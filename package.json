@@ -37,8 +37,7 @@
 		"prettier": "^1.18.2"
 	},
 	"scripts": {
-		"dev": "next",
-		"build": "next build",
-		"start": "next start"
+		"dev": "gatsby develop",
+		"build": "gatsby build"
 	}
 }
