@@ -16,7 +16,7 @@ module.exports = {
         resolve: `gatsby-source-filesystem`,
         options: {
           name: `images`,
-          path: path.join(__dirname, `src`, `images`),
+          path: path.join(__dirname, `static`, `images`),
         },
       },
 
@@ -49,6 +49,19 @@ module.exports = {
        * @since 1.0.0
        */
       `gatsby-plugin-react-helmet`,
+
+      /**
+       * Styled Components support
+       *
+       * @link https://www.gatsbyjs.org/packages/gatsby-plugin-styled-components/
+       * @since 1.0.0
+       */
+      {
+        resolve: `gatsby-plugin-styled-components`,
+        options: {
+          // Add any options here
+        },
+      },
 
       /**
        * @link
