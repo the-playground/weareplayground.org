@@ -74,7 +74,7 @@ module.exports = {
             accessToken: process.env.PRISMIC_API_TOKEN, // (optional)
             previews: false, // (optional, default: false)
             pages: [{
-              type: 'Shows',         // TypeName from prismic
+              type: 'Show',         // TypeName from prismic
               match: '/shows/:uid',  // Pages will be generated under this pattern (optional)
               path: '/show-preview',        // Placeholder page for unpublished documents
               component: require.resolve('./src/templates/show.js'),
@@ -92,8 +92,8 @@ module.exports = {
             name: `The Playground`,
             short_name: `Playground`,
             start_url: `/`,
-            background_color: `#f7f0eb`,
-            theme_color: `#a2466c`,
+            background_color: `#303030`,
+            theme_color: `#5DA460`,
             display: `standalone`,
           }
       },
@@ -107,7 +107,29 @@ module.exports = {
           options: {
             precachePages: [],
           },
-      },
+	  },
+
+	  /**
+	   * Robots.txt Handler
+	   *
+       * @link https://www.gatsbyjs.org/packages/gatsby-plugin-robots-txt/
+       * @since 1.0.0
+       */
+	  {
+		resolve: 'gatsby-plugin-robots-txt',
+		options: {
+		  host: 'https://weareplayground.org',
+		  sitemap: 'https://weareplayground.org/sitemap.xml',
+		  env: {
+			development: {
+			  policy: [{ userAgent: '*', disallow: ['/'] }]
+			},
+			production: {
+			  policy: [{ userAgent: '*', allow: '/' }]
+			}
+		  }
+		}
+	  }
     ]
 
 }

@@ -6,3 +6,11 @@
 
 // Instant Search
 // OR Filter by season -- URL populated with filter param
+
+import React from 'react'
+
+const ShowsPage = () => (
+    'Shows Page'
+)
+
+export default ShowsPage

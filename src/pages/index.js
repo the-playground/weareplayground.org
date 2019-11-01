@@ -1,7 +1,12 @@
-import React from 'react';
+import React from 'react'
+
+import {Layout} from '../ui/components/_structure/Layout'
+
 
 const HomePage = () => (
-    'Coming soon...'
+	<Layout>
+    	Coming soon...
+	</Layout>
 )
 
 export default HomePage

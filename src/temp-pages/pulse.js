@@ -5,3 +5,11 @@
 // About Us action
 // links to social
 // Donate action
+
+import React from 'react'
+
+const PulsePage = () => (
+    'Pulse'
+)
+
+export default PulsePage

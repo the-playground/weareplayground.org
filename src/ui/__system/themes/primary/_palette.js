@@ -8,6 +8,8 @@
  */
 export const primary = {
 
+	base: '#5DA460',
+
 }
 
 export const secondary = {

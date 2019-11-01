@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PrivacyPage = () => (
-    'Coming soon...'
+    'Privacy Policy'
 )
 
 export default PrivacyPage
