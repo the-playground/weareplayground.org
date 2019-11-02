@@ -1,14 +1,15 @@
 import React from 'react';
 import Helmet from 'react-helmet'
 
+// Import utilities
+import {getCurrentRootURL} from '../../functions/URL'
+
 /**
  *
  * ! Remember to change robots meta tags to index, follow when we get into production!
  * @param {*} param0
  */
 const PageSEO = ({ data, video, robots }) => {
-
-	const currentRootURL = `${window.location.protocol}://${window.location.hostname}${window.location.pathname}`;
 
 	// Wrap our array of structured data components in an object to achieve proper formatting
 	// const structuredDataObject = JSON.stringify({
@@ -28,7 +29,7 @@ const PageSEO = ({ data, video, robots }) => {
 			<meta name="robots" content={robots ? robots : 'noindex, nofollow'} />
 
 			{/* Opengraph meta tags for Facebook & LinkedIn */}
-			<meta property="og:url" content={`${currentRootURL}/?ref=weareplayground.org`} />
+			<meta property="og:url" content={`${getCurrentRootURL()}/?ref=weareplayground.org`} />
 			<meta property="og:title" content={`${data.title} | The Playground`} />
 			<meta property="og:description" content={data.description} />
 
