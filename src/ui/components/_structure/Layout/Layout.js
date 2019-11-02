@@ -20,6 +20,7 @@ const Layout = ({children, globalSEO, pageSEO}) => (
 
 			<GlobalSEO data={globalSEO}/>
 			<PageSEO data={pageSEO}/>
+
 			<GlobalStyles />
 
 			<Header />
