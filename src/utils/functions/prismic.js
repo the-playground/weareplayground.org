@@ -1,3 +1,8 @@
+/**
+ *
+ * @param {*} slices
+ * @param {*} type
+ */
 export const getPrismicSlice = ( slices, type ) => {
 
 	const foundSlice = slices.find( (slice) => {
