@@ -36,7 +36,8 @@ export const Organization = ( props ) => `
 	sameAs: [
 		"https://theplaygroundtheatre.org",
 		"${props.social.facebook}",
-		"${props.social.instagram}"
+		"${props.social.instagram}",
+		"${props.social.spotify}"
 	]
 
 `;

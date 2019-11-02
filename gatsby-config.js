@@ -6,6 +6,48 @@ require("dotenv").config({
 
 module.exports = {
 
+	siteMetadata: {
+
+		company: {
+
+			name: 'The Playground',
+			email: 'hello@weareplayground.org',
+			url: 'https://weareplayground.org',
+
+			social: {
+				spotify: 'https://open.spotify.com/user/theplaygroundtheatre?si=z2I3ujYnTy-K4oW6tYadDw',
+				facebook: 'https://www.facebook.com/playgroundDYT/',
+				facebookAppID: '',
+				instagram: 'https://www.instagram.com/playground_dyt/',
+			},
+
+			location: {
+				city: 'Dayton',
+				state: 'Ohio',
+				stateCode: 'OH',
+				zip: '45402',
+			},
+
+			legal: {
+
+				name: 'The Playground Theatre, INC.',
+				ein: '',
+				foundingDate: ''
+
+			}
+
+		},
+
+		siteVerification: {
+
+			google: '',
+			bing: '',
+			norton: '',
+
+		}
+
+	},
+
     plugins: [
 
       /**
@@ -112,6 +154,8 @@ module.exports = {
 	  /**
 	   * Robots.txt Handler
 	   *
+	   * ! Remember to change production policy to `allow` when we launch
+	   *
        * @link https://www.gatsbyjs.org/packages/gatsby-plugin-robots-txt/
        * @since 1.0.0
        */
@@ -125,7 +169,7 @@ module.exports = {
 			  policy: [{ userAgent: '*', disallow: ['/'] }]
 			},
 			production: {
-			  policy: [{ userAgent: '*', allow: '/' }]
+			  policy: [{ userAgent: '*', disallow: '/' }]
 			}
 		  }
 		}
