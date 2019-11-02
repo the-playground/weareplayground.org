@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 
 
 import {Layout} from '../ui/components/_structure/Layout'
-import {PageSEO} from '../utils/components/PageSEO'
 import {getPrismicSlice} from '../utils/functions/prismic';
 
 const HomePage = ({data}) => {
