@@ -2,9 +2,6 @@ import React, { createContext } from 'react'
 // Use static query to get default data from prismic.
 
 const defaultValues = {
-	currentShow: {},
-	nextShow: {},
-	currentSeason: {},
 	globalNotice: {},
 	hasGlobalNotice: false,
 	isCartOpen: false,

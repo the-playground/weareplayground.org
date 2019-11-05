@@ -7,6 +7,7 @@
 // global imports
 import React from 'react';
 import { SiteProvider } from './src/__context__/SiteContext'
+import { ShowProvider } from './src/__context__/ShowContext'
 
 // Register global styles
 require( './static/styles/normalize.css' );
@@ -14,6 +15,10 @@ require( './static/styles/normalize.css' );
 // Handle Application wrapper
 export const wrapRootElement = ({ element }) => (
 
-	<SiteProvider>{element}</SiteProvider>
+	<SiteProvider>
+		<ShowProvider>
+			{element}
+		</ShowProvider>
+	</SiteProvider>
 
 )
