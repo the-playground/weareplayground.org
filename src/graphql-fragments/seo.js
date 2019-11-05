@@ -41,6 +41,8 @@ export const SiteGlobalSEOFragment = graphql`
 `
 
 /**
+ * Query important SEO information abou
+ * Source » Prismic
  *
  * @since 1.0.0
  */
@@ -52,9 +54,9 @@ export const PageSEOFragment = graphql`
 					... on PRISMIC_Home_pageBodyBasic_seo {
 						type
 						primary {
-						description
-						image
-						title
+							description
+							image
+							title
 						}
 					}
 				}

@@ -3,11 +3,11 @@ import React, { Fragment } from 'react'
 // UI imports
 import { ThemeProvider } from 'styled-components'
 import {GlobalStyles} from '../GlobalStyles'
-import themes from '../../../__system/themes'
+import themes from '../../../ui/themes'
 
 // SEO imports
-import {GlobalSEO} from '../../../../utils/components/GlobalSEO'
-import {PageSEO} from '../../../../utils/components/PageSEO'
+import {GlobalSEO} from '../../_utility/GlobalSEO'
+import {PageSEO} from '../../_utility/PageSEO'
 
 // Structural imports
 import {Footer} from '../Footer'

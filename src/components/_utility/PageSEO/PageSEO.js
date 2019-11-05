@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet'
 
 // Import utilities
-import {getCurrentRootURL} from '../../functions/URL'
+import {getCurrentRootURL} from '../../../utils/URL'
 
 /**
  *
