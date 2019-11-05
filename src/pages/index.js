@@ -2,8 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 
-import {Layout} from '../components/_structure/Layout'
-import {getPrismicSlice} from '../utils/prismic';
+import {Layout} from '../components/Layout'
+import {getPrismicSlice} from '../__utility__/prismic';
 
 const HomePage = ({data}) => {
 

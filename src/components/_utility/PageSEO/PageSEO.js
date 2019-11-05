@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet'
 
 // Import utilities
-import {getCurrentRootURL} from '../../../utils/URL'
+import {getCurrentRootURL} from '../../../__utility__/URL'
 
 /**
  *
@@ -23,7 +23,7 @@ const PageSEO = ({ data, video, robots }) => {
 			{/* Standard meta data for search engines */}
 			<title>{`${data.title} | The Playground`}</title>
 			<meta name="description" content={data.description} />
-			<meta name="image" content={data.image} />
+			<meta name="image" content={data.image.url} />
 
 			{/* Search engine visibility */}
 			<meta name="robots" content={robots ? robots : 'noindex, nofollow'} />
