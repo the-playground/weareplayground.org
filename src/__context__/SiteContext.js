@@ -1,6 +1,4 @@
 import React, { createContext } from 'react'
-import { graphql, StaticQuery } from 'graphql'
-
 // Use static query to get default data from prismic.
 
 const defaultValues = {
