@@ -1,6 +1,6 @@
 // https://schema.org/Offer
 
-export const Offer = ( props ) => `
+const Offer = ( props ) => `
 
 	"@context" : "http://schema.org",
 	"@type"	: "Offer",
@@ -9,3 +9,5 @@ export const Offer = ( props ) => `
 	"url": "${props.url}"
 
 `;
+
+export default Offer;

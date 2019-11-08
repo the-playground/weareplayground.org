@@ -5,7 +5,7 @@ const founders = ( people ) => {
 
 }
 
-export const Organization = ( props ) => `
+const Organization = ( props ) => `{
 
 	"@context" : "http://schema.org",
 	"@type"	: "Organization",
@@ -13,18 +13,21 @@ export const Organization = ( props ) => `
 	"name": "${props.name}",
 	"email": "${props.email}",
 	"url" : "${props.url}",
-	"logo": "${props.logo}",
+	"logo": "${props.logo.url}",
 	"legalName": "${props.legal.name}",
-	"taxID": "${props.legal.ein}",
 	"foundingDate": "${props.legal.foundingDate}",
 	"founders": [
 		{
 			"@type": "Person",
-			"name": "Christopher Hahn"
+			"name": "Chris Hahn",
+			"jobTitle": "Cofounder & Artistic Director",
+			"image": ""
 		},
 		{
 			"@type": "Person",
-			"name": "Jenna Burnette"
+			"name": "Jenna Valyn",
+			"jobTitle": "Cofounder & Artistic Director",
+			"image": ""
 		},
 	],
 	"address": {
@@ -33,11 +36,20 @@ export const Organization = ( props ) => `
 		"addressRegion": "${props.address.state}",
     	"postalCode": "${props.address.zip}"
 	},
+	"contactPoint" : [{
+		"@type" : "ContactPoint",
+		"url": "",
+		"email": "",
+		"contactType" : "general contact",
+		"availableLanguage" : "English",
+	}],
 	sameAs: [
-		"https://theplaygroundtheatre.org",
 		"${props.social.facebook}",
 		"${props.social.instagram}",
-		"${props.social.spotify}"
+		"${props.social.spotify}",
+		"${props.social.youtube}"
 	]
 
-`;
+}`;
+
+export default Organization;

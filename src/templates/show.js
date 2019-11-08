@@ -1,17 +1,35 @@
 import React from 'react'
-import {graphql} from 'gatsby'
+import {Layout} from '../components/Layout'
+import { SEOMetaPage } from '../components/SEO'
 import { Show } from '../components/Show'
+import { graphql } from 'gatsby'
+import { getPrismicSlice } from '../__utility__/prismic'
 
-const ShowTemplate = () => {
+const ShowTemplate = ({data}) => {
 
-	// FIX data undefined... we will need a static query probably. This page has access to UID
+	const pageMeta = getPrismicSlice( data.prismic.show.body, 'basic_seo' );
 
 	return (
-		<Show />
+
+		<Layout>
+			<SEOMetaPage metadata={pageMeta} />
+			<Show />
+		</Layout>
+
 	)
 
 }
 
-// dynamic static query here from gatsby that uses the uid of the show
+export const query = graphql`
+
+	query ShowDataByID( $uid: String! ) {
+		prismic {
+			show(lang: "en-us", uid: $uid) {
+				...ExpandedShowDataFragment
+			}
+		}
+	}
+
+`
 
 export default ShowTemplate

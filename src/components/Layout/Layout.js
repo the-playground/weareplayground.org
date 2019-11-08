@@ -5,30 +5,35 @@ import { ThemeProvider } from 'styled-components'
 import themes from '../../__ui__/themes'
 
 // SEO imports
-import {GlobalSEO} from '../_utility/GlobalSEO'
-import {PageSEO} from '../_utility/PageSEO'
+import { useCompanyMetadata } from '../../__hooks__/company';
+import { SEOMetaGlobal } from '../SEO'
 
 // Structural imports
 import {Footer} from './Footer'
 import {Header} from './Header'
 
-const Layout = ({children, globalSEO, pageSEO}) => (
+const Layout = ({children, noHeader, noFooter}) => {
 
-	<ThemeProvider theme={themes.primary}>
-		<Fragment>
+	const { company, siteVerification } = useCompanyMetadata();
 
-			<GlobalSEO data={globalSEO}/>
-			<PageSEO data={pageSEO}/>
+	return (
 
-			<Header />
-				<main>
-					{children}
-				</main>
-			<Footer />
+		<ThemeProvider theme={themes.primary}>
+			<Fragment>
 
-		</Fragment>
-	</ThemeProvider>
+				<SEOMetaGlobal company={company} verifications={siteVerification} />
 
-);
+				{ noHeader ? '' : <Header /> }
+					<main>
+						{children}
+					</main>
+				{ noFooter ? '' : <Footer /> }
+
+			</Fragment>
+		</ThemeProvider>
+
+	)
+
+};
 
 export default Layout

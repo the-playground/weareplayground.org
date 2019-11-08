@@ -1,4 +1,4 @@
-const creativeWork = (props) => `
+const CreativeWork = (props) => `
 
 	"@type": "CreativeWork",
 	"name": "${props.title}",
@@ -8,3 +8,5 @@ const creativeWork = (props) => `
 	}
 
 `;
+
+export default CreativeWork;

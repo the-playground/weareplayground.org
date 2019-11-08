@@ -18,3 +18,4 @@ const Place = (props) => `
 	"url": "${props.url ? props.url : ''}",
 
 `;
+export default Place;

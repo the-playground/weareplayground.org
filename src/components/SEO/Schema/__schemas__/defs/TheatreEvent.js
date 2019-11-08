@@ -17,11 +17,16 @@ const houseOpens = ( startTime ) => {
 	return moment( startTime ).subtract( 30, 'minutes' ).format()
 }
 
-export const multipleEvents = (events) => `
+/**
+ *
+ * @param {*} events
+ * @param {*} location
+ */
+const multipleEvents = ( main, events, location, creativeWork ) => `
 
 `;
 
-export const theatreEvent = ( main, location, offer, creativeWork ) => `
+const TheatreEvent = ( main, location, offers, creativeWork ) => `{
 
 	"@context" : "http://schema.org",
 	"@type"	: "TheatreEvent",
@@ -50,5 +55,6 @@ export const theatreEvent = ( main, location, offer, creativeWork ) => `
 		${creativeWork}
 	}
 
+}`;
 
-`;
+export default TheatreEvent;
