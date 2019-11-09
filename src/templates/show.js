@@ -1,8 +1,8 @@
 import React from 'react'
-import {Layout} from '../components/Layout'
-import { SEOMetaPage } from '../components/SEO'
-import { Show } from '../components/Show'
 import { graphql } from 'gatsby'
+
+import { SEOPageMeta } from '../components/SEO'
+import {Layout} from '../components/Layout'
 import { getPrismicSlice } from '../__utility__/prismic'
 
 const ShowTemplate = ({data}) => {
@@ -11,9 +11,9 @@ const ShowTemplate = ({data}) => {
 
 	return (
 
-		<Layout>
-			<SEOMetaPage metadata={pageMeta} />
-			<Show />
+		<Layout pageMeta={pageMeta}>
+				<SEOPageMeta metadata={pageMeta} />
+				{data.prismic.show.title}
 		</Layout>
 
 	)

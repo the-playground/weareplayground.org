@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import {Layout} from '../components/Layout'
-import { SEOMetaPage } from '../components/SEO'
+import { Layout } from '../components/Layout'
+import { SEOPageMeta } from '../components/SEO'
 import { getPrismicSlice } from '../__utility__/prismic';
 
 const HomePage = ({data}) => {
@@ -12,10 +12,11 @@ const HomePage = ({data}) => {
 	return (
 
 		<Layout>
+			<SEOPageMeta metadata={pageMeta} />
+			Home Page
 
-			<SEOMetaPage metadata={pageMeta}/>
+			<div hidden id="snipcart" data-api-key={process.env.GATSBY_SNIPCART_API_KEY}></div>
 
-			Coming soon...
 		</Layout>
 
 	)

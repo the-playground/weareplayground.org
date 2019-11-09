@@ -1,12 +1,10 @@
 import React, { Fragment } from 'react'
 
 // UI imports
-import { ThemeProvider } from 'styled-components'
-import themes from '../../__ui__/themes'
 
 // SEO imports
 import { useCompanyMetadata } from '../../__hooks__/company';
-import { SEOMetaGlobal } from '../SEO'
+import { SEOGlobalMeta } from '../SEO'
 
 // Structural imports
 import {Footer} from './Footer'
@@ -18,19 +16,17 @@ const Layout = ({children, noHeader, noFooter}) => {
 
 	return (
 
-		<ThemeProvider theme={themes.primary}>
-			<Fragment>
+		<Fragment>
 
-				<SEOMetaGlobal company={company} verifications={siteVerification} />
+			<SEOGlobalMeta company={company} verifications={siteVerification} />
 
-				{ noHeader ? '' : <Header /> }
-					<main>
-						{children}
-					</main>
-				{ noFooter ? '' : <Footer /> }
+			{ noHeader ? '' : <Header /> }
+				<main>
+					{children}
+				</main>
+			{ noFooter ? '' : <Footer /> }
 
-			</Fragment>
-		</ThemeProvider>
+		</Fragment>
 
 	)
 

@@ -8,6 +8,10 @@
 import React from 'react';
 import { SiteProvider } from './src/__context__/SiteContext'
 import { ShowProvider } from './src/__context__/ShowContext'
+import { ThemeProvider } from 'styled-components'
+
+// IMport our themes
+import themes from './src/__ui__/themes'
 
 // Register global styles
 require( './static/styles/normalize.css' );
@@ -17,7 +21,9 @@ export const wrapRootElement = ({ element }) => (
 
 	<SiteProvider>
 		<ShowProvider>
-			{element}
+			<ThemeProvider theme={themes.primary}>
+				{element}
+			</ThemeProvider>
 		</ShowProvider>
 	</SiteProvider>
 
