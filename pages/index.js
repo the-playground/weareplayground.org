@@ -1,7 +1,7 @@
 import React from 'react'
 
-import {Layout} from '../src/components/Layout'
-import {SEOPageMeta} from '../src/components/SEO'
+import {Layout} from '../lib/components/Layout'
+import {SEOPageMeta} from '../lib/components/SEO'
 
 const HomePage = () => {
 

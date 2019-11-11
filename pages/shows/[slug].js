@@ -1,4 +1,4 @@
-import {Layout} from '../../src/components/Layout'
+import {Layout} from '../../lib/components/Layout'
 
 const Show = () => {
 
