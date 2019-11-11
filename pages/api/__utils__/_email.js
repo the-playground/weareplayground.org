@@ -31,7 +31,7 @@ const getDevelopmentEnvConfig = () => ({
 /**
  *
  */
-const transportConfig = process.env.production ? getProductionEnvConfig() : getDevelopmentEnvConfig()
+const transportConfig = process.env.NODE_ENV === 'production' ? getProductionEnvConfig() : getDevelopmentEnvConfig()
 
 /**
  *
@@ -61,7 +61,7 @@ const getHydratedEmailTemplate = ({ templateName, data }) => {
  */
 const composeEmail = () => ({
 
-	from: 'chris@theplaygroundtheatre',
+	from: 'chris@theplaygroundtheatre.org',
 	to: 'chahn1692@gmail.com',
 	subject: 'This is a test',
 	text: 'hello world', //getHydratedPlainText( data ),
@@ -76,9 +76,12 @@ export const sendEmail = async () => {
 
 	const email = composeEmail()
 
+	console.log( transportConfig );
+
 	try {
 
 		const status = await transport.sendMail(email)
+
 		console.log(status);
 
 	} catch(error) {
