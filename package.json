@@ -9,6 +9,7 @@
 	"private": false,
 	"dependencies": {
 		"@storybook/cli": "^5.2.6",
+		"@zeit/next-css": "^1.0.1",
 		"apollo-server-micro": "^2.9.7",
 		"babel-plugin-styled-components": "^1.10.6",
 		"dotenv": "^8.2.0",
