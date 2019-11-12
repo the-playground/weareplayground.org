@@ -1,4 +1,4 @@
-import {Layout} from '../../lib/components/Layout'
+import {Layout} from '../../src/components/Layout'
 
 const ShowsPage = () => {
 

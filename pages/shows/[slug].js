@@ -2,9 +2,9 @@ import { useRouter } from  'next/router'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 
-import { ShowData } from '../../lib/__graphql__/fragments/show'
-import {Layout} from '../../lib/components/Layout'
-import {withApollo} from '../../lib/__utility__/withApollo'
+import { ShowData } from '../../src/__graphql__/fragments/show'
+import {Layout} from '../../src/components/Layout'
+import {withApollo} from '../../src/__utility__/withApollo'
 
 const SHOW_QUERY = gql`
 	query ShowQuery( $uid: String! ) {
@@ -64,41 +64,41 @@ const SHOW_QUERY = gql`
 				sponsors {
 					contribution
 					sponsor {
-					... on Sponsor {
-						name
-						description
-						website {
-							... on _ExternalLink {
-								url
-								_linkType
+						... on Sponsor {
+							name
+							description
+							website {
+								... on _ExternalLink {
+									url
+									_linkType
+								}
 							}
 						}
-					}
 					}
 				}
 				body {
 					... on ShowBodyVideo_collection {
+						type
 						fields {
 							video_description
 							video_embed_url
 							video_id
 							video_title
 						}
-						type
 					}
 					... on ShowBodySpotify_playlist {
+						type
 						fields {
 							spotify_playlist_id
 						}
-						type
 					}
 					... on ShowBodyBasic_seo {
 						type
 						primary {
-						meta_description
-						meta_image
-						meta_title
-						twitter_card_image
+							meta_description
+							meta_image
+							meta_title
+							twitter_card_image
 						}
 					}
 				}

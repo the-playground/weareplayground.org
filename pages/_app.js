@@ -8,12 +8,12 @@
 
 import App from 'next/app'
 
-import { SiteProvider } from '../lib/__context__/SiteContext'
-import { ShowProvider } from '../lib/__context__/ShowContext'
+import { SiteProvider } from '../src/__context__/SiteContext'
+import { ShowProvider } from '../src/__context__/ShowContext'
 import { ThemeProvider } from 'styled-components'
 
 // Import our themes
-import themes from '../lib/__ui__/themes'
+import themes from '../src/__ui__/themes'
 
 class PlaygroundApp extends App {
 

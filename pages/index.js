@@ -3,9 +3,9 @@ import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 
-import {Layout} from '../lib/components/Layout'
-import {SEOPageMeta} from '../lib/components/SEO'
-import {withApollo} from '../lib/__utility__/withApollo'
+import {Layout} from '../src/components/Layout'
+import {SEOPageMeta} from '../src/components/SEO'
+import {withApollo} from '../src/__utility__/withApollo'
 
 const HOME_PAGE_QUERY = gql`
 	query HomePageQuery {
