@@ -6,11 +6,14 @@ import React, { Fragment } from 'react'
 import {Footer} from './Footer'
 import {Header} from './Header'
 
+import { SEOGlobalMeta } from '../SEO'
+
 const Layout = ({children, noHeader, noFooter}) => {
 
 	return (
 
 		<Fragment>
+			<SEOGlobalMeta />
 
 			{ noHeader ? '' : <Header /> }
 				<main>
