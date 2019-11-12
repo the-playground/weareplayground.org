@@ -1,4 +1,4 @@
-import { sendEmail } from './__utils__/_email'
+import { sendEmail } from '../__utils__/_email'
 
 /**
  * Orchestrate ticket purchase actions

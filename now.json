@@ -1,5 +1,6 @@
 {
 	"env": {
+		"PRISMIC_GRAPHQL_API_URL": "@prismic-graphql-api-url",
 		"PRISMIC_API_KEY": "@prismic-api-key",
 		"SNIPCART_API_KEY": "@snipcart-api-key",
 		"POSTMARK_USER": "@postmark-user",
