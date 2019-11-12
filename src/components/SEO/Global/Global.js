@@ -1,14 +1,29 @@
-import React from 'react';
 import Head from 'next/head'
-import PropTypes from 'prop-types'
+import { useQuery } from '@apollo/react-hooks'
+import gql from 'graphql-tag'
 
-// Import utilities
-import {getCurrentRootURL} from '../../../__utility__/URL'
+import { companyDataFragment } from '../../../__graphql__/fragments/company'
 
 /**
  *
  * TODO: Research rel="canonical" meta tags.
  */
+
+const GLOBAL_META_QUERY = gql`
+	query GlobalMetaQuery {
+		...companyDataFragment
+		allSiteconfigs{
+			edges{
+				node{
+					verification_google
+					verification_bing
+					verification_norton
+				}
+			}
+		}
+	}
+	${companyDataFragment}
+`
 
  /**
  * Component: SEOGlobal
@@ -19,25 +34,28 @@ import {getCurrentRootURL} from '../../../__utility__/URL'
  * @param {object} company
  * @param {object} verifications
  */
-const SEOGlobal = ({ company, verifications }) => {
+const SEOGlobal = () => {
 
-	const facebookAppID = ( company.social && company.social.facebookAppID ) ? company.social.facebookAppID : null;
+	const { data, loading, error } = useQuery( GLOBAL_META_QUERY );
 
-	const googleVerification = verifications.google ? verifications.google : null;
-	const bingVerification = verifications.bing ? verifications.bing : null;
-	const nortonVerification = verifications.norton ? verifications.norton : null;
+	if (loading) return <div />
+
+	const company = data.allCompanyconfigs.edges[0].node;
+	const verifications = data.allSiteconfigs.edges[0].node;
+
+	const facebookAppID = company.facebook_app_id ? company.facebook_app_id : null;
+	const googleVerification = verifications.verification_google ? verifications.verification_google : null;
+	const bingVerification = verifications.verification_bing ? verifications.verification_bing : null;
+	const nortonVerification = verifications.verification_norton ? verifications.verification_norton : null;
 
 	return (
 
 		<Head>
 
-			{/* Default language and direction */}
-			<html lang="en" dir="ltr" />
-
 			{/* Handle site verifications generation */}
-			{ googleVerification ? <meta name="google-site-verification" content={verifications.google} /> : '' }
-			{ bingVerification ? <meta name="msvalidate.01" content={verifications.bing} /> : '' }
-			{ nortonVerification ? <meta name="norton-safeweb-site-verification" content={verifications.norton} /> : '' }
+			{ googleVerification ? <meta name="google-site-verification" content={googleVerification} /> : '' }
+			{ bingVerification ? <meta name="msvalidate.01" content={bingVerification} /> : '' }
+			{ nortonVerification ? <meta name="norton-safeweb-site-verification" content={nortonVerification} /> : '' }
 
 			{/* Facebook App ID for your FB Business App */}
 			{ facebookAppID ? <meta property="fb:app_id" content={facebookAppID} /> : '' }
@@ -46,56 +64,24 @@ const SEOGlobal = ({ company, verifications }) => {
 			<meta name="google" content="nositelinkssearchbox" />
 
 			{/* Canonical URL */}
-			<link rel="canonical" href={getCurrentRootURL()} />
+			{/*<link rel="canonical" href={getCurrentRootURL()} />*/}
 
 			{/* Set geo location for business */}
-			<meta name="geo.region" content={`US-${company.location.stateCode}`} />
-			<meta name="geo.placename" content={company.location.city} />
+			<meta name="geo.region" content={`US-${company.location_state_code}`} />
+			<meta name="geo.placename" content={company.location_city} />
 
 			{/* Global OpenGraph meta */}
 			<meta property="og:locale" content="en_US" />
 			<meta property="og:type" content='website' />
 			<meta property="og:sitename" content={company.name} />
-			<meta name="og:email" content={company.email}/>
+			<meta name="og:email" content={company.contact_email}/>
 			<meta name="og:country-name" content="USA"/>
-			<meta name="og:region" content={company.location.stateCode} />
-			<meta name="og:postal-code" content={company.location.zip} />
+			<meta name="og:region" content={company.location_state_code} />
+			<meta name="og:postal-code" content={company.location_zip} />
 
 		</Head>
 
 	)
-
-}
-
-/**
- * ----------
- * Prop Types
- * ----------
- */
-SEOGlobal.propTypes = {
-
-	company: PropTypes.shape({
-
-		name: PropTypes.string.isRequired,
-		email: PropTypes.string.isRequired,
-
-		location: PropTypes.shape({
-			stateCode: PropTypes.string.isRequired,
-			city: PropTypes.string.isRequired,
-			zip: PropTypes.string.isRequired,
-		}),
-
-		social: PropTypes.shape({
-			faceBookAppID: PropTypes.string
-		}),
-
-	}).isRequired,
-
-	verifications: PropTypes.shape({
-		google: PropTypes.string,
-		bing: PropTypes.string,
-		norton: PropTypes.string
-	}),
 
 }
 
