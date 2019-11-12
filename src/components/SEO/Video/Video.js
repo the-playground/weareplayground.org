@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import Head from 'next/head'
 
 /**
  * Component: SEOVideo
@@ -15,7 +15,7 @@ const SEOVideo = ({ data }) => {
 
 	return (
 
-		<Helmet>
+		<Head>
 
 			{/* Opengraph video tags for Facebook & LinkedIn */}
 			<meta property="og:video" content={data.url} />
@@ -24,7 +24,7 @@ const SEOVideo = ({ data }) => {
 			<meta property="og:video:height" content={data.height} />
 			<meta property="og:video:width" content={data.width} />
 
-		</Helmet>
+		</Head>
 
 	)
 

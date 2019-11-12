@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet'
+import Head from 'next/head'
 import PropTypes from 'prop-types'
 
 // Import utilities
@@ -29,7 +29,7 @@ const SEOGlobal = ({ company, verifications }) => {
 
 	return (
 
-		<Helmet>
+		<Head>
 
 			{/* Default language and direction */}
 			<html lang="en" dir="ltr" />
@@ -61,7 +61,7 @@ const SEOGlobal = ({ company, verifications }) => {
 			<meta name="og:region" content={company.location.stateCode} />
 			<meta name="og:postal-code" content={company.location.zip} />
 
-		</Helmet>
+		</Head>
 
 	)
 

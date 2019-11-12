@@ -1,5 +1,5 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import Head from 'next/head'
 
 // See Yoast example for how to structure structure data in a graph format.
 
@@ -14,11 +14,11 @@ const SEOStructuredDataGraph = (schemas) => {
 
 	return (
 
-		<Helmet>
+		<Head>
 
 			{ schemas ? <script type="application/ld+json">{dataGraph}</script> : '' }
 
-		</Helmet>
+		</Head>
 	)
 
 }
