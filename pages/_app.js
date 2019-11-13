@@ -6,34 +6,32 @@
  * @since 1.0.0
  */
 
-import App from 'next/app'
+import App from 'next/app';
 
-import { SiteProvider } from '../src/__context__/SiteContext'
-import { ShowProvider } from '../src/__context__/ShowContext'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components';
+import { SiteProvider } from '../src/__context__/SiteContext';
+import { ShowProvider } from '../src/__context__/ShowContext';
 
 // Import our themes
-import themes from '../src/__ui__/themes'
+import themes from '../src/__ui__/themes';
 
 class PlaygroundApp extends App {
 
 	render() {
+		const { Component, pageProps } = this.props;
 
-		const { Component, pageProps } = this.props
 		return (
 
-			<SiteProvider>
-				<ShowProvider>
-					<ThemeProvider theme={themes.primary}>
-						<Component {...pageProps} />
-					</ThemeProvider>
-				</ShowProvider>
-			</SiteProvider>
+  <SiteProvider>
+    <ShowProvider>
+      <ThemeProvider theme={themes.primary}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </ShowProvider>
+  </SiteProvider>
 
-		)
-
+		);
 	}
-
 }
 
-  export default PlaygroundApp
+export default PlaygroundApp;

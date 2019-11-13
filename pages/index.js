@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-import { useQuery } from '@apollo/react-hooks'
-import gql from 'graphql-tag'
+import { useQuery } from '@apollo/react-hooks';
+import gql from 'graphql-tag';
 
-import {Layout} from '../src/components/Layout'
-import {SEOPageMeta} from '../src/components/SEO'
-import {withApollo} from '../src/__utility__/withApollo'
+import { Layout } from '../src/components/Layout';
+import { SEOPageMeta } from '../src/components/SEO';
+import { withApollo } from '../src/__utility__/withApollo';
 
 const HOME_PAGE_QUERY = gql`
 	query HomePageQuery {
@@ -24,24 +24,23 @@ const HOME_PAGE_QUERY = gql`
 			}
 		}
 	}
-`
+`;
 
 const HomePage = () => {
+  const { data, loading, error } = useQuery(HOME_PAGE_QUERY);
 
-	const { data, loading, error } = useQuery( HOME_PAGE_QUERY );
+  if (loading) return <div />;
 
-	if (loading) return <div />
+  return (
 
-	return (
+    <Layout>
 
-		<Layout>
-			<h1>{data.home_page.page_name}</h1>
-			<div hidden id="snipcart" data-api-key={process.env.GATSBY_SNIPCART_API_KEY}></div>
+      <h1>{data.home_page.page_name}</h1>
+      <div hidden id="snipcart" data-api-key={process.env.GATSBY_SNIPCART_API_KEY} />
 
-		</Layout>
+    </Layout>
 
-	)
+  );
+};
 
-}
-
-export default withApollo( HomePage );
+export default withApollo(HomePage);
