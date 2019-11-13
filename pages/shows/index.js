@@ -1,3 +1,4 @@
+import {withApollo} from '../../src/__utility__/withApollo'
 import {Layout} from '../../src/components/Layout'
 
 const ShowsPage = () => {
@@ -12,4 +13,4 @@ const ShowsPage = () => {
 
 }
 
-export default ShowsPage
+export default withApollo( ShowsPage )
