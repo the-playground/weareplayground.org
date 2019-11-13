@@ -1,3 +1,10 @@
+/**
+ * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/ssr-apis/
+ */
+
+
 const React = require("react")
 
 exports.onRenderBody = ({ setHeadComponents, setPostBodyComponents, }) => {
@@ -12,7 +19,7 @@ exports.onRenderBody = ({ setHeadComponents, setPostBodyComponents, }) => {
         <link
             rel="stylesheet"
             id="snipcart-css"
-            src="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.css"
+            src="https://cdn.snipcart.com/themes/v3.0.2/default/snipcart.css"
             type="text/css"
         />,
 
@@ -28,7 +35,7 @@ exports.onRenderBody = ({ setHeadComponents, setPostBodyComponents, }) => {
         <script
             key="snipcart-js"
             type="text/javascript"
-            src="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.js"
+            src="https://cdn.snipcart.com/themes/v3.0.2/default/snipcart.js"
             />,
 
     ]);

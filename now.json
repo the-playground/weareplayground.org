@@ -1,0 +1,10 @@
+{
+	"env": {
+		"PRISMIC_API_KEY": "@prismic-api-key",
+		"SNIPCART_API_KEY": "@snipcart-api-key",
+		"POSTMARK_USER": "@postmark-user",
+		"POSTMARK_PASS": "@postmark-pass",
+		"MAILTRAP_USER": "@mailtrap-user",
+		"MAILTRAP_PASS": "@mailtrap-pass"
+	}
+}
