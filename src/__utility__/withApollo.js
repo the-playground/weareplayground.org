@@ -1,6 +1,6 @@
 import { ApolloClient } from 'apollo-client'
 import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory'
-import { PrismicLink } from '../__utility__/prismic'
+import { PrismicLink } from 'apollo-link-prismic'
 import Head from 'next/head'
 import { ApolloProvider } from '@apollo/react-hooks'
 import fetch from 'isomorphic-unfetch'
