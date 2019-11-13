@@ -38,7 +38,7 @@ const SEOGlobal = () => {
 
 	const { data, loading, error } = useQuery( GLOBAL_META_QUERY );
 
-	if (loading) return <div />
+	if (loading) return <Head></Head>
 
 	const company = data.allCompanyconfigs.edges[0].node;
 	const verifications = data.allSiteconfigs.edges[0].node;
