@@ -117,9 +117,14 @@ const Show = () => {
 		variables: { uid }
 	});
 
+
+	// Implement page loading state
 	if (loading) return <div />
 
-	console.log(data);
+	const { show } = data
+
+	// Render a 404 Page if the URL doesn't actually exist.
+	if( ! show ) return 'not found'
 
 	return (
 
