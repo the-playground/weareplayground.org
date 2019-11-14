@@ -1,4 +1,4 @@
-import { sendEmail } from '../__utils__/_email'
+import { sendEmail } from '../__utils__/_email';
 
 /**
  * Orchestrate ticket purchase actions
@@ -8,19 +8,19 @@ import { sendEmail } from '../__utils__/_email'
  * -- set up timed email deliver for day before performance
  */
 
- export default async (req, res) => {
+export default async (req, res) => {
 
 	try {
 
-		await sendEmail()
+		await sendEmail();
 		res.status(200).json({
-			status: "success"
-		})
+			status: 'success',
+		});
 
-	} catch (error){
+	} catch (error) {
 
-		console.log(error)
+		console.log(error);
 
 	}
 
- }
+};

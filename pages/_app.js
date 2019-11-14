@@ -21,17 +21,16 @@ class PlaygroundApp extends App {
 		const { Component, pageProps } = this.props;
 
 		return (
-
-  <SiteProvider>
-    <ShowProvider>
-      <ThemeProvider theme={themes.primary}>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </ShowProvider>
-  </SiteProvider>
-
+			<SiteProvider>
+				<ShowProvider>
+					<ThemeProvider theme={themes.primary}>
+						<Component {...pageProps} />
+					</ThemeProvider>
+				</ShowProvider>
+			</SiteProvider>
 		);
 	}
+
 }
 
 export default PlaygroundApp;

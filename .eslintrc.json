@@ -86,6 +86,7 @@
 		"react/no-unescaped-entities": 0,
 		"jsx-a11y/accessible-emoji": 0,
 		"react/require-default-props": 0,
+		"react/jsx-props-no-spreading": 0,
 		"react/jsx-filename-extension": [
 			1,
 			{
@@ -93,12 +94,6 @@
 					".js",
 					".jsx"
 				]
-			}
-		],
-		"react/jsx-max-props-per-line": [
-			1,
-			{
-				"maximum": 3,
 			}
 		],
 		"radix": 0,

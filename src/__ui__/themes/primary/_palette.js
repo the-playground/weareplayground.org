@@ -7,15 +7,9 @@
  * @since 1.0.0
  */
 export const primary = {
-
 	base: '#5DA460',
+};
 
-}
+export const secondary = {};
 
-export const secondary = {
-
-}
-
-export const tertiary = {
-
-}
+export const tertiary = {};

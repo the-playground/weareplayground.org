@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
 import { Layout } from '../src/components/Layout';
-import { SEOPageMeta } from '../src/components/SEO';
+// import { SEOPageMeta } from '../src/components/SEO';
 import { withApollo } from '../src/__utility__/withApollo';
 
 const HOME_PAGE_QUERY = gql`
@@ -34,7 +34,7 @@ const HomePage = () => {
 	return (
 		<Layout>
 			<h1>{data.home_page.page_name}</h1>
-			<div hidden id="snipcart" data-api-key={process.env.GATSBY_SNIPCART_API_KEY} />
+			<div hidden id="snipcart" data-api-key={process.env.GATSBY_SNIPCART_API_KEY} test="3" />
 		</Layout>
 	);
 };

@@ -1,35 +1,31 @@
-import { grayscale, system } from '../global'
-import { primary, secondary, tertiary } from './_palette'
-import { ui } from './ui'
+import { grayscale, system } from '../global';
+import { primary, secondary, tertiary } from './_palette';
+import { ui } from './ui';
 
 export const theme = {
-
 	palette: {
-
 		primary: {
-			...primary
+			...primary,
 		},
 
 		secondary: {
-			...secondary
+			...secondary,
 		},
 
 		tertiary: {
-			...tertiary
+			...tertiary,
 		},
 
 		grayscale: {
-			...grayscale
+			...grayscale,
 		},
 
-		system:{
-			...system
-		}
-
+		system: {
+			...system,
+		},
 	},
 
 	ui: {
-		...ui
+		...ui,
 	},
-
-}
+};

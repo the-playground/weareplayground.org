@@ -1,30 +1,21 @@
-import React, { Fragment } from 'react'
+import React from 'react';
 
 // UI imports
 
 // Structural imports
-import {Footer} from './Footer'
-import {Header} from './Header'
+import { Footer } from './Footer';
+import { Header } from './Header';
 
-import { SEOGlobalMeta } from '../SEO'
+import { SEOGlobalMeta } from '../SEO';
 
-const Layout = ({children, noHeader, noFooter}) => {
+const Layout = ({ children, noHeader, noFooter }) => (
+	<>
+		<SEOGlobalMeta />
 
-	return (
+		{noHeader ? '' : <Header />}
+		<main>{children}</main>
+		{noFooter ? '' : <Footer />}
+	</>
+);
 
-		<Fragment>
-			<SEOGlobalMeta />
-
-			{ noHeader ? '' : <Header /> }
-				<main>
-					{children}
-				</main>
-			{ noFooter ? '' : <Footer /> }
-
-		</Fragment>
-
-	)
-
-};
-
-export default Layout
+export default Layout;
