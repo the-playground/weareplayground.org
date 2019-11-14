@@ -1,6 +1,4 @@
-import React from 'react';
-
-// UI imports
+import PropTypes from 'prop-types';
 
 // Structural imports
 import { Footer } from './Footer';
@@ -17,5 +15,16 @@ const Layout = ({ children, noHeader, noFooter }) => (
 		{noFooter ? '' : <Footer />}
 	</>
 );
+
+Layout.propTypes = {
+	children: PropTypes.object.isRequired,
+	noHeader: PropTypes.bool,
+	noFooter: PropTypes.bool,
+};
+
+Layout.defaultProps = {
+	noHeader: false,
+	noFooter: false,
+};
 
 export default Layout;

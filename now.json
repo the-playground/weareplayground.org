@@ -1,4 +1,9 @@
 {
+	"build": {
+		"env": {
+			"SNIPCART_API_KEY": "@snipcart-api-key"
+		}
+	},
 	"env": {
 		"PRISMIC_API_KEY": "@prismic-api-key",
 		"SNIPCART_API_KEY": "@snipcart-api-key",

@@ -34,7 +34,6 @@ const HomePage = () => {
 	return (
 		<Layout>
 			<h1>{data.home_page.page_name}</h1>
-			<div hidden id="snipcart" data-api-key={process.env.GATSBY_SNIPCART_API_KEY} test="3" />
 		</Layout>
 	);
 };
