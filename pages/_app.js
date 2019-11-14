@@ -16,7 +16,6 @@ import { ShowProvider } from '../src/__context__/ShowContext';
 import themes from '../src/__ui__/themes';
 
 class PlaygroundApp extends App {
-
 	render() {
 		const { Component, pageProps } = this.props;
 
@@ -30,7 +29,6 @@ class PlaygroundApp extends App {
 			</SiteProvider>
 		);
 	}
-
 }
 
 export default PlaygroundApp;
