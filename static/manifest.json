@@ -1,9 +1,0 @@
-{
-	"name": "The Playground",
-	"short_name": "Playground",
-	"icons": [],
-	"start_url": "/",
-	"display": "standalone",
-	"theme_color": "#5DA460",
-	"background_color": "#303030"
-}
