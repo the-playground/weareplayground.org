@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 
 // Structural imports
-import { Footer } from './Footer';
 import { Header } from './Header';
-
+import { Footer } from './Footer';
 import { SEOGlobalMeta } from '../SEO';
 
 const Layout = ({ children, noHeader, noFooter }) => (
