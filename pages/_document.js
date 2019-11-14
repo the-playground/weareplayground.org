@@ -9,12 +9,15 @@ class PlaygroundDocument extends Document {
 		return (
 			<Html>
 				<Head>
+					<link rel="manifest" href="/manifest.json" />
 					{/* Snipcart V3 -- https://docs.snipcart.com/v3/setup/installation */}
+					{/* Async CSS -- https://www.filamentgroup.com/lab/load-css-simpler/ */}
 					<link
 						rel="stylesheet"
 						id="snipcart-css"
 						src="https://cdn.snipcart.com/themes/v3.0.2/default/snipcart.css"
-						type="text/css"
+						media="print"
+						onLoad="this.media='all'"
 					/>
 				</Head>
 				<body>
