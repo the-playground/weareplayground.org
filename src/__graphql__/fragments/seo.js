@@ -1,9 +1,5 @@
-import { graphql } from 'gatsby'
-
-// https://www.gatsbyjs.org/docs/graphql-concepts/#fragments
-
 /**
- * Query important SEO information abou
+ * Query important SEO information about a given page
  * Source » Prismic
  *
  * @since 1.0.0
@@ -26,4 +22,4 @@ export const PageSEOFragment = graphql`
 			}
 		}
 	}
-`
+`;

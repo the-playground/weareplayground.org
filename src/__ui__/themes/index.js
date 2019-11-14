@@ -1,11 +1,9 @@
-import { theme as primaryTheme } from '../themes/primary'
+import { theme as primaryTheme } from './primary';
 
 const themes = {
-
 	primary: {
-		...primaryTheme
+		...primaryTheme,
 	},
+};
 
-}
-
-export default themes
+export default themes;

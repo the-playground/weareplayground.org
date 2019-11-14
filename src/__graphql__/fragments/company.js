@@ -1,16 +1,14 @@
-import gql from 'graphql-tag'
+import gql from 'graphql-tag';
 
 export const companyDataFragment = gql`
-
-	fragment companyDataFragment on Query{
-
-		allCompanyconfigs{
-			edges{
-				node{
+	fragment companyDataFragment on Query {
+		allCompanyconfigs {
+			edges {
+				node {
 					name
 					contact_email
-					website{
-						...on _ExternalLink{
+					website {
+						... on _ExternalLink {
 							url
 						}
 					}
@@ -20,18 +18,18 @@ export const companyDataFragment = gql`
 					location_city
 					location_state_code
 					location_zip
-					spotify{
-						...on _ExternalLink{
+					spotify {
+						... on _ExternalLink {
 							url
 						}
 					}
-					facebook{
-						...on _ExternalLink{
+					facebook {
+						... on _ExternalLink {
 							url
 						}
 					}
-					instagram{
-						...on _ExternalLink{
+					instagram {
+						... on _ExternalLink {
 							url
 						}
 					}
@@ -40,4 +38,4 @@ export const companyDataFragment = gql`
 			}
 		}
 	}
-`
+`;

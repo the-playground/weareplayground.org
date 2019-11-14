@@ -1,4 +1,4 @@
-import React, { createContext } from 'react'
+import React, { createContext } from 'react';
 // Use static query to get default data from prismic.
 
 const defaultValues = {
@@ -8,18 +8,8 @@ const defaultValues = {
 	isMobileNavOpen: false,
 	isDesktopDropdownOpen: false,
 	isAuditionActive: false,
-}
+};
 
 export const SiteContext = createContext(defaultValues);
 
-export const SiteProvider = ({children}) => {
-
-	return (
-
-		<SiteContext.Provider value={defaultValues}>
-			{children}
-		</SiteContext.Provider>
-
-	)
-
-}
+export const SiteProvider = ({ children }) => <SiteContext.Provider value={defaultValues}>{children}</SiteContext.Provider>;

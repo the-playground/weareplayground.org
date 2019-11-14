@@ -1,4 +1,4 @@
-import gql from 'graphql-tag'
+import gql from 'graphql-tag';
 
 /**
  * Query all information about a show
@@ -7,7 +7,6 @@ import gql from 'graphql-tag'
  * @since 1.0.0
  */
 export const ShowData = {
-
 	show: gql`
 		fragment ShowData on Show {
 			title
@@ -65,16 +64,16 @@ export const ShowData = {
 			sponsors {
 				contribution
 				sponsor {
-				... on Sponsor {
-					name
-					description
-					website {
-						... on _ExternalLink {
-							url
-							_linkType
+					... on Sponsor {
+						name
+						description
+						website {
+							... on _ExternalLink {
+								url
+								_linkType
+							}
 						}
 					}
-				}
 				}
 			}
 			body {
@@ -96,16 +95,16 @@ export const ShowData = {
 				... on ShowBodyBasic_seo {
 					type
 					primary {
-					meta_description
-					meta_image
-					meta_title
-					twitter_card_image
+						meta_description
+						meta_image
+						meta_title
+						twitter_card_image
 					}
 				}
 			}
 		}
-	`
-}
+	`,
+};
 
 /**
  * Get information about ALL Playground shows.
@@ -119,7 +118,6 @@ export const AllShowsFragment = gql`
 			allShows {
 				edges {
 					node {
-
 						title
 						author
 						thumbnail_image
@@ -143,10 +141,9 @@ export const AllShowsFragment = gql`
 							pwyw
 							talkback
 						}
-
 					}
 				}
 			}
 		}
 	}
-`
+`;
