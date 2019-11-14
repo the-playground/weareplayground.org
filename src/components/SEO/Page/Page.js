@@ -1,9 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types'
-import Head from 'next/head'
+import PropTypes from 'prop-types';
+import Head from 'next/head';
 
 // Import utilities
-import {getCurrentRootURL} from '../../../__utility__/URL'
+import { getCurrentRootURL } from '../../../__utility__/URL';
 
 /**
  * Component: SEOPage
@@ -16,7 +16,6 @@ import {getCurrentRootURL} from '../../../__utility__/URL'
  */
 
 const SEOPage = ({ metadata, robots }) => {
-
 	// create helpers
 	// formatSEOTitle(  ) -- create a format for our titles
 	// getFallbackTwitterImage(  ) -- fallback image for twitter cards
@@ -36,9 +35,7 @@ const SEOPage = ({ metadata, robots }) => {
 	const twitterImageURL = metadata.twitter_card_image ? metadata.twitter_card_image.url : imageURL;
 
 	return (
-
 		<Head>
-
 			{/* Standard meta data for search engines */}
 			<title>{`${title}`}</title>
 			<meta name="description" content={description} />
@@ -63,12 +60,9 @@ const SEOPage = ({ metadata, robots }) => {
 			<meta name="twitter:title" content={`${title}`} />
 			<meta name="twitter:description" content={description} />
 			<meta name="twitter:image" content={twitterImageURL} />
-
 		</Head>
-
-	)
-
-}
+	);
+};
 
 /**
  * ----------
@@ -77,39 +71,30 @@ const SEOPage = ({ metadata, robots }) => {
  */
 
 SEOPage.propTypes = {
-
 	metadata: PropTypes.shape({
-
 		meta_title: PropTypes.string.isRequired,
 		meta_description: PropTypes.string.isRequired,
 
 		meta_image: PropTypes.shape({
-
 			url: PropTypes.string.isRequired,
 			dimensions: PropTypes.shape({
 				height: PropTypes.number.isRequired,
 				width: PropTypes.number.isRequired,
 			}),
 			alt: PropTypes.string.isRequired,
-
 		}).isRequired,
-
 	}),
 
-	robots: PropTypes.string.isRequired
+	robots: PropTypes.string,
+};
 
-}
-
- /**
+/**
  * -------------
  * Default Props
  * -------------
  */
 SEOPage.defaultProps = {
-
 	robots: 'noindex, nofollow',
+};
 
-}
-
-
-export default SEOPage
+export default SEOPage;
