@@ -49,7 +49,6 @@
 		"build": "npm run generate-introspection; next build",
 		"start": "npm run generate-introspection; next start",
 		"storybook": "start-storybook",
-		"generate-introspection": "node ./src/__utility__/prismicDataIntrospection.js",
 		"build-storybook": "build-storybook -c .storybook -o storybook-app"
 	}
 }
