@@ -5,40 +5,6 @@ require('dotenv').config({
 });
 
 module.exports = {
-	siteMetadata: {
-		company: {
-			name: 'The Playground',
-			email: 'hello@weareplayground.org',
-			url: 'https://weareplayground.org',
-
-			social: {
-				spotify: 'https://open.spotify.com/user/theplaygroundtheatre?si=z2I3ujYnTy-K4oW6tYadDw',
-				facebook: 'https://www.facebook.com/playgroundDYT/',
-				facebookAppID: '',
-				instagram: 'https://www.instagram.com/playground_dyt/',
-			},
-
-			location: {
-				city: 'Dayton',
-				state: 'Ohio',
-				stateCode: 'OH',
-				zip: '45402',
-			},
-
-			legal: {
-				name: 'The Playground Theatre, INC.',
-				ein: '',
-				foundingDate: '',
-			},
-		},
-
-		siteVerification: {
-			google: '',
-			bing: '',
-			norton: '',
-		},
-	},
-
 	plugins: [
 		/**
 		 * @link
@@ -127,7 +93,7 @@ module.exports = {
 				short_name: `Playground`,
 				start_url: `/`,
 				background_color: `#303030`,
-				theme_color: `#5DA460`,
+				theme_color: `#2D3837`,
 				display: `standalone`,
 			},
 		},
