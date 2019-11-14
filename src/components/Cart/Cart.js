@@ -1,14 +1,3 @@
-import React, { Component } from 'react'
+const Cart = () => <div id="snipcart" data-api-key={process.env.SNIPCART_API_KEY} hidden />;
 
-class Cart extends Component{
-
-	constructor(props){
-		super(props);
-
-	}
-
-
-	render() {
-	}
-
-}
+export default Cart;
