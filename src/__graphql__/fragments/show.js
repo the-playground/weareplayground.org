@@ -1,4 +1,5 @@
-import gql from 'graphql-tag';
+import React from 'react';
+import { graphql } from 'gatsby';
 
 /**
  * Query all information about a show
@@ -6,105 +7,104 @@ import gql from 'graphql-tag';
  *
  * @since 1.0.0
  */
-export const ShowData = {
-	show: gql`
-		fragment ShowData on Show {
-			title
-			author
-			author_link {
-				... on _ExternalLink {
-					url
-				}
+
+export const expandedShowDataFragment = graphql`
+	fragment expandedShowDataFragment on PRISMIC_Show {
+		title
+		author
+		author_link {
+			... on PRISMIC__ExternalLink {
+				url
 			}
-			script_link {
-				... on _ExternalLink {
-					url
-				}
+		}
+		script_link {
+			... on PRISMIC__ExternalLink {
+				url
 			}
-			thumbnail_image
-			featured_image
-			hero_image
-			short_description
-			long_description
-			tagline
-			hashtag
-			effects_advisory
-			content_advisory
-			intermissions
-			runtime_hours
-			runtime_minutes
-			performances {
-				datetime
-				preview
-				price
-				pwyw
-				status
-				talkback
+		}
+		thumbnail_image
+		featured_image
+		hero_image
+		short_description
+		long_description
+		tagline
+		hashtag
+		effects_advisory
+		content_advisory
+		intermissions
+		runtime_hours
+		runtime_minutes
+		performances {
+			datetime
+			preview
+			price
+			pwyw
+			status
+			talkback
+		}
+		location {
+			... on PRISMIC_Location {
+				name
+				street
+				state
+				zip
+				geo_point
+				city
+				parking_info
 			}
-			location {
-				... on Location {
+		}
+		artists {
+			artist {
+				... on PRISMIC_Artist {
 					name
-					street
-					state
-					zip
-					geo_point
-					city
-					parking_info
 				}
 			}
-			artists {
-				artist {
-					... on Artist {
-						name
-					}
-				}
-				bio
-				role
-			}
-			sponsors {
-				contribution
-				sponsor {
-					... on Sponsor {
-						name
-						description
-						website {
-							... on _ExternalLink {
-								url
-								_linkType
-							}
+			bio
+			role
+		}
+		sponsors {
+			contribution
+			sponsor {
+				... on PRISMIC_Sponsor {
+					name
+					description
+					website {
+						... on PRISMIC__ExternalLink {
+							url
+							_linkType
 						}
 					}
 				}
 			}
-			body {
-				... on ShowBodyVideo_collection {
-					fields {
-						video_description
-						video_embed_url
-						video_id
-						video_title
-					}
-					type
+		}
+		body {
+			... on PRISMIC_ShowBodyVideo_collection {
+				fields {
+					video_description
+					video_embed_url
+					video_id
+					video_title
 				}
-				... on ShowBodySpotify_playlist {
-					fields {
-						spotify_playlist_id
-					}
-					type
+				type
+			}
+			... on PRISMIC_ShowBodySpotify_playlist {
+				fields {
+					spotify_playlist_id
 				}
-				... on ShowBodyBasic_seo {
-					type
-					primary {
-						meta_description
-						meta_image
-						meta_title
-						twitter_card_image
-					}
+				type
+			}
+			... on PRISMIC_ShowBodyBasic_seo {
+				type
+				primary {
+					meta_description
+					meta_image
+					meta_title
+					twitter_card_image
 				}
 			}
 		}
-	`,
-};
+	}
+`;
 
 /**
  * Get information about ALL Playground shows.
@@ -112,7 +112,7 @@ export const ShowData = {
  *
  * @since 1.0.0
  */
-export const AllShowsFragment = gql`
+export const AllShowsFragment = graphql`
 	fragment AllShowsFragment on Query {
 		prismic {
 			allShows {
@@ -124,7 +124,7 @@ export const AllShowsFragment = gql`
 						featured_image
 
 						location {
-							... on Location {
+							... on PRISMIC_Location {
 								name
 								street
 								city

@@ -8,13 +8,12 @@ Theatres have a reputation for being out of touch with the times when it comes t
 
 ## 🏗️ Built With
 
-Frontend » [React](https://reactjs.org/) + [Next.js](https://nextjs.org/)\
+Frontend » [React](https://reactjs.org/) + [Gatsby](https://www.gatsbyjs.org/)\ + [Graphql](https://graphql.org/)
 Design Framework » [Custom-built design system](https://www.figma.com/) w/ [Styled Components](https://www.styled-components.com/)\
 Backend » [Zeit Serverless Functions](https://zeit.co/docs/v2/serverless-functions/introduction/) w/ [Node.js](https://nodejs.org/en/)\
-Data Layer » [Apollo](https://www.apollographql.com/) + [Graphql](https://graphql.org/)\
 Headless CMS » [Prismic](https://prismic.io/)\
-eCommerce » [Snipcart](https://snipcart.com/)\
-On-site Payments » [Stripe](https://stripe.com/)\
+On-site Ticket Sales » [Snipcart](https://snipcart.com/)\
+On-site Payments (for classes & donations) » [Stripe](https://stripe.com/)\
 Email Sending  » [nodemailer](https://nodemailer.com/) + [Postmark](https://postmarkapp.com/)\
 Email Templating » [MJML Framework](https://mjml.io/)\
 Hosting » [ZEIT Now](https://zeit.co/)

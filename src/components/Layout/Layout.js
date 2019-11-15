@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 
 // Structural imports
@@ -16,7 +17,7 @@ const Layout = ({ children, noHeader, noFooter }) => (
 );
 
 Layout.propTypes = {
-	children: PropTypes.object.isRequired,
+	children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
 	noHeader: PropTypes.bool,
 	noFooter: PropTypes.bool,
 };

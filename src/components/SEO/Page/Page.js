@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Head from 'next/head';
+import Helmet from 'react-helmet';
 
 // Import utilities
 import { getCurrentRootURL } from '../../../__utility__/URL';
@@ -35,7 +35,7 @@ const SEOPage = ({ metadata, robots }) => {
 	const twitterImageURL = metadata.twitter_card_image ? metadata.twitter_card_image.url : imageURL;
 
 	return (
-		<Head>
+		<Helmet>
 			{/* Standard meta data for search engines */}
 			<title>{`${title}`}</title>
 			<meta name="description" content={description} />
@@ -60,7 +60,7 @@ const SEOPage = ({ metadata, robots }) => {
 			<meta name="twitter:title" content={`${title}`} />
 			<meta name="twitter:description" content={description} />
 			<meta name="twitter:image" content={twitterImageURL} />
-		</Head>
+		</Helmet>
 	);
 };
 

@@ -1,30 +1,11 @@
-import Head from 'next/head';
-import { useQuery } from '@apollo/react-hooks';
-import gql from 'graphql-tag';
-
-import { companyDataFragment } from '../../../__graphql__/fragments/company';
+import React from 'react';
+import Helmet from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
 
 /**
  *
  * TODO: Research rel="canonical" meta tags.
  */
-
-const GLOBAL_META_QUERY = gql`
-	query GlobalMetaQuery {
-		...companyDataFragment
-		allSiteconfigs {
-			edges {
-				node {
-					verification_google
-					verification_bing
-					verification_norton
-				}
-			}
-		}
-	}
-	${companyDataFragment}
-`;
-
 /**
  * Component: SEOGlobal
  *
@@ -35,20 +16,28 @@ const GLOBAL_META_QUERY = gql`
  * @param {object} verifications
  */
 const SEOGlobal = () => {
-	const { data, loading, error } = useQuery(GLOBAL_META_QUERY);
+	/**
+	 * Query for all the metadata our site needs to use for every page.
+	 */
+	const data = useStaticQuery(graphql`
+		query GlobalMetaQuery {
+			...companyConfigFragment
+			...siteConfigFragment
+		}
+	`);
 
-	if (loading) return <></>;
-
-	const company = data.allCompanyconfigs.edges[0].node;
-	const verifications = data.allSiteconfigs.edges[0].node;
+	const company = data.prismic.companyconfig;
+	const site = data.prismic.siteconfig;
 
 	const facebookAppID = company.facebook_app_id ? company.facebook_app_id : null;
-	const googleVerification = verifications.verification_google ? verifications.verification_google : null;
-	const bingVerification = verifications.verification_bing ? verifications.verification_bing : null;
-	const nortonVerification = verifications.verification_norton ? verifications.verification_norton : null;
+	const googleVerification = site.verification_google ? site.verification_google : null;
+	const bingVerification = site.verification_bing ? site.verification_bing : null;
+	const nortonVerification = site.verification_norton ? site.verification_norton : null;
 
 	return (
-		<Head>
+		<Helmet>
+			{/* Default language and direction */}
+			<html lang="en" dir="ltr" />
 			{/* Handle site verifications generation */}
 			{googleVerification ? <meta name="google-site-verification" content={googleVerification} /> : ''}
 			{bingVerification ? <meta name="msvalidate.01" content={bingVerification} /> : ''}
@@ -75,7 +64,7 @@ const SEOGlobal = () => {
 			<meta name="og:country-name" content="USA" />
 			<meta name="og:region" content={company.location_state_code} />
 			<meta name="og:postal-code" content={company.location_zip} />
-		</Head>
+		</Helmet>
 	);
 };
 

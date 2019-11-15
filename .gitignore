@@ -8,9 +8,9 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
+# gatsby
+.cache/
+public/
 
 # production
 /build
@@ -21,6 +21,9 @@
 .env.build
 .env.development
 .env.production
+
+# Temp holding place for future pages
+temp-pages
 
 # debug
 npm-debug.log*

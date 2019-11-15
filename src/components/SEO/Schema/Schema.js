@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 // Import all of our schema definitions
 import * as schemas from './__schemas__';
@@ -15,22 +15,16 @@ import * as schemas from './__schemas__';
  */
 
 const SEOSchema = (type, data) => {
-
 	// Throw an error and bail if the requested type does not exists
-	if( schemas[type] === null ){
-		return ( console.log( `A matching schema could not be found for requested type: ${type}.` ) )
+	if (schemas[type] === null) {
+		return console.log(`A matching schema could not be found for requested type: ${type}.`);
 	}
 
 	// Retrieve schema type since we know it exists
 	const schema = schemas[type];
 
-	return (
-
-		<>{ schema ? schema( data ) : '' }</>
-
-	)
-
-}
+	return <>{schema ? schema(data) : ''}</>;
+};
 
 /**
  * ----------
@@ -39,7 +33,6 @@ const SEOSchema = (type, data) => {
  */
 
 const availableSchemaTypes = [
-
 	'Article',
 	'CreativeWork',
 	'EventCollection',
@@ -50,15 +43,12 @@ const availableSchemaTypes = [
 	'TheatreEvent',
 	'Video',
 	'VideoCollection',
-	'Website'
-
+	'Website',
 ];
 
 SEOSchema.propTypes = {
+	type: PropTypes.oneOf(availableSchemaTypes).isRequired,
+	data: PropTypes.object.isRequired,
+};
 
-	type: PropTypes.oneOf( availableSchemaTypes ).isRequired,
-	data: PropTypes.object.isRequired
-
-}
-
-export default SEOSchema
+export default SEOSchema;
