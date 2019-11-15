@@ -75,7 +75,7 @@ module.exports = {
 					{
 						type: 'Show', // TypeName from prismic
 						match: '/shows/:uid', // Pages will be generated under this pattern (optional)
-						path: '/show-preview', // Placeholder page for unpublished documents
+						path: '/show', // Placeholder page for unpublished documents
 						component: require.resolve('./src/templates/show.js'),
 					},
 				],
