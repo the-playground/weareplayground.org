@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { SEOPageMeta } from '../components/SEO';
 import { getSlice } from '../__utility__/prismic';
-import { expandedShowDataFragment } from '../__graphql__/fragments/show';
 import { Layout } from '../components/Layout';
 
 const ShowLanding = ({ data }) => {
