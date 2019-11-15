@@ -15,6 +15,8 @@ const Layout = ({ children, noHeader, noFooter }) => (
 		{noHeader ? '' : <Header />}
 		<main>{children}</main>
 		{noFooter ? '' : <Footer />}
+
+		<Cart />
 	</>
 );
 
