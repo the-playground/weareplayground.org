@@ -1,19 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { Show } from '../components/Show';
 import { SEOPageMeta } from '../components/SEO';
 import { getSlice } from '../__utility__/prismic';
+import { expandedShowDataFragment } from '../__graphql__/fragments/show';
+import { Layout } from '../components/Layout';
 
 const ShowLanding = ({ data }) => {
 	const { show } = data.prismic;
+
+	if (!show) return <></>;
+
 	const showMeta = getSlice(show.body, 'basic_seo');
 
 	return (
-		<>
+		<Layout>
 			<SEOPageMeta metadata={showMeta} />
-			<Show />
-		</>
+			{show.title}
+		</Layout>
 	);
 };
 
