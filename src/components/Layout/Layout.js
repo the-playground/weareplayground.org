@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// Structural imports
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { SEOGlobalMeta } from '../SEO';
+import { NormalizeCSS } from '../../__ui__/NormalizeCSS';
+import { Cart } from '../Cart';
 
 const Layout = ({ children, noHeader, noFooter }) => (
 	<>
 		<SEOGlobalMeta />
+		<NormalizeCSS />
 
 		{noHeader ? '' : <Header />}
 		<main>{children}</main>

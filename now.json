@@ -1,7 +1,7 @@
 {
 	"build": {
 		"env": {
-			"SNIPCART_API_KEY": "@snipcart-api-key"
+			"SNIPCART_API_KEY": "@gatsby-snipcart-api-key"
 		}
 	},
 	"env": {
