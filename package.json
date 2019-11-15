@@ -50,7 +50,7 @@
 	},
 	"scripts": {
 		"dev": "rm -rf .cache && gatsby develop",
-		"build": "&& gatsby build",
+		"build": "gatsby build",
 		"storybook": "start-storybook",
 		"build-storybook": "build-storybook -c .storybook -o storybook-app"
 	}
