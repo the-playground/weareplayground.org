@@ -1,13 +1,40 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { Show } from '../components/Show';
+import { SEOPageMeta } from '../components/SEO';
+import { getSlice } from '../__utility__/prismic';
 
-const ShowTemplate = () => (
-	// FIX data undefined... we will need a static query probably. This page has access to UID
+const ShowLanding = ({ data }) => {
+	const { show } = data.prismic;
+	const showMeta = getSlice(show.body, 'basic_seo');
 
-	<Show />
-);
+	return (
+		<>
+			<SEOPageMeta metadata={showMeta} />
+			<Show />
+		</>
+	);
+};
 
-// dynamic static query here from gatsby that uses the uid of the show
+export const query = graphql`
+	query showData($uid: String!) {
+		prismic {
+			show(lang: "en-us", uid: $uid) {
+				...expandedShowDataFragment
+			}
+		}
+	}
+`;
 
-export default ShowTemplate;
+/**
+ * ----------
+ * Prop Types
+ * ----------
+ */
+
+ShowLanding.propTypes = {
+	data: PropTypes.object.isRequired,
+};
+
+export default ShowLanding;
