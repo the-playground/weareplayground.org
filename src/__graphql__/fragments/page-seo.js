@@ -1,11 +1,13 @@
+import { graphql } from 'gatsby';
+
 /**
  * Query important SEO information about a given page
  * Source » Prismic
  *
  * @since 1.0.0
  */
-export const PageSEOFragment = graphql`
-	fragment PageSEOFragment on Query {
+export const HomePageSEOFragment = graphql`
+	fragment HomePageSEOFragment on Query {
 		prismic {
 			home_page(lang: "en-us", uid: "home") {
 				body {
