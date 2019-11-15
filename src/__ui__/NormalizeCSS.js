@@ -1,7 +1,7 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 
-const NormalizeCSS = createGlobalStyle`
+export const NormalizeCSS = createGlobalStyle`
 	/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 	/* Document
@@ -345,5 +345,3 @@ const NormalizeCSS = createGlobalStyle`
 		display: none;
 	}
 `;
-
-export default NormalizeCSS;
