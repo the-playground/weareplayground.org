@@ -4,19 +4,20 @@ import PropTypes from 'prop-types';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { SEOGlobalMeta } from '../SEO';
-import { NormalizeCSS } from '../../__ui__/NormalizeCSS';
-import { Cart } from '../Cart';
+import { GlobalStyles } from './GlobalStyles';
+import { SnipcartLibs, SnipcartMount } from '../Snipcart';
 
 const Layout = ({ children, noHeader, noFooter }) => (
 	<>
 		<SEOGlobalMeta />
-		<NormalizeCSS />
+		<GlobalStyles />
+		<SnipcartLibs />
 
 		{noHeader ? '' : <Header />}
 		<main>{children}</main>
 		{noFooter ? '' : <Footer />}
 
-		<Cart />
+		<SnipcartMount />
 	</>
 );
 
