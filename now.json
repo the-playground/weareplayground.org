@@ -6,7 +6,7 @@
 	},
 	"env": {
 		"PRISMIC_API_KEY": "@prismic-api-key",
-		"SNIPCART_API_KEY": "@snipcart-api-key",
+		"GATSBY_SNIPCART_API_KEY": "@gatsby-snipcart-api-key",
 		"POSTMARK_USER": "@postmark-user",
 		"POSTMARK_PASS": "@postmark-pass",
 		"MAILTRAP_USER": "@mailtrap-user",
