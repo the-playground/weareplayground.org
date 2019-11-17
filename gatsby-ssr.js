@@ -6,21 +6,12 @@
 
 const React = require('react');
 
-exports.onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
+exports.onRenderBody = ({ setHeadComponents }) => {
 	/**
-	 * Load external css
-	 * TODO: Maybe migrate to React Helmet
+	 * Load external css SSR
 	 */
 	setHeadComponents([
 		// Snipcart v3
-		<link rel="stylesheet" id="snipcart-css" src="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.css" type="text/css" />,
-	]);
-
-	/**
-	 * Load external js
-	 */
-	setPostBodyComponents([
-		// Snipcart v3
-		<script key="snipcart-js" type="text/javascript" src="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.js" />,
+		<link rel="stylesheet" id="snipcart-css" href="https://cdn.snipcart.com/themes/v3.0.2/default/snipcart.css" type="text/css" />,
 	]);
 };

@@ -16,6 +16,17 @@ const ShowLanding = ({ data }) => {
 		<Layout>
 			<SEOPageMeta metadata={showMeta} />
 			{show.title}
+			<button
+				type="button"
+				className="snipcart-add-item"
+				data-item-id="the-breakfast-club"
+				data-item-price="20.00"
+				data-item-url="https://weareplayground.org/shows/the-breakfast-club"
+				data-item-description="The Breakfast Club Presented by The Playground"
+				data-item-name={show.title}
+			>
+				Purchase Tickets
+			</button>
 		</Layout>
 	);
 };

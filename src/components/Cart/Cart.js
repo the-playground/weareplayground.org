@@ -1,3 +1,6 @@
-const Cart = () => <div id="snipcart" data-api-key={process.env.SNIPCART_API_KEY} hidden />;
+import React from 'react';
+import { Snipcart } from './Snipcart';
+
+const Cart = () => <Snipcart />;
 
 export default Cart;

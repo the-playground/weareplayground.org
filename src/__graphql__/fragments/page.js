@@ -7,8 +7,8 @@ import { graphql } from 'gatsby';
  *
  * @since 1.0.0
  */
-export const HomePageSEOFragment = graphql`
-	fragment HomePageSEOFragment on Query {
+export const HomePageDataFragment = graphql`
+	fragment HomePageDataFragment on Query {
 		prismic {
 			home_page(lang: "en-us", uid: "home") {
 				body {

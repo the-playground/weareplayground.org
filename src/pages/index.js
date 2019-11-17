@@ -21,7 +21,7 @@ const HomePage = ({ data }) => {
 
 export const query = graphql`
 	query HomePageData {
-		...HomePageSEOFragment
+		...HomePageDataFragment
 	}
 `;
 

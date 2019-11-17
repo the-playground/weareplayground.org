@@ -4,17 +4,19 @@ import PropTypes from 'prop-types';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { SEOGlobalMeta } from '../SEO';
-import { NormalizeCSS } from '../../__ui__/NormalizeCSS';
+import { GlobalStyles } from './GlobalStyles';
 import { Cart } from '../Cart';
 
 const Layout = ({ children, noHeader, noFooter }) => (
 	<>
 		<SEOGlobalMeta />
-		<NormalizeCSS />
+		<GlobalStyles />
 
 		{noHeader ? '' : <Header />}
 		<main>{children}</main>
 		{noFooter ? '' : <Footer />}
+
+		<Cart />
 	</>
 );
 

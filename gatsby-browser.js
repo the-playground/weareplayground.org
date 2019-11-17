@@ -17,6 +17,7 @@ import themes from './src/__ui__/themes';
 require('./static/styles/normalize.css');
 
 // Handle Application wrapper
+// eslint-disable-next-line
 export const wrapRootElement = ({ element }) => (
 	<SiteProvider>
 		<ShowProvider>
