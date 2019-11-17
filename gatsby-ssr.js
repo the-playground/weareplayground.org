@@ -12,6 +12,6 @@ exports.onRenderBody = ({ setHeadComponents }) => {
 	 */
 	setHeadComponents([
 		// Snipcart v3
-		<link rel="stylesheet" id="snipcart-css" src="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.css" type="text/css" />,
+		<link rel="stylesheet" id="snipcart-css" href="https://cdn.snipcart.com/themes/v3.0.2/default/snipcart.css" type="text/css" />,
 	]);
 };

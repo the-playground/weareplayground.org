@@ -5,19 +5,18 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { SEOGlobalMeta } from '../SEO';
 import { GlobalStyles } from './GlobalStyles';
-import { SnipcartLibs, SnipcartMount } from '../Snipcart';
+import { Cart } from '../Cart';
 
 const Layout = ({ children, noHeader, noFooter }) => (
 	<>
 		<SEOGlobalMeta />
 		<GlobalStyles />
-		<SnipcartLibs />
 
 		{noHeader ? '' : <Header />}
 		<main>{children}</main>
 		{noFooter ? '' : <Footer />}
 
-		<SnipcartMount />
+		<Cart />
 	</>
 );
 
