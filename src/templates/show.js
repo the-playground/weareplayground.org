@@ -5,8 +5,9 @@ import { SEOPageMeta } from '../components/SEO';
 import { getSlice } from '../__utility__/prismic';
 import { Layout } from '../components/Layout';
 
-const ShowLanding = ({ data }) => {
+const ShowLanding = ({ data, pageContext }) => {
 	const { show } = data.prismic;
+	const { uid } = pageContext;
 
 	if (!show) return <></>;
 
@@ -19,7 +20,7 @@ const ShowLanding = ({ data }) => {
 			<button
 				type="button"
 				className="snipcart-add-item"
-				data-item-id="the-breakfast-club"
+				data-item-id={uid}
 				data-item-price="20.00"
 				data-item-url="https://weareplayground.org/shows/the-breakfast-club"
 				data-item-description="The Breakfast Club Presented by The Playground"
@@ -72,6 +73,9 @@ ShowLanding.propTypes = {
 			}).isRequired,
 		}).isRequired,
 	}).isRequired,
+	pageContext: PropTypes.shape({
+		uid: PropTypes.string.isRequired,
+	}),
 };
 
 export default ShowLanding;
