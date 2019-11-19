@@ -1,66 +1,56 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyles = createGlobalStyle`
-	/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+export const StylesReset = createGlobalStyle`
+	/* Loosely based on normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 	/* Document
 	========================================================================== */
 
-	/* stylelint-disable */
-
-
-	/**
-	* 1. Correct the line height in all browsers.
-	* 2. Prevent adjustments of font size after orientation changes in iOS.
-	*/
-
-	html {
-		line-height: 1.15; /* 1 */
-		-webkit-text-size-adjust: 100%; /* 2 */
+	:root {
+		height: 100%;
+		overflow-x: hidden;
 	}
+
+	* {
+    	box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	}
+
+	/* stylelint-disable */
 
 	/* Sections
 	========================================================================== */
 
 	/**
-	* Remove the margin in all browsers.
+	* Remove the margin & padding in all browsers.
 	*/
-
-	body {
+	blockquote,
+	body,
+	button,
+	dd,
+	dl,
+	figure,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	ol,
+	p,
+	pre,
+	ul {
 		margin: 0;
+		padding: 0;
 	}
 
 	/**
-	* Render the 'main' element consistently in IE.
+	* Render the 'main' & 'section' elements consistently in IE.
 	*/
-
-	main {
+	main,
+	section {
 		display: block;
-	}
-
-	/* Grouping content
-	========================================================================== */
-
-	/**
-	* 1. Add the correct box sizing in Firefox.
-	* 2. Show the overflow in Edge and IE.
-	*/
-
-	hr {
-		box-sizing: content-box; /* 1 */
-		height: 0; /* 1 */
-		overflow: visible; /* 2 */
-	}
-
-	/**
-	* 1. Correct the inheritance and scaling of font size in all browsers.
-	* 2. Correct the odd 'em' font sizing in all browsers.
-	*/
-
-	pre {
-		font-family: monospace, monospace; /* 1 */
-		font-size: 1em; /* 2 */
 	}
 
 	/* Text-level semantics
@@ -72,67 +62,6 @@ export const GlobalStyles = createGlobalStyle`
 
 	a {
 		background-color: transparent;
-	}
-
-	/**
-	* 1. Remove the bottom border in Chrome 57-
-	* 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
-	*/
-
-	abbr[title] {
-		border-bottom: none; /* 1 */
-		text-decoration: underline; /* 2 */
-		text-decoration: underline dotted; /* 2 */
-	}
-
-	/**
-	* Add the correct font weight in Chrome, Edge, and Safari.
-	*/
-
-	b,
-	strong {
-	font-weight: bolder;
-	}
-
-	/**
-	* 1. Correct the inheritance and scaling of font size in all browsers.
-	* 2. Correct the odd 'em' font sizing in all browsers.
-	*/
-
-	code,
-	kbd,
-	samp {
-		font-family: monospace, monospace; /* 1 */
-		font-size: 1em; /* 2 */
-	}
-
-	/**
-	* Add the correct font size in all browsers.
-	*/
-
-	small {
-	font-size: 80%;
-	}
-
-	/**
-	* Prevent 'sub' and 'sup' elements from affecting the line height in
-	* all browsers.
-	*/
-
-	sub,
-	sup {
-		font-size: 75%;
-		line-height: 0;
-		position: relative;
-		vertical-align: baseline;
-	}
-
-	sub {
-		bottom: -0.25em;
-	}
-
-	sup {
-		top: -0.5em;
 	}
 
 	/* Embedded content
@@ -162,7 +91,14 @@ export const GlobalStyles = createGlobalStyle`
 		font-family: inherit; /* 1 */
 		font-size: 100%; /* 1 */
 		line-height: 1.5; /* 1 */
-		margin: 0; /* 2 */
+	}
+
+	a,
+	button,
+	input,
+	select,
+	textarea {
+    	-webkit-tap-highlight-color: transparent;
 	}
 
 	/**
@@ -193,7 +129,7 @@ export const GlobalStyles = createGlobalStyle`
 	[type="button"],
 	[type="reset"],
 	[type="submit"] {
-		-webkit-appearance: button;
+		-webkit-appearance: none;
 	}
 
 	/**
@@ -217,14 +153,6 @@ export const GlobalStyles = createGlobalStyle`
 	[type="reset"]:-moz-focusring,
 	[type="submit"]:-moz-focusring {
 		outline: 1px dotted ButtonText;
-	}
-
-	/**
-	* Correct the padding in Firefox.
-	*/
-
-	fieldset {
-		padding: 0.35em 0.75em 0.625em;
 	}
 
 	/**
@@ -276,7 +204,7 @@ export const GlobalStyles = createGlobalStyle`
 
 	[type="number"]::-webkit-inner-spin-button,
 	[type="number"]::-webkit-outer-spin-button {
-	height: auto;
+		height: auto;
 	}
 
 	/**
@@ -307,35 +235,8 @@ export const GlobalStyles = createGlobalStyle`
 		font: inherit; /* 2 */
 	}
 
-	/* Interactive
-	========================================================================== */
-
-	/*
-	* Add the correct display in Edge, IE 10+, and Firefox.
-	*/
-
-	details {
-		display: block;
-	}
-
-	/*
-	* Add the correct display in all browsers.
-	*/
-
-	summary {
-		display: list-item;
-	}
-
 	/* Misc
 	========================================================================== */
-
-	/**
-	* Add the correct display in IE 10+.
-	*/
-
-	template {
-		display: none;
-	}
 
 	/**
 	* Add the correct display in IE 10.
@@ -346,4 +247,4 @@ export const GlobalStyles = createGlobalStyle`
 	}
 `;
 
-export default GlobalStyles;
+export default StylesReset;
