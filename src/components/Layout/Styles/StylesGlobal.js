@@ -1,7 +1,6 @@
-import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 
-import typography from '../../../__ui__/tokens';
+import { typography } from '../../../__tokens__';
 
 export const StylesGlobal = createGlobalStyle`
 
@@ -13,6 +12,7 @@ export const StylesGlobal = createGlobalStyle`
 	}
 
 	body{
+		${typography.bodyText.Medium};
 		line-height: 1.5;
 		min-height: 100%;
 		text-rendering: optimizeLegibility;
