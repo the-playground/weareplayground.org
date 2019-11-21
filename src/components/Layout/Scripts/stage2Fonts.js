@@ -1,4 +1,10 @@
+import { isSSR } from '../../../__utility__/ssr';
+
 export const loadStage2Fonts = () => {
+	if (isSSR) {
+		return '';
+	}
+
 	if ('fonts' in document) {
 		const regular = new FontFace(
 			'Greycliff',
