@@ -31,6 +31,7 @@ export const StylesReset = createGlobalStyle`
 	dd,
 	dl,
 	figure,
+	img,
 	h1,
 	h2,
 	h3,
