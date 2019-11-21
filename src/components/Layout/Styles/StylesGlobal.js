@@ -1,7 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
-
 import { typography } from '../../../__tokens__';
 
+/**
+ * Define global styles and Stage 1 fonts. These are the fonts that will be preloaded and some of them will eventually
+ * be replaced by Stage 2 fonts.
+ */
+
+/* eslint no-unused-expressions: 0 */
 export const StylesGlobal = createGlobalStyle`
 
 	html {
@@ -12,6 +17,7 @@ export const StylesGlobal = createGlobalStyle`
 	}
 
 	body{
+		background-color: ${({ theme }) => theme.palette.white};
 		${typography.bodyText.Medium};
 		line-height: 1.5;
 		min-height: 100%;
