@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import { bodyTextSizes, bodyTextColors } from './BodyText.styles';
 import * as Styled from './BodyText.styles';
 
 /**
@@ -12,7 +11,7 @@ import * as Styled from './BodyText.styles';
  */
 
 const BodyText = ({ children, tag, size, color, isBold, ...others }) => (
-	<Styled.BodyText as={tag} color={color} size={size} {...others}>
+	<Styled.BodyText as={tag} color={color} size={size} isBold={isBold} {...others}>
 		{children}
 	</Styled.BodyText>
 );
@@ -23,18 +22,25 @@ const BodyText = ({ children, tag, size, color, isBold, ...others }) => (
  * ----------
  */
 
-// const BodyTextSizes = Object.keys(bodyTextSizes);
-// const BodyTextColors = Object.keys(bodyTextColors);
+const validBodyTextSizes = Object.keys(Styled.bodyTextSizes);
+const validBodyTextColors = Object.keys(Styled.bodyTextColors);
+const validTags = ['span', 'a'];
 
-// BodyText.propTypes = {
-// 	children: PropTypes.node,
+BodyText.propTypes = {
+	children: PropTypes.node,
 
-// 	/** Color of the Paragraph. Options are 'dark', 'light' */
-// 	color: PropTypes.oneOf(BodyTextColors),
+	tag: PropTypes.oneOf(validTags),
 
-// 	/** Size of the Paragraph. Options are 'xs', 's', 'm', and 'l' */
-// 	size: PropTypes.oneOf(BodyTextSizes),
-// };
+	/** Size of the Paragraph. Options are s', 'm', and 'l' */
+	size: PropTypes.oneOf(validBodyTextSizes),
+
+	color: PropTypes.oneOf(validBodyTextColors),
+
+	isBold: PropTypes.bool,
+};
+
+/** Color of the Paragraph. Options are 'dark', 'light' */
+// color: PropTypes.oneOf(BodyTextColors),
 
 /**
  * -------------
