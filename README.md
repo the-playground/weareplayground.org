@@ -6,6 +6,11 @@ Theatres have a reputation for being out of touch with the times when it comes t
 
 ## 📁 Project Structure
 
+## 📝 Technical Docs
+Everything in here serves as a holding place for important technical information we may need to reference later.
+
+- [Fonts & Font Loading](docs/fonts.md)
+
 ## 🏗️ Built With
 
 Frontend » [React](https://reactjs.org/) + [Gatsby](https://www.gatsbyjs.org/)\ + [Graphql](https://graphql.org/)
