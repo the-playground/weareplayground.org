@@ -6,6 +6,8 @@ import { Layout } from '../components/Layout';
 import { SEOPageMeta } from '../components/SEO';
 import { getSlice } from '../__utility__/prismic';
 
+import { BodyText } from '../components/_foundations/typography';
+
 const HomePage = ({ data }) => {
 	const home = data.prismic.home_page;
 
@@ -14,7 +16,7 @@ const HomePage = ({ data }) => {
 	return (
 		<Layout>
 			<SEOPageMeta metadata={pageMeta} />
-			Home Page
+			<BodyText size="l">Home Page</BodyText>
 		</Layout>
 	);
 };

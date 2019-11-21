@@ -13,9 +13,6 @@ import { ShowProvider } from './src/__context__/ShowContext';
 // Import our themes
 import themes from './src/__ui__/themes';
 
-// Register global styles
-require('./static/styles/normalize.css');
-
 // Handle Application wrapper
 // eslint-disable-next-line
 export const wrapRootElement = ({ element }) => (

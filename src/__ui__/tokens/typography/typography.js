@@ -18,15 +18,15 @@ const typography = {
 	// BodyText
 	bodyText: {
 		Large: css`
-			${fonts.bodyCommon};
+			${fonts.bodyText};
 			${fontSizes.size2};
 		`,
 		Medium: css`
-			${fonts.bodyCommon};
+			${fonts.bodyText};
 			${fontSizes.size1};
 		`,
 		Small: css`
-			${fonts.bodyCommon};
+			${fonts.bodyText};
 			${fontSizes.size0};
 		`,
 	},

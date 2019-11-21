@@ -10,26 +10,36 @@ import { css } from 'styled-components';
 
 const fonts = {
 	//
-	bodyCommon: css`
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
+	bodyText: css`
+		font-family: 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
 			sans-serif;
 		font-style: normal;
 		font-weight: 400;
 	`,
 
 	//
-	bodyBold: css`
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
+	bodyTextBold: css`
+		font-family: 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
 			sans-serif;
 		font-style: normal;
-		font-weight: 500;
+		font-weight: 600;
 	`,
 
 	//
-	headingStandard: css``,
+	headingStandard: css`
+		font-family: 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
+			Cantarell sans-serif;
+		font-style: normal;
+		font-weight: 900;
+	`,
 
 	//
-	headingGrunge: css``,
+	headingGrunge: css`
+		font-family: 'Veneer', 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+			sans-serif;
+		font-style: normal;
+		font-weight: 900;
+	`,
 };
 
 export default fonts;
