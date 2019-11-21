@@ -1,7 +1,5 @@
 // These are all the breakpoint sizes for use within your system.
-// We currently use pixel values, but ems work too.
-
-export const sizes = {
+export const mediaQuerySizes = {
 	xs: '414px',
 	s: '768px',
 	m: '960px',
@@ -14,15 +12,15 @@ export const sizes = {
 //
 // Example Usage:
 //
-// ${mediaQueries.sm} {
+// ${breakpoints.s} {
 //   ...css rules
 // }
 //
 
-const breakpoints = Object.keys(sizes).reduce(
+const breakpoints = Object.keys(mediaQuerySizes).reduce(
 	(acc, bp) => ({
 		...acc,
-		[bp]: `@media (min-width: ${sizes[bp]})`,
+		[bp]: `@media (min-width: ${mediaQuerySizes[bp]})`,
 	}),
 	{}
 );

@@ -98,9 +98,11 @@ const generateFontSizings = size => css`
  *
  * @since 1.0.0
  */
-export const fontSizes = {
+const fontSizes = {
 	size0: generateFontSizings(typeScale.step0),
-	size1: generateFontSizings(typeScale.step1),
+	size1: css`
+		font-size: ${typeScale.step1.desktop}rem;
+	`,
 	size2: generateFontSizings(typeScale.step2),
 	size3: generateFontSizings(typeScale.step3),
 	size4: generateFontSizings(typeScale.step4),
@@ -109,3 +111,5 @@ export const fontSizes = {
 	size7: generateFontSizings(typeScale.step7),
 	size8: generateFontSizings(typeScale.step8),
 };
+
+export default fontSizes;

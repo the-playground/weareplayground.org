@@ -12,7 +12,7 @@
 import { css } from 'styled-components';
 
 import fonts from './fonts';
-import { fontSizes } from './typeScale';
+import fontSizes from './typeScale';
 
 const typography = {
 	// BodyText

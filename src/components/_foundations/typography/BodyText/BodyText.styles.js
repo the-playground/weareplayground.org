@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import typography from '../../../../__ui__/tokens/typography/typography';
+import { typography } from '../../../../__tokens__';
 
 export const bodyTextColors = {
 	// dark: props => props.theme.ui.typography.dark,
@@ -13,7 +13,6 @@ export const bodyTextSizes = {
 };
 
 export const BodyText = styled.p`
-	margin: 0;
 	${props => bodyTextSizes[props.size]};
 
 	strong {

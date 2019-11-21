@@ -13,3 +13,7 @@ export const primary = {
 export const secondary = {};
 
 export const tertiary = {};
+
+export const black = '#000000';
+
+export const white = '#FFFFFF';
