@@ -17,7 +17,6 @@ export const StylesGlobal = createGlobalStyle`
 	}
 
 	body{
-		background-color: ${({ theme }) => theme.palette.white};
 		${typography.bodyText.Medium};
 		line-height: 1.5;
 		min-height: 100%;
