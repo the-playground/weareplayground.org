@@ -6,7 +6,7 @@ import * as Styled from './BodyTitle.styles';
 /**
  * Component: Typography » BodyTitle
  *
- * @description Used for displaying common "body" text.
+ * @description Used for displaying titles that are of less emphasis than headings, such as in cards.
  * @since 1.0.0
  */
 

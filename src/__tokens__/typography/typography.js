@@ -17,6 +17,10 @@ import fontSizes from './typeScale';
 const typography = {
 	// BodyText
 	bodyText: {
+		XLarge: css`
+			${fonts.bodyText};
+			${fontSizes.size3};
+		`,
 		Large: css`
 			${fonts.bodyText};
 			${fontSizes.size2};
@@ -37,7 +41,6 @@ const typography = {
 			${fonts.bodyTextBold};
 			${fontSizes.size3};
 		`,
-
 		Large: css`
 			${fonts.bodyTextBold};
 			${fontSizes.size2};
@@ -53,28 +56,39 @@ const typography = {
 	},
 
 	// Heading » Standard
-	headingStandard: {
+	heading: {
 		XLarge: css`
-			${fonts.headingStandard};
-			${fontSizes.size3};
+			${fonts.heading};
+			${fontSizes.size8};
 		`,
 		Large: css`
-			${fonts.headingStandard};
-			${fontSizes.size2};
+			${fonts.heading};
+			${fontSizes.size7};
 		`,
 		Medium: css`
-			${fonts.headingStandard};
-			${fontSizes.size1};
+			${fonts.heading};
+			${fontSizes.size6};
 		`,
 		Small: css`
-			${fonts.headingStandard};
-			${fontSizes.size0};
+			${fonts.heading};
+			${fontSizes.size5};
 		`,
 	},
 
 	// Heading » Grunge
-	headingGrunge: {
-		//
+	grungeHeading: {
+		Large: css`
+			${fonts.grungeHeading};
+			${fontSizes.size9};
+		`,
+		Medium: css`
+			${fonts.grungeHeading};
+			${fontSizes.size8};
+		`,
+		Small: css`
+			${fonts.grungeHeading};
+			${fontSizes.size7};
+		`,
 	},
 };
 

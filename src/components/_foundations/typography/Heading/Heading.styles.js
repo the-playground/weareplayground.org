@@ -9,12 +9,16 @@ export const headingColors = {
 };
 
 export const headingSizes = {
-	l: typography.grungeHeading.Large,
-	m: typography.grungeHeading.Medium,
-	s: typography.grungeHeading.Small,
+	xl: typography.heading.XLarge,
+	l: typography.heading.Large,
+	m: typography.heading.Medium,
+	s: typography.heading.Small,
 };
 
-export const GrungeHeading = styled.span`
+export const Heading = styled.div`
 	${props => headingSizes[props.size]};
+
+	${props => props.isUppercase && `text-transform: uppercase;`}
+	${props => props.isLowercase && `text-transform: lowercase;`}
 `;
 /* color: ${props => commonTextColors[props.color]}; */

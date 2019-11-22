@@ -31,7 +31,7 @@ const baseFontSizeRem = 1.063; // approx 17px base
  *
  * @since 1.0.0
  */
-const desktopScaleRatio = 1.2; // Minor Third
+const desktopScaleRatio = 1.25; // Minor Third
 const mobileScaleRatio = 1.125; // Major Second
 
 /**
@@ -85,6 +85,10 @@ const typeScale = {
 	step10: {
 		mobile: baseFontSizeRem * mobileScaleRatio ** 10,
 		desktop: baseFontSizeRem * desktopScaleRatio ** 10,
+	},
+	step11: {
+		mobile: baseFontSizeRem * mobileScaleRatio ** 11,
+		desktop: baseFontSizeRem * desktopScaleRatio ** 11,
 	},
 };
 

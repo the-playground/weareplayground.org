@@ -27,7 +27,7 @@ const fonts = {
 	`,
 
 	// Greycliff CF Heavy
-	headingStandard: css`
+	heading: css`
 		font-family: 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
 			Cantarell sans-serif;
 		font-style: normal;
@@ -35,9 +35,8 @@ const fonts = {
 	`,
 
 	// Veneer Grunge
-	headingGrunge: css`
-		font-family: 'Veneer', 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-			sans-serif;
+	grungeHeading: css`
+		font-family: 'Veneer', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
 		font-style: normal;
 		font-weight: 900;
 	`,
