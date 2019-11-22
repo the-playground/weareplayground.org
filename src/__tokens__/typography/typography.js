@@ -12,86 +12,86 @@
 import { css } from 'styled-components';
 
 import fonts from './fonts';
-import fontSizes from './typeScale';
+import { bodyFontSizes, headingFontSizes } from './typeScale';
 
 const typography = {
 	// BodyText
 	bodyText: {
-		XXLarge: css`
-			${fonts.bodyText};
-			${fontSizes.size6};
-		`,
 		XLarge: css`
 			${fonts.bodyText};
-			${fontSizes.size4};
+			${bodyFontSizes.size3};
 		`,
 		Large: css`
 			${fonts.bodyText};
-			${fontSizes.size2};
+			${bodyFontSizes.size2};
 		`,
 		Medium: css`
 			${fonts.bodyText};
-			${fontSizes.size1};
+			${bodyFontSizes.size1};
 		`,
 		Small: css`
 			${fonts.bodyText};
-			${fontSizes.size0};
+			${bodyFontSizes.size0};
 		`,
 	},
 
 	// Body » Bold
 	bodyTextBold: {
-		XXLarge: css`
-			${fonts.bodyTextBold};
-			${fontSizes.size6};
-		`,
 		XLarge: css`
 			${fonts.bodyTextBold};
-			${fontSizes.size4};
+			${bodyFontSizes.size3};
 		`,
 		Large: css`
 			${fonts.bodyTextBold};
-			${fontSizes.size2};
+			${bodyFontSizes.size2};
 		`,
 		Medium: css`
 			${fonts.bodyTextBold};
-			${fontSizes.size1};
+			${bodyFontSizes.size1};
 		`,
 		Small: css`
 			${fonts.bodyTextBold};
-			${fontSizes.size0};
+			${bodyFontSizes.size0};
 		`,
 	},
 
 	// Heading » Standard
 	heading: {
+		XLarge: css`
+			${fonts.heading};
+			${headingFontSizes.size3};
+		`,
 		Large: css`
 			${fonts.heading};
-			${fontSizes.size10};
+			${headingFontSizes.size2};
 		`,
 		Medium: css`
 			${fonts.heading};
-			${fontSizes.size8};
+			${headingFontSizes.size1};
 		`,
 		Small: css`
 			${fonts.heading};
-			${fontSizes.size6};
+			${headingFontSizes.size0};
 		`,
 	},
 
 	// Heading » Grunge
 	grungeHeading: {
+		XLarge: css`
+			${fonts.grungeHeading};
+			${headingFontSizes.size4};
+		`,
 		Large: css`
 			${fonts.grungeHeading};
-			${fontSizes.size12};
+			${headingFontSizes.size3};
 		`,
 		Medium: css`
 			${fonts.grungeHeading};
-			${fontSizes.size11};
+			${headingFontSizes.size2};
 		`,
 		Small: css`
 			${fonts.grungeHeading};
-			${fontSizes.size10};
+			${headingFontSizes.size1};
 		`,
 	},
 };

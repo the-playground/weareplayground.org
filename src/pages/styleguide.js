@@ -29,8 +29,6 @@ const StyleguidePage = () => (
 		<BodyTitle size="s">Small Body Title</BodyTitle>
 		<BodyTitle size="m">Medium Body Title</BodyTitle>
 		<BodyTitle size="l">Large Body Title</BodyTitle>
-		<BodyTitle size="xl">Extra Large Body Title</BodyTitle>
-		<BodyTitle size="xxl">Extra Large Body Title</BodyTitle>
 
 		{/* Standard Heading */}
 		<Heading size="s" tag="h1">
@@ -42,6 +40,9 @@ const StyleguidePage = () => (
 		<Heading size="l" tag="h3">
 			Large Standard Heading
 		</Heading>
+		<Heading size="xl" tag="h3">
+			Extra Large Standard Heading
+		</Heading>
 
 		<GrungeHeading size="s" tag="h1">
 			Small Grunge Heading
@@ -51,6 +52,9 @@ const StyleguidePage = () => (
 		</GrungeHeading>
 		<GrungeHeading size="l" tag="h3">
 			Large Grunge Heading
+		</GrungeHeading>
+		<GrungeHeading size="xl" tag="h3">
+			Extra Large Grunge Heading
 		</GrungeHeading>
 
 		{/* Grunge Heading */}

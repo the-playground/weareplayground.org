@@ -9,8 +9,6 @@ export const bodyTitleColors = {
 };
 
 export const bodyTitleSizes = {
-	xxl: typography.bodyTextBold.XXLarge,
-	xl: typography.bodyTextBold.XLarge,
 	l: typography.bodyTextBold.Large,
 	m: typography.bodyTextBold.Medium,
 	s: typography.bodyTextBold.Small,

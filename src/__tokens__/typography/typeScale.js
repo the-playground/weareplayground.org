@@ -20,7 +20,7 @@ import breakpoints from '../breakpoints';
  *
  * @since 1.0.0
  */
-const baseFontSizeRem = 1.063; // approx 17px base
+const baseFontSizeRem = 17; // approx 17px base
 
 /**
  * These typographic scale values control typography sizing
@@ -31,8 +31,8 @@ const baseFontSizeRem = 1.063; // approx 17px base
  *
  * @since 1.0.0
  */
-const desktopScaleRatio = 1.2; // Minor Third
-const mobileScaleRatio = 1.125; // Major Second
+const desktopScaleRatio = 1.333; // Perfect Fourth
+const mobileScaleRatio = 1.2; // Major Second
 
 /**
  * Define the font sizes used on smaller "mobile" devices
@@ -41,95 +41,65 @@ const mobileScaleRatio = 1.125; // Major Second
  * @since 1.0.0
  */
 
-const typeScale = {
-	step0: {
-		mobile: baseFontSizeRem / mobileScaleRatio,
-		desktop: baseFontSizeRem / desktopScaleRatio,
-	},
-	step1: {
-		mobile: baseFontSizeRem,
-		desktop: baseFontSizeRem,
-	},
-	step2: {
-		mobile: baseFontSizeRem * mobileScaleRatio ** 1,
-		desktop: baseFontSizeRem * desktopScaleRatio ** 1,
-	},
-	step3: {
-		mobile: baseFontSizeRem * mobileScaleRatio ** 2,
-		desktop: baseFontSizeRem * desktopScaleRatio ** 2,
-	},
-	step4: {
-		mobile: baseFontSizeRem * mobileScaleRatio ** 3,
-		desktop: baseFontSizeRem * desktopScaleRatio ** 3,
-	},
-	step5: {
-		mobile: baseFontSizeRem * mobileScaleRatio ** 4,
-		desktop: baseFontSizeRem * desktopScaleRatio ** 4,
-	},
-	step6: {
-		mobile: baseFontSizeRem * mobileScaleRatio ** 5,
-		desktop: baseFontSizeRem * desktopScaleRatio ** 5,
-	},
-	step7: {
-		mobile: baseFontSizeRem * mobileScaleRatio ** 6,
-		desktop: baseFontSizeRem * desktopScaleRatio ** 6,
-	},
-	step8: {
-		mobile: baseFontSizeRem * mobileScaleRatio ** 8,
-		desktop: baseFontSizeRem * desktopScaleRatio ** 8,
-	},
-	step9: {
-		mobile: baseFontSizeRem * mobileScaleRatio ** 9,
-		desktop: baseFontSizeRem * desktopScaleRatio ** 9,
-	},
-	step10: {
-		mobile: baseFontSizeRem * mobileScaleRatio ** 10,
-		desktop: baseFontSizeRem * desktopScaleRatio ** 10,
-	},
-	step11: {
-		mobile: baseFontSizeRem * mobileScaleRatio ** 11,
-		desktop: baseFontSizeRem * desktopScaleRatio ** 11,
-	},
-	step12: {
-		mobile: baseFontSizeRem * mobileScaleRatio ** 12,
-		desktop: baseFontSizeRem * desktopScaleRatio ** 12,
-	},
-};
-
 /**
  * Handle generating responsive CSS for font sizes
  *
  * @param {string} size the size to fetch from the typeScale
  */
 const generateFontSizings = size => css`
-	font-size: ${size.mobile}rem;
+	font-size: ${size.mobile}px;
 	${breakpoints.s} {
-		font-size: ${size.desktop}rem;
+		font-size: ${size.desktop}px;
 	}
 `;
 
-/**
- * Create our final font sizing styles based on the type scale values above.
- * Media queries are rolled into the style definitions by default to make dev life easier.
- *
- * @since 1.0.0
- */
-const fontSizes = {
-	size0: generateFontSizings(typeScale.step0),
-	size1: css`
-		font-size: ${typeScale.step1.desktop}rem;
+// These sizes were based on Stripe's Body Text... it's so beautiful, why not borrow it!
+export const bodyFontSizes = {
+	size0: css`
+		font-size: 14px;
 	`,
-	size2: generateFontSizings(typeScale.step2),
-	size3: generateFontSizings(typeScale.step3),
-	size4: generateFontSizings(typeScale.step4),
-	size5: generateFontSizings(typeScale.step5),
-	size6: generateFontSizings(typeScale.step6),
-	size7: generateFontSizings(typeScale.step7),
-	size8: generateFontSizings(typeScale.step8),
-	size9: generateFontSizings(typeScale.step9),
-	size10: generateFontSizings(typeScale.step10),
-	size11: generateFontSizings(typeScale.step11),
-	size12: generateFontSizings(typeScale.step12),
+	size1: css`
+		font-size: 17px;
+	`,
+	size2: css`
+		font-size: 23px;
+	`,
+	size3: css`
+		font-size: 27px;
+		${breakpoints.s} {
+			font-size: 30px;
+		}
+	`,
 };
 
-export default fontSizes;
+const headingTypeScale = {
+	step0: {
+		mobile: baseFontSizeRem * mobileScaleRatio ** 3,
+		desktop: baseFontSizeRem * desktopScaleRatio ** 3,
+	},
+	step1: {
+		mobile: baseFontSizeRem * mobileScaleRatio ** 4,
+		desktop: baseFontSizeRem * desktopScaleRatio ** 4,
+	},
+	step2: {
+		mobile: baseFontSizeRem * mobileScaleRatio ** 5,
+		desktop: baseFontSizeRem * desktopScaleRatio ** 5,
+	},
+	step3: {
+		mobile: baseFontSizeRem * mobileScaleRatio ** 6,
+		desktop: baseFontSizeRem * desktopScaleRatio ** 6,
+	},
+	step4: {
+		mobile: baseFontSizeRem * mobileScaleRatio ** 7,
+		desktop: baseFontSizeRem * desktopScaleRatio ** 7,
+	},
+};
+
+// Generated on a 1.25 ratio Major Third scale with a 17px base.
+export const headingFontSizes = {
+	size0: generateFontSizings(headingTypeScale.step0),
+	size1: generateFontSizings(headingTypeScale.step1),
+	size2: generateFontSizings(headingTypeScale.step2),
+	size3: generateFontSizings(headingTypeScale.step3),
+	size4: generateFontSizings(headingTypeScale.step4),
+};
