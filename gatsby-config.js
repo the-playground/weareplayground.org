@@ -69,7 +69,7 @@ module.exports = {
 			resolve: 'gatsby-source-prismic-graphql',
 			options: {
 				repositoryName: 'theplayground', // (required)
-				accessToken: process.env.PRISMIC_API_TOKEN, // (optional)
+				accessToken: process.env.PRISMIC_API_KEY, // (optional)
 				previews: false, // (optional, default: false)
 				pages: [
 					{
