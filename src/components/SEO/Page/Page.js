@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 // Import utilities
-import { getCurrentRootURL } from '../../../__utility__/url';
+import { getCurrentRootURL } from '../../../__utility__/URL';
 
 /**
  * Component: SEOPage
