@@ -17,7 +17,6 @@ module.exports = {
 				path: path.join(__dirname, `static`, `images`),
 			},
 		},
-
 		/**
 		 * @link
 		 * @since 1.0.0
