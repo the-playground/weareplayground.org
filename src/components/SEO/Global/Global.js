@@ -26,6 +26,8 @@ const SEOGlobal = () => {
 		}
 	`);
 
+	if (!data) return <></>;
+
 	const company = data.prismic.companyconfig;
 	const site = data.prismic.siteconfig;
 
