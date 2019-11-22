@@ -1,24 +1,22 @@
 import styled from 'styled-components';
 import { typography } from '../../../../__tokens__';
 
-export const bodyTextColors = {
+export const bodyTitleColors = {
 	dark: '',
 	light: '',
 	// dark: props => props.theme.ui.typography.dark,
 	// light: props => props.theme.ui.typography.light,
 };
 
-export const bodyTextSizes = {
-	l: props => (props.isBold ? typography.bodyTextBold.Large : typography.bodyText.Large),
-	m: props => (props.isBold ? typography.bodyTextBold.Medium : typography.bodyText.Medium),
-	s: props => (props.isBold ? typography.bodyTextBold.Small : typography.bodyText.Small),
+export const bodyTitleSizes = {
+	xl: typography.bodyTextBold.XLarge,
+	l: typography.bodyTextBold.Large,
+	m: typography.bodyTextBold.Medium,
+	s: typography.bodyTextBold.Small,
 };
 
-export const BodyText = styled.p`
-	${props => bodyTextSizes[props.size]};
-
-	strong {
-		/* Set weight */
-	}
+export const BodyTitle = styled.p`
+	${props => bodyTitleSizes[props.size]};
+	text-transform: uppercase;
 `;
 /* color: ${props => commonTextColors[props.color]}; */

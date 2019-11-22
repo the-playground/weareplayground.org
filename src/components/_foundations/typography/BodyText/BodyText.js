@@ -50,7 +50,7 @@ BodyText.propTypes = {
 
 BodyText.defaultProps = {
 	color: 'dark',
-	size: 's',
+	size: 'm',
 	isBold: false,
 };
 

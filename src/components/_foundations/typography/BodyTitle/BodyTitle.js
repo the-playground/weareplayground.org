@@ -48,7 +48,7 @@ BodyTitle.propTypes = {
 
 BodyTitle.defaultProps = {
 	color: 'dark',
-	size: 's',
+	size: 'm',
 };
 
 export default BodyTitle;

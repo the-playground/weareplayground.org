@@ -33,6 +33,11 @@ const typography = {
 
 	// Body » Bold
 	bodyTextBold: {
+		XLarge: css`
+			${fonts.bodyTextBold};
+			${fontSizes.size3};
+		`,
+
 		Large: css`
 			${fonts.bodyTextBold};
 			${fontSizes.size2};
