@@ -22,21 +22,21 @@ export const loadStage2Fonts = () => {
 
 	const regular = new FontFace(
 		'Greycliff',
-		"url(/fonts/stage-2/GreycliffCF-Regular-all--stage2.woff2) format('woff2'), url(fonts/stage-2/GreycliffCF-Regular-all--stage2.woff.woff) format('woff')", // eslint-disable-line
+		"url(./fonts/stage-2/GreycliffCF-Regular-all--stage2.woff2) format('woff2'), url(fonts/stage-2/GreycliffCF-Regular-all--stage2.woff.woff) format('woff')", // eslint-disable-line
 		{
 			weight: '400',
 		}
 	);
 	const demiBold = new FontFace(
 		'Greycliff',
-		"url(/fonts/stage-2/GreycliffCF-DemiBold-all--stage2.woff2) format('woff2'), url(fonts/stage-2/GreycliffCF-DemiBold-all--stage2.woff) format('woff')", // eslint-disable-line
+		"url(./fonts/stage-2/GreycliffCF-DemiBold-all--stage2.woff2) format('woff2'), url(fonts/stage-2/GreycliffCF-DemiBold-all--stage2.woff) format('woff')", // eslint-disable-line
 		{
 			weight: '600',
 		}
 	);
 	const heavy = new FontFace(
 		'Greycliff',
-		"url(/fonts/stage-2/GreycliffCF-Heavy-all--stage2.woff2) format('woff2'), url(fonts/stage-2/GreycliffCF-Heavy-all--stage2.woff) format('woff')", // eslint-disable-line
+		"url(./fonts/stage-2/GreycliffCF-Heavy-all--stage2.woff2) format('woff2'), url(fonts/stage-2/GreycliffCF-Heavy-all--stage2.woff) format('woff')", // eslint-disable-line
 		{
 			weight: '900',
 		}

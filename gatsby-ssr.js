@@ -13,21 +13,21 @@ exports.onRenderBody = ({ setHeadComponents }) => {
 	setHeadComponents([
 		<link
 			rel="preload"
-			href="/fonts/stage-1/GreycliffCF-Regular-kern--stage1.woff2"
+			href="./fonts/stage-1/GreycliffCF-Regular-kern--stage1.woff2"
 			as="font"
 			type="font/woff2"
 			crossOrigin="anonymous"
 		/>,
 		<link
 			rel="preload"
-			href="/fonts/stage-1/GreycliffCF-DemiBold-kern--stage1.woff2"
+			href="./fonts/stage-1/GreycliffCF-DemiBold-kern--stage1.woff2"
 			as="font"
 			type="font/woff2"
 			crossOrigin="anonymous"
 		/>,
 		<link
 			rel="preload"
-			href="/fonts/stage-1/GreycliffCF-Heavy-kern--stage1.woff2"
+			href="./fonts/stage-1/GreycliffCF-Heavy-kern--stage1.woff2"
 			as="font"
 			type="font/woff2"
 			crossOrigin="anonymous"
