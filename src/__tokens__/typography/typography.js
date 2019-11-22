@@ -77,21 +77,17 @@ const typography = {
 
 	// Heading » Grunge
 	grungeHeading: {
-		XLarge: css`
+		Large: css`
 			${fonts.grungeHeading};
 			${headingFontSizes.size4};
 		`,
-		Large: css`
+		Medium: css`
 			${fonts.grungeHeading};
 			${headingFontSizes.size3};
 		`,
-		Medium: css`
-			${fonts.grungeHeading};
-			${headingFontSizes.size2};
-		`,
 		Small: css`
 			${fonts.grungeHeading};
-			${headingFontSizes.size1};
+			${headingFontSizes.size2};
 		`,
 	},
 };
