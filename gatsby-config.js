@@ -78,6 +78,7 @@ module.exports = {
 						component: require.resolve('./src/templates/show.js'),
 					},
 				],
+				omitPrismicScript: true,
 			},
 		},
 
