@@ -31,7 +31,7 @@ const baseFontSizeRem = 1.063; // approx 17px base
  *
  * @since 1.0.0
  */
-const desktopScaleRatio = 1.25; // Minor Third
+const desktopScaleRatio = 1.2; // Minor Third
 const mobileScaleRatio = 1.125; // Major Second
 
 /**
@@ -90,6 +90,10 @@ const typeScale = {
 		mobile: baseFontSizeRem * mobileScaleRatio ** 11,
 		desktop: baseFontSizeRem * desktopScaleRatio ** 11,
 	},
+	step12: {
+		mobile: baseFontSizeRem * mobileScaleRatio ** 12,
+		desktop: baseFontSizeRem * desktopScaleRatio ** 12,
+	},
 };
 
 /**
@@ -124,6 +128,8 @@ const fontSizes = {
 	size8: generateFontSizings(typeScale.step8),
 	size9: generateFontSizings(typeScale.step9),
 	size10: generateFontSizings(typeScale.step10),
+	size11: generateFontSizings(typeScale.step11),
+	size12: generateFontSizings(typeScale.step12),
 };
 
 export default fontSizes;

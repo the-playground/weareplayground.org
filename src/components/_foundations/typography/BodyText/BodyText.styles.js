@@ -9,6 +9,7 @@ export const bodyTextColors = {
 };
 
 export const bodyTextSizes = {
+	xxl: props => (props.isBold ? typography.bodyTextBold.XXLarge : typography.bodyText.XXLarge),
 	xl: props => (props.isBold ? typography.bodyTextBold.XLarge : typography.bodyText.XLarge),
 	l: props => (props.isBold ? typography.bodyTextBold.Large : typography.bodyText.Large),
 	m: props => (props.isBold ? typography.bodyTextBold.Medium : typography.bodyText.Medium),
