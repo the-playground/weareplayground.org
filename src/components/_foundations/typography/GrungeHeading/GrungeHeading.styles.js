@@ -9,7 +9,6 @@ export const headingColors = {
 };
 
 export const headingSizes = {
-	l: typography.grungeHeading.Large,
 	m: typography.grungeHeading.Medium,
 	s: typography.grungeHeading.Small,
 };
