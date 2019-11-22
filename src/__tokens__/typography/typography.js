@@ -32,13 +32,39 @@ const typography = {
 	},
 
 	// Body » Bold
-	bodyBold: {
-		//
+	bodyTextBold: {
+		Large: css`
+			${fonts.bodyTextBold};
+			${fontSizes.size2};
+		`,
+		Medium: css`
+			${fonts.bodyTextBold};
+			${fontSizes.size1};
+		`,
+		Small: css`
+			${fonts.bodyTextBold};
+			${fontSizes.size0};
+		`,
 	},
 
 	// Heading » Standard
 	headingStandard: {
-		//
+		XLarge: css`
+			${fonts.headingStandard};
+			${fontSizes.size3};
+		`,
+		Large: css`
+			${fonts.headingStandard};
+			${fontSizes.size2};
+		`,
+		Medium: css`
+			${fonts.headingStandard};
+			${fontSizes.size1};
+		`,
+		Small: css`
+			${fonts.headingStandard};
+			${fontSizes.size0};
+		`,
 	},
 
 	// Heading » Grunge
