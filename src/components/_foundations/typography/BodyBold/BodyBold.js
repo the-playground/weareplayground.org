@@ -6,7 +6,7 @@ import * as Styled from './BodyBold.styles';
 /**
  * Component: Typography » BodyBold
  *
- * @description Used for displaying common "body" text.
+ * @description Used for displaying bold "body" text.
  * @since 1.0.0
  */
 

@@ -24,7 +24,7 @@ const BodyTitle = ({ children, tag, size, color, ...others }) => (
 
 const validBodyTitleSizes = Object.keys(Styled.bodyTitleSizes);
 const validBodyTitleColors = Object.keys(Styled.bodyTitleColors);
-const validTags = ['span', 'p', 'h2', 'h3', 'h4', 'h5', 'h6'];
+const validTags = ['span', 'p', 'h3', 'h4', 'h5', 'h6'];
 
 BodyTitle.propTypes = {
 	children: PropTypes.node,

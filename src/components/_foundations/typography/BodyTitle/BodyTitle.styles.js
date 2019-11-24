@@ -9,9 +9,9 @@ export const bodyTitleColors = {
 };
 
 export const bodyTitleSizes = {
-	l: typography.bodyBold.Large,
-	m: typography.bodyBold.Medium,
-	s: typography.bodyBold.Small,
+	l: typography.bodyTitle.Large,
+	m: typography.bodyTitle.Medium,
+	s: typography.bodyTitle.Small,
 };
 
 export const BodyTitle = styled.p`

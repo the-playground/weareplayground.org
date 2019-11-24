@@ -56,11 +56,7 @@ const typography = {
 	},
 
 	// Body » Title
-	bodyTile: {
-		XLarge: css`
-			${fonts.bodyBold};
-			${fontSizes.size3};
-		`,
+	bodyTitle: {
 		Large: css`
 			${fonts.bodyBold};
 			${fontSizes.size2};
