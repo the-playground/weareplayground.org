@@ -35,14 +35,6 @@ export const StylesGlobal = createGlobalStyle`
 
 	@font-face {
 		font-family: "Greycliff";
-		src: url('/fonts/stage-1/GreycliffCF-DemiBold-kern--stage1.woff2') format('woff2'),
-		url('/fonts/stage-1/GreycliffCF-DemiBold-kern--stage1.woff') format('woff');
-		font-weight: 600;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "Greycliff";
 		src: url('/fonts/stage-1/GreycliffCF-Bold-kern--stage1.woff2') format('woff2'),
 		url('/fonts/stage-1/GreycliffCF-Bold-kern--stage1.woff') format('woff');
 		font-weight: 700;
