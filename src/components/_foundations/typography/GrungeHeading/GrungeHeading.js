@@ -6,7 +6,7 @@ import * as Styled from './GrungeHeading.styles';
 /**
  * Component: Typography » GrungeHeading
  *
- * @description Used for displaying titles that are of less emphasis than headings, such as in cards.
+ * @description Used for displaying titles that should have some impact!
  * @since 1.0.0
  */
 
