@@ -34,6 +34,13 @@ export const loadStage2Fonts = () => {
 			weight: '600',
 		}
 	);
+	const bold = new FontFace(
+		'Greycliff',
+		"url(/fonts/stage-2/GreycliffCF-Bold-all--stage2.woff2) format('woff2'), url(/fonts/stage-2/GreycliffCF-Bold-all--stage2.woff) format('woff')", // eslint-disable-line
+		{
+			weight: '700',
+		}
+	);
 	const heavy = new FontFace(
 		'Greycliff',
 		"url(/fonts/stage-2/GreycliffCF-Heavy-all--stage2.woff2) format('woff2'), url(/fonts/stage-2/GreycliffCF-Heavy-all--stage2.woff) format('woff')", // eslint-disable-line
@@ -41,7 +48,7 @@ export const loadStage2Fonts = () => {
 			weight: '900',
 		}
 	);
-	Promise.all([heavy.load(), demiBold.load(), regular.load()]).then(function(fonts) {
+	Promise.all([heavy.load(), bold.load(), demiBold.load(), regular.load()]).then(function(fonts) {
 		fonts.forEach(function(font) {
 			document.fonts.add(font);
 		});

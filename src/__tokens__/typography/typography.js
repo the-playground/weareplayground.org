@@ -36,21 +36,41 @@ const typography = {
 	},
 
 	// Body » Bold
-	bodyTextBold: {
+	bodyBold: {
 		XLarge: css`
-			${fonts.bodyTextBold};
+			${fonts.bodyBold};
 			${fontSizes.size3};
 		`,
 		Large: css`
-			${fonts.bodyTextBold};
+			${fonts.bodyBold};
 			${fontSizes.size2};
 		`,
 		Medium: css`
-			${fonts.bodyTextBold};
+			${fonts.bodyBold};
 			${fontSizes.size1};
 		`,
 		Small: css`
-			${fonts.bodyTextBold};
+			${fonts.bodyBold};
+			${fontSizes.size0};
+		`,
+	},
+
+	// Body » Title
+	bodyTile: {
+		XLarge: css`
+			${fonts.bodyBold};
+			${fontSizes.size3};
+		`,
+		Large: css`
+			${fonts.bodyBold};
+			${fontSizes.size2};
+		`,
+		Medium: css`
+			${fonts.bodyBold};
+			${fontSizes.size1};
+		`,
+		Small: css`
+			${fonts.bodyBold};
 			${fontSizes.size0};
 		`,
 	},

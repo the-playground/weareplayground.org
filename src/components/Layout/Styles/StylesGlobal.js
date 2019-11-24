@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { appBaseFontSize } from '../../../__tokens__';
+import { appBaseFontSize, fonts } from '../../../__tokens__';
 
 /**
  * Define global styles and Stage 1 fonts. These are the fonts that will be preloaded and some of them will eventually
@@ -17,6 +17,7 @@ export const StylesGlobal = createGlobalStyle`
 	}
 
 	body{
+		${fonts.bodyText};
 		line-height: 1.5;
 		min-height: 100%;
 		text-rendering: optimizeLegibility;

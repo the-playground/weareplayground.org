@@ -19,11 +19,11 @@ const fonts = {
 	`,
 
 	// Greycliff CF DemiBold
-	bodyTextBold: css`
+	bodyBold: css`
 		font-family: 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
 			sans-serif;
 		font-style: normal;
-		font-weight: 600;
+		font-weight: 700;
 	`,
 
 	// Greycliff CF Heavy

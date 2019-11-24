@@ -9,11 +9,10 @@ export const bodyTextColors = {
 };
 
 export const bodyTextSizes = {
-	xxl: props => (props.isBold ? typography.bodyTextBold.XXLarge : typography.bodyText.XXLarge),
-	xl: props => (props.isBold ? typography.bodyTextBold.XLarge : typography.bodyText.XLarge),
-	l: props => (props.isBold ? typography.bodyTextBold.Large : typography.bodyText.Large),
-	m: props => (props.isBold ? typography.bodyTextBold.Medium : typography.bodyText.Medium),
-	s: props => (props.isBold ? typography.bodyTextBold.Small : typography.bodyText.Small),
+	xl: typography.bodyText.XLarge,
+	l: typography.bodyText.Large,
+	m: typography.bodyText.Medium,
+	s: typography.bodyText.Small,
 };
 
 export const BodyText = styled.p`
@@ -23,4 +22,4 @@ export const BodyText = styled.p`
 		/* Set weight */
 	}
 `;
-/* color: ${props => commonTextColors[props.color]}; */
+/* color: ${props => bodyTextColors[props.color]}; */

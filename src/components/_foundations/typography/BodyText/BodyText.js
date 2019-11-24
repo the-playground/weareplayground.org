@@ -10,8 +10,8 @@ import * as Styled from './BodyText.styles';
  * @since 1.0.0
  */
 
-const BodyText = ({ children, tag, size, color, isBold, ...others }) => (
-	<Styled.BodyText as={tag} color={color} size={size} isBold={isBold} {...others}>
+const BodyText = ({ children, tag, size, color, ...others }) => (
+	<Styled.BodyText as={tag} color={color} size={size} {...others}>
 		{children}
 	</Styled.BodyText>
 );
@@ -24,7 +24,7 @@ const BodyText = ({ children, tag, size, color, isBold, ...others }) => (
 
 const validBodyTextSizes = Object.keys(Styled.bodyTextSizes);
 const validBodyTextColors = Object.keys(Styled.bodyTextColors);
-const validTags = ['span', 'a'];
+const validTags = ['span', 'p'];
 
 BodyText.propTypes = {
 	children: PropTypes.node,
@@ -35,8 +35,6 @@ BodyText.propTypes = {
 	size: PropTypes.oneOf(validBodyTextSizes),
 
 	color: PropTypes.oneOf(validBodyTextColors),
-
-	isBold: PropTypes.bool,
 };
 
 /** Color of the Paragraph. Options are 'dark', 'light' */
@@ -51,7 +49,6 @@ BodyText.propTypes = {
 BodyText.defaultProps = {
 	color: 'dark',
 	size: 'm',
-	isBold: false,
 };
 
 export default BodyText;
