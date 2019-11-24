@@ -12,26 +12,26 @@
 import { css } from 'styled-components';
 
 import fonts from './fonts';
-import { bodyFontSizes, headingFontSizes } from './typeScale';
+import { fontSizes } from './typeScale';
 
 const typography = {
 	// BodyText
 	bodyText: {
 		XLarge: css`
 			${fonts.bodyText};
-			${bodyFontSizes.size3};
+			${fontSizes.size3};
 		`,
 		Large: css`
 			${fonts.bodyText};
-			${bodyFontSizes.size2};
+			${fontSizes.size2};
 		`,
 		Medium: css`
 			${fonts.bodyText};
-			${bodyFontSizes.size1};
+			${fontSizes.size1};
 		`,
 		Small: css`
 			${fonts.bodyText};
-			${bodyFontSizes.size0};
+			${fontSizes.size0};
 		`,
 	},
 
@@ -39,19 +39,19 @@ const typography = {
 	bodyTextBold: {
 		XLarge: css`
 			${fonts.bodyTextBold};
-			${bodyFontSizes.size3};
+			${fontSizes.size3};
 		`,
 		Large: css`
 			${fonts.bodyTextBold};
-			${bodyFontSizes.size2};
+			${fontSizes.size2};
 		`,
 		Medium: css`
 			${fonts.bodyTextBold};
-			${bodyFontSizes.size1};
+			${fontSizes.size1};
 		`,
 		Small: css`
 			${fonts.bodyTextBold};
-			${bodyFontSizes.size0};
+			${fontSizes.size0};
 		`,
 	},
 
@@ -59,31 +59,35 @@ const typography = {
 	heading: {
 		XLarge: css`
 			${fonts.heading};
-			${headingFontSizes.size3};
+			${fontSizes.size7};
 		`,
 		Large: css`
 			${fonts.heading};
-			${headingFontSizes.size2};
+			${fontSizes.size7};
 		`,
 		Medium: css`
 			${fonts.heading};
-			${headingFontSizes.size1};
+			${fontSizes.size6};
 		`,
 		Small: css`
 			${fonts.heading};
-			${headingFontSizes.size0};
+			${fontSizes.size5};
 		`,
 	},
 
 	// Heading » Grunge
 	grungeHeading: {
+		Large: css`
+			${fonts.grungeHeading};
+			${fontSizes.size8};
+		`,
 		Medium: css`
 			${fonts.grungeHeading};
-			${headingFontSizes.size4};
+			${fontSizes.size7};
 		`,
 		Small: css`
 			${fonts.grungeHeading};
-			${headingFontSizes.size3};
+			${fontSizes.size6};
 		`,
 	},
 };

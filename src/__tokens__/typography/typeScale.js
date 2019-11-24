@@ -15,91 +15,113 @@ import { css } from 'styled-components';
 import breakpoints from '../breakpoints';
 
 /**
- * The base font size for our entire project is in `rem`s, and we set the
- * default unit-less value here.
+ * The base font size for our entire project is set here.
+ * This value will ultimately get set on the body in pixels.
+ *
+ * Changing this value will change all font size accordingly.
  *
  * @since 1.0.0
  */
-const baseFontSizeRem = 17; // approx 17px base
+export const appBaseFontSize = 17;
 
 /**
  * These typographic scale values control typography sizing
  * across the entire site.
  *
- * Scale values are pulled from https://type-scale.com/ and are
- * ultimately chosen via designer/developer collaboration.
+ * Scale ratios are pulled from https://type-scale.com/.
  *
  * @since 1.0.0
  */
-const desktopScaleRatio = 1.333; // Perfect Fourth
-const mobileScaleRatio = 1.2; // Major Second
+const largeScalar = 1.333; // Perfect Fourth
+const smallScalar = 1.25; // Minor Third
 
 /**
- * Define the font sizes used on smaller "mobile" devices
+ * Our typographic scale drives the mathematical relationship between all of our font sizes.
+ * We are generating values for 2 scales using a large and a small scalar value (defined above).
  *
- * @uses exponentiation `**` to "climb" the typographic scale and produce unified font sizing
- * @since 1.0.0
+ * Note that it is possible that not all of these scales steps will be used.
  */
-
-/**
- * Handle generating responsive CSS for font sizes
- *
- * @param {string} size the size to fetch from the typeScale
- */
-const generateFontSizings = size => css`
-	font-size: ${size.mobile}px;
-	${breakpoints.s} {
-		font-size: ${size.desktop}px;
-	}
-`;
-
-// These sizes were based on Stripe's Body Text... it's so beautiful, why not borrow it!
-export const bodyFontSizes = {
-	size0: css`
-		font-size: 14px;
-	`,
-	size1: css`
-		font-size: 17px;
-	`,
-	size2: css`
-		font-size: 23px;
-	`,
-	size3: css`
-		font-size: 27px;
-		${breakpoints.s} {
-			font-size: 30px;
-		}
-	`,
-};
-
-const headingTypeScale = {
+const typeScale = {
 	step0: {
-		mobile: baseFontSizeRem * mobileScaleRatio ** 3,
-		desktop: baseFontSizeRem * desktopScaleRatio ** 3,
+		large: largeScalar / largeScalar ** 2,
+		small: smallScalar / smallScalar ** 2,
 	},
+	/* Base size = 1rem */
 	step1: {
-		mobile: baseFontSizeRem * mobileScaleRatio ** 4,
-		desktop: baseFontSizeRem * desktopScaleRatio ** 4,
+		small: 1,
+		large: 1,
 	},
 	step2: {
-		mobile: baseFontSizeRem * mobileScaleRatio ** 5,
-		desktop: baseFontSizeRem * desktopScaleRatio ** 5,
+		small: smallScalar,
+		large: largeScalar,
 	},
 	step3: {
-		mobile: baseFontSizeRem * mobileScaleRatio ** 6,
-		desktop: baseFontSizeRem * desktopScaleRatio ** 6,
+		small: smallScalar ** 2,
+		large: largeScalar ** 2,
 	},
 	step4: {
-		mobile: baseFontSizeRem * mobileScaleRatio ** 7,
-		desktop: baseFontSizeRem * desktopScaleRatio ** 7,
+		small: smallScalar ** 3,
+		large: largeScalar ** 3,
+	},
+	step5: {
+		small: smallScalar ** 4,
+		large: largeScalar ** 4,
+	},
+	step6: {
+		small: smallScalar ** 5,
+		large: largeScalar ** 5,
+	},
+	step7: {
+		small: smallScalar ** 6,
+		large: largeScalar ** 6,
+	},
+	step8: {
+		small: smallScalar ** 7,
+		large: largeScalar ** 7,
 	},
 };
 
-// Generated on a 1.25 ratio Major Third scale with a 17px base.
-export const headingFontSizes = {
-	size0: generateFontSizings(headingTypeScale.step0),
-	size1: generateFontSizings(headingTypeScale.step1),
-	size2: generateFontSizings(headingTypeScale.step2),
-	size3: generateFontSizings(headingTypeScale.step3),
-	size4: generateFontSizings(headingTypeScale.step4),
+/**
+ * Easily handle generating responsive font sizes using our type scale (above).
+ * * Note that we are always using REM values, never EMs or pixels
+ *
+ * @param {string} scaleSize the size to fetch from the typeScale
+ * @param {bool} skipSmall skip the smaller font sie and use the larger font size across all devices
+ */
+const generateFontSizings = (scaleSize, skipSmall) => {
+	// Skip small scalar size output and output only the large scalar size
+	if (skipSmall) {
+		return css`
+			font-size: ${scaleSize.large}rem;
+		`;
+	}
+
+	// Output large and small scalar font sizings across a defined breakpoint
+	return css`
+		font-size: ${scaleSize.small}rem;
+		${breakpoints.m} {
+			font-size: ${scaleSize.large}rem;
+		}
+	`;
+};
+
+/**
+ * Generate final font sizings for consumption by components in our app.
+ */
+export const fontSizes = {
+	/**
+	 * Approx 14px for size0 -  We are stepping outside of the scale here with a custom size.
+	 * It looks better! We are also skipping the small scalar size.
+	 */
+	size0: css`
+		font-size: 0.875rem;
+	`,
+	size1: generateFontSizings(typeScale.step1, true) /* Skip small scalar size */,
+	size2: generateFontSizings(typeScale.step2, true) /* Skip small scalar size */,
+	size3: generateFontSizings(typeScale.step3),
+	size4: generateFontSizings(typeScale.step4),
+	size5: generateFontSizings(typeScale.step5),
+	size6: generateFontSizings(typeScale.step6),
+	size7: generateFontSizings(typeScale.step7),
+	size8: generateFontSizings(typeScale.step8),
 };

@@ -63,6 +63,8 @@ export const StylesReset = createGlobalStyle`
 
 	a {
 		background-color: transparent;
+		color: unset;
+    	text-decoration: none;
 	}
 
 	/* Embedded content

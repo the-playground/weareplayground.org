@@ -50,6 +50,9 @@ const StyleguidePage = () => (
 		<GrungeHeading size="m" tag="h2">
 			Medium Grunge Heading
 		</GrungeHeading>
+		<GrungeHeading size="l" tag="h2">
+			Extra Large Grunge Heading
+		</GrungeHeading>
 
 		{/* Grunge Heading */}
 	</Layout>
