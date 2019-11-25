@@ -17,7 +17,6 @@ module.exports = {
 				path: path.join(__dirname, `static`, `images`),
 			},
 		},
-
 		/**
 		 * @link
 		 * @since 1.0.0
@@ -69,7 +68,7 @@ module.exports = {
 			resolve: 'gatsby-source-prismic-graphql',
 			options: {
 				repositoryName: 'theplayground', // (required)
-				accessToken: process.env.PRISMIC_API_TOKEN, // (optional)
+				accessToken: process.env.PRISMIC_API_KEY, // (optional)
 				previews: false, // (optional, default: false)
 				pages: [
 					{
@@ -79,6 +78,7 @@ module.exports = {
 						component: require.resolve('./src/templates/show.js'),
 					},
 				],
+				omitPrismicScript: true,
 			},
 		},
 
