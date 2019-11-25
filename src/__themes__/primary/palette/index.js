@@ -6,14 +6,25 @@
  *
  * @since 1.0.0
  */
-export const primary = {
-	base: '#5DA460',
+
+const palette = {
+	ghostlight: '#FFFFFF',
+
+	blackout: {
+		light1: '#034F38',
+		light: '#023627',
+		base: '#011C14',
+	},
+	greenroom: {
+		light1: '#038C64',
+		light: '#037352',
+		base: '#025940',
+	},
+	spikeTape: {
+		light1: '#0FB37D',
+		light: '#0D9B6C',
+		base: '#0B845C',
+	},
 };
 
-export const secondary = {};
-
-export const tertiary = {};
-
-export const black = '#000000';
-
-export const white = '#FFFFFF';
+export default palette;

@@ -1,25 +1,15 @@
-import { primary, secondary, tertiary, black, white } from './palette';
-import { buttons, inputs, logo, typography } from './ui';
+import palette from './palette';
+import { backgrounds, buttons, inputs, logo, typography } from './ui';
 
 export const theme = {
 	palette: {
-		primary: {
-			...primary,
-		},
-
-		secondary: {
-			...secondary,
-		},
-
-		tertiary: {
-			...tertiary,
-		},
-
-		black,
-		white,
+		...palette,
 	},
 
 	ui: {
+		backgrounds: {
+			...backgrounds,
+		},
 		buttons: {
 			...buttons,
 		},
