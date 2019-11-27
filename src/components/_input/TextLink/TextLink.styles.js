@@ -2,11 +2,17 @@ import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
 import { typography } from '../../../__tokens__';
 
-export const buttonSizes = {
+export const textLinkSizes = {
 	m: typography.bodyBold.Medium,
 	s: typography.bodyBold.Small,
 };
 
-export const buttonThemes = {};
+export const textLinkColors = {};
 
-export const Button = styled(Link)``;
+export const TextLink = styled(Link)`
+	${props =>
+		props.activeStyle &&
+		css`
+			color: red;
+		`}
+`;
