@@ -8,22 +8,40 @@
  */
 
 const palette = {
+	// White
 	ghostlight: '#FFFFFF',
 
+	// Very dark Jungle Green + black
 	blackout: {
-		light1: '#034F38',
 		light: '#023627',
 		base: '#011C14',
+		dark: '#000000',
 	},
+
+	// Green
 	greenroom: {
-		light1: '#038C64',
-		light: '#037352',
 		base: '#025940',
 	},
+
+	// Medium-Light Green
 	spikeTape: {
 		light1: '#0FB37D',
 		light: '#0D9B6C',
 		base: '#0B845C',
+	},
+
+	// A sensible and admittedly beautiful grayscale palette
+	grayscale: {
+		light5: '#F6F8FA',
+		light4: '#E1E4E8',
+		light3: '#D1D5DA',
+		light2: '#959DA5',
+		light1: '#6A737D',
+		light: '#586069',
+		base: '#444D56',
+		dark1: '#2F363D',
+		dark2: '#24292E',
+		dark3: '#161A1D',
 	},
 };
 
