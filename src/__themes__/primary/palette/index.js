@@ -13,17 +13,17 @@ const palette = {
 
 	// Very dark Jungle Green + black
 	blackout: {
-		light: '#023627',
 		base: '#011C14',
 		dark: '#000000',
 	},
 
-	// Green
+	// Medium Green (darker)
 	greenroom: {
 		base: '#025940',
+		dark: '#023627',
 	},
 
-	// Medium-Light Green
+	// Medium Green (lighter)
 	spikeTape: {
 		light1: '#0FB37D',
 		light: '#0D9B6C',
