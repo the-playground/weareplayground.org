@@ -33,6 +33,7 @@ exports.onRenderBody = ({ setHeadComponents }) => {
 			crossOrigin="anonymous"
 		/>,
 		<link rel="preload" href="/fonts/stage-1/Veneer-all--stage1.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />,
+
 		// Snipcart v3
 		<link rel="stylesheet" id="snipcart-css" href="https://cdn.snipcart.com/themes/v3.0.2/default/snipcart.css" type="text/css" />,
 	]);

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Layout } from '../components/Layout';
+import { Layout } from '../components/_structure';
 
 import { BodyText, BodyBold, BodyTitle, Heading, GrungeHeading } from '../components/_foundations/typography';
+import { TextLink, Button } from '../components/_input';
 
 const StyleguidePage = () => (
 	<Layout noHeader noFooter>
@@ -36,6 +37,7 @@ const StyleguidePage = () => (
 			Extra Large Standard Heading
 		</Heading>
 
+		{/* Grunge Heading */}
 		<GrungeHeading size="s" tag="h1">
 			Small Grunge Heading
 		</GrungeHeading>
@@ -46,7 +48,9 @@ const StyleguidePage = () => (
 			Extra Large Grunge Heading
 		</GrungeHeading>
 
-		{/* Grunge Heading */}
+		<Button isInteraction>
+			<BodyBold size="m">Check out the show</BodyBold>
+		</Button>
 	</Layout>
 );
 
