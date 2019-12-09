@@ -13,7 +13,7 @@ Everything in here serves as a holding place for important technical information
 
 ## 🏗️ Built With
 
-Frontend » [React](https://reactjs.org/) + [Gatsby](https://www.gatsbyjs.org/)\ + [Graphql](https://graphql.org/)
+Frontend » [React](https://reactjs.org/) + [Gatsby](https://www.gatsbyjs.org/) + [Graphql](https://graphql.org/)\
 Design Framework » [Custom-built design system](https://www.figma.com/) w/ [Styled Components](https://www.styled-components.com/)\
 Backend » [Netlify Serverless Functions](https://docs.netlify.com/functions/overview/) w/ [Node.js](https://nodejs.org/en/)\
 Headless CMS » [Prismic](https://prismic.io/)\
