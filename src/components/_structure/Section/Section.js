@@ -1,18 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import { SectionContainer } from './Container';
 import * as Styled from './Section.styles';
 
-const Section = ({ children, useContainer, slant, texture, ...others }) => {
-	if (useContainer) {
+// Considerations for container, background-color, background-image, overlays, textures, slants, parallax?
+
+const Section = ({ children, container, slant, ...others }) => {
+	if (container) {
 		return (
-			<Styled.Section useContainer slant texture {...others}>
+			<Styled.Section container={container} slant={slant} {...others}>
 				{children}
 			</Styled.Section>
 		);
 	}
 
 	return (
-		<Styled.Section useContainer slant texture {...others}>
+		<Styled.Section container={container} slant={slant} {...others}>
 			{children}
 		</Styled.Section>
 	);
@@ -20,11 +24,11 @@ const Section = ({ children, useContainer, slant, texture, ...others }) => {
 
 Section.propTypes = {
 	children: PropTypes.node.isRequired,
-	useContainer: PropTypes.bool,
+	container: PropTypes.bool,
 };
 
 Section.defaultProps = {
-	useContainer: false,
+	container: false,
 };
 
 export default Section;
