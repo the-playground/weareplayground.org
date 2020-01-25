@@ -60,14 +60,17 @@ const typography = {
 		Large: css`
 			${fonts.bodyBold};
 			${fontSizes.size2};
+			text-transform: uppercase;
 		`,
 		Medium: css`
 			${fonts.bodyBold};
 			${fontSizes.size1};
+			text-transform: uppercase;
 		`,
 		Small: css`
 			${fonts.bodyBold};
 			${fontSizes.size0};
+			text-transform: uppercase;
 		`,
 	},
 
