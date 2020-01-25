@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { SEOPageMeta } from '../components/SEO';
 import { getSlice } from '../__utility__/prismic';
-import { Layout } from '../components/Layout';
+import { Layout } from '../components/_structure';
 
 const ShowLanding = ({ data, pageContext }) => {
 	const { show } = data.prismic;
