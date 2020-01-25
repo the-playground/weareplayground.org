@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from '../components/_structure';
+import { Layout } from '../components/Layout';
 
 import { BodyText, BodyBold, BodyTitle, Heading, GrungeHeading } from '../components/_foundations/typography';
 import { TextLink, Button } from '../components/_input';

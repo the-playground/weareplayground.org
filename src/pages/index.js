@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
-import { Layout } from '../components/_structure';
+import { Layout } from '../components/Layout';
 import { SEOPageMeta } from '../components/SEO';
 import { getSlice } from '../__utility__/prismic';
 
