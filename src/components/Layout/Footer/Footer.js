@@ -1,9 +1,20 @@
-import React from 'react'
+import React from 'react';
+<<<<<<< Updated upstream
+import { Copyright } from './Copyright';
 
 const Footer = () => (
 	<footer>
-		Footer
+		<Copyright />
 	</footer>
-)
+=======
+import * as Styled from './Footer.styles';
+import { Copyright } from './Copyright';
 
-export default Footer
+const Footer = () => (
+	<Styled.Footer>
+		<Copyright />
+	</Styled.Footer>
+>>>>>>> Stashed changes
+);
+
+export default Footer;

@@ -5,6 +5,7 @@ const defaultValues = {
 	globalNotice: {},
 	hasGlobalNotice: false,
 	isCartOpen: false,
+	isModalOpen: false,
 	isMobileNavOpen: false,
 	isDesktopDropdownOpen: false,
 	isAuditionActive: false,
