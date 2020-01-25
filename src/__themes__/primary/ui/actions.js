@@ -2,7 +2,6 @@ import palette from '../palette';
 
 const actions = {
 	primary: {
-		// Primary
 		background: palette.ghostlight,
 		backgroundHover: palette.grayscale.light5,
 		text: palette.blackout.base,
@@ -19,7 +18,6 @@ const actions = {
 	},
 
 	tertiary: {
-		// Tertiary
 		background: palette.spikeTape.base,
 		backgroundHover: palette.spikeTape.light,
 		text: palette.ghostlight,
