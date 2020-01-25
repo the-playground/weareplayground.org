@@ -1,4 +1,4 @@
-import { isSSR } from '../../../../__utility__/ssr';
+import { isSSR } from '../../../__utility__/ssr';
 
 /**
  * Load our Stage 2 fonts. These are more fully featured and robust than stage 1.
