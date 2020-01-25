@@ -9,12 +9,17 @@ import { isPageLink } from '../../../__utility__/links';
  *
  * @since 1.0.0
  */
-const Button = ({ children, to, type, size, theme, iconLeft, iconRight, isInteraction, ...others }) => {
-	if (isInteraction) {
+
+const Button = ({ children, to, type, size, variant, iconLeft, iconRight, ...others }) => {
+	/**
+	 * If the button is purely for UI interaction, it should not be created as as a link with an "a" tag,
+	 * but as a simple raw button with the correct props.
+	 */
+	if (!to) {
 		return (
-			<Styled.Button as="button" {...others}>
+			<Styled.Button as="button" size={size} variant={variant} type={type} {...others}>
 				{iconLeft || ''}
-				{children}
+				<span className="inner-text">{children}</span>
 				{iconRight || ''}
 			</Styled.Button>
 		);
@@ -26,18 +31,18 @@ const Button = ({ children, to, type, size, theme, iconLeft, iconRight, isIntera
 	 */
 	if (!isPageLink(to)) {
 		return (
-			<Styled.Button as="a" href={to} {...others} rel="noopener" target="_blank">
+			<Styled.Button as="a" href={to} size={size} variant={variant} type={type} {...others} rel="noopener noreferrer" target="_blank">
 				{iconLeft || ''}
-				{children}
+				<span className="inner-text">{children}</span>
 				{iconRight || ''}
 			</Styled.Button>
 		);
 	}
 
 	return (
-		<Styled.Button to={to} type={type} theme={theme} {...others}>
+		<Styled.Button to={to} size={size} variant={variant} type={type} {...others}>
 			{iconLeft || ''}
-			{children}
+			<span className="inner-text">{children}</span>
 			{iconRight || ''}
 		</Styled.Button>
 	);
@@ -45,25 +50,27 @@ const Button = ({ children, to, type, size, theme, iconLeft, iconRight, isIntera
 
 const buttonSizes = ['s', 'm', 'l'];
 
-const buttonTypes = ['standard', 'text'];
+const buttonTypes = ['standard'];
+
+const buttonVariants = ['primary', 'secondary', 'tertiary'];
+
+const buttonWidths = ['auto', 'full'];
 
 Button.propTypes = {
 	children: PropTypes.node.isRequired,
 	to: PropTypes.string,
 	type: PropTypes.oneOf(buttonTypes),
-	theme: PropTypes.string,
+	variant: PropTypes.oneOf(buttonVariants),
 	others: PropTypes.any,
 	iconLeft: PropTypes.elementType,
 	iconRight: PropTypes.elementType,
-	isInteraction: PropTypes.bool,
-	sizes: PropTypes.oneOf(buttonSizes),
+	size: PropTypes.oneOf(buttonSizes),
 };
 
 Button.defaultProps = {
 	type: 'standard',
-	theme: 'green',
-	to: '/',
-	sizes: 'm',
+	variant: 'primary',
+	size: 'm',
 };
 
 export default Button;

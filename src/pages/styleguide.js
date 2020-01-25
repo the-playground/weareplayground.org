@@ -48,8 +48,23 @@ const StyleguidePage = () => (
 			Extra Large Grunge Heading
 		</GrungeHeading>
 
-		<Button isInteraction>
-			<BodyBold size="m">Check out the show</BodyBold>
+		<div style={{ background: 'black', padding: '24px', marginBottom: '48px' }}>
+			<Button variant="primary">Check out the show</Button>
+			<Button variant="primary" size="s">
+				Check out the show
+			</Button>
+			<Button variant="tertiary">Check out the show</Button>
+			<Button variant="tertiary" size="s">
+				Check out the show
+			</Button>
+		</div>
+		<Button variant="secondary">Check out the show</Button>
+		<Button variant="secondary" size="s">
+			Check out the show
+		</Button>
+		<Button variant="tertiary">Check out the show</Button>
+		<Button variant="tertiary" size="s">
+			Check out the show
 		</Button>
 	</Layout>
 );
