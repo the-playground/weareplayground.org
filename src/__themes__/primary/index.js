@@ -1,5 +1,5 @@
 import palette from './palette';
-import { backgrounds, buttons, inputs, logo, typography } from './ui';
+import { actions, backgrounds, elevation, inputs, logo, typography } from './ui';
 
 export const theme = {
 	palette: {
@@ -7,11 +7,14 @@ export const theme = {
 	},
 
 	ui: {
+		actions: {
+			...actions,
+		},
 		backgrounds: {
 			...backgrounds,
 		},
-		buttons: {
-			...buttons,
+		elevation: {
+			...elevation,
 		},
 		inputs: {
 			...inputs,

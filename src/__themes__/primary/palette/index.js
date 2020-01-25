@@ -17,6 +17,20 @@ const palette = {
 		dark: '#000000',
 	},
 
+	// A sensible and admittedly beautiful grayscale palette
+	grayscale: {
+		light5: '#F6F8FA',
+		light4: '#E1E4E8',
+		light3: '#D1D5DA',
+		light2: '#959DA5',
+		light1: '#6A737D',
+		light: '#586069',
+		base: '#444D56', // Backstage -- our branded gray
+		dark1: '#2F363D',
+		dark2: '#24292E',
+		dark3: '#161A1D',
+	},
+
 	// Medium Green (darker)
 	greenroom: {
 		base: '#025940',
@@ -30,18 +44,11 @@ const palette = {
 		base: '#0B845C',
 	},
 
-	// A sensible and admittedly beautiful grayscale palette
-	grayscale: {
-		light5: '#F6F8FA',
-		light4: '#E1E4E8',
-		light3: '#D1D5DA',
-		light2: '#959DA5',
-		light1: '#6A737D',
-		light: '#586069',
-		base: '#444D56',
-		dark1: '#2F363D',
-		dark2: '#24292E',
-		dark3: '#161A1D',
+	// Red Color
+	stakes: {
+		light: '',
+		base: '#0B845C',
+		dark: '',
 	},
 };
 
