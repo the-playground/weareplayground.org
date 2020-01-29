@@ -10,7 +10,7 @@ const TextLink = ({ children, to, activeClassName, partiallyActive, iconLeft, ic
 	 */
 	if (!isPageLink(to)) {
 		return (
-			<Styled.TextLink as="a" href={to} {...others} rel="noopener" target="_blank">
+			<Styled.TextLink as="a" href={to} {...others} rel="noopener noreferrer" target="_blank">
 				{iconLeft || ''}
 				{children}
 				{iconRight || ''}
