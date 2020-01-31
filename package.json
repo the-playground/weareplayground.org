@@ -21,7 +21,7 @@
 		"gatsby-plugin-styled-components": "^3.1.13",
 		"gatsby-source-filesystem": "^2.1.37",
 		"gatsby-source-prismic-graphql": "^3.4.0-beta.2",
-		"gatsby-transformer-sharp": "^2.3.5",
+		"gatsby-transformer-sharp": "^2.3.13",
 		"graphql": "^14.5.8",
 		"isomorphic-unfetch": "^3.0.0",
 		"mjml": "^4.5.1",
