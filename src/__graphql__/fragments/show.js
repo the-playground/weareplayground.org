@@ -23,7 +23,7 @@ export const expandedShowDataFragment = graphql`
 			}
 		}
 		thumbnail_image
-		featured_image
+		feed_image
 		hero_image
 		short_description
 		long_description
@@ -48,9 +48,9 @@ export const expandedShowDataFragment = graphql`
 				street
 				state
 				zip
-				geo_point
 				city
 				parking_info
+				notes
 			}
 		}
 		artists {
@@ -121,25 +121,16 @@ export const AllShowsFragment = graphql`
 						title
 						author
 						thumbnail_image
-						featured_image
+						feed_image
 
 						location {
 							... on PRISMIC_Location {
 								name
-								street
-								city
-								state
-								zip
-								geo_point
 							}
 						}
 
 						performances {
 							datetime
-							preview
-							price
-							pwyw
-							talkback
 						}
 					}
 				}

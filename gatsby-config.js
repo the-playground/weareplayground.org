@@ -132,5 +132,12 @@ module.exports = {
 				},
 			},
 		},
+		/**
+		 * Allows new optional chaining!!!s
+		 *
+		 * @link https://www.gatsbyjs.org/packages/@bumped-inc/gatsby-plugin-optional-chaining/
+		 * @since 1.0.0
+		 */
+		'@bumped-inc/gatsby-plugin-optional-chaining',
 	],
 };
