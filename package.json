@@ -40,7 +40,7 @@
 		"@storybook/react": "^5.2.8",
 		"babel-eslint": "^10.0.3",
 		"babel-loader": "^8.0.6",
-		"babel-plugin-styled-components": "^1.10.6",
+		"babel-plugin-styled-components": "^1.10.7",
 		"eslint": "^6.7.2",
 		"eslint-config-airbnb": "^18.0.1",
 		"eslint-config-prettier": "^6.5.0",
