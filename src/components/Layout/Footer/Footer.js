@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import * as Styled from './Footer.styles';
+import { Copyright } from './Copyright';
 
 const Footer = () => (
-	<footer>
-		Footer
-	</footer>
-)
+	<Styled.Footer>
+		<Copyright />
+	</Styled.Footer>
+);
 
-export default Footer
+export default Footer;

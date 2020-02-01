@@ -7,7 +7,6 @@ import { Footer } from './Footer';
 import { SEOGlobalMeta } from '../SEO';
 import { StylesReset, StylesGlobal } from './Styles';
 import { loadStage2Fonts } from './Scripts/stage2Fonts';
-import { Cart } from '../Cart';
 
 const Layout = ({ children, noHeader, noFooter }) => (
 	<>
@@ -21,13 +20,11 @@ const Layout = ({ children, noHeader, noFooter }) => (
 		{noHeader ? '' : <Header />}
 		<main>{children}</main>
 		{noFooter ? '' : <Footer />}
-
-		<Cart />
 	</>
 );
 
 Layout.propTypes = {
-	children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+	children: PropTypes.node,
 	noHeader: PropTypes.bool,
 	noFooter: PropTypes.bool,
 };

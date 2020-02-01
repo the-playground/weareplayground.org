@@ -16,6 +16,5 @@ export const bodyTitleSizes = {
 
 export const BodyTitle = styled.p`
 	${props => bodyTitleSizes[props.size]};
-	text-transform: uppercase;
 `;
 /* color: ${props => commonTextColors[props.color]}; */
