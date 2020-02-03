@@ -23,7 +23,13 @@ export const expandedShowDataFragment = graphql`
 			}
 		}
 		thumbnail_image
-		feed_image
+		feed_imageSharp {
+			childImageSharp {
+				fluid(maxWidth: 1200, quality: 100) {
+					...GatsbyImageSharpFluid
+				}
+			}
+		}
 		hero_image
 		short_description
 		long_description
@@ -121,7 +127,13 @@ export const AllShowsFragment = graphql`
 						title
 						author
 						thumbnail_image
-						feed_image
+						feed_imageSharp {
+							childImageSharp {
+								fluid(maxWidth: 1200, quality: 100) {
+									...GatsbyImageSharpFluid
+								}
+							}
+						}
 
 						location {
 							... on PRISMIC_Location {
