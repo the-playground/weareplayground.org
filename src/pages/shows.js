@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import { Layout } from '../components/Layout';
-import { SEOPageMeta } from '../components/SEO';
-import { getSlice } from '../__utility__/prismic';
 
 const ShowsPage = ({ data }) => {
 	const shows = data?.prismic?.allShows?.edges;

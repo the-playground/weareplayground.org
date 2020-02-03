@@ -11,11 +11,8 @@ const ShowLanding = ({ data, pageContext }) => {
 
 	if (!show) return <></>;
 
-	const showMeta = getSlice(show.body, 'basic_seo');
-
 	return (
 		<Layout>
-			<SEOPageMeta metadata={showMeta} />
 			{show.title}
 			<button
 				type="button"
