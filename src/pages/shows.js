@@ -1,18 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 
 import { Layout } from '../components/Layout';
+import { ShowFeed } from '../components/ShowFeed';
 
 const ShowsPage = ({ data }) => {
 	const shows = data?.prismic?.allShows?.edges;
 
+	if (!shows) {
+		return <></>;
+	}
+
 	return (
 		<Layout>
-			{shows.map(show => {
-				const showData = show.node;
-			})}
+			<ShowFeed shows={shows} />
 		</Layout>
 	);
 };
