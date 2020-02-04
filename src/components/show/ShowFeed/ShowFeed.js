@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Styled from './ShowFeed.styles';
 
-import { ShowFeedCard } from './ShowFeedCard';
+import { ShowFeedCard } from './ShowFeedCard/ShowFeedCard';
 
 const ShowFeed = shows => (
 	<>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import { Layout } from '../components/Layout';
-import { ShowFeed } from '../components/ShowFeed';
+import { ShowFeed } from '../components/show';
 
 const ShowsPage = ({ data }) => {
 	const shows = data?.prismic?.allShows?.edges;

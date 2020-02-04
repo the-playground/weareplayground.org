@@ -19,4 +19,4 @@ const ShowFeedCard = show => {
 	return <>Show</>;
 };
 
-export default ShowFeedCard;
+export { ShowFeedCard };
