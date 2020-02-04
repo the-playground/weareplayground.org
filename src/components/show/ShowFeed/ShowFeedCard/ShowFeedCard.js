@@ -16,7 +16,11 @@ const ShowFeedCard = show => {
 	// group shows by season
 	// show status (state)
 
-	return <>Show</>;
+	return (
+		<Styled.ShowFeedCard>
+			<Styled.ShowFeedCardInner></Styled.ShowFeedCardInner>
+		</Styled.ShowFeedCard>
+	);
 };
 
 export { ShowFeedCard };
