@@ -1,4 +1,4 @@
-import { subMinutes } from 'date-fns/subMinutes';
+import { subMinutes } from 'date-fns';
 import { Person } from './Person';
 import { Place } from './Place';
 import { CreativeWork } from './CreativeWork';
