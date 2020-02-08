@@ -117,6 +117,9 @@ export const AllShowsFragment = graphql`
 			allShows {
 				edges {
 					node {
+						_meta {
+							uid
+						}
 						title
 						author
 						thumbnail_image
@@ -126,12 +129,6 @@ export const AllShowsFragment = graphql`
 								fluid(maxWidth: 1200, quality: 100) {
 									...GatsbyImageSharpFluid_withWebp
 								}
-							}
-						}
-
-						location {
-							... on PRISMIC_Location {
-								name
 							}
 						}
 
