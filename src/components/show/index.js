@@ -1,1 +1,1 @@
-export { default as ShowFeed } from './ShowFeed/ShowFeed';
+export { default as ShowsFeed } from './ShowsFeed/ShowsFeed';

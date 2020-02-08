@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import * as Styled from './ShowFeed.styles';
+import * as Styled from './ShowsFeed.styles';
 
 import { ShowFeedCard } from './ShowFeedCard/ShowFeedCard';
 
-const ShowFeed = ({ shows }) => (
-	<Styled.ShowFeed>
+const ShowsFeed = ({ shows }) => (
+	<Styled.ShowsFeed>
 		{shows.map((show, index) => (
-			<ShowFeedCard key={index} show={show.node} />
+			<ShowFeedCard key={show.node.title} show={show.node} />
 		))}
-	</Styled.ShowFeed>
+	</Styled.ShowsFeed>
 );
 
 /**
@@ -19,8 +19,8 @@ const ShowFeed = ({ shows }) => (
  * ----------
  */
 
-ShowFeed.propTypes = {
+ShowsFeed.propTypes = {
 	shows: PropTypes.object.isRequired,
 };
 
-export default ShowFeed;
+export default ShowsFeed;
