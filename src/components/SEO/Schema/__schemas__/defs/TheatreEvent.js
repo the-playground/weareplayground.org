@@ -1,32 +1,29 @@
-import moment from 'moment'
-import {Person} from './Person'
-import {Place} from './Place'
-import {CreativeWork} from './CreativeWork'
-import {Offer} from './Offer'
-import {Organization} from './Organization'
+import { subMinutes } from 'date-fns/subMinutes';
+import { Person } from './Person';
+import { Place } from './Place';
+import { CreativeWork } from './CreativeWork';
+import { Offer } from './Offer';
+import { Organization } from './Organization';
 
 /**
  * {@link https://schema.org/TheaterEvent}
  */
 
-const performers = () => {
+const performers = () => {};
 
-}
-
-const houseOpens = ( startTime ) => {
-	return moment( startTime ).subtract( 30, 'minutes' ).format()
-}
+const houseOpens = startTime => subMinutes(startTime, 30);
+// old moment js format return moment( startTime ).subtract( 30, 'minutes' ).format()
 
 /**
  *
  * @param {*} events
  * @param {*} location
  */
-const multipleEvents = ( main, events, location, creativeWork ) => `
+const multipleEvents = (main, events, location, creativeWork) => `
 
 `;
 
-const TheatreEvent = ( main, location, offers, creativeWork ) => `{
+const TheatreEvent = (main, location, offers, creativeWork) => `{
 
 	"@context" : "http://schema.org",
 	"@type"	: "TheatreEvent",
