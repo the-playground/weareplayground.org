@@ -7,6 +7,7 @@
 // global imports
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { ConfigProvider } from './src/__context__/ConfigContext';
 import { SiteProvider } from './src/__context__/SiteContext';
 import { ShowProvider } from './src/__context__/ShowContext';
 
@@ -17,9 +18,11 @@ import themes from './src/__themes__';
 // eslint-disable-next-line
 export const wrapRootElement = ({ element }) => (
 	<SiteProvider>
-		<ShowProvider>
-			<ThemeProvider theme={themes.primary}>{element}</ThemeProvider>
-		</ShowProvider>
+		<ConfigProvider>
+			<ShowProvider>
+				<ThemeProvider theme={themes.primary}>{element}</ThemeProvider>
+			</ShowProvider>
+		</ConfigProvider>
 	</SiteProvider>
 );
 
