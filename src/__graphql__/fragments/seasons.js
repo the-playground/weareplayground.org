@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 /**
- * Get all seasons.
+ * Get data specific to the seasons page
  * Source » Prismic
  *
  * @since 1.0.0
@@ -29,7 +29,7 @@ export const SeasonsPageFragment = graphql`
 `;
 
 /**
- * Get all seasons.
+ * Get all seasons sorted by year (most recent to least)
  * Source » Prismic
  *
  * @since 1.0.0

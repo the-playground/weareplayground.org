@@ -7,9 +7,11 @@ import { Layout } from '../components/Layout';
 
 const SeasonLanding = ({ data, pageContext }) => {
 	const { season } = data.prismic;
-	const { uid } = pageContext;
-	console.log(pageContext);
+	const { uid, allSeasonsURL } = pageContext;
+
 	if (!season) return <></>;
+
+	console.log(season);
 
 	return <Layout>{season.title}</Layout>;
 };
@@ -19,6 +21,27 @@ export const query = graphql`
 		prismic {
 			season(lang: "en-us", uid: $uid) {
 				title
+				tagline
+				description
+				hero_image
+				body {
+					... on PRISMIC_SeasonBodyBasic_seo {
+						type
+						primary {
+							meta_description
+							meta_image
+							meta_title
+							twitter_card_image
+						}
+					}
+				}
+				shows {
+					show {
+						... on PRISMIC_Show {
+							...ShowCatalogDataFragment
+						}
+					}
+				}
 			}
 		}
 	}
@@ -43,6 +66,7 @@ SeasonLanding.propTypes = {
 	}).isRequired,
 	pageContext: PropTypes.shape({
 		uid: PropTypes.string.isRequired,
+		allSeasonsURL: PropTypes.string.isRequired,
 	}),
 };
 
