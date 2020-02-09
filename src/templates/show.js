@@ -1,31 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { SEOPageMeta } from '../components/SEO';
+import { SEOPageMeta, SEOStructuredDataGraph } from '../components/SEO';
 import { getSlice } from '../__utility__/prismic';
 import { Layout } from '../components/Layout';
 
 const ShowLanding = ({ data, pageContext }) => {
 	const { show } = data.prismic;
 	const { uid, seasonUID, seasonURL } = pageContext;
-	console.log(pageContext);
+
+	const showMeta = getSlice(show.body, 'basic_seo');
 
 	if (!show) return <></>;
 
 	return (
 		<Layout>
+			<SEOPageMeta metadata={showMeta} />
+			<SEOStructuredDataGraph schemas={{}} />
 			{show.title}
-			<button
-				type="button"
-				className="snipcart-add-item"
-				data-item-id={uid}
-				data-item-price="20.00"
-				data-item-url="https://weareplayground.org/shows/the-breakfast-club"
-				data-item-description="The Breakfast Club Presented by The Playground"
-				data-item-name={show.title}
-			>
-				Purchase Tickets
-			</button>
 		</Layout>
 	);
 };

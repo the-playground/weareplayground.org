@@ -6,12 +6,21 @@ import Helmet from 'react-helmet';
 // `schemas` should be an array of objects
 
 const SEOStructuredDataGraph = schemas => {
+	// Return nothing if the schemas object is empty
+	if (Object.keys(schemas).length === 0) {
+		return <>''</>;
+	}
+
 	const dataGraph = `{
 		"@context": "https://schema.org/",
 		"@graph": ${schemas}
 	}`;
 
-	return <Helmet>{schemas ? <script type="application/ld+json">{dataGraph}</script> : ''}</Helmet>;
+	return (
+		<Helmet>
+			<script type="application/ld+json">{dataGraph}</script>
+		</Helmet>
+	);
 };
 
 export default SEOStructuredDataGraph;

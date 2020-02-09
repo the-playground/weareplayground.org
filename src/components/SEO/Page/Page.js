@@ -32,7 +32,7 @@ const SEOPage = ({ metadata, robots }) => {
 	const imageHeight = image.dimensions.height ? image.dimensions.height : '';
 	const imageURL = image.url ? image.url : '';
 
-	const twitterImageURL = metadata.twitter_card_image ? metadata.twitter_card_image.url : imageURL;
+	const twitterImageURL = metadata.twitter_card_image ? metadata.twitter_card_image.url : imageURL; // eslint-disable-line
 
 	return (
 		<Helmet>
