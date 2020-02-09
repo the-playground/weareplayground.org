@@ -6,6 +6,7 @@ const defaultValues = {
 	currentShow: {},
 	nextShow: {},
 	currentSeason: {},
+	nextSeason: {},
 };
 
 export const ShowContext = createContext(defaultValues);
