@@ -26,30 +26,3 @@ export const HomePageDataFragment = graphql`
 		}
 	}
 `;
-
-/**
- * Query shows-page specific data
- * Source » Prismic
- *
- * @since 1.0.0
- */
-export const ShowsPageDataFragment = graphql`
-	fragment ShowsPageDataFragment on Query {
-		prismic {
-			shows_page(lang: "en-us", uid: "shows") {
-				title
-				body {
-					... on PRISMIC_Shows_pageBodyBasic_seo {
-						type
-						primary {
-							meta_description
-							meta_image
-							meta_title
-							twitter_card_image
-						}
-					}
-				}
-			}
-		}
-	}
-`;
