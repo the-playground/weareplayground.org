@@ -8,6 +8,7 @@ import { Layout } from '../components/Layout';
 const ShowLanding = ({ data, pageContext }) => {
 	const { show } = data.prismic;
 	const { uid } = pageContext;
+	console.log(pageContext);
 
 	if (!show) return <></>;
 

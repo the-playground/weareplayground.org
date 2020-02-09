@@ -70,14 +70,15 @@ module.exports = {
 				repositoryName: 'theplayground', // (required)
 				accessToken: process.env.PRISMIC_API_KEY, // (optional)
 				previews: false, // (optional, default: false)
-				pages: [
-					{
-						type: 'Show', // TypeName from prismic
-						match: '/shows/:uid', // Pages will be generated under this pattern (optional)
-						path: '/show', // Placeholder page for unpublished documents
-						component: require.resolve('./src/templates/show.js'),
-					},
-				],
+				// Do not use. We build pages manually in gatsby-node.js
+				// pages: [
+				// 	{
+				// 		type: 'Show', // TypeName from prismic
+				// 		match: '/shows/:uid', // Pages will be generated under this pattern (optional)
+				// 		path: '/show', // Placeholder page for unpublished documents
+				// 		component: require.resolve('./src/templates/show.js'),
+				// 	},
+				// ],
 				omitPrismicScript: true,
 			},
 		},

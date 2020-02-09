@@ -5,6 +5,8 @@ import * as Styled from './ShowsFeed.styles';
 
 import { ShowFeedCard } from './ShowFeedCard/ShowFeedCard';
 
+// Sort shows by season.
+
 const ShowsFeed = ({ shows }) => (
 	<Styled.ShowsFeed>
 		{shows.map(show => (
