@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useConfigContext } from '../../../__hooks__/useContext';
 
 /**
  *
@@ -19,12 +19,7 @@ const SEOGlobal = () => {
 	/**
 	 * Query for all the metadata our site needs to use for every page.
 	 */
-	const data = useStaticQuery(graphql`
-		query GlobalMetaQuery {
-			...companyConfigFragment
-			...siteConfigFragment
-		}
-	`);
+	const data = useConfigContext();
 
 	if (!data) return <></>;
 
