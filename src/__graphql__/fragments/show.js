@@ -1,4 +1,3 @@
-import React from 'react';
 import { graphql } from 'gatsby';
 
 /**
@@ -8,8 +7,8 @@ import { graphql } from 'gatsby';
  * @since 1.0.0
  */
 
-export const expandedShowDataFragment = graphql`
-	fragment expandedShowDataFragment on PRISMIC_Show {
+export const FullShowDataFragment = graphql`
+	fragment FullShowDataFragment on PRISMIC_Show {
 		title
 		author
 		author_link {
@@ -23,7 +22,6 @@ export const expandedShowDataFragment = graphql`
 			}
 		}
 		thumbnail_image
-		featured_image
 		hero_image
 		short_description
 		long_description
@@ -48,9 +46,9 @@ export const expandedShowDataFragment = graphql`
 				street
 				state
 				zip
-				geo_point
 				city
 				parking_info
+				notes
 			}
 		}
 		artists {
@@ -107,43 +105,28 @@ export const expandedShowDataFragment = graphql`
 `;
 
 /**
- * Get information about ALL Playground shows.
+ *
  * Source » Prismic
  *
  * @since 1.0.0
  */
-export const AllShowsFragment = graphql`
-	fragment AllShowsFragment on Query {
-		prismic {
-			allShows {
-				edges {
-					node {
-						title
-						author
-						thumbnail_image
-						featured_image
-
-						location {
-							... on PRISMIC_Location {
-								name
-								street
-								city
-								state
-								zip
-								geo_point
-							}
-						}
-
-						performances {
-							datetime
-							preview
-							price
-							pwyw
-							talkback
-						}
-					}
+export const ShowCatalogDataFragment = graphql`
+	fragment ShowCatalogDataFragment on PRISMIC_Show {
+		_meta {
+			uid
+		}
+		title
+		author
+		catalog_image
+		catalog_imageSharp {
+			childImageSharp {
+				fluid(maxWidth: 1200, quality: 100) {
+					...GatsbyImageSharpFluid_withWebp
 				}
 			}
+		}
+		performances {
+			datetime
 		}
 	}
 `;

@@ -7,15 +7,13 @@ import { Layout } from '../components/Layout';
 
 const ShowLanding = ({ data, pageContext }) => {
 	const { show } = data.prismic;
-	const { uid } = pageContext;
+	const { uid, seasonUID, seasonURL } = pageContext;
+	console.log(pageContext);
 
 	if (!show) return <></>;
 
-	const showMeta = getSlice(show.body, 'basic_seo');
-
 	return (
 		<Layout>
-			<SEOPageMeta metadata={showMeta} />
 			{show.title}
 			<button
 				type="button"
@@ -36,7 +34,7 @@ export const query = graphql`
 	query showData($uid: String!) {
 		prismic {
 			show(lang: "en-us", uid: $uid) {
-				...expandedShowDataFragment
+				...FullShowDataFragment
 			}
 		}
 	}

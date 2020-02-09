@@ -6,7 +6,10 @@
 
 const React = require('react');
 
-exports.onRenderBody = ({ setHeadComponents }) => {
+// Wrap root with all logic to make SSR work
+export { wrapRootElement } from './gatsby-browser';
+
+export const onRenderBody = ({ setHeadComponents }) => {
 	/**
 	 * Load external css SSR
 	 */
