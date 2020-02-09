@@ -22,3 +22,11 @@ export const wrapRootElement = ({ element }) => (
 		</ShowProvider>
 	</SiteProvider>
 );
+
+export const onClientEntry = () => {
+	// IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
+	if (!(`IntersectionObserver` in window)) {
+		import('intersection-observer'); // eslint-disable-line
+		console.log(`# IntersectionObserver is polyfilled!`);
+	}
+};
