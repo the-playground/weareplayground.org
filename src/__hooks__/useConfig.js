@@ -11,5 +11,8 @@ export const useConfig = () => {
 		}
 	`);
 
-	return config;
+	const site = config?.prismic?.siteconfig;
+	const company = config?.prismic?.companyconfig;
+
+	return { site, company };
 };
