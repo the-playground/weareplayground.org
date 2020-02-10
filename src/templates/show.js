@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { SEOPageMeta, SEOStructuredDataGraph } from '../components/SEO';
+import { SEOPageMeta, SEOStructuredDataGraph, SEOSchema } from '../components/SEO';
+import { useConfigContext } from '../__hooks__/useContext';
 import { getSlice } from '../__utility__/prismic';
 import { Layout } from '../components/Layout';
 
@@ -11,12 +12,16 @@ const ShowLanding = ({ data, pageContext }) => {
 
 	const showMeta = getSlice(show.body, 'basic_seo');
 
-	if (!show) return <></>;
+	const config = useConfigContext();
+
+	if (!show || !config) return <></>;
+
+	const schemas = [<SEOSchema type="Organization" data={config.company} />];
 
 	return (
 		<Layout>
 			<SEOPageMeta metadata={showMeta} />
-			<SEOStructuredDataGraph schemas={{}} />
+			<SEOStructuredDataGraph schemas={schemas} />
 			{show.title}
 		</Layout>
 	);

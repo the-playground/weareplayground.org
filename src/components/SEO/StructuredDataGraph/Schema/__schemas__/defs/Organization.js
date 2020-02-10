@@ -1,11 +1,7 @@
-import {Person} from './Person';
-
 // Turn an array of founders into an array of Person objects with data
-const founders = ( people ) => {
+const founders = people => {};
 
-}
-
-const Organization = ( props ) => `{
+const Organization = ({ props }) => `{
 
 	"@context" : "http://schema.org",
 	"@type"	: "Organization",
@@ -13,9 +9,9 @@ const Organization = ( props ) => `{
 	"name": "${props.name}",
 	"email": "${props.email}",
 	"url" : "${props.url}",
-	"logo": "${props.logo.url}",
-	"legalName": "${props.legal.name}",
-	"foundingDate": "${props.legal.foundingDate}",
+	"logo": "${props.logo?.url}",
+	"legalName": "${props.legal?.name}",
+	"foundingDate": "${props.legal?.foundingDate}",
 	"founders": [
 		{
 			"@type": "Person",
@@ -32,9 +28,9 @@ const Organization = ( props ) => `{
 	],
 	"address": {
 		"@type": "PostalAddress",
-		"addressLocality": "${props.address.city}",
-		"addressRegion": "${props.address.state}",
-    	"postalCode": "${props.address.zip}"
+		"addressLocality": "${props.address?.city}",
+		"addressRegion": "${props.address?.state}",
+    	"postalCode": "${props.address?.zip}"
 	},
 	"contactPoint" : [{
 		"@type" : "ContactPoint",
@@ -44,10 +40,10 @@ const Organization = ( props ) => `{
 		"availableLanguage" : "English",
 	}],
 	sameAs: [
-		"${props.social.facebook}",
-		"${props.social.instagram}",
-		"${props.social.spotify}",
-		"${props.social.youtube}"
+		"${props.social?.facebook}",
+		"${props.social?.instagram}",
+		"${props.social?.spotify}",
+		"${props.social?.youtube}"
 	]
 
 }`;

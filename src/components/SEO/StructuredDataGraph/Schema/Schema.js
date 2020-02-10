@@ -14,7 +14,7 @@ import * as schemas from './__schemas__';
  * @param data
  */
 
-const SEOSchema = (type, data) => {
+const SEOSchema = ({ type, data }) => {
 	// Throw an error and bail if the requested type does not exists
 	if (schemas[type] === null) {
 		return console.log(`A matching schema could not be found for requested type: ${type}.`);

@@ -19,12 +19,9 @@ const SEOGlobal = () => {
 	/**
 	 * Query for all the metadata our site needs to use for every page.
 	 */
-	const data = useConfigContext();
+	const { site, company } = useConfigContext();
 
-	if (!data) return <></>;
-
-	const company = data.prismic.companyconfig;
-	const site = data.prismic.siteconfig;
+	if (!site || !company) return <></>;
 
 	const facebookAppID = company.facebook_app_id ? company.facebook_app_id : null;
 	const googleVerification = site.verification_google ? site.verification_google : null;
