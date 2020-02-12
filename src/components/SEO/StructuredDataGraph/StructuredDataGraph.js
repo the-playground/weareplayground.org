@@ -21,7 +21,7 @@ const SEOStructuredDataGraph = ({ schemas }) => {
 		<Helmet>
 			<script type="application/ld+json">{`{
 					"@context": "https://schema.org/",
-					"@graph": ${schemas.map(schema => <SEOSchema type={schema.type} data={schema.data})} />
+					"@graph": ${schemas.map(schema => <SEOSchema type={schema.type} data={schema.data} />)}
 				}`}</script>
 		</Helmet>
 	);
