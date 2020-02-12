@@ -45,7 +45,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 	 */
 	console.log(`🙏🏼 Begin creating dynamic season and show pages from Prismic...`);
 
-	const seasonTemplate = require.resolve(`./src/templates/season.js`);
+	const seasonTemplate = require.resolve(`./src/templates/season.tsx`);
 	const showTemplate = require.resolve(`./src/templates/show.js`);
 	const URLBase = 'seasons';
 

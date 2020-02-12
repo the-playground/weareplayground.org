@@ -1,17 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { graphql, Page } from 'gatsby';
+
+// Import typescript interfaces
+import { SharpImage, ResponsiveImage } from '../__interfaces__/image';
+import { PageMeta } from '../__interfaces__/seo';
+import { ShowCard } from '../__interfaces__/show';
+
+// Import components
 import { SEOPageMeta } from '../components/SEO';
 import { getSlice } from '../__utility__/prismic';
 import { Layout } from '../components/Layout';
 
-const SeasonLanding = ({ data, pageContext }) => {
+
+const SeasonLanding: React.FC<SeasonTemplate> = ({ data, pageContext }) => {
+
 	const { season } = data.prismic;
 	const { uid, allSeasonsURL } = pageContext;
 
 	if (!season) return <></>;
-
-	console.log(season);
 
 	return <Layout>{season.title}</Layout>;
 };
@@ -24,6 +30,13 @@ export const query = graphql`
 				tagline
 				description
 				hero_image
+				hero_imageSharp {
+					childImageSharp {
+						fluid(maxWidth: 1920, quality: 100) {
+							...GatsbyImageSharpFluid_withWebp
+						}
+					}
+				}
 				body {
 					... on PRISMIC_SeasonBodyBasic_seo {
 						type
@@ -53,21 +66,26 @@ export const query = graphql`
  * ----------
  */
 
-const bodyShape = PropTypes.arrayOf(PropTypes.shape({})).isRequired;
+interface SeasonTemplate {
 
-SeasonLanding.propTypes = {
-	data: PropTypes.shape({
-		prismic: PropTypes.shape({
-			season: PropTypes.shape({
-				title: PropTypes.string.isRequired,
-				body: bodyShape,
-			}).isRequired,
-		}).isRequired,
-	}).isRequired,
-	pageContext: PropTypes.shape({
-		uid: PropTypes.string.isRequired,
-		allSeasonsURL: PropTypes.string.isRequired,
-	}),
-};
+	data: {
+		prismic: {
+			season: {
+				title: string;
+				tagline: string;
+				description: string;
+				hero_image: ResponsiveImage;
+				hero_imageSharp: SharpImage;
+				body: PageMeta;
+				shows: ShowCard[];
+			}
+		}
+	}
+
+	pageContext: {
+		uid: string;
+		allSeasonsURL: string;
+	}
+}
 
 export default SeasonLanding;

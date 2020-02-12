@@ -21,8 +21,14 @@ export const FullShowDataFragment = graphql`
 				url
 			}
 		}
-		thumbnail_image
 		hero_image
+		hero_imageSharp {
+			childImageSharp {
+				fluid(maxWidth: 1920, quality: 100) {
+					...GatsbyImageSharpFluid_withWebp
+				}
+			}
+		}
 		short_description
 		long_description
 		tagline
