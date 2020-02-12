@@ -47,6 +47,16 @@ module.exports = {
 		 */
 		`gatsby-plugin-react-helmet`,
 
+		{
+			resolve: `gatsby-plugin-typescript`,
+			options: {
+			//   isTSX: true, // defaults to false
+			//   jsxPragma: `jsx`, // defaults to "React"
+			//   allExtensions: true, // defaults to false
+			},
+		},
+
+
 		/**
 		 * Styled Components support
 		 *
@@ -133,12 +143,5 @@ module.exports = {
 				},
 			},
 		},
-		/**
-		 * Allows new optional chaining!!!s
-		 *
-		 * @link https://www.gatsbyjs.org/packages/@bumped-inc/gatsby-plugin-optional-chaining/
-		 * @since 1.0.0
-		 */
-		'@bumped-inc/gatsby-plugin-optional-chaining',
 	],
 };
