@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { GatsbyImageProps } from 'gatsby-image';
 
 // Import typescript interfaces
 import { Season } from '../__interfaces__/season';
@@ -8,10 +9,8 @@ import { PageMeta } from '../__interfaces__/seo';
 // Import components
 import { Layout } from '../components/Layout';
 import { SeasonCatalog } from '../components/season';
-import { GatsbyImageProps } from 'gatsby-image';
 
 const SeasonsPage: React.FC<SeasonsPageProps> = ({ data }) => {
-
 	const seasons = data?.prismic?.allSeasons?.edges;
 	const pageData = data?.prismic?.seasons_page; // eslint-disable-line
 
@@ -44,10 +43,9 @@ export const query = graphql`
 interface SeasonsPageProps {
 	data: {
 		prismic: {
-
 			allSeasons: {
 				edges: Season[];
-			}
+			};
 
 			seasons_page: {
 				title: string;
@@ -55,12 +53,11 @@ interface SeasonsPageProps {
 				hero_image?: GatsbyImageProps;
 				hero_imageSharp?: {
 					childImageSharp: GatsbyImageProps;
-				}
-				body: PageMeta
-			}
-
-		}
-	}
+				};
+				body: PageMeta;
+			};
+		};
+	};
 }
 
 export default SeasonsPage;
