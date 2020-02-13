@@ -10,7 +10,7 @@ import { SEOPageMeta } from '../components/SEO';
 import { getSlice } from '../__utility__/prismic';
 import { Layout } from '../components/Layout';
 
-const ShowLanding: React.FC<ShowTemplate> = ({ data, pageContext }) => {
+const ShowLanding: React.FC<ShowLandingProps> = ({ data, pageContext }) => {
 	const { show } = data.prismic;
 	const { uid, seasonUID, seasonURL } = pageContext;
 	console.log(pageContext);
@@ -51,19 +51,18 @@ export const query = graphql`
  * ----------
  */
 
-interface ShowTemplate {
-
+interface ShowLandingProps {
 	data: {
 		prismic: {
 			show: Show;
-		}
-	}
+		};
+	};
 
 	pageContext: {
 		uid: string;
 		seasonUID: string;
 		seasonURL: string;
-	}
+	};
 }
 
 export default ShowLanding;
