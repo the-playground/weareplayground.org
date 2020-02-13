@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql, Page } from 'gatsby';
+import { GatsbyImageProps } from 'gatsby-image';
 
 // Import typescript interfaces
-import { SharpImage, ResponsiveImage } from '../__interfaces__/image';
 import { PageMeta } from '../__interfaces__/seo';
 import { ShowCard } from '../__interfaces__/show';
 
@@ -11,9 +11,7 @@ import { SEOPageMeta } from '../components/SEO';
 import { getSlice } from '../__utility__/prismic';
 import { Layout } from '../components/Layout';
 
-
-const SeasonLanding: React.FC<SeasonTemplate> = ({ data, pageContext }) => {
-
+const SeasonLanding: React.FC<SeasonLandingProps> = ({ data, pageContext }) => {
 	const { season } = data.prismic;
 	const { uid, allSeasonsURL } = pageContext;
 
@@ -66,26 +64,27 @@ export const query = graphql`
  * ----------
  */
 
-interface SeasonTemplate {
-
+interface SeasonLandingProps {
 	data: {
 		prismic: {
 			season: {
 				title: string;
 				tagline: string;
 				description: string;
-				hero_image: ResponsiveImage;
-				hero_imageSharp: SharpImage;
+				hero_image: GatsbyImageProps;
+				hero_imageSharp: {
+					childImageSharp: GatsbyImageProps;
+				};
 				body: PageMeta;
 				shows: ShowCard[];
-			}
-		}
-	}
+			};
+		};
+	};
 
 	pageContext: {
 		uid: string;
 		allSeasonsURL: string;
-	}
+	};
 }
 
 export default SeasonLanding;
