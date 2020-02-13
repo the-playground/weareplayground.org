@@ -1,4 +1,4 @@
-import { ResponsiveImage, SharpImage } from './image';
+import { GatsbyImageProps } from 'gatsby-image';
 import { PageMeta } from './seo';
 
 export interface Performance {
@@ -13,8 +13,10 @@ export interface Performance {
 export interface Show {
 	title: string;
 	author: string;
-	hero_image: ResponsiveImage;
-	hero_imageSharp: SharpImage;
+	hero_image: GatsbyImageProps;
+	hero_imageSharp: {
+		childImageSharp: GatsbyImageProps;
+	}
 	short_description: string;
 	long_description: string;
 	tagline: string;
@@ -43,10 +45,12 @@ export interface ShowCard {
 	};
 	title: string;
 	author: string;
-	catalog_image: ResponsiveImage;
-	catalog_imageSharp: SharpImage;
+	catalog_image: GatsbyImageProps;
+	catalog_imageSharp: {
+		childImageSharp: GatsbyImageProps;
+	}
 	performances: {
 		datetime: Date;
-	}
+	}[]
 
 }
