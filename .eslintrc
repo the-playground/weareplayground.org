@@ -5,8 +5,9 @@
 		"prettier/@typescript-eslint",
 		"prettier/react"
 	],
-	"parser": "typescript-eslint/parser",
+	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
+		"project": "./tsconfig.json",
 		"ecmaVersion": 2020,
 		"ecmaFeatures": {
 			"impliedStrict": true,
@@ -147,6 +148,7 @@
 	"plugins": [
 		"html",
 		"prettier",
-		"react-hooks"
+		"react-hooks",
+		"@typescript-eslint"
 	]
 }
