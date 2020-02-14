@@ -1,15 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+
+// Import Typescript interfaces
+import { PageMeta } from '../__interfaces__/seo';
 
 import { Layout } from '../components/Layout';
 import { SEOPageMeta } from '../components/SEO';
 import { getSlice } from '../__utility__/prismic';
 
-const HomePage = ({ data }) => {
+const HomePage: React.FC<HomePageProps> = ({ data }) => {
 	const home = data.prismic.home_page;
 
-	const pageMeta = getSlice(home.body, 'basic_seo');
+	const pageMeta = getSlice(home.body, `basic_seo`);
 
 	return (
 		<Layout>
@@ -31,8 +33,14 @@ export const query = graphql`
  * ----------
  */
 
-HomePage.propTypes = {
-	data: PropTypes.object.isRequired,
-};
+interface HomePageProps {
+	data: {
+		prismic: {
+			home_page: {
+				body: PageMeta;
+			};
+		};
+	};
+}
 
 export default HomePage;
