@@ -12,6 +12,14 @@ export const SeasonsPageFragment = graphql`
 			seasons_page(lang: "en-us", uid: "seasons") {
 				title
 				subtitle
+				hero_image
+				hero_imageSharp {
+					childImageSharp {
+						fluid(maxWidth: 1920, quality: 100) {
+							...GatsbyImageSharpFluid_withWebp
+						}
+					}
+				}
 				body {
 					... on PRISMIC_Seasons_pageBodyBasic_seo {
 						type
