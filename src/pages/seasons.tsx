@@ -1,11 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import { GatsbyImageProps } from 'gatsby-image';
 
+// Import typescript interfaces
+import { Season } from '../__interfaces__/season';
+import { PageMeta } from '../__interfaces__/seo';
+
+// Import components
 import { Layout } from '../components/Layout';
 import { SeasonCatalog } from '../components/season';
 
-const SeasonsPage = ({ data }) => {
+const SeasonsPage: React.FC<SeasonsPageProps> = ({ data }) => {
 	const seasons = data?.prismic?.allSeasons?.edges;
 	const pageData = data?.prismic?.seasons_page; // eslint-disable-line
 
@@ -35,13 +40,24 @@ export const query = graphql`
  * ----------
  */
 
-SeasonsPage.propTypes = {
-	data: PropTypes.shape({
-		prismic: PropTypes.shape({
-			seasons_page: PropTypes.object.isRequired,
-			allSeasons: PropTypes.object.isRequired,
-		}).isRequired,
-	}).isRequired,
-};
+interface SeasonsPageProps {
+	data: {
+		prismic: {
+			allSeasons: {
+				edges: Season[];
+			};
+
+			seasons_page: {
+				title: string;
+				subtitle: string;
+				hero_image?: GatsbyImageProps;
+				hero_imageSharp?: {
+					childImageSharp: GatsbyImageProps;
+				};
+				body: PageMeta;
+			};
+		};
+	};
+}
 
 export default SeasonsPage;

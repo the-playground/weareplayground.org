@@ -1,4 +1,4 @@
 node_modules/
-.next
 .github/
-prismicIntrospectionResults.json
+public/
+static/
