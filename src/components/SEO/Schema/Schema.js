@@ -23,7 +23,9 @@ const SEOSchema = ({ type, data }) => {
 	// Retrieve schema type since we know it exists
 	const schema = schemas[type];
 
-	return <>{schema ? schema(data) : ''}</>;
+	console.log(schema);
+
+	return <>{schema ? schema(data) : ``}</>;
 };
 
 /**
@@ -33,17 +35,17 @@ const SEOSchema = ({ type, data }) => {
  */
 
 const availableSchemaTypes = [
-	'Article',
-	'CreativeWork',
-	'EventCollection',
-	'Offer',
-	'Organization',
-	'Person',
-	'Place',
-	'TheatreEvent',
-	'Video',
-	'VideoCollection',
-	'Website',
+	`Article`,
+	`CreativeWork`,
+	`EventCollection`,
+	`Offer`,
+	`Organization`,
+	`Person`,
+	`Place`,
+	`TheatreEvent`,
+	`Video`,
+	`VideoCollection`,
+	`Website`,
 ];
 
 SEOSchema.propTypes = {

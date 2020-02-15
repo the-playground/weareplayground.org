@@ -1,11 +1,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import SEOSchema from './Schema/Schema';
+import SEOSchema from '../Schema/Schema';
 
 // See Yoast example for how to structure structure data in a graph format.
 
-// `schemas` should be an array of objects
+// `schemas` should be an array of react components
 
 const SEOStructuredDataGraph = ({ schemas }) => {
 	if (!schemas) {
@@ -19,10 +19,7 @@ const SEOStructuredDataGraph = ({ schemas }) => {
 
 	return (
 		<Helmet>
-			<script type="application/ld+json">{`{
-					"@context": "https://schema.org/",
-					"@graph": ${schemas.map(schema => <SEOSchema type={schema.type} data={schema.data} />)}
-				}`}</script>
+			<script type="application/ld+json">{dataGraph}</script>
 		</Helmet>
 	);
 };

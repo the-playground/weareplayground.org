@@ -33,12 +33,12 @@ const SEOGlobal = () => {
 			{/* Default language and direction */}
 			<html lang="en" dir="ltr" />
 			{/* Handle site verifications generation */}
-			{googleVerification ? <meta name="google-site-verification" content={googleVerification} /> : ''}
-			{bingVerification ? <meta name="msvalidate.01" content={bingVerification} /> : ''}
-			{nortonVerification ? <meta name="norton-safeweb-site-verification" content={nortonVerification} /> : ''}
+			{googleVerification ? <meta name="google-site-verification" content={googleVerification} /> : ``}
+			{bingVerification ? <meta name="msvalidate.01" content={bingVerification} /> : ``}
+			{nortonVerification ? <meta name="norton-safeweb-site-verification" content={nortonVerification} /> : ``}
 
 			{/* Facebook App ID for your FB Business App */}
-			{facebookAppID ? <meta property="fb:app_id" content={facebookAppID} /> : ''}
+			{facebookAppID ? <meta property="fb:app_id" content={facebookAppID} /> : ``}
 
 			{/* Google Specific Tags -- prevent search boc from showing up on Google */}
 			<meta name="google" content="nositelinkssearchbox" />

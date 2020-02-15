@@ -1,4 +1,4 @@
-const CreativeWork = (props) => `
+const CreativeWork = props => `
 
 	"@type": "CreativeWork",
 	"name": "${props.title}",

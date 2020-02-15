@@ -1,4 +1,4 @@
-const Place = (props) => `
+const Place = props => `
 
 	"@context": "http://schema.org",
 	"@type": "Place",
@@ -15,7 +15,7 @@ const Place = (props) => `
 		"latitude": "${props.latitude}",
 		"longitude": "${props.longitude}"
 	},
-	"url": "${props.url ? props.url : ''}",
+	"url": "${props.url ? props.url : ``}",
 
 `;
 export default Place;

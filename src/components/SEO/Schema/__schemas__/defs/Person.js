@@ -1,4 +1,4 @@
-const Person = (props) => `
+const Person = props => `
 
 	"@type": "Person",
 	"name": "${props.name}",

@@ -1,7 +1,7 @@
 // Turn an array of founders into an array of Person objects with data
 const founders = people => {};
 
-const Organization = ({ props }) => `{
+const Organization = props => `{
 
 	"@context" : "http://schema.org",
 	"@type"	: "Organization",

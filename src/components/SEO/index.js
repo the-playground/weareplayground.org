@@ -4,5 +4,5 @@ export { default as SEOPageMeta } from './Page/Page';
 export { default as SEOVideoMeta } from './Video/Video';
 
 // SEO Structured Data
-export { default as SEOSchema } from './StructuredDataGraph/Schema/Schema';
+export { default as SEOSchema } from './Schema/Schema';
 export { default as SEOStructuredDataGraph } from './StructuredDataGraph/StructuredDataGraph';

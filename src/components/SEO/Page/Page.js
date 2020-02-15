@@ -22,15 +22,15 @@ const SEOPage = ({ metadata, robots }) => {
 	// getFallbackSEOImage(  ) -- fallback image for open graph & SEO
 
 	const url = getCurrentRootURL();
-	const title = metadata.meta_title ? metadata.meta_title : '';
-	const description = metadata.meta_description ? metadata.meta_description : '';
+	const title = metadata.meta_title ? metadata.meta_title : ``;
+	const description = metadata.meta_description ? metadata.meta_description : ``;
 
-	const image = metadata.meta_image ? metadata.meta_image : '';
+	const image = metadata.meta_image ? metadata.meta_image : ``;
 
-	const imageAlt = image.alt ? image.alt : '';
-	const imageWidth = image.dimensions.width ? image.dimensions.width : '';
-	const imageHeight = image.dimensions.height ? image.dimensions.height : '';
-	const imageURL = image.url ? image.url : '';
+	const imageAlt = image.alt ? image.alt : ``;
+	const imageWidth = image.dimensions.width ? image.dimensions.width : ``;
+	const imageHeight = image.dimensions.height ? image.dimensions.height : ``;
+	const imageURL = image.url ? image.url : ``;
 
 	const twitterImageURL = metadata.twitter_card_image ? metadata.twitter_card_image.url : imageURL; // eslint-disable-line
 
@@ -94,7 +94,7 @@ SEOPage.propTypes = {
  * -------------
  */
 SEOPage.defaultProps = {
-	robots: 'noindex, nofollow',
+	robots: `noindex, nofollow`,
 };
 
 export default SEOPage;
