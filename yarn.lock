@@ -6823,10 +6823,10 @@ fuse.js@^3.4.6:
   resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.4.6.tgz#545c3411fed88bf2e27c457cab6e73e7af697a45"
   integrity sha512-H6aJY4UpLFwxj1+5nAvufom5b2BT2v45P1MkPvdGIK8fWjQx/7o6tTT1+ALV0yawQvbmvCF0ufl2et8eJ7v7Cg==
 
-gatsby-background-image@^0.9.14:
-  version "0.9.14"
-  resolved "https://registry.yarnpkg.com/gatsby-background-image/-/gatsby-background-image-0.9.14.tgz#55f22665249090464cf753efb5adb6e3ac6fcdd6"
-  integrity sha512-7H40uJre4++dra1xSn6Qksw4b+ge0P5QExKtAIhCWarwMhCCFZEKr0/tMmxADfJx8e4RIomx7oJmDRdunQNCtA==
+gatsby-background-image@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/gatsby-background-image/-/gatsby-background-image-0.10.0.tgz#e337cf4be22dde177fe7983e7059e22f7eb13bb4"
+  integrity sha512-mfWLeiZGZO3o7NXucbxKn6/DOF1ZpQqJOuta8Ld4y4lDSew1jzHlnxf+UU1Q1uWPeoZkQNm/LpMbF5Rt0F9zhA==
   dependencies:
     "@babel/runtime" "^7.8.4"
     filter-invalid-dom-props "^2.0.0"
