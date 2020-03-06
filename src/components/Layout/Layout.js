@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 
 import { Header } from './Header';
 import { Footer } from './Footer';
-import { SEOGlobalMeta } from '../SEO';
+import { SEOGlobalMeta } from '../seo';
 import { StylesReset, StylesGlobal } from './Styles';
 import { loadStage2Fonts } from './Scripts/stage2Fonts';
 
@@ -17,9 +17,9 @@ const Layout = ({ children, noHeader, noFooter }) => (
 			<script type="text/javascript">{loadStage2Fonts()}</script>
 		</Helmet>
 
-		{noHeader ? '' : <Header />}
+		{noHeader ? `` : <Header />}
 		<main>{children}</main>
-		{noFooter ? '' : <Footer />}
+		{noFooter ? `` : <Footer />}
 	</>
 );
 

@@ -15,13 +15,13 @@ function useOnClickOutside(ref, clickOutsideHandler) {
 		};
 
 		// Listen for a click or touch interaction
-		document.addEventListener('mousedown', listener);
-		document.addEventListener('touchstart', listener);
+		document.addEventListener(`mousedown`, listener);
+		document.addEventListener(`touchstart`, listener);
 
 		// Runs on cleanup
 		return () => {
-			document.removeEventListener('mousedown', listener);
-			document.removeEventListener('touchstart', listener);
+			document.removeEventListener(`mousedown`, listener);
+			document.removeEventListener(`touchstart`, listener);
 		};
 	}, [clickOutsideHandler, ref]);
 }

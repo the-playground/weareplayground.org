@@ -47,7 +47,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 	const seasonTemplate = require.resolve(`./src/templates/season.tsx`);
 	const showTemplate = require.resolve(`./src/templates/show.tsx`);
-	const URLBase = 'seasons';
+	const URLBase = `seasons`;
 
 	result.data.prismic.allSeasons.edges.forEach(({ node }) => {
 		// Set up season data

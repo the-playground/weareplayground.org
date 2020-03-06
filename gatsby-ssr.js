@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
-const React = require('react');
+const React = require(`react`);
 
 // Wrap root with all logic to make SSR work
 export { wrapRootElement } from './gatsby-browser';
@@ -38,6 +38,6 @@ export const onRenderBody = ({ setHeadComponents }) => {
 		<link rel="preload" href="/fonts/stage-1/Veneer-all--stage1.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />,
 
 		// Snipcart v3
-		<link rel="stylesheet" id="snipcart-css" href="https://cdn.snipcart.com/themes/v3.0.6/default/snipcart.css" type="text/css" />,
+		<link rel="stylesheet" id="snipcart-css" href="https://cdn.snipcart.com/themes/v3.0.9/default/snipcart.css" type="text/css" />,
 	]);
 };

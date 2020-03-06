@@ -24,7 +24,7 @@ const BodyBold = ({ children, tag, size, color, ...others }) => (
 
 const validBodyBoldSizes = Object.keys(Styled.bodyBoldSizes);
 const validBodyBoldColors = Object.keys(Styled.bodyBoldColors);
-const validTags = ['span', 'p'];
+const validTags = [`span`, `p`];
 
 BodyBold.propTypes = {
 	children: PropTypes.node,
@@ -47,8 +47,8 @@ BodyBold.propTypes = {
  */
 
 BodyBold.defaultProps = {
-	color: 'dark',
-	size: 'm',
+	color: `dark`,
+	size: `m`,
 };
 
 export default BodyBold;

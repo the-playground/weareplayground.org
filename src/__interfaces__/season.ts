@@ -1,12 +1,10 @@
-import { GatsbyImageProps } from "gatsby-image";
+import { GatsbyImageProps } from 'gatsby-image';
 
 export interface Season {
-
 	node: {
-
 		_meta: {
 			uid: string;
-		}
+		};
 
 		title: string;
 		tagline: string;
@@ -14,15 +12,13 @@ export interface Season {
 		catalog_image: GatsbyImageProps;
 		catalog_imageSharp: {
 			childImageSharp: GatsbyImageProps;
-		}
+		};
 		shows: {
 			title: string;
 			author: string;
 			performances: {
 				datetime: Date;
-			}[]
-		}[]
-
-	}
-
+			}[];
+		}[];
+	};
 }

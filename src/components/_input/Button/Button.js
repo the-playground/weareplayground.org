@@ -18,9 +18,9 @@ const Button = ({ children, to, type, size, variant, iconLeft, iconRight, ...oth
 	if (!to) {
 		return (
 			<Styled.Button as="button" size={size} variant={variant} type={type} {...others}>
-				{iconLeft || ''}
+				{iconLeft || ``}
 				<span className="inner-text">{children}</span>
-				{iconRight || ''}
+				{iconRight || ``}
 			</Styled.Button>
 		);
 	}
@@ -32,29 +32,29 @@ const Button = ({ children, to, type, size, variant, iconLeft, iconRight, ...oth
 	if (!isPageLink(to)) {
 		return (
 			<Styled.Button as="a" href={to} size={size} variant={variant} type={type} {...others} rel="noopener noreferrer" target="_blank">
-				{iconLeft || ''}
+				{iconLeft || ``}
 				<span className="inner-text">{children}</span>
-				{iconRight || ''}
+				{iconRight || ``}
 			</Styled.Button>
 		);
 	}
 
 	return (
 		<Styled.Button to={to} size={size} variant={variant} type={type} {...others}>
-			{iconLeft || ''}
+			{iconLeft || ``}
 			<span className="inner-text">{children}</span>
-			{iconRight || ''}
+			{iconRight || ``}
 		</Styled.Button>
 	);
 };
 
-const buttonSizes = ['s', 'm', 'l'];
+const buttonSizes = [`s`, `m`, `l`];
 
-const buttonTypes = ['standard'];
+const buttonTypes = [`standard`];
 
-const buttonVariants = ['primary', 'secondary', 'tertiary'];
+const buttonVariants = [`primary`, `secondary`, `tertiary`];
 
-const buttonWidths = ['auto', 'full'];
+const buttonWidths = [`auto`, `full`];
 
 Button.propTypes = {
 	children: PropTypes.node.isRequired,
@@ -68,9 +68,9 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-	type: 'standard',
-	variant: 'primary',
-	size: 'm',
+	type: `standard`,
+	variant: `primary`,
+	size: `m`,
 };
 
 export default Button;

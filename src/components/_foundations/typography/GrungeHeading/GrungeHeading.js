@@ -24,7 +24,7 @@ const GrungeHeading = ({ children, tag, size, color, ...others }) => (
 
 const validHeadingSizes = Object.keys(Styled.headingSizes);
 const validHeadingColors = Object.keys(Styled.headingColors);
-const validTags = ['h1', 'h2', 'h3', 'h4', 'span'];
+const validTags = [`h1`, `h2`, `h3`, `h4`, `span`];
 
 GrungeHeading.propTypes = {
 	children: PropTypes.node,
@@ -43,8 +43,8 @@ GrungeHeading.propTypes = {
  */
 
 GrungeHeading.defaultProps = {
-	color: 'dark',
-	size: 'm',
+	color: `dark`,
+	size: `m`,
 };
 
 export default GrungeHeading;

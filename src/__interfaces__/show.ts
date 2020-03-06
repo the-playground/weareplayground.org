@@ -1,5 +1,5 @@
 import { GatsbyImageProps } from 'gatsby-image';
-import { PageMeta } from './seo';
+import { PageMeta } from './Seo';
 
 export interface Performance {
 	datetime: Date;
@@ -16,7 +16,7 @@ export interface Show {
 	hero_image: GatsbyImageProps;
 	hero_imageSharp: {
 		childImageSharp: GatsbyImageProps;
-	}
+	};
 	short_description: string;
 	long_description: string;
 	tagline: string;
@@ -27,7 +27,7 @@ export interface Show {
 	runtime_hours: number;
 	runtime_minutes: number;
 	author_link: {
-		url: string
+		url: string;
 	};
 	script_link: {
 		url: string;
@@ -48,9 +48,8 @@ export interface ShowCard {
 	catalog_image: GatsbyImageProps;
 	catalog_imageSharp: {
 		childImageSharp: GatsbyImageProps;
-	}
+	};
 	performances: {
 		datetime: Date;
-	}[]
-
+	}[];
 }

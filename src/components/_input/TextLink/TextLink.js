@@ -3,29 +3,24 @@ import PropTypes from 'prop-types';
 import * as Styled from './TextLink.styles';
 import { isPageLink } from '../../../__utility__/links';
 
-const TextLink = ({ children, to, activeClassName, partiallyActive, iconLeft, iconRight, ...others }) => {
+const TextLink = ({ children, to, activeClassName, partiallyActive, iconLeft, iconRight, ...others }) =>
 	/**
 	 * If the link is to an external destination, or to a file,
 	 * render as a standard  'a' tag with appropriate props
 	 */
-	if (!isPageLink(to)) {
-		return (
-			<Styled.TextLink as="a" href={to} {...others} rel="noopener noreferrer" target="_blank">
-				{iconLeft || ''}
-				{children}
-				{iconRight || ''}
-			</Styled.TextLink>
-		);
-	}
-
-	return (
-		<Styled.TextLink to={to} partiallyActive={partiallyActive} activeClassName={activeClassName} {...others}>
-			{iconLeft || ''}
+	!isPageLink(to) ? (
+		<Styled.TextLink as="a" href={to} {...others} rel="noopener noreferrer" target="_blank">
+			{iconLeft || ``}
 			{children}
-			{iconRight || ''}
+			{iconRight || ``}
+		</Styled.TextLink>
+	) : (
+		<Styled.TextLink to={to} partiallyActive={partiallyActive} activeClassName={activeClassName} {...others}>
+			{iconLeft || ``}
+			{children}
+			{iconRight || ``}
 		</Styled.TextLink>
 	);
-};
 
 TextLink.propTypes = {
 	children: PropTypes.node.isRequired,
@@ -38,7 +33,7 @@ TextLink.propTypes = {
 };
 
 TextLink.defaultProps = {
-	activeClassName: '--active',
+	activeClassName: `--active`,
 };
 
 export default TextLink;

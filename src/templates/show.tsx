@@ -2,18 +2,17 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 // Import typescript interfaces
-import { PageMeta } from '../__interfaces__/seo';
-import { Show } from '../__interfaces__/show';
+import { PageMeta } from '../__interfaces__/Seo';
+import { Show } from '../__interfaces__/Show';
 
 // Import components
-import { SEOPageMeta } from '../components/SEO';
+import { SEOPageMeta } from '../components/seo';
 import { getSlice } from '../__utility__/prismic';
 import { Layout } from '../components/Layout';
 
 const ShowLanding: React.FC<ShowLandingProps> = ({ data, pageContext }) => {
 	const { show } = data.prismic;
 	const { uid, seasonUID, seasonURL } = pageContext;
-	console.log(pageContext);
 
 	if (!show) return <></>;
 

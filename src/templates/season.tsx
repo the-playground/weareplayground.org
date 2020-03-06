@@ -1,14 +1,12 @@
 import React from 'react';
-import { graphql, Page } from 'gatsby';
+import { graphql } from 'gatsby';
 import { GatsbyImageProps } from 'gatsby-image';
 
 // Import typescript interfaces
-import { PageMeta } from '../__interfaces__/seo';
-import { ShowCard } from '../__interfaces__/show';
+import { PageMeta } from '../__interfaces__/Seo';
+import { ShowCard } from '../__interfaces__/Show';
 
 // Import components
-import { SEOPageMeta } from '../components/SEO';
-import { getSlice } from '../__utility__/prismic';
 import { Layout } from '../components/Layout';
 
 const SeasonLanding: React.FC<SeasonLandingProps> = ({ data, pageContext }) => {

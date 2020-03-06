@@ -24,7 +24,7 @@ const BodyText = ({ children, tag, size, color, ...others }) => (
 
 const validBodyTextSizes = Object.keys(Styled.bodyTextSizes);
 const validBodyTextColors = Object.keys(Styled.bodyTextColors);
-const validTags = ['span', 'p'];
+const validTags = [`span`, `p`];
 
 BodyText.propTypes = {
 	children: PropTypes.node,
@@ -47,8 +47,8 @@ BodyText.propTypes = {
  */
 
 BodyText.defaultProps = {
-	color: 'dark',
-	size: 'm',
+	color: `dark`,
+	size: `m`,
 };
 
 export default BodyText;

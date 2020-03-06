@@ -24,7 +24,7 @@ const Heading = ({ children, tag, size, color, isUppercase, isLowercase, ...othe
 
 const validHeadingSizes = Object.keys(Styled.headingSizes);
 const validHeadingColors = Object.keys(Styled.headingColors);
-const validTags = ['h1', 'h2', 'h3', 'h4', 'span'];
+const validTags = [`h1`, `h2`, `h3`, `h4`, `span`];
 
 Heading.propTypes = {
 	children: PropTypes.node,
@@ -48,9 +48,9 @@ Heading.propTypes = {
  */
 
 Heading.defaultProps = {
-	color: 'dark',
-	size: 'm',
-	tag: 'span',
+	color: `dark`,
+	size: `m`,
+	tag: `span`,
 	isUppercase: false,
 	isLowercase: false,
 };

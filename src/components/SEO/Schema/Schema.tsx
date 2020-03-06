@@ -4,7 +4,7 @@ import React from 'react';
 import { SchemaProps, AvailableSchemaTypes } from './Schema.interfaces';
 
 // Import all of our schema definitions
-import * as schemas from './__schemas__';
+import * as schemas from './__manifest__';
 
 /**
  * Component: SEOSchema

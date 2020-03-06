@@ -28,8 +28,8 @@ const fonts = {
 
 	// Greycliff CF Heavy
 	heading: css`
-		font-family: 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
-			Cantarell sans-serif;
+		font-family: 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+			sans-serif;
 		font-style: normal;
 		font-weight: 900;
 	`,
