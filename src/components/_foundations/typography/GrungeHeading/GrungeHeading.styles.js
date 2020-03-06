@@ -13,7 +13,7 @@ export const headingSizes = {
 	m: typography.grungeHeading.Medium,
 	s: typography.grungeHeading.Small,
 };
-s;
+
 export const GrungeHeading = styled.span`
 	${props => headingSizes[props.size]};
 `;
