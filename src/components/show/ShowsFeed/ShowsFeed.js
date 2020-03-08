@@ -8,11 +8,11 @@ import { ShowFeedCard } from './ShowFeedCard/ShowFeedCard';
 // Sort shows by season.
 
 const ShowsFeed = ({ shows }) => (
-	<Styled.ShowsFeed>
-		{shows.map(show => (
-			<ShowFeedCard key={show.node.title} show={show.node} />
-		))}
-	</Styled.ShowsFeed>
+    <Styled.ShowsFeed>
+        {shows.map(show => (
+            <ShowFeedCard key={show.node.title} show={show.node} />
+        ))}
+    </Styled.ShowsFeed>
 );
 
 /**
@@ -22,13 +22,13 @@ const ShowsFeed = ({ shows }) => (
  */
 
 ShowsFeed.propTypes = {
-	shows: PropTypes.arrayOf(
-		PropTypes.shape({
-			node: PropTypes.shape({
-				title: PropTypes.string.isRequired,
-			}).isRequired,
-		}).isRequired
-	).isRequired,
+    shows: PropTypes.arrayOf(
+        PropTypes.shape({
+            node: PropTypes.shape({
+                title: PropTypes.string.isRequired,
+            }).isRequired,
+        }).isRequired
+    ).isRequired,
 };
 
 export default ShowsFeed;

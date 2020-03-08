@@ -8,21 +8,21 @@ import { graphql } from 'gatsby';
  * @since 1.0.0
  */
 export const HomePageDataFragment = graphql`
-	fragment HomePageDataFragment on Query {
-		prismic {
-			home_page(lang: "en-us", uid: "home") {
-				body {
-					... on PRISMIC_Home_pageBodyBasic_seo {
-						type
-						primary {
-							meta_description
-							meta_image
-							meta_title
-							twitter_card_image
-						}
-					}
-				}
-			}
-		}
-	}
+    fragment HomePageDataFragment on Query {
+        prismic {
+            home_page(lang: "en-us", uid: "home") {
+                body {
+                    ... on PRISMIC_Home_pageBodyBasic_seo {
+                        type
+                        primary {
+                            meta_description
+                            meta_image
+                            meta_title
+                            twitter_card_image
+                        }
+                    }
+                }
+            }
+        }
+    }
 `;

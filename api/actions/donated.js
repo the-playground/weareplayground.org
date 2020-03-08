@@ -1,7 +1,5 @@
 export default async (req, res) => {
-
-	res.status(200).json({
-		status: 'donated',
-	});
-
+    res.status(200).json({
+        status: `donated`,
+    });
 };

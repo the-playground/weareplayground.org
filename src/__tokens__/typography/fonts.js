@@ -10,36 +10,36 @@
 import { css } from 'styled-components';
 
 const fonts = {
-	// Greycliff CF Regular
-	bodyText: css`
-		font-family: 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-			sans-serif;
-		font-style: normal;
-		font-weight: 400;
-	`,
+    // Greycliff CF Regular
+    bodyText: css`
+        font-family: 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+            sans-serif;
+        font-style: normal;
+        font-weight: 400;
+    `,
 
-	// Greycliff CF DemiBold
-	bodyBold: css`
-		font-family: 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-			sans-serif;
-		font-style: normal;
-		font-weight: 700;
-	`,
+    // Greycliff CF DemiBold
+    bodyBold: css`
+        font-family: 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+            sans-serif;
+        font-style: normal;
+        font-weight: 700;
+    `,
 
-	// Greycliff CF Heavy
-	heading: css`
-		font-family: 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-			sans-serif;
-		font-style: normal;
-		font-weight: 900;
-	`,
+    // Greycliff CF Heavy
+    heading: css`
+        font-family: 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+            sans-serif;
+        font-style: normal;
+        font-weight: 900;
+    `,
 
-	// Veneer Grunge
-	grungeHeading: css`
-		font-family: 'Veneer', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
-		font-style: normal;
-		font-weight: 900;
-	`,
+    // Veneer Grunge
+    grungeHeading: css`
+        font-family: 'Veneer', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+        font-style: normal;
+        font-weight: 900;
+    `,
 };
 
 export default fonts;

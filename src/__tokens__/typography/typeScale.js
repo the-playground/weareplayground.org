@@ -42,43 +42,43 @@ const smallScalar = 1.25; // Minor Third
  * Note that it is possible that not all of these scales steps will be used.
  */
 const typeScale = {
-	step0: {
-		large: largeScalar / largeScalar ** 2,
-		small: smallScalar / smallScalar ** 2,
-	},
-	/* Base size = 1rem */
-	step1: {
-		small: 1,
-		large: 1,
-	},
-	step2: {
-		small: smallScalar,
-		large: largeScalar,
-	},
-	step3: {
-		small: smallScalar ** 2,
-		large: largeScalar ** 2,
-	},
-	step4: {
-		small: smallScalar ** 3,
-		large: largeScalar ** 3,
-	},
-	step5: {
-		small: smallScalar ** 4,
-		large: largeScalar ** 4,
-	},
-	step6: {
-		small: smallScalar ** 5,
-		large: largeScalar ** 5,
-	},
-	step7: {
-		small: smallScalar ** 6,
-		large: largeScalar ** 6,
-	},
-	step8: {
-		small: smallScalar ** 7,
-		large: largeScalar ** 7,
-	},
+    step0: {
+        large: largeScalar / largeScalar ** 2,
+        small: smallScalar / smallScalar ** 2,
+    },
+    /* Base size = 1rem */
+    step1: {
+        small: 1,
+        large: 1,
+    },
+    step2: {
+        small: smallScalar,
+        large: largeScalar,
+    },
+    step3: {
+        small: smallScalar ** 2,
+        large: largeScalar ** 2,
+    },
+    step4: {
+        small: smallScalar ** 3,
+        large: largeScalar ** 3,
+    },
+    step5: {
+        small: smallScalar ** 4,
+        large: largeScalar ** 4,
+    },
+    step6: {
+        small: smallScalar ** 5,
+        large: largeScalar ** 5,
+    },
+    step7: {
+        small: smallScalar ** 6,
+        large: largeScalar ** 6,
+    },
+    step8: {
+        small: smallScalar ** 7,
+        large: largeScalar ** 7,
+    },
 };
 
 /**
@@ -89,39 +89,39 @@ const typeScale = {
  * @param {bool} skipSmall skip the smaller font sie and use the larger font size across all devices
  */
 const generateFontSizings = (scaleSize, skipSmall) => {
-	// Skip small scalar size output and output only the large scalar size
-	if (skipSmall) {
-		return css`
-			font-size: ${scaleSize.large}rem;
-		`;
-	}
+    // Skip small scalar size output and output only the large scalar size
+    if (skipSmall) {
+        return css`
+            font-size: ${scaleSize.large}rem;
+        `;
+    }
 
-	// Output large and small scalar font sizings across a defined breakpoint
-	return css`
-		font-size: ${scaleSize.small}rem;
-		${breakpoints.m} {
-			font-size: ${scaleSize.large}rem;
-		}
-	`;
+    // Output large and small scalar font sizings across a defined breakpoint
+    return css`
+        font-size: ${scaleSize.small}rem;
+        ${breakpoints.m} {
+            font-size: ${scaleSize.large}rem;
+        }
+    `;
 };
 
 /**
  * Generate final font sizings for consumption by components in our app.
  */
 export const fontSizes = {
-	/**
-	 * Approx 14px for size0 -  We are stepping outside of the scale here with a custom size.
-	 * It looks better! We are also skipping the small scalar size.
-	 */
-	size0: css`
-		font-size: 0.875rem;
-	`,
-	size1: generateFontSizings(typeScale.step1, true) /* Skip small scalar size */,
-	size2: generateFontSizings(typeScale.step2, true) /* Skip small scalar size */,
-	size3: generateFontSizings(typeScale.step3),
-	size4: generateFontSizings(typeScale.step4),
-	size5: generateFontSizings(typeScale.step5),
-	size6: generateFontSizings(typeScale.step6),
-	size7: generateFontSizings(typeScale.step7),
-	size8: generateFontSizings(typeScale.step8),
+    /**
+     * Approx 14px for size0 -  We are stepping outside of the scale here with a custom size.
+     * It looks better! We are also skipping the small scalar size.
+     */
+    size0: css`
+        font-size: 0.875rem;
+    `,
+    size1: generateFontSizings(typeScale.step1, true) /* Skip small scalar size */,
+    size2: generateFontSizings(typeScale.step2, true) /* Skip small scalar size */,
+    size3: generateFontSizings(typeScale.step3),
+    size4: generateFontSizings(typeScale.step4),
+    size5: generateFontSizings(typeScale.step5),
+    size6: generateFontSizings(typeScale.step6),
+    size7: generateFontSizings(typeScale.step7),
+    size8: generateFontSizings(typeScale.step8),
 };

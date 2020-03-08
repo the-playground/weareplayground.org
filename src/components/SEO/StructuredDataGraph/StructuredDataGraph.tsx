@@ -8,20 +8,20 @@ import Helmet from 'react-helmet';
 // `schemas` should be an array of react components
 
 const SEOStructuredDataGraph = ({ schemas }) => {
-	if (!schemas) {
-		return;
-	}
+    if (!schemas) {
+        return;
+    }
 
-	const dataGraph = `{
+    const dataGraph = `{
 		"@context": "https://schema.org/",
 		"@graph": ${schemas}
 	}`;
 
-	return (
-		<Helmet>
-			<script type="application/ld+json">{dataGraph}</script>
-		</Helmet>
-	);
+    return (
+        <Helmet>
+            <script type="application/ld+json">{dataGraph}</script>
+        </Helmet>
+    );
 };
 
 export default SEOStructuredDataGraph;

@@ -1,11 +1,9 @@
-import {Person} from './Person';
+import { Person } from './Person';
 
 // Turn an array of founders into an array of Person objects with data
-const founders = ( people ) => {
+const founders = people => {};
 
-}
-
-const Website = ( props ) => `
+const Website = props => `
 
 	"@context" : "http://schema.org",
 	"@type"	: "Website",

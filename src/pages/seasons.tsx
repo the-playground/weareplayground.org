@@ -11,27 +11,27 @@ import { Layout } from '../components/Layout';
 import { SeasonCatalog } from '../components/season';
 
 const SeasonsPage: React.FC<SeasonsPageProps> = ({ data }) => {
-	const seasons = data?.prismic?.allSeasons?.edges;
+    const seasons = data?.prismic?.allSeasons?.edges;
 	const pageData = data?.prismic?.seasons_page; // eslint-disable-line
 
-	if (!seasons || !pageData) {
-		return <></>;
-	}
+    if (!seasons || !pageData) {
+        return <></>;
+    }
 
-	return (
-		<Layout>
-			{/* Seasons Hero Goes Here */}
-			<SeasonCatalog seasons={seasons} />
-			{/* Seasons CTA Goes Here */}
-		</Layout>
-	);
+    return (
+        <Layout>
+            {/* Seasons Hero Goes Here */}
+            <SeasonCatalog seasons={seasons} />
+            {/* Seasons CTA Goes Here */}
+        </Layout>
+    );
 };
 
 export const query = graphql`
-	query SeasonsPageData {
-		...SeasonsPageFragment
-		...AllSeasonsSortedFragment
-	}
+    query SeasonsPageData {
+        ...SeasonsPageFragment
+        ...AllSeasonsSortedFragment
+    }
 `;
 
 /**
@@ -41,23 +41,23 @@ export const query = graphql`
  */
 
 interface SeasonsPageProps {
-	data: {
-		prismic: {
-			allSeasons: {
-				edges: Season[];
-			};
+    data: {
+        prismic: {
+            allSeasons: {
+                edges: Season[];
+            };
 
-			seasons_page: {
-				title: string;
-				subtitle: string;
-				hero_image?: GatsbyImageProps;
-				hero_imageSharp?: {
-					childImageSharp: GatsbyImageProps;
-				};
-				body: PageMeta;
-			};
-		};
-	};
+            seasons_page: {
+                title: string;
+                subtitle: string;
+                hero_image?: GatsbyImageProps;
+                hero_imageSharp?: {
+                    childImageSharp: GatsbyImageProps;
+                };
+                body: PageMeta;
+            };
+        };
+    };
 }
 
 export default SeasonsPage;

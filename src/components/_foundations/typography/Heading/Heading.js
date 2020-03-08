@@ -11,9 +11,9 @@ import * as Styled from './Heading.styles';
  */
 
 const Heading = ({ children, tag, size, color, isUppercase, isLowercase, ...others }) => (
-	<Styled.Heading as={tag} color={color} size={size} isUppercase={isUppercase} isLowercase={isLowercase} {...others}>
-		{children}
-	</Styled.Heading>
+    <Styled.Heading as={tag} color={color} size={size} isUppercase={isUppercase} isLowercase={isLowercase} {...others}>
+        {children}
+    </Styled.Heading>
 );
 
 /**
@@ -27,18 +27,18 @@ const validHeadingColors = Object.keys(Styled.headingColors);
 const validTags = [`h1`, `h2`, `h3`, `h4`, `span`];
 
 Heading.propTypes = {
-	children: PropTypes.node,
+    children: PropTypes.node,
 
-	tag: PropTypes.oneOf(validTags),
+    tag: PropTypes.oneOf(validTags),
 
-	/** Size of the Paragraph. Options are s', 'm', and 'l' */
-	size: PropTypes.oneOf(validHeadingSizes),
+    /** Size of the Paragraph. Options are s', 'm', and 'l' */
+    size: PropTypes.oneOf(validHeadingSizes),
 
-	color: PropTypes.oneOf(validHeadingColors),
+    color: PropTypes.oneOf(validHeadingColors),
 
-	isUppercase: PropTypes.bool,
+    isUppercase: PropTypes.bool,
 
-	isLowercase: PropTypes.bool,
+    isLowercase: PropTypes.bool,
 };
 
 /**
@@ -48,11 +48,11 @@ Heading.propTypes = {
  */
 
 Heading.defaultProps = {
-	color: `dark`,
-	size: `m`,
-	tag: `span`,
-	isUppercase: false,
-	isLowercase: false,
+    color: `dark`,
+    size: `m`,
+    tag: `span`,
+    isUppercase: false,
+    isLowercase: false,
 };
 
 export default Heading;

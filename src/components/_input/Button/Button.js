@@ -11,41 +11,41 @@ import { isPageLink } from '../../../__utility__/links';
  */
 
 const Button = ({ children, to, type, size, variant, iconLeft, iconRight, ...others }) => {
-	/**
-	 * If the button is purely for UI interaction, it should not be created as as a link with an "a" tag,
-	 * but as a simple raw button with the correct props.
-	 */
-	if (!to) {
-		return (
-			<Styled.Button as="button" size={size} variant={variant} type={type} {...others}>
-				{iconLeft || ``}
-				<span className="inner-text">{children}</span>
-				{iconRight || ``}
-			</Styled.Button>
-		);
-	}
+    /**
+     * If the button is purely for UI interaction, it should not be created as as a link with an "a" tag,
+     * but as a simple raw button with the correct props.
+     */
+    if (!to) {
+        return (
+            <Styled.Button as="button" size={size} variant={variant} type={type} {...others}>
+                {iconLeft || ``}
+                <span className="inner-text">{children}</span>
+                {iconRight || ``}
+            </Styled.Button>
+        );
+    }
 
-	/**
-	 * If the link is to an external destination, or to a file,
-	 * render as a standard  'a' tag with appropriate props
-	 */
-	if (!isPageLink(to)) {
-		return (
-			<Styled.Button as="a" href={to} size={size} variant={variant} type={type} {...others} rel="noopener noreferrer" target="_blank">
-				{iconLeft || ``}
-				<span className="inner-text">{children}</span>
-				{iconRight || ``}
-			</Styled.Button>
-		);
-	}
+    /**
+     * If the link is to an external destination, or to a file,
+     * render as a standard  'a' tag with appropriate props
+     */
+    if (!isPageLink(to)) {
+        return (
+            <Styled.Button as="a" href={to} size={size} variant={variant} type={type} {...others} rel="noopener noreferrer" target="_blank">
+                {iconLeft || ``}
+                <span className="inner-text">{children}</span>
+                {iconRight || ``}
+            </Styled.Button>
+        );
+    }
 
-	return (
-		<Styled.Button to={to} size={size} variant={variant} type={type} {...others}>
-			{iconLeft || ``}
-			<span className="inner-text">{children}</span>
-			{iconRight || ``}
-		</Styled.Button>
-	);
+    return (
+        <Styled.Button to={to} size={size} variant={variant} type={type} {...others}>
+            {iconLeft || ``}
+            <span className="inner-text">{children}</span>
+            {iconRight || ``}
+        </Styled.Button>
+    );
 };
 
 const buttonSizes = [`s`, `m`, `l`];
@@ -57,20 +57,20 @@ const buttonVariants = [`primary`, `secondary`, `tertiary`];
 const buttonWidths = [`auto`, `full`];
 
 Button.propTypes = {
-	children: PropTypes.node.isRequired,
-	to: PropTypes.string,
-	type: PropTypes.oneOf(buttonTypes),
-	variant: PropTypes.oneOf(buttonVariants),
-	others: PropTypes.any,
-	iconLeft: PropTypes.elementType,
-	iconRight: PropTypes.elementType,
-	size: PropTypes.oneOf(buttonSizes),
+    children: PropTypes.node.isRequired,
+    to: PropTypes.string,
+    type: PropTypes.oneOf(buttonTypes),
+    variant: PropTypes.oneOf(buttonVariants),
+    others: PropTypes.any,
+    iconLeft: PropTypes.elementType,
+    iconRight: PropTypes.elementType,
+    size: PropTypes.oneOf(buttonSizes),
 };
 
 Button.defaultProps = {
-	type: `standard`,
-	variant: `primary`,
-	size: `m`,
+    type: `standard`,
+    variant: `primary`,
+    size: `m`,
 };
 
 export default Button;

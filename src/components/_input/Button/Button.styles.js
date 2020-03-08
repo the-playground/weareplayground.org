@@ -8,11 +8,11 @@ import { borderRadius, spacing, typography } from '../../../__tokens__';
  * @since 1.0.0
  */
 export const buttonSizes = {
-	s: css`
+    s: css`
 		${typography.bodyBold.Small}
 		padding: ${spacing.component.xs} ${spacing.component.m};
 	`,
-	m: css`
+    m: css`
 		${typography.bodyBold.Medium}
 		padding: ${spacing.component.s} ${spacing.component.m};
 	`,
@@ -24,13 +24,13 @@ export const buttonSizes = {
  * @since 1.0.0
  */
 export const buttonTypes = {
-	standard: css`
-		border: none;
-	`,
-	// ghost: css`
-	// 	background: transparent;
-	// 	border: 2px solid;
-	// `,
+    standard: css`
+        border: none;
+    `,
+    // ghost: css`
+    // 	background: transparent;
+    // 	border: 2px solid;
+    // `,
 };
 
 /**
@@ -44,28 +44,28 @@ export const buttonTypes = {
  */
 
 export const applyButtonColorTheme = (specifiedTheme, availableThemes) => {
-	// Retrieve the requested theme from our available action themes
-	const selectedTheme = availableThemes[specifiedTheme];
+    // Retrieve the requested theme from our available action themes
+    const selectedTheme = availableThemes[specifiedTheme];
 
-	return css`
-		background-color: ${selectedTheme.background};
-		border-color: ${selectedTheme.border};
-		color: ${selectedTheme.text};
+    return css`
+        background-color: ${selectedTheme.background};
+        border-color: ${selectedTheme.border};
+        color: ${selectedTheme.text};
 
-		&:hover {
-			background-color: ${selectedTheme.backgroundHover};
-			border-color: ${selectedTheme.borderHover};
-		}
+        &:hover {
+            background-color: ${selectedTheme.backgroundHover};
+            border-color: ${selectedTheme.borderHover};
+        }
 
-		&:focus {
-		}
+        &:focus {
+        }
 
-		&:active {
-		}
+        &:active {
+        }
 
-		&:disabled {
-		}
-	`;
+        &:disabled {
+        }
+    `;
 };
 
 export const Button = styled(Link)`

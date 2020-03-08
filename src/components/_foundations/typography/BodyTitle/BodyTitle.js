@@ -11,9 +11,9 @@ import * as Styled from './BodyTitle.styles';
  */
 
 const BodyTitle = ({ children, tag, size, color, ...others }) => (
-	<Styled.BodyTitle as={tag} color={color} size={size} {...others}>
-		{children}
-	</Styled.BodyTitle>
+    <Styled.BodyTitle as={tag} color={color} size={size} {...others}>
+        {children}
+    </Styled.BodyTitle>
 );
 
 /**
@@ -27,14 +27,14 @@ const validBodyTitleColors = Object.keys(Styled.bodyTitleColors);
 const validTags = [`span`, `p`, `h3`, `h4`, `h5`, `h6`];
 
 BodyTitle.propTypes = {
-	children: PropTypes.node,
+    children: PropTypes.node,
 
-	tag: PropTypes.oneOf(validTags),
+    tag: PropTypes.oneOf(validTags),
 
-	/** Size of the Paragraph. Options are s', 'm', and 'l' */
-	size: PropTypes.oneOf(validBodyTitleSizes),
+    /** Size of the Paragraph. Options are s', 'm', and 'l' */
+    size: PropTypes.oneOf(validBodyTitleSizes),
 
-	color: PropTypes.oneOf(validBodyTitleColors),
+    color: PropTypes.oneOf(validBodyTitleColors),
 };
 
 /** Color of the Paragraph. Options are 'dark', 'light' */
@@ -47,8 +47,8 @@ BodyTitle.propTypes = {
  */
 
 BodyTitle.defaultProps = {
-	color: `dark`,
-	size: `m`,
+    color: `dark`,
+    size: `m`,
 };
 
 export default BodyTitle;

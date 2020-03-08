@@ -6,11 +6,11 @@ import { useConfig } from '../__hooks__/useConfig';
 export const ConfigContext = createContext({});
 
 export const ConfigProvider = ({ children }) => {
-	const config = useConfig();
+    const config = useConfig();
 
-	return <ConfigContext.Provider value={config}>{children}</ConfigContext.Provider>;
+    return <ConfigContext.Provider value={config}>{children}</ConfigContext.Provider>;
 };
 
 ConfigProvider.propTypes = {
-	children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 };

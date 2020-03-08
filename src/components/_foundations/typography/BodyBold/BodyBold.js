@@ -11,9 +11,9 @@ import * as Styled from './BodyBold.styles';
  */
 
 const BodyBold = ({ children, tag, size, color, ...others }) => (
-	<Styled.BodyBold as={tag} color={color} size={size} {...others}>
-		{children}
-	</Styled.BodyBold>
+    <Styled.BodyBold as={tag} color={color} size={size} {...others}>
+        {children}
+    </Styled.BodyBold>
 );
 
 /**
@@ -27,14 +27,14 @@ const validBodyBoldColors = Object.keys(Styled.bodyBoldColors);
 const validTags = [`span`, `p`];
 
 BodyBold.propTypes = {
-	children: PropTypes.node,
+    children: PropTypes.node,
 
-	tag: PropTypes.oneOf(validTags),
+    tag: PropTypes.oneOf(validTags),
 
-	/** Size of the Paragraph. Options are s', 'm', and 'l' */
-	size: PropTypes.oneOf(validBodyBoldSizes),
+    /** Size of the Paragraph. Options are s', 'm', and 'l' */
+    size: PropTypes.oneOf(validBodyBoldSizes),
 
-	color: PropTypes.oneOf(validBodyBoldColors),
+    color: PropTypes.oneOf(validBodyBoldColors),
 };
 
 /** Color of the Paragraph. Options are 'dark', 'light' */
@@ -47,8 +47,8 @@ BodyBold.propTypes = {
  */
 
 BodyBold.defaultProps = {
-	color: `dark`,
-	size: `m`,
+    color: `dark`,
+    size: `m`,
 };
 
 export default BodyBold;

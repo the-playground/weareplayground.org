@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import * as Styled from './Container.styles';
 
 const Container = ({ children, size, ...others }) => (
-	<Styled.Container size={size} {...others}>
-		{children}
-	</Styled.Container>
+    <Styled.Container size={size} {...others}>
+        {children}
+    </Styled.Container>
 );
 
 Container.propTypes = {
-	children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 };
 
 Container.defaultProps = {};

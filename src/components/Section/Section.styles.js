@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-	${props =>
-		props.slant &&
-		`
+    ${props =>
+        props.slant &&
+        `
 		:before{
 			content: "";
 			position: absolute;

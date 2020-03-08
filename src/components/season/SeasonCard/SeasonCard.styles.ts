@@ -7,5 +7,5 @@ export const SeasonCardLink = styled(Link)``;
 export const SeasonCard = styled.article<SeasonCardProps>``;
 
 export interface SeasonCardProps {
-	season?: Season;
+    season?: Season;
 }
