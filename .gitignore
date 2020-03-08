@@ -29,3 +29,5 @@ temp-pages
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.now
