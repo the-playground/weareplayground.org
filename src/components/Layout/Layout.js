@@ -4,13 +4,11 @@ import Helmet from 'react-helmet';
 
 import { Header } from './Header';
 import { Footer } from './Footer';
-import { SEOGlobalMeta } from '../seo';
 import { StylesReset, StylesGlobal } from './Styles';
 import { loadStage2Fonts } from './Scripts/stage2Fonts';
 
 const Layout = ({ children, noHeader, noFooter }) => (
     <>
-        <SEOGlobalMeta />
         <StylesReset />
         <StylesGlobal />
         <Helmet>
