@@ -1,5 +1,4 @@
 {
-	"name": "weareplayground",
 	"version": 2,
 	"build": {
 		"env": {
@@ -14,9 +13,5 @@
 		"POSTMARK_PASS": "@postmark-pass",
 		"PRISMIC_API_KEY": "@prismic-api-key"
 	},
-	"regions": [
-		"cle1",
-		"chs1"
-	],
 	"trailingSlash": false
 }
