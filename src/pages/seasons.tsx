@@ -3,8 +3,8 @@ import { graphql } from 'gatsby';
 import { GatsbyImageProps } from 'gatsby-image';
 
 // Import typescript interfaces
-import { PageMeta } from '../__interfaces__/Seo';
-import { Season } from '../__interfaces__/Season';
+import { PageMeta } from '../__interfaces__/seo';
+import { Season } from '../__interfaces__/season';
 
 // Import components
 import { Layout } from '../components/Layout';
