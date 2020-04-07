@@ -2,7 +2,7 @@
 
 ## Overview
 
-Playground implements a custom 2-stage font-loading technique to prevent FLOUT and FOIT while still making performance a top priority. The article below was heavily referenced during the development process but was customized to fit our needs:
+The Nerve implements a custom 2-stage font-loading technique to prevent FLOUT and FOIT while still making performance a top priority. The article below was heavily referenced during the development process but was customized to fit our needs:
 [Developing a Robust Font Loading Strategy for CSS-Tricks-zachleat.com](https://www.zachleat.com/web/css-tricks-web-fonts/)
 
 We leveraged [Wakamaifondue](https://wakamaifondue.com/) to give us visibility into our fonts. This gave us the ability to select the exact features & unicode characters we needed for each font, drastically reducing file size.
