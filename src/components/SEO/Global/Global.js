@@ -40,11 +40,8 @@ const SEOGlobal = () => {
             {/* Facebook App ID for your FB Business App */}
             {facebookAppID ? <meta property="fb:app_id" content={facebookAppID} /> : ``}
 
-            {/* Google Specific Tags -- prevent search boc from showing up on Google */}
+            {/* Google Specific Tags -- prevent search box from showing up on Google */}
             <meta name="google" content="nositelinkssearchbox" />
-
-            {/* Canonical URL */}
-            {/* <link rel="canonical" href={getCurrentRootURL()} /> */}
 
             {/* Set geo location for business */}
             <meta name="geo.region" content={`US-${company.location_state_code}`} />

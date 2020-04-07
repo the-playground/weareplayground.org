@@ -1,7 +1,7 @@
 import React, { createContext } from 'react';
 import PropTypes from 'prop-types';
 import { useConfig } from '../__hooks__/useConfig';
-// Use static query to get default data from prismic.
+// Use static query to get config data from prismic.
 
 export const ConfigContext = createContext({});
 

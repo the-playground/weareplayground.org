@@ -93,18 +93,13 @@ module.exports = {
         },
 
         /**
-         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-manifest/
+         * @link
          * @since 1.0.0
          */
         {
-            resolve: `gatsby-plugin-manifest`, // add icon 512x512 -- svg
+            resolve: `gatsby-plugin-offline`,
             options: {
-                name: `The Playground`,
-                short_name: `Playground`,
-                start_url: `/`,
-                background_color: `#303030`,
-                theme_color: `#2D3837`,
-                display: `standalone`,
+                precachePages: [],
             },
         },
 
