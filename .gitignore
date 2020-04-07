@@ -22,12 +22,10 @@ public/
 .env.development
 .env.production
 
-# Temp holding place for future pages
-temp-pages
-
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-.now
+# Local Netlify folder
+.netlify
