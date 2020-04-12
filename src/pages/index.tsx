@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 // Import Typescript interfaces
-import { PageMeta } from '../__interfaces__/Seo';
+import { PageMeta } from '../__interfaces__/seo';
 
 import { Layout } from '../components/Layout';
 import { getSlice } from '../__utility__/prismic';

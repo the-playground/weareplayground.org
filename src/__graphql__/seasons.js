@@ -57,14 +57,14 @@ export const AllSeasonsSortedFragment = graphql`
                         title
                         tagline
                         description
-                        catalog_image
-                        catalog_imageSharp {
-                            childImageSharp {
-                                fluid(maxWidth: 1200, quality: 100) {
-                                    ...GatsbyImageSharpFluid_withWebp
-                                }
-                            }
-                        }
+                        # catalog_image
+                        # catalog_imageSharp {
+                        #     childImageSharp {
+                        #         fluid(maxWidth: 1200, quality: 100) {
+                        #             ...GatsbyImageSharpFluid_withWebp
+                        #         }
+                        #     }
+                        # }
                         # Get all the shows in each season
                         shows {
                             show {
