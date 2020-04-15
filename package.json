@@ -64,9 +64,5 @@
 	"scripts": {
 		"dev": "rm -rf .cache && gatsby develop",
 		"build": "gatsby build"
-	},
-	"engines": {
-		"node": ">=12"
-	},
-	"engineStrict": true
+	}
 }
