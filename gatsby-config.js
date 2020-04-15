@@ -30,18 +30,6 @@ module.exports = {
         `gatsby-transformer-sharp`,
 
         /**
-         * @link
-         * @since 1.0.0
-         */
-        `gatsby-plugin-sharp`,
-
-        /**
-         * @link
-         * @since 1.0.0
-         */
-        `gatsby-transformer-sharp`,
-
-        /**
          * @link https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/
          * @since 1.0.0
          */
@@ -89,17 +77,6 @@ module.exports = {
                 // 	},
                 // ],
                 omitPrismicScript: true,
-            },
-        },
-
-        /**
-         * @link
-         * @since 1.0.0
-         */
-        {
-            resolve: `gatsby-plugin-offline`,
-            options: {
-                precachePages: [],
             },
         },
 
