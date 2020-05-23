@@ -3,12 +3,11 @@ import { graphql } from 'gatsby';
 import { GatsbyImageProps } from 'gatsby-image';
 
 // Import typescript interfaces
-import { PageMeta } from '../__interfaces__/seo';
-import { Season } from '../__interfaces__/season';
+import { Season } from '@type/season';
 
 // Import components
-import { Layout } from '../components/Layout';
-import { SeasonCatalog } from '../components/season';
+import { Layout } from '@components/layout';
+import { SeasonCatalog } from '@components/ui';
 
 const SeasonsPage: React.FC<SeasonsPageProps> = ({ data }) => {
     const seasons = data?.prismic?.allSeasons?.edges;

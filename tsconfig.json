@@ -1,5 +1,32 @@
 {
 	"compilerOptions": {
+		"baseUrl": "src/",
+		"paths": {
+			"@context": [
+				"./__context__/"
+			],
+			"@hooks": [
+				"./__hooks__/"
+			],
+			"@type/*": [
+				"./__types__/*"
+			],
+			"@lib/*": [
+				"./__lib__/*"
+			],
+			"@state": [
+				"./__state__/"
+			],
+			"@themes": [
+				"./__themes__/"
+			],
+			"@tokens": [
+				"./__tokens__/"
+			],
+			"@components/*": [
+				"./components/*"
+			]
+		},
 		"target": "es5",
 		"module": "esnext",
 		"strict": true,
@@ -19,11 +46,12 @@
 		"jsx": "preserve"
 	},
 	"exclude": [
-		"node_modules"
+		"node_modules",
+		".vscode",
+		".github"
 	],
 	"include": [
-		"api",
 		"src",
-		"gatsby-*"
+		"gatsby-*",
 	]
 }

@@ -45,6 +45,28 @@ module.exports = {
         },
 
         /**
+         * Implement the babel module resolver for a really nice global import syntax
+         *
+         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-module-resolver
+         */
+        {
+            resolve: 'gatsby-plugin-module-resolver',
+            options: {
+                root: './src', // <- will be used as a root dir
+                aliases: {
+                    '@context': './__context__', // <- will become ./src/__context__
+                    '@hooks': './__hooks__',
+                    '@lib': './__lib__',
+                    '@state': './__state__',
+                    '@themes': './__themes__',
+                    '@tokens': './__tokens__',
+                    '@type': './__types__',
+                    '@components': './components',
+                },
+            },
+        },
+
+        /**
          * Styled Components support
          *
          * @link https://www.gatsbyjs.org/packages/gatsby-plugin-styled-components/
@@ -102,8 +124,8 @@ module.exports = {
         {
             resolve: `gatsby-plugin-robots-txt`,
             options: {
-                host: `https://weareplayground.org`,
-                sitemap: `https://weareplayground.org/sitemap.xml`,
+                host: `https://nervetheatre.org`,
+                sitemap: `https://nervetheatre.org/sitemap.xml`,
                 env: {
                     development: {
                         policy: [{ userAgent: `*`, disallow: [`/`] }],

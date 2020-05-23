@@ -6,11 +6,17 @@
 
 // global imports
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { ConfigProvider, NavigationProvider, SeasonProvider, ShowProvider } from './src/__context__';
 
-// Import our themes
-import themes from './src/__themes__';
+import {
+    ConfigProvider,
+    SeasonProvider,
+    ShowProvider,
+    UIProvider,
+} from './src/__context__';
+
+// Import our default css theme
+import './src/__themes__/palette.css';
+import './src/__themes__/defaultTheme.css';
 
 // Handle Application wrapper
 // eslint-disable-next-line
@@ -18,9 +24,7 @@ export const wrapRootElement = ({ element }) => (
     <ConfigProvider>
         <SeasonProvider>
             <ShowProvider>
-                <NavigationProvider>
-                    <ThemeProvider theme={themes.primary}>{element}</ThemeProvider>
-                </NavigationProvider>
+                <UIProvider>{element}</UIProvider>
             </ShowProvider>
         </SeasonProvider>
     </ConfigProvider>

@@ -2,16 +2,10 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 // Import Typescript interfaces
-import { PageMeta } from '../__interfaces__/seo';
-
-import { Layout } from '../components/Layout';
-import { getSlice } from '../__utility__/prismic';
-
-import { useConfigContext } from '../__hooks__/useContext';
+import { Layout } from '@components/layout';
 
 const HomePage: React.FC<HomePageProps> = ({ data }) => {
     const home = data.prismic.home_page;
-    const pageMeta = getSlice(home.body, `basic_seo`);
 
     return <Layout>Home Page</Layout>;
 };

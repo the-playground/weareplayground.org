@@ -1,8 +1,8 @@
 import React from 'react';
-import { Layout } from '../components/Layout';
+import { BodyText, BodyTitle, Heading } from '@components/foundations';
+import { Layout } from '@components/layout';
 
-import { BodyText, BodyBold, BodyTitle, Heading, GrungeHeading } from '../components/_foundations/typography';
-import { TextLink, Button } from '../components/_input';
+import { TextLink, Button } from '@components/actions';
 
 const StyleguidePage = () => (
     <Layout noHeader noFooter>
@@ -11,12 +11,6 @@ const StyleguidePage = () => (
         <BodyText size="m">Medium body text</BodyText>
         <BodyText size="l">Large body text</BodyText>
         <BodyText size="xl">Extra Large body text</BodyText>
-
-        {/* Body Text Bold */}
-        <BodyBold size="s">Small bold body bext</BodyBold>
-        <BodyBold size="m">Medium bold body bext</BodyBold>
-        <BodyBold size="l">Large bold body text</BodyBold>
-        <BodyBold size="xl">Extra Large bold body text</BodyBold>
 
         {/* Body Title */}
         <BodyTitle size="s">Small Body Title</BodyTitle>
@@ -37,18 +31,13 @@ const StyleguidePage = () => (
             Extra Large Standard Heading
         </Heading>
 
-        {/* Grunge Heading */}
-        <GrungeHeading size="s" tag="h1">
-            Small Grunge Heading
-        </GrungeHeading>
-        <GrungeHeading size="m" tag="h2">
-            Medium Grunge Heading
-        </GrungeHeading>
-        <GrungeHeading size="l" tag="h2">
-            Extra Large Grunge Heading
-        </GrungeHeading>
-
-        <div style={{ background: `black`, padding: `24px`, marginBottom: `48px` }}>
+        <div
+            style={{
+                background: `black`,
+                padding: `24px`,
+                marginBottom: `48px`,
+            }}
+        >
             <Button variant="primary">Check out the show</Button>
             <Button variant="primary" size="s">
                 Check out the show

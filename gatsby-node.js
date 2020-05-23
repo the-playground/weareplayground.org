@@ -36,14 +36,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `);
 
     if (result.errors) {
-        reporter.panicOnBuild(`🔥 Error while running GraphQL query on Prismic.`);
+        reporter.panicOnBuild(
+            `🔥 Error while running GraphQL query on Prismic.`
+        );
         return;
     }
 
     /**
      * Begin Building Season Pages
      */
-    console.log(`🙏🏼 Begin creating dynamic season and show pages from Prismic...`);
+    console.log(
+        `🙏🏼 Begin creating dynamic season and show pages from Prismic...`
+    );
 
     const seasonTemplate = require.resolve(`./src/templates/season.tsx`);
     const showTemplate = require.resolve(`./src/templates/show.tsx`);
