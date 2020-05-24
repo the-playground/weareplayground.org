@@ -19,6 +19,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
      */
     setHeadComponents([
         <link
+            key="regular-body-font"
             rel="preload"
             href="/fonts/stage-1/GreycliffCF-Regular-kern--stage1.woff2"
             as="font"
@@ -26,6 +27,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
             crossOrigin="anonymous"
         />,
         <link
+            key="bold-body-font"
             rel="preload"
             href="/fonts/stage-1/GreycliffCF-Bold-kern--stage1.woff2"
             as="font"
@@ -33,6 +35,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
             crossOrigin="anonymous"
         />,
         <link
+            key="heading-font"
             rel="preload"
             href="/fonts/stage-1/GreycliffCF-Heavy-kern--stage1.woff2"
             as="font"
@@ -42,6 +45,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
 
         // Snipcart v3
         <link
+            key="css-snipcart"
             rel="stylesheet"
             id="snipcart-css"
             href="https://cdn.snipcart.com/themes/v3.0.11/default/snipcart.css"
