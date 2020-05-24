@@ -1,4 +1,10 @@
 /* The default theme for the Nerve Theatre Website */
 :root {
-
+    --typeDark: var(--blue);
+    --typeLight: var(--gray5);
+    --typeAccent: var(--orange);
+    /* --actionPrimaryColor: var();
+    --actionPrimaryBG: var();
+    --actionSecondaryColor: var();
+    --actionSecondaryBG: var(); */
 }

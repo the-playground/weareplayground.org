@@ -1,41 +1,49 @@
-import React, { isValidElement } from 'react';
+import React from 'react';
 
-import { IconProps, RawIconDefinition } from './__types';
+import { IconProps } from './__types';
 
 import { SVGElement } from '../SVGElement/SVGElement';
 
 import * as Styled from './__styles';
-import { availableIcons } from './__manifest__';
+import { availableIcons, AvailableIcon, IconDefinition } from './__manifest__';
 
-export const Icon: React.FC<IconProps> = ({
+export const Icon: React.FC<Omit<IconProps, 'selectedSize'>> = ({
     name,
-    size = 'l',
-    color = 'light',
-    gradient,
+    color,
+    size,
     ...others
 }) => {
-    const selectedIcon: RawIconDefinition = availableIcons[name];
+    const selectedIcon: AvailableIcon = availableIcons[name];
 
-    if (!isValidElement(selectedIcon?.path)) {
-        console.error(
-            `The requested path for the icon "${name}" was not valid. The retrieved path was ${selectedIcon.path}. The icon could not be rendered.` //eslint-disable-line
+    if (!selectedIcon) {
+        console.warn(
+            `The requested icon "${name}" does not exist. No icon will be rendered.`
         );
-        return <></>;
+        return null;
+    }
+
+    const sizedIcon: IconDefinition = selectedIcon[size]!;
+
+    if (!sizedIcon) {
+        console.warn(
+            `The requested icon "${name}" exists but does contain a size of "${size}". Valid sizes for this icon are [${Object.keys(
+                selectedIcon
+            )}]. No icon will be rendered.`
+        );
+        return null;
     }
 
     return (
         <Styled.Icon
-            size={size}
-            color={color}
+            selectedSize={sizedIcon.size}
             name={name}
-            gradient={gradient}
+            color={color}
             {...others}
         >
             <SVGElement
                 name={name}
-                path={selectedIcon.path}
-                viewBox={selectedIcon.viewBox}
-                gradient={gradient!}
+                path={sizedIcon.path}
+                viewBox={sizedIcon.viewBox}
             />
         </Styled.Icon>
     );

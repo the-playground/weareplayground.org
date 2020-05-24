@@ -1,11 +1,9 @@
-import * as React from 'react';
+import React, { createContext, useContext } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { useModal, UseModalReturnProps } from '@hooks';
 import { Modal } from '@components/ui';
 
-export const UIContext = React.createContext<UIContextProps>(
-    {} as UIContextProps
-);
+export const UIContext = createContext<UIContextProps>({} as UIContextProps);
 
 /**
  * Handles all aspects of our application UI State. This gives us a central place to
@@ -40,4 +38,4 @@ export interface UIContextProps {
 /**
  * A saucy little thin wrapper for fetching and using our App Context
  */
-export const useUIContext = () => React.useContext(UIContext);
+export const useUIContext = () => useContext(UIContext);

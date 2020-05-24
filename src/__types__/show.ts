@@ -1,5 +1,4 @@
 import { GatsbyImageProps } from 'gatsby-image';
-import { PageMeta } from './Seo';
 
 export interface Performance {
     datetime: Date;
@@ -36,7 +35,7 @@ export interface Show {
     artists: [] | undefined;
     location: [] | undefined;
     sponsors: [] | undefined;
-    body: PageMeta;
+    body: any;
 }
 
 export interface ShowCard {

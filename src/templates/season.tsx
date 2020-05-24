@@ -3,11 +3,10 @@ import { graphql } from 'gatsby';
 import { GatsbyImageProps } from 'gatsby-image';
 
 // Import typescript interfaces
-import { PageMeta } from '../__interfaces__/Seo';
-import { ShowCard } from '../__interfaces__/Show';
+import { ShowCard } from '@type/show';
 
 // Import components
-import { Layout } from '../components/Layout';
+import { Layout } from '@components/layout';
 
 const SeasonLanding: React.FC<SeasonLandingProps> = ({ data, pageContext }) => {
     const { season } = data.prismic;
@@ -73,7 +72,7 @@ interface SeasonLandingProps {
                 hero_imageSharp: {
                     childImageSharp: GatsbyImageProps;
                 };
-                body: PageMeta;
+                body: any;
                 shows: ShowCard[];
             };
         };

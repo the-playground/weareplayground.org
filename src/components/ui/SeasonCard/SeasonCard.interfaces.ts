@@ -1,4 +1,4 @@
-import { Season } from '../../../__interfaces__/Season';
+import { Season } from '@type/season';
 
 export interface SeasonCardProps {
     season?: Season;

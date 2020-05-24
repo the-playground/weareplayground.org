@@ -16,5 +16,5 @@
  * * syntax of `@package/${componentName}`.
  */
 
-export * from './Button/Button';
-export * from './TextLink/TextLink';
+// export * from './Button/Button';
+// export * from './TextLink/TextLink';

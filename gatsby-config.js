@@ -57,7 +57,6 @@ module.exports = {
                     '@context': './__context__', // <- will become ./src/__context__
                     '@hooks': './__hooks__',
                     '@lib': './__lib__',
-                    '@state': './__state__',
                     '@themes': './__themes__',
                     '@tokens': './__tokens__',
                     '@type': './__types__',

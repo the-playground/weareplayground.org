@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 import { useOnClickOutside, useScrollFreeze } from '@hooks';
-import { useModalState } from '@state';
+import { useUIContext } from '@context';
 
 import * as styled from './__styles';
 
@@ -13,7 +13,7 @@ import * as styled from './__styles';
  * It also handles locking the user's ability to scroll when open.
  */
 export const Modal: React.FC = () => {
-    const modal = useModalState();
+    const { modal } = useUIContext();
     useScrollFreeze(); // lock scrolling
 
     // Close the modal when the user clicks outside of the modal container

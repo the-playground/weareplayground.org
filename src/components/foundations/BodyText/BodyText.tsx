@@ -7,9 +7,16 @@ export const BodyText: React.FC<Omit<BodyTextProps, 'as'>> = ({
     tag,
     size,
     color,
+    weight = 'regular',
     ...others
 }) => (
-    <Styled.BodyText as={tag} color={color} size={size} {...others}>
+    <Styled.BodyText
+        as={tag}
+        color={color}
+        size={size}
+        weight={weight}
+        {...others}
+    >
         {children}
     </Styled.BodyText>
 );

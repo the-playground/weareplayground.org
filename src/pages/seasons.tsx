@@ -53,7 +53,7 @@ interface SeasonsPageProps {
                 hero_imageSharp?: {
                     childImageSharp: GatsbyImageProps;
                 };
-                body: PageMeta;
+                body: any;
             };
         };
     };

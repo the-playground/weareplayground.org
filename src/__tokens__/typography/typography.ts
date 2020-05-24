@@ -17,19 +17,19 @@ import { fontSizes } from './typeScale';
 export const typography = {
     // BodyText
     bodyText: {
-        XLarge: css`
+        xl: css`
             ${fonts.bodyText};
             ${fontSizes.size3};
         `,
-        Large: css`
+        l: css`
             ${fonts.bodyText};
             ${fontSizes.size2};
         `,
-        Medium: css`
+        m: css`
             ${fonts.bodyText};
             ${fontSizes.size1};
         `,
-        Small: css`
+        s: css`
             ${fonts.bodyText};
             ${fontSizes.size0};
         `,
@@ -37,19 +37,19 @@ export const typography = {
 
     // Body » Bold
     bodyBold: {
-        XLarge: css`
+        xl: css`
             ${fonts.bodyBold};
             ${fontSizes.size3};
         `,
-        Large: css`
+        l: css`
             ${fonts.bodyBold};
             ${fontSizes.size2};
         `,
-        Medium: css`
+        m: css`
             ${fonts.bodyBold};
             ${fontSizes.size1};
         `,
-        Small: css`
+        s: css`
             ${fonts.bodyBold};
             ${fontSizes.size0};
         `,
@@ -57,17 +57,17 @@ export const typography = {
 
     // Body » Title
     bodyTitle: {
-        Large: css`
+        l: css`
             ${fonts.bodyBold};
             ${fontSizes.size2};
             text-transform: uppercase;
         `,
-        Medium: css`
+        m: css`
             ${fonts.bodyBold};
             ${fontSizes.size1};
             text-transform: uppercase;
         `,
-        Small: css`
+        s: css`
             ${fonts.bodyBold};
             ${fontSizes.size0};
             text-transform: uppercase;
@@ -76,19 +76,19 @@ export const typography = {
 
     // Heading » Standard
     heading: {
-        XLarge: css`
+        xl: css`
             ${fonts.heading};
             ${fontSizes.size7};
         `,
-        Large: css`
+        l: css`
             ${fonts.heading};
             ${fontSizes.size7};
         `,
-        Medium: css`
+        m: css`
             ${fonts.heading};
             ${fontSizes.size6};
         `,
-        Small: css`
+        s: css`
             ${fonts.heading};
             ${fontSizes.size5};
         `,

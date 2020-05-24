@@ -2,13 +2,10 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 // Import typescript interfaces
-import { PageMeta } from '../__interfaces__/Seo';
-import { Show } from '../__interfaces__/Show';
+import { Show } from '@type/show';
 
 // Import components
-import { SEOPageMeta } from '../components/seo';
-import { getSlice } from '../__utility__/prismic';
-import { Layout } from '../components/Layout';
+import { Layout } from '@components/layout';
 
 const ShowLanding: React.FC<ShowLandingProps> = ({ data, pageContext }) => {
     const { show } = data.prismic;

@@ -1,4 +1,4 @@
-import { Season } from '../../../__interfaces__/season';
+import { Season } from '@type/season';
 
 export interface SeasonCatalogProps {
     seasons?: Season[];

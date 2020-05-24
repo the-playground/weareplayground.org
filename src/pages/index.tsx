@@ -26,7 +26,7 @@ interface HomePageProps {
     data: {
         prismic: {
             home_page: {
-                body: PageMeta;
+                body: any;
             };
         };
     };

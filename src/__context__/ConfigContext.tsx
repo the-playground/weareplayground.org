@@ -1,11 +1,11 @@
 import React, { createContext, useContext } from 'react';
-import { useConfig } from '../__hooks__/useConfig';
+import { useQueryConfig } from '@hooks';
 // Use static query to get config data from prismic.
 
 export const ConfigContext = createContext({});
 
 export const ConfigProvider: React.FC = ({ children }) => {
-    const config = useConfig();
+    const config = useQueryConfig();
 
     return (
         <ConfigContext.Provider value={config}>

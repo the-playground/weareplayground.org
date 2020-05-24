@@ -20,4 +20,4 @@ interface ShowContextProps {
     nextShow: any;
 }
 
-export const useShowContext = useContext(ShowContext);
+export const useShowContext = () => useContext(ShowContext);

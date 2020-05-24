@@ -12,4 +12,7 @@
  * * syntax of `@package/${componentName}`.
  */
 
+export * from './GlobalSEO/GlobalSEO';
 export * from './LinkHandler/LinkHandler';
+export * from './PageSEO/PageSEO';
+export * from './StructuredData/StructuredData';

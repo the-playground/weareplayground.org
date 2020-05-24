@@ -1,8 +1,26 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { typography } from '@tokens';
 import { BodyTextProps } from './__types';
 
+const colors = {
+    light: css`
+        color: var(--typeLight);
+    `,
+    dark: css`
+        color: var(--typeDark);
+    `,
+    accent: css`
+        color: var(--typeAccent);
+    `,
+    inherit: css`
+        color: inherit;
+    `,
+};
+
 export const BodyText = styled.p<Omit<BodyTextProps, 'tag'>>`
-    color: ${(props) => props.theme.typography[props.color!]};
-    ${(props) => typography.body[props.size!]};
+    ${(props) => (props.color ? colors[props.color] : colors.inherit)};
+    ${(props) =>
+        props.weight === 'regular'
+            ? typography.bodyText[props.size!]
+            : typography.bodyBold[props.size!]};
 `;
