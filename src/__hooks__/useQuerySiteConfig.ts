@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-export const useQueryConfig = () => {
+export const useQuerySiteConfig = () => {
     /**
      * Query for all the configs our site might need to use for every page.
      */

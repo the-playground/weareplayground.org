@@ -1,4 +1,4 @@
-export * from './useQueryConfig';
+export * from './useQuerySiteConfig';
 export * from './useHover';
 export * from './useLocalStorage';
 export * from './useModal';
