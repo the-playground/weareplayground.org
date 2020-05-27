@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import * as Styled from './ShowsFeed.styles';
+import * as Styled from './__styles';
 
-import { ShowFeedCard } from './ShowFeedCard/ShowFeedCard';
+import { ShowCard } from '../ShowCard/ShowCard';
 
 // Sort shows by season.
 
-export const ShowsFeed = ({ shows }) => (
-    <Styled.ShowsFeed>
+export const ShowCatalog = ({ shows }) => (
+    <Styled.ShowCatalog>
         {shows.map((show) => (
-            <ShowFeedCard key={show.node.title} show={show.node} />
+            <ShowCard key={show.node.title} show={show.node} />
         ))}
-    </Styled.ShowsFeed>
+    </Styled.ShowCatalog>
 );
 
 /**
@@ -21,7 +21,7 @@ export const ShowsFeed = ({ shows }) => (
  * ----------
  */
 
-ShowsFeed.propTypes = {
+ShowCatalog.propTypes = {
     shows: PropTypes.arrayOf(
         PropTypes.shape({
             node: PropTypes.shape({

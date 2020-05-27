@@ -1,4 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby';
+import { PrismicImage, PrismicLink } from '@type/prismic';
 
 export const useQuerySiteConfig = () => {
     /**
@@ -7,9 +8,11 @@ export const useQuerySiteConfig = () => {
     const config = useStaticQuery(graphql`
         query GlobalMetaQuery {
             prismic {
-                companyconfig(lang: "en-us", uid: "company-config") {
+                site_config(lang: "en-us", uid: "site-config") {
                     name
                     contact_email
+                    ticket_email
+                    audition_email
                     website {
                         ... on PRISMIC__ExternalLink {
                             url
@@ -37,8 +40,6 @@ export const useQuerySiteConfig = () => {
                         }
                     }
                     facebook_app_id
-                }
-                siteconfig(lang: "en-us", uid: "site-config") {
                     verification_google
                     verification_bing
                     verification_norton
@@ -47,8 +48,7 @@ export const useQuerySiteConfig = () => {
         }
     `);
 
-    const site = config?.prismic?.siteconfig;
-    const company = config?.prismic?.companyconfig;
-
-    return { site, company };
+    return config?.prismic?.site_config;
 };
+
+export interface SiteConfig {}

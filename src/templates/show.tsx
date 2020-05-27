@@ -1,20 +1,23 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 
-// Import typescript interfaces
+import { GatsbyPageContext } from '@type/gatsby';
 import { Show } from '@type/show';
 
 // Import components
 import { Layout } from '@components/layout';
 
-const ShowLanding: React.FC<ShowLandingProps> = ({ data, pageContext }) => {
+const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
+    data,
+    pageContext,
+    location,
+}) => {
     const { show } = data.prismic;
     const { uid, seasonUID, seasonURL } = pageContext;
-
-    if (!show) return <></>;
+    // const url = useCurrentURL(location.pathname);
 
     return (
-        <Layout>
+        <Layout noHeader={false} noFooter={false}>
             {show.title}
             <button
                 type="button"
@@ -47,17 +50,9 @@ export const query = graphql`
  * ----------
  */
 
-interface ShowLandingProps {
-    data: {
-        prismic: {
-            show: Show;
-        };
-    };
-
-    pageContext: {
-        uid: string;
-        seasonUID: string;
-        seasonURL: string;
+interface PageData {
+    prismic: {
+        show: Show;
     };
 }
 

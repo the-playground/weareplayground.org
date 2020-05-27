@@ -1,5 +1,6 @@
 import { Season } from '@type/season';
 
 export interface SeasonCardProps {
-    season?: Season;
+    season: Season;
+    className?: string;
 }

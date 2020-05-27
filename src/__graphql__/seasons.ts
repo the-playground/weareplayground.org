@@ -1,49 +1,13 @@
 import { graphql } from 'gatsby';
 
 /**
- * Get data specific to the seasons page
- * Source » Prismic
- *
- * @since 1.0.0
- */
-export const SeasonsPageFragment = graphql`
-    fragment SeasonsPageFragment on Query {
-        prismic {
-            seasons_page(lang: "en-us", uid: "seasons") {
-                title
-                subtitle
-                hero_image
-                hero_imageSharp {
-                    childImageSharp {
-                        fluid(maxWidth: 1920, quality: 100) {
-                            ...GatsbyImageSharpFluid_withWebp
-                        }
-                    }
-                }
-                body {
-                    ... on PRISMIC_Seasons_pageBodyBasic_seo {
-                        type
-                        primary {
-                            meta_description
-                            meta_image
-                            meta_title
-                            twitter_card_image
-                        }
-                    }
-                }
-            }
-        }
-    }
-`;
-
-/**
  * Get all seasons sorted by year (most recent to least)
  * Source » Prismic
  *
  * @since 1.0.0
  */
-export const AllSeasonsSortedFragment = graphql`
-    fragment AllSeasonsSortedFragment on Query {
+export const FullSeasonCatalogFragment = graphql`
+    fragment FullSeasonCatalogFragment on Query {
         prismic {
             # Query the seasons page to get SEO metadata
             ## ---
@@ -57,14 +21,14 @@ export const AllSeasonsSortedFragment = graphql`
                         title
                         tagline
                         description
-                        # catalog_image
-                        # catalog_imageSharp {
-                        #     childImageSharp {
-                        #         fluid(maxWidth: 1200, quality: 100) {
-                        #             ...GatsbyImageSharpFluid_withWebp
-                        #         }
-                        #     }
-                        # }
+                        catalog_image
+                        catalog_imageSharp {
+                            childImageSharp {
+                                fluid(maxWidth: 1200, quality: 100) {
+                                    ...GatsbyImageSharpFluid_withWebp
+                                }
+                            }
+                        }
                         # Get all the shows in each season
                         shows {
                             show {

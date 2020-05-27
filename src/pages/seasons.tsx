@@ -1,24 +1,20 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import { GatsbyImageProps } from 'gatsby-image';
+import { graphql, PageProps } from 'gatsby';
 
-// Import typescript interfaces
+import { GatsbyPageContext } from '@type/gatsby';
 import { Season } from '@type/season';
 
 // Import components
 import { Layout } from '@components/layout';
 import { SeasonCatalog } from '@components/ui';
 
-const SeasonsPage: React.FC<SeasonsPageProps> = ({ data }) => {
+const SeasonsPage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
+    data,
+}) => {
     const seasons = data?.prismic?.allSeasons?.edges;
-	const pageData = data?.prismic?.seasons_page; // eslint-disable-line
-
-    if (!seasons || !pageData) {
-        return <></>;
-    }
 
     return (
-        <Layout>
+        <Layout noHeader={false} noFooter={false}>
             {/* Seasons Hero Goes Here */}
             <SeasonCatalog seasons={seasons} />
             {/* Seasons CTA Goes Here */}
@@ -28,33 +24,14 @@ const SeasonsPage: React.FC<SeasonsPageProps> = ({ data }) => {
 
 export const query = graphql`
     query SeasonsPageData {
-        ...SeasonsPageFragment
-        ...AllSeasonsSortedFragment
+        ...FullSeasonCatalogFragment
     }
 `;
 
-/**
- * ----------
- * Prop Types
- * ----------
- */
-
-interface SeasonsPageProps {
-    data: {
-        prismic: {
-            allSeasons: {
-                edges: Season[];
-            };
-
-            seasons_page: {
-                title: string;
-                subtitle: string;
-                hero_image?: GatsbyImageProps;
-                hero_imageSharp?: {
-                    childImageSharp: GatsbyImageProps;
-                };
-                body: any;
-            };
+interface PageData {
+    prismic: {
+        allSeasons: {
+            edges: Season[];
         };
     };
 }

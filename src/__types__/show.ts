@@ -38,7 +38,7 @@ export interface Show {
     body: any;
 }
 
-export interface ShowCard {
+export interface ShowSnippet {
     _meta: {
         uid: string;
     };

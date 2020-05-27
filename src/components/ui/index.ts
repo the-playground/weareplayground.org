@@ -20,5 +20,4 @@
 export * from './Cart/Cart';
 export * from './Modal/Modal';
 export * from './SeasonCatalog/SeasonCatalog';
-export * from './SeasonCard/SeasonCard';
-export * from './ShowsFeed/ShowsFeed';
+export * from './ShowCatalog/ShowCatalog';

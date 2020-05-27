@@ -1,20 +1,27 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import { GatsbyImageProps } from 'gatsby-image';
 
-// Import typescript interfaces
-import { ShowCard } from '@type/show';
+import { GatsbyPageContext } from '@type/gatsby';
+import { ShowSnippet } from '@type/show';
 
 // Import components
 import { Layout } from '@components/layout';
 
-const SeasonLanding: React.FC<SeasonLandingProps> = ({ data, pageContext }) => {
+const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
+    data,
+    pageContext,
+    location,
+}) => {
     const { season } = data.prismic;
     const { uid, allSeasonsURL } = pageContext;
+    // const url = useCurrentURL(location.pathname);
 
-    if (!season) return <></>;
-
-    return <Layout>{season.title}</Layout>;
+    return (
+        <Layout noHeader={false} noFooter={false}>
+            {season.title}
+        </Layout>
+    );
 };
 
 export const query = graphql`
@@ -32,17 +39,6 @@ export const query = graphql`
                         }
                     }
                 }
-                body {
-                    ... on PRISMIC_SeasonBodyBasic_seo {
-                        type
-                        primary {
-                            meta_description
-                            meta_image
-                            meta_title
-                            twitter_card_image
-                        }
-                    }
-                }
                 shows {
                     show {
                         ... on PRISMIC_Show {
@@ -50,6 +46,8 @@ export const query = graphql`
                         }
                     }
                 }
+                seo_title
+                seo_description
             }
         }
     }
@@ -61,26 +59,19 @@ export const query = graphql`
  * ----------
  */
 
-interface SeasonLandingProps {
-    data: {
-        prismic: {
-            season: {
-                title: string;
-                tagline: string;
-                description: string;
-                hero_image: GatsbyImageProps;
-                hero_imageSharp: {
-                    childImageSharp: GatsbyImageProps;
-                };
-                body: any;
-                shows: ShowCard[];
+interface PageData {
+    prismic: {
+        season: {
+            title: string;
+            tagline: string;
+            description: string;
+            hero_image: GatsbyImageProps;
+            hero_imageSharp: {
+                childImageSharp: GatsbyImageProps;
             };
+            body: any;
+            shows: ShowSnippet[];
         };
-    };
-
-    pageContext: {
-        uid: string;
-        allSeasonsURL: string;
     };
 }
 

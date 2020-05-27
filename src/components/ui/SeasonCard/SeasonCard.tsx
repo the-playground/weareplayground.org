@@ -1,13 +1,16 @@
 import React from 'react';
-
-// Import typescript interfaces
 import Img from 'gatsby-image';
 
-//  Import components
-import * as Styled from './SeasonCard.styles';
+import { SeasonCardProps } from './__types';
 
-export const SeasonCard: React.FC<Styled.SeasonCardProps> = ({ season }) => {
-    const seasonData = season!.node;
+//  Import components
+import * as Styled from './__styles';
+
+export const SeasonCard: React.FC<SeasonCardProps> = ({
+    season,
+    className,
+}) => {
+    const seasonData = season.node;
 
     const { uid } = seasonData._meta;
 
@@ -24,8 +27,9 @@ export const SeasonCard: React.FC<Styled.SeasonCardProps> = ({ season }) => {
     // const [status, SetStatus] = useState('past');
 
     return (
-        <Styled.SeasonCard>
+        <Styled.SeasonCard className={className}>
             <Styled.SeasonCardLink to={`/seasons/${uid}`}>
+                {seasonData.title}
                 {imageSource ? <Img fluid={imageSource} alt="" /> : ``}
             </Styled.SeasonCardLink>
         </Styled.SeasonCard>

@@ -85,7 +85,7 @@ module.exports = {
         {
             resolve: `gatsby-source-prismic-graphql`,
             options: {
-                repositoryName: `theplayground`, // (required)
+                repositoryName: `thenerveweb`, // (required)
                 accessToken: process.env.PRISMIC_API_KEY, // (optional)
                 previews: false, // (optional, default: false)
                 // Do not use. We build pages manually in gatsby-node.js
