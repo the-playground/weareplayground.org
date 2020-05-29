@@ -69,7 +69,6 @@ interface PageData {
             hero_imageSharp: {
                 childImageSharp: GatsbyImageProps;
             };
-            body: any;
             shows: ShowSnippet[];
         };
     };
