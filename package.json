@@ -71,7 +71,10 @@
 	"eslintConfig": {
 		"extends": [
 			"@ascend-innovations"
-		]
+		],
+		"rules": {
+			"@typescript-eslint/camelcase": 0
+		}
 	},
 	"eslintIgnore": [
 		"node_modules/",
