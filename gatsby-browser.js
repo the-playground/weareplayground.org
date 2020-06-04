@@ -9,6 +9,7 @@ import React from 'react';
 
 import {
     ConfigProvider,
+    LinkMapProvider,
     SeasonProvider,
     ShowProvider,
     UIProvider,
@@ -22,11 +23,13 @@ import './src/__themes__/defaultTheme.css';
 // eslint-disable-next-line
 export const wrapRootElement = ({ element }) => (
     <ConfigProvider>
-        <SeasonProvider>
-            <ShowProvider>
-                <UIProvider>{element}</UIProvider>
-            </ShowProvider>
-        </SeasonProvider>
+        <LinkMapProvider>
+            <SeasonProvider>
+                <ShowProvider>
+                    <UIProvider>{element}</UIProvider>
+                </ShowProvider>
+            </SeasonProvider>
+        </LinkMapProvider>
     </ConfigProvider>
 );
 

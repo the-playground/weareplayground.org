@@ -4,5 +4,6 @@ export * from './useLocalStorage';
 export * from './useModal';
 export * from './useOnClickOutside';
 export * from './useScrollFreeze';
+export * from './useLinkMap';
 export * from './useQuerySiteConfig';
 export * from './useToggle';

@@ -61,6 +61,7 @@ module.exports = {
                     '@tokens': './__tokens__',
                     '@type': './__types__',
                     '@components': './components',
+                    '@templates': './templates',
                 },
             },
         },
