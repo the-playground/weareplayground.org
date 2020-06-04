@@ -66,7 +66,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             path: seasonURL,
             component: seasonTemplate,
             context: {
-                allSeasonsURL: URLBase,
                 uid: seasonSlug,
             },
         });
