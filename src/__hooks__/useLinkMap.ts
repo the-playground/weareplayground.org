@@ -5,7 +5,7 @@ const formatSlug = (slug: string) => {
 };
 
 const getCurrentShowSlug = (showUID: string, seasonUID: string) => {
-    return seasonUID && showUID ? `/${seasonUID}/${showUID}` : '/archive';
+    return seasonUID && showUID ? `/${seasonUID}/${showUID}` : null;
 };
 
 export const useLinkMap = (): LinkMap => {
@@ -94,11 +94,17 @@ export const useLinkMap = (): LinkMap => {
         seasonArchive: formatSlug(links.season_archive_page?._meta.uid),
         currentSeason:
             formatSlug(links.current_season_page?._meta.uid) ??
-            formatSlug(links.season_archive_page?._meta.uid),
-        currentShow: getCurrentShowSlug(
-            links.current_show_page?._meta.uid,
-            links.current_show_page?.season._meta.uid
-        ),
+            formatSlug(
+                links.season_archive_page?._meta.uid
+            ) /* Make sure we have a fallback here */,
+        currentShow:
+            getCurrentShowSlug(
+                links.current_show_page?._meta.uid,
+                links.current_show_page?.season._meta.uid
+            ) ??
+            formatSlug(
+                links.season_archive_page?._meta.uid
+            ) /* Make sure we have a fallback here */,
     };
 };
 
