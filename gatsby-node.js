@@ -4,6 +4,19 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+/**
+ * Temp fix for gatsby-source-prismic-graphql bug: https://github.com/birkir/gatsby-source-prismic-graphql/issues/162
+ */
+const fs = require('fs');
+
+const dir = './.cache/caches/gatsby-source-prismic-graphql';
+
+exports.onPreBootstrap = () => {
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir);
+    }
+};
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
     const { createPage } = actions;
 
@@ -49,9 +62,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         `🙏🏼 Begin creating dynamic season and show pages from Prismic...`
     );
 
-    const seasonTemplate = require.resolve(`./src/templates/season.tsx`);
-    const showTemplate = require.resolve(`./src/templates/show.tsx`);
-    const URLBase = `seasons`;
+    const seasonTemplate = require.resolve(
+        `./src/templates/SeasonTemplate.tsx`
+    );
+    const showTemplate = require.resolve(`./src/templates/ShowTemplate.tsx`);
+    const URLBase = `s`;
 
     result.data.prismic.allSeasons.edges.forEach(({ node }) => {
         // Set up season data
