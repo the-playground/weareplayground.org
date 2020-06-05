@@ -5,7 +5,7 @@ const formatSlug = (slug: string) => {
 };
 
 const getCurrentShowSlug = (showUID: string, seasonUID: string) => {
-    return seasonUID && showUID ? `/${seasonUID}/${showUID}` : null;
+    return seasonUID && showUID ? `/s/${seasonUID}/${showUID}` : null;
 };
 
 export const useLinkMap = (): LinkMap => {

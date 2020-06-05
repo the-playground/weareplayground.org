@@ -19,5 +19,5 @@
 
 export * from './Cart/Cart';
 export * from './Modal/Modal';
-export * from './SeasonCatalog/SeasonCatalog';
-export * from './ShowCatalog/ShowCatalog';
+export * from './ShowCard/ShowCard';
+export * from './ShowPoster/ShowPoster';

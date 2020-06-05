@@ -38,7 +38,47 @@ export const query = graphql`
     query showData($uid: String!) {
         prismic {
             show(lang: "en-us", uid: $uid) {
-                ...FullShowDataFragment
+                title
+                author
+                author_link {
+                    ... on PRISMIC__ExternalLink {
+                        url
+                    }
+                }
+                script_link {
+                    ... on PRISMIC__ExternalLink {
+                        url
+                    }
+                }
+                hero_image
+                hero_imageSharp {
+                    childImageSharp {
+                        fluid(maxWidth: 1920, quality: 100) {
+                            ...GatsbyImageSharpFluid_withWebp
+                        }
+                    }
+                }
+                teaser
+                description
+                tagline
+                hashtag
+                effects_advisory
+                content_advisory
+                intermissions
+                runtime_hours
+                runtime_minutes
+                performances {
+                    datetime
+                    preview
+                    price
+                    pwyw
+                    status
+                    talkback
+                }
+                seo_title
+                seo_description
+                seo_image
+                seo_hide
             }
         }
     }

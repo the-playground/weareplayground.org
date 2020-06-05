@@ -1,4 +1,5 @@
 import { GatsbyImageProps } from 'gatsby-image';
+import { PrismicImage } from './prismic';
 
 export interface Performance {
     datetime: Date;
@@ -10,6 +11,12 @@ export interface Performance {
 }
 
 export interface Show {
+    season: {
+        title: string;
+        _meta: {
+            uid: string;
+        };
+    };
     title: string;
     author: string;
     hero_image: GatsbyImageProps;
@@ -35,20 +42,35 @@ export interface Show {
     artists: [] | undefined;
     location: [] | undefined;
     sponsors: [] | undefined;
-    body: any;
+    seo_title: string;
+    seo_description: string;
+    seo_image: PrismicImage;
+    seo_hide: boolean;
 }
 
 export interface ShowSnippet {
     _meta: {
         uid: string;
     };
+    season: {
+        title: string;
+        _meta: {
+            uid: string;
+        };
+    };
     title: string;
     author: string;
-    catalog_image: GatsbyImageProps;
-    catalog_imageSharp: {
+    card_image?: GatsbyImageProps;
+    card_imageSharp?: {
         childImageSharp: GatsbyImageProps;
     };
-    performances: {
-        datetime: Date;
-    }[];
+    poster_image?: GatsbyImageProps;
+    poster_imageSharp?: {
+        childImageSharp: GatsbyImageProps;
+    };
+    performances:
+        | {
+              datetime: Date;
+          }[]
+        | null;
 }

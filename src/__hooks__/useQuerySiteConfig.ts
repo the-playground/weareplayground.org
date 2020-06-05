@@ -44,6 +44,9 @@ export const useQuerySiteConfig = (): SiteConfig => {
                     verification_google
                     verification_bing
                     verification_norton
+                    fallback_page_meta_image
+                    fallback_season_meta_image
+                    fallback_show_meta_image
                 }
             }
         }
@@ -58,6 +61,9 @@ export interface SiteConfig {
     ein: string;
     facebook: PrismicLink;
     facebook_app_id: string;
+    fallback_page_meta_image: PrismicImage;
+    fallback_season_meta_image: PrismicImage;
+    fallback_show_meta_image: PrismicImage;
     founding_date: string;
     instagram: PrismicLink;
     legal_name: string;
