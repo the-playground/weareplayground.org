@@ -72,7 +72,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         // Set up season data
         const season = node;
         const seasonSlug = season._meta.uid;
-        const seasonURL = `${URLBase}/${seasonSlug}`;
+        const seasonURL = `/${URLBase}/${seasonSlug}`;
         const seasonID = season._meta.id;
 
         console.log(`✅ Season: ${seasonURL}`);
@@ -82,6 +82,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             component: seasonTemplate,
             context: {
                 uid: seasonSlug,
+                seasonURL,
             },
         });
 

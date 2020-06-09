@@ -8,9 +8,16 @@ export const Heading: React.FC<Omit<HeadingProps, 'as'>> = ({
     tag,
     size,
     color,
+    className,
     ...others
 }) => (
-    <Styled.Heading as={tag} color={color} size={size} {...others}>
+    <Styled.Heading
+        as={tag}
+        color={color}
+        size={size}
+        className={className}
+        {...others}
+    >
         {children}
     </Styled.Heading>
 );

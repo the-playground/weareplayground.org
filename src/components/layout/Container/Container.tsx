@@ -6,9 +6,15 @@ export const Container: React.FC<ContainerProps> = ({
     children,
     maxWidth = 'l',
     type = 'contained',
+    className,
     ...others
 }) => (
-    <styled.Container maxWidth={maxWidth} type={type} {...others}>
+    <styled.Container
+        maxWidth={maxWidth}
+        type={type}
+        className={className}
+        {...others}
+    >
         {children}
     </styled.Container>
 );

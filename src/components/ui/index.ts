@@ -19,5 +19,6 @@
 
 export * from './Cart/Cart';
 export * from './Modal/Modal';
+export * from './PosterGrid/PosterGrid';
 export * from './ShowCard/ShowCard';
 export * from './ShowPoster/ShowPoster';

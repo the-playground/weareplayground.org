@@ -8,6 +8,9 @@ import { ShowSnippet } from '@type/show';
 // Import Typescript interfaces
 import PageTemplate from '@templates/PageTemplate';
 
+import { Container } from '@components/layout';
+import { PosterGrid } from '@components/ui';
+
 const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
     pageContext,
@@ -24,6 +27,7 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
             currentLocation={location.pathname}
         >
             Archive Page
+            <PosterGrid items={shows} />
         </PageTemplate>
     );
 };
@@ -46,6 +50,9 @@ export const query = graphql`
             allShows {
                 edges {
                     node {
+                        _meta {
+                            uid
+                        }
                         author
                         title
                         season {

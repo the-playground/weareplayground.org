@@ -60,12 +60,12 @@ export interface ShowSnippet {
     };
     title: string;
     author: string;
-    card_image?: GatsbyImageProps;
-    card_imageSharp?: {
+    card_image: PrismicImage;
+    card_imageSharp: {
         childImageSharp: GatsbyImageProps;
     };
-    poster_image?: GatsbyImageProps;
-    poster_imageSharp?: {
+    poster_image: PrismicImage;
+    poster_imageSharp: {
         childImageSharp: GatsbyImageProps;
     };
     performances:

@@ -91,6 +91,7 @@ export const typography = {
         s: css`
             ${fonts.heading};
             ${fontSizes.size5};
+            line-height: 1.2;
         `,
     },
 };

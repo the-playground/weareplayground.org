@@ -1,12 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby';
-
-const formatSlug = (slug: string) => {
-    return `/${slug}`;
-};
-
-const getCurrentShowSlug = (showUID: string, seasonUID: string) => {
-    return seasonUID && showUID ? `/s/${seasonUID}/${showUID}` : null;
-};
+import { getShowSlug, formatSlug } from '@lib/url';
 
 export const useLinkMap = (): LinkMap => {
     // Get all of our predefined site links from Prismic
@@ -98,7 +91,7 @@ export const useLinkMap = (): LinkMap => {
                 links.season_archive_page?._meta.uid
             ) /* Make sure we have a fallback here */,
         currentShow:
-            getCurrentShowSlug(
+            getShowSlug(
                 links.current_show_page?._meta.uid,
                 links.current_show_page?.season._meta.uid
             ) ??

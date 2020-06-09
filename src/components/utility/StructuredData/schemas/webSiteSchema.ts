@@ -14,7 +14,7 @@ export const webSiteSchema = (config: SiteConfig): string => {
 		"url" : "${siteURL}",
 		"name": "${config.name}",
 		"publisher": {"@id": ${siteURL}/#organization"},
-		"copyrightYear": "2015",
+		"copyrightYear": "2014",
 		"copyrightHolder": {"@id": ${siteURL}/#organization"},
 	}`;
 };

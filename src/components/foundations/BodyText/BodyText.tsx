@@ -8,6 +8,7 @@ export const BodyText: React.FC<Omit<BodyTextProps, 'as'>> = ({
     size,
     color,
     weight = 'regular',
+    className,
     ...others
 }) => (
     <Styled.BodyText
@@ -15,6 +16,7 @@ export const BodyText: React.FC<Omit<BodyTextProps, 'as'>> = ({
         color={color}
         size={size}
         weight={weight}
+        className={className}
         {...others}
     >
         {children}

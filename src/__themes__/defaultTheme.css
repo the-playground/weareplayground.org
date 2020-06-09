@@ -1,8 +1,10 @@
 /* The default theme for the Nerve Theatre Website */
 :root {
+    --bodyBG: var(--blueD1);
     --typeDark: var(--blue);
-    --typeLight: var(--gray5);
+    --typeLight: var(--gray6);
     --typeAccent: var(--orange);
+    --posterOverlay: var(--blueD1);
     /* --actionPrimaryColor: var();
     --actionPrimaryBG: var();
     --actionSecondaryColor: var();

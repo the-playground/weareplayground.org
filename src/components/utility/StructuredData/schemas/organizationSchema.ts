@@ -13,7 +13,7 @@ export const organizationSchema = (config: SiteConfig): string => {
 		"@id":"${siteURL}/#organization",
 		"inLanguage": "EN",
 		"name": "${config.name}",
-		"email": "${config.email}",
+		"email": "${config.contact_email}",
 		"url" : "${siteURL}",
 		"logo": {
 			"@type": "ImageObject",
@@ -25,27 +25,43 @@ export const organizationSchema = (config: SiteConfig): string => {
 			"@id": "${siteURL}/#logo"
 		},
 		"legalName": "${config.legal_name}",
-		"foundingDate": "2015",
+		"foundingDate": "2014",
 		"address": {
 			"@type": "PostalAddress",
 			"addressCountry": "US",
 			"addressLocality": "${config.location_city}",
 			"addressRegion": "${config.location_state}",
 			"postalCode": "${config.location_zip}"
-			"streetAddress": "${config.location_street}",
 		},
 		"contactPoint" : [{
 			"@type" : "ContactPoint",
-			"email": "${config.email}",
-			"telephone": "${config.phone}"
+			"email": "${config.contact_email}",
 			"contactType" : "general contact",
 			"availableLanguage" : "English",
 		}],
 		sameAs: [
-			"${config.linkedin?.url}",
-			"${config.twitter?.url}",
-			"${config.github?.url}",
-			"${config.medium?.url}"
+			"https://theplaygroundtheatre.org"
+			"${config.facebook?.url}",
+			"${config.instagram?.url}",
+			"${config.spotify?.url}",
+		],
+		founders: [
+			{
+				"@type": "Person",
+				"givenName": "Chris",
+				"familyName": "Hahn"
+				"birthPlace": "",
+				"jobTitle": "Artistic Director",
+				"email": "",
+			},
+			{
+				"@type": "Person",
+				"givenName": "Jenna",
+				"familyName": "Burnette",
+				"birthPlace": "",
+				"jobTitle": "Artistic Director",
+				"email": "",
+			}
 		]
 	}`;
 };

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { css, createGlobalStyle } from 'styled-components';
 import { appBaseFontSize, fonts } from '@tokens';
 
 /**
@@ -16,6 +16,7 @@ export const StylesGlobal = createGlobalStyle`
 
 	body{
 		${fonts.bodyText};
+		background-color: var(--bodyBG);
 		line-height: 1.5;
 		min-height: 100%;
 		text-rendering: optimizeLegibility;

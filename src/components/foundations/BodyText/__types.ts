@@ -8,4 +8,5 @@ export interface BodyTextProps {
     size: AvailableBodyTypography;
     color: 'light' | 'dark' | 'accent';
     weight?: 'regular' | 'bold';
+    className?: string;
 }

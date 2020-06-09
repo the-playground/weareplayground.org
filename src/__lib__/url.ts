@@ -14,3 +14,25 @@ export const getCurrentRootURL = () =>
  * @param url The URL to process
  */
 export const removeTrailingSlash = (url: string) => url.replace(/\/+$/, '');
+
+/**
+ *
+ * @param slug
+ */
+export const formatSlug = (slug: string) => {
+    return `/${slug}`;
+};
+
+/**
+ *
+ * @param showUID
+ * @param seasonUID
+ */
+export const getShowSlug = (showUID: string, seasonUID: string) =>
+    `/s/${seasonUID}/${showUID}`;
+
+/**
+ *
+ * @param seasonUID
+ */
+export const getSeasonSlug = (seasonUID: string) => `/s/${seasonUID}`;

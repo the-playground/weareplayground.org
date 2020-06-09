@@ -7,4 +7,5 @@ export interface HeadingProps {
     as: AllowedTag;
     size: AvailableHeadingTypography;
     color: 'light' | 'dark' | 'accent';
+    className?: string;
 }
