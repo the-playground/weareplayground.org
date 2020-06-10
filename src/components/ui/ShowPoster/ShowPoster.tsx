@@ -15,6 +15,11 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
     image,
     season,
 }) => {
+    /**
+     * Todo: 1. Use performance date range to extract a "prettified" version of the dates. Ex. April 23-28, 2019
+     * Todo: 2, Turn date extraction methodology into custom hook
+     */
+
     return (
         <styled.ShowPoster>
             <LinkHandler className="wrapper" to={getShowSlug(uid, season.uid)}>
@@ -24,15 +29,21 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
                 <div className="content">
                     <BodyText
                         className="title"
-                        size="l"
+                        size="xl"
                         color="light"
                         tag="h2"
                         weight="bold"
                     >
                         {title}
                     </BodyText>
-                    <BodyText className="author" size="s" color="light" tag="p">
-                        {author}
+                    <BodyText
+                        className="author"
+                        size="m"
+                        color="light"
+                        tag="p"
+                        weight="bold"
+                    >
+                        by {author}
                     </BodyText>
                     <BodyText className="season" size="s" color="light" tag="p">
                         {season.title}

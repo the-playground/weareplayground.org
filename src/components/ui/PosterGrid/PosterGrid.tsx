@@ -6,12 +6,18 @@ import { ShowSnippet } from '@type/show';
 import * as styled from './__styles';
 
 export const PosterGrid: React.FC<PosterGridProps> = ({ items }) => {
+    /**
+     * Todo: 1. Sort shows based on performance dates
+     * Todo: 2. Turn sorting methodology into reuseable hook
+     */
+
     return (
         <styled.PosterGrid>
             {items.map((item) => {
                 const show = item.node;
                 return (
                     <ShowPoster
+                        key={show.title}
                         title={show.title}
                         author={show.author}
                         uid={show._meta.uid}
