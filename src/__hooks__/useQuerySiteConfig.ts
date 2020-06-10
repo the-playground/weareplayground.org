@@ -5,7 +5,7 @@ export const useQuerySiteConfig = (): SiteConfig => {
     /**
      * Query for all the configs our site might need to use for every page.
      */
-    const config = useStaticQuery(graphql`
+    const { prismic } = useStaticQuery(graphql`
         query GlobalMetaQuery {
             prismic {
                 site_config(lang: "en-us", uid: "site-config") {
@@ -52,7 +52,7 @@ export const useQuerySiteConfig = (): SiteConfig => {
         }
     `);
 
-    return config?.prismic?.site_config;
+    return prismic?.site_config;
 };
 
 export interface SiteConfig {
