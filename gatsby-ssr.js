@@ -48,7 +48,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
             key="css-snipcart"
             rel="stylesheet"
             id="snipcart-css"
-            href="https://cdn.snipcart.com/themes/v3.0.11/default/snipcart.css"
+            href="https://cdn.snipcart.com/themes/v3.0.15/default/snipcart.css"
             type="text/css"
         />,
     ]);

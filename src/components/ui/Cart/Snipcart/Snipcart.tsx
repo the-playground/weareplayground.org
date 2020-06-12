@@ -7,7 +7,7 @@ export const Snipcart: React.FC = () => (
             <script
                 defer
                 type="text/javascript"
-                src="https://cdn.snipcart.com/themes/v3.0.11/default/snipcart.js"
+                src="https://cdn.snipcart.com/themes/v3.0.15/default/snipcart.js"
             />
         </Helmet>
         <div
