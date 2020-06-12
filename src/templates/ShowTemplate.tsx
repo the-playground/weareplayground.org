@@ -4,6 +4,9 @@ import { graphql, PageProps } from 'gatsby';
 import { GatsbyPageContext } from '@type/gatsby';
 import { Show } from '@type/show';
 
+import { useConfigContext } from '@context';
+import { useGetMetaImage, useCurrentURL } from '@hooks';
+
 // Import components
 import { Layout } from '@components/layout';
 
@@ -12,9 +15,12 @@ const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     pageContext,
     location,
 }) => {
-    const { show } = data.prismic;
+    const show = data.prismicShow.data;
     const { uid, seasonUID, seasonURL } = pageContext;
-    // const url = useCurrentURL(location.pathname);
+
+    const siteConfig = useConfigContext();
+    const url = useCurrentURL(location.pathname);
+    const metaImage = useGetMetaImage('season', show.seo_image);
 
     return (
         <Layout noHeader={false} noFooter={false}>
@@ -26,7 +32,7 @@ const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 data-item-price="20.00"
                 data-item-url="https://weareplayground.org/shows/the-breakfast-club"
                 data-item-description="The Breakfast Club Presented by The Playground"
-                data-item-name={show.title}
+                data-item-name="test"
             >
                 Purchase Tickets
             </button>
@@ -36,30 +42,27 @@ const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
 
 export const query = graphql`
     query showData($uid: String!) {
-        prismic {
-            show(lang: "en-us", uid: $uid) {
+        prismicShow(uid: { eq: $uid }, lang: { eq: "en-us" }) {
+            first_publication_date
+            last_publication_date
+            data {
                 title
                 author
                 author_link {
-                    ... on PRISMIC__ExternalLink {
-                        url
-                    }
+                    url
                 }
                 script_link {
-                    ... on PRISMIC__ExternalLink {
-                        url
-                    }
+                    url
                 }
-                hero_image
-                hero_imageSharp {
-                    childImageSharp {
-                        fluid(maxWidth: 1920, quality: 100) {
-                            ...GatsbyImageSharpFluid_withWebp
-                        }
+                hero_image {
+                    fluid {
+                        ...GatsbyPrismicImageFluid
                     }
                 }
                 teaser
-                description
+                description {
+                    raw
+                }
                 tagline
                 hashtag
                 effects_advisory
@@ -75,9 +78,18 @@ export const query = graphql`
                     status
                     talkback
                 }
+
+                ## SEO Data
                 seo_title
                 seo_description
-                seo_image
+                seo_image {
+                    alt
+                    url
+                    dimensions {
+                        width
+                        height
+                    }
+                }
                 seo_hide
             }
         }
@@ -91,8 +103,8 @@ export const query = graphql`
  */
 
 interface PageData {
-    prismic: {
-        show: Show;
+    prismicShow: {
+        data: Show;
     };
 }
 

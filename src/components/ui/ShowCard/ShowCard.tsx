@@ -1,7 +1,6 @@
 import React from 'react';
-import Img, { GatsbyImageProps } from 'gatsby-image';
 
-import { PrismicImage } from '@type/prismic';
+import { Image, ImageProps } from '@components/foundations';
 import * as Styled from './__styles';
 
 export const ShowCard: React.FC<ShowCardProps> = ({ show, className }) => {
@@ -21,7 +20,7 @@ export const ShowCard: React.FC<ShowCardProps> = ({ show, className }) => {
     return (
         <Styled.ShowCard className={className}>
             <Styled.ShowCardLink to={`/shows/${uid}`}>
-                {imageSource ? <Img fluid={imageSource} alt="Hello" /> : ``}
+                {imageSource ? <Image fluid={imageSource} alt="Hello" /> : ``}
             </Styled.ShowCardLink>
         </Styled.ShowCard>
     );
@@ -31,10 +30,7 @@ export interface ShowCardProps {
     title: string;
     author: string;
     uid: string;
-    image: {
-        basic: PrismicImage;
-        sharp: GatsbyImageProps;
-    };
+    image: ImageProps;
     season: {
         title: string;
         uid: string;

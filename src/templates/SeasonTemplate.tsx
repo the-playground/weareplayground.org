@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
-import { GatsbyImageProps } from 'gatsby-image';
 
 import { GatsbyPageContext } from '@type/gatsby';
 import { PrismicImage } from '@type/prismic';
@@ -11,69 +10,79 @@ import { useGetMetaImage, useCurrentURL } from '@hooks';
 
 // Import components
 import { Layout } from '@components/layout';
+import { ImageProps } from '@components/foundations';
 
 const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
     pageContext,
     location,
 }) => {
-    const { season } = data.prismic;
+    const season = data.prismicSeason;
     const { shows } = season;
+    const seasonData = data.prismicSeason.data;
 
     const { uid } = pageContext;
     const siteConfig = useConfigContext();
     const url = useCurrentURL(location.pathname);
-    const metaImage = useGetMetaImage('season', season.seo_image);
+    const metaImage = useGetMetaImage('season', seasonData.seo_image);
 
     return (
         <Layout noHeader={false} noFooter={false}>
-            {season.title}
+            {seasonData.title}
         </Layout>
     );
 };
 
 export const query = graphql`
-    query seasonData($uid: String!) {
-        prismic {
-            season(lang: "en-us", uid: $uid) {
+    query seasonData($id: String!) {
+        prismicSeason(id: { eq: $id }, lang: { eq: "en-us" }) {
+            first_publication_date
+            last_publication_date
+
+            data {
                 title
                 tagline
                 description
-                hero_image
-                hero_imageSharp {
-                    childImageSharp {
-                        fluid(maxWidth: 1920, quality: 100) {
-                            ...GatsbyImageSharpFluid_withWebp
-                        }
+                hero_image {
+                    alt
+                    fluid {
+                        ...GatsbyPrismicImageFluid
                     }
                 }
                 shows {
                     show {
-                        ... on PRISMIC_Show {
-                            author
-                            title
-                            performances {
-                                datetime
-                            }
-                            card_image
-                            card_imageSharp {
-                                childImageSharp {
-                                    fluid(quality: 90) {
-                                        ...GatsbyImageSharpFluid_withWebp
+                        document {
+                            ... on PrismicShow {
+                                data {
+                                    author
+                                    title
+                                    performances {
+                                        datetime
+                                    }
+                                    card_image {
+                                        alt
+                                        fluid {
+                                            ...GatsbyPrismicImageFluid
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
+
+                ## SEO Data
                 seo_title
                 seo_description
-                seo_image
-                seo_hide
-                _meta {
-                    firstPublicationDate
-                    lastPublicationDate
+                seo_image {
+                    alt
+                    url
+                    dimensions {
+                        width
+                        height
+                    }
                 }
+                seo_hide
             }
         }
     }
@@ -86,17 +95,19 @@ export const query = graphql`
  */
 
 interface PageData {
-    prismic: {
-        season: {
+    prismicSeason: {
+        data: {
             title: string;
             tagline: string;
             description: string;
-            hero_image: GatsbyImageProps;
-            hero_imageSharp: {
-                childImageSharp: GatsbyImageProps;
-            };
+            hero_image: ImageProps;
+
             shows: {
-                show: ShowSnippet;
+                show: {
+                    document: {
+                        data: ShowSnippet;
+                    };
+                };
             }[];
             seo_title: string;
             seo_description: string;

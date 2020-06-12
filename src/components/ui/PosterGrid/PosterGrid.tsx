@@ -13,21 +13,19 @@ export const PosterGrid: React.FC<PosterGridProps> = ({ items }) => {
 
     return (
         <styled.PosterGrid>
-            {items.map((item) => {
-                const show = item.node;
+            {items.map(({ uid, data }) => {
+                const show = data;
+
                 return (
                     <ShowPoster
                         key={show.title}
                         title={show.title}
                         author={show.author}
-                        uid={show._meta.uid}
-                        image={{
-                            basic: show.poster_image,
-                            sharp: show.poster_imageSharp?.childImageSharp,
-                        }}
+                        uid={uid}
+                        image={show.poster_image}
                         season={{
-                            title: show.season.title,
-                            uid: show.season._meta.uid,
+                            title: show.season.document.data.title,
+                            uid: show.season.uid,
                         }}
                     />
                 );
@@ -37,7 +35,5 @@ export const PosterGrid: React.FC<PosterGridProps> = ({ items }) => {
 };
 
 export interface PosterGridProps {
-    items: {
-        node: Omit<ShowSnippet, 'card_image' | 'card_imageSharp'>;
-    }[];
+    items: Omit<ShowSnippet, 'card_image'>[];
 }

@@ -1,5 +1,5 @@
 {
-	"name": "the-nerve",
+	"name": "the-nerve-web",
 	"version": "1.0.0",
 	"description": "A modern web app for The Nerve",
 	"main": "index.js",
@@ -24,10 +24,10 @@
 		"gatsby-plugin-styled-components": "^3.3.4",
 		"gatsby-plugin-typescript": "^2.4.6",
 		"gatsby-source-filesystem": "^2.3.11",
-		"gatsby-source-prismic-graphql": "^3.6.2",
+		"gatsby-source-prismic": "^3.1.4",
 		"gatsby-transformer-sharp": "^2.5.5",
 		"intersection-observer": "^0.10.0",
-		"polished": "^3.6.4",
+		"polished": "^3.6.5",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-helmet": "^6.1.0",
@@ -71,10 +71,7 @@
 	"eslintConfig": {
 		"extends": [
 			"@ascend-innovations"
-		],
-		"rules": {
-			"@typescript-eslint/camelcase": 0
-		}
+		]
 	},
 	"eslintIgnore": [
 		"node_modules/",

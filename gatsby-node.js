@@ -4,42 +4,21 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-/**
- * Temp fix for gatsby-source-prismic-graphql bug: https://github.com/birkir/gatsby-source-prismic-graphql/issues/162
- */
-const fs = require('fs');
-
-const dir = './.cache/caches/gatsby-source-prismic-graphql';
-
-exports.onPreBootstrap = () => {
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir);
-    }
-};
-
 exports.createPages = async ({ graphql, actions, reporter }) => {
     const { createPage } = actions;
 
     // Query Season and show data
-    const result = await graphql(`
-        query SeasonShowQuery {
-            prismic {
-                allSeasons {
-                    edges {
-                        node {
-                            _meta {
+    const query = await graphql(`
+        {
+            allPrismicSeason {
+                nodes {
+                    uid
+                    id
+                    data {
+                        shows {
+                            show {
                                 id
                                 uid
-                            }
-                            shows {
-                                show {
-                                    ... on PRISMIC_Show {
-                                        _meta {
-                                            id
-                                            uid
-                                        }
-                                    }
-                                }
                             }
                         }
                     }
@@ -48,7 +27,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
     `);
 
-    if (result.errors) {
+    if (query.errors) {
         reporter.panicOnBuild(
             `🔥 Error while running GraphQL query on Prismic.`
         );
@@ -68,12 +47,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const showTemplate = require.resolve(`./src/templates/ShowTemplate.tsx`);
     const URLBase = `s`;
 
-    result.data.prismic.allSeasons.edges.forEach(({ node }) => {
-        // Set up season data
-        const season = node;
-        const seasonSlug = season._meta.uid;
+    query.data.allPrismicSeason.nodes.forEach((season) => {
+        const seasonSlug = season.uid;
         const seasonURL = `/${URLBase}/${seasonSlug}`;
-        const seasonID = season._meta.id;
+        const seasonID = season.id;
 
         console.log(`✅ Season: ${seasonURL}`);
 
@@ -81,20 +58,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             path: seasonURL,
             component: seasonTemplate,
             context: {
+                id: seasonID,
                 uid: seasonSlug,
                 seasonURL,
             },
         });
 
         // Bail if there are no shows linked to the season
-        if (!season.shows) {
+        if (!season.data?.shows) {
             return;
         }
 
         // We have to use a nested forEach now to go through every show in a season and generate the pages
-        season.shows.forEach(({ show }) => {
-            const showSlug = show._meta.uid;
+        season.data.shows.forEach(({ show }) => {
+            const showSlug = show.uid;
             const showURL = `${URLBase}/${seasonSlug}/${showSlug}`;
+            const showID = show.id;
 
             console.log(`✅ Show: ${showURL}`);
 
@@ -106,6 +85,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                     seasonUID: seasonSlug,
                     seasonURL,
                     uid: showSlug,
+                    id: showID,
                 },
             });
         });

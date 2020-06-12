@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { breakpoints, spacing } from '@tokens';
 
-export const PosterGrid = styled.div`
+export const PosterGrid = styled.section`
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: ${spacing.component.m};

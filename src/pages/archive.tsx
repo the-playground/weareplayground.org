@@ -17,8 +17,8 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     location,
 }) => {
     const { uid } = pageContext;
-    const pageData = data.prismic.archive_page;
-    const shows = data.prismic.allShows.edges;
+    const pageData = data.prismicArchivePage;
+    const shows = data.allPrismicShow.nodes;
 
     return (
         <PageTemplate
@@ -26,7 +26,7 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
             pageConfig={pageData}
             currentLocation={location.pathname}
         >
-            Archive Page
+            <Container>Archive Page</Container>
             <PosterGrid items={shows} />
         </PageTemplate>
     );
@@ -34,43 +34,50 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
 
 export const query = graphql`
     query {
-        prismic {
-            archive_page(uid: "archive", lang: "en-us") {
-                seo_title
-                seo_hide
-                seo_description
-                seo_image
-                remove_header
+        prismicArchivePage {
+            last_publication_date
+            first_publication_date
+            data {
                 remove_footer
-                _meta {
-                    firstPublicationDate
-                    lastPublicationDate
+                remove_header
+                seo_description
+                seo_hide
+                seo_title
+                seo_image {
+                    alt
+                    url
+                    dimensions {
+                        height
+                        width
+                    }
                 }
             }
-            allShows {
-                edges {
-                    node {
-                        _meta {
-                            uid
+        }
+
+        allPrismicShow {
+            nodes {
+                uid
+                data {
+                    performances {
+                        datetime
+                        external_ticket_link {
+                            url
                         }
-                        author
-                        title
-                        season {
-                            ... on PRISMIC_Season {
-                                title
-                                _meta {
-                                    uid
-                                }
-                            }
+                    }
+                    poster_image {
+                        fluid {
+                            ...GatsbyPrismicImageFluid
                         }
-                        performances {
-                            datetime
-                        }
-                        poster_image
-                        poster_imageSharp {
-                            childImageSharp {
-                                fluid(quality: 90) {
-                                    ...GatsbyImageSharpFluid_withWebp
+                    }
+                    title
+                    author
+                    # Query related season info
+                    season {
+                        uid
+                        document {
+                            ... on PrismicSeason {
+                                data {
+                                    title
                                 }
                             }
                         }
@@ -88,24 +95,20 @@ export const query = graphql`
  */
 
 interface PageData {
-    prismic: {
-        archive_page: {
+    prismicArchivePage: {
+        first_publication_date: string;
+        last_publication_date: string;
+        data: {
             remove_header: boolean;
             remove_footer: boolean;
             seo_title: string;
             seo_description: string;
             seo_image?: PrismicImage;
             seo_hide: boolean;
-            _meta: {
-                firstPublicationDate: string;
-                lastPublicationDate: string;
-            };
         };
-        allShows: {
-            edges: {
-                node: ShowSnippet;
-            }[];
-        };
+    };
+    allPrismicShow: {
+        nodes: Omit<ShowSnippet, 'card_image'>[];
     };
 }
 

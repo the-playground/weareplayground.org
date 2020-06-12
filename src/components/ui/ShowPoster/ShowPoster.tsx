@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { PrismicImage } from '@type/prismic';
-
 import { getShowSlug } from '@lib/url';
 import { LinkHandler } from '@components/utility';
-import { BodyText, Heading, Image, ImageProps } from '@components/foundations';
+import { BodyText, Image, ImageProps } from '@components/foundations';
 
 import * as styled from './__styles';
 
@@ -23,7 +21,7 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
     return (
         <styled.ShowPoster>
             <LinkHandler className="wrapper" to={getShowSlug(uid, season.uid)}>
-                <Image fluid={image.sharp?.fluid} alt={image.basic.alt} />
+                <Image fluid={image.fluid} alt={image.alt} />
                 <div className="overlay" />
 
                 <div className="content">
@@ -58,10 +56,7 @@ export interface ShowPosterProps {
     title: string;
     author: string;
     uid: string;
-    image: {
-        basic: PrismicImage;
-        sharp: ImageProps;
-    };
+    image: ImageProps;
     season: {
         title: string;
         uid: string;

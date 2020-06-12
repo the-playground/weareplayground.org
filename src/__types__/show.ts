@@ -1,4 +1,4 @@
-import { GatsbyImageProps } from 'gatsby-image';
+import { ImageProps } from '@components/foundations';
 import { PrismicImage } from './prismic';
 
 export interface Performance {
@@ -12,17 +12,16 @@ export interface Performance {
 
 export interface Show {
     season: {
-        title: string;
-        _meta: {
-            uid: string;
+        uid: string;
+        document: {
+            data: {
+                title: string;
+            };
         };
     };
     title: string;
     author: string;
-    hero_image: GatsbyImageProps;
-    hero_imageSharp: {
-        childImageSharp: GatsbyImageProps;
-    };
+    hero_image: ImageProps;
     short_description: string;
     long_description: string;
     tagline: string;
@@ -49,28 +48,21 @@ export interface Show {
 }
 
 export interface ShowSnippet {
-    _meta: {
-        uid: string;
-    };
-    season: {
-        title: string;
-        _meta: {
+    uid: string;
+    data: {
+        season: {
             uid: string;
+            document: {
+                data: {
+                    title: string;
+                };
+            };
         };
+        title: string;
+        author: string;
+
+        card_image: ImageProps;
+        poster_image: ImageProps;
+        performances: Pick<Performance, 'datetime'>[] | null;
     };
-    title: string;
-    author: string;
-    card_image: PrismicImage;
-    card_imageSharp: {
-        childImageSharp: GatsbyImageProps;
-    };
-    poster_image: PrismicImage;
-    poster_imageSharp: {
-        childImageSharp: GatsbyImageProps;
-    };
-    performances:
-        | {
-              datetime: Date;
-          }[]
-        | null;
 }
