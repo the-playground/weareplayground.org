@@ -65,7 +65,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         });
 
         // Bail if there are no shows linked to the season
-        if (!season.data?.shows) {
+        if (!season.data || !season.data.shows) {
             return;
         }
 
