@@ -128,7 +128,8 @@ module.exports = {
                 // `imageImgixParams` option.
                 // See: https://docs.imgix.com/apis/url
                 imagePlaceholderImgixParams: {
-                    blur: 100,
+                    w: 50,
+                    blur: 75,
                 },
             },
         },
