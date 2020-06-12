@@ -1,0 +1,21 @@
+/* The brand color palette for The Nerve Theatre */
+
+:root{
+    --orange: #F25C05;
+    --orangeD1: #D75204;
+    --orangeL1: #FA7223;
+
+    --blue: #0C1E31;
+    --blueD1: #07121D;
+    --blueL1: #122D4A;
+    --blueL2: #173A5F;
+
+    --gray0: #000000;
+    --gray1: #343438;
+    --gray2: #67676F;
+    --gray3: #888891;
+    --gray4: #A2A2A9;
+    --gray5: #D6D6D9;
+    --gray6: #F2F2F3;
+    --gray7: #FFFFFF;
+}

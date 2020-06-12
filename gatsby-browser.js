@@ -6,27 +6,37 @@
 
 // global imports
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { SiteProvider } from './src/__context__/SiteContext';
-import { ShowProvider } from './src/__context__/ShowContext';
 
-// Import our themes
-import themes from './src/__themes__';
+import {
+    ConfigProvider,
+    LinkMapProvider,
+    SeasonProvider,
+    ShowProvider,
+    UIProvider,
+} from './src/__context__';
+
+// Import our default css theme
+import './src/__themes__/palette.css';
+import './src/__themes__/defaultTheme.css';
 
 // Handle Application wrapper
 // eslint-disable-next-line
 export const wrapRootElement = ({ element }) => (
-	<SiteProvider>
-		<ShowProvider>
-			<ThemeProvider theme={themes.primary}>{element}</ThemeProvider>
-		</ShowProvider>
-	</SiteProvider>
+    <ConfigProvider>
+        <LinkMapProvider>
+            <SeasonProvider>
+                <ShowProvider>
+                    <UIProvider>{element}</UIProvider>
+                </ShowProvider>
+            </SeasonProvider>
+        </LinkMapProvider>
+    </ConfigProvider>
 );
 
 export const onClientEntry = () => {
-	// IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
-	if (!(`IntersectionObserver` in window)) {
+    // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
+    if (!(`IntersectionObserver` in window)) {
 		import('intersection-observer'); // eslint-disable-line
-		console.log(`# IntersectionObserver is polyfilled!`);
-	}
+        console.log(`# IntersectionObserver is polyfilled!`);
+    }
 };

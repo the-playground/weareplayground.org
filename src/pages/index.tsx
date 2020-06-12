@@ -1,31 +1,21 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
+import { GatsbyPageContext } from '@type/gatsby';
 
 // Import Typescript interfaces
-import { PageMeta } from '../__interfaces__/seo';
+import { Layout } from '@components/layout';
 
-import { Layout } from '../components/Layout';
-import { SEOPageMeta } from '../components/SEO';
-import { getSlice } from '../__utility__/prismic';
-
-const HomePage: React.FC<HomePageProps> = ({ data }) => {
-	const home = data.prismic.home_page;
-
-	const pageMeta = getSlice(home.body, `basic_seo`);
-
-	return (
-		<Layout>
-			<SEOPageMeta metadata={pageMeta} />
-			Home Page
-		</Layout>
-	);
+const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
+    data,
+    pageContext,
+    location,
+}) => {
+    return (
+        <Layout noHeader={false} noFooter={false}>
+            Home Page
+        </Layout>
+    );
 };
-
-export const query = graphql`
-	query HomePageData {
-		...HomePageDataFragment
-	}
-`;
 
 /**
  * ----------
@@ -33,14 +23,12 @@ export const query = graphql`
  * ----------
  */
 
-interface HomePageProps {
-	data: {
-		prismic: {
-			home_page: {
-				body: PageMeta;
-			};
-		};
-	};
+interface PageData {
+    prismic: {
+        home_page: {
+            body: any;
+        };
+    };
 }
 
 export default HomePage;

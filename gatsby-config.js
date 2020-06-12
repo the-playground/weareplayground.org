@@ -1,147 +1,169 @@
 const path = require(`path`);
 
-require('dotenv').config({
-	path: `.env.${process.env.NODE_ENV}`,
+require(`dotenv`).config({
+    path: `.env.${process.env.NODE_ENV}`,
 });
 
 module.exports = {
-	plugins: [
-		/**
-		 * @link
-		 * @since 1.0.0
-		 */
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				name: `images`,
-				path: path.join(__dirname, `static`, `images`),
-			},
-		},
-		/**
-		 * @link
-		 * @since 1.0.0
-		 */
-		`gatsby-plugin-sharp`,
+    plugins: [
+        /**
+         * @link https://www.gatsbyjs.org/packages/gatsby-source-filesystem
+         */
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `images`,
+                path: path.join(__dirname, `static`, `images`),
+            },
+        },
+        /**
+         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-sharp/
+         */
+        `gatsby-plugin-sharp`,
 
-		/**
-		 * @link
-		 * @since 1.0.0
-		 */
-		`gatsby-transformer-sharp`,
+        /**
+         * @link https://www.gatsbyjs.org/packages/gatsby-transformer-sharp
+         */
+        `gatsby-transformer-sharp`,
 
-		/**
-		 * @link
-		 * @since 1.0.0
-		 */
-		`gatsby-plugin-sharp`,
+        /**
+         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/
+         */
+        `gatsby-plugin-react-helmet`,
 
-		/**
-		 * @link
-		 * @since 1.0.0
-		 */
-		`gatsby-transformer-sharp`,
+        /**
+         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-typescript
+         */
+        {
+            resolve: `gatsby-plugin-typescript`,
+            options: {
+                // Add any options here
+            },
+        },
 
-		/**
-		 * @link https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/
-		 * @since 1.0.0
-		 */
-		`gatsby-plugin-react-helmet`,
+        /**
+         * Implement the babel module resolver for a really nice global import syntax
+         *
+         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-module-resolver
+         */
+        {
+            resolve: 'gatsby-plugin-module-resolver',
+            options: {
+                root: './src', // <- will be used as a root dir
+                aliases: {
+                    '@context': './__context__', // <- will become ./src/__context__
+                    '@hooks': './__hooks__',
+                    '@lib': './__lib__',
+                    '@themes': './__themes__',
+                    '@tokens': './__tokens__',
+                    '@type': './__types__',
+                    '@components': './components',
+                    '@templates': './templates',
+                },
+            },
+        },
 
-		{
-			resolve: `gatsby-plugin-typescript`,
-			options: {
-			//   isTSX: true, // defaults to false
-			//   jsxPragma: `jsx`, // defaults to "React"
-			//   allExtensions: true, // defaults to false
-			},
-		},
+        /**
+         * Styled Components support
+         *
+         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-styled-components/
+         */
+        {
+            resolve: `gatsby-plugin-styled-components`,
+            options: {
+                // Add any options here
+            },
+        },
+        /**
+         * Query data from our CMS
+         *
+         * @link https://www.gatsbyjs.org/packages/gatsby-source-prismic
+         */
+        {
+            resolve: 'gatsby-source-prismic',
+            options: {
+                // The name of your prismic.io repository. This is required.
+                repositoryName: 'thenerveweb',
+                // An API access token to your prismic.io repository. This is required.
+                accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+                // Provide an object of Prismic custom type JSON schemas to load into
+                // Gatsby. This is required.
+                // Note that w are disabling eslint below to turn off the following global-require and prettier/prettier
+                schemas: {
+                    // Global site config/data schemas
+                    'site_config': require('./src/__schemas__/site_config.json'), // eslint-disable-line
+                    header: require('./src/__schemas__/header.json'), // eslint-disable-line
+                    footer: require('./src/__schemas__/footer.json'), // eslint-disable-line
 
+                    // Site repeatable type schemas
+                    season: require('./src/__schemas__/season.json'), // eslint-disable-line
+                    show: require('./src/__schemas__/show.json'), // eslint-disable-line
 
-		/**
-		 * Styled Components support
-		 *
-		 * @link https://www.gatsbyjs.org/packages/gatsby-plugin-styled-components/
-		 * @since 1.0.0
-		 */
-		{
-			resolve: `gatsby-plugin-styled-components`,
-			options: {
-				// Add any options here
-			},
-		},
+                    // Site single type schemas
+                    'about_page': require('./src/__schemas__/about_page.json'), // eslint-disable-line
+                    'archive_page': require('./src/__schemas__/archive_page.json'), // eslint-disable-line
+                    'audition_page': require('./src/__schemas__/audition_page.json'), // eslint-disable-line
+                    'contact_page': require('./src/__schemas__/contact_page.json'), // eslint-disable-line
+                    'home_page': require('./src/__schemas__/home_page.json'), // eslint-disable-line
+                    'legal_page': require('./src/__schemas__/legal_page.json'), // eslint-disable-line
+                    'support_us_page': require('./src/__schemas__/support_us_page.json'), // eslint-disable-line
+                },
+                // Set a default language when fetching documents. The default value is
+                // '*' which will fetch all languages.
+                // See: https://prismic.io/docs/javascript/query-the-api/query-by-language
+                lang: 'en-us',
+                // Set a function to determine if images are downloaded locally and made
+                // available for gatsby-transformer-sharp for use with gatsby-image.
+                // The document node, field key (i.e. API ID), and field value are
+                // provided to the function, as seen below. This allows you to use
+                // different logic for each field if necessary.
+                // This defaults to always return false.
+                shouldDownloadImage: () => {
+                    // Return true to download the image or false to skip.
+                    return false;
+                },
+                // Provide a default set of Imgix image transformations applied to
+                // the placeholder images of Imgix-backed gatsby-image fields. These
+                // parameters will be applied over those provided in the above
+                // `imageImgixParams` option.
+                // See: https://docs.imgix.com/apis/url
+                imagePlaceholderImgixParams: {
+                    blur: 100,
+                },
+            },
+        },
 
-		/**
-		 * @link
-		 * @since 1.0.0
-		 */
-		{
-			resolve: 'gatsby-source-prismic-graphql',
-			options: {
-				repositoryName: 'theplayground', // (required)
-				accessToken: process.env.PRISMIC_API_KEY, // (optional)
-				previews: false, // (optional, default: false)
-				// Do not use. We build pages manually in gatsby-node.js
-				// pages: [
-				// 	{
-				// 		type: 'Show', // TypeName from prismic
-				// 		match: '/shows/:uid', // Pages will be generated under this pattern (optional)
-				// 		path: '/show', // Placeholder page for unpublished documents
-				// 		component: require.resolve('./src/templates/show.js'),
-				// 	},
-				// ],
-				omitPrismicScript: true,
-			},
-		},
+        /**
+         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-offline
+         */
+        {
+            resolve: `gatsby-plugin-offline`,
+            options: {
+                precachePages: [],
+            },
+        },
 
-		/**
-		 * @link https://www.gatsbyjs.org/packages/gatsby-plugin-manifest/
-		 * @since 1.0.0
-		 */
-		{
-			resolve: `gatsby-plugin-manifest`, // add icon 512x512 -- svg
-			options: {
-				name: `The Playground`,
-				short_name: `Playground`,
-				start_url: `/`,
-				background_color: `#303030`,
-				theme_color: `#2D3837`,
-				display: `standalone`,
-			},
-		},
-
-		/**
-		 * @link
-		 * @since 1.0.0
-		 */
-		{
-			resolve: `gatsby-plugin-offline`,
-			options: {
-				precachePages: [],
-			},
-		},
-
-		/**
-		 * Robots.txt Handler
-		 *
-		 * ! Remember to change production policy to `allow` when we launch
-		 *
-		 * @link https://www.gatsbyjs.org/packages/gatsby-plugin-robots-txt/
-		 * @since 1.0.0
-		 */
-		{
-			resolve: 'gatsby-plugin-robots-txt',
-			options: {
-				host: 'https://weareplayground.org',
-				sitemap: 'https://weareplayground.org/sitemap.xml',
-				env: {
-					development: {
-						policy: [{ userAgent: '*', disallow: ['/'] }],
-					},
-					production: {
-						policy: [{ userAgent: '*', disallow: '/' }],
-					},
-				},
-			},
-		},
-	],
+        /**
+         * Robots.txt Handler
+         *
+         * ! Remember to change production policy to `allow` when we launch
+         *
+         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-robots-txt/
+         */
+        {
+            resolve: `gatsby-plugin-robots-txt`,
+            options: {
+                host: `https://nervetheatre.org`,
+                sitemap: `https://nervetheatre.org/sitemap.xml`,
+                env: {
+                    development: {
+                        policy: [{ userAgent: `*`, disallow: [`/`] }],
+                    },
+                    production: {
+                        policy: [{ userAgent: `*`, disallow: `/` }],
+                    },
+                },
+            },
+        },
+    ],
 };

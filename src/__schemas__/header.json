@@ -1,0 +1,41 @@
+{
+    "Main": {
+        "document_title": {
+            "type": "Text",
+            "config": {
+                "label": "Document Title"
+            }
+        },
+        "nav_links": {
+            "type": "Group",
+            "config": {
+                "fields": {
+                    "text": {
+                        "type": "Text",
+                        "config": {
+                            "label": "Text"
+                        }
+                    },
+                    "page": {
+                        "type": "Link",
+                        "config": {
+                            "select": "document",
+                            "customtypes": [
+                                "home_page",
+                                "about_page",
+                                "legal_page",
+                                "support_us_page",
+                                "contact_page",
+                                "archive_page",
+                                "season",
+                                "audition_page"
+                            ],
+                            "label": "Page"
+                        }
+                    }
+                },
+                "label": "Nav Links"
+            }
+        }
+    }
+}
