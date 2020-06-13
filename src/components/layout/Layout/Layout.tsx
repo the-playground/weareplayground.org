@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { Header } from './Header/Header';
 import { Footer } from './Footer/Footer';
 import { StylesReset, StylesGlobal } from './styles';
-import { loadStage2Fonts } from './scripts/stage2Fonts';
+import { loadStage2Fonts, stage1FontDeclarations } from './fonts';
 
 export const Layout: React.FC<LayoutProps> = ({
     children,
@@ -15,6 +15,7 @@ export const Layout: React.FC<LayoutProps> = ({
         <StylesReset />
         <StylesGlobal />
         <Helmet>
+            <style>{stage1FontDeclarations}</style>
             <script type="text/javascript">{loadStage2Fonts()}</script>
         </Helmet>
 

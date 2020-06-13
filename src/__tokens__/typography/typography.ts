@@ -55,25 +55,6 @@ export const typography = {
         `,
     },
 
-    // Body » Title
-    bodyTitle: {
-        l: css`
-            ${fonts.bodyBold};
-            ${fontSizes.size2};
-            text-transform: uppercase;
-        `,
-        m: css`
-            ${fonts.bodyBold};
-            ${fontSizes.size1};
-            text-transform: uppercase;
-        `,
-        s: css`
-            ${fonts.bodyBold};
-            ${fontSizes.size0};
-            text-transform: uppercase;
-        `,
-    },
-
     // Heading » Standard
     heading: {
         xl: css`
@@ -93,14 +74,17 @@ export const typography = {
             ${fontSizes.size5};
             line-height: 1.2;
         `,
+        xs: css`
+            ${fonts.heading};
+            ${fontSizes.size4};
+            line-height: 1.2;
+            letter-spacing: 2px;
+        `,
     },
 };
 
 export type BodyTypography = typeof typography['bodyText'];
 export type AvailableBodyTypography = keyof BodyTypography;
-
-export type BodyTitleTypography = typeof typography['bodyTitle'];
-export type AvailableBodyTitleTypography = keyof BodyTitleTypography;
 
 export type HeadingTypography = typeof typography['heading'];
 export type AvailableHeadingTypography = keyof HeadingTypography;

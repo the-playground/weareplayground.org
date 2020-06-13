@@ -30,7 +30,7 @@ const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 className="snipcart-add-item"
                 data-item-id={uid}
                 data-item-price="20.00"
-                data-item-url="https://weareplayground.org/shows/the-breakfast-club"
+                data-item-url={url}
                 data-item-description="The Breakfast Club Presented by The Playground"
                 data-item-name="test"
             >

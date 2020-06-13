@@ -2,7 +2,7 @@ import React from 'react';
 
 import { getShowSlug } from '@lib/url';
 import { LinkHandler } from '@components/utility';
-import { BodyText, Image, ImageProps } from '@components/foundations';
+import { BodyText, Heading, Image, ImageProps } from '@components/foundations';
 
 import * as styled from './__styles';
 
@@ -25,15 +25,9 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
                 <div className="overlay" />
 
                 <div className="content">
-                    <BodyText
-                        className="title"
-                        size="xl"
-                        color="light"
-                        tag="h2"
-                        weight="bold"
-                    >
+                    <Heading className="title" size="xs" color="light" tag="h2">
                         {title}
-                    </BodyText>
+                    </Heading>
                     <BodyText
                         className="author"
                         size="m"
