@@ -8,7 +8,6 @@ export const ShowPoster = styled.article`
     overflow: hidden;
     position: relative;
     transition: ${animation.cardHover};
-    will-change: transform;
 
     .overlay {
         background: linear-gradient(

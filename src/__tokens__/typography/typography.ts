@@ -94,6 +94,12 @@ export const typography = {
             ${fontSizes.size5};
             line-height: 1.2;
         `,
+        xs: css`
+            ${fonts.heading};
+            ${fontSizes.size4};
+            line-height: 1.2;
+            letter-spacing: 2px;
+        `,
     },
 };
 
