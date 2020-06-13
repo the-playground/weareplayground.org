@@ -19,8 +19,23 @@ export const StylesGlobal = createGlobalStyle`
 		background-color: var(--bodyBG);
 		line-height: 1.5;
 		min-height: 100%;
+		overflow-x: hidden;
 		text-rendering: optimizeLegibility;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
+
+	/**
+	 * Utility Classes
+	 */
+	 .u-visually-hidden {
+		position: absolute !important;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+		clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+		clip: rect(1px, 1px, 1px, 1px);
+		white-space: nowrap; /* added line */
+	 }
+
 `;
