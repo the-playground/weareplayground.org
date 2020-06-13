@@ -21,10 +21,10 @@ export const loadStage2Fonts = () => {
     }
 
     const heading = new FontFace(
-        'Assistant',
-        "local('Assistant ExtraBold'), local('Assistant-ExtraBold'), url(/fonts/stage-2/Assistant-ExtraBold--stage2.woff2) format('woff2'), url(/fonts/stage-2/Assistant-ExtraBold--stage2.woff) format('woff')",
+        'Greycliff',
+        "local('Greycliff CF Heavy'), url(/fonts/stage-2/GreycliffCF-Heavy--stage2.woff2) format('woff2'), url(/fonts/stage-2/GreycliffCF-Heavy--stage2.woff) format('woff')",
         {
-            weight: '800',
+            weight: '900',
         }
     );
 
@@ -42,9 +42,11 @@ export const loadStage2Fonts = () => {
             weight: '700',
         }
     );
-    Promise.all([regularBody.load(), boldBody.load()]).then(function (fonts) {
-        fonts.forEach(function (font) {
-            document.fonts.add(font);
-        });
-    });
+    Promise.all([heading.load(), regularBody.load(), boldBody.load()]).then(
+        function (fonts) {
+            fonts.forEach(function (font) {
+                document.fonts.add(font);
+            });
+        }
+    );
 };

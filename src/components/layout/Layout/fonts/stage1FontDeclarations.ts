@@ -4,14 +4,13 @@
  */
 export const stage1FontDeclarations = `
 
-    /* Heading Font -- Assistant */
+    /* Heading Font -- Greycliff CF */
     @font-face {
-		font-family: "Assistant";
-		src: local('Assistant ExtraBold'),
-			local('Assistant-ExtraBold'),
-            url('/fonts/stage-1/Assistant-ExtraBold--stage1.woff2') format('woff2'),
-            url('/fonts/stage-1/Assistant-ExtraBold--stage1.woff') format('woff');
-		font-weight: 800;
+		font-family: "Greycliff";
+		src: local('Greycliff CF Heavy'),
+            url('/fonts/stage-1/GreycliffCF-Heavy--stage1.woff2') format('woff2'),
+            url('/fonts/stage-1/GreycliffCF-Heavy--stage1.woff') format('woff');
+		font-weight: 900;
 		font-display: swap;
 	}
 

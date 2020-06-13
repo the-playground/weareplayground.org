@@ -57,20 +57,21 @@ export const typography = {
 
     // Body » Title
     bodyTitle: {
+        xl: css`
+            ${fonts.heading};
+            ${fontSizes.size3};
+        `,
         l: css`
-            ${fonts.bodyBold};
+            ${fonts.heading};
             ${fontSizes.size2};
-            text-transform: uppercase;
         `,
         m: css`
-            ${fonts.bodyBold};
+            ${fonts.heading};
             ${fontSizes.size1};
-            text-transform: uppercase;
         `,
         s: css`
-            ${fonts.bodyBold};
+            ${fonts.heading};
             ${fontSizes.size0};
-            text-transform: uppercase;
         `,
     },
 

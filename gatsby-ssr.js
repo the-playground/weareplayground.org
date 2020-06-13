@@ -37,7 +37,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
         <link
             key="heading-font"
             rel="preload"
-            href="/fonts/stage-1/Assistant-ExtraBold--stage1.woff2"
+            href="/fonts/stage-1/GreycliffCF-Heavy--stage1.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"

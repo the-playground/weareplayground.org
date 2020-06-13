@@ -26,12 +26,12 @@ export const fonts = {
         font-weight: 700;
     `,
 
-    // Greycliff CF Bold
+    // Greycliff CF Heavy
     heading: css`
-        font-family: 'Assistant', system-ui, -apple-system, BlinkMacSystemFont,
+        font-family: 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont,
             'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
         font-style: normal;
-        font-weight: 800;
+        font-weight: 900;
     `,
 };
 

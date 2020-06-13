@@ -8,27 +8,9 @@ The Nerve implements a custom 2-stage font-loading technique to prevent FLOUT an
 
 We leveraged [Wakamaifondue](https://wakamaifondue.com/) to give us visibility into our fonts. This gave us the ability to select the exact features & unicode characters we needed for each font, drastically reducing file size.
 
-## Assistant
-Assistant is our heading font from [Google Fonts](https://fonts.google.com/specimen/Assistant). It is a stimulating, passionate, and on-trend geometric sans with large counters.
-
-This font is loaded in 2 stages. The first stages is an incredibly stripped down version of the font devoid of any features or unicodes we've deemed unimportant.
-
-The stage 1 files were generated with the below command for `woff` and `woff2` using [fonttools](https://github.com/fonttools/fonttools):
-```
-pyftsubset "Assistant-ExtraBold.ttf" --output-file="Assistant-ExtraBold--stage-1.woff2" --flavor=woff2 --layout-features=kern --no-hinting --desubroutinize --unicodes=U+0000-00A0,U+00A9,U+00B7,U+00BB,U+2010-201E
-```
-
-The resulting fonts file is around 7kb for `woff2`!!
-
-Next, we ran the following command to generate stage2 fonts in `woff` and `woff2`. We also chose custom unicodes for this based on how we know the font will be implemented:
-
-```
-pyftsubset "Assistant-ExtraBold.ttf" --output-file="Assistant-ExtraBold--stage-1.woff2" --flavor=woff2 --flavor=woff2 --layout-features="*" --unicodes=U+0000-00A0,U+00A9,U+00B7,U+00BB,U+2010-201E
-```
-
 ## Greycliff
 
-Greycliff is our workhorse font purchased from [Conarry Fagen Inc](https://connary.com/greycliff.html). It is a rugged, hearty, and warm sans that will carry the bulk of the content load on the site.
+Greycliff is our workhorse font purchased from [Conarry Fagen Inc](https://connary.com/greycliff.html). It is a rugged, hearty, and warm sans that will carry the content load on the site.
 
 This font is loaded in 2 stages. The first stages is an incredibly stripped down version of the font devoid of any features or unicodes we've deemed unimportant.
 
@@ -43,6 +25,7 @@ We are loading the following weights in stage1 right now:
 
 - Greycliff Regular
 - Greycliff Bold
+- Greycliff Heavy
 
 Next, we ran the following command to generate stage2 fonts in `woff` and `woff2`. We also chose custom unicodes for this based on how we know the font will be implemented:
 ```
