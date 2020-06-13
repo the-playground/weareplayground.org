@@ -21,7 +21,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
         <link
             key="regular-body-font"
             rel="preload"
-            href="/fonts/stage-1/GreycliffCF-Regular-kern--stage1.woff2"
+            href="/fonts/stage-1/GreycliffCF-Regular--stage1.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
@@ -29,7 +29,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
         <link
             key="bold-body-font"
             rel="preload"
-            href="/fonts/stage-1/GreycliffCF-Bold-kern--stage1.woff2"
+            href="/fonts/stage-1/GreycliffCF-Bold--stage1.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
@@ -37,7 +37,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
         <link
             key="heading-font"
             rel="preload"
-            href="/fonts/stage-1/GreycliffCF-Heavy-kern--stage1.woff2"
+            href="/fonts/stage-1/Assistant-ExtraBold--stage1.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"

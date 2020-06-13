@@ -13,7 +13,6 @@ export const StylesReset = createGlobalStyle`
 
 	* {
     	box-sizing: border-box;
-		-webkit-box-sizing: border-box;
 	}
 
 	/* stylelint-disable */
@@ -131,7 +130,7 @@ export const StylesReset = createGlobalStyle`
 	[type="button"],
 	[type="reset"],
 	[type="submit"] {
-		-webkit-appearance: none;
+		appearance: none;
 	}
 
 	/**
@@ -215,7 +214,7 @@ export const StylesReset = createGlobalStyle`
 	*/
 
 	[type="search"] {
-		-webkit-appearance: textfield; /* 1 */
+		appearance: textfield; /* 1 */
 		outline-offset: -2px; /* 2 */
 	}
 
@@ -224,7 +223,7 @@ export const StylesReset = createGlobalStyle`
 	*/
 
 	[type="search"]::-webkit-search-decoration {
-		-webkit-appearance: none;
+		appearance: none;
 	}
 
 	/**
@@ -233,7 +232,7 @@ export const StylesReset = createGlobalStyle`
 	*/
 
 	::-webkit-file-upload-button {
-		-webkit-appearance: button; /* 1 */
+		appearance: button; /* 1 */
 		font: inherit; /* 2 */
 	}
 

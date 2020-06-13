@@ -82,51 +82,70 @@ module.exports = {
         {
             resolve: 'gatsby-source-prismic',
             options: {
-                // The name of your prismic.io repository. This is required.
+                /**
+                 * The name of your prismic.io repository. This is required.
+                 */
                 repositoryName: 'thenerveweb',
-                // An API access token to your prismic.io repository. This is required.
+
+                /**
+                 * An API access token to your prismic.io repository. This is required.
+                 */
                 accessToken: process.env.PRISMIC_ACCESS_TOKEN,
-                // Provide an object of Prismic custom type JSON schemas to load into
-                // Gatsby. This is required.
-                // Note that w are disabling eslint below to turn off the following global-require and prettier/prettier
+
+                /**
+                 * Provide an object of Prismic custom type JSON schemas to load into
+                 * Gatsby. This is required.
+                 */
                 schemas: {
                     // Global site config/data schemas
-                    'site_config': require('./src/__schemas__/site_config.json'), // eslint-disable-line
-                    header: require('./src/__schemas__/header.json'), // eslint-disable-line
-                    footer: require('./src/__schemas__/footer.json'), // eslint-disable-line
+                    'site_config': require('./src/__schemas__/site_config.json'), // eslint-disable-line global-require, prettier/prettier
+                    header: require('./src/__schemas__/header.json'), // eslint-disable-line global-require, prettier/prettier
+                    footer: require('./src/__schemas__/footer.json'), // eslint-disable-line global-require, prettier/prettier
 
-                    // Site repeatable type schemas
-                    season: require('./src/__schemas__/season.json'), // eslint-disable-line
-                    show: require('./src/__schemas__/show.json'), // eslint-disable-line
+                    // Repeatable type schemas
+                    season: require('./src/__schemas__/season.json'), // eslint-disable-line global-require, prettier/prettier
+                    show: require('./src/__schemas__/show.json'), // eslint-disable-line global-require, prettier/prettier
 
-                    // Site single type schemas
-                    'about_page': require('./src/__schemas__/about_page.json'), // eslint-disable-line
-                    'archive_page': require('./src/__schemas__/archive_page.json'), // eslint-disable-line
-                    'audition_page': require('./src/__schemas__/audition_page.json'), // eslint-disable-line
-                    'contact_page': require('./src/__schemas__/contact_page.json'), // eslint-disable-line
-                    'home_page': require('./src/__schemas__/home_page.json'), // eslint-disable-line
-                    'legal_page': require('./src/__schemas__/legal_page.json'), // eslint-disable-line
-                    'support_us_page': require('./src/__schemas__/support_us_page.json'), // eslint-disable-line
+                    // Single type schemas
+                    'about_page': require('./src/__schemas__/about_page.json'), // eslint-disable-line global-require, prettier/prettier
+                    'archive_page': require('./src/__schemas__/archive_page.json'), // eslint-disable-line global-require, prettier/prettier
+                    'audition_page': require('./src/__schemas__/audition_page.json'), // eslint-disable-line global-require, prettier/prettier
+                    'contact_page': require('./src/__schemas__/contact_page.json'), // eslint-disable-line global-require, prettier/prettier
+                    'home_page': require('./src/__schemas__/home_page.json'), // eslint-disable-line global-require, prettier/prettier
+                    'legal_page': require('./src/__schemas__/legal_page.json'), // eslint-disable-line global-require, prettier/prettier
+                    'support_us_page': require('./src/__schemas__/support_us_page.json'), // eslint-disable-line global-require, prettier/prettier
                 },
-                // Set a default language when fetching documents. The default value is
-                // '*' which will fetch all languages.
-                // See: https://prismic.io/docs/javascript/query-the-api/query-by-language
+
+                /**
+                 * Set a default language when fetching documents. The default value is
+                 * '*' which will fetch all languages.
+                 *
+                 * @link https://prismic.io/docs/javascript/query-the-api/query-by-language
+                 */
                 lang: 'en-us',
-                // Set a function to determine if images are downloaded locally and made
-                // available for gatsby-transformer-sharp for use with gatsby-image.
-                // The document node, field key (i.e. API ID), and field value are
-                // provided to the function, as seen below. This allows you to use
-                // different logic for each field if necessary.
-                // This defaults to always return false.
+
+                /**
+                 * Set a function to determine if images are downloaded locally and made
+                 * available for gatsby-transformer-sharp for use with gatsby-image.
+                 * The document node, field key (i.e. API ID), and field value are
+                 * provided to the function, as seen below. This allows you to use
+                 * different logic for each field if necessary.
+                 *
+                 * This defaults to always return false.
+                 */
                 shouldDownloadImage: () => {
                     // Return true to download the image or false to skip.
                     return false;
                 },
-                // Provide a default set of Imgix image transformations applied to
-                // the placeholder images of Imgix-backed gatsby-image fields. These
-                // parameters will be applied over those provided in the above
-                // `imageImgixParams` option.
-                // See: https://docs.imgix.com/apis/url
+
+                /**
+                 * Provide a default set of Imgix image transformations applied to
+                 * the placeholder images of Imgix-backed gatsby-image fields. These
+                 * parameters will be applied over those provided in the above
+                 * `imageImgixParams` option.
+                 *
+                 * @link https://docs.imgix.com/apis/url
+                 */
                 imagePlaceholderImgixParams: {
                     w: 50,
                     blur: 75,
