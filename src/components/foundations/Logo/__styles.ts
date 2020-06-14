@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { LogoProps, AvailableLogoSizes } from './__types';
 
 const logoWidth: AvailableLogoSizes = {
@@ -9,10 +9,9 @@ const logoWidth: AvailableLogoSizes = {
 };
 
 export const Logo = styled.i<LogoProps>`
-    color: ${(props) =>
-        props.color ? props.theme.logo[props.color].color.default : 'inherit'};
     display: inline-flex;
     height: auto;
+    line-height: 0;
 
     svg {
         height: auto;
