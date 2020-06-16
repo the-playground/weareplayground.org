@@ -12,5 +12,5 @@ export type AvailableLogoSize = keyof AvailableLogoSizes;
 export interface LogoProps {
     size: AvailableLogoSize;
     type: AvailableLogoType;
-    color?: any;
+    color: 'standard' | 'inverted' | 'light' | 'dark';
 }

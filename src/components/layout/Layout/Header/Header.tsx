@@ -13,7 +13,7 @@ export const Header = () => {
         <styled.Header>
             <Container className="container" maxWidth="l">
                 <LinkHandler to="/" className="brand">
-                    <Logo type="Lockup" size="l" />
+                    <Logo type="Lockup" size="l" color="inverted" />
                     <h1 className="u-visually-hidden">The Nerve Theatre</h1>
                 </LinkHandler>
                 <NavBar />
