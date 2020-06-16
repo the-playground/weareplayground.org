@@ -1,5 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import { getShowSlug, formatSlug } from '@lib/url';
+import { getShowSlug, getSeasonSlug, formatSlug } from '@lib/url';
 
 export const useLinkMap = (): LinkMap => {
     // Get all of our predefined site links from Prismic
@@ -19,7 +19,7 @@ export const useLinkMap = (): LinkMap => {
                     legal_page {
                         uid
                     }
-                    season_archive_page {
+                    show_archive_page {
                         uid
                     }
                     support_us_page {
@@ -47,6 +47,7 @@ export const useLinkMap = (): LinkMap => {
     `);
 
     const links = prismicSiteConfig.data;
+    const archivePage = formatSlug(links.show_archive_page?.uid);
 
     return {
         about: formatSlug(links.about_page?.uid),
@@ -54,20 +55,12 @@ export const useLinkMap = (): LinkMap => {
         contact: formatSlug(links.contact_page?.uid),
         supportUs: formatSlug(links.support_us_page?.uid),
         legal: formatSlug(links.legal_page?.uid),
-        seasonArchive: formatSlug(links.season_archive_page?.uid),
-        currentSeason:
-            formatSlug(links.current_season_page?.uid) ??
-            formatSlug(
-                links.season_archive_page?.uid
-            ) /* Make sure we have a fallback here */,
-        currentShow:
-            getShowSlug(
-                links.current_show_page?.uid,
-                links.current_show_page?.document?.data?.season?.uid
-            ) ??
-            formatSlug(
-                links.season_archive_page?.uid
-            ) /* Make sure we have a fallback here */,
+        archive: archivePage,
+        currentSeason: getSeasonSlug(links.current_season_page?.uid),
+        currentShow: getShowSlug(
+            links.current_show_page?.uid,
+            links.current_show_page?.document?.data?.season?.uid
+        ),
     };
 };
 
@@ -77,7 +70,7 @@ export interface LinkMap {
     contact: string;
     supportUs: string;
     legal: string;
-    seasonArchive: string;
-    currentSeason: string;
-    currentShow: string;
+    archive: string;
+    currentSeason: string | undefined;
+    currentShow: string | undefined;
 }

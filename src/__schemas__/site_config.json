@@ -208,7 +208,7 @@
                 "label": "Current Show Page"
             }
         },
-        "season_archive_page": {
+        "show_archive_page": {
             "type": "Link",
             "config": {
                 "select": "document",

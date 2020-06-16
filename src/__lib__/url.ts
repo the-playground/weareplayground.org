@@ -29,10 +29,11 @@ export const formatSlug = (slug: string) => {
  * @param seasonUID
  */
 export const getShowSlug = (showUID: string, seasonUID: string) =>
-    `/s/${seasonUID}/${showUID}`;
+    showUID && seasonUID ? `/s/${seasonUID}/${showUID}` : undefined;
 
 /**
  *
  * @param seasonUID
  */
-export const getSeasonSlug = (seasonUID: string) => `/s/${seasonUID}`;
+export const getSeasonSlug = (seasonUID: string) =>
+    seasonUID ? `/s/${seasonUID}` : undefined;
