@@ -20,6 +20,7 @@ export const useQuerySiteConfig = (): SiteConfig => {
                     ein
                     founding_date
                     location_city
+                    location_state
                     location_state_code
                     location_zip
                     logo {
@@ -39,10 +40,14 @@ export const useQuerySiteConfig = (): SiteConfig => {
                     instagram {
                         url
                     }
+                    youtube {
+                        url
+                    }
                     facebook_app_id
                     verification_google
                     verification_bing
                     verification_norton
+                    meta_title_template
                     fallback_page_meta_image {
                         url
                         alt
@@ -92,6 +97,7 @@ export interface SiteConfig {
     location_state_code: string;
     location_zip: string;
     logo: PrismicImage;
+    meta_title_template: string;
     name: string;
     spotify: PrismicLink;
     ticket_email: string;
@@ -99,4 +105,5 @@ export interface SiteConfig {
     verification_bing: string;
     verification_norton: string;
     website: PrismicLink;
+    youtube: PrismicLink;
 }

@@ -130,6 +130,13 @@
                 "allowTargetBlank": true,
                 "label": "Instagram"
             }
+        },
+        "youtube": {
+            "type": "Link",
+            "config": {
+                "allowTargetBlank": true,
+                "label": "Youtube"
+            }
         }
     },
     "Verification": {
@@ -153,6 +160,12 @@
         }
     },
     "SEO": {
+        "meta_title_template": {
+            "type": "Text",
+            "config": {
+                "label": "Meta Title Template"
+            }
+        },
         "fallback_page_meta_image": {
             "type": "Image",
             "config": {
@@ -216,7 +229,7 @@
                     "page",
                     "archive_page"
                 ],
-                "label": "Season Archive Page"
+                "label": "Show Archive Page"
             }
         },
         "about_page": {
@@ -272,6 +285,33 @@
                     "legal_page"
                 ],
                 "label": "Legal Page"
+            }
+        },
+        "privacy_policy_page": {
+            "type": "Link",
+            "config": {
+                "select": "document",
+                "customtypes": [
+                    "privacy_page"
+                ],
+                "label": "Privacy Policy Page"
+            }
+        },
+        "terms_page": {
+            "type": "Link",
+            "config": {
+                "select": "document",
+                "customtypes": [
+                    "terms_page"
+                ],
+                "label": "Terms Page"
+            }
+        },
+        "sitemap": {
+            "type": "Link",
+            "config": {
+                "allowTargetBlank": true,
+                "label": "Sitemap"
             }
         }
     }

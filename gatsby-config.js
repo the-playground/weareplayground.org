@@ -113,7 +113,9 @@ module.exports = {
                     'contact_page': require('./src/__schemas__/contact_page.json'), // eslint-disable-line global-require, prettier/prettier
                     'home_page': require('./src/__schemas__/home_page.json'), // eslint-disable-line global-require, prettier/prettier
                     'legal_page': require('./src/__schemas__/legal_page.json'), // eslint-disable-line global-require, prettier/prettier
+                    'privacy_page': require('./src/__schemas__/privacy_page.json'), // eslint-disable-line global-require, prettier/prettier
                     'support_us_page': require('./src/__schemas__/support_us_page.json'), // eslint-disable-line global-require, prettier/prettier
+                    'terms_page': require('./src/__schemas__/terms_page.json'), // eslint-disable-line global-require, prettier/prettier
                 },
 
                 /**

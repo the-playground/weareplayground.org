@@ -9,19 +9,34 @@ export const getCurrentRootURL = () =>
         : `${window.location.protocol}//${window.location.hostname}${window.location.pathname}`;
 
 /**
- * Work to normalize URLs by removing trailing slashes.
+ * Strip all leading and trailing slashes from slugs
  *
- * @param url The URL to process
+ * @link https://stackoverflow.com/questions/3840600/javascript-regular-expression-remove-first-and-last-slash
+ *
+ * @param slug The slug to process
  */
-export const removeTrailingSlash = (url: string) => url.replace(/\/+$/, '');
+export const normalizeSlug = (slug: string) => {
+    const normalizedSlug = slug.replace(/^\/|\/$/g, '');
+    return `/${normalizedSlug}`;
+};
 
 /**
+ * Build a multi-layerd slug with a parent/child relationship
  *
- * @param slug
+ * @param parentUID The slug of the parent page
+ * @param childUID The slug of the child page
  */
-export const formatSlug = (slug: string) => {
-    return `/${slug}`;
-};
+export const getChildPageSlug = (parentUID: string, childUID: string) =>
+    parentUID && childUID
+        ? normalizeSlug(`${parentUID}/${childUID}`)
+        : undefined;
+/**
+ * Set the base URL identifier for shows and seasons.
+ * To be constructed as such: `base/season/show`.
+ *
+ * Example: `/s/2018-2019/assistance`
+ */
+export const seasonSlugBase = 's';
 
 /**
  *
@@ -29,11 +44,13 @@ export const formatSlug = (slug: string) => {
  * @param seasonUID
  */
 export const getShowSlug = (showUID: string, seasonUID: string) =>
-    showUID && seasonUID ? `/s/${seasonUID}/${showUID}` : undefined;
+    showUID && seasonUID
+        ? normalizeSlug(`${seasonSlugBase}/${seasonUID}/${showUID}`)
+        : undefined;
 
 /**
  *
  * @param seasonUID
  */
 export const getSeasonSlug = (seasonUID: string) =>
-    seasonUID ? `/s/${seasonUID}` : undefined;
+    seasonUID ? normalizeSlug(`${seasonSlugBase}/${seasonUID}`) : undefined;
