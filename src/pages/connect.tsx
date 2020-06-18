@@ -5,14 +5,14 @@ import { GatsbyPageContext } from '@type/gatsby';
 // Import Typescript interfaces
 import { Layout } from '@components/layout';
 
-const AboutPage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
+const ConnectPage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
     pageContext,
     location,
 }) => {
     return (
         <Layout noHeader={false} noFooter={false}>
-            About Page
+            Connect Page
         </Layout>
     );
 };
@@ -31,4 +31,4 @@ interface PageData {
     };
 }
 
-export default AboutPage;
+export default ConnectPage;
