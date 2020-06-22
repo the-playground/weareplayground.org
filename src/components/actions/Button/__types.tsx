@@ -7,4 +7,5 @@ export interface ButtonProps {
     size: ButtonSize;
     type: 'primary' | 'secondary' | 'tertiary';
     width?: 'auto' | 'full';
+    className?: string;
 }

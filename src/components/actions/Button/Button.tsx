@@ -9,13 +9,15 @@ export const Button: React.FC<ButtonProps> = ({
     type,
     children,
     width,
+    className,
 }) => {
     return (
         <styled.Button
-            to={link?.to}
+            to={link ? link.to : ''}
             size={size}
             type={type}
             width={width ?? 'auto'}
+            className={className}
         >
             {children}
         </styled.Button>

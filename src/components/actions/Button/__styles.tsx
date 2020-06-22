@@ -11,24 +11,23 @@ import { ButtonProps } from './__types';
  */
 export const buttonSizes = {
     s: css`
-		${typography.bodyText.s}
-		padding: ${spacing.component.xs} ${spacing.component.m};
+        padding: ${spacing.component.xs} ${spacing.component.m} 11px
+            ${spacing.component.m};
         font-weight: 700;
-	`,
+    `,
     m: css`
-		${typography.bodyText.m}
-		padding: ${spacing.component.s} ${spacing.component.m};
+        padding: 11px ${spacing.component.m} ${spacing.component.s}
+            ${spacing.component.m};
         font-weight: 700;
-	`,
+    `,
 };
 
 const buttonThemes = {
-
     primary: css`
         background-color: var(--actionPrimaryBG);
         color: var(--actionPrimaryColor);
 
-        &:hover{
+        &:hover {
             background-color: var(--actionPrimaryBG-Hover);
         }
 
@@ -37,13 +36,12 @@ const buttonThemes = {
 
         &:disabled {
         }
-
     `,
     secondary: css`
         background-color: var(--actionSecondaryBG);
         color: var(--actionSecondaryColor);
 
-        &:hover{
+        &:hover {
             background-color: var(--actionSecondaryBG-Hover);
         }
 
@@ -57,7 +55,7 @@ const buttonThemes = {
         background-color: var(--actionTertiaryBG);
         color: var(--actionTertiaryColor);
 
-        &:hover{
+        &:hover {
             background-color: var(--actionTertiaryBG-Hover);
         }
 
@@ -67,30 +65,29 @@ const buttonThemes = {
         &:disabled {
         }
     `,
-}
+};
 
 export const Button = styled(LinkHandler)<ButtonProps>`
-	align-items: center;
+    align-items: center;
     border-radius: ${borders.defaultRadius};
     border: none;
-	cursor: pointer;
-	display: inline-flex;
-	justify-content: center;
-	margin-bottom: 100px;
-    margin-left: 100px;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
     overflow: hidden;
     transition: ${animation.buttonHover};
-	width: auto;
+    width: auto;
+    ${typography.bodyText.m}
 
-	&:disabled {
-		cursor: not-allowed;
-	}
+    &:disabled {
+        cursor: not-allowed;
+    }
 
-	&:focus{
-		outline: none;
-	}
+    &:focus {
+        outline: none;
+    }
 
-	/* Set Themeable Properties */
-	${(props) => buttonThemes[props.type]}
-	${(props) => buttonSizes[props.size]}
+    /* Set Themeable Properties */
+    ${(props) => buttonThemes[props.type]}
+    ${(props) => buttonSizes[props.size]}
 `;

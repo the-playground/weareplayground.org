@@ -13,7 +13,6 @@ export const LinkHandler: React.FC<LinkProps> = ({
     ...others
 }) => {
     // If the link is internal, render using Gatsby Link
-
     return isLinkInternal(to) ? (
         <GatsbyLink
             to={to}

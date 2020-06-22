@@ -9,7 +9,7 @@ export const NavBar = styled.nav`
         justify-content: flex-end;
         list-style: none;
 
-        a {
+        a:not(.button) {
             display: block;
             padding: ${spacing.component.s} ${spacing.component.m};
             position: relative;
@@ -20,8 +20,12 @@ export const NavBar = styled.nav`
             opacity: 0.6;
         }
 
-        a:hover {
+        a:hover:not(.button) {
             opacity: 0.6;
+        }
+
+        li.highlight {
+            margin-left: ${spacing.component.s};
         }
     }
 `;
