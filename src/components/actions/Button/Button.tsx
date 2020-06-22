@@ -12,7 +12,7 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
     return (
         <styled.Button
-            to={link.to}
+            to={link?.to}
             size={size}
             type={type}
             width={width ?? 'auto'}

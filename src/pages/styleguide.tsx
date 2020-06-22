@@ -2,7 +2,7 @@ import React from 'react';
 import { BodyText, Heading } from '@components/foundations';
 import { Layout } from '@components/layout';
 
-// import { TextLink, Button } from '@components/actions';
+import { Button } from '@components/actions';
 
 const StyleguidePage: React.FC = () => (
     <Layout noHeader noFooter>
@@ -34,30 +34,30 @@ const StyleguidePage: React.FC = () => (
             Extra Large Standard Heading
         </Heading>
 
-        {/* <div
+        <div
             style={{
                 background: `black`,
                 padding: `24px`,
                 marginBottom: `48px`,
             }}
         >
-            <Button variant="primary">Check out the show</Button>
-            <Button variant="primary" size="s">
+            <Button type="primary" size="m">Check out the show</Button>
+            <Button type="primary" size="s">
                 Check out the show
             </Button>
-            <Button variant="tertiary">Check out the show</Button>
-            <Button variant="tertiary" size="s">
+            <Button type="tertiary" size="m">Check out the show</Button>
+            <Button type="tertiary" size="s">
                 Check out the show
             </Button>
         </div>
-        <Button variant="secondary">Check out the show</Button>
-        <Button variant="secondary" size="s">
+        <Button type="secondary" size="m">Check out the show</Button>
+        <Button type="secondary" size="s">
             Check out the show
         </Button>
-        <Button variant="tertiary">Check out the show</Button>
-        <Button variant="tertiary" size="s">
+        <Button type="tertiary" size="m">Check out the show</Button>
+        <Button type="tertiary" size="s">
             Check out the show
-        </Button> */}
+        </Button>
     </Layout>
 );
 

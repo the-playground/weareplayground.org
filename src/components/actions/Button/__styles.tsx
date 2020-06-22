@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { LinkHandler } from '@components/utility';
-import { animation, spacing, typography } from '@tokens';
+
+import { animation, borders, spacing, typography } from '@tokens';
 import { ButtonProps } from './__types';
 
 /**
@@ -10,55 +11,25 @@ import { ButtonProps } from './__types';
  */
 export const buttonSizes = {
     s: css`
-		${typography.bodyBold.Small}
+		${typography.bodyText.s}
 		padding: ${spacing.component.xs} ${spacing.component.m};
+        font-weight: 700;
 	`,
     m: css`
-		${typography.bodyBold.Medium}
+		${typography.bodyText.m}
 		padding: ${spacing.component.s} ${spacing.component.m};
+        font-weight: 700;
 	`,
 };
 
-/**
- * Define style properties for available "types" of buttons.
- *
- * @since 1.0.0
- */
-export const buttonTypes = {
-    standard: css`
-        border: none;
-    `,
-    // ghost: css`
-    // 	background: transparent;
-    // 	border: 2px solid;
-    // `,
-};
+const buttonThemes = {
 
-/**
- * Creates a template to be applied to our button color themes.
- * This prevents us from writing out a bunch of styles over and over again.
- * Takes in the theme passed into the button ar runtime and fetches the appropriate "action"
- * theme from our globally defined styled components theme.
- *
- * @param {string} specifiedTheme - the ui theme prop passed into the button
- * @param {object} availableThemes - the available "action" themes in our application
- */
+    primary: css`
+        background-color: var(--actionPrimaryBG);
+        color: var(--actionPrimaryColor);
 
-export const applyButtonColorTheme = (specifiedTheme, availableThemes) => {
-    // Retrieve the requested theme from our available action themes
-    const selectedTheme = availableThemes[specifiedTheme];
-
-    return css`
-        background-color: ${selectedTheme.background};
-        border-color: ${selectedTheme.border};
-        color: ${selectedTheme.text};
-
-        &:hover {
-            background-color: ${selectedTheme.backgroundHover};
-            border-color: ${selectedTheme.borderHover};
-        }
-
-        &:focus {
+        &:hover{
+            background-color: var(--actionPrimaryBG-Hover);
         }
 
         &:active {
@@ -66,17 +37,49 @@ export const applyButtonColorTheme = (specifiedTheme, availableThemes) => {
 
         &:disabled {
         }
-    `;
-};
+
+    `,
+    secondary: css`
+        background-color: var(--actionSecondaryBG);
+        color: var(--actionSecondaryColor);
+
+        &:hover{
+            background-color: var(--actionSecondaryBG-Hover);
+        }
+
+        &:active {
+        }
+
+        &:disabled {
+        }
+    `,
+    tertiary: css`
+        background-color: var(--actionTertiaryBG);
+        color: var(--actionTertiaryColor);
+
+        &:hover{
+            background-color: var(--actionTertiaryBG-Hover);
+        }
+
+        &:active {
+        }
+
+        &:disabled {
+        }
+    `,
+}
 
 export const Button = styled(LinkHandler)<ButtonProps>`
 	align-items: center;
-	border-radius: ${borderRadius.default};
+    border-radius: ${borders.defaultRadius};
+    border: none;
 	cursor: pointer;
 	display: inline-flex;
 	justify-content: center;
 	margin-bottom: 100px;
-	margin-left: 100px;
+    margin-left: 100px;
+    overflow: hidden;
+    transition: ${animation.buttonHover};
 	width: auto;
 
 	&:disabled {
@@ -88,7 +91,6 @@ export const Button = styled(LinkHandler)<ButtonProps>`
 	}
 
 	/* Set Themeable Properties */
-	${(props) => applyButtonColorTheme(props.variant, props.theme.ui.actions)}
+	${(props) => buttonThemes[props.type]}
 	${(props) => buttonSizes[props.size]}
-	${(props) => buttonTypes[props.type]}
 `;

@@ -12,10 +12,18 @@
     /* Sections */
 
     /* Actions */
-    /* --actionPrimaryColor: var();
-    --actionPrimaryBG: var();
-    --actionSecondaryColor: var();
-    --actionSecondaryBG: var(); */
+
+    --actionPrimaryColor: var(--typeLight);
+    --actionPrimaryBG: var(--orange);
+    --actionPrimaryBG-Hover: var(--orangeD1);
+
+    --actionSecondaryColor: var(--typeDark);
+    --actionSecondaryBG: var(--white);
+    --actionSecondaryBG-Hover: var(--gray5);
+
+    --actionTertiaryColor: var(--typeLight);
+    --actionTertiaryBG: var(--blue);
+    --actionTertiaryBG-Hover: var(--blueL1);
 
     /* Brand Logo */
     --logoBracketStandard: var(--orange);

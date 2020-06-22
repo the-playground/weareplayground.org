@@ -142,6 +142,17 @@ module.exports = {
 
                 /**
                  * Provide a default set of Imgix image transformations applied to
+                 * Imgix-backed gatsby-image fields. These options will override the
+                 * defaults set by Prismic.
+                 * https://docs.imgix.com/apis/url
+                 */
+
+                imageImgixParams: {
+                    q: 60,
+                },
+
+                /**
+                 * Provide a default set of Imgix image transformations applied to
                  * the placeholder images of Imgix-backed gatsby-image fields. These
                  * parameters will be applied over those provided in the above
                  * `imageImgixParams` option.
@@ -150,7 +161,7 @@ module.exports = {
                  */
                 imagePlaceholderImgixParams: {
                     w: 50,
-                    blur: 75,
+                    blur: 50,
                 },
             },
         },
