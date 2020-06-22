@@ -18,7 +18,7 @@ const LinkItem: React.FC<{ slug: string; text: string }> = ({ slug, text }) => (
     </li>
 );
 
-export const NavBar: React.FC = () => {
+export const DesktopNavBar: React.FC = () => {
     const {
         currentSeason,
         archive,
@@ -28,7 +28,10 @@ export const NavBar: React.FC = () => {
     } = useLinkMapContext();
 
     return (
-        <styled.NavBar aria-labelledby="mainmenulabel">
+        <styled.DesktopNavBar
+            aria-labelledby="mainmenulabel"
+            data-nav-scope="desktop"
+        >
             <p id="mainmenulabel" className="u-visually-hidden">
                 Main Menu
             </p>
@@ -56,6 +59,6 @@ export const NavBar: React.FC = () => {
                     </Button>
                 </li>
             </ul>
-        </styled.NavBar>
+        </styled.DesktopNavBar>
     );
 };
