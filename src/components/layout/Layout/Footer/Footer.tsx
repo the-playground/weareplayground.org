@@ -36,7 +36,7 @@ export const Footer = () => {
             link: links.currentSeason,
         },
         {
-            text: 'show archives',
+            text: 'archive',
             link: links.archive,
         },
         {
