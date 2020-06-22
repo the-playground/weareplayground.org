@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 
-import { animation, spacing } from '@tokens';
+import { animation, breakpoints, spacing } from '@tokens';
 
 export const Footer = styled.footer`
     background-color: var(--blue);
 
     .footer-container {
-        padding: ${spacing.layout.l} 0;
+        padding: ${spacing.layout.m} 0;
+        ${breakpoints.s} {
+            padding: ${spacing.layout.l} 0;
+        }
     }
 
     a {

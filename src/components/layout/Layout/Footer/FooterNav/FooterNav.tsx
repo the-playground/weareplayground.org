@@ -28,7 +28,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({
             </div>
 
             <div className="menus">
-                <div className="explore">
+                <div className="menu explore">
                     <BodyText
                         size="m"
                         weight="bold"
@@ -60,7 +60,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({
                         ))}
                     </ul>
                 </div>
-                <div className="follow">
+                <div className="menu follow">
                     <BodyText
                         size="m"
                         weight="bold"
@@ -90,7 +90,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({
                         ))}
                     </ul>
                 </div>
-                <div className="connect">
+                <div className="menu connect">
                     <BodyText
                         size="m"
                         weight="bold"

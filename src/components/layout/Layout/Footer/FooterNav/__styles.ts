@@ -1,8 +1,12 @@
 import styled from 'styled-components';
-import { animation, spacing } from '@tokens';
+import { animation, breakpoints, spacing } from '@tokens';
+
+const footerBreakpoint = breakpoints.s;
 
 export const FooterNav = styled.nav`
-    display: flex;
+    ${footerBreakpoint} {
+        display: flex;
+    }
 
     ul {
         list-style: none;
@@ -25,13 +29,26 @@ export const FooterNav = styled.nav`
     }
 
     .brand {
-        margin-right: ${spacing.layout.m};
+        margin-bottom: ${spacing.layout.xs};
+        ${footerBreakpoint} {
+            margin-right: ${spacing.layout.m};
+            margin-bottom: 0;
+        }
     }
 
     .menus {
-        flex: 1 0 auto;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        ${footerBreakpoint} {
+            flex: 1 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .menu:not(:last-child) {
+        margin-bottom: ${spacing.layout.s};
+        ${footerBreakpoint} {
+            margin-bottom: 0;
+        }
     }
 
     .menu-title {
