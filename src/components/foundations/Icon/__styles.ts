@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { iconSizes } from '@tokens';
 import { IconProps } from './__types';
 
 export const Icon = styled.i<IconProps>`
