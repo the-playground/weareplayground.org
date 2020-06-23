@@ -20,6 +20,7 @@ export const useQuerySiteConfig = (): SiteConfig => {
                     ein
                     founding_date
                     location_city
+                    location_state
                     location_state_code
                     location_zip
                     logo {
@@ -30,19 +31,26 @@ export const useQuerySiteConfig = (): SiteConfig => {
                             height
                         }
                     }
-                    spotify {
-                        url
-                    }
                     facebook {
                         url
                     }
+                    github {
+                        url
+                    }
                     instagram {
+                        url
+                    }
+                    spotify {
+                        url
+                    }
+                    youtube {
                         url
                     }
                     facebook_app_id
                     verification_google
                     verification_bing
                     verification_norton
+                    meta_title_template
                     fallback_page_meta_image {
                         url
                         alt
@@ -85,6 +93,7 @@ export interface SiteConfig {
     fallback_season_meta_image: PrismicImage;
     fallback_show_meta_image: PrismicImage;
     founding_date: string;
+    github: PrismicLink;
     instagram: PrismicLink;
     legal_name: string;
     location_city: string;
@@ -92,6 +101,7 @@ export interface SiteConfig {
     location_state_code: string;
     location_zip: string;
     logo: PrismicImage;
+    meta_title_template: string;
     name: string;
     spotify: PrismicLink;
     ticket_email: string;
@@ -99,4 +109,5 @@ export interface SiteConfig {
     verification_bing: string;
     verification_norton: string;
     website: PrismicLink;
+    youtube: PrismicLink;
 }

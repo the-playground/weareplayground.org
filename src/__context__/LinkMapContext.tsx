@@ -1,7 +1,7 @@
 import React, { createContext, useContext } from 'react';
-import { useLinkMap } from '@hooks';
+import { useLinkMap, LinkMap } from '@hooks';
 
-export const LinkMapContext = createContext({});
+export const LinkMapContext = createContext({} as LinkMap);
 
 export const LinkMapProvider: React.FC = ({ children }) => {
     const links = useLinkMap();

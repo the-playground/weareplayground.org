@@ -1,5 +1,11 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import { getShowSlug, formatSlug } from '@lib/url';
+import { PrismicLink } from '@type/prismic';
+import {
+    getChildPageSlug,
+    getShowSlug,
+    getSeasonSlug,
+    normalizeSlug,
+} from '@lib/url';
 
 export const useLinkMap = (): LinkMap => {
     // Get all of our predefined site links from Prismic
@@ -19,16 +25,27 @@ export const useLinkMap = (): LinkMap => {
                     legal_page {
                         uid
                     }
-                    season_archive_page {
+                    privacy_policy_page {
+                        uid
+                    }
+                    show_archive_page {
                         uid
                     }
                     support_us_page {
                         uid
                     }
+                    terms_page {
+                        uid
+                    }
+
+                    sitemap {
+                        url
+                    }
 
                     current_season_page {
                         uid
                     }
+
                     current_show_page {
                         uid
                         document {
@@ -47,37 +64,37 @@ export const useLinkMap = (): LinkMap => {
     `);
 
     const links = prismicSiteConfig.data;
+    const archive = normalizeSlug(links.show_archive_page?.uid);
+    const legal = normalizeSlug(links.legal_page?.uid);
 
     return {
-        about: formatSlug(links.about_page?.uid),
-        audition: formatSlug(links.audition_page?.uid),
-        contact: formatSlug(links.contact_page?.uid),
-        supportUs: formatSlug(links.support_us_page?.uid),
-        legal: formatSlug(links.legal_page?.uid),
-        seasonArchive: formatSlug(links.season_archive_page?.uid),
-        currentSeason:
-            formatSlug(links.current_season_page?.uid) ??
-            formatSlug(
-                links.season_archive_page?.uid
-            ) /* Make sure we have a fallback here */,
-        currentShow:
-            getShowSlug(
-                links.current_show_page?.uid,
-                links.current_show_page?.document?.data?.season?.uid
-            ) ??
-            formatSlug(
-                links.season_archive_page?.uid
-            ) /* Make sure we have a fallback here */,
+        archive,
+        about: normalizeSlug(links.about_page?.uid),
+        audition: normalizeSlug(links.audition_page?.uid),
+        contact: normalizeSlug(links.contact_page?.uid),
+        legal,
+        privacyPolicy: getChildPageSlug(legal, links.privacy_policy_page?.uid),
+        sitemap: links.sitemap?.url,
+        supportUs: normalizeSlug(links.support_us_page?.uid),
+        terms: getChildPageSlug(legal, links.terms_page?.uid),
+        currentSeason: getSeasonSlug(links.current_season_page?.uid),
+        currentShow: getShowSlug(
+            links.current_show_page?.uid,
+            links.current_show_page?.document?.data?.season?.uid
+        ),
     };
 };
 
 export interface LinkMap {
     about: string;
+    archive: string;
     audition: string;
     contact: string;
-    supportUs: string;
     legal: string;
-    seasonArchive: string;
-    currentSeason: string;
-    currentShow: string;
+    privacyPolicy: string | undefined;
+    supportUs: string;
+    sitemap: string;
+    terms: string | undefined;
+    currentSeason: string | undefined;
+    currentShow: string | undefined;
 }

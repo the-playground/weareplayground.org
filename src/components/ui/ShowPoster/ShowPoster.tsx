@@ -25,9 +25,15 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
                 <div className="overlay" />
 
                 <div className="content">
-                    <Heading className="title" size="xs" color="light" tag="h2">
+                    <BodyText
+                        className="title"
+                        size="xl"
+                        color="light"
+                        tag="h2"
+                        weight="bold"
+                    >
                         {title}
-                    </Heading>
+                    </BodyText>
                     <BodyText
                         className="author"
                         size="m"

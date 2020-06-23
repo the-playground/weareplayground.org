@@ -90,8 +90,6 @@ export const StylesReset = createGlobalStyle`
 	select,
 	textarea {
 		font-family: inherit; /* 1 */
-		font-size: 100%; /* 1 */
-		line-height: 1.5; /* 1 */
 	}
 
 	a,

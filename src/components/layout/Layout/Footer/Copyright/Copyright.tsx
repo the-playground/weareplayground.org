@@ -1,14 +1,57 @@
 import React from 'react';
+
+import { LinkHandler } from '@components/utility';
 import { BodyText } from '@components/foundations';
-import { useConfigContext } from '@context';
+import { useConfigContext, useLinkMapContext } from '@context';
+
+import { Container } from '@components/layout';
+
+import * as styled from './__styles';
+
+const LinkItem: React.FC<{ slug: string; text: string }> = ({ slug, text }) => (
+    <li>
+        <LinkHandler to={slug} activeClassName="--is-active">
+            <BodyText tag="span" size="s" weight="bold" color="medium">
+                {text}
+            </BodyText>
+        </LinkHandler>
+    </li>
+);
 
 export const Copyright = () => {
     const currentYear = new Date().getFullYear();
-    const { name } = useConfigContext();
+    const config = useConfigContext();
+    const { privacyPolicy, terms, sitemap } = useLinkMapContext();
 
     return (
-        <BodyText size="s" color="dark">
-            Copyright &copy; {currentYear}. {name}
-        </BodyText>
+        <styled.Copyright>
+            <Container className="container">
+                <BodyText size="s" color="medium" tag="p">
+                    &copy; {currentYear} {config.legal_name} All rights
+                    reserved.
+                </BodyText>
+                <ul>
+                    {privacyPolicy && (
+                        <LinkItem
+                            slug={privacyPolicy}
+                            text="privacy policy"
+                            key="privacy policy"
+                        />
+                    )}
+
+                    {terms && (
+                        <LinkItem
+                            slug={terms}
+                            text="terms & conditions"
+                            key="terms"
+                        />
+                    )}
+
+                    {terms && (
+                        <LinkItem slug={sitemap} text="sitemap" key="sitemap" />
+                    )}
+                </ul>
+            </Container>
+        </styled.Copyright>
     );
 };

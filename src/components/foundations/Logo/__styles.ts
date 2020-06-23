@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { LogoProps, AvailableLogoSizes } from './__types';
 
 const logoWidth: AvailableLogoSizes = {
@@ -9,13 +9,49 @@ const logoWidth: AvailableLogoSizes = {
 };
 
 export const Logo = styled.i<LogoProps>`
-    color: ${(props) =>
-        props.color ? props.theme.logo[props.color].color.default : 'inherit'};
     display: inline-flex;
     height: auto;
+    line-height: 0;
 
     svg {
         height: auto;
         width: ${(props) => logoWidth[props.size]};
     }
+
+    ${(props) =>
+        props.color === 'standard' &&
+        `
+        .bracket {
+            fill: var(--logoBracketStandard);
+        }
+        .text {
+            fill: var(--logoTextStandard);
+        }
+    `};
+    ${(props) =>
+        props.color === 'inverted' &&
+        `
+        .bracket {
+            fill: var(--logoBracketStandard);
+        }
+        .text {
+            fill: var(--logoTextInverted);
+        }
+    `};
+    ${(props) =>
+        props.color === 'light' &&
+        `
+        .bracket,
+        .text {
+            fill: var(--logoLight);
+        }
+    `};
+    ${(props) =>
+        props.color === 'dark' &&
+        `
+        .bracket,
+        .text {
+            fill: var(--logoDark);
+        }
+    `};
 `;

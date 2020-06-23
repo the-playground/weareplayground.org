@@ -29,3 +29,5 @@ export const breakpoints = Object.keys(mediaQuerySizes).reduce(
 
 export type AvailableBreakpoints = typeof mediaQuerySizes;
 export type AvailableBreakpoint = keyof AvailableBreakpoints;
+
+export const appNavBreakpoint = breakpoints.m;

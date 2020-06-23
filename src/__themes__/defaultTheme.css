@@ -1,12 +1,41 @@
 /* The default theme for the Nerve Theatre Website */
 :root {
     --bodyBG: var(--blueD1);
+
+    /* Typography */
     --typeDark: var(--blue);
     --typeLight: var(--gray6);
+    --typeMedium: var(--gray4);
     --typeAccent: var(--orange);
     --posterOverlay: var(--blueD1);
-    /* --actionPrimaryColor: var();
-    --actionPrimaryBG: var();
-    --actionSecondaryColor: var();
-    --actionSecondaryBG: var(); */
+
+    /* Sections */
+
+    /* Actions */
+
+    --actionPrimaryColor: var(--typeLight);
+    --actionPrimaryBG: var(--orange);
+    --actionPrimaryBG-Hover: var(--orangeD1);
+
+    --actionSecondaryColor: var(--typeDark);
+    --actionSecondaryBG: var(--white);
+    --actionSecondaryBG-Hover: var(--gray5);
+
+    --actionTertiaryColor: var(--typeLight);
+    --actionTertiaryBG: var(--blue);
+    --actionTertiaryBG-Hover: var(--blueL1);
+
+    /* Brand Logo */
+    --logoBracketStandard: var(--orange);
+    --logoTextStandard: var(--blue);
+    --logoTextInverted: var(--white);
+    --logoLight: var(--white);
+    --logoDark: var(--blue);
+
+    /* Icons */
+    --iconLight: var(--gray6);
+    --iconMedium: var(--gray4);
+    --iconDark: var(--blue);
+    --iconAccentA: var(--orange);
+
 }

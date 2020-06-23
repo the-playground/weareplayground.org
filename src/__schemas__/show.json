@@ -64,8 +64,8 @@
             "type": "Image",
             "config": {
                 "constraint": {
-                    "width": 800,
-                    "height": 1200
+                    "width": null,
+                    "height": null
                 },
                 "thumbnails": [],
                 "label": "Poster Image"

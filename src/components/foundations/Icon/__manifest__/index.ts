@@ -1,17 +1,20 @@
-import Example from './defs/Example';
+import { Facebook } from './defs/Facebook';
+import { Github } from './defs/Github';
+import { Instagram } from './defs/Instagram';
+import { Spotify } from './defs/Spotify';
+import { Youtube } from './defs/Youtube';
 
 export const availableIcons = {
-    Example,
+    Facebook,
+    Github,
+    Instagram,
+    Spotify,
+    Youtube,
 };
 
 export type IconDefinition = {
-    size: string;
     viewBox: string;
     path: JSX.Element;
-};
-
-export type AvailableIcon = {
-    [K in 's' | 'm' | 'l' | 'xl']?: IconDefinition;
 };
 
 export type AvailableIcons = typeof availableIcons;

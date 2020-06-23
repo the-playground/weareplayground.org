@@ -6,6 +6,9 @@ const colors = {
     light: css`
         color: var(--typeLight);
     `,
+    medium: css`
+        color: var(--typeMedium);
+    `,
     dark: css`
         color: var(--typeDark);
     `,

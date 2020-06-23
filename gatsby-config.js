@@ -113,7 +113,9 @@ module.exports = {
                     'contact_page': require('./src/__schemas__/contact_page.json'), // eslint-disable-line global-require, prettier/prettier
                     'home_page': require('./src/__schemas__/home_page.json'), // eslint-disable-line global-require, prettier/prettier
                     'legal_page': require('./src/__schemas__/legal_page.json'), // eslint-disable-line global-require, prettier/prettier
+                    'privacy_page': require('./src/__schemas__/privacy_page.json'), // eslint-disable-line global-require, prettier/prettier
                     'support_us_page': require('./src/__schemas__/support_us_page.json'), // eslint-disable-line global-require, prettier/prettier
+                    'terms_page': require('./src/__schemas__/terms_page.json'), // eslint-disable-line global-require, prettier/prettier
                 },
 
                 /**
@@ -140,6 +142,17 @@ module.exports = {
 
                 /**
                  * Provide a default set of Imgix image transformations applied to
+                 * Imgix-backed gatsby-image fields. These options will override the
+                 * defaults set by Prismic.
+                 * https://docs.imgix.com/apis/url
+                 */
+
+                imageImgixParams: {
+                    q: 60,
+                },
+
+                /**
+                 * Provide a default set of Imgix image transformations applied to
                  * the placeholder images of Imgix-backed gatsby-image fields. These
                  * parameters will be applied over those provided in the above
                  * `imageImgixParams` option.
@@ -148,7 +161,7 @@ module.exports = {
                  */
                 imagePlaceholderImgixParams: {
                     w: 50,
-                    blur: 75,
+                    blur: 50,
                 },
             },
         },
