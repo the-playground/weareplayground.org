@@ -9,8 +9,10 @@ import { useConfigContext } from '@context';
 import { useGetMetaImage, useCurrentURL } from '@hooks';
 
 // Import components
+
 import { Layout } from '@components/layout';
 import { ImageProps } from '@components/foundations';
+import { SimpleHero } from '@components/ui';
 
 const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
@@ -18,7 +20,7 @@ const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     location,
 }) => {
     const season = data.prismicSeason;
-    const { shows } = season;
+    const { shows } = season.data;
     const seasonData = data.prismicSeason.data;
 
     const { uid } = pageContext;
@@ -28,7 +30,10 @@ const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
 
     return (
         <Layout noHeader={false} noFooter={false}>
-            {seasonData.title}
+            <SimpleHero
+                title={`${seasonData.title} Season`}
+                subTitle={seasonData.tagline}
+            />
         </Layout>
     );
 };
