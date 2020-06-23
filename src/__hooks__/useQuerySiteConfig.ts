@@ -31,13 +31,16 @@ export const useQuerySiteConfig = (): SiteConfig => {
                             height
                         }
                     }
-                    spotify {
-                        url
-                    }
                     facebook {
                         url
                     }
+                    github {
+                        url
+                    }
                     instagram {
+                        url
+                    }
+                    spotify {
                         url
                     }
                     youtube {
@@ -90,6 +93,7 @@ export interface SiteConfig {
     fallback_season_meta_image: PrismicImage;
     fallback_show_meta_image: PrismicImage;
     founding_date: string;
+    github: PrismicLink;
     instagram: PrismicLink;
     legal_name: string;
     location_city: string;

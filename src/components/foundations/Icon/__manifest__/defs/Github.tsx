@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const Github = {
     viewBox: '0 0 496 512',
 

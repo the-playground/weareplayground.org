@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const Youtube = {
     viewBox: '0 0 576 512',
 

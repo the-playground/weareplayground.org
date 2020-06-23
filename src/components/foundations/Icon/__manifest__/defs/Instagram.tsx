@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const Instagram = {
     viewBox: '0 0 448 512',
 

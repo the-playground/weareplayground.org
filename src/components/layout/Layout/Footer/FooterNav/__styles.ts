@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { animation, breakpoints, spacing } from '@tokens';
+import { breakpoints, spacing } from '@tokens';
 
 const footerBreakpoint = breakpoints.s;
 
@@ -14,7 +14,7 @@ export const FooterNav = styled.nav`
 
     li {
         a {
-            padding: ${spacing.component.xxs} 0;
+            padding: ${spacing.component.xs} 0;
         }
     }
 
@@ -22,10 +22,16 @@ export const FooterNav = styled.nav`
         display: block;
     }
 
-    a:hover {
-    }
-
     a.--is-active {
+        padding-left: ${spacing.component.s};
+        position: relative;
+
+        &:before {
+            color: var(--typeAccent);
+            content: '[';
+            left: 0;
+            position: absolute;
+        }
     }
 
     .brand {
@@ -57,5 +63,19 @@ export const FooterNav = styled.nav`
 
     .company {
         margin-bottom: ${spacing.component.m};
+    }
+
+    /**
+     * Style specific menus
+     */
+    .menu.follow a {
+        align-items: center;
+        display: flex;
+
+        i {
+            margin-right: ${spacing.component.s};
+            position: relative;
+            top: 2px;
+        }
     }
 `;

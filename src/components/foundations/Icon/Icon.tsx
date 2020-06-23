@@ -5,15 +5,17 @@ import { IconProps } from './__types';
 import { SVGElement } from '../SVGElement/SVGElement';
 
 import * as Styled from './__styles';
-import { availableIcons, AvailableIcon, IconDefinition } from './__manifest__';
+import { availableIcons, IconDefinition } from './__manifest__';
 
-export const Icon: React.FC<Omit<IconProps, 'selectedSize'>> = ({
+export const Icon: React.FC<IconProps> = ({
     name,
     color,
     size,
+    title,
+    desc,
     ...others
 }) => {
-    const selectedIcon: AvailableIcon = availableIcons[name];
+    const selectedIcon: IconDefinition = availableIcons[name];
 
     if (!selectedIcon) {
         console.warn(
@@ -22,28 +24,14 @@ export const Icon: React.FC<Omit<IconProps, 'selectedSize'>> = ({
         return null;
     }
 
-    const sizedIcon: IconDefinition = selectedIcon[size]!;
-
-    if (!sizedIcon) {
-        console.warn(
-            `The requested icon "${name}" exists but does contain a size of "${size}". Valid sizes for this icon are [${Object.keys(
-                selectedIcon
-            )}]. No icon will be rendered.`
-        );
-        return null;
-    }
-
     return (
-        <Styled.Icon
-            selectedSize={sizedIcon.size}
-            name={name}
-            color={color}
-            {...others}
-        >
+        <Styled.Icon name={name} color={color} size={size} {...others}>
             <SVGElement
                 name={name}
-                path={sizedIcon.path}
-                viewBox={sizedIcon.viewBox}
+                path={selectedIcon.path}
+                viewBox={selectedIcon.viewBox}
+                title={title}
+                desc={desc}
             />
         </Styled.Icon>
     );

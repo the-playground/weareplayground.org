@@ -13,13 +13,8 @@ export const availableIcons = {
 };
 
 export type IconDefinition = {
-    size: string;
     viewBox: string;
     path: JSX.Element;
-};
-
-export type AvailableIcon = {
-    [K in 's' | 'm' | 'l' | 'xl']?: IconDefinition;
 };
 
 export type AvailableIcons = typeof availableIcons;

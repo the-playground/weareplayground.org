@@ -19,9 +19,13 @@ export const SVGElement: React.FC<SVGElementProps> = ({
     path,
     viewBox,
     gradient,
+    title,
+    desc,
     ...others
 }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox={viewBox} {...others}>
+        {title && <title>{title}</title>}
+        {desc && <desc>{desc}</desc>}
         {gradient ? <LinearGradient gradient={gradient!} name={name} /> : ''}
         {path}
     </svg>
@@ -42,4 +46,6 @@ interface SVGElementProps {
     path: React.ReactElement;
     viewBox: string;
     gradient: Gradient;
+    title?: Gradient;
+    desc?: Gradient;
 }

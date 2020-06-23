@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const Facebook = {
     viewBox: '0 0 512 512',
 

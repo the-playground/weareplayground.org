@@ -33,5 +33,9 @@
     --logoDark: var(--blue);
 
     /* Icons */
+    --iconLight: var(--gray6);
+    --iconMedium: var(--gray4);
+    --iconDark: var(--blue);
+    --iconAccentA: var(--orange);
 
 }

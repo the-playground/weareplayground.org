@@ -137,6 +137,13 @@
                 "allowTargetBlank": true,
                 "label": "Youtube"
             }
+        },
+        "github": {
+            "type": "Link",
+            "config": {
+                "allowTargetBlank": true,
+                "label": "Github"
+            }
         }
     },
     "Verification": {

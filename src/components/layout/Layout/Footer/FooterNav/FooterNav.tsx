@@ -22,7 +22,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({
             </p>
 
             <div className="brand">
-                <LinkHandler to="/" activeClassName={activeClass}>
+                <LinkHandler to="/">
                     <Logo type="BrandMark" size="xs" color="inverted" />
                 </LinkHandler>
             </div>
@@ -77,6 +77,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({
                                     to={account.link}
                                     activeClassName={activeClass}
                                 >
+                                    {account.icon}
                                     <BodyText
                                         size="s"
                                         color="medium"
@@ -155,6 +156,7 @@ interface FooterNavProps {
     socialAccounts: {
         name: string;
         link: string;
+        icon: React.ReactElement;
     }[];
     menuItems: {
         text: string;
