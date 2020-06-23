@@ -7,9 +7,7 @@ import { ShowSnippet } from '@type/show';
 
 // Import Typescript interfaces
 import PageTemplate from '@templates/PageTemplate';
-
-import { Container } from '@components/layout';
-import { PosterGrid } from '@components/ui';
+import { SimpleHero, PosterGrid } from '@components/ui';
 
 const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
@@ -26,7 +24,10 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
             pageConfig={pageData}
             currentLocation={location.pathname}
         >
-            <Container>Archive Page</Container>
+            <SimpleHero
+                title={pageData.data.hero_title}
+                subTitle={pageData.data.hero_sub_title}
+            />
             <PosterGrid items={shows} />
         </PageTemplate>
     );
@@ -38,6 +39,7 @@ export const query = graphql`
             last_publication_date
             first_publication_date
             data {
+                # Config & SEO
                 remove_footer
                 remove_header
                 seo_description
@@ -51,6 +53,10 @@ export const query = graphql`
                         width
                     }
                 }
+
+                # Hero
+                hero_title
+                hero_sub_title
             }
         }
 
@@ -99,12 +105,17 @@ interface PageData {
         first_publication_date: string;
         last_publication_date: string;
         data: {
+            // Config & SEO
             remove_header: boolean;
             remove_footer: boolean;
             seo_title: string;
             seo_description: string;
             seo_image?: PrismicImage;
             seo_hide: boolean;
+
+            // Hero
+            hero_title: string;
+            hero_sub_title: string;
         };
     };
     allPrismicShow: {
