@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { rgba } from 'polished';
 
-import { animation, spacing, zIndex } from '@tokens';
+import { animation, breakpoints, spacing, zIndex } from '@tokens';
 
 export const ShowPoster = styled.article`
     border-radius: 7px;
@@ -10,11 +9,7 @@ export const ShowPoster = styled.article`
     transition: ${animation.cardHover};
 
     .overlay {
-        background: linear-gradient(
-            0deg,
-            rgba(7, 18, 29, 0.7) 15%,
-            rgba(7, 18, 29, 0) 100%
-        );
+        background: var(--posterOverlay);
         bottom: 0;
         display: block;
         height: 100%;
@@ -44,9 +39,11 @@ export const ShowPoster = styled.article`
     }
 
     &:hover {
-        transform: scale(1.01);
-        .overlay {
-            opacity: 0.2;
+        ${breakpoints.m} {
+            transform: scale(1.01);
+            .overlay {
+                opacity: 0.2;
+            }
         }
     }
 `;

@@ -7,7 +7,11 @@
     --typeLight: var(--gray6);
     --typeMedium: var(--gray4);
     --typeAccent: var(--orange);
-    --posterOverlay: var(--blueD1);
+    --posterOverlay: linear-gradient(
+            0deg,
+            rgba(7, 18, 29, 0.7) 15%,
+            rgba(7, 18, 29, 0) 100%
+        );;
 
     /* Sections */
 
