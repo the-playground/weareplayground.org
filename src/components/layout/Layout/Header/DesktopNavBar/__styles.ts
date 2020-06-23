@@ -17,10 +17,21 @@ export const DesktopNavBar = styled.nav`
         }
 
         a.--is-active {
-            opacity: 0.6;
+            position: relative;
+
+            &:before {
+                color: var(--typeAccent);
+                content: '[';
+                left: 2px;
+                position: absolute;
+            }
+
+            > span {
+                opacity: 0.6;
+            }
         }
 
-        a:hover:not(.button) {
+        a:hover:not(.button) > span {
             opacity: 0.6;
         }
 
