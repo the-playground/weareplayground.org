@@ -5,7 +5,6 @@ import { GatsbyPageContext } from '@type/gatsby';
 import { PrismicImage } from '@type/prismic';
 import { ShowSnippet } from '@type/show';
 
-// Import Typescript interfaces
 import PageTemplate from '@templates/PageTemplate';
 import { SimpleHero, PosterGrid } from '@components/ui';
 
