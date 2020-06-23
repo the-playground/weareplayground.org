@@ -12,6 +12,7 @@ export const Copyright = styled.div`
         ${breakpoints.s} {
             align-items: center;
             flex-direction: row;
+            justify-content: space-between;
         }
     }
 

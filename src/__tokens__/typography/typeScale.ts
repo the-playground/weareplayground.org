@@ -43,8 +43,8 @@ const smallScalar = 1.25; // Minor Third
  */
 const typeScale: TypeScale = {
     step0: {
-        large: largeScalar / largeScalar ** 2,
-        small: smallScalar / smallScalar ** 2,
+        large: 1 / largeScalar,
+        small: 1 / smallScalar,
     },
     /* Base size = 1rem */
     step1: {
