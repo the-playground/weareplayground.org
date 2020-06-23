@@ -60,7 +60,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({
                         ))}
                     </ul>
                 </div>
-                <div className="menu follow">
+                <div className="menu social">
                     <BodyText
                         size="m"
                         weight="bold"

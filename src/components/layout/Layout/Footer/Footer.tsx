@@ -17,27 +17,62 @@ export const Footer = () => {
         {
             name: 'facebook',
             link: config.facebook.url,
-            icon: <Icon name="Facebook" size="s" color="medium" />,
+            icon: (
+                <Icon
+                    name="Facebook"
+                    size="s"
+                    color="medium"
+                    title="Facebook icon"
+                />
+            ),
         },
         {
             name: 'instagram',
             link: config.instagram.url,
-            icon: <Icon name="Instagram" size="s" color="medium" />,
+            icon: (
+                <Icon
+                    name="Instagram"
+                    size="s"
+                    color="medium"
+                    title="Instagram icon"
+                />
+            ),
         },
         {
             name: 'spotify',
             link: config.spotify.url,
-            icon: <Icon name="Spotify" size="s" color="medium" />,
+            icon: (
+                <Icon
+                    name="Spotify"
+                    size="s"
+                    color="medium"
+                    title="Spotify icon"
+                />
+            ),
         },
         {
             name: 'youtube',
             link: config.youtube.url,
-            icon: <Icon name="Youtube" size="s" color="medium" />,
+            icon: (
+                <Icon
+                    name="Youtube"
+                    size="s"
+                    color="medium"
+                    title="Youtube icon"
+                />
+            ),
         },
         {
             name: 'github',
             link: config.github.url,
-            icon: <Icon name="Github" size="s" color="medium" />,
+            icon: (
+                <Icon
+                    name="Github"
+                    size="s"
+                    color="medium"
+                    title="Github icon"
+                />
+            ),
         },
     ];
 

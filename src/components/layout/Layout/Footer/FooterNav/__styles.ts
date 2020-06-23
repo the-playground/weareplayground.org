@@ -12,16 +12,17 @@ export const FooterNav = styled.nav`
         list-style: none;
     }
 
-    li {
-        a {
-            padding: ${spacing.component.xs} 0;
-        }
-    }
-
+    /* All footer links */
     a {
         display: block;
     }
 
+    /* All footer links (in menu lists) */
+    li > a {
+        padding: ${spacing.component.xs} 0;
+    }
+
+    /* Give active items a cool little bracket */
     a.--is-active {
         padding-left: ${spacing.component.s};
         position: relative;
@@ -34,6 +35,7 @@ export const FooterNav = styled.nav`
         }
     }
 
+    /* Our brand mark */
     .brand {
         margin-bottom: ${spacing.layout.xs};
         ${footerBreakpoint} {
@@ -61,6 +63,7 @@ export const FooterNav = styled.nav`
         margin-bottom: ${spacing.component.m};
     }
 
+    /* Company and contact info */
     .company {
         margin-bottom: ${spacing.component.m};
     }
@@ -68,7 +71,7 @@ export const FooterNav = styled.nav`
     /**
      * Style specific menus
      */
-    .menu.follow a {
+    .menu.social a {
         align-items: center;
         display: flex;
 
