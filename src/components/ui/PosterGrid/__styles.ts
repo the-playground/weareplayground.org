@@ -3,20 +3,27 @@ import styled from 'styled-components';
 import { breakpoints, spacing } from '@tokens';
 
 export const PosterGrid = styled.section`
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: ${spacing.component.m};
-    padding: ${spacing.component.m};
-
-    ${breakpoints.s} {
-        grid-template-columns: repeat(2, 1fr);
+    .instructions {
+        margin-bottom: ${spacing.component.l};
+        padding-left: ${spacing.component.m};
     }
 
-    ${breakpoints.l} {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: ${spacing.component.m};
+        padding: ${spacing.component.m};
 
-    ${breakpoints.xxl} {
-        grid-template-columns: repeat(4, 1fr);
+        ${breakpoints.s} {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        ${breakpoints.l} {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        ${breakpoints.xxl} {
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
 `;

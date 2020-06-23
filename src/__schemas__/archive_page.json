@@ -58,5 +58,19 @@
                 "label": "SEO Image"
             }
         }
+    },
+    "Hero": {
+        "hero_title": {
+            "type": "Text",
+            "config": {
+                "label": "Hero Title"
+            }
+        },
+        "hero_sub_title": {
+            "type": "Text",
+            "config": {
+                "label": "Hero Sub Title"
+            }
+        }
     }
 }

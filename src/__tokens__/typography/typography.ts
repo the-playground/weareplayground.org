@@ -60,14 +60,17 @@ export const typography = {
         xl: css`
             ${fonts.heading};
             ${fontSizes.size7};
+            line-height: 1.2;
         `,
         l: css`
             ${fonts.heading};
             ${fontSizes.size7};
+            line-height: 1.2;
         `,
         m: css`
             ${fonts.heading};
             ${fontSizes.size6};
+            line-height: 1.2;
         `,
         s: css`
             ${fonts.heading};
@@ -76,7 +79,7 @@ export const typography = {
         `,
         xs: css`
             ${fonts.heading};
-            ${fontSizes.size4};
+            ${fontSizes.size3};
             line-height: 1.2;
             letter-spacing: 2px;
         `,

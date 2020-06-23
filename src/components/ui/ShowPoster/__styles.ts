@@ -38,6 +38,11 @@ export const ShowPoster = styled.article`
         text-transform: uppercase;
     }
 
+    .season {
+        text-transform: lowercase;
+        margin-top: ${spacing.component.xs};
+    }
+
     &:hover {
         transform: scale(1.01);
         .overlay {
