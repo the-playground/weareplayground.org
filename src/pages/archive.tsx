@@ -8,6 +8,8 @@ import { ShowSnippet } from '@type/show';
 import PageTemplate from '@templates/PageTemplate';
 import { SimpleHero, PosterGrid } from '@components/ui';
 
+import { sortShows } from '@lib/shows';
+
 const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
     pageContext,
@@ -27,7 +29,7 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 title={pageData.data.hero_title}
                 subTitle={pageData.data.hero_sub_title}
             />
-            <PosterGrid items={shows} />
+            <PosterGrid items={sortShows(shows)} />
         </PageTemplate>
     );
 };
