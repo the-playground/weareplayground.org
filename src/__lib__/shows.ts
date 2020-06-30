@@ -9,8 +9,20 @@ import { ShowSnippet } from '@type/show';
  */
 export const sortShows = (shows: ShowSnippet[]) =>
     shows.sort((a, b) => {
-        const dateA = parseISO(a.data.performances![0].datetime);
-        const dateB = parseISO(b.data.performances![0].datetime);
+        const performancesA = a.data.performances;
+        const performancesB = b.data.performances;
+
+        if (!performancesA || !performancesB) {
+            return 0;
+        }
+
+        const finalPerformanceA =
+            performancesA[performancesA.length - 1].datetime;
+        const finalPerformanceB =
+            performancesB[performancesB.length - 1].datetime;
+
+        const dateA = parseISO(finalPerformanceA);
+        const dateB = parseISO(finalPerformanceB);
 
         return compareDesc(dateA, dateB);
     });
