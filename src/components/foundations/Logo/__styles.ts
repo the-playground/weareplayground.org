@@ -20,38 +20,41 @@ export const Logo = styled.i<LogoProps>`
 
     ${(props) =>
         props.color === 'standard' &&
-        `
-        .bracket {
-            fill: var(--logoBracketStandard);
-        }
-        .text {
-            fill: var(--logoTextStandard);
-        }
-    `};
+        css`
+            .bracket {
+                fill: var(--logoBracketStandard);
+            }
+            .text {
+                fill: var(--logoTextStandard);
+            }
+        `};
+
     ${(props) =>
         props.color === 'inverted' &&
-        `
-        .bracket {
-            fill: var(--logoBracketStandard);
-        }
-        .text {
-            fill: var(--logoTextInverted);
-        }
-    `};
+        css`
+            .bracket {
+                fill: var(--logoBracketStandard);
+            }
+            .text {
+                fill: var(--logoTextInverted);
+            }
+        `};
+
     ${(props) =>
         props.color === 'light' &&
-        `
-        .bracket,
-        .text {
-            fill: var(--logoLight);
-        }
-    `};
+        css`
+            .bracket,
+            .text {
+                fill: var(--logoLight);
+            }
+        `};
+
     ${(props) =>
         props.color === 'dark' &&
-        `
-        .bracket,
-        .text {
-            fill: var(--logoDark);
-        }
-    `};
+        css`
+            .bracket,
+            .text {
+                fill: var(--logoDark);
+            }
+        `};
 `;

@@ -2,7 +2,7 @@ import { ImageProps } from '@components/foundations';
 import { PrismicImage } from './prismic';
 
 export interface Performance {
-    datetime: Date;
+    datetime: string;
     preview: boolean;
     price: number;
     pwyw: boolean;
@@ -63,6 +63,6 @@ export interface ShowSnippet {
 
         card_image: ImageProps;
         poster_image: ImageProps;
-        performances: Pick<Performance, 'datetime'>[] | null;
+        performances: Pick<Performance, 'datetime'>[] | undefined;
     };
 }

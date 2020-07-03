@@ -1,17 +1,18 @@
 /* The default theme for the Nerve Theatre Website */
 :root {
     --bodyBG: var(--blueD1);
+    --GradientASolid: linear-gradient(60.5deg, #07121D 0%, #122D4A 101.2%);
+    --posterOverlay: linear-gradient(
+            0deg,
+            rgba(7, 18, 29, 0.7) 15%,
+            rgba(7, 18, 29, 0) 100%
+        );
 
     /* Typography */
     --typeDark: var(--blue);
     --typeLight: var(--gray6);
     --typeMedium: var(--gray4);
-    --typeAccent: var(--orange);
-    --posterOverlay: linear-gradient(
-            0deg,
-            rgba(7, 18, 29, 0.7) 15%,
-            rgba(7, 18, 29, 0) 100%
-        );;
+    --typeAccentA: var(--orange);
 
     /* Sections */
 
