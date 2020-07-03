@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Performance } from '@type/show';
 import { getShowSlug } from '@lib/url';
 import { LinkHandler } from '@components/utility';
 import { BodyText, Heading, Image, ImageProps } from '@components/foundations';
@@ -12,6 +13,7 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
     uid,
     image,
     season,
+    performances,
 }) => {
     /**
      * Todo: 1. Use performance date range to extract a "prettified" version of the dates. Ex. April 23-28, 2019
@@ -55,4 +57,5 @@ export interface ShowPosterProps {
         title: string;
         uid: string;
     };
+    performances: Performance[];
 }

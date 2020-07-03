@@ -44,9 +44,7 @@ export const seasonSlugBase = 's';
  * @param seasonUID
  */
 export const getShowSlug = (showUID: string, seasonUID: string) =>
-    showUID && seasonUID
-        ? normalizeSlug(`${seasonSlugBase}/${seasonUID}/${showUID}`)
-        : undefined;
+    normalizeSlug(`${seasonSlugBase}/${seasonUID}/${showUID}`);
 
 /**
  *
