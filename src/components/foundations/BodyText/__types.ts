@@ -6,7 +6,7 @@ export interface BodyTextProps {
     tag: AllowedTag;
     as: AllowedTag;
     size: AvailableBodyTypography;
-    color: 'light' | 'medium' | 'dark' | 'accent';
+    color: 'light' | 'medium' | 'dark' | 'accentA';
     weight?: 'regular' | 'bold';
     className?: string;
 }

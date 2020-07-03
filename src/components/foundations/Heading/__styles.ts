@@ -10,8 +10,8 @@ const colors = {
     dark: css`
         color: var(--typeDark);
     `,
-    accent: css`
-        color: var(--typeAccent);
+    accentA: css`
+        color: var(--typeAccentA);
     `,
     inherit: css`
         color: inherit;

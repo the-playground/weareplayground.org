@@ -6,6 +6,6 @@ export interface HeadingProps {
     tag: AllowedTag;
     as: AllowedTag;
     size: AvailableHeadingTypography;
-    color: 'light' | 'dark' | 'accent';
+    color: 'light' | 'dark' | 'accentA';
     className?: string;
 }
