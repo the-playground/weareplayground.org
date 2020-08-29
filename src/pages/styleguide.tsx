@@ -41,20 +41,28 @@ const StyleguidePage: React.FC = () => (
                 marginBottom: `48px`,
             }}
         >
-            <Button type="primary" size="m">Check out the show</Button>
+            <Button type="primary" size="m">
+                Check out the show
+            </Button>
             <Button type="primary" size="s">
                 Check out the show
             </Button>
-            <Button type="tertiary" size="m">Check out the show</Button>
+            <Button type="tertiary" size="m">
+                Check out the show
+            </Button>
             <Button type="tertiary" size="s">
                 Check out the show
             </Button>
         </div>
-        <Button type="secondary" size="m">Check out the show</Button>
+        <Button type="secondary" size="m">
+            Check out the show
+        </Button>
         <Button type="secondary" size="s">
             Check out the show
         </Button>
-        <Button type="tertiary" size="m">Check out the show</Button>
+        <Button type="tertiary" size="m">
+            Check out the show
+        </Button>
         <Button type="tertiary" size="s">
             Check out the show
         </Button>

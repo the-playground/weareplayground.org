@@ -49,6 +49,14 @@
         }
     },
     "Main Images": {
+        "hero_image": {
+            "type": "Image",
+            "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Hero Image"
+            }
+        },
         "card_image": {
             "type": "Image",
             "config": {
@@ -64,19 +72,11 @@
             "type": "Image",
             "config": {
                 "constraint": {
-                    "width": null,
-                    "height": null
+                    "width": 600,
+                    "height": 900
                 },
                 "thumbnails": [],
                 "label": "Poster Image"
-            }
-        },
-        "hero_image": {
-            "type": "Image",
-            "config": {
-                "constraint": {},
-                "thumbnails": [],
-                "label": "Hero Image"
             }
         },
         "thumbnail_image": {

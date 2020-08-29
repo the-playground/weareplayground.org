@@ -43,7 +43,7 @@ export const useGetMetaImage = (
 
     const metaImage = image?.url ? image : getFallbackImage(type, siteConfig);
 
-    return metaImage;
+    return { metaImage };
 };
 
 type MetaImageContentType = 'page' | 'season' | 'show';

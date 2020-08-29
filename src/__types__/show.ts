@@ -1,4 +1,4 @@
-import { ImageProps } from '@components/foundations';
+import { ImageProps, LocalFileImageProps } from '@components/foundations';
 import { PrismicImage } from './prismic';
 
 export interface Performance {
@@ -21,7 +21,7 @@ export interface Show {
     };
     title: string;
     author: string;
-    hero_image: ImageProps;
+    hero_image: LocalFileImageProps;
     short_description: string;
     long_description: string;
     tagline: string;
@@ -37,7 +37,7 @@ export interface Show {
     script_link: {
         url: string;
     };
-    performances: Performance[] | undefined;
+    performances: Performance[];
     artists: [] | undefined;
     location: [] | undefined;
     sponsors: [] | undefined;

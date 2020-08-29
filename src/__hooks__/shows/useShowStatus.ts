@@ -17,7 +17,7 @@ export const useShowStatus = (performances: Performance[]) => {
     useEffect(() => {
         // If no performances are passed in, bail.
         if (!performances || performances.length === 0) {
-            return { status, setStatus };
+            return;
         }
 
         // Grab the first performance of the show and format it.
@@ -62,7 +62,7 @@ export const useShowStatus = (performances: Performance[]) => {
             default:
                 setStatus('future');
         }
-    });
+    }, [performances]);
 
     return { status, setStatus };
 };

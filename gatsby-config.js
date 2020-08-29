@@ -135,9 +135,10 @@ module.exports = {
                  *
                  * This defaults to always return false.
                  */
-                shouldDownloadImage: () => {
-                    // Return true to download the image or false to skip.
-                    return false;
+                shouldDownloadImage: ({ key }) => {
+                    // For any field that includes the word "hero", we are going to process locally to
+                    // open up expanded image loading capabilities as per the `gatsby-source-prismic` docs.
+                    return !!key.includes('hero');
                 },
 
                 /**
@@ -148,7 +149,7 @@ module.exports = {
                  */
 
                 imageImgixParams: {
-                    q: 60,
+                    q: 90,
                 },
 
                 /**
@@ -161,18 +162,8 @@ module.exports = {
                  */
                 imagePlaceholderImgixParams: {
                     w: 50,
-                    blur: 50,
+                    blur: 100,
                 },
-            },
-        },
-
-        /**
-         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-offline
-         */
-        {
-            resolve: `gatsby-plugin-offline`,
-            options: {
-                precachePages: [],
             },
         },
 
