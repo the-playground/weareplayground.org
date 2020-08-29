@@ -15,6 +15,10 @@ export const Header = styled.header`
         transition: ${animation.linkHover};
     }
 
+    .brand.--is-active {
+        pointer-events: none;
+    }
+
     .brand:hover {
         opacity: 0.7;
     }

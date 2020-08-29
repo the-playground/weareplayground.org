@@ -16,7 +16,7 @@ export const Footer = styled.footer`
         transition: ${animation.linkHover};
     }
 
-    a.--is-active {
+    li a.--is-active {
         opacity: 0.7;
     }
 

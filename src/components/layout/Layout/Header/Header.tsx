@@ -12,7 +12,11 @@ export const Header = () => {
     return (
         <styled.Header>
             <Container className="container" maxWidth="l">
-                <LinkHandler to="/" className="brand">
+                <LinkHandler
+                    to="/"
+                    className="brand"
+                    activeClassName="--is-active"
+                >
                     <Logo type="Lockup" size="l" color="inverted" />
                     <h1 className="u-visually-hidden">The Nerve Theatre</h1>
                 </LinkHandler>
