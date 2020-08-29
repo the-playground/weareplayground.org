@@ -17,21 +17,9 @@ export const DesktopNavBar = styled.nav`
             transition: ${animation.linkHover};
         }
 
-        /* Current page */
-        a.--is-active {
-            position: relative;
-
-            &:before {
-                color: var(--typeAccent);
-                content: '[';
-                left: 2px;
-                position: absolute;
-            }
-
-            /* Link item text */
-            > span {
-                opacity: 0.6;
-            }
+        /* Current page link item text */
+        a.--is-active > span {
+            opacity: 0.6;
         }
 
         /* Control hover effect on the text of all non-button menu links */

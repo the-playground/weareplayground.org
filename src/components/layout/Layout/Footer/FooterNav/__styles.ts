@@ -23,16 +23,8 @@ export const FooterNav = styled.nav`
     }
 
     /* Give active items a cool little bracket */
-    a.--is-active {
-        padding-left: ${spacing.component.s};
-        position: relative;
-
-        &:before {
-            color: var(--typeAccent);
-            content: '[';
-            left: 0;
-            position: absolute;
-        }
+    a.--is-active > span {
+        opacity: 0.6;
     }
 
     /* Our brand mark */
