@@ -1,11 +1,36 @@
 import React from 'react';
-import Img, { GatsbyImageProps, FluidObject, FixedObject } from 'gatsby-image';
+import Img, {
+    GatsbyImageFixedProps,
+    GatsbyImageFluidProps,
+    FixedObject,
+    FluidObject,
+} from 'gatsby-image';
 
-export const Image: React.FC<ImageProps> = ({ ...props }) => (
-    <Img {...props} durationFadeIn={1000} />
-);
+/**
+ * A thin wrapper for Gatsby Image to allow us to easily add
+ * our own global customizations and improve developer experience
+ * when working with the image and image types.
+ *
+ * @param props All Gatsby image props as a destructured object
+ */
+export const Image: React.FC<FixedImageProps | FluidImageProps> = ({
+    ...props
+}) => <Img {...props} durationFadeIn={1000} />;
 
-export interface ImageProps extends GatsbyImageProps {}
+// Localize Gatsby Image Props into this component
+export interface FixedImageProps extends GatsbyImageFixedProps {
+    // Multiple size possibilities from Prismic
+    thumbnails?: {
+        [key: string]: FixedImageProps;
+    };
+}
+
+export interface FluidImageProps extends GatsbyImageFluidProps {
+    // Multiple size possibilities from Prismic
+    thumbnails?: {
+        [key: string]: FluidImageProps;
+    };
+}
 
 // The interfaces below will never be directly consumed as props for the
 // `Image` component, but they will allow us to more easily
