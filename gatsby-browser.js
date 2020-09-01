@@ -6,6 +6,8 @@
 
 // global imports
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './src/__themes__/default';
 
 import {
     ConfigProvider,
@@ -26,7 +28,9 @@ export const wrapRootElement = ({ element }) => (
         <LinkMapProvider>
             <SeasonProvider>
                 <ShowProvider>
-                    <UIProvider>{element}</UIProvider>
+                    <ThemeProvider theme={theme}>
+                        <UIProvider>{element}</UIProvider>
+                    </ThemeProvider>
                 </ShowProvider>
             </SeasonProvider>
         </LinkMapProvider>

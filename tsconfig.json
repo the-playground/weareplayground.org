@@ -14,8 +14,8 @@
 			"@lib/*": [
 				"./__lib__/*"
 			],
-			"@themes": [
-				"./__themes__/"
+			"@themes/*": [
+				"./__themes__/*"
 			],
 			"@tokens": [
 				"./__tokens__/"
@@ -53,5 +53,6 @@
 	"include": [
 		"src",
 		"gatsby-*",
+		"@typings/*"
 	]
 }
