@@ -28,6 +28,8 @@ export interface TypographyPalette {
     danger: string;
 }
 
+export type AvailableTypographyPalette = keyof TypographyPalette;
+
 export interface Palette {
     primary: PaletteColor;
     secondary: PaletteColor;

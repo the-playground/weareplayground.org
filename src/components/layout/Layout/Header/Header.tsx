@@ -17,7 +17,7 @@ export const Header = () => {
                     className="brand"
                     activeClassName="--is-active"
                 >
-                    <Logo type="Lockup" size="l" color="inverted" />
+                    <Logo type="Lockup" size="l" color="light" />
                     <h1 className="u-visually-hidden">The Nerve Theatre</h1>
                 </LinkHandler>
                 <DesktopNavBar />

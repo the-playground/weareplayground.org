@@ -80,6 +80,7 @@ export interface AppTheme {
         light: BackgroundTheme;
         medium: BackgroundTheme;
         dark: BackgroundTheme;
+        extraDark: BackgroundTheme;
         accent: BackgroundTheme;
     };
     // inputs: {

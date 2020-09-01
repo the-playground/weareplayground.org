@@ -1,24 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { iconSizes } from '@tokens';
 import { IconProps } from './__types';
-
-const iconThemes = {
-    light: css`
-        color: var(--iconLight);
-    `,
-    medium: css`
-        color: var(--iconMedium);
-    `,
-    dark: css`
-        color: var(--iconDark);
-    `,
-    accentA: css`
-        color: var(--iconAccentA);
-    `,
-    default: css`
-        color: inherit;
-    `,
-};
 
 export const Icon = styled.i<IconProps>`
     align-items: center;
@@ -26,7 +8,8 @@ export const Icon = styled.i<IconProps>`
     height: ${(props) => iconSizes[props.size]};
     justify-content: center;
     width: ${(props) => iconSizes[props.size]};
-    ${(props) => (props.color ? iconThemes[props.color] : iconThemes.default)};
+    color: ${(props) =>
+        props.color ? props.theme.icons[props.color].color.default : 'inherit'};
 
     > svg {
         height: ${(props) => iconSizes[props.size]};

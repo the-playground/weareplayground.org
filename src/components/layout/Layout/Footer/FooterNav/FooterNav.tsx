@@ -23,7 +23,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({
 
             <div className="brand">
                 <LinkHandler to="/" activeClassName="--is-active">
-                    <Logo type="BrandMark" size="xs" color="inverted" />
+                    <Logo type="BrandMark" size="xs" color="light" />
                 </LinkHandler>
             </div>
 

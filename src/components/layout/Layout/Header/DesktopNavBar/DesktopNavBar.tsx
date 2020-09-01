@@ -50,7 +50,7 @@ export const DesktopNavBar: React.FC = () => {
                 <li className="highlight">
                     <Button
                         size="s"
-                        type="primary"
+                        color="primary"
                         link={{ to: supportUs }}
                         key="support us"
                         className="button"

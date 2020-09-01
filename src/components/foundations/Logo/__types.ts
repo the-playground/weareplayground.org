@@ -1,3 +1,4 @@
+import { AvailableLogoTheme } from '@themes/theme.d';
 import { AvailableLogoType } from './__manifest__';
 
 export type AvailableLogoSizes = {
@@ -12,5 +13,5 @@ export type AvailableLogoSize = keyof AvailableLogoSizes;
 export interface LogoProps {
     size: AvailableLogoSize;
     type: AvailableLogoType;
-    color: 'standard' | 'inverted' | 'light' | 'dark';
+    color: AvailableLogoTheme;
 }

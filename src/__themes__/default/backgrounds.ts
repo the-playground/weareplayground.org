@@ -5,10 +5,14 @@ const light: BackgroundTheme = {
     solid: palette.grey[100],
 };
 const medium: BackgroundTheme = {
-    solid: palette.secondary.main,
+    solid: palette.grey[400],
 };
 
 const dark: BackgroundTheme = {
+    solid: palette.secondary.main,
+};
+
+const extraDark: BackgroundTheme = {
     solid: palette.secondary.dark,
 };
 
@@ -20,5 +24,6 @@ export const backgrounds: BackgroundThemes = {
     light,
     medium,
     dark,
+    extraDark,
     accent,
 };

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { animation, breakpoints, spacing } from '@tokens';
 
 export const Footer = styled.footer`
-    background-color: var(--blue);
+    background-color: ${(props) => props.theme.backgrounds.dark.solid};
 
     .footer-container {
         padding: ${spacing.layout.m} 0;

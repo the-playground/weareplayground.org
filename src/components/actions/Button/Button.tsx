@@ -6,7 +6,7 @@ import * as styled from './__styles';
 export const Button: React.FC<ButtonProps> = ({
     link,
     size,
-    type,
+    color,
     children,
     width,
     className,
@@ -15,7 +15,7 @@ export const Button: React.FC<ButtonProps> = ({
         <styled.Button
             to={link ? link.to : ''}
             size={size}
-            type={type}
+            color={color}
             width={width ?? 'auto'}
             className={className}
         >

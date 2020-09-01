@@ -22,51 +22,6 @@ export const buttonSizes = {
     `,
 };
 
-const buttonThemes = {
-    primary: css`
-        background-color: var(--actionPrimaryBG);
-        color: var(--actionPrimaryColor);
-
-        &:hover {
-            background-color: var(--actionPrimaryBG-Hover);
-        }
-
-        &:active {
-        }
-
-        &:disabled {
-        }
-    `,
-    secondary: css`
-        background-color: var(--actionSecondaryBG);
-        color: var(--actionSecondaryColor);
-
-        &:hover {
-            background-color: var(--actionSecondaryBG-Hover);
-        }
-
-        &:active {
-        }
-
-        &:disabled {
-        }
-    `,
-    tertiary: css`
-        background-color: var(--actionTertiaryBG);
-        color: var(--actionTertiaryColor);
-
-        &:hover {
-            background-color: var(--actionTertiaryBG-Hover);
-        }
-
-        &:active {
-        }
-
-        &:disabled {
-        }
-    `,
-};
-
 export const Button = styled(LinkHandler)<ButtonProps>`
     align-items: center;
     border-radius: ${borders.defaultRadius};
@@ -79,7 +34,21 @@ export const Button = styled(LinkHandler)<ButtonProps>`
     width: auto;
     ${typography.bodyText.m}
 
+    /* Themeable properties */
+    background-color: ${(props) =>
+        props.theme.actions[props.color].background.default};
+    color: ${(props) => props.theme.actions[props.color].color.default};
+
+    &:hover {
+        background-color: ${(props) =>
+            props.theme.actions[props.color].background.hover};
+        color: ${(props) => props.theme.actions[props.color].color.hover};
+    }
+
     &:disabled {
+        background-color: ${(props) =>
+            props.theme.actions[props.color].background.disabled};
+        color: ${(props) => props.theme.actions[props.color].color.disabled};
         cursor: not-allowed;
     }
 
@@ -88,6 +57,5 @@ export const Button = styled(LinkHandler)<ButtonProps>`
     }
 
     /* Set Themeable Properties */
-    ${(props) => buttonThemes[props.type]}
     ${(props) => buttonSizes[props.size]}
 `;

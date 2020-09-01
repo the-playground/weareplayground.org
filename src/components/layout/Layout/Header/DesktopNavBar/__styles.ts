@@ -18,12 +18,12 @@ export const DesktopNavBar = styled.nav`
         }
 
         /* Current page link item text */
-        a.--is-active > span {
+        a.--is-active {
             opacity: 0.6;
         }
 
         /* Control hover effect on the text of all non-button menu links */
-        a:hover:not(.button) > span {
+        a:hover:not(.button) {
             opacity: 0.6;
         }
 
