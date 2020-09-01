@@ -3,7 +3,12 @@ import React from 'react';
 import { Performance } from '@type/show';
 import { getShowSlug } from '@lib/url';
 import { LinkHandler } from '@components/utility';
-import { BodyText, Heading, Image, ImageProps } from '@components/foundations';
+import {
+    BodyText,
+    Heading,
+    Image,
+    FluidImageProps,
+} from '@components/foundations';
 
 import * as styled from './__styles';
 
@@ -52,7 +57,7 @@ export interface ShowPosterProps {
     title: string;
     author: string;
     uid: string;
-    image: ImageProps;
+    image: FluidImageProps;
     season: {
         title: string;
         uid: string;
