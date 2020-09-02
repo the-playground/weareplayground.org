@@ -1,4 +1,4 @@
-import { PaletteColor, Grey, SystemColors } from './colorPalette.d';
+import { PaletteColor, Grey, SystemColors } from './palette';
 
 const orange: PaletteColor = {
     light: '#FA7223',

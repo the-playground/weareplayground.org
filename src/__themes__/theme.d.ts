@@ -1,4 +1,5 @@
-import { Palette, TypographyPalette } from './colorPalette';
+import { FlattenSimpleInterpolation } from 'styled-components';
+import { Palette, TypographyPalette } from './palette';
 
 /**
  * This file contains Typescript typings for all of our
@@ -32,8 +33,7 @@ export interface ActionTheme {
 }
 
 export interface BackgroundTheme {
-    solid?: string;
-    overlay?: string;
+    color: string;
 }
 
 export interface InputTheme {
@@ -68,6 +68,10 @@ export interface LogoTheme {
     textColor: string;
 }
 
+export interface OverlayTheme {
+    color: string | FlattenSimpleInterpolation;
+}
+
 export interface AppTheme {
     palette: Palette;
     actions: {
@@ -83,6 +87,12 @@ export interface AppTheme {
         extraDark: BackgroundTheme;
         accent: BackgroundTheme;
     };
+    icons: {
+        light: IconTheme;
+        medium: IconTheme;
+        dark: IconTheme;
+        accent: IconTheme;
+    };
     // inputs: {
     //     light: InputTheme;
     //     medium: InputTheme;
@@ -92,12 +102,7 @@ export interface AppTheme {
         light: LogoTheme;
         dark: LogoTheme;
     };
-    icons: {
-        light: IconTheme;
-        medium: IconTheme;
-        dark: IconTheme;
-        accent: IconTheme;
-    };
+    overlays: {};
     typography: TypographyPalette;
 }
 
@@ -109,7 +114,7 @@ export type ThemeProps = { theme?: AppTheme };
  * re-usability across components.
  */
 
-export * from './colorPalette';
+export * from './palette';
 
 export type ActionThemes = AppTheme['actions'];
 export type AvailableActionTheme = keyof ActionThemes;
@@ -125,6 +130,9 @@ export type AvailableIconTheme = keyof IconThemes;
 
 export type LogoThemes = AppTheme['logo'];
 export type AvailableLogoTheme = keyof LogoThemes;
+
+export type OverlayThemes = AppTheme['overlays'];
+export type AvailableOverlayTheme = keyof OverlayThemes;
 
 export type TypographyThemes = AppTheme['typography'];
 export type AvailableTypographyTheme = keyof TypographyThemes;

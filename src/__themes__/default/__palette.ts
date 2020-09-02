@@ -1,6 +1,6 @@
 import { brandColors } from '../brandColors';
 
-import { Palette } from '../colorPalette.d';
+import { Palette } from '../palette';
 
 export const palette: Palette = {
     primary: {
