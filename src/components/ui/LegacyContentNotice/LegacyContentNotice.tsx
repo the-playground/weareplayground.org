@@ -17,9 +17,10 @@ export const LegacyContentNotice: React.FC<LegacyContentNoticeProps> = ({
             <Container maxWidth="s" className="content">
                 <BodyText
                     color="medium"
-                    size="l"
+                    size="m"
                     tag="p"
                     className="progress-text"
+                    weight="bold"
                 >
                     Page construction in progress...
                 </BodyText>
