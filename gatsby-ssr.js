@@ -4,10 +4,6 @@
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
-// Import our default css theme
-import './src/__themes__/palette.css';
-import './src/__themes__/defaultTheme.css';
-
 import React from 'react';
 
 // Wrap root with all logic to make SSR work

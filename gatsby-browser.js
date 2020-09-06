@@ -17,10 +17,6 @@ import {
     UIProvider,
 } from './src/__context__';
 
-// Import our default css theme
-import './src/__themes__/palette.css';
-import './src/__themes__/defaultTheme.css';
-
 // Handle Application wrapper
 // eslint-disable-next-line
 export const wrapRootElement = ({ element }) => (

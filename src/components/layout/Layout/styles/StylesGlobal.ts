@@ -16,7 +16,7 @@ export const StylesGlobal = createGlobalStyle`
 
 	body{
 		${fonts.bodyText};
-		background-color: var(--bodyBG);
+		background-color: ${(props) => props.theme.backgrounds.extraDark.color};
 		line-height: 1.5;
 		min-height: 100%;
 		overflow-x: hidden;

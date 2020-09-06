@@ -5,6 +5,7 @@ import { actions } from './actions';
 import { backgrounds } from './backgrounds';
 import { icons } from './icons';
 import { logo } from './logo';
+import { overlays } from './overlays';
 import { typography } from './typography';
 
 export const theme: AppTheme = {
@@ -13,5 +14,6 @@ export const theme: AppTheme = {
     backgrounds,
     icons,
     logo,
+    overlays,
     typography,
 };

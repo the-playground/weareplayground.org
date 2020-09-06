@@ -9,7 +9,8 @@ export const ShowPoster = styled.article`
     transition: ${animation.cardHover};
 
     .overlay {
-        background: var(--posterOverlay);
+        background: ${(props) =>
+            props.theme.overlays.verticalGradientDark.color};
         bottom: 0;
         display: block;
         height: 100%;
