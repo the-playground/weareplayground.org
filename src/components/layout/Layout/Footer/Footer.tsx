@@ -77,10 +77,10 @@ export const Footer = () => {
     ];
 
     const menuItems = [
-        {
-            text: 'current season',
-            link: links.currentSeason,
-        },
+        // {
+        //     text: 'current season',
+        //     link: links.currentSeason,
+        // },
         {
             text: 'archives',
             link: links.archive,

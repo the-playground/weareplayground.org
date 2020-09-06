@@ -36,13 +36,13 @@ export const DesktopNavBar: React.FC = () => {
                 Main Menu
             </p>
             <ul>
-                {currentSeason && (
+                {/* {currentSeason && (
                     <LinkItem
                         slug={currentSeason}
                         text="current season"
                         key="currentSeason"
                     />
-                )}
+                )} */}
 
                 <LinkItem slug={archive} text="archive" key="archive" />
                 <LinkItem slug={about} text="about" key="about" />
