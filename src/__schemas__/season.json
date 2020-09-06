@@ -95,5 +95,14 @@
                 "label": "SEO Image"
             }
         }
+    },
+    "Legacy": {
+        "legacy_url": {
+            "type": "Link",
+            "config": {
+                "allowTargetBlank": true,
+                "label": "Legacy URL"
+            }
+        }
     }
 }

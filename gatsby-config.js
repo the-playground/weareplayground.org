@@ -42,6 +42,22 @@ module.exports = {
         },
 
         /**
+         * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/
+         */
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: `The Nerve Theatre`,
+                short_name: `Nerve`,
+                start_url: `/`,
+                background_color: `#0C1E31`,
+                theme_color: `#F25C05`,
+                display: `standalone`,
+                icon: 'static/icons/nerve-site-icon.png',
+            },
+        },
+
+        /**
          * Implement the babel module resolver for a really nice global import syntax
          *
          * @link https://www.gatsbyjs.org/packages/gatsby-plugin-module-resolver

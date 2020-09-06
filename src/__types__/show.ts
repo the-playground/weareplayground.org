@@ -1,5 +1,5 @@
-import { ImageProps, LocalFileImageProps } from '@components/foundations';
-import { PrismicImage } from './prismic';
+import { FluidImageProps, LocalFileImageProps } from '@components/foundations';
+import { PrismicExternalLink, PrismicImage } from './prismic';
 
 export interface Performance {
     datetime: string;
@@ -45,6 +45,7 @@ export interface Show {
     seo_description: string;
     seo_image: PrismicImage;
     seo_hide: boolean;
+    legacy_url: PrismicExternalLink;
 }
 
 export interface ShowSnippet {
@@ -61,8 +62,8 @@ export interface ShowSnippet {
         title: string;
         author: string;
 
-        card_image: ImageProps;
-        poster_image: ImageProps;
+        card_image: FluidImageProps;
+        poster_image: FluidImageProps;
         performances: Pick<Performance, 'datetime'>[] | undefined;
     };
 }

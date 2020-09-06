@@ -9,8 +9,7 @@ import { useGetMetaImage, useCurrentURL, useShowStatus } from '@hooks';
 
 // Import components
 import { Layout } from '@components/layout';
-
-import { ShowHero } from '@components/ui/show';
+import { LegacyContentNotice } from '@components/ui';
 
 const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
@@ -26,8 +25,14 @@ const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     const { status } = useShowStatus(show.performances);
 
     return (
-        <Layout noHeader noFooter={false}>
-            <ShowHero image={show.hero_image} />
+        <Layout noHeader={false} noFooter={false}>
+            <LegacyContentNotice
+                title={show.title}
+                subTitle={`by ${show.author}`}
+                contentType="show"
+                legacyURL={show.legacy_url.url}
+                legacyURLText="See Show On Old Website"
+            />
         </Layout>
     );
 };
@@ -88,6 +93,11 @@ export const query = graphql`
                     }
                 }
                 seo_hide
+
+                ## Legacy Data
+                legacy_url {
+                    url
+                }
             }
         }
     }
