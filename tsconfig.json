@@ -48,11 +48,12 @@
 	"exclude": [
 		"node_modules",
 		".vscode",
-		".github"
+		".github",
 	],
 	"include": [
 		"src",
 		"gatsby-*",
-		"@typings/*"
+		"@typings/*",
+		"functions",
 	]
 }

@@ -5,6 +5,7 @@ import { PrismicImage } from '@type/prismic';
 
 import PageTemplate from '@templates/PageTemplate';
 import { FluidImageProps } from '@components/foundations';
+import { SubscribeBar } from '@components/ui';
 
 const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
@@ -20,7 +21,7 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
             pageConfig={pageData}
             currentLocation={location.pathname}
         >
-            Home Page
+            <SubscribeBar />
         </PageTemplate>
     );
 };
