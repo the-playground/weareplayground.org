@@ -1,21 +1,23 @@
 // Inspo https://deliciousbrains.com/
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import * as drip from '@lib/drip';
 
 export const SubscribeBar: React.FC = () => {
     const { register, handleSubmit, watch, errors } = useForm();
     const [formStatus, setFormStatus] = useState<FormStatus>('initial');
     const [result, setResult] = useState({});
-    const [message, setMessage] = useState('');
+    const [message, setMessage] = useState('No message set');
     const formName = 'subscribe';
 
     const onSubmit = async (formData: DripSubscriberData) => {
-        fetch(`${drip.baseURL}/subscribers`, {
+        console.log(formData);
+        console.log(JSON.stringify(formData));
+        setFormStatus('loading');
+
+        fetch('/.netlify/functions/subscribe', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                authorization: drip.auth,
             },
             body: JSON.stringify(formData),
         })
@@ -24,15 +26,18 @@ export const SubscribeBar: React.FC = () => {
                 return res.json();
             })
             .then((data) => {
+                console.log(data);
                 setResult(data);
+                setFormStatus('success');
                 setMessage('Subscribed successfully');
             })
             .catch((error) => {
-                setMessage('There was a an error when trying to subscribe you');
+                console.log(error);
+                setFormStatus('failure');
+                setMessage(
+                    `There was a an error when trying to subscribe you: ${error}`
+                );
             });
-
-        console.log(result);
-        console.log(message);
     };
 
     return (
@@ -91,4 +96,4 @@ export interface DripSubscriberData {
     original_referrer?: string;
 }
 
-type FormStatus = 'initial' | 'processing' | 'success' | 'failure';
+type FormStatus = 'initial' | 'loading' | 'success' | 'failure';

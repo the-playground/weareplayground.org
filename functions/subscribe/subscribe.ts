@@ -11,19 +11,34 @@ exports.handler = async (
     callback: APIGatewayProxyCallback
 ) => {
     console.log(event);
+    console.log(process.env.GATSBY_DRIP_API_KEY);
 
     const formData = JSON.parse(event.body!);
 
-    const result = await client
+    await client
         .createUpdateSubscriber(formData)
-        .then((response: any) => response.json())
-        .catch((error: any) => console.log(error));
+        .then((response: any) => {
 
-    callback(null, {
-        statusCode: 200,
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(result),
-    });
+            callback(null, {
+                statusCode: 200,
+                headers: {
+                    'Content-Type': 'application/json',
+                    accept: 'Accept: application/json',
+                },
+                body: response.json(),
+            });
+
+        })
+        .catch((error: string ) => {
+            callback(null, {
+                statusCode: error,
+                headers: {
+                    'Content-Type': 'application/json',
+                    accept: 'Accept: application/json',
+                },
+                body: '',
+            });
+            console.log(error)
+        )};
+
 };
