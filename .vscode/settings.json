@@ -1,0 +1,25 @@
+{
+    //
+    // Auto-run code formatting on save
+    //
+    "editor.formatOnSave": true,
+    // Tell the ESLint plugin to run on save
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    // The following prevents linting from running twice
+    // turn it off for JS and JSX, we will do this via eslint
+    "[javascript]": {
+        "editor.formatOnSave": false
+    },
+    "[javascriptreact]": {
+        "editor.formatOnSave": false
+    },
+    // Turn it off for TS & TSX
+    "[typescript]": {
+        "editor.formatOnSave": false
+    },
+    "[typescriptreact]": {
+        "editor.formatOnSave": false
+    },
+}
