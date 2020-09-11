@@ -18,27 +18,22 @@ exports.handler = async (
     await client
         .createUpdateSubscriber(formData)
         .then((response: any) => {
-
             callback(null, {
                 statusCode: 200,
                 headers: {
                     'Content-Type': 'application/json',
-                    accept: 'Accept: application/json',
                 },
                 body: response.json(),
             });
-
         })
-        .catch((error: string ) => {
+        .catch((error: any) => {
             callback(null, {
                 statusCode: error,
                 headers: {
                     'Content-Type': 'application/json',
-                    accept: 'Accept: application/json',
                 },
                 body: '',
             });
-            console.log(error)
-        )};
-
+            console.log(error);
+        });
 };
