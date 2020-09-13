@@ -10,19 +10,15 @@ export const SubscribeBar: React.FC = () => {
     const formName = 'subscribe';
 
     const onSubmit = async (formData: DripSubscriberData) => {
-        console.log(formData);
-        console.log(JSON.stringify(formData));
+        console.log(`Pre fetch:`, formData);
         setFormStatus('loading');
 
-        fetch('/.netlify/functions/subscribe', {
+        fetch('https://marketing.nervetheatre.io/dev/createSubscriber', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
             body: JSON.stringify(formData),
         })
             .then((res) => {
-                console.log(res);
+                console.log('Response:', res);
                 return res.json();
             })
             .then((data) => {
@@ -32,7 +28,7 @@ export const SubscribeBar: React.FC = () => {
                 setMessage('Subscribed successfully');
             })
             .catch((error) => {
-                console.log(error);
+                console.log(`Client: ${error}`);
                 setFormStatus('failure');
                 setMessage(
                     `There was a an error when trying to subscribe you: ${error}`
