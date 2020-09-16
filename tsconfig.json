@@ -54,6 +54,5 @@
 		"src",
 		"gatsby-*",
 		"@typings/*",
-		"functions",
 	]
 }
