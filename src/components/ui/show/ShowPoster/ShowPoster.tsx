@@ -7,6 +7,7 @@ import {
     BodyText,
     Heading,
     Image,
+    BackgroundOverlay,
     FluidImageProps,
 } from '@components/foundations';
 
@@ -28,8 +29,11 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
     return (
         <styled.ShowPoster>
             <LinkHandler className="wrapper" to={getShowSlug(uid, season.uid)}>
-                <Image fluid={image.fluid} alt={image.alt} />
-                <div className="overlay" />
+                <Image fluid={image.fluid} alt={image.alt} className="image" />
+                <BackgroundOverlay
+                    variant="verticalGradientDark"
+                    className="overlay"
+                />
 
                 <div className="content">
                     <Heading className="title" size="xs" color="light" tag="h2">

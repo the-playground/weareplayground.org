@@ -1,18 +1,54 @@
 import React from 'react';
 import styled from 'styled-components';
-import BackgroundImage from 'gatsby-background-image';
-import { breakpoints, spacing } from '@tokens';
 
-import { Container } from '@components/layout';
+import { breakpoints, grid, spacing } from '@tokens';
 
-const StyledHeroSection = styled.section``;
+import { Container, Section, SectionProps } from '@components/layout';
+import { Heading, BodyText } from '@components/foundations';
 
-export const HeroSection: React.FC<HeroSectionProps> = () => {
+const StyledHeroSection = styled(Section)`
+    padding: ${spacing.layout.xxl} 0 ${spacing.layout.xxl} 0;
+
+    .title {
+        margin-bottom: ${spacing.component.xl};
+        max-width: ${grid.m};
+    }
+    .copy {
+        max-width: ${grid.xs};
+    }
+`;
+
+export const HeroSection: React.FC<HeroSectionProps> = ({
+    title,
+    copy,
+    bgImage,
+}) => {
     return (
-        <StyledHeroSection>
-            <Container>Data</Container>
+        <StyledHeroSection
+            bgColor="extraDark"
+            bgImage={bgImage}
+            bgPosition="center center"
+            overlay="verticalGradientDark"
+        >
+            <Container>
+                <Heading
+                    tag="h1"
+                    color="light"
+                    size="xl"
+                    className="title"
+                    textTransform="lowercase"
+                >
+                    {title}
+                </Heading>
+                <BodyText tag="p" color="light" size="l" className="copy">
+                    {copy}
+                </BodyText>
+            </Container>
         </StyledHeroSection>
     );
 };
 
-interface HeroSectionProps {}
+interface HeroSectionProps extends SectionProps {
+    title: string;
+    copy: string;
+}

@@ -1,11 +1,12 @@
+import { rgba } from 'polished';
 import { OverlayTheme, OverlayThemes } from '../theme.d';
 import { palette } from './__palette';
 
 const verticalGradientDark: OverlayTheme = {
     color: `linear-gradient(
             0deg,
-            rgba(7, 18, 29, 0.7) 15%,
-            rgba(7, 18, 29, 0) 100%
+            ${rgba(palette.secondary.dark, 0.8)} 15%,
+            ${rgba(palette.secondary.dark, 0.4)} 50%
         )`,
 };
 

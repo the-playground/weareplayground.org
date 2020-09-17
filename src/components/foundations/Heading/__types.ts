@@ -8,5 +8,6 @@ export interface HeadingProps {
     as: AllowedTag;
     size: AvailableHeadingTypography;
     color: AvailableTypographyPalette;
+    textTransform?: 'uppercase' | 'lowercase' | 'capitalize';
     className?: string;
 }

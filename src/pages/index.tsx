@@ -1,10 +1,9 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import { GatsbyPageContext } from '@type/gatsby';
-import { PrismicImage } from '@type/prismic';
+import { PrismicImage, PrismicFluidImage } from '@type/prismic';
 
 import PageTemplate from '@templates/PageTemplate';
-import { FluidImageProps } from '@components/foundations';
 
 import { HeroSection, SubscribeSection } from '@components/pageView/HomePage';
 
@@ -14,15 +13,19 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     location,
 }) => {
     const { uid } = pageContext;
-    const pageData = data.prismicHomePage;
+    const pageData = data.prismicHomePage.data;
 
     return (
         <PageTemplate
             slug={uid}
-            pageConfig={pageData}
+            pageConfig={data.prismicHomePage}
             currentLocation={location.pathname}
         >
-            <HeroSection />
+            <HeroSection
+                title={pageData.hero_title}
+                copy={pageData.hero_copy}
+                bgImage={pageData.hero_image}
+            />
             <SubscribeSection />
         </PageTemplate>
     );
@@ -80,7 +83,7 @@ interface PageData {
             // Hero
             hero_title: string;
             hero_copy: string;
-            hero_image: FluidImageProps;
+            hero_image: PrismicFluidImage;
         };
     };
 }

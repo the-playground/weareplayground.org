@@ -8,20 +8,14 @@ export const ShowPoster = styled.article`
     position: relative;
     transition: ${animation.cardHover};
 
-    .overlay {
-        background: ${(props) =>
-            props.theme.overlays.verticalGradientDark.color};
-        bottom: 0;
-        display: block;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        pointer-events: none;
-        right: 0;
-        top: 0;
+    .image {
+        filter: grayscale(1);
         transition: ${animation.cardHover};
-        width: 100%;
-        z-index: ${zIndex.base};
+    }
+
+    .overlay {
+        pointer-events: none;
+        transition: ${animation.cardHover};
     }
     .content {
         bottom: 0;
@@ -40,11 +34,16 @@ export const ShowPoster = styled.article`
     }
 
     &:hover {
+        .image {
+            filter: grayscale(0);
+        }
+
+        .overlay {
+            opacity: 0.2;
+        }
+
         ${breakpoints.m} {
             transform: scale(1.01);
-            .overlay {
-                opacity: 0.2;
-            }
         }
     }
 `;
