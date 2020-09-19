@@ -66,5 +66,5 @@ export interface ShowPosterProps {
         title: string;
         uid: string;
     };
-    performances: Performance[];
+    performances: Pick<Performance, 'datetime'>[];
 }

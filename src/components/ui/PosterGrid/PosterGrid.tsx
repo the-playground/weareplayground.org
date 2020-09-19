@@ -33,7 +33,7 @@ export const PosterGrid: React.FC<PosterGridProps> = ({ items }) => {
                                 title: show.season.document.data.title,
                                 uid: show.season.uid,
                             }}
-                            performances={show.performances}
+                            performances={show.performances!}
                         />
                     );
                 })}
