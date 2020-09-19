@@ -5,6 +5,7 @@ import { breakpoints, grid, spacing } from '@tokens';
 
 import { Container, Section, SectionProps } from '@components/layout';
 import { Heading, BodyText } from '@components/foundations';
+import { TitleBlock } from '@components/ui';
 
 const StyledHeroSection = styled(Section)`
     padding: ${spacing.layout.xxl} 0 ${spacing.layout.xxl} 0;
@@ -31,15 +32,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             overlay="verticalGradientDark"
         >
             <Container>
-                <Heading
+                <TitleBlock
                     tag="h1"
-                    color="light"
+                    bgColor="light"
+                    color="dark"
                     size="xl"
                     className="title"
-                    textTransform="lowercase"
                 >
                     {title}
-                </Heading>
+                </TitleBlock>
                 <BodyText tag="p" color="light" size="l" className="copy">
                     {copy}
                 </BodyText>

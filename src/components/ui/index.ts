@@ -24,3 +24,4 @@ export * from './PosterGrid/PosterGrid';
 export * from './show';
 export * from './SimpleHero/SimpleHero';
 export * from './SubscribeBar/SubscribeBar';
+export * from './TitleBlock/TitleBlock';
