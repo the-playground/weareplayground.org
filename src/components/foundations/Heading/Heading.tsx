@@ -3,7 +3,7 @@ import React from 'react';
 import { HeadingProps } from './__types';
 import * as Styled from './__styles';
 
-export const Heading: React.FC<Omit<HeadingProps, 'as'>> = ({
+export const Heading: React.FC<HeadingProps> = ({
     children,
     textTransform,
     tag,

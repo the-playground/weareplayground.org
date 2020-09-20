@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { Heading } from '@components/foundations';
+
 import * as styled from './__styles';
 import { TitleBlockProps } from './__types';
 
@@ -17,14 +20,15 @@ export const TitleBlock: React.FC<TitleBlockProps> = ({
             bgColor={bgColor}
             className={className}
         >
-            <styled.TitleBlockText
+            <Heading
                 tag={tag}
                 color={color}
                 size={size}
                 textTransform="uppercase"
+                className="text"
             >
                 {children}
-            </styled.TitleBlockText>
+            </Heading>
         </styled.TitleBlock>
     );
 };
