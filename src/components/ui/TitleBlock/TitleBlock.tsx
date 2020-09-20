@@ -18,6 +18,7 @@ export const TitleBlock: React.FC<TitleBlockProps> = ({
         <styled.TitleBlock
             offset={offset}
             bgColor={bgColor}
+            size={size}
             className={className}
         >
             <Heading

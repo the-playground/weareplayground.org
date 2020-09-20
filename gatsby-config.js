@@ -16,6 +16,13 @@ module.exports = {
                 path: path.join(__dirname, `static`, `images`),
             },
         },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `textures`,
+                path: path.join(__dirname, `static`, `textures`),
+            },
+        },
         /**
          * @link https://www.gatsbyjs.org/packages/gatsby-plugin-sharp/
          */

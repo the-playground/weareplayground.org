@@ -22,6 +22,7 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
             currentLocation={location.pathname}
         >
             <HeroSection
+                bgColor="extraDark"
                 title={pageData.hero_title}
                 copy={pageData.hero_copy}
                 bgImage={pageData.hero_image}
@@ -56,7 +57,7 @@ export const query = graphql`
                 hero_title
                 hero_copy
                 hero_image {
-                    fluid {
+                    fluid(imgixParams: { sat: -100 }) {
                         ...GatsbyPrismicImageFluid
                     }
                 }

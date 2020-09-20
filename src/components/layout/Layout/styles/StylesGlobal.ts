@@ -25,6 +25,15 @@ export const StylesGlobal = createGlobalStyle`
 		-moz-osx-font-smoothing: grayscale;
 	}
 
+	::selection {
+  		background: ${(props) =>
+            props.theme.backgrounds.accent.color}; /* WebKit/Blink Browsers */
+	}
+	::-moz-selection {
+		background:  ${(props) =>
+            props.theme.backgrounds.accent.color};; /* Gecko Browsers */
+	}
+
 	/**
 	 * Utility Classes
 	 */

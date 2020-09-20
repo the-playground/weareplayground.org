@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { breakpoints, grid, spacing } from '@tokens';
 
 import { Container, Section, SectionProps } from '@components/layout';
-import { Heading, BodyText } from '@components/foundations';
+import { BodyText } from '@components/foundations';
 import { TitleBlock } from '@components/ui';
 
 const StyledHeroSection = styled(Section)`
@@ -15,6 +15,7 @@ const StyledHeroSection = styled(Section)`
         max-width: ${grid.m};
     }
     .copy {
+        margin-top: ${spacing.layout.m};
         max-width: ${grid.xs};
     }
 `;
@@ -29,14 +30,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             bgColor="extraDark"
             bgImage={bgImage}
             bgPosition="center center"
-            overlay="verticalGradientDark"
+            overlay="secondary75"
         >
             <Container>
                 <TitleBlock
                     tag="h1"
                     bgColor="light"
                     color="dark"
-                    size="xl"
+                    size="l"
                     className="title"
                 >
                     {title}
