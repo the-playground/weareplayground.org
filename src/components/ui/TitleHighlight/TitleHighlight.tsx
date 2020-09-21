@@ -3,9 +3,9 @@ import React from 'react';
 import { Heading } from '@components/foundations';
 
 import * as styled from './__styles';
-import { TitleBlockProps } from './__types';
+import { TitleHighlightProps } from './__types';
 
-export const TitleBlock: React.FC<TitleBlockProps> = ({
+export const TitleHighlight: React.FC<TitleHighlightProps> = ({
     children,
     className,
     color,
@@ -15,7 +15,7 @@ export const TitleBlock: React.FC<TitleBlockProps> = ({
     size,
 }) => {
     return (
-        <styled.TitleBlock
+        <styled.TitleHighlight
             offset={offset}
             bgColor={bgColor}
             size={size}
@@ -30,6 +30,6 @@ export const TitleBlock: React.FC<TitleBlockProps> = ({
             >
                 {children}
             </Heading>
-        </styled.TitleBlock>
+        </styled.TitleHighlight>
     );
 };

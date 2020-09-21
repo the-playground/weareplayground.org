@@ -1,3 +1,4 @@
+import React from 'react';
 import { IFluidObject } from 'gatsby-background-image';
 
 export type PrismicImage = {

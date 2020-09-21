@@ -21,7 +21,6 @@ export * from './Cart/Cart';
 export * from './LegacyContentNotice/LegacyContentNotice';
 export * from './Modal/Modal';
 export * from './PosterGrid/PosterGrid';
-export * from './show';
 export * from './SimpleHero/SimpleHero';
 export * from './SubscribeBar/SubscribeBar';
-export * from './TitleBlock/TitleBlock';
+export * from './TitleHighlight/TitleHighlight';

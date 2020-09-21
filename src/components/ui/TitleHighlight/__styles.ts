@@ -1,9 +1,9 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { breakpoints, zIndex, AvailableHeadingTypography } from '@tokens';
-import { TitleBlockProps } from './__types';
+import { TitleHighlightProps } from './__types';
 
-// A style map of desktop & mobile style for each size the title block may appear as
-const titleBlockStyle = {
+// A style map of desktop & mobile style for each size the title Highlight may appear as
+const titleHighlightStyle = {
     xs: {
         mobile: {
             lineHeight: 1.5,
@@ -57,10 +57,10 @@ const titleBlockStyle = {
 };
 
 // Get the desktop & mobile styles for the specific size
-const getTitleBlockStyle = (
+const getTitleHighlightStyle = (
     size: AvailableHeadingTypography
 ): FlattenSimpleInterpolation => {
-    const style = titleBlockStyle[size];
+    const style = titleHighlightStyle[size];
 
     return css`
         line-height: ${style.mobile.lineHeight};
@@ -72,8 +72,8 @@ const getTitleBlockStyle = (
     `;
 };
 
-export const TitleBlock = styled.div<
-    Pick<TitleBlockProps, 'offset' | 'bgColor' | 'size'>
+export const TitleHighlight = styled.div<
+    Pick<TitleHighlightProps, 'offset' | 'bgColor' | 'size'>
 >`
     transform: rotate(${(props) => props.offset}deg);
 
@@ -81,7 +81,7 @@ export const TitleBlock = styled.div<
         background: ${(props) => props.theme.backgrounds[props.bgColor].color};
         display: inline;
         letter-spacing: 5px;
-        ${(props) => getTitleBlockStyle(props.size)};
+        ${(props) => getTitleHighlightStyle(props.size)};
         position: relative;
         z-index: ${zIndex.base};
     }
@@ -89,7 +89,7 @@ export const TitleBlock = styled.div<
     > .text:before,
     > .text:after {
         content: '';
-        display: block;
+        display: Highlight;
         height: 110%;
         position: absolute;
         pointer-events: none;

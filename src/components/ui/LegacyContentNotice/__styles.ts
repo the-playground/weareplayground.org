@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
-import { spacing } from '@tokens';
+import { breakpoints, spacing } from '@tokens';
 
 export const LegacyContentNotice = styled.div`
     .content {
-        padding: ${spacing.layout.l} 0 ${spacing.layout.xl};
+        padding: ${spacing.layout.l} 0 ${spacing.layout.l};
+        ${breakpoints.m} {
+            padding: ${spacing.layout.xl} 0 ${spacing.layout.xl};
+        }
     }
 
     .divider {

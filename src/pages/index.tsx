@@ -5,7 +5,7 @@ import { PrismicImage, PrismicFluidImage } from '@type/prismic';
 
 import PageTemplate from '@templates/PageTemplate';
 
-import { HeroSection, SubscribeSection } from '@components/pageView/HomePage';
+import { HeroSection, SubscribeSection } from '@screens/HomePage';
 
 const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,

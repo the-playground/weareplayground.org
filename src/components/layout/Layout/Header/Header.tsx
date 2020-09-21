@@ -6,9 +6,10 @@ import { Container } from '../../Container/Container';
 
 import { DesktopNavBar } from './DesktopNavBar/DesktopNavBar';
 
+import { HeaderProps } from './__types';
 import * as styled from './__styles';
 
-export const Header = () => {
+export const Header: React.FC<HeaderProps> = () => {
     return (
         <styled.Header>
             <Container className="container" maxWidth="l">
@@ -25,3 +26,5 @@ export const Header = () => {
         </styled.Header>
     );
 };
+
+export * from './__types';

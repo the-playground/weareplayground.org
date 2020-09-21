@@ -1,4 +1,4 @@
-import { css, createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import { appBaseFontSize, fonts } from '@tokens';
 
 /**
@@ -26,12 +26,10 @@ export const StylesGlobal = createGlobalStyle`
 	}
 
 	::selection {
-  		background: ${(props) =>
-            props.theme.backgrounds.accent.color}; /* WebKit/Blink Browsers */
+  		background: ${(props) => props.theme.backgrounds.accent.color};
 	}
 	::-moz-selection {
-		background:  ${(props) =>
-            props.theme.backgrounds.accent.color};; /* Gecko Browsers */
+		background:  ${(props) => props.theme.backgrounds.accent.color};
 	}
 
 	/**
