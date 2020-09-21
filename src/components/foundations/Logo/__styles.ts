@@ -14,7 +14,7 @@ export const Logo = styled.i<LogoProps>`
     line-height: 0;
 
     svg {
-        height: auto;
+        height: 100%;
         width: ${(props) => logoWidth[props.size]};
     }
 
