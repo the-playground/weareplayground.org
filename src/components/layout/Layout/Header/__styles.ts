@@ -5,15 +5,15 @@ import { animation, appNavBreakpoint, spacing, zIndex } from '@tokens';
 import { HeaderProps } from './__types';
 
 export const Header = styled.header<HeaderProps>`
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: ${zIndex.base};
     padding: ${spacing.component.s} 0;
     ${appNavBreakpoint} {
-        display: block;
-        left: 0;
         padding: ${spacing.component.m} 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: ${zIndex.base};
     }
 
     .container {
