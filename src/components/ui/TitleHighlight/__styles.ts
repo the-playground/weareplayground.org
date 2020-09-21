@@ -89,7 +89,7 @@ export const TitleHighlight = styled.div<
     > .text:before,
     > .text:after {
         content: '';
-        display: Highlight;
+        display: block;
         height: 110%;
         position: absolute;
         pointer-events: none;

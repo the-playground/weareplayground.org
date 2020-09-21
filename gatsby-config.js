@@ -75,13 +75,14 @@ module.exports = {
                 root: './src', // <- will be used as a root dir
                 aliases: {
                     '@context': './__context__', // <- will become ./src/__context__
+                    '@components': './components',
                     '@hooks': './__hooks__',
                     '@lib': './__lib__',
+                    '@screens': './screens',
+                    '@templates': './templates',
                     '@themes': './__themes__',
                     '@tokens': './__tokens__',
                     '@type': './__types__',
-                    '@components': './components',
-                    '@templates': './templates',
                 },
             },
         },
