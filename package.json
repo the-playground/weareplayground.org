@@ -66,7 +66,7 @@
 	},
 	"scripts": {
 		"dev": "rm -rf .cache && gatsby develop",
-		"build": "gatsby build",
+		"build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
 		"serve": "gatsby build && gatsby serve",
 		"clean": "gatsby clean"
 	},
