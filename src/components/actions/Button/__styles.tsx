@@ -11,14 +11,14 @@ import { ButtonProps } from './__types';
  */
 export const buttonSizes = {
     s: css`
-        padding: ${spacing.component.xs} ${spacing.component.m} 11px
+        padding: ${spacing.component.s} ${spacing.component.m} 11px
             ${spacing.component.m};
-        font-weight: 700;
+        ${typography.bodyBold.s};
     `,
     m: css`
         padding: 11px ${spacing.component.m} ${spacing.component.s}
             ${spacing.component.m};
-        font-weight: 700;
+        ${typography.bodyBold.m};
     `,
 };
 
@@ -32,7 +32,6 @@ export const Button = styled(LinkHandler)<ButtonProps>`
     overflow: hidden;
     transition: ${animation.buttonHover};
     width: auto;
-    ${typography.bodyText.m}
 
     /* Themeable properties */
     background-color: ${(props) =>
