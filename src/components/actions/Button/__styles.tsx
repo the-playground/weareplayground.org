@@ -11,8 +11,7 @@ import { ButtonProps } from './__types';
  */
 export const buttonSizes = {
     s: css`
-        padding: ${spacing.component.s} ${spacing.component.m} 11px
-            ${spacing.component.m};
+        padding: 8px ${spacing.component.m} 10px ${spacing.component.m};
         ${typography.bodyBold.s};
     `,
     m: css`
