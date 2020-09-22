@@ -62,20 +62,11 @@ export const RebrandSection: React.FC<RebrandSectionProps> = () => {
     return (
         <StyledRebrandSection bgColor="light">
             <Container className="container">
-                <Logo
-                    type="Playground"
-                    size="xxl"
-                    responsive={{ size: 'xl', breakpoint: 'm' }}
-                />
+                <Logo type="Playground" size="xl" />
                 <Heading color="dark" size="s" tag="p" className="middle">
                     is now
                 </Heading>
-                <Logo
-                    type="Lockup"
-                    size="xxl"
-                    responsive={{ size: 'xl', breakpoint: 'm' }}
-                    color="dark"
-                />
+                <Logo type="Lockup" size="xl" color="dark" />
             </Container>
         </StyledRebrandSection>
     );
