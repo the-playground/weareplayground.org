@@ -25,6 +25,7 @@ export const palette: Palette = {
         medium: brandColors.grey[300],
         dark: brandColors.blue.main,
         accent: brandColors.orange.main,
+        accentDark: brandColors.orange.dark,
         danger: '#F23405',
     },
 };

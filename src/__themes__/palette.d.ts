@@ -25,6 +25,7 @@ export interface TypographyPalette {
     medium: string;
     dark: string;
     accent: string;
+    accentDark: string;
     danger: string;
 }
 

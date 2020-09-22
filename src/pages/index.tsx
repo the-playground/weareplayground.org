@@ -6,6 +6,7 @@ import { PrismicImage, PrismicFluidImage } from '@type/prismic';
 import PageTemplate from '@templates/PageTemplate';
 
 import {
+    ArchiveSection,
     HeroSection,
     RebrandSection,
     SubscribeSection,
@@ -32,6 +33,7 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 bgImage={pageData.hero_image}
             />
             <RebrandSection />
+            <ArchiveSection />
             <SubscribeSection />
         </PageTemplate>
     );

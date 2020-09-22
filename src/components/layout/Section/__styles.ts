@@ -5,7 +5,7 @@ import { SectionProps } from './__types';
 
 export const SectionWithBackgroundImage = styled(BackgroundImage)<SectionProps>`
     background-size: cover;
-    background-position: ${(props) => props.bgPosition};
+    background-position: ${({ bgPosition }) => bgPosition};
     position: relative;
     > .content {
         position: relative;
@@ -14,6 +14,7 @@ export const SectionWithBackgroundImage = styled(BackgroundImage)<SectionProps>`
 `;
 
 export const Section = styled.section<SectionProps>`
-    background: ${(props) => props.theme.backgrounds[props.bgColor].color};
+    background: ${({ theme, bgColor }) =>
+        bgColor && theme.backgrounds[bgColor].color};
     position: relative;
 `;

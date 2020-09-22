@@ -10,7 +10,7 @@ import { Heading, Logo } from '@components/foundations';
 const sectionBreakpoint = breakpoints.m;
 
 const StyledRebrandSection = styled(Section)`
-    padding: ${spacing.layout.l} 0;
+    padding: ${spacing.layout.m} 0;
     position: relative;
 
     > .container {

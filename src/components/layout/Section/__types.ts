@@ -13,7 +13,7 @@ type BackgroundPosition =
     | 'right bottom';
 
 export interface SectionProps {
-    bgColor: AvailableBackgroundTheme;
+    bgColor?: AvailableBackgroundTheme;
     overlay?: AvailableOverlayTheme;
     bgImage?: PrismicFluidImage;
     bgPosition?: BackgroundPosition;
