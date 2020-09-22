@@ -1,11 +1,38 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { breakpoints } from '@tokens';
 import { LogoProps, AvailableLogoSizes } from './__types';
 
 const logoWidth: AvailableLogoSizes = {
+    xxl: '300px',
+    xl: '225px',
     l: '150px',
     m: '100px',
     s: '75px',
     xs: '50px',
+};
+
+/**
+ * Get the requested logo size,  Also handles responsive sizes if a
+ * responsive size configuration is present.
+ *
+ * @param size
+ * @param responsive
+ */
+const getLogoSize = (
+    size: LogoProps['size'],
+    responsive: LogoProps['responsive']
+) => {
+    if (responsive) {
+        return css`
+            width: ${logoWidth[responsive.size]};
+            ${breakpoints[responsive.breakpoint]} {
+                width: ${logoWidth[size]};
+            }
+        `;
+    }
+    return css`
+        width: ${logoWidth[size]};
+    `;
 };
 
 export const Logo = styled.i<LogoProps>`
@@ -15,14 +42,16 @@ export const Logo = styled.i<LogoProps>`
 
     svg {
         height: 100%;
-        width: ${(props) => logoWidth[props.size]};
+        ${({ responsive, size }) => getLogoSize(size, responsive)};
     }
 
     .bracket {
-        fill: ${(props) => props.theme.logo[props.color].bracketColor};
+        fill: ${({ theme, color }) =>
+            color ? theme.logo[color].bracketColor : ''};
     }
 
     .text {
-        fill: ${(props) => props.theme.logo[props.color].textColor};
+        fill: ${({ theme, color }) =>
+            color ? theme.logo[color].textColor : ''};
     }
 `;

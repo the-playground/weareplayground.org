@@ -3,10 +3,10 @@ import { typography } from '@tokens';
 import { BodyTextStyledProps } from './__types';
 
 export const BodyText = styled.p<BodyTextStyledProps>`
-    color: ${(props) =>
-        props.color ? props.theme.typography[props.color] : 'inherit'};
-    ${(props) =>
-        props.weight === 'regular'
-            ? typography.bodyText[props.size!]
-            : typography.bodyBold[props.size!]};
+    color: ${({ color, theme }) =>
+        color ? theme.typography[color] : 'inherit'};
+    ${({ weight, size }) =>
+        weight === 'regular'
+            ? typography.bodyText[size!]
+            : typography.bodyBold[size!]};
 `;

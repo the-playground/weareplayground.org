@@ -4,8 +4,7 @@ import styled from 'styled-components';
 import { breakpoints, grid, spacing } from '@tokens';
 
 import { Container, Section, SectionProps } from '@components/layout';
-import { BodyText } from '@components/foundations';
-import { TitleHighlight } from '@components/ui';
+import { BodyText, GrittyHeading } from '@components/foundations';
 
 const StyledHeroSection = styled(Section)`
     padding: ${spacing.layout.l} 0 ${spacing.layout.xl} 0;
@@ -36,7 +35,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             overlay="secondary75"
         >
             <Container>
-                <TitleHighlight
+                <GrittyHeading
                     tag="h1"
                     bgColor="light"
                     color="dark"
@@ -44,7 +43,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     className="title"
                 >
                     {title}
-                </TitleHighlight>
+                </GrittyHeading>
                 <BodyText tag="p" color="light" size="l" className="copy">
                     {copy}
                 </BodyText>

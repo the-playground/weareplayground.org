@@ -3,9 +3,9 @@ import React from 'react';
 import { Heading } from '@components/foundations';
 
 import * as styled from './__styles';
-import { TitleHighlightProps } from './__types';
+import { GrittyHeadingProps } from './__types';
 
-export const TitleHighlight: React.FC<TitleHighlightProps> = ({
+export const GrittyHeading: React.FC<GrittyHeadingProps> = ({
     children,
     className,
     color,
@@ -15,7 +15,7 @@ export const TitleHighlight: React.FC<TitleHighlightProps> = ({
     size,
 }) => {
     return (
-        <styled.TitleHighlight
+        <styled.GrittyHeading
             offset={offset}
             bgColor={bgColor}
             size={size}
@@ -30,6 +30,6 @@ export const TitleHighlight: React.FC<TitleHighlightProps> = ({
             >
                 {children}
             </Heading>
-        </styled.TitleHighlight>
+        </styled.GrittyHeading>
     );
 };

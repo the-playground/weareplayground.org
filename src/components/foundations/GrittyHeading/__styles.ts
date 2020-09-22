@@ -1,9 +1,11 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { breakpoints, zIndex, AvailableHeadingTypography } from '@tokens';
-import { TitleHighlightProps } from './__types';
+import whiteGrit from '@assets/grit-white.png';
+import blackGrit from '@assets/grit-black.png';
+import { GrittyHeadingProps } from './__types';
 
 // A style map of desktop & mobile style for each size the title Highlight may appear as
-const titleHighlightStyle = {
+const grittyHeadingStyle = {
     xs: {
         mobile: {
             lineHeight: 1.5,
@@ -36,7 +38,7 @@ const titleHighlightStyle = {
     },
     l: {
         mobile: {
-            lineHeight: 1.4,
+            lineHeight: 1.5,
             paddingBottom: 8,
         },
         desktop: {
@@ -57,10 +59,10 @@ const titleHighlightStyle = {
 };
 
 // Get the desktop & mobile styles for the specific size
-const getTitleHighlightStyle = (
+const getGrittyHeadingStyle = (
     size: AvailableHeadingTypography
 ): FlattenSimpleInterpolation => {
-    const style = titleHighlightStyle[size];
+    const style = grittyHeadingStyle[size];
 
     return css`
         line-height: ${style.mobile.lineHeight};
@@ -72,16 +74,16 @@ const getTitleHighlightStyle = (
     `;
 };
 
-export const TitleHighlight = styled.div<
-    Pick<TitleHighlightProps, 'offset' | 'bgColor' | 'size'>
+export const GrittyHeading = styled.div<
+    Pick<GrittyHeadingProps, 'offset' | 'bgColor' | 'size'>
 >`
-    transform: rotate(${(props) => props.offset}deg);
+    transform: rotate(${({ offset }) => offset}deg);
 
     > .text {
-        background: ${(props) => props.theme.backgrounds[props.bgColor].color};
+        background: ${({ theme, bgColor }) => theme.backgrounds[bgColor].color};
         display: inline;
         letter-spacing: 5px;
-        ${(props) => getTitleHighlightStyle(props.size)};
+        ${({ size }) => getGrittyHeadingStyle(size)};
         position: relative;
         z-index: ${zIndex.base};
     }
@@ -101,10 +103,10 @@ export const TitleHighlight = styled.div<
     }
 
     > .text:before {
-        background-image: url(textures/grit--black.png);
+        background-image: url(${blackGrit});
     }
 
     > .text:after {
-        background-image: url(textures/grit--white.png);
+        background-image: url(${whiteGrit});
     }
 `;

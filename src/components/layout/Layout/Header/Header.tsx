@@ -18,7 +18,12 @@ export const Header: React.FC<HeaderProps> = () => {
                     className="brand"
                     activeClassName="--is-active"
                 >
-                    <Logo type="Lockup" size="l" color="light" />
+                    <Logo
+                        type="Lockup"
+                        size="l"
+                        color="light"
+                        responsive={{ size: 'm', breakpoint: 'm' }}
+                    />
                     <h1 className="u-visually-hidden">The Nerve Theatre</h1>
                 </LinkHandler>
                 <DesktopNavBar />

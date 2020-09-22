@@ -23,4 +23,3 @@ export * from './Modal/Modal';
 export * from './PosterGrid/PosterGrid';
 export * from './SimpleHero/SimpleHero';
 export * from './SubscribeBar/SubscribeBar';
-export * from './TitleHighlight/TitleHighlight';

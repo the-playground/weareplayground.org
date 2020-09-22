@@ -4,7 +4,7 @@ import { AvailableOverlayTheme } from '@themes/theme';
 import { zIndex } from '@tokens';
 
 const StyledOverlay = styled.div<BackgroundOverlayProps>`
-    background: ${(props) => props.theme.overlays[props.variant].color};
+    background: ${({ theme, variant }) => theme.overlays[variant].color};
     bottom: 0;
     height: 100%;
     left: 0;

@@ -26,12 +26,6 @@ export const Header = styled.header<HeaderProps>`
     .brand {
         display: flex;
         transition: ${animation.linkHover};
-        svg {
-            width: 125px;
-            ${appNavBreakpoint} {
-                width: 150px;
-            }
-        }
     }
 
     .brand.--is-active {

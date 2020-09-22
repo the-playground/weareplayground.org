@@ -7,26 +7,8 @@ require(`dotenv`).config({
 module.exports = {
     plugins: [
         /**
-         * @link https://www.gatsbyjs.org/packages/gatsby-source-filesystem
-         */
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                name: `images`,
-                path: path.join(__dirname, `static`, `images`),
-            },
-        },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                name: `textures`,
-                path: path.join(__dirname, `static`, `textures`),
-            },
-        },
-        /**
          * @link https://www.gatsbyjs.org/packages/gatsby-plugin-sharp/
-         */
-        `gatsby-plugin-sharp`,
+         */ `gatsby-plugin-sharp`,
 
         /**
          * @link https://www.gatsbyjs.org/packages/gatsby-transformer-sharp
@@ -74,6 +56,7 @@ module.exports = {
             options: {
                 root: './src', // <- will be used as a root dir
                 aliases: {
+                    '@assets': './assets',
                     '@context': './__context__', // <- will become ./src/__context__
                     '@components': './components',
                     '@hooks': './__hooks__',

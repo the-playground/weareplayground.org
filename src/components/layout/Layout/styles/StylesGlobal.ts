@@ -45,4 +45,11 @@ export const StylesGlobal = createGlobalStyle`
 		white-space: nowrap; /* added line */
 	 }
 
+	 /**
+	  *
+	  */
+	  .u-gritty {
+		  position: relative;
+	  }
+
 `;
