@@ -4,11 +4,57 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
-    const { createPage } = actions;
+/**
+ * Build a single season page
+ *
+ * @param {*} seasonConfig
+ * @param {*} createPage
+ */
+function buildSeasonPage(seasonConfig, createPage) {
+    console.log(`🗓️ Season: ${seasonConfig.url}`);
 
-    // Query Season and show data
-    const query = await graphql(`
+    createPage({
+        path: seasonConfig.url,
+        component: seasonConfig.template,
+        context: {
+            id: seasonConfig.id,
+            uid: seasonConfig.slug,
+            seasonURL: seasonConfig.url,
+        },
+    });
+}
+
+/**
+ * Build a single show page
+ *
+ * @param {*} showConfig
+ * @param {*} createPage
+ */
+function buildShowPage(showConfig, createPage) {
+    console.log(`🎭 Show: ${showConfig.url}`);
+
+    createPage({
+        path: showConfig.url,
+        component: showConfig.template,
+        context: {
+            seasonID: showConfig.season.id,
+            seasonUID: showConfig.season.slug,
+            seasonURL: showConfig.season.url,
+            uid: showConfig.slug,
+            id: showConfig.id,
+        },
+    });
+}
+
+/**
+ * Query all available seasons and shows and dynamically
+ * generate pages from the results
+ *
+ * @param {*} params destructured instances of createPages params
+ */
+async function generateSeasonsAndShows({ graphql, actions, reporter }) {
+    // Query Season and Show data
+    const { data } = await graphql(`
         {
             allPrismicSeason {
                 nodes {
@@ -27,68 +73,56 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
     `);
 
-    if (query.errors) {
+    if (data.errors) {
         reporter.panicOnBuild(
-            `🔥 Error while running GraphQL query on Prismic.`
+            `🔥 Error while running GraphQL query on Seasons & Shows.`
         );
-        return;
     }
 
     /**
-     * Begin Building Season Pages
+     * Begin building Season pages
      */
-    console.log(
-        `🙏🏼 Begin creating dynamic season and show pages from Prismic...`
-    );
+    console.log(`🚀 Begin creating dynamic Season and Show pages...`);
 
-    const seasonTemplate = require.resolve(
-        `./src/templates/SeasonTemplate.tsx`
-    );
-    const showTemplate = require.resolve(`./src/templates/ShowTemplate.tsx`);
+    const { createPage } = actions;
     const URLBase = `s`;
 
-    query.data.allPrismicSeason.nodes.forEach((season) => {
-        const seasonSlug = season.uid;
-        const seasonURL = `/${URLBase}/${seasonSlug}`;
-        const seasonID = season.id;
+    await data.allPrismicSeason.nodes.forEach(async (season) => {
+        const seasonConfig = {
+            slug: season.uid,
+            url: `/${URLBase}/${season.uid}`,
+            id: season.id,
+            template: require.resolve(`./src/templates/SeasonTemplate.tsx`),
+        };
 
-        console.log(`✅ Season: ${seasonURL}`);
-
-        createPage({
-            path: seasonURL,
-            component: seasonTemplate,
-            context: {
-                id: seasonID,
-                uid: seasonSlug,
-                seasonURL,
-            },
-        });
+        buildSeasonPage(seasonConfig, createPage);
 
         // Bail if there are no shows linked to the season
-        if (!season.data || !season.data.shows) {
+        if (!season.data?.shows) {
             return;
         }
 
-        // We have to use a nested forEach now to go through every show in a season and generate the pages
-        season.data.shows.forEach(({ show }) => {
-            const showSlug = show.uid;
-            const showURL = `${URLBase}/${seasonSlug}/${showSlug}`;
-            const showID = show.id;
+        /**
+         * Begin building pages for each Show in the current Season
+         */
+        season.data.shows.forEach(async ({ show }) => {
+            const showConfig = {
+                slug: show.uid,
+                url: `${seasonConfig.url}/${show.uid}`,
+                id: show.id,
+                template: require.resolve(`./src/templates/ShowTemplate.tsx`),
+                season: seasonConfig,
+            };
 
-            console.log(`✅ Show: ${showURL}`);
-
-            createPage({
-                path: showURL,
-                component: showTemplate,
-                context: {
-                    seasonID,
-                    seasonUID: seasonSlug,
-                    seasonURL,
-                    uid: showSlug,
-                    id: showID,
-                },
-            });
+            buildShowPage(showConfig, createPage);
         });
     });
-    console.log(`👌🏼 Done creating season and show pages from Prismic!`);
+    console.log(`🎉 Done creating Season and Show pages!`);
+}
+
+/**
+ * When Gatsby attempts to crete pages, run the requested functionality
+ */
+exports.createPages = async (params) => {
+    await Promise.all([generateSeasonsAndShows(params)]);
 };
