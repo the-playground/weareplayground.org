@@ -11,7 +11,7 @@
  * @param {*} createPage
  */
 function buildSeasonPage(seasonConfig, createPage) {
-    console.log(`🗓️ Season: ${seasonConfig.url}`);
+    console.log(`🗓️  Season: ${seasonConfig.url}`);
 
     createPage({
         path: seasonConfig.url,
