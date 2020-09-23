@@ -1,5 +1,4 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import { PrismicLink } from '@type/prismic';
 import {
     getChildPageSlug,
     getShowSlug,
