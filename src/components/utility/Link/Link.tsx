@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 
-import { isLinkInternal } from '@lib/links';
+import { isInternalPageLink } from '@lib/links';
 
 export const Link: React.FC<LinkProps> = ({
     to,
@@ -12,8 +12,8 @@ export const Link: React.FC<LinkProps> = ({
     className,
     ...others
 }) => {
-    // If the link is internal, render using Gatsby Link
-    return isLinkInternal(to) ? (
+    // If the link is to an internal page, render using Gatsby Link
+    return isInternalPageLink(to) ? (
         <GatsbyLink
             to={to}
             activeClassName={activeClassName}
@@ -24,7 +24,7 @@ export const Link: React.FC<LinkProps> = ({
             {children}
         </GatsbyLink>
     ) : (
-        // If the link is external, render using standard link
+        // If the link is external or if we are linking to a file, render using standard link
         <a
             href={to}
             target={noNewTab ? '_self' : '_blank'}
