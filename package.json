@@ -35,7 +35,7 @@
 		"styled-components": "^5.2.0"
 	},
 	"devDependencies": {
-		"@codingwithchris/eslint-config": "^1.0.0",
+		"@codingwithchris/eslint-config": "^1.0.2",
 		"@types/css-font-loading-module": "^0.0.4",
 		"@types/node": "^14.11.2",
 		"@types/react": "^16.9.49",
@@ -68,12 +68,18 @@
 		"dev": "rm -rf .cache && gatsby develop",
 		"build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
 		"serve": "gatsby build && gatsby serve",
-		"clean": "gatsby clean"
+		"clean": "gatsby clean",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix"
 	},
 	"eslintConfig": {
 		"extends": [
 			"@codingwithchris/eslint-config/react-typescript"
-		]
+		],
+		"rules": {
+			"@typescript-eslint/no-explicit-any": "off",
+			"@typescript-eslint/no-empty-interfaces": "off"
+		}
 	},
 	"eslintIgnore": [
 		"node_modules/",

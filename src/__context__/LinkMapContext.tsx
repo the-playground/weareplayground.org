@@ -13,4 +13,4 @@ export const LinkMapProvider: React.FC = ({ children }) => {
     );
 };
 
-export const useLinkMapContext = () => useContext(LinkMapContext);
+export const useLinkMapContext = (): LinkMap => useContext(LinkMapContext);

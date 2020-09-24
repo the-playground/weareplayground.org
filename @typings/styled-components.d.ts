@@ -12,5 +12,5 @@ import { AppTheme } from '@themes/theme.d';
 
 // Finally, use our theme type as the base for the typed SC `DefaultTheme`
 declare module 'styled-components' {
-    export interface DefaultTheme extends AppTheme {}
+    export type DefaultTheme = AppTheme;
 }

@@ -18,7 +18,8 @@ import {
 } from './src/__context__';
 
 // Handle Application wrapper
-// eslint-disable-next-line
+
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const wrapRootElement = ({ element }) => (
     <ConfigProvider>
         <LinkMapProvider>
@@ -33,6 +34,7 @@ export const wrapRootElement = ({ element }) => (
     </ConfigProvider>
 );
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const onClientEntry = () => {
     // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
     if (!(`IntersectionObserver` in window)) {

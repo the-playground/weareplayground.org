@@ -21,4 +21,5 @@ interface SeasonContextProps {
     nextSeason: any;
 }
 
-export const useSeasonContext = () => useContext(SeasonContext);
+export const useSeasonContext = (): SeasonContextProps =>
+    useContext(SeasonContext);

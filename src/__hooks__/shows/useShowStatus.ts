@@ -11,8 +11,8 @@ import { Performance } from '@type/show';
  *
  * @param performances All of the available performances of the show.
  */
-export const useShowStatus = (performances: Performance[]) => {
-    const [status, setStatus] = useState('inactive');
+export const useShowStatus = (performances: Performance[]): ShowStatusProps => {
+    const [status, setStatus] = useState<ShowStatus>('inactive');
 
     useEffect(() => {
         // If no performances are passed in, bail.
@@ -66,3 +66,10 @@ export const useShowStatus = (performances: Performance[]) => {
 
     return { status, setStatus };
 };
+
+type ShowStatus = 'inactive' | 'archived' | 'active' | 'upcoming' | 'future';
+
+interface ShowStatusProps {
+    status: ShowStatus;
+    setStatus: React.Dispatch<React.SetStateAction<ShowStatus>>;
+}

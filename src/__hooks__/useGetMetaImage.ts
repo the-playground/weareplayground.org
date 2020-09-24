@@ -38,12 +38,12 @@ const getFallbackImage = (
 export const useGetMetaImage = (
     type: MetaImageContentType,
     image?: PrismicImage
-) => {
+): PrismicImage => {
     const siteConfig = useConfigContext();
 
     const metaImage = image?.url ? image : getFallbackImage(type, siteConfig);
 
-    return { metaImage };
+    return metaImage;
 };
 
 type MetaImageContentType = 'page' | 'season' | 'show';

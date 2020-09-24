@@ -48,6 +48,6 @@ export interface LocalFileImageProps {
     };
 }
 
-export interface ImageFixedObjectProps extends FixedObject {}
+export type ImageFixedObjectProps = FixedObject;
 
-export interface ImageFluidObjectProps extends FluidObject {}
+export type ImageFluidObjectProps = FluidObject;

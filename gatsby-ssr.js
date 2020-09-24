@@ -9,6 +9,7 @@ import React from 'react';
 // Wrap root with all logic to make SSR work
 export { wrapRootElement } from './gatsby-browser';
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const onRenderBody = ({ setHeadComponents }) => {
     /**
      * Load external css SSR

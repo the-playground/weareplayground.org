@@ -14,4 +14,4 @@ export const ConfigProvider: React.FC = ({ children }) => {
     );
 };
 
-export const useConfigContext = () => useContext(ConfigContext);
+export const useConfigContext = (): SiteConfig => useContext(ConfigContext);
