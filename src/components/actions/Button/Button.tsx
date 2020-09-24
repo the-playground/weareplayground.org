@@ -7,6 +7,7 @@ export const Button: React.FC<ButtonProps> = ({
     link,
     size,
     color,
+    variant,
     children,
     fullWidth,
     startIcon,
@@ -17,6 +18,7 @@ export const Button: React.FC<ButtonProps> = ({
     return (
         <styled.Button
             to={link ? link.to : ''}
+            variant={variant ?? 'fill'}
             size={size}
             color={color}
             fullWidth={fullWidth}

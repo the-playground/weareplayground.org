@@ -7,6 +7,7 @@ export type ButtonSize = 's' | 'm';
 
 export interface ButtonProps extends ButtonBaseProps {
     color: AvailableActionTheme;
+    variant?: 'fill' | 'text' | 'outlined';
     startIcon?: React.ReactElement<IconProps>;
     endIcon?: React.ReactElement<IconProps>;
 }
