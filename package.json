@@ -72,7 +72,7 @@
 	},
 	"eslintConfig": {
 		"extends": [
-			"@ascend-innovations/eslint-config/react-typescript"
+			"@codingwithchris/eslint-config/react-typescript"
 		]
 	},
 	"eslintIgnore": [
