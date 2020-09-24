@@ -58,8 +58,8 @@ const StyleguidePage: React.FC = () => (
                 size="m"
                 color="primary"
                 startIcon={<Icon name="Facebook" size="xs" />}
-                endIcon={<Icon name="Facebook" size="xs" />}
-                animateClick
+                animateOnClick
+                animateIconOnHover
             >
                 Check out the show
             </Button>
@@ -71,7 +71,7 @@ const StyleguidePage: React.FC = () => (
             >
                 Check out the show
             </Button>
-            <Button size="m" color="secondary">
+            <Button size="m" color="secondary" variant="outline">
                 Check out the show
             </Button>
             <Button size="s" color="secondary">
@@ -99,7 +99,7 @@ const StyleguidePage: React.FC = () => (
         <Button size="m" color="tertiary">
             Check out the show
         </Button>
-        <Button size="s" color="tertiary">
+        <Button size="s" variant="ghost" color="tertiary">
             Check out the show
         </Button>
     </Layout>

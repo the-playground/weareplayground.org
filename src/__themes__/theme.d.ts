@@ -17,6 +17,7 @@ export interface ActionTheme {
         hover?: string;
         active?: string;
         disabled?: string;
+        ghost?: string;
     };
     border: {
         default: string;
@@ -29,6 +30,7 @@ export interface ActionTheme {
         hover?: string;
         active?: string;
         disabled?: string;
+        inverted?: string;
     };
 }
 

@@ -1,8 +1,9 @@
-import styled, { css } from 'styled-components';
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 
 import { animation, borders, spacing } from '@tokens';
+import { ActionTheme } from '@themes/theme';
 import { ButtonProps } from './__types';
-import { ButtonBase } from '../ButtonBase/ButtonBase';
+import { ButtonBase } from '../ButtonBase';
 
 const ButtonIconBase = styled.div`
     color: currentColor;
@@ -12,53 +13,58 @@ const ButtonIconBase = styled.div`
 export const StartIcon = styled(ButtonIconBase)``;
 export const EndIcon = styled(ButtonIconBase)``;
 
-/**
- * Define button size styles at each available button size
- *
- * @since 1.0.0
- */
-export const buttonSizes = {
-    s: css`
-        ${StartIcon} {
-            margin-right: ${spacing.component.s};
-        }
-        ${EndIcon} {
-            margin-left: ${spacing.component.s};
-        }
-    `,
-    m: css`
-        ${StartIcon} {
-            margin-right: ${spacing.component.xs};
-        }
-        ${EndIcon} {
-            margin-left: ${spacing.component.xs};
-        }
-    `,
+export const getVariantStyles = (
+    variant: ButtonProps['variant'],
+    actionTheme: ActionTheme
+): FlattenSimpleInterpolation | undefined => {
+    if (!variant || !actionTheme) {
+        return undefined;
+    }
+
+    const styles = {
+        fill: css`
+            background-color: ${actionTheme.background.default};
+            border: none;
+            color: ${actionTheme.color.default};
+
+            &:hover {
+                background-color: ${actionTheme.background.hover};
+                color: ${actionTheme.color.hover};
+            }
+
+            &:disabled {
+                background-color: ${actionTheme.background.disabled};
+                color: ${actionTheme.color.disabled};
+            }
+        `,
+        outline: css`
+            background-color: transparent;
+            border: 1px solid ${actionTheme.border.default};
+            color: ${actionTheme.color.default};
+            &:hover {
+                background-color: ${actionTheme.background.ghost};
+            }
+        `,
+        ghost: css`
+            background-color: transparent;
+            border: none;
+            color: ${actionTheme.color.default};
+
+            &:hover {
+                background-color: ${actionTheme.background.ghost};
+            }
+        `,
+        text: css`
+            background-color: transparent;
+            border: none;
+            color: ${actionTheme.color.default};
+        `,
+    };
+
+    return styles[variant];
 };
 
 export const Button = styled(ButtonBase)<ButtonProps>`
-    border: none;
-    /* Themeable properties */
-    background-color: ${(props) =>
-        props.theme.actions[props.color].background.default};
-    color: ${(props) => props.theme.actions[props.color].color.default};
-
-    &:hover {
-        background-color: ${(props) =>
-            props.theme.actions[props.color].background.hover};
-        color: ${(props) => props.theme.actions[props.color].color.hover};
-
-        ${StartIcon} {
-            transform: translateX(-3px);
-        }
-        ${EndIcon} {
-            transform: translateX(3px);
-        }
-    }
-
-    &:disabled {
-        background-color: ${(props) =>
-            props.theme.actions[props.color].background.disabled};
-        color: ${(props) => props.theme.actions[props.color].color.disabled};
-    }
+    ${({ variant, theme, color }) =>
+        getVariantStyles(variant, theme.actions[color])};
 `;

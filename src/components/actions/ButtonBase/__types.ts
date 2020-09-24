@@ -6,6 +6,7 @@ export interface ButtonBaseProps {
     link?: LinkProps;
     size: ButtonSize;
     fullWidth?: true | undefined;
-    animateClick?: true | undefined;
+    animateOnClick?: true | undefined;
+    animateIconOnHover?: true | undefined;
     className?: string;
 }

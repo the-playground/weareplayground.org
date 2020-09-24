@@ -7,27 +7,29 @@ export const Button: React.FC<ButtonProps> = ({
     link,
     size,
     color,
-    variant,
+    variant = 'fill',
     children,
     fullWidth,
     startIcon,
     endIcon,
-    animateClick,
+    animateOnClick,
+    animateIconOnHover,
     className,
 }) => {
     return (
         <styled.Button
             to={link ? link.to : ''}
-            variant={variant ?? 'fill'}
+            variant={variant}
             size={size}
             color={color}
             fullWidth={fullWidth}
-            animateClick={animateClick}
+            animateOnClick={animateOnClick}
+            animateIconOnHover={animateIconOnHover}
             className={className}
         >
-            {startIcon && <styled.StartIcon>{startIcon}</styled.StartIcon>}
+            {startIcon && <div className="start-icon">{startIcon}</div>}
             {children}
-            {endIcon && <styled.EndIcon>{endIcon}</styled.EndIcon>}
+            {endIcon && <div className="end-icon">{endIcon}</div>}
         </styled.Button>
     );
 };
