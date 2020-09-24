@@ -1,5 +1,5 @@
 import React from 'react';
-import { BodyText, Heading } from '@components/foundations';
+import { BodyText, Icon, Heading } from '@components/foundations';
 import { Layout } from '@components/layout';
 
 import { Button } from '@components/actions';
@@ -54,10 +54,21 @@ const StyleguidePage: React.FC = () => (
                 marginBottom: `48px`,
             }}
         >
-            <Button size="m" color="primary">
+            <Button
+                size="m"
+                color="primary"
+                clickAnimation
+                startIcon={<Icon name="Facebook" size="xs" />}
+                endIcon={<Icon name="Facebook" size="xs" />}
+            >
                 Check out the show
             </Button>
-            <Button size="s" color="primary">
+            <Button
+                size="s"
+                color="primary"
+                startIcon={<Icon name="Facebook" size="xs" />}
+                endIcon={<Icon name="Facebook" size="xs" />}
+            >
                 Check out the show
             </Button>
             <Button size="m" color="secondary">

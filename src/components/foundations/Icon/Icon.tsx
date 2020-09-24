@@ -43,3 +43,5 @@ export const Icon: React.FC<IconProps> = ({
         </Styled.Icon>
     );
 };
+
+export * from './__types';

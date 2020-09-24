@@ -1,8 +1,16 @@
 import styled, { css } from 'styled-components';
-import { LinkHandler } from '@components/utility';
 
-import { animation, borders, spacing, typography } from '@tokens';
+import { animation, borders, spacing } from '@tokens';
 import { ButtonProps } from './__types';
+import { ButtonBase } from '../ButtonBase/ButtonBase';
+
+const ButtonIconBase = styled.div`
+    color: currentColor;
+    transition: ${animation.buttonHover};
+`;
+
+export const StartIcon = styled(ButtonIconBase)``;
+export const EndIcon = styled(ButtonIconBase)``;
 
 /**
  * Define button size styles at each available button size
@@ -11,27 +19,25 @@ import { ButtonProps } from './__types';
  */
 export const buttonSizes = {
     s: css`
-        padding: 8px ${spacing.component.m} 10px ${spacing.component.m};
-        ${typography.bodyBold.s};
+        ${StartIcon} {
+            margin-right: ${spacing.component.s};
+        }
+        ${EndIcon} {
+            margin-left: ${spacing.component.s};
+        }
     `,
     m: css`
-        padding: 11px ${spacing.component.m} ${spacing.component.s}
-            ${spacing.component.m};
-        ${typography.bodyBold.m};
+        ${StartIcon} {
+            margin-right: ${spacing.component.xs};
+        }
+        ${EndIcon} {
+            margin-left: ${spacing.component.xs};
+        }
     `,
 };
 
-export const Button = styled(LinkHandler)<ButtonProps>`
-    align-items: center;
-    border-radius: ${borders.defaultRadius};
+export const Button = styled(ButtonBase)<ButtonProps>`
     border: none;
-    cursor: pointer;
-    display: inline-flex;
-    justify-content: center;
-    overflow: hidden;
-    transition: ${animation.buttonHover};
-    width: auto;
-
     /* Themeable properties */
     background-color: ${(props) =>
         props.theme.actions[props.color].background.default};
@@ -41,19 +47,18 @@ export const Button = styled(LinkHandler)<ButtonProps>`
         background-color: ${(props) =>
             props.theme.actions[props.color].background.hover};
         color: ${(props) => props.theme.actions[props.color].color.hover};
+
+        ${StartIcon} {
+            transform: translateX(-3px);
+        }
+        ${EndIcon} {
+            transform: translateX(3px);
+        }
     }
 
     &:disabled {
         background-color: ${(props) =>
             props.theme.actions[props.color].background.disabled};
         color: ${(props) => props.theme.actions[props.color].color.disabled};
-        cursor: not-allowed;
     }
-
-    &:focus {
-        outline: none;
-    }
-
-    /* Set Themeable Properties */
-    ${(props) => buttonSizes[props.size]}
 `;
