@@ -3,7 +3,7 @@ import { Link as GatsbyLink } from 'gatsby';
 
 import { isLinkInternal } from '@lib/links';
 
-export const LinkHandler: React.FC<LinkProps> = ({
+export const Link: React.FC<LinkProps> = ({
     to,
     activeClassName,
     partiallyActive,

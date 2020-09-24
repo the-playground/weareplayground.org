@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { LinkHandler } from '@components/utility';
+import { Link } from '@components/utility';
 
 import { animation, borders, typography } from '@tokens';
 import { ButtonBaseProps } from './__types';
@@ -35,7 +35,7 @@ const buttonClickScaleAmount = 0.96;
  * It contains a load of style reset and some focus/ripple logic.
  */
 
-export const ButtonBase = styled(LinkHandler)<ButtonBaseProps>`
+export const ButtonBase = styled(Link)<ButtonBaseProps>`
     align-items: center;
     border-radius: ${borders.defaultRadius};
     cursor: pointer;
@@ -55,8 +55,8 @@ export const ButtonBase = styled(LinkHandler)<ButtonBaseProps>`
     }
 
     &:active {
-        ${({ clickAnimation }) =>
-            clickAnimation &&
+        ${({ animateClick }) =>
+            animateClick &&
             css`
                 transform: scale(${buttonClickScaleAmount});
             `};

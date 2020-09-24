@@ -1,4 +1,4 @@
 import styled, { css } from 'styled-components';
-import { LinkHandler } from '@components/utility';
+import { Link } from '@components/utility';
 
-export const TextLink = styled(LinkHandler)``;
+export const TextLink = styled(Link)``;

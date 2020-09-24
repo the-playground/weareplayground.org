@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Performance } from '@type/show';
 import { getShowSlug } from '@lib/url';
-import { LinkHandler } from '@components/utility';
+import { Link } from '@components/utility';
 import {
     BodyText,
     Heading,
@@ -28,7 +28,7 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
 
     return (
         <styled.ShowPoster>
-            <LinkHandler className="wrapper" to={getShowSlug(uid, season.uid)}>
+            <Link className="wrapper" to={getShowSlug(uid, season.uid)}>
                 <Image fluid={image.fluid} alt={image.alt} className="image" />
                 <BackgroundOverlay
                     variant="verticalGradientDark"
@@ -52,7 +52,7 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
                         {season.title}
                     </BodyText>
                 </div>
-            </LinkHandler>
+            </Link>
         </styled.ShowPoster>
     );
 };

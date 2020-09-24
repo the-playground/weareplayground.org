@@ -57,9 +57,9 @@ const StyleguidePage: React.FC = () => (
             <Button
                 size="m"
                 color="primary"
-                clickAnimation
                 startIcon={<Icon name="Facebook" size="xs" />}
                 endIcon={<Icon name="Facebook" size="xs" />}
+                animateClick
             >
                 Check out the show
             </Button>

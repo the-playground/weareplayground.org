@@ -12,7 +12,7 @@ export const Button: React.FC<ButtonProps> = ({
     fullWidth,
     startIcon,
     endIcon,
-    clickAnimation,
+    animateClick,
     className,
 }) => {
     return (
@@ -22,7 +22,7 @@ export const Button: React.FC<ButtonProps> = ({
             size={size}
             color={color}
             fullWidth={fullWidth}
-            clickAnimation={clickAnimation}
+            animateClick={animateClick}
             className={className}
         >
             {startIcon && <styled.StartIcon>{startIcon}</styled.StartIcon>}
