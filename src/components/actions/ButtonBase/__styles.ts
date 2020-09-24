@@ -14,7 +14,7 @@ import { ButtonBaseProps } from './__types';
 export const buttonSizes = {
     s: css`
         /* Custom padding values make button fine-tuning and readability easier -- don't make a habit of this. */
-        padding: 4px 12px 5px 12px;
+        padding: 4px 12px 7px 12px;
         ${typography.bodyBold.s};
     `,
     m: css`
