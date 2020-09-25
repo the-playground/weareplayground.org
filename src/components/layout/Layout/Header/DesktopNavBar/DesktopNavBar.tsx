@@ -54,6 +54,7 @@ export const DesktopNavBar: React.FC = () => {
                         to={supportUs}
                         key="support us"
                         className="button"
+                        animateOnClick
                     >
                         support us
                     </FillButton>

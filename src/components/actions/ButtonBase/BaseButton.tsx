@@ -1,13 +1,31 @@
 import React from 'react';
-
+import classnames from 'classnames';
 import { ButtonBaseProps } from './__types';
 import * as styled from './__styles';
 
 export const ButtonBase: React.FC<ButtonBaseProps> = (props) => {
-    const { children, startIcon, endIcon, ...others } = props;
+    const {
+        children,
+        className,
+        fullWidth,
+        animateOnClick,
+        animateIconOnHover,
+        startIcon,
+        endIcon,
+        ...others
+    } = props;
+
+    const classes = classnames(
+        {
+            '--full': fullWidth,
+            '--click': animateOnClick,
+            '--icon-hover': animateIconOnHover,
+        },
+        className
+    );
 
     return (
-        <styled.ButtonBase {...others}>
+        <styled.ButtonBase className={classes} {...others}>
             {startIcon && <div className="start-icon">{startIcon}</div>}
             {children}
             {endIcon && <div className="end-icon">{endIcon}</div>}

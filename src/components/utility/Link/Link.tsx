@@ -5,6 +5,7 @@ import { isLinkInternal } from '@lib/links';
 
 export const Link: React.FC<LinkProps> = ({
     to,
+    component = 'a',
     activeClassName,
     partiallyActive,
     noNewTab,
@@ -12,6 +13,15 @@ export const Link: React.FC<LinkProps> = ({
     className,
     ...others
 }) => {
+    // Create a passthrough for buttons who might have extended the link
+    if (component === 'button' || !to) {
+        return (
+            <button className={className} {...others} type="button">
+                {children}
+            </button>
+        );
+    }
+
     // If the link is to an internal page, render using Gatsby Link
     return isLinkInternal(to) ? (
         <GatsbyLink
@@ -38,7 +48,8 @@ export const Link: React.FC<LinkProps> = ({
 };
 
 export interface LinkProps {
-    to: string;
+    to?: string;
+    component?: 'a' | 'button';
     activeClassName?: string;
     partiallyActive?: boolean;
     noNewTab?: true;

@@ -59,6 +59,8 @@ const StyleguidePage: React.FC = () => (
                 size="m"
                 color="primary"
                 to="/styleguide"
+                animateOnClick
+                animateIconOnHover
             >
                 Hello
             </FillButton>

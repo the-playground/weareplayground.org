@@ -53,8 +53,12 @@ export const ButtonBase = styled(Link)<ButtonBaseProps>`
     justify-content: center;
     overflow: hidden;
     transition: ${animation.buttonHover};
-    width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
+    width: auto;
     ${(props) => buttonSizes[props.size]}
+
+    &.--full {
+        width: 100%;
+    }
 
     .start-icon,
     .end-icon {
@@ -63,16 +67,13 @@ export const ButtonBase = styled(Link)<ButtonBaseProps>`
     }
 
     &:hover {
-        ${({ animateIconOnHover }) =>
-            animateIconOnHover &&
-            css`
-                .start-icon {
-                    transform: translateX(-3px);
-                }
-                .end-icon {
-                    transform: translateX(3px);
-                }
-            `}
+        &.--icon-hover .start-icon {
+            transform: translateX(-3px);
+        }
+
+        &.--icon-hover .end-icon {
+            transform: translateX(3px);
+        }
     }
 
     &:disabled {
@@ -84,10 +85,8 @@ export const ButtonBase = styled(Link)<ButtonBaseProps>`
     }
 
     &:active {
-        ${({ animateOnClick }) =>
-            animateOnClick &&
-            css`
-                transform: scale(${buttonClickScaleAmount});
-            `};
+        &.--click {
+            transform: scale(${buttonClickScaleAmount});
+        }
     }
 `;
