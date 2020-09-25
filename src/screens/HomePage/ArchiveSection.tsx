@@ -5,7 +5,7 @@ import { breakpoints, spacing } from '@tokens';
 import { useLinkMapContext } from '@context';
 import { Container } from '@components/layout';
 import { Heading, BodyText, Icon } from '@components/foundations';
-import { Button } from '@components/actions';
+import { FillButton } from '@components/actions';
 
 const StyledArchiveSection = styled.section`
     padding: ${spacing.layout.xl} 0;
@@ -37,14 +37,14 @@ export const ArchiveSection: React.FC<AboutSectionProps> = () => {
                     check out out our show archives and discover why our brand
                     of theatre will get under your skin.
                 </BodyText>
-                <Button
+                <FillButton
                     color="primary"
                     size="m"
-                    link={{ to: archive }}
+                    to={archive}
                     className="action"
                 >
                     take me there
-                </Button>
+                </FillButton>
             </Container>
         </StyledArchiveSection>
     );

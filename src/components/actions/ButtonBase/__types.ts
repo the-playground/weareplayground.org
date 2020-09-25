@@ -1,12 +1,14 @@
 import { LinkProps } from '@components/utility';
+import { IconProps } from '@components/foundations';
+import { WithOptional } from '@type/utils';
 
 export type ButtonSize = 's' | 'm';
 
-export interface ButtonBaseProps {
-    link?: LinkProps;
+export interface ButtonBaseProps extends LinkProps {
     size: ButtonSize;
     fullWidth?: true | undefined;
     animateOnClick?: true | undefined;
     animateIconOnHover?: true | undefined;
-    className?: string;
+    startIcon?: React.ReactElement<IconProps>;
+    endIcon?: React.ReactElement<IconProps>;
 }

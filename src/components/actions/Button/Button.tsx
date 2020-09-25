@@ -1,35 +1,49 @@
 import React from 'react';
 
-import { ButtonProps } from './__types';
+import {
+    FillButtonProps,
+    GhostButtonProps,
+    OutlineButtonProps,
+    TextButtonProps,
+} from './__types';
 import * as styled from './__styles';
 
-export const Button: React.FC<ButtonProps> = ({
-    link,
-    size,
-    color,
-    variant = 'fill',
-    children,
-    fullWidth,
-    startIcon,
-    endIcon,
-    animateOnClick,
-    animateIconOnHover,
-    className,
-}) => {
+export const FillButton: React.FC<FillButtonProps> = (props) => {
+    const { color, children, ...others } = props;
+
     return (
-        <styled.Button
-            to={link ? link.to : ''}
-            variant={variant}
-            size={size}
-            color={color}
-            fullWidth={fullWidth}
-            animateOnClick={animateOnClick}
-            animateIconOnHover={animateIconOnHover}
-            className={className}
-        >
-            {startIcon && <div className="start-icon">{startIcon}</div>}
+        <styled.FillButton color={color} {...others}>
             {children}
-            {endIcon && <div className="end-icon">{endIcon}</div>}
-        </styled.Button>
+        </styled.FillButton>
+    );
+};
+
+export const GhostButton: React.FC<GhostButtonProps> = (props) => {
+    const { color, children, ...others } = props;
+
+    return (
+        <styled.GhostButton color={color} {...others}>
+            {children}
+        </styled.GhostButton>
+    );
+};
+
+export const OutlineButton: React.FC<OutlineButtonProps> = (props) => {
+    const { color, children, ...others } = props;
+
+    return (
+        <styled.OutlineButton color={color} {...others}>
+            {children}
+        </styled.OutlineButton>
+    );
+};
+
+export const TextButton: React.FC<TextButtonProps> = (props) => {
+    const { color, children, ...others } = props;
+
+    return (
+        <styled.TextButton color={color} {...others}>
+            {children}
+        </styled.TextButton>
     );
 };

@@ -22,4 +22,4 @@ export const isLinkToFile = (dest: string): boolean =>
  * @returns {bool}
  */
 export const isInternalPageLink = (dest: string): boolean =>
-    isLinkInternal(dest) && !isLinkToFile(dest);
+    isLinkInternal(dest) || !isLinkToFile(dest);

@@ -1,13 +1,18 @@
-import React from 'react';
-import { IconProps } from '@components/foundations';
 import { AvailableActionTheme } from '@themes/theme.d';
-import { ButtonBaseProps } from '../ButtonBase';
+import { ButtonBaseProps } from '../ButtonBase/BaseButton';
 
-export type ButtonSize = 's' | 'm';
-
-export interface ButtonProps extends ButtonBaseProps {
+export interface FillButtonProps extends ButtonBaseProps {
     color: AvailableActionTheme;
-    variant?: 'fill' | 'text' | 'outline' | 'ghost';
-    startIcon?: React.ReactElement<IconProps>;
-    endIcon?: React.ReactElement<IconProps>;
+}
+
+export interface OutlineButtonProps extends ButtonBaseProps {
+    color: AvailableActionTheme;
+}
+
+export interface GhostButtonProps extends ButtonBaseProps {
+    color: AvailableActionTheme;
+}
+
+export interface TextButtonProps extends ButtonBaseProps {
+    color: AvailableActionTheme;
 }

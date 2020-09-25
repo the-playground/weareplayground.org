@@ -2,7 +2,7 @@ import React from 'react';
 import { BodyText, Icon, Heading } from '@components/foundations';
 import { Layout } from '@components/layout';
 
-import { Button } from '@components/actions';
+import { FillButton } from '@components/actions';
 
 const StyleguidePage: React.FC = () => (
     <Layout noHeader noFooter>
@@ -54,54 +54,62 @@ const StyleguidePage: React.FC = () => (
                 marginBottom: `48px`,
             }}
         >
-            <Button
+            <FillButton
+                startIcon={<Icon name="Facebook" size="xs" />}
+                size="m"
+                color="primary"
+                to="/styleguide"
+            >
+                Hello
+            </FillButton>
+            <FillButton
                 size="m"
                 color="primary"
                 startIcon={<Icon name="Facebook" size="xs" />}
-                animateOnClick
-                animateIconOnHover
+                to="/styleguide"
             >
                 Check out the show
-            </Button>
-            <Button
+            </FillButton>
+            <FillButton
+                to="/styleguide"
                 size="s"
                 color="primary"
                 startIcon={<Icon name="Facebook" size="xs" />}
                 endIcon={<Icon name="Facebook" size="xs" />}
             >
                 Check out the show
-            </Button>
-            <Button size="m" color="secondary" variant="outline">
+            </FillButton>
+            <FillButton size="m" color="secondary" to="/styleguide">
                 Check out the show
-            </Button>
-            <Button size="s" color="secondary">
+            </FillButton>
+            <FillButton size="s" color="secondary" to="/styleguide">
                 Check out the show
-            </Button>
-            <Button size="m" color="tertiary">
+            </FillButton>
+            <FillButton size="m" color="tertiary" to="/styleguide">
                 Check out the show
-            </Button>
-            <Button size="s" color="tertiary">
+            </FillButton>
+            <FillButton size="s" color="tertiary" to="/styleguide">
                 Check out the show
-            </Button>
+            </FillButton>
         </div>
-        <Button size="m" color="primary">
+        <FillButton size="m" color="primary" to="/styleguide">
             Check out the show
-        </Button>
-        <Button size="s" color="primary">
+        </FillButton>
+        <FillButton size="s" color="primary" to="/styleguide">
             Check out the show
-        </Button>
-        <Button size="m" color="secondary">
+        </FillButton>
+        <FillButton size="m" color="secondary" to="/styleguide">
             Check out the show
-        </Button>
-        <Button size="s" color="secondary">
+        </FillButton>
+        <FillButton size="s" color="secondary" to="/styleguide">
             Check out the show
-        </Button>
-        <Button size="m" color="tertiary">
+        </FillButton>
+        <FillButton size="m" color="tertiary" to="/styleguide">
             Check out the show
-        </Button>
-        <Button size="s" variant="ghost" color="tertiary">
+        </FillButton>
+        <FillButton size="s" color="tertiary" to="/styleguide">
             Check out the show
-        </Button>
+        </FillButton>
     </Layout>
 );
 

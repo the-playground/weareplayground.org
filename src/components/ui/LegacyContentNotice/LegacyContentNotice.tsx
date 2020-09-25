@@ -1,6 +1,6 @@
 import React from 'react';
 import { Heading, BodyText } from '@components/foundations';
-import { Button } from '@components/actions';
+import { FillButton } from '@components/actions';
 import { Container } from '@components/layout';
 
 import * as styled from './__styles';
@@ -52,14 +52,14 @@ export const LegacyContentNotice: React.FC<LegacyContentNoticeProps> = ({
                     to date with what we're up to!
                 </BodyText>
 
-                <Button
-                    link={{ to: legacyURL }}
+                <FillButton
                     color="tertiary"
                     size="s"
+                    to={legacyURL}
                     className="action"
                 >
                     {legacyURLText}
-                </Button>
+                </FillButton>
 
                 {/* Subscribe feature here */}
             </Container>
