@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
+import { Input } from '@components/inputs';
+
 export const SubscribeBar: React.FC = () => {
     const { register, handleSubmit, watch, errors } = useForm();
     const [formStatus, setFormStatus] = useState<FormStatus>('initial');
@@ -39,21 +41,24 @@ export const SubscribeBar: React.FC = () => {
     return (
         <form name={formName} onSubmit={handleSubmit(onSubmit)}>
             {/* Hidden field required by Netlify */}
-            <input
+            <Input
+                color="light"
                 name="first_name"
                 type="text"
                 placeholder="First Name"
                 ref={register}
                 required
             />
-            <input
+            <Input
+                color="light"
                 name="last_name"
                 type="text"
                 placeholder="Last Name"
                 ref={register}
                 required
             />
-            <input
+            <Input
+                color="light"
                 name="email"
                 type="text"
                 placeholder="Email"
@@ -62,17 +67,48 @@ export const SubscribeBar: React.FC = () => {
             />
 
             {/* Hidden form to collect required data */}
-            <input
+            <Input
+                color="light"
                 type="hidden"
                 name="original_referrer"
                 value="/"
                 ref={register}
             />
-            <input type="hidden" name="time_zone" value="/" ref={register} />
-            <input type="hidden" name="country" value="/" ref={register} />
-            <input type="hidden" name="landing_url" value="/" ref={register} />
-            <input type="hidden" name="user_agent" value="/" ref={register} />
-            <input type="hidden" name="ip_address" value="/" ref={register} />
+            <Input
+                color="light"
+                type="hidden"
+                name="time_zone"
+                value="/"
+                ref={register}
+            />
+            <Input
+                color="light"
+                type="hidden"
+                name="country"
+                value="/"
+                ref={register}
+            />
+            <Input
+                color="light"
+                type="hidden"
+                name="landing_url"
+                value="/"
+                ref={register}
+            />
+            <Input
+                color="light"
+                type="hidden"
+                name="user_agent"
+                value="/"
+                ref={register}
+            />
+            <Input
+                color="light"
+                type="hidden"
+                name="ip_address"
+                value="/"
+                ref={register}
+            />
 
             <input type="submit" />
         </form>

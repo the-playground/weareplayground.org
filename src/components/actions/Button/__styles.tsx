@@ -57,6 +57,9 @@ export const OutlineButton = styled(ButtonBase)<OutlineButtonProps>`
 
 export const TextButton = styled(ButtonBase)<TextButtonProps>`
     background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: visible;
     ${({ theme, color }) => css`
         color: ${theme.actions[color].background.default};
 

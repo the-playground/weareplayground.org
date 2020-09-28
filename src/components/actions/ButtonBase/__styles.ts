@@ -14,23 +14,11 @@ export const buttonSizes = {
         /* Custom padding values make button fine-tuning and readability easier -- don't make a habit of this. */
         padding: 4px 12px 5px 12px;
         ${typography.bodyBold.s};
-        .start-icon {
-            margin-right: ${spacing.component.xs};
-        }
-        .end-icon {
-            margin-left: ${spacing.component.xs};
-        }
     `,
     m: css`
         /* Custom padding values make button fine-tuning and readability easier -- don't make a habit of this. */
         padding: 11px 16px 12px 16px;
         ${typography.bodyBold.m};
-        .start-icon {
-            margin-right: ${spacing.component.s};
-        }
-        .end-icon {
-            margin-left: ${spacing.component.s};
-        }
     `,
 };
 
@@ -49,7 +37,7 @@ export const ButtonBase = styled(Link)<ButtonBaseProps>`
     align-items: center;
     border-radius: ${borders.defaultRadius};
     cursor: pointer;
-    display: ${({ fullWidth }) => (fullWidth ? 'flex' : 'inline-flex')};
+    display: inline-flex;
     justify-content: center;
     overflow: hidden;
     transition: ${animation.buttonHover};
@@ -57,13 +45,22 @@ export const ButtonBase = styled(Link)<ButtonBaseProps>`
     ${(props) => buttonSizes[props.size]}
 
     &.--full {
+        display: flex;
         width: 100%;
     }
 
     .start-icon,
     .end-icon {
-        color: currentColor;
+        position: relative;
+        top: 2px;
         transition: ${animation.buttonHover};
+    }
+
+    .start-icon {
+        margin-right: ${spacing.component.xs};
+    }
+    .end-icon {
+        margin-left: ${spacing.component.xs};
     }
 
     &:hover {

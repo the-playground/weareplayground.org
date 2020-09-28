@@ -41,17 +41,14 @@ export interface BackgroundTheme {
 export interface InputTheme {
     background: {
         default: string;
-        hover?: string;
         focus?: string;
     };
     border: {
         default: string;
-        hover?: string;
         focus?: string;
     };
     color: {
         default: string;
-        hover?: string;
         focus?: string;
         placeholder?: string;
     };
@@ -95,11 +92,10 @@ export interface AppTheme {
         dark: IconTheme;
         accent: IconTheme;
     };
-    // inputs: {
-    //     light: InputTheme;
-    //     medium: InputTheme;
-    //     dark: InputTheme;
-    // };
+    inputs: {
+        light: InputTheme;
+        dark: InputTheme;
+    };
     logo: {
         light: LogoTheme;
         dark: LogoTheme;
@@ -132,6 +128,9 @@ export type AvailableBackgroundTheme = keyof BackgroundThemes;
 
 export type IconThemes = AppTheme['icons'];
 export type AvailableIconTheme = keyof IconThemes;
+
+export type InputThemes = AppTheme['inputs'];
+export type AvailableInputTheme = keyof InputThemes;
 
 export type LogoThemes = AppTheme['logo'];
 export type AvailableLogoTheme = keyof LogoThemes;
