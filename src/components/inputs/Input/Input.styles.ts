@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { spacing } from '@tokens';
-import { InputProps } from './__types';
+import { InputProps } from './Input.d';
 
 export const Input = styled.div<Pick<InputProps, 'color'>>`
     > input {

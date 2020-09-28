@@ -67,48 +67,17 @@ export const SubscribeBar: React.FC = () => {
             />
 
             {/* Hidden form to collect required data */}
-            <Input
-                color="light"
+            <input
                 type="hidden"
                 name="original_referrer"
                 value="/"
                 ref={register}
             />
-            <Input
-                color="light"
-                type="hidden"
-                name="time_zone"
-                value="/"
-                ref={register}
-            />
-            <Input
-                color="light"
-                type="hidden"
-                name="country"
-                value="/"
-                ref={register}
-            />
-            <Input
-                color="light"
-                type="hidden"
-                name="landing_url"
-                value="/"
-                ref={register}
-            />
-            <Input
-                color="light"
-                type="hidden"
-                name="user_agent"
-                value="/"
-                ref={register}
-            />
-            <Input
-                color="light"
-                type="hidden"
-                name="ip_address"
-                value="/"
-                ref={register}
-            />
+            <input type="hidden" name="time_zone" value="/" ref={register} />
+            <input type="hidden" name="country" value="/" ref={register} />
+            <input type="hidden" name="landing_url" value="/" ref={register} />
+            <input type="hidden" name="user_agent" value="/" ref={register} />
+            <input type="hidden" name="ip_address" value="/" ref={register} />
 
             <input type="submit" />
         </form>

@@ -7,15 +7,21 @@ export const Link: React.FC<LinkProps> = ({
     to,
     activeClassName,
     partiallyActive,
+    isSubmit,
     noNewTab,
     children,
     className,
     ...others
 }) => {
     // Create a passthrough for buttons who might have extended the link
+    // ToDo -- move this functionality out of this file and handle in the button files -- it doesn't belong in a "Link" handler.
     if (!to) {
         return (
-            <button className={className} {...others} type="button">
+            <button
+                className={className}
+                {...others}
+                type={isSubmit ? 'submit' : 'button'}
+            >
                 {children}
             </button>
         );
@@ -48,7 +54,7 @@ export const Link: React.FC<LinkProps> = ({
 
 export interface LinkProps {
     to?: string;
-    component?: 'a' | 'button';
+    isSubmit?: true;
     activeClassName?: string;
     partiallyActive?: boolean;
     noNewTab?: true;
