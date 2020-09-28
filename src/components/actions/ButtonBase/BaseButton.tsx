@@ -18,7 +18,7 @@ export const ButtonBase: React.FC<ButtonBaseProps> = (props) => {
     const classes = classnames(
         {
             '--full': fullWidth,
-            '--click': animateOnClick,
+            '--animate-click': animateOnClick,
             '--icon-hover': animateIconOnHover,
         },
         className

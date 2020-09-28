@@ -58,14 +58,13 @@ export const OutlineButton = styled(ButtonBase)<OutlineButtonProps>`
 export const TextButton = styled(ButtonBase)<TextButtonProps>`
     background: transparent;
     ${({ theme, color }) => css`
-        color: ${theme.actions[color].color.default};
+        color: ${theme.actions[color].background.default};
 
         &:hover {
-            color: ${theme.actions[color].color.hover};
+            opacity: 0.7;
         }
 
         &:disabled {
-            color: ${theme.actions[color].color.disabled};
         }
     `};
 `;

@@ -5,7 +5,6 @@ import { isLinkInternal } from '@lib/links';
 
 export const Link: React.FC<LinkProps> = ({
     to,
-    component = 'a',
     activeClassName,
     partiallyActive,
     noNewTab,
@@ -14,7 +13,7 @@ export const Link: React.FC<LinkProps> = ({
     ...others
 }) => {
     // Create a passthrough for buttons who might have extended the link
-    if (component === 'button' || !to) {
+    if (!to) {
         return (
             <button className={className} {...others} type="button">
                 {children}
