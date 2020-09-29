@@ -3,15 +3,18 @@ import styled from 'styled-components';
 import { breakpoints, spacing } from '@tokens';
 
 import { Container } from '@components/layout';
-import { SubscribeBar } from '@components/ui';
+import { EmailSubscribe } from '@components/ui';
 
-const StyledSubscribeSection = styled.section``;
+const StyledSubscribeSection = styled.section`
+    border-top: 1px solid ${({ theme }) => theme.palette.secondary.light};
+    padding: ${spacing.layout.m};
+`;
 
 export const SubscribeSection: React.FC<SubscribeSectionProps> = () => {
     return (
         <StyledSubscribeSection>
             <Container>
-                <SubscribeBar />
+                <EmailSubscribe />
             </Container>
         </StyledSubscribeSection>
     );

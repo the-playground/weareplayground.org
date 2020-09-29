@@ -6,7 +6,7 @@
     # This is where we will look for package.json/.nvmrc/etc.
     base = "./"
     publish = "public/"
-    command = "yarn build"
+    command = "npm run build"
     functions = "functions/"
 
 # Add and configure Netlify Plugins
@@ -25,7 +25,7 @@
 # Branch Deploy context: all deploys that are not from a pull/merge request or
 # from the Production branch will inherit these settings.
 [context.branch-deploy]
-    command = "yarn dev"
+    command = "npm run dev"
 
 
 # Redirects and headers are GLOBAL for all builds – they do not get scoped to

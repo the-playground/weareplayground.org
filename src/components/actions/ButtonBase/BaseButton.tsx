@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
-import { ButtonBaseProps } from './__types';
-import * as styled from './__styles';
+import { ButtonBaseProps } from './ButtonBase.d';
+import * as styled from './ButtonBase.styles';
 
 export const ButtonBase: React.FC<ButtonBaseProps> = (props) => {
     const {
@@ -12,6 +12,7 @@ export const ButtonBase: React.FC<ButtonBaseProps> = (props) => {
         animateIconOnHover,
         startIcon,
         endIcon,
+        isLoading,
         ...others
     } = props;
 
@@ -20,12 +21,14 @@ export const ButtonBase: React.FC<ButtonBaseProps> = (props) => {
             '--full': fullWidth,
             '--animate-click': animateOnClick,
             '--icon-hover': animateIconOnHover,
+            '--loading': isLoading,
         },
         className
     );
 
     return (
         <styled.ButtonBase className={classes} {...others}>
+            {isLoading && <div className="loader">loading</div>}
             {startIcon && <div className="start-icon">{startIcon}</div>}
             {children}
             {endIcon && <div className="end-icon">{endIcon}</div>}
@@ -33,5 +36,4 @@ export const ButtonBase: React.FC<ButtonBaseProps> = (props) => {
     );
 };
 
-export * from './__types';
-// export * from './__styles';
+export * from './ButtonBase.d';

@@ -177,6 +177,19 @@ module.exports = {
         },
 
         /**
+         * A helper plugin for subscribing new email addresses to a Mailchimp email list.
+         *
+         * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-mailchimp/
+         */
+        {
+            resolve: 'gatsby-plugin-mailchimp',
+            options: {
+                endpoint:
+                    process.env.GATSBY_MAILCHIMP_NEWSLETTER_SUBSCRIBE_ENDPOINT,
+            },
+        },
+
+        /**
          * Robots.txt Handler
          *
          * ! Remember to change production policy to `allow` when we launch

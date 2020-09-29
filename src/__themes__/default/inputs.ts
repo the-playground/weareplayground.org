@@ -7,11 +7,11 @@ const light: InputTheme = {
     },
     border: {
         default: palette.grey[200],
-        focus: palette.secondary.dark,
+        focus: palette.primary.main,
     },
     color: {
         default: palette.secondary.dark,
-        placeholder: palette.grey[400],
+        placeholder: palette.grey[500],
     },
 };
 
@@ -22,7 +22,7 @@ const dark: InputTheme = {
     },
     border: {
         default: palette.grey[400],
-        focus: palette.secondary.light,
+        focus: palette.primary.main,
     },
     color: {
         default: palette.grey[100],

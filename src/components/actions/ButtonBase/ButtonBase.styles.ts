@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { Link } from '@components/utility';
 
 import { animation, borders, spacing, typography } from '@tokens';
-import { ButtonBaseProps } from './__types';
+import { ButtonBaseProps } from './ButtonBase.d';
 
 /**
  * Define button size styles at each available button size
