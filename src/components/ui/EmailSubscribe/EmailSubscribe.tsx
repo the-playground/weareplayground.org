@@ -7,19 +7,17 @@ import { emailRegexPattern } from '@lib/forms';
 
 import { Input } from '@components/inputs';
 import { FillButton } from '@components/actions';
-import { BodyText } from '@components/foundations';
+import { BodyText, Heading } from '@components/foundations';
 import { EmailSubscribeProps } from './EmailSubscribe.d';
 
 import * as styled from './EmailSubscribe.styles';
-
-const SubscriptionSuccess: React.FC = () => {};
 
 export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
     // Form Data handlers
     const { register, handleSubmit, errors } = useForm<UseFormInputs>();
 
     // Form UI state handlers
-    const [formUIStatus, setFormUIStatus] = useState<FormUIStatus>('initial');
+    const [loading, setLoading] = useState(false);
 
     // Email Subscription state handlers
     const [subscription, setSubscription] = useState({} as MailchimpResponse);
@@ -33,7 +31,7 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
      * @param data -The data from the submitted form
      */
     const onSubmit = async (data: UseFormInputs) => {
-        setFormUIStatus('loading');
+        setLoading(true);
         const results = await addToMailchimp(data.email, {
             SIGNUPLOC: data.signupLocation,
             REFERRER: data.referrer,
@@ -41,13 +39,20 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
         });
 
         setSubscription(results);
-        setFormUIStatus('initial');
+        setLoading(false);
     };
 
     return (
         <>
             {subscription.result === 'success' ? (
-                <></>
+                <styled.SubscriptionSuccess>
+                    <Heading tag="h3" color="light" size="xs">
+                        Great success!
+                    </Heading>
+                    <BodyText tag="p" color="light" size="m">
+                        Thanks for subscribing
+                    </BodyText>
+                </styled.SubscriptionSuccess>
             ) : (
                 <styled.EmailSubscribe>
                     <form name={formName} onSubmit={handleSubmit(onSubmit)}>
@@ -93,10 +98,10 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
                         <FillButton
                             size="m"
                             color="primary"
-                            isLoading={formUIStatus === 'loading'}
+                            isLoading={loading}
                             isSubmit
                         >
-                            Subscribe
+                            subscribe
                         </FillButton>
                     </form>
 

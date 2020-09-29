@@ -11,5 +11,5 @@ export interface ButtonBaseProps extends LinkProps {
     animateIconOnHover?: true | undefined;
     startIcon?: React.ReactElement<IconProps>;
     endIcon?: React.ReactElement<IconProps>;
-    isLoading?: true;
+    isLoading?: boolean;
 }

@@ -5,8 +5,8 @@ import {
     GhostButtonProps,
     OutlineButtonProps,
     TextButtonProps,
-} from './__types';
-import * as styled from './__styles';
+} from './Button.d';
+import * as styled from './Button.styles';
 
 export const FillButton: React.FC<FillButtonProps> = (props) => {
     const { color, children, ...others } = props;

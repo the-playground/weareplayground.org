@@ -5,7 +5,7 @@ import {
     OutlineButtonProps,
     GhostButtonProps,
     TextButtonProps,
-} from './__types';
+} from './Button.d';
 import { ButtonBase } from '../ButtonBase/BaseButton';
 
 export const FillButton = styled(ButtonBase)<FillButtonProps>`
