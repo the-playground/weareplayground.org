@@ -32,13 +32,11 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
      *
      * @param data -The data from the submitted form
      */
-    const onSubmit = async (data: UseFormInputs, e: any) => {
+    const onSubmit = async (data: UseFormInputs) => {
         setFormUIStatus('loading');
         const results = await addToMailchimp(data.email, {
             SIGNUPLOC: data.signupLocation,
             REFERRER: data.referrer,
-            FNAME: data.firstName,
-            LNAME: data.lastName,
             'group[33097][16]': '16',
         });
 
@@ -58,7 +56,7 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
                             color="light"
                             name="email"
                             type="text"
-                            placeholder="email"
+                            placeholder="your email address"
                             ref={register({
                                 required:
                                     'An email address is required in order to subscribe.',
@@ -68,21 +66,6 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
                                         "Hmmm... it doesn't look like this is a valid email address.",
                                 },
                             })}
-                        />
-                        <Input
-                            color="light"
-                            name="firstName"
-                            type="text"
-                            label="First Name"
-                            placeholder="first name"
-                            ref={register}
-                        />
-                        <Input
-                            color="light"
-                            name="lastName"
-                            type="text"
-                            placeholder="last name"
-                            ref={register}
                         />
 
                         {/* Automatically add to "General News Updates" group */}
@@ -131,8 +114,6 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
 };
 
 export interface UseFormInputs {
-    firstName: string;
-    lastName: string;
     email: string;
     signupLocation: string;
     referrer: string;

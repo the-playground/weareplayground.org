@@ -13,7 +13,7 @@ const StyledSubscribeSection = styled.section`
 export const SubscribeSection: React.FC<SubscribeSectionProps> = () => {
     return (
         <StyledSubscribeSection>
-            <Container>
+            <Container maxWidth="s">
                 <EmailSubscribe />
             </Container>
         </StyledSubscribeSection>
