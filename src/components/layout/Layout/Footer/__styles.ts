@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { animation, breakpoints, spacing } from '@tokens';
 
 export const Footer = styled.footer`
-    background-color: var(--blue);
+    background-color: ${(props) => props.theme.backgrounds.dark.color};
 
     .footer-container {
         padding: ${spacing.layout.m} 0;
@@ -16,7 +16,7 @@ export const Footer = styled.footer`
         transition: ${animation.linkHover};
     }
 
-    a.--is-active {
+    li a.--is-active {
         opacity: 0.7;
     }
 

@@ -2,8 +2,9 @@ import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 
 import { GatsbyPageContext } from '@type/gatsby';
-import { PrismicImage } from '@type/prismic';
+import { PrismicImage, PrismicExternalLink } from '@type/prismic';
 import { ShowSnippet } from '@type/show';
+import { SubscribeSection, LegacyContentNotice } from '@components/ui';
 
 import { useConfigContext } from '@context';
 import { useGetMetaImage, useCurrentURL } from '@hooks';
@@ -11,8 +12,7 @@ import { useGetMetaImage, useCurrentURL } from '@hooks';
 // Import components
 
 import { Layout } from '@components/layout';
-import { ImageProps } from '@components/foundations';
-import { SimpleHero } from '@components/ui';
+import { FluidImageProps } from '@components/foundations';
 
 const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
@@ -26,14 +26,18 @@ const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     const { uid } = pageContext;
     const siteConfig = useConfigContext();
     const url = useCurrentURL(location.pathname);
-    const metaImage = useGetMetaImage('season', seasonData.seo_image);
+    const { metaImage } = useGetMetaImage('season', seasonData.seo_image);
 
     return (
         <Layout noHeader={false} noFooter={false}>
-            <SimpleHero
+            <LegacyContentNotice
+                contentType="season"
                 title={`${seasonData.title} Season`}
                 subTitle={seasonData.tagline}
+                legacyURL={seasonData.legacy_url.url}
+                legacyURLText="See season on old website"
             />
+            <SubscribeSection />
         </Layout>
     );
 };
@@ -88,6 +92,11 @@ export const query = graphql`
                     }
                 }
                 seo_hide
+
+                ## Legacy Data
+                legacy_url {
+                    url
+                }
             }
         }
     }
@@ -105,7 +114,7 @@ interface PageData {
             title: string;
             tagline: string;
             description: string;
-            hero_image: ImageProps;
+            hero_image: FluidImageProps;
 
             shows: {
                 show: {
@@ -118,6 +127,8 @@ interface PageData {
             seo_description: string;
             seo_image: PrismicImage;
             seo_hide: boolean;
+
+            legacy_url: PrismicExternalLink;
         };
     };
 }

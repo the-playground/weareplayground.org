@@ -33,7 +33,7 @@ export const appBaseFontSize = 17;
  * @since 1.0.0
  */
 const largeScalar = 1.333; // Perfect Fourth
-const smallScalar = 1.25; // Minor Third
+const smallScalar = 1.2; // Minor Third
 
 /**
  * Our typographic scale drives the mathematical relationship between all of our font sizes.

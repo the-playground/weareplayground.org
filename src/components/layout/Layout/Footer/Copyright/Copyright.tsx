@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { LinkHandler } from '@components/utility';
+import { Link } from '@components/utility';
 import { BodyText } from '@components/foundations';
 import { useConfigContext, useLinkMapContext } from '@context';
 
@@ -10,11 +10,11 @@ import * as styled from './__styles';
 
 const LinkItem: React.FC<{ slug: string; text: string }> = ({ slug, text }) => (
     <li>
-        <LinkHandler to={slug} activeClassName="--is-active">
+        <Link to={slug} activeClassName="--is-active">
             <BodyText tag="span" size="s" weight="bold" color="medium">
                 {text}
             </BodyText>
-        </LinkHandler>
+        </Link>
     </li>
 );
 

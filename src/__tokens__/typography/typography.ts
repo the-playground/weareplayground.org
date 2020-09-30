@@ -59,7 +59,7 @@ export const typography = {
     heading: {
         xl: css`
             ${fonts.heading};
-            ${fontSizes.size7};
+            ${fontSizes.size8};
             line-height: 1.2;
         `,
         l: css`

@@ -1,6 +1,6 @@
 // https://schema.org/Offer
 
-const Offer = props => `
+const Offer = (props) => `
 
 	"@context" : "http://schema.org",
 	"@type"	: "Offer",

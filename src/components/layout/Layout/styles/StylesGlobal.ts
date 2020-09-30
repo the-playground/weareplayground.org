@@ -1,4 +1,4 @@
-import { css, createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import { appBaseFontSize, fonts } from '@tokens';
 
 /**
@@ -16,13 +16,20 @@ export const StylesGlobal = createGlobalStyle`
 
 	body{
 		${fonts.bodyText};
-		background-color: var(--bodyBG);
-		line-height: 1.5;
+		background-color: ${(props) => props.theme.backgrounds.extraDark.color};
+		line-height: 1.6;
 		min-height: 100%;
 		overflow-x: hidden;
 		text-rendering: optimizeLegibility;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+	}
+
+	::selection {
+  		background: ${(props) => props.theme.backgrounds.accent.color};
+	}
+	::-moz-selection {
+		background:  ${(props) => props.theme.backgrounds.accent.color};
 	}
 
 	/**
@@ -37,5 +44,12 @@ export const StylesGlobal = createGlobalStyle`
 		clip: rect(1px, 1px, 1px, 1px);
 		white-space: nowrap; /* added line */
 	 }
+
+	 /**
+	  *
+	  */
+	  .u-gritty {
+		  position: relative;
+	  }
 
 `;

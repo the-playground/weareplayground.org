@@ -3,8 +3,9 @@ import React from 'react';
 import { HeadingProps } from './__types';
 import * as Styled from './__styles';
 
-export const Heading: React.FC<Omit<HeadingProps, 'as'>> = ({
+export const Heading: React.FC<HeadingProps> = ({
     children,
+    textTransform,
     tag,
     size,
     color,
@@ -13,6 +14,7 @@ export const Heading: React.FC<Omit<HeadingProps, 'as'>> = ({
 }) => (
     <Styled.Heading
         as={tag}
+        textTransform={textTransform}
         color={color}
         size={size}
         className={className}

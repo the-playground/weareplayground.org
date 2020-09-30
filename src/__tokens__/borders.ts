@@ -1,5 +1,3 @@
 export const borders = {
-
-    defaultRadius: '4px'
-
+    defaultRadius: '4px',
 };

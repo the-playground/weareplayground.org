@@ -1,4 +1,4 @@
-const Place = props => `
+const Place = (props) => `
 
 	"@context": "http://schema.org",
 	"@type": "Place",

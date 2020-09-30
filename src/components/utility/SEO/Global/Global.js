@@ -23,28 +23,61 @@ const SEOGlobal = () => {
 
     if (!site || !company) return <></>;
 
-    const facebookAppID = company.facebook_app_id ? company.facebook_app_id : null;
-    const googleVerification = site.verification_google ? site.verification_google : null;
-    const bingVerification = site.verification_bing ? site.verification_bing : null;
-    const nortonVerification = site.verification_norton ? site.verification_norton : null;
+    const facebookAppID = company.facebook_app_id
+        ? company.facebook_app_id
+        : null;
+    const googleVerification = site.verification_google
+        ? site.verification_google
+        : null;
+    const bingVerification = site.verification_bing
+        ? site.verification_bing
+        : null;
+    const nortonVerification = site.verification_norton
+        ? site.verification_norton
+        : null;
 
     return (
         <Helmet>
             {/* Default language and direction */}
             <html lang="en" dir="ltr" />
             {/* Handle site verifications generation */}
-            {googleVerification ? <meta name="google-site-verification" content={googleVerification} /> : ``}
-            {bingVerification ? <meta name="msvalidate.01" content={bingVerification} /> : ``}
-            {nortonVerification ? <meta name="norton-safeweb-site-verification" content={nortonVerification} /> : ``}
+            {googleVerification ? (
+                <meta
+                    name="google-site-verification"
+                    content={googleVerification}
+                />
+            ) : (
+                ``
+            )}
+            {bingVerification ? (
+                <meta name="msvalidate.01" content={bingVerification} />
+            ) : (
+                ``
+            )}
+            {nortonVerification ? (
+                <meta
+                    name="norton-safeweb-site-verification"
+                    content={nortonVerification}
+                />
+            ) : (
+                ``
+            )}
 
             {/* Facebook App ID for your FB Business App */}
-            {facebookAppID ? <meta property="fb:app_id" content={facebookAppID} /> : ``}
+            {facebookAppID ? (
+                <meta property="fb:app_id" content={facebookAppID} />
+            ) : (
+                ``
+            )}
 
             {/* Google Specific Tags -- prevent search box from showing up on Google */}
             <meta name="google" content="nositelinkssearchbox" />
 
             {/* Set geo location for business */}
-            <meta name="geo.region" content={`US-${company.location_state_code}`} />
+            <meta
+                name="geo.region"
+                content={`US-${company.location_state_code}`}
+            />
             <meta name="geo.placename" content={company.location_city} />
 
             {/* Global OpenGraph meta */}

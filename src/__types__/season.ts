@@ -1,4 +1,5 @@
 import { GatsbyImageProps } from 'gatsby-image';
+import { PrismicExternalLink } from './prismic';
 
 export interface Season {
     node: {
@@ -20,5 +21,6 @@ export interface Season {
                 datetime: Date;
             }[];
         }[];
+        legacy_url: PrismicExternalLink;
     };
 }

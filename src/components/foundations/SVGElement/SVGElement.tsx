@@ -45,7 +45,7 @@ interface SVGElementProps {
     name: string;
     path: React.ReactElement;
     viewBox: string;
-    gradient: Gradient;
-    title?: Gradient;
-    desc?: Gradient;
+    gradient?: Gradient;
+    title?: string;
+    desc?: string;
 }

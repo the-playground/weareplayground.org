@@ -11,13 +11,13 @@ import { Performance } from '@type/show';
  *
  * @param performances All of the available performances of the show.
  */
-export const useShowStatus = (performances: Performance[]) => {
-    const [status, setStatus] = useState('inactive');
+export const useShowStatus = (performances: Performance[]): ShowStatusProps => {
+    const [status, setStatus] = useState<ShowStatus>('inactive');
 
     useEffect(() => {
         // If no performances are passed in, bail.
         if (!performances || performances.length === 0) {
-            return { status, setStatus };
+            return;
         }
 
         // Grab the first performance of the show and format it.
@@ -62,7 +62,14 @@ export const useShowStatus = (performances: Performance[]) => {
             default:
                 setStatus('future');
         }
-    });
+    }, [performances]);
 
     return { status, setStatus };
 };
+
+type ShowStatus = 'inactive' | 'archived' | 'active' | 'upcoming' | 'future';
+
+interface ShowStatusProps {
+    status: ShowStatus;
+    setStatus: React.Dispatch<React.SetStateAction<ShowStatus>>;
+}

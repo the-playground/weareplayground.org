@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { useConfigContext, useLinkMapContext } from '@context';
 
-import { LinkHandler } from '@components/utility';
+import { Link } from '@components/utility';
 import { BodyText, Logo } from '@components/foundations';
 
 import * as styled from './__styles';
@@ -22,9 +22,9 @@ export const FooterNav: React.FC<FooterNavProps> = ({
             </p>
 
             <div className="brand">
-                <LinkHandler to="/">
-                    <Logo type="BrandMark" size="xs" color="inverted" />
-                </LinkHandler>
+                <Link to="/" activeClassName="--is-active">
+                    <Logo type="BrandMark" size="xs" color="light" />
+                </Link>
             </div>
 
             <div className="menus">
@@ -42,7 +42,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({
                         {menuItems.map((item) => (
                             <li key={item.text}>
                                 {item.link && (
-                                    <LinkHandler
+                                    <Link
                                         to={item.link}
                                         activeClassName={activeClass}
                                     >
@@ -54,7 +54,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({
                                         >
                                             {item.text}
                                         </BodyText>
-                                    </LinkHandler>
+                                    </Link>
                                 )}
                             </li>
                         ))}
@@ -73,7 +73,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({
                     <ul>
                         {socialAccounts.map((account) => (
                             <li key={account.name}>
-                                <LinkHandler
+                                <Link
                                     to={account.link}
                                     activeClassName={activeClass}
                                 >
@@ -86,7 +86,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({
                                     >
                                         {account.name}
                                     </BodyText>
-                                </LinkHandler>
+                                </Link>
                             </li>
                         ))}
                     </ul>
@@ -116,7 +116,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({
                     </div>
                     <ul>
                         <li key="message">
-                            <LinkHandler
+                            <Link
                                 to={links.contact}
                                 activeClassName={activeClass}
                             >
@@ -128,10 +128,10 @@ export const FooterNav: React.FC<FooterNavProps> = ({
                                 >
                                     send us a message
                                 </BodyText>
-                            </LinkHandler>
+                            </Link>
                         </li>
                         <li key="audition">
-                            <LinkHandler
+                            <Link
                                 to={links.audition}
                                 activeClassName={activeClass}
                             >
@@ -143,7 +143,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({
                                 >
                                     audition
                                 </BodyText>
-                            </LinkHandler>
+                            </Link>
                         </li>
                     </ul>
                 </div>

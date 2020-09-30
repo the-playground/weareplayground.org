@@ -1,11 +1,38 @@
 import styled, { css } from 'styled-components';
+import { breakpoints } from '@tokens';
 import { LogoProps, AvailableLogoSizes } from './__types';
 
 const logoWidth: AvailableLogoSizes = {
+    xxl: '300px',
+    xl: '225px',
     l: '150px',
     m: '100px',
     s: '75px',
     xs: '50px',
+};
+
+/**
+ * Get the requested logo size,  Also handles responsive sizes if a
+ * responsive size configuration is present.
+ *
+ * @param size
+ * @param responsive
+ */
+const getLogoSize = (
+    size: LogoProps['size'],
+    responsive: LogoProps['responsive']
+) => {
+    if (responsive) {
+        return css`
+            width: ${logoWidth[responsive.size]};
+            ${breakpoints[responsive.breakpoint]} {
+                width: ${logoWidth[size]};
+            }
+        `;
+    }
+    return css`
+        width: ${logoWidth[size]};
+    `;
 };
 
 export const Logo = styled.i<LogoProps>`
@@ -14,47 +41,17 @@ export const Logo = styled.i<LogoProps>`
     line-height: 0;
 
     svg {
-        height: auto;
-        width: ${(props) => logoWidth[props.size]};
+        height: 100%;
+        ${({ responsive, size }) => getLogoSize(size, responsive)};
     }
 
-    ${(props) =>
-        props.color === 'standard' &&
-        css`
-            .bracket {
-                fill: var(--logoBracketStandard);
-            }
-            .text {
-                fill: var(--logoTextStandard);
-            }
-        `};
+    .bracket {
+        fill: ${({ theme, color }) =>
+            color ? theme.logo[color].bracketColor : ''};
+    }
 
-    ${(props) =>
-        props.color === 'inverted' &&
-        css`
-            .bracket {
-                fill: var(--logoBracketStandard);
-            }
-            .text {
-                fill: var(--logoTextInverted);
-            }
-        `};
-
-    ${(props) =>
-        props.color === 'light' &&
-        css`
-            .bracket,
-            .text {
-                fill: var(--logoLight);
-            }
-        `};
-
-    ${(props) =>
-        props.color === 'dark' &&
-        css`
-            .bracket,
-            .text {
-                fill: var(--logoDark);
-            }
-        `};
+    .text {
+        fill: ${({ theme, color }) =>
+            color ? theme.logo[color].textColor : ''};
+    }
 `;

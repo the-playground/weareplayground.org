@@ -23,7 +23,9 @@ const SEOPage = ({ metadata, robots }) => {
 
     const url = getCurrentRootURL();
     const title = metadata.meta_title ? metadata.meta_title : ``;
-    const description = metadata.meta_description ? metadata.meta_description : ``;
+    const description = metadata.meta_description
+        ? metadata.meta_description
+        : ``;
 
     const image = metadata.meta_image ? metadata.meta_image : ``;
 

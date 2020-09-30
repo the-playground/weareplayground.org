@@ -58,5 +58,27 @@
                 "label": "SEO Image"
             }
         }
+    },
+    "Hero": {
+        "hero_title": {
+            "type": "Text",
+            "config": {
+                "label": "Hero Title"
+            }
+        },
+        "hero_copy": {
+            "type": "Text",
+            "config": {
+                "label": "Hero Copy"
+            }
+        },
+        "hero_image": {
+            "type": "Image",
+            "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Hero Image"
+            }
+        }
     }
 }

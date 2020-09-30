@@ -5,10 +5,11 @@ import { GatsbyPageContext } from '@type/gatsby';
 import { Show } from '@type/show';
 
 import { useConfigContext } from '@context';
-import { useGetMetaImage, useCurrentURL } from '@hooks';
+import { useGetMetaImage, useCurrentURL, useShowStatus } from '@hooks';
 
 // Import components
 import { Layout } from '@components/layout';
+import { LegacyContentNotice, SubscribeSection } from '@components/ui';
 
 const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
@@ -20,22 +21,19 @@ const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
 
     const siteConfig = useConfigContext();
     const url = useCurrentURL(location.pathname);
-    const metaImage = useGetMetaImage('season', show.seo_image);
+    const { metaImage } = useGetMetaImage('season', show.seo_image);
+    const { status } = useShowStatus(show.performances);
 
     return (
         <Layout noHeader={false} noFooter={false}>
-            {show.title}
-            <button
-                type="button"
-                className="snipcart-add-item"
-                data-item-id={uid}
-                data-item-price="20.00"
-                data-item-url={url}
-                data-item-description="The Breakfast Club Presented by The Playground"
-                data-item-name="test"
-            >
-                Purchase Tickets
-            </button>
+            <LegacyContentNotice
+                title={show.title}
+                subTitle={`by ${show.author}`}
+                contentType="show"
+                legacyURL={show.legacy_url.url}
+                legacyURLText="see show on old website"
+            />
+            <SubscribeSection />
         </Layout>
     );
 };
@@ -55,8 +53,13 @@ export const query = graphql`
                     url
                 }
                 hero_image {
-                    fluid {
-                        ...GatsbyPrismicImageFluid
+                    alt
+                    localFile {
+                        childImageSharp {
+                            fluid(quality: 90) {
+                                ...GatsbyImageSharpFluid_withWebp
+                            }
+                        }
                     }
                 }
                 teaser
@@ -91,6 +94,11 @@ export const query = graphql`
                     }
                 }
                 seo_hide
+
+                ## Legacy Data
+                legacy_url {
+                    url
+                }
             }
         }
     }

@@ -11,6 +11,7 @@ export const Icon: React.FC<IconProps> = ({
     name,
     color,
     size,
+    responsive,
     title,
     desc,
     ...others
@@ -25,7 +26,13 @@ export const Icon: React.FC<IconProps> = ({
     }
 
     return (
-        <Styled.Icon name={name} color={color} size={size} {...others}>
+        <Styled.Icon
+            name={name}
+            color={color}
+            size={size}
+            responsive={responsive}
+            {...others}
+        >
             <SVGElement
                 name={name}
                 path={selectedIcon.path}
@@ -36,3 +43,5 @@ export const Icon: React.FC<IconProps> = ({
         </Styled.Icon>
     );
 };
+
+export * from './__types';

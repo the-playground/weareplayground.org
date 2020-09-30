@@ -11,7 +11,7 @@ import { Organization } from './Organization';
 
 const performers = () => {};
 
-const houseOpens = startTime => subMinutes(startTime, 30);
+const houseOpens = (startTime) => subMinutes(startTime, 30);
 // old moment js format return moment( startTime ).subtract( 30, 'minutes' ).format()
 
 /**

@@ -38,4 +38,4 @@ export interface UIContextProps {
 /**
  * A saucy little thin wrapper for fetching and using our App Context
  */
-export const useUIContext = () => useContext(UIContext);
+export const useUIContext = (): UIContextProps => useContext(UIContext);

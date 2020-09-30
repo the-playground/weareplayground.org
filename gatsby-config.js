@@ -1,5 +1,7 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require(`path`);
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 require(`dotenv`).config({
     path: `.env.${process.env.NODE_ENV}`,
 });
@@ -7,19 +9,8 @@ require(`dotenv`).config({
 module.exports = {
     plugins: [
         /**
-         * @link https://www.gatsbyjs.org/packages/gatsby-source-filesystem
-         */
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                name: `images`,
-                path: path.join(__dirname, `static`, `images`),
-            },
-        },
-        /**
          * @link https://www.gatsbyjs.org/packages/gatsby-plugin-sharp/
-         */
-        `gatsby-plugin-sharp`,
+         */ `gatsby-plugin-sharp`,
 
         /**
          * @link https://www.gatsbyjs.org/packages/gatsby-transformer-sharp
@@ -42,6 +33,22 @@ module.exports = {
         },
 
         /**
+         * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/
+         */
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: `The Nerve Theatre`,
+                short_name: `Nerve`,
+                start_url: `/`,
+                background_color: `#0C1E31`,
+                theme_color: `#F25C05`,
+                display: `standalone`,
+                icon: 'static/icons/nerve-site-icon.png',
+            },
+        },
+
+        /**
          * Implement the babel module resolver for a really nice global import syntax
          *
          * @link https://www.gatsbyjs.org/packages/gatsby-plugin-module-resolver
@@ -51,14 +58,16 @@ module.exports = {
             options: {
                 root: './src', // <- will be used as a root dir
                 aliases: {
+                    '@assets': './assets',
                     '@context': './__context__', // <- will become ./src/__context__
+                    '@components': './components',
                     '@hooks': './__hooks__',
                     '@lib': './__lib__',
+                    '@screens': './screens',
+                    '@templates': './templates',
                     '@themes': './__themes__',
                     '@tokens': './__tokens__',
                     '@type': './__types__',
-                    '@components': './components',
-                    '@templates': './templates',
                 },
             },
         },
@@ -135,9 +144,10 @@ module.exports = {
                  *
                  * This defaults to always return false.
                  */
-                shouldDownloadImage: () => {
-                    // Return true to download the image or false to skip.
-                    return false;
+                shouldDownloadImage: ({ key }) => {
+                    // For any field that includes the word "hero", we are going to process locally to
+                    // open up expanded image loading capabilities as per the `gatsby-source-prismic` docs.
+                    return !!key.includes('hero');
                 },
 
                 /**
@@ -148,7 +158,7 @@ module.exports = {
                  */
 
                 imageImgixParams: {
-                    q: 60,
+                    q: 90,
                 },
 
                 /**
@@ -161,18 +171,21 @@ module.exports = {
                  */
                 imagePlaceholderImgixParams: {
                     w: 50,
-                    blur: 50,
+                    blur: 100,
                 },
             },
         },
 
         /**
-         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-offline
+         * A helper plugin for subscribing new email addresses to a Mailchimp email list.
+         *
+         * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-mailchimp/
          */
         {
-            resolve: `gatsby-plugin-offline`,
+            resolve: 'gatsby-plugin-mailchimp',
             options: {
-                precachePages: [],
+                endpoint:
+                    process.env.GATSBY_MAILCHIMP_NEWSLETTER_SUBSCRIBE_ENDPOINT,
             },
         },
 

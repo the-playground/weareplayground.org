@@ -1,7 +1,13 @@
 {
+	"parserOptions": {
+		"project": "./tsconfig.json",
+	},
 	"compilerOptions": {
 		"baseUrl": "src/",
 		"paths": {
+			"@assets/*": [
+				"./assets/*"
+			],
 			"@context": [
 				"./__context__/"
 			],
@@ -14,8 +20,8 @@
 			"@lib/*": [
 				"./__lib__/*"
 			],
-			"@themes": [
-				"./__themes__/"
+			"@themes/*": [
+				"./__themes__/*"
 			],
 			"@tokens": [
 				"./__tokens__/"
@@ -23,12 +29,15 @@
 			"@components/*": [
 				"./components/*"
 			],
+			"@screens/*": [
+				"./screens/*"
+			],
 			"@templates/*": [
 				"./templates/*"
 			]
 		},
-		"target": "es5",
-		"module": "esnext",
+		"module": "commonjs",
+		"target": "esnext",
 		"strict": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
@@ -48,10 +57,14 @@
 	"exclude": [
 		"node_modules",
 		".vscode",
-		".github"
+		".github",
+		"public",
+		".cache",
+		"static",
 	],
 	"include": [
 		"src",
 		"gatsby-*",
+		"@typings/*",
 	]
 }

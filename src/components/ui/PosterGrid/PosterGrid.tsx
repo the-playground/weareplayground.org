@@ -3,7 +3,7 @@ import React from 'react';
 import { ShowSnippet } from '@type/show';
 
 import { BodyText } from '@components/foundations';
-import { ShowPoster } from '@components/ui';
+import { ShowPoster } from '../ShowPoster/ShowPoster';
 
 import * as styled from './__styles';
 
@@ -33,7 +33,7 @@ export const PosterGrid: React.FC<PosterGridProps> = ({ items }) => {
                                 title: show.season.document.data.title,
                                 uid: show.season.uid,
                             }}
-                            performances={show.performances}
+                            performances={show.performances!}
                         />
                     );
                 })}

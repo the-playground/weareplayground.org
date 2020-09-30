@@ -13,6 +13,6 @@
  */
 
 export * from './GlobalSEO/GlobalSEO';
-export * from './LinkHandler/LinkHandler';
+export * from './Link/Link';
 export * from './PageSEO/PageSEO';
 export * from './StructuredData/StructuredData';

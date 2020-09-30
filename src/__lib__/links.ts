@@ -21,5 +21,5 @@ export const isLinkToFile = (dest: string): boolean =>
  * @param {*} dest
  * @returns {bool}
  */
-export const isPageLink = (dest: string): boolean =>
+export const isInternalPageLink = (dest: string): boolean =>
     isLinkInternal(dest) || !isLinkToFile(dest);

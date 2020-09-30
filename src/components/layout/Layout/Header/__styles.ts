@@ -1,9 +1,21 @@
 import styled from 'styled-components';
 
-import { animation, appNavBreakpoint, spacing } from '@tokens';
+import { animation, appNavBreakpoint, spacing, zIndex } from '@tokens';
 
-export const Header = styled.header`
-    padding: ${spacing.component.m} 0;
+import { HeaderProps } from './__types';
+
+export const Header = styled.header<HeaderProps>`
+    display: block;
+    padding: ${spacing.component.s} 0;
+
+    ${appNavBreakpoint} {
+        left: 0;
+        padding: ${spacing.component.m} 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: ${zIndex.base};
+    }
 
     .container {
         align-items: center;
@@ -12,7 +24,12 @@ export const Header = styled.header`
     }
 
     .brand {
+        display: flex;
         transition: ${animation.linkHover};
+    }
+
+    .brand.--is-active {
+        pointer-events: none;
     }
 
     .brand:hover {

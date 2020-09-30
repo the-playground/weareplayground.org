@@ -1,35 +1,44 @@
 import styled, { css } from 'styled-components';
-import { iconSizes } from '@tokens';
+import { breakpoints, iconSizes } from '@tokens';
 import { IconProps } from './__types';
 
-const iconThemes = {
-    light: css`
-        color: var(--iconLight);
-    `,
-    medium: css`
-        color: var(--iconMedium);
-    `,
-    dark: css`
-        color: var(--iconDark);
-    `,
-    accentA: css`
-        color: var(--iconAccentA);
-    `,
-    default: css`
-        color: inherit;
-    `,
+/**
+ * Get the requested icon size,  Also handles responsive sizes if a
+ * responsive size configuration is present.
+ *
+ * @param size
+ * @param responsive
+ */
+const getIconSize = (
+    size: IconProps['size'],
+    responsive: IconProps['responsive']
+) => {
+    if (responsive) {
+        return css`
+            height: ${iconSizes[responsive.size]};
+            width: ${iconSizes[responsive.size]};
+            ${breakpoints[responsive.breakpoint]} {
+                height: ${iconSizes[size]};
+                width: ${iconSizes[size]};
+            }
+        `;
+    }
+    return css`
+        height: ${iconSizes[size]};
+        width: ${iconSizes[size]};
+    `;
 };
 
 export const Icon = styled.i<IconProps>`
     align-items: center;
     display: flex;
-    height: ${(props) => iconSizes[props.size]};
     justify-content: center;
-    width: ${(props) => iconSizes[props.size]};
-    ${(props) => (props.color ? iconThemes[props.color] : iconThemes.default)};
+    color: ${({ theme, color }) =>
+        color ? theme.icons[color].color.default : 'inherit'};
+
+    ${({ size, responsive }) => getIconSize(size, responsive)};
 
     > svg {
-        height: ${(props) => iconSizes[props.size]};
-        width: ${(props) => iconSizes[props.size]};
+        ${({ size, responsive }) => getIconSize(size, responsive)};
     }
 `;

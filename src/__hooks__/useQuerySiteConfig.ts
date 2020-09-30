@@ -1,5 +1,9 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import { PrismicImage, PrismicLink } from '@type/prismic';
+import {
+    PrismicImage,
+    PrismicFluidImage,
+    PrismicExternalLink,
+} from '@type/prismic';
 
 export const useQuerySiteConfig = (): SiteConfig => {
     /**
@@ -75,6 +79,15 @@ export const useQuerySiteConfig = (): SiteConfig => {
                             height
                         }
                     }
+
+                    # Subscribe
+                    subscribe_title
+                    subscribe_copy
+                    subscribe_image {
+                        fluid(imgixParams: { sat: -100 }) {
+                            ...GatsbyPrismicImageFluid
+                        }
+                    }
                 }
             }
         }
@@ -87,14 +100,14 @@ export interface SiteConfig {
     audition_email: string;
     contact_email: string;
     ein: string;
-    facebook: PrismicLink;
+    facebook: PrismicExternalLink;
     facebook_app_id: string;
     fallback_page_meta_image: PrismicImage;
     fallback_season_meta_image: PrismicImage;
     fallback_show_meta_image: PrismicImage;
     founding_date: string;
-    github: PrismicLink;
-    instagram: PrismicLink;
+    github: PrismicExternalLink;
+    instagram: PrismicExternalLink;
     legal_name: string;
     location_city: string;
     location_state: string;
@@ -103,11 +116,16 @@ export interface SiteConfig {
     logo: PrismicImage;
     meta_title_template: string;
     name: string;
-    spotify: PrismicLink;
+    spotify: PrismicExternalLink;
     ticket_email: string;
     verification_google: string;
     verification_bing: string;
     verification_norton: string;
-    website: PrismicLink;
-    youtube: PrismicLink;
+    website: PrismicExternalLink;
+    youtube: PrismicExternalLink;
+
+    // Subscribe
+    subscribe_title: string;
+    subscribe_copy: string;
+    subscribe_image: PrismicFluidImage;
 }

@@ -22,19 +22,6 @@ export const FooterNav = styled.nav`
         padding: ${spacing.component.xs} 0;
     }
 
-    /* Give active items a cool little bracket */
-    a.--is-active {
-        padding-left: ${spacing.component.s};
-        position: relative;
-
-        &:before {
-            color: var(--typeAccent);
-            content: '[';
-            left: 0;
-            position: absolute;
-        }
-    }
-
     /* Our brand mark */
     .brand {
         margin-bottom: ${spacing.layout.xs};
@@ -42,6 +29,10 @@ export const FooterNav = styled.nav`
             margin-right: ${spacing.layout.m};
             margin-bottom: 0;
         }
+    }
+
+    .brand .--is-active {
+        pointer-events: none;
     }
 
     .menus {

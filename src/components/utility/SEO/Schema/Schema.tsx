@@ -17,18 +17,20 @@ import * as schemas from './__manifest__';
  */
 
 const SEOSchema: React.FC<SchemaProps> = ({ type, data }) => {
-	// Throw an error and bail if the requested type does not exists
-	if (!schemas[type as AvailableSchemaTypes]) {
-		console.log(`A matching schema could not be found for requested type: ${type}. Requested schemas not generated`);
-		return <></>;
-	}
+    // Throw an error and bail if the requested type does not exists
+    if (!schemas[type as AvailableSchemaTypes]) {
+        console.log(
+            `A matching schema could not be found for requested type: ${type}. Requested schemas not generated`
+        );
+        return <></>;
+    }
 
-	// Retrieve schema type since we know it exists
-	const schema: CallableFunction = schemas[type as AvailableSchemaTypes];
+    // Retrieve schema type since we know it exists
+    const schema: CallableFunction = schemas[type as AvailableSchemaTypes];
 
-	console.log(schema);
+    console.log(schema);
 
-	return <>{schema ? schema(data) : ``}</>;
+    return <>{schema ? schema(data) : ``}</>;
 };
 
 export default SEOSchema;

@@ -76,6 +76,10 @@ export const StylesReset = createGlobalStyle`
 		border-style: none;
 	}
 
+	i, svg {
+		line-height: 0;
+	}
+
 	/* Forms
 	========================================================================== */
 

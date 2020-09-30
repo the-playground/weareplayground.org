@@ -6,6 +6,8 @@
 
 // global imports
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './src/__themes__/default';
 
 import {
     ConfigProvider,
@@ -15,24 +17,24 @@ import {
     UIProvider,
 } from './src/__context__';
 
-// Import our default css theme
-import './src/__themes__/palette.css';
-import './src/__themes__/defaultTheme.css';
-
 // Handle Application wrapper
-// eslint-disable-next-line
+
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const wrapRootElement = ({ element }) => (
     <ConfigProvider>
         <LinkMapProvider>
             <SeasonProvider>
                 <ShowProvider>
-                    <UIProvider>{element}</UIProvider>
+                    <ThemeProvider theme={theme}>
+                        <UIProvider>{element}</UIProvider>
+                    </ThemeProvider>
                 </ShowProvider>
             </SeasonProvider>
         </LinkMapProvider>
     </ConfigProvider>
 );
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const onClientEntry = () => {
     // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
     if (!(`IntersectionObserver` in window)) {
