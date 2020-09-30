@@ -22,7 +22,7 @@ export const LegacyContentNotice: React.FC<LegacyContentNoticeProps> = ({
                     className="progress-text"
                     weight="bold"
                 >
-                    Page construction in progress...
+                    page construction in progress...
                 </BodyText>
 
                 <Heading color="light" size="m" tag="h2" className="title">
