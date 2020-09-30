@@ -35,7 +35,7 @@ const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 title={`${seasonData.title} Season`}
                 subTitle={seasonData.tagline}
                 legacyURL={seasonData.legacy_url.url}
-                legacyURLText="See Season On Old Website"
+                legacyURLText="See season on old website"
             />
             <SubscribeSection />
         </Layout>

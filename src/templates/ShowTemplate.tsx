@@ -31,7 +31,7 @@ const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 subTitle={`by ${show.author}`}
                 contentType="show"
                 legacyURL={show.legacy_url.url}
-                legacyURLText="See Show On Old Website"
+                legacyURLText="see show on old website"
             />
             <SubscribeSection />
         </Layout>
