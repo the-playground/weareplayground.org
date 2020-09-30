@@ -37,7 +37,7 @@ export const SubscribeSection: React.FC = () => {
                     size="m"
                     className="intro-copy"
                 >
-                    Drop us your email below to stay up-to-date with all the
+                    drop us your email below to stay up-to-date with all the
                     cool shit we've got going on. We promise not to spam you!
                 </BodyText>
                 <EmailSubscribe />
