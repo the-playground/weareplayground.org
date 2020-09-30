@@ -8,8 +8,9 @@ import { emailRegexPattern } from '@lib/forms';
 import { Input } from '@components/inputs';
 import { FillButton } from '@components/actions';
 import { BodyText, Heading } from '@components/foundations';
-import { EmailSubscribeProps } from './EmailSubscribe.d';
+import { CircularProgress } from '@components/progress';
 
+import { EmailSubscribeProps } from './EmailSubscribe.d';
 import * as styled from './EmailSubscribe.styles';
 
 export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
@@ -46,11 +47,21 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
         <>
             {subscription.result === 'success' ? (
                 <styled.SubscriptionSuccess>
-                    <Heading tag="h3" color="light" size="xs">
-                        Great success!
+                    <Heading
+                        tag="h3"
+                        color="light"
+                        size="xs"
+                        className="success-title"
+                    >
+                        Sweet!
                     </Heading>
-                    <BodyText tag="p" color="light" size="m">
-                        Thanks for subscribing
+                    <BodyText
+                        tag="p"
+                        color="light"
+                        size="m"
+                        className="success-copy"
+                    >
+                        Your signup was successful 🎉! Welcome to The Nerve.
                     </BodyText>
                 </styled.SubscriptionSuccess>
             ) : (
@@ -99,6 +110,7 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
                             size="m"
                             color="primary"
                             isLoading={loading}
+                            fullWidth
                             isSubmit
                         >
                             subscribe

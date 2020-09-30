@@ -15,6 +15,7 @@ import { Info } from './defs/Info';
 import { Instagram } from './defs/Instagram';
 import { Location } from './defs/Location';
 import { Lock } from './defs/Lock';
+import { NewTab } from './defs/NewTab';
 import { Next } from './defs/Next';
 import { Previous } from './defs/Previous';
 import { Rocket } from './defs/Rocket';
@@ -41,6 +42,7 @@ export const availableIcons = {
     Instagram,
     Location,
     Lock,
+    NewTab,
     Next,
     Previous,
     Rocket,

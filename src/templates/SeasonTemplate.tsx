@@ -4,6 +4,7 @@ import { graphql, PageProps } from 'gatsby';
 import { GatsbyPageContext } from '@type/gatsby';
 import { PrismicImage, PrismicExternalLink } from '@type/prismic';
 import { ShowSnippet } from '@type/show';
+import { SubscribeSection, LegacyContentNotice } from '@components/ui';
 
 import { useConfigContext } from '@context';
 import { useGetMetaImage, useCurrentURL } from '@hooks';
@@ -12,7 +13,6 @@ import { useGetMetaImage, useCurrentURL } from '@hooks';
 
 import { Layout } from '@components/layout';
 import { FluidImageProps } from '@components/foundations';
-import { LegacyContentNotice } from '@components/ui';
 
 const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
@@ -37,6 +37,7 @@ const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 legacyURL={seasonData.legacy_url.url}
                 legacyURLText="See Season On Old Website"
             />
+            <SubscribeSection />
         </Layout>
     );
 };

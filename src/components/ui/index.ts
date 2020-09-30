@@ -22,4 +22,4 @@ export * from './LegacyContentNotice/LegacyContentNotice';
 export * from './Modal/Modal';
 export * from './PosterGrid/PosterGrid';
 export * from './SimpleHero/SimpleHero';
-export * from './EmailSubscribe/EmailSubscribe';
+export * from './SubscribeSection/SubscribeSection';

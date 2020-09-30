@@ -6,7 +6,7 @@ import { PrismicImage } from '@type/prismic';
 import { ShowSnippet } from '@type/show';
 
 import PageTemplate from '@templates/PageTemplate';
-import { SimpleHero, PosterGrid } from '@components/ui';
+import { SimpleHero, PosterGrid, SubscribeSection } from '@components/ui';
 
 import { sortShows } from '@lib/shows';
 
@@ -30,6 +30,7 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 subTitle={pageData.data.hero_sub_title}
             />
             <PosterGrid items={sortShows(shows)} />
+            <SubscribeSection />
         </PageTemplate>
     );
 };

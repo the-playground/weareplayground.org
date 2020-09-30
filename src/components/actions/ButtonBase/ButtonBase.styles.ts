@@ -63,6 +63,15 @@ export const ButtonBase = styled(Link)<ButtonBaseProps>`
         margin-left: ${spacing.component.xs};
     }
 
+    &.--loading {
+        pointer-events: none;
+    }
+
+    > .loader {
+        line-height: 0;
+        flex: 1;
+    }
+
     &:hover {
         &.--icon-hover .start-icon {
             transform: translateX(-3px);

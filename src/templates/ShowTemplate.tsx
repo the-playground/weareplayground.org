@@ -9,7 +9,7 @@ import { useGetMetaImage, useCurrentURL, useShowStatus } from '@hooks';
 
 // Import components
 import { Layout } from '@components/layout';
-import { LegacyContentNotice } from '@components/ui';
+import { LegacyContentNotice, SubscribeSection } from '@components/ui';
 
 const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
@@ -33,6 +33,7 @@ const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 legacyURL={show.legacy_url.url}
                 legacyURLText="See Show On Old Website"
             />
+            <SubscribeSection />
         </Layout>
     );
 };

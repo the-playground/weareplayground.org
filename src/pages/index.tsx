@@ -4,13 +4,9 @@ import { GatsbyPageContext } from '@type/gatsby';
 import { PrismicImage, PrismicFluidImage } from '@type/prismic';
 
 import PageTemplate from '@templates/PageTemplate';
+import { SubscribeSection } from '@components/ui';
 
-import {
-    ArchiveSection,
-    HeroSection,
-    RebrandSection,
-    SubscribeSection,
-} from '@screens/HomePage';
+import { ArchiveSection, HeroSection, RebrandSection } from '@screens/HomePage';
 
 const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,

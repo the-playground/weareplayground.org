@@ -1,5 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
+
+import { CircularProgress } from '@components/progress';
+
 import { ButtonBaseProps } from './ButtonBase.d';
 import * as styled from './ButtonBase.styles';
 
@@ -7,6 +10,7 @@ export const ButtonBase: React.FC<ButtonBaseProps> = (props) => {
     const {
         children,
         className,
+        size,
         fullWidth,
         animateOnClick,
         animateIconOnHover,
@@ -26,12 +30,21 @@ export const ButtonBase: React.FC<ButtonBaseProps> = (props) => {
         className
     );
 
+    const loaderIconSize = size === 'm' ? 's' : 'xs';
+
     return (
-        <styled.ButtonBase className={classes} {...others}>
-            {isLoading && <div className="loader">loading</div>}
-            {startIcon && <div className="start-icon">{startIcon}</div>}
-            {children}
-            {endIcon && <div className="end-icon">{endIcon}</div>}
+        <styled.ButtonBase className={classes} size={size} {...others}>
+            {isLoading ? (
+                <div className="loader">
+                    <CircularProgress size={loaderIconSize} />
+                </div>
+            ) : (
+                <>
+                    {startIcon && <div className="start-icon">{startIcon}</div>}
+                    {children}
+                    {endIcon && <div className="end-icon">{endIcon}</div>}
+                </>
+            )}
         </styled.ButtonBase>
     );
 };
