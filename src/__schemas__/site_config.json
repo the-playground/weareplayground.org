@@ -321,5 +321,27 @@
                 "label": "Sitemap"
             }
         }
+    },
+    "Subscribe": {
+        "subscribe_title": {
+            "type": "Text",
+            "config": {
+                "label": "Subscribe Title"
+            }
+        },
+        "subscribe_copy": {
+            "type": "Text",
+            "config": {
+                "label": "Subscribe Copy"
+            }
+        },
+        "subscribe_image": {
+            "type": "Image",
+            "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Subscribe Image"
+            }
+        }
     }
 }

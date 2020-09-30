@@ -102,7 +102,8 @@ export interface AppTheme {
     };
     overlays: {
         verticalGradientDark: OverlayTheme;
-        secondary75: OverlayTheme;
+        dark85: OverlayTheme;
+        dark90: OverlayTheme;
     };
     typography: TypographyPalette;
 }

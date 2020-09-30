@@ -25,7 +25,7 @@ const StyledArchiveSection = styled.section`
         margin-right: ${spacing.component.m};
     }
 
-    .title > span {
+    .title .period {
         color: ${({ theme }) => theme.typography.accentDark};
     }
 
@@ -47,9 +47,11 @@ export const ArchiveSection: React.FC<AboutSectionProps> = () => {
                         size="l"
                         responsive={{ breakpoint: 'm', size: 'm' }}
                     />
-                    blast to the past<span>.</span>
+                    <span>
+                        blast to the past<span className="period">.</span>
+                    </span>
                 </Heading>
-                <BodyText color="light" size="m" tag="p" className="copy">
+                <BodyText color="medium" size="m" tag="p" className="copy">
                     check out out our show archives and discover why our brand
                     of theatre will get under your skin.
                 </BodyText>

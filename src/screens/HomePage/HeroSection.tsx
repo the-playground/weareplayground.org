@@ -32,7 +32,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             bgColor="extraDark"
             bgImage={bgImage}
             bgPosition="center center"
-            overlay="secondary75"
+            overlay="dark85"
         >
             <Container>
                 <GrittyHeading

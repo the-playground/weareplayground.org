@@ -1,5 +1,9 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import { PrismicImage, PrismicExternalLink } from '@type/prismic';
+import {
+    PrismicImage,
+    PrismicFluidImage,
+    PrismicExternalLink,
+} from '@type/prismic';
 
 export const useQuerySiteConfig = (): SiteConfig => {
     /**
@@ -75,6 +79,15 @@ export const useQuerySiteConfig = (): SiteConfig => {
                             height
                         }
                     }
+
+                    # Subscribe
+                    subscribe_title
+                    subscribe_copy
+                    subscribe_image {
+                        fluid(imgixParams: { sat: -100 }) {
+                            ...GatsbyPrismicImageFluid
+                        }
+                    }
                 }
             }
         }
@@ -110,4 +123,9 @@ export interface SiteConfig {
     verification_norton: string;
     website: PrismicExternalLink;
     youtube: PrismicExternalLink;
+
+    // Subscribe
+    subscribe_title: string;
+    subscribe_copy: string;
+    subscribe_image: PrismicFluidImage;
 }
