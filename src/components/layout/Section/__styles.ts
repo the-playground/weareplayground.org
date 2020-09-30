@@ -4,9 +4,7 @@ import { zIndex } from '@tokens';
 import { SectionProps } from './__types';
 
 export const SectionWithBackgroundImage = styled(BackgroundImage)<SectionProps>`
-    background-size: cover;
-    background-position: ${({ bgPosition }) => bgPosition};
-    position: relative;
+    background-position: ${({ bgPosition }) => bgPosition} !important;
     > .content {
         position: relative;
         z-index: ${zIndex.front};

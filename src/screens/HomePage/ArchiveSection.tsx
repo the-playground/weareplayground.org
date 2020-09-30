@@ -15,9 +15,11 @@ const StyledArchiveSection = styled.section`
     }
 
     .title {
-        align-items: center;
-        display: flex;
         margin-bottom: ${spacing.component.m};
+        ${breakpoints.m} {
+            align-items: center;
+            display: flex;
+        }
     }
 
     .title > i {
