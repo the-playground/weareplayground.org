@@ -47,6 +47,58 @@ function buildShowPage(showConfig, createPage) {
 }
 
 /**
+ * Query the "Blog" parent page.
+ *
+ * @param {*} graphql graphql instance from createPages
+ * @param {*} reporter reporter instance from createPages
+ */
+async function getBlogPostParentPage(graphql, reporter) {
+    console.log(`👨‍👧‍👧 Retrieving "Blog" parent page uid...`);
+
+    const { data } = await graphql(`
+        query {
+            prismicSiteConfig {
+                data {
+                    blog_page {
+                        uid
+                    }
+                }
+            }
+        }
+    `);
+
+    const blogPostParentPage = data.prismicSiteConfig.data.blog_page;
+
+    if (data.errors || !blogPostParentPage || !blogPostParentPage.uid) {
+        reporter.panicOnBuild(
+            `🔥 Error attempting to retrieve "Blog" posts parent page.`
+        );
+        return;
+    }
+
+    return blogPostParentPage.uid;
+}
+
+/**
+ * Build a single blog page
+ *
+ * @param {*} showConfig
+ * @param {*} createPage
+ */
+function buildBlogPost(blogConfig, createPage) {
+    console.log(`✏️ Blog: ${blogConfig.url}`);
+
+    createPage({
+        path: blogConfig.url,
+        component: blogConfig.template,
+        context: {
+            uid: blogConfig.slug,
+            id: blogConfig.id,
+        },
+    });
+}
+
+/**
  * Query all available seasons and shows and dynamically
  * generate pages from the results
  *
@@ -121,8 +173,55 @@ async function generateSeasonsAndShows({ graphql, actions, reporter }) {
 }
 
 /**
+ * Query all available posts and dynamically and generate pages from the results,
+ *
+ * @param {*} params destructured instances of createPages params
+ */
+async function generateBlogPosts({ graphql, actions, reporter }) {
+    const blogParentPage = await getBlogPostParentPage(graphql, reporter);
+
+    // Query Blog data
+    const { data } = await graphql(`
+        {
+            allPrismicPost {
+                nodes {
+                    id
+                    uid
+                }
+            }
+        }
+    `);
+
+    if (data.errors) {
+        reporter.panicOnBuild(`🔥 Error while running GraphQL query on Blogs.`);
+    }
+
+    /**
+     * Begin building Blog pages
+     */
+
+    const { createPage } = actions;
+
+    await data.allPrismicPost.nodes.forEach(async (post) => {
+        const blogConfig = {
+            slug: post.uid,
+            url: `/${blogParentPage}/${post.uid}`,
+            id: post.id,
+            template: require.resolve(`./src/templates/PostTemplate.tsx`),
+        };
+
+        buildBlogPost(blogConfig, createPage);
+    });
+
+    console.log(`🎉 Done creating Blog pages!`);
+}
+
+/**
  * When Gatsby attempts to crete pages, run the requested functionality
  */
 exports.createPages = async (params) => {
-    await Promise.all([generateSeasonsAndShows(params)]);
+    await Promise.all([
+        generateSeasonsAndShows(params),
+        generateBlogPosts(params),
+    ]);
 };

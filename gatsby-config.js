@@ -1,7 +1,4 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const path = require(`path`);
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 require(`dotenv`).config({
     path: `.env.${process.env.NODE_ENV}`,
 });
@@ -105,27 +102,7 @@ module.exports = {
                  * Provide an object of Prismic custom type JSON schemas to load into
                  * Gatsby. This is required.
                  */
-                schemas: {
-                    // Global site config/data schemas
-                    'site_config': require('./src/__schemas__/site_config.json'), // eslint-disable-line global-require, prettier/prettier
-                    header: require('./src/__schemas__/header.json'), // eslint-disable-line global-require, prettier/prettier
-                    footer: require('./src/__schemas__/footer.json'), // eslint-disable-line global-require, prettier/prettier
-
-                    // Repeatable type schemas
-                    season: require('./src/__schemas__/season.json'), // eslint-disable-line global-require, prettier/prettier
-                    show: require('./src/__schemas__/show.json'), // eslint-disable-line global-require, prettier/prettier
-
-                    // Single type schemas
-                    'about_page': require('./src/__schemas__/about_page.json'), // eslint-disable-line global-require, prettier/prettier
-                    'archive_page': require('./src/__schemas__/archive_page.json'), // eslint-disable-line global-require, prettier/prettier
-                    'audition_page': require('./src/__schemas__/audition_page.json'), // eslint-disable-line global-require, prettier/prettier
-                    'contact_page': require('./src/__schemas__/contact_page.json'), // eslint-disable-line global-require, prettier/prettier
-                    'home_page': require('./src/__schemas__/home_page.json'), // eslint-disable-line global-require, prettier/prettier
-                    'legal_page': require('./src/__schemas__/legal_page.json'), // eslint-disable-line global-require, prettier/prettier
-                    'privacy_page': require('./src/__schemas__/privacy_page.json'), // eslint-disable-line global-require, prettier/prettier
-                    'support_us_page': require('./src/__schemas__/support_us_page.json'), // eslint-disable-line global-require, prettier/prettier
-                    'terms_page': require('./src/__schemas__/terms_page.json'), // eslint-disable-line global-require, prettier/prettier
-                },
+                schemas: require('./src/__schemas__'), // eslint-disable-line global-require
 
                 /**
                  * Set a default language when fetching documents. The default value is
