@@ -23,8 +23,6 @@ import { Image } from '../Image/Image';
  * @param doc
  */
 const linkResolver = (doc: LinkResolverProps): string => {
-    console.log(doc);
-
     switch (doc.type) {
         case 'home_page':
             return '/';
@@ -83,8 +81,6 @@ const customHTMLSerializer: PrismicHTMLSerializer<React.ReactNode> = (
 
         // handle blog images here
         case PrismicElements.image:
-            console.log(element);
-
             return (
                 <figure key={key}>
                     <img
