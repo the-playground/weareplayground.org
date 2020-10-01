@@ -6,10 +6,11 @@ import parseISO from 'date-fns/parseISO';
 
 import { GatsbyPageContext } from '@type/gatsby';
 import { PrismicImage } from '@type/prismic';
-import { Artist } from '@type/artist';
+import { Author } from '@type/artist';
 import {
     BodyText,
     Heading,
+    Image,
     PrismicCMSRichTextProps,
     RichTextDisplay,
     FluidImageProps,
@@ -34,7 +35,8 @@ const BlogHero = styled.div`
         margin-bottom: ${spacing.component.m};
     }
 
-    .image {
+    .featured-image {
+        margin-top: ${spacing.layout.l};
     }
 `;
 
@@ -45,25 +47,35 @@ const StyledContent = styled.div`
         margin-top: ${spacing.component.xl};
     }
 
-    h2,
-    h3,
-    h4,
-    h5 {
-        margin-bottom: ${spacing.component.s};
+    > figure {
+        margin-top: ${spacing.layout.m};
+        margin-bottom: ${spacing.layout.m};
     }
 
-    h2,
-    h3 {
+    > figure img {
+        width: 100%;
+        height: auto;
+    }
+
+    > figure .copyright {
+        margin-top: ${spacing.component.s};
+    }
+
+    /* Grunge heading */
+    > div {
+        margin-bottom: ${spacing.component.m};
         margin-top: ${spacing.component.xxl};
     }
 
-    h4,
-    h5 {
-        margin-top: ${spacing.component.xl};
+    h2,
+    h3,
+    h4 {
+        margin-bottom: ${spacing.component.s};
+        margin-top: ${spacing.component.xxl};
     }
 
     /* Any heading tags that are followed immediately by a standard paragraph */
-    > :is(h2, h3, h4, h5, h6) + p {
+    > :is(div, h2, h3, h4, h5, h6) + p {
         margin-top: 0;
     }
 `;
@@ -83,7 +95,7 @@ const PostLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     const metaImage = useGetMetaImage('post', postData.seo_image);
 
     // Format the posted-on date
-    const rawPostedOnDate = parseISO(post.first_publication_date);
+    const rawPostedOnDate = parseISO(postData.published_on);
     const postedOnDate = format(rawPostedOnDate, 'PP');
 
     return (
@@ -101,6 +113,11 @@ const PostLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                     >
                         {postedOnDate} • by {author.name}
                     </BodyText>
+                    <Image
+                        fluid={postData.featured_image.fluid}
+                        alt={postData.featured_image.alt}
+                        className="featured-image"
+                    />
                 </BlogHero>
                 <StyledContent>
                     <RichTextDisplay content={postData.content} />
@@ -125,9 +142,10 @@ export const query = graphql`
 
             data {
                 title
+                published_on
                 featured_image {
                     alt
-                    fluid {
+                    fluid(maxWidth: 800) {
                         ...GatsbyPrismicImageFluid
                     }
                 }
@@ -187,11 +205,12 @@ interface PageData {
         data: {
             title: string;
             teaser: string;
+            published_on: string;
             featured_image: FluidImageProps;
             content: PrismicCMSRichTextProps;
             author: {
                 document: {
-                    data: Artist;
+                    data: Author;
                 };
             };
 

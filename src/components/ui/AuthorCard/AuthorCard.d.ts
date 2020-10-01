@@ -1,6 +1,6 @@
-import { Artist } from '@type/artist';
+import { Author } from '@type/artist';
 
 export type AuthorCardProps = Pick<
-    Artist,
+    Author,
     'name' | 'bio' | 'headshot' | 'instagram'
 >;

@@ -14,6 +14,7 @@ import { getChildPageSlug, normalizeSlug } from '@lib/url';
 import { Link } from '@components/utility';
 import { BodyText } from '../BodyText/BodyText';
 import { Heading } from '../Heading/Heading';
+import { GrittyHeading } from '../GrittyHeading/GrittyHeading';
 import { Image } from '../Image/Image';
 
 /**
@@ -54,52 +55,56 @@ const customHTMLSerializer: PrismicHTMLSerializer<React.ReactNode> = (
     switch (type) {
         case PrismicElements.heading2:
             return (
-                <Heading size="s" tag="h2" key={key} color="medium">
+                <GrittyHeading
+                    size="xs"
+                    tag="h2"
+                    key={key}
+                    color="dark"
+                    bgColor="light"
+                    offset={-1}
+                >
                     {children}
-                </Heading>
+                </GrittyHeading>
             );
 
         case PrismicElements.heading3:
             return (
-                <Heading size="xs" tag="h3" key={key} color="medium">
+                <Heading size="s" tag="h3" key={key} color="medium">
                     {children}
                 </Heading>
             );
-
-        case PrismicElements.heading4:
-            return (
-                <BodyText
-                    size="l"
-                    tag="h4"
-                    key={key}
-                    color="accent"
-                    weight="bold"
-                >
-                    {children}
-                </BodyText>
-            );
-
-        case PrismicElements.heading5:
-            return (
-                <BodyText
-                    size="m"
-                    tag="h4"
-                    key={key}
-                    color="medium"
-                    weight="bold"
-                >
-                    {children}
-                </BodyText>
-            );
-
-        case PrismicElements.strong:
-            return <strong key={key}>{children}</strong>;
 
         case PrismicElements.paragraph:
             return (
                 <BodyText size="m" tag="p" key={key} color="light">
                     {children}
                 </BodyText>
+            );
+
+        // handle blog images here
+        case PrismicElements.image:
+            console.log(element);
+
+            return (
+                <figure key={key}>
+                    <img
+                        src={element.url}
+                        width={element.dimensions.width}
+                        height={element.dimensions.height}
+                        alt={element.alt}
+                        loading="lazy"
+                    />
+                    {element.copyright && (
+                        <BodyText
+                            className="copyright"
+                            color="medium"
+                            tag="p"
+                            size="s"
+                        >
+                            {element.copyright}
+                        </BodyText>
+                    )}
+                </figure>
             );
 
         case PrismicElements.hyperlink:

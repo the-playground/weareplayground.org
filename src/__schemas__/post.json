@@ -12,6 +12,12 @@
                 "label": "UID"
             }
         },
+        "published_on": {
+            "type": "Date",
+            "config": {
+                "label": "Published On"
+            }
+        },
         "teaser": {
             "type": "Text",
             "config": {
@@ -45,7 +51,7 @@
         "content": {
             "type": "StructuredText",
             "config": {
-                "multi": "paragraph, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, list-item, o-list-item",
+                "multi": "paragraph, preformatted, heading2, heading3, strong, em, hyperlink, image, list-item, o-list-item",
                 "allowTargetBlank": true,
                 "label": "Content"
             }
