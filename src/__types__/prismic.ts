@@ -1,4 +1,4 @@
-import { IFluidObject } from 'gatsby-background-image';
+import { IFluidObject, IFixedObject } from 'gatsby-background-image';
 
 export type PrismicImage = {
     alt?: string;
@@ -12,6 +12,15 @@ export type PrismicImage = {
 export type PrismicFluidImage = {
     alt?: string;
     fluid: IFluidObject;
+    dimensions?: {
+        width: string;
+        height: string;
+    };
+};
+
+export type PrismicFixedImage = {
+    alt?: string;
+    fixed: IFixedObject;
     dimensions?: {
         width: string;
         height: string;

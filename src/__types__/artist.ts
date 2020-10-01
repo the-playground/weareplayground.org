@@ -1,5 +1,5 @@
-import { PrismicCMSRichTextProps } from '@components/foundations';
-import { PrismicFluidImage, PrismicExternalLink } from './prismic';
+import { FluidImageProps, FixedImageProps } from '@components/foundations';
+import { PrismicExternalLink } from './prismic';
 
 export type ArtistRole =
     | 'actor'
@@ -17,8 +17,8 @@ export type ArtistRole =
 export interface Artist {
     uid: string;
     name: string;
-    bio?: PrismicCMSRichTextProps;
-    headshot?: PrismicFluidImage;
+    bio?: string;
+    headshot?: FixedImageProps;
     roles: ArtistRole[];
     website?: PrismicExternalLink;
     instagram?: PrismicExternalLink;

@@ -1,3 +1,6 @@
-import 'Artist' from  '@type/artist';
+import { Artist } from '@type/artist';
 
-export interface AuthorCardProps extends Artist {}
+export type AuthorCardProps = Pick<
+    Artist,
+    'name' | 'bio' | 'headshot' | 'instagram'
+>;

@@ -5,7 +5,7 @@ import format from 'date-fns/format';
 import parseISO from 'date-fns/parseISO';
 
 import { GatsbyPageContext } from '@type/gatsby';
-import { PrismicImage, PrismicExternalLink } from '@type/prismic';
+import { PrismicImage } from '@type/prismic';
 import { Artist } from '@type/artist';
 import {
     BodyText,
@@ -14,11 +14,11 @@ import {
     RichTextDisplay,
     FluidImageProps,
 } from '@components/foundations';
-import { SimpleHero, SubscribeSection } from '@components/ui';
+import { AuthorCard, SubscribeSection } from '@components/ui';
 
 import { useConfigContext } from '@context';
 import { useGetMetaImage, useCurrentURL } from '@hooks';
-import { breakpoints, appNavBreakpoint, spacing } from '@tokens';
+import { appNavBreakpoint, spacing } from '@tokens';
 
 import { Layout, Container } from '@components/layout';
 
@@ -39,7 +39,7 @@ const BlogHero = styled.div`
 `;
 
 const StyledContent = styled.div`
-    padding-bottom: ${spacing.layout.l};
+    padding-bottom: ${spacing.layout.m};
 
     p {
         margin-top: ${spacing.component.xl};
@@ -105,6 +105,12 @@ const PostLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 <StyledContent>
                     <RichTextDisplay content={postData.content} />
                 </StyledContent>
+                <AuthorCard
+                    name={author.name}
+                    bio={author.bio}
+                    headshot={author.headshot}
+                    instagram={author.instagram}
+                />
             </Container>
             <SubscribeSection />
         </Layout>
@@ -134,18 +140,16 @@ export const query = graphql`
                     document {
                         ... on PrismicArtist {
                             data {
-                                bio {
-                                    raw
-                                    text
-                                }
+                                bio
                                 email
                                 instagram {
                                     url
                                 }
                                 name
                                 headshot {
-                                    fluid {
-                                        ...GatsbyPrismicImageFluid
+                                    alt
+                                    fixed(width: 80) {
+                                        ...GatsbyPrismicImageFixed
                                     }
                                 }
                             }

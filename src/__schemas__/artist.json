@@ -13,10 +13,8 @@
             }
         },
         "bio": {
-            "type": "StructuredText",
+            "type": "Text",
             "config": {
-                "single": "paragraph, strong, em, hyperlink",
-                "allowTargetBlank": true,
                 "label": "Bio"
             }
         },

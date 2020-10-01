@@ -52,7 +52,6 @@ export const ButtonBase = styled(Link)<ButtonBaseProps>`
     .start-icon,
     .end-icon {
         position: relative;
-        top: 2px;
         transition: ${animation.buttonHover};
     }
 
