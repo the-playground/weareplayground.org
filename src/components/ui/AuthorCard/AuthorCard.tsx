@@ -45,6 +45,7 @@ export const AuthorCard: React.FC<AuthorCardProps> = ({
                         color="tertiary"
                         size="s"
                         endIcon={<Icon name="Instagram" size="xs" />}
+                        animateOnClick
                     >
                         follow
                     </GhostButton>
