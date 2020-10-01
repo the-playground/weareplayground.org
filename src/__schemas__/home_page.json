@@ -80,5 +80,23 @@
                 "label": "Hero Image"
             }
         }
+    },
+    "Rebrand": {
+        "rebrand_link_text": {
+            "type": "Text",
+            "config": {
+                "label": "Rebrand Link Text"
+            }
+        },
+        "rebrand_link": {
+            "type": "Link",
+            "config": {
+                "select": "document",
+                "customtypes": [
+                    "post"
+                ],
+                "label": "Rebrand Link"
+            }
+        }
     }
 }

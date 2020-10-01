@@ -21,6 +21,9 @@ export const useLinkMap = (): LinkMap => {
                     contact_page {
                         uid
                     }
+                    blog_page {
+                        uid
+                    }
                     legal_page {
                         uid
                     }
@@ -70,6 +73,7 @@ export const useLinkMap = (): LinkMap => {
         archive,
         about: normalizeSlug(links.about_page?.uid),
         audition: normalizeSlug(links.audition_page?.uid),
+        blog: normalizeSlug(links.blog_page?.uid),
         contact: normalizeSlug(links.contact_page?.uid),
         legal,
         privacyPolicy: getChildPageSlug(legal, links.privacy_policy_page?.uid),
@@ -88,6 +92,7 @@ export interface LinkMap {
     about: string;
     archive: string;
     audition: string;
+    blog: string;
     contact: string;
     legal: string;
     privacyPolicy: string | undefined;

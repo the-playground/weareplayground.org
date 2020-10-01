@@ -19,7 +19,7 @@ import { AuthorCard, SubscribeSection } from '@components/ui';
 
 import { useConfigContext } from '@context';
 import { useGetMetaImage, useCurrentURL } from '@hooks';
-import { appNavBreakpoint, spacing } from '@tokens';
+import { animation, appNavBreakpoint, borders, spacing } from '@tokens';
 
 import { Layout, Container } from '@components/layout';
 
@@ -36,6 +36,7 @@ const BlogHero = styled.div`
     }
 
     .featured-image {
+        border-radius: ${borders.imageRadius};
         margin-top: ${spacing.layout.l};
     }
 `;
@@ -47,12 +48,49 @@ const StyledContent = styled.div`
         margin-top: ${spacing.component.xl};
     }
 
+    p strong {
+        color: ${({ theme }) => theme.typography.accent};
+    }
+
+    .content-link {
+        display: inline-block;
+        position: relative;
+        --scaleX: 0.95;
+        --rotate: 0deg;
+        --skew: -20deg;
+
+        &:before {
+            height: 3px;
+            position: absolute;
+            background: ${({ theme }) => theme.typography.accentDark};
+            content: '';
+            width: 100%;
+            bottom: 0px;
+            z-index: -1;
+            transition: ${animation.linkHover};
+            transform: skew(var(--skew)) rotate(var(--rotate))
+                scaleX(var(--scaleX));
+            opacity: 0.9;
+        }
+
+        &:hover :before {
+            --scaleX: 1.03;
+            background: ${({ theme }) => theme.typography.accent};
+            opacity: 1;
+        }
+    }
+
+    .content-link:hover {
+        --linkScaleX: 1.03;
+    }
+
     > figure {
         margin-top: ${spacing.layout.m};
         margin-bottom: ${spacing.layout.m};
     }
 
     > figure img {
+        border-radius: ${borders.imageRadius};
         width: 100%;
         height: auto;
     }
