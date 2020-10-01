@@ -26,7 +26,7 @@ const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     const { uid } = pageContext;
     const siteConfig = useConfigContext();
     const url = useCurrentURL(location.pathname);
-    const { metaImage } = useGetMetaImage('season', seasonData.seo_image);
+    const metaImage = useGetMetaImage('season', seasonData.seo_image);
 
     return (
         <Layout noHeader={false} noFooter={false}>

@@ -1,0 +1,79 @@
+{
+    "Main": {
+        "name": {
+            "type": "Text",
+            "config": {
+                "label": "Name"
+            }
+        },
+        "uid": {
+            "type": "UID",
+            "config": {
+                "label": "UID"
+            }
+        },
+        "bio": {
+            "type": "Text",
+            "config": {
+                "label": "Bio"
+            }
+        },
+        "headshot": {
+            "type": "Image",
+            "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Headshot"
+            }
+        },
+        "roles": {
+            "type": "Group",
+            "config": {
+                "fields": {
+                    "role": {
+                        "type": "Select",
+                        "config": {
+                            "options": [
+                                "actor",
+                                "artistic director",
+                                "assistant director",
+                                "board member",
+                                "co-director",
+                                "co-founder",
+                                "director",
+                                "lighting designer",
+                                "music supervisor",
+                                "set designer",
+                                "show shadow",
+                                "sound designer",
+                                "stage manager"
+                            ],
+                            "label": "Role"
+                        }
+                    }
+                },
+                "label": "Roles"
+            }
+        },
+        "website": {
+            "type": "Link",
+            "config": {
+                "allowTargetBlank": true,
+                "label": "Website"
+            }
+        },
+        "email": {
+            "type": "Text",
+            "config": {
+                "label": "Email"
+            }
+        },
+        "instagram": {
+            "type": "Link",
+            "config": {
+                "allowTargetBlank": true,
+                "label": "Instagram"
+            }
+        }
+    }
+}

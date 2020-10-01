@@ -37,7 +37,7 @@ const StyledArchiveSection = styled.section`
     }
 `;
 
-export const ArchiveSection: React.FC<AboutSectionProps> = () => {
+export const ArchiveSection: React.FC = () => {
     const { archive } = useLinkMapContext();
 
     return (
@@ -70,5 +70,3 @@ export const ArchiveSection: React.FC<AboutSectionProps> = () => {
         </StyledArchiveSection>
     );
 };
-
-interface AboutSectionProps {}

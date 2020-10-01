@@ -21,7 +21,7 @@ const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
 
     const siteConfig = useConfigContext();
     const url = useCurrentURL(location.pathname);
-    const { metaImage } = useGetMetaImage('season', show.seo_image);
+    const metaImage = useGetMetaImage('season', show.seo_image);
     const { status } = useShowStatus(show.performances);
 
     return (

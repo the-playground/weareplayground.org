@@ -11,20 +11,6 @@
             "config": {
                 "label": "Document Title"
             }
-        },
-        "remove_header": {
-            "type": "Boolean",
-            "config": {
-                "default_value": false,
-                "label": "Remove the Header on this page?"
-            }
-        },
-        "remove_footer": {
-            "type": "Boolean",
-            "config": {
-                "default_value": false,
-                "label": "Remove the Footer on this page?"
-            }
         }
     },
     "SEO": {
@@ -66,36 +52,10 @@
                 "label": "Hero Title"
             }
         },
-        "hero_copy": {
+        "hero_sub_title": {
             "type": "Text",
             "config": {
-                "label": "Hero Copy"
-            }
-        },
-        "hero_image": {
-            "type": "Image",
-            "config": {
-                "constraint": {},
-                "thumbnails": [],
-                "label": "Hero Image"
-            }
-        }
-    },
-    "Rebrand": {
-        "rebrand_link_text": {
-            "type": "Text",
-            "config": {
-                "label": "Rebrand Link Text"
-            }
-        },
-        "rebrand_link": {
-            "type": "Link",
-            "config": {
-                "select": "document",
-                "customtypes": [
-                    "post"
-                ],
-                "label": "Rebrand Link"
+                "label": "Hero Sub Title"
             }
         }
     }

@@ -16,7 +16,8 @@ const getFallbackImage = (
     switch (type) {
         case 'page':
             return siteConfig.fallback_page_meta_image;
-
+        case 'post':
+            return siteConfig.fallback_post_meta_image;
         case 'season':
             return siteConfig.fallback_season_meta_image;
 
@@ -46,4 +47,4 @@ export const useGetMetaImage = (
     return metaImage;
 };
 
-type MetaImageContentType = 'page' | 'season' | 'show';
+type MetaImageContentType = 'page' | 'post' | 'season' | 'show';

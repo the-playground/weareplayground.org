@@ -184,6 +184,17 @@
                 "label": "Fallback Page Meta Image"
             }
         },
+        "fallback_post_meta_image": {
+            "type": "Image",
+            "config": {
+                "constraint": {
+                    "width": 1200,
+                    "height": 630
+                },
+                "thumbnails": [],
+                "label": "Fallback Post Meta Image"
+            }
+        },
         "fallback_show_meta_image": {
             "type": "Image",
             "config": {
@@ -248,6 +259,16 @@
                     "about_page"
                 ],
                 "label": "About Page"
+            }
+        },
+        "blog_page": {
+            "type": "Link",
+            "config": {
+                "select": "document",
+                "customtypes": [
+                    "blog_page"
+                ],
+                "label": "Blog Page"
             }
         },
         "contact_page": {

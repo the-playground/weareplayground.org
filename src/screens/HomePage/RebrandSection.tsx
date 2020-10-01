@@ -4,16 +4,23 @@ import { breakpoints, spacing, zIndex } from '@tokens';
 import whiteGrit from '@assets/grit-white.png';
 import blackGrit from '@assets/grit-black.png';
 
+import { PrismicInternalLink } from '@type/prismic';
+
+import { useLinkMapContext } from '@context';
+import { getChildPageSlug } from '@lib/url';
+
 import { Container, Section } from '@components/layout';
-import { Heading, Logo } from '@components/foundations';
+import { TextButton } from '@components/actions';
+import { Heading, Icon, Logo } from '@components/foundations';
 
 const sectionBreakpoint = breakpoints.m;
 
 const StyledRebrandSection = styled(Section)`
     padding: ${spacing.layout.m} 0;
     position: relative;
+    text-align: center;
 
-    > .container {
+    .content {
         align-items: center;
         display: flex;
         flex-direction: column;
@@ -23,7 +30,7 @@ const StyledRebrandSection = styled(Section)`
         }
     }
 
-    .middle {
+    .content .middle {
         margin-top: ${spacing.layout.xs};
         margin-bottom: ${spacing.layout.xs};
 
@@ -33,6 +40,10 @@ const StyledRebrandSection = styled(Section)`
             margin-right: ${spacing.layout.m};
             margin-top: 0;
         }
+    }
+
+    .action {
+        margin-top: ${spacing.component.xl};
     }
 
     &:before,
@@ -58,18 +69,39 @@ const StyledRebrandSection = styled(Section)`
     }
 `;
 
-export const RebrandSection: React.FC<RebrandSectionProps> = () => {
+export const RebrandSection: React.FC<RebrandSectionProps> = ({
+    link,
+    linkText,
+}) => {
+    const links = useLinkMapContext();
+    const blogLink = getChildPageSlug(links.blog, link.uid);
+
     return (
         <StyledRebrandSection bgColor="light">
-            <Container className="container">
-                <Logo type="Playground" size="xl" />
-                <Heading color="dark" size="s" tag="p" className="middle">
-                    is now
-                </Heading>
-                <Logo type="Lockup" size="xl" color="dark" />
+            <Container>
+                <div className="content">
+                    <Logo type="Playground" size="xl" />
+                    <Heading color="dark" size="s" tag="p" className="middle">
+                        is now
+                    </Heading>
+                    <Logo type="Lockup" size="xl" color="dark" />
+                </div>
+                <TextButton
+                    to={blogLink}
+                    color="secondary"
+                    size="m"
+                    className="action"
+                    endIcon={<Icon name="ArrowRight" size="xs" />}
+                    animateIconOnHover
+                >
+                    {linkText}
+                </TextButton>
             </Container>
         </StyledRebrandSection>
     );
 };
 
-interface RebrandSectionProps {}
+interface RebrandSectionProps {
+    link: PrismicInternalLink;
+    linkText: string;
+}

@@ -63,6 +63,14 @@ export const useQuerySiteConfig = (): SiteConfig => {
                             height
                         }
                     }
+                    fallback_post_meta_image {
+                        url
+                        alt
+                        dimensions {
+                            width
+                            height
+                        }
+                    }
                     fallback_season_meta_image {
                         url
                         alt
@@ -103,6 +111,7 @@ export interface SiteConfig {
     facebook: PrismicExternalLink;
     facebook_app_id: string;
     fallback_page_meta_image: PrismicImage;
+    fallback_post_meta_image: PrismicImage;
     fallback_season_meta_image: PrismicImage;
     fallback_show_meta_image: PrismicImage;
     founding_date: string;

@@ -19,7 +19,7 @@ const PageTemplate: React.FC<PageTemplateProps> = ({
 }) => {
     const siteConfig = useConfigContext();
     const url = useCurrentURL(currentLocation);
-    const { metaImage } = useGetMetaImage('page', pageConfig.data.seo_image);
+    const metaImage = useGetMetaImage('page', pageConfig.data.seo_image);
 
     return (
         <Layout

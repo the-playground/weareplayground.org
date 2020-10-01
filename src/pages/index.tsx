@@ -1,7 +1,11 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import { GatsbyPageContext } from '@type/gatsby';
-import { PrismicImage, PrismicFluidImage } from '@type/prismic';
+import {
+    PrismicImage,
+    PrismicFluidImage,
+    PrismicInternalLink,
+} from '@type/prismic';
 
 import PageTemplate from '@templates/PageTemplate';
 import { SubscribeSection } from '@components/ui';
@@ -15,7 +19,6 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
 }) => {
     const { uid } = pageContext;
     const pageData = data.prismicHomePage.data;
-
     return (
         <PageTemplate
             slug={uid}
@@ -28,7 +31,10 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 copy={pageData.hero_copy}
                 bgImage={pageData.hero_image}
             />
-            <RebrandSection />
+            <RebrandSection
+                linkText={pageData.rebrand_link_text}
+                link={pageData.rebrand_link}
+            />
             <ArchiveSection />
             <SubscribeSection />
         </PageTemplate>
@@ -65,7 +71,11 @@ export const query = graphql`
                     }
                 }
 
-                # Intro
+                # Rebrand
+                rebrand_link_text
+                rebrand_link {
+                    uid
+                }
             }
         }
     }
@@ -88,6 +98,10 @@ interface PageData {
             hero_title: string;
             hero_copy: string;
             hero_image: PrismicFluidImage;
+
+            // Rebrand
+            rebrand_link: PrismicInternalLink;
+            rebrand_link_text: string;
         };
     };
 }

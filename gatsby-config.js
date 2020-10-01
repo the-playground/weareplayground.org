@@ -6,7 +6,23 @@ require(`dotenv`).config({
     path: `.env.${process.env.NODE_ENV}`,
 });
 
+/**
+ * Get information about the Production & Netlify environments to make sure
+ * bots cannot crawl dev or dev-preview URLS, thus harming our SEO.
+ */
+const {
+    NODE_ENV,
+    URL: NETLIFY_SITE_URL = 'https://nervetheatre.org', // Final production URL
+    DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+    CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env;
+const isNetlifyProduction = NETLIFY_ENV === 'production';
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+
 module.exports = {
+    siteMetadata: {
+        siteUrl,
+    },
     plugins: [
         /**
          * @link https://www.gatsbyjs.org/packages/gatsby-plugin-sharp/
@@ -29,6 +45,18 @@ module.exports = {
             resolve: `gatsby-plugin-typescript`,
             options: {
                 // Add any options here
+            },
+        },
+
+        /**
+         * Simplify redirect & header generation on Netlify
+         *
+         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/
+         */
+        {
+            resolve: `gatsby-plugin-netlify`,
+            options: {
+                // Custom options currently not in use
             },
         },
 
@@ -105,27 +133,7 @@ module.exports = {
                  * Provide an object of Prismic custom type JSON schemas to load into
                  * Gatsby. This is required.
                  */
-                schemas: {
-                    // Global site config/data schemas
-                    'site_config': require('./src/__schemas__/site_config.json'), // eslint-disable-line global-require, prettier/prettier
-                    header: require('./src/__schemas__/header.json'), // eslint-disable-line global-require, prettier/prettier
-                    footer: require('./src/__schemas__/footer.json'), // eslint-disable-line global-require, prettier/prettier
-
-                    // Repeatable type schemas
-                    season: require('./src/__schemas__/season.json'), // eslint-disable-line global-require, prettier/prettier
-                    show: require('./src/__schemas__/show.json'), // eslint-disable-line global-require, prettier/prettier
-
-                    // Single type schemas
-                    'about_page': require('./src/__schemas__/about_page.json'), // eslint-disable-line global-require, prettier/prettier
-                    'archive_page': require('./src/__schemas__/archive_page.json'), // eslint-disable-line global-require, prettier/prettier
-                    'audition_page': require('./src/__schemas__/audition_page.json'), // eslint-disable-line global-require, prettier/prettier
-                    'contact_page': require('./src/__schemas__/contact_page.json'), // eslint-disable-line global-require, prettier/prettier
-                    'home_page': require('./src/__schemas__/home_page.json'), // eslint-disable-line global-require, prettier/prettier
-                    'legal_page': require('./src/__schemas__/legal_page.json'), // eslint-disable-line global-require, prettier/prettier
-                    'privacy_page': require('./src/__schemas__/privacy_page.json'), // eslint-disable-line global-require, prettier/prettier
-                    'support_us_page': require('./src/__schemas__/support_us_page.json'), // eslint-disable-line global-require, prettier/prettier
-                    'terms_page': require('./src/__schemas__/terms_page.json'), // eslint-disable-line global-require, prettier/prettier
-                },
+                schemas: require('./src/__schemas__'), // eslint-disable-line global-require
 
                 /**
                  * Set a default language when fetching documents. The default value is
@@ -190,23 +198,34 @@ module.exports = {
         },
 
         /**
-         * Robots.txt Handler
-         *
-         * ! Remember to change production policy to `allow` when we launch
+         * Handle dynamic robots.txt generation across production, dev, & PR preview URLs.
+         * This will prevent crawlers hitting our site at all URL other than our
+         * production site.
          *
          * @link https://www.gatsbyjs.org/packages/gatsby-plugin-robots-txt/
          */
         {
-            resolve: `gatsby-plugin-robots-txt`,
+            resolve: 'gatsby-plugin-robots-txt',
             options: {
-                host: `https://nervetheatre.org`,
-                sitemap: `https://nervetheatre.org/sitemap.xml`,
+                resolveEnv: () => NETLIFY_ENV,
                 env: {
-                    development: {
-                        policy: [{ userAgent: `*`, disallow: [`/`] }],
-                    },
                     production: {
-                        policy: [{ userAgent: `*`, disallow: `/` }],
+                        policy: [{ userAgent: '*', allow: '/' }],
+                        sitemap: null,
+                    },
+                    development: {
+                        policy: [{ userAgent: '*', disallow: ['/'] }],
+                        sitemap: null,
+                    },
+                    'branch-deploy': {
+                        policy: [{ userAgent: '*', disallow: ['/'] }],
+                        sitemap: null,
+                        host: null,
+                    },
+                    'deploy-preview': {
+                        policy: [{ userAgent: '*', disallow: ['/'] }],
+                        sitemap: null,
+                        host: null,
                     },
                 },
             },
