@@ -4,6 +4,9 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { redirects } = require('./netlifyRedirects');
+
 /**
  * Build a single season page
  *
@@ -217,10 +220,22 @@ async function generateBlogPosts({ graphql, actions, reporter }) {
 }
 
 /**
+ * Build redirects for our application based on the config.
+ *
+ * @param {*} actions destructured action instance from creatPages
+ */
+async function generateRedirects({ actions }) {
+    // Build all app redirects
+    const { createRedirect } = actions;
+    await redirects.forEach((redirect) => createRedirect(redirect));
+}
+
+/**
  * When Gatsby attempts to crete pages, run the requested functionality
  */
 exports.createPages = async (params) => {
     await Promise.all([
+        generateRedirects(params),
         generateSeasonsAndShows(params),
         generateBlogPosts(params),
     ]);

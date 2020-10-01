@@ -34,8 +34,3 @@
 # PER-DEPLOY.
 
 # A basic redirect rule
-[[redirects]]
-  from = "https://thenerve.netlify.com/*"
-  to = "https://nervetheatre.org/:splat"
-  status = 301
-  force = true
