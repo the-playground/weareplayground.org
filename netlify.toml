@@ -13,6 +13,18 @@
 [[plugins]]
   package = "netlify-plugin-gatsby-cache"
 
+[[plugins]]
+package = "@netlify/plugin-sitemap"
+
+  [plugins.inputs]
+  buildDir = "public"
+
+  exclude = [
+    # Never sitemap 404
+    './public/404.html',
+    './public/404',
+  ]
+
 # Production context: all deploys from the Production branch set in your site's
 # deploy contexts will inherit these settings.
 # [context.production]
