@@ -25,9 +25,10 @@ import { Layout, Container } from '@components/layout';
 
 const BlogHero = styled.div`
     padding-top: ${spacing.layout.m};
-    padding-bottom: ${spacing.layout.m};
+    padding-bottom: ${spacing.layout.s};
 
     ${appNavBreakpoint} {
+        padding-bottom: ${spacing.layout.m};
         padding-top: ${spacing.layout.xl};
     }
 
@@ -37,7 +38,11 @@ const BlogHero = styled.div`
 
     .featured-image {
         border-radius: ${borders.imageRadius};
-        margin-top: ${spacing.layout.l};
+        margin-top: ${spacing.layout.m};
+
+        ${appNavBreakpoint} {
+            margin-top: ${spacing.layout.l};
+        }
     }
 `;
 
