@@ -6,6 +6,7 @@
 
 // global imports
 import React from 'react';
+
 import { ThemeProvider } from 'styled-components';
 import { theme } from './src/__themes__/default';
 
@@ -43,8 +44,8 @@ export const wrapRootElement = ({ element }) => (
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const onClientEntry = () => {
     // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
-    if (!(`IntersectionObserver` in window)) {
-		import('intersection-observer'); // eslint-disable-line
-        console.log(`# IntersectionObserver is polyfilled!`);
+    if (!('IntersectionObserver' in window)) {
+        import('intersection-observer');
+        console.log('# IntersectionObserver is polyfilled!');
     }
 };

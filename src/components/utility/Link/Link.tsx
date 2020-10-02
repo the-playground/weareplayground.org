@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-gtag';
 
 import { isLinkInternal } from '@lib/links';
 
@@ -40,7 +41,7 @@ export const Link: React.FC<LinkProps> = ({
         </GatsbyLink>
     ) : (
         // If the link is external or if we are linking to a file, render using standard link
-        <a
+        <OutboundLink
             href={to}
             target={noNewTab ? '_self' : '_blank'}
             rel={noNewTab ? '' : 'noopener noreferrer'}
@@ -48,7 +49,7 @@ export const Link: React.FC<LinkProps> = ({
             {...others}
         >
             {children}
-        </a>
+        </OutboundLink>
     );
 };
 

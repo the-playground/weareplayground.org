@@ -1,7 +1,4 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const path = require(`path`);
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 require(`dotenv`).config({
     path: `.env.${process.env.NODE_ENV}`,
 });
@@ -25,20 +22,6 @@ module.exports = {
     },
     plugins: [
         /**
-         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-sharp/
-         */ `gatsby-plugin-sharp`,
-
-        /**
-         * @link https://www.gatsbyjs.org/packages/gatsby-transformer-sharp
-         */
-        `gatsby-transformer-sharp`,
-
-        /**
-         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/
-         */
-        `gatsby-plugin-react-helmet`,
-
-        /**
          * @link https://www.gatsbyjs.org/packages/gatsby-plugin-typescript
          */
         {
@@ -61,18 +44,28 @@ module.exports = {
         },
 
         /**
-         * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/
+         * The official Sentry implementtion for Gatsby
+         * @link https://docs.sentry.io/platforms/javascript/guides/gatsby/
          */
         {
-            resolve: `gatsby-plugin-manifest`,
+            resolve: '@sentry/gatsby',
             options: {
-                name: `The Nerve Theatre`,
-                short_name: `Nerve`,
-                start_url: `/`,
-                background_color: `#0C1E31`,
-                theme_color: `#F25C05`,
-                display: `standalone`,
-                icon: 'static/icons/nerve-site-icon.png',
+                dsn: process.env.SENTRY_DSN,
+                // A rate of 1 means all traces will be sent, so it's good for testing.
+                // In production, you'll likely want to either choose a lower rate or use `tracesSampler` instead (see below).
+                tracesSampleRate: isNetlifyProduction ? 0.5 : 1,
+            },
+        },
+
+        {
+            resolve: `gatsby-plugin-gtag`,
+            options: {
+                // your google analytics tracking id
+                trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+                // Puts tracking script in the head instead of the body
+                head: false,
+                // enable ip anonymization
+                anonymize: false,
             },
         },
 
@@ -123,11 +116,6 @@ module.exports = {
                  * The name of your prismic.io repository. This is required.
                  */
                 repositoryName: 'thenerveweb',
-
-                /**
-                 * An API access token to your prismic.io repository. This is required.
-                 */
-                accessToken: process.env.PRISMIC_ACCESS_TOKEN,
 
                 /**
                  * Provide an object of Prismic custom type JSON schemas to load into
@@ -228,6 +216,37 @@ module.exports = {
                         host: null,
                     },
                 },
+            },
+        },
+
+        /**
+         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/
+         */
+        `gatsby-plugin-react-helmet`,
+
+        /**
+         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-sharp/
+         */
+        `gatsby-plugin-sharp`,
+
+        /**
+         * @link https://www.gatsbyjs.org/packages/gatsby-transformer-sharp
+         */
+        `gatsby-transformer-sharp`,
+
+        /**
+         * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/
+         */
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: `The Nerve Theatre`,
+                short_name: `Nerve`,
+                start_url: `/`,
+                background_color: `#0C1E31`,
+                theme_color: `#F25C05`,
+                display: `standalone`,
+                icon: 'static/icons/nerve-site-icon.png',
             },
         },
     ],
