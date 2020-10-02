@@ -47,7 +47,7 @@ export const Copyright = () => {
                         />
                     )}
 
-                    {terms && (
+                    {sitemap && (
                         <LinkItem slug={sitemap} text="sitemap" key="sitemap" />
                     )}
                 </ul>

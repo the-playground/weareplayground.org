@@ -37,7 +37,7 @@ export const Header = styled.header<HeaderProps>`
     }
 
     [data-nav-scope='desktop'] {
-        display: none;
+        /* display: none; */
         ${appNavBreakpoint} {
             display: initial;
         }
