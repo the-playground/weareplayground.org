@@ -37,6 +37,7 @@ export const Header = styled.header<HeaderProps>`
     }
 
     [data-nav-scope='desktop'] {
+        /* temp disable nav hiding until we build a mobile menu */
         /* display: none; */
         ${appNavBreakpoint} {
             display: initial;
