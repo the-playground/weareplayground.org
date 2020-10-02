@@ -30,7 +30,7 @@ export const Copyright = () => {
                     &copy; {currentYear} {config.legal_name} All rights
                     reserved.
                 </BodyText>
-                <ul>
+                <ul className="links">
                     {privacyPolicy && (
                         <LinkItem
                             slug={privacyPolicy}
