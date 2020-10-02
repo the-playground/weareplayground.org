@@ -21,7 +21,6 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     const pageData = data.prismicHomePage.data;
     return (
         <PageTemplate
-            slug={uid}
             pageConfig={data.prismicHomePage}
             currentLocation={location.pathname}
         >
