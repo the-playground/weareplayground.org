@@ -53,7 +53,7 @@ module.exports = {
                 dsn: process.env.SENTRY_DSN,
                 // A rate of 1 means all traces will be sent, so it's good for testing.
                 // In production, you'll likely want to either choose a lower rate or use `tracesSampler` instead (see below).
-                tracesSampleRate: isNetlifyProduction ? 0.5 : 1,
+                // tracesSampleRate: isNetlifyProduction ? 0.5 : 1,
             },
         },
 
