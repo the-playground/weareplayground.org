@@ -114,7 +114,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({
                             {config.contact_email}
                         </BodyText>
                     </div>
-                    <ul>
+                    {/* <ul>
                         <li key="message">
                             <Link
                                 to={links.contact}
@@ -145,7 +145,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({
                                 </BodyText>
                             </Link>
                         </li>
-                    </ul>
+                    </ul> */}
                 </div>
             </div>
         </styled.FooterNav>

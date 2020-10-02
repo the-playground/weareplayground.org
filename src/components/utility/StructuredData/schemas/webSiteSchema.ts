@@ -8,13 +8,17 @@ import { SiteConfig } from '@hooks';
 export const webSiteSchema = (config: SiteConfig): string => {
     const siteURL = config.website?.url;
 
-    return `{
-		"@type"	: "Website",
-		"@id": "${siteURL}/#website",
-		"url" : "${siteURL}",
-		"name": "${config.name}",
-		"publisher": {"@id": ${siteURL}/#organization"},
-		"copyrightYear": "2014",
-		"copyrightHolder": {"@id": ${siteURL}/#organization"},
-	}`;
+    const schema = {
+        '@type': 'Website',
+        '@id': `${siteURL}/#website`,
+        url: siteURL,
+        name: config.name,
+        publisher: { '@id': `${siteURL}/#organization` },
+        copyrightYear: '2015',
+        copyrightHolder: {
+            '@id': `${siteURL}/#organization`,
+        },
+    };
+
+    return JSON.stringify(schema);
 };

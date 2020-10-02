@@ -82,17 +82,17 @@ export const Footer = () => {
         //     link: links.currentSeason,
         // },
         {
-            text: 'archives',
+            text: 'the archive',
             link: links.archive,
         },
-        {
-            text: 'about us',
-            link: links.about,
-        },
-        {
-            text: 'support us',
-            link: links.supportUs,
-        },
+        // {
+        //     text: 'about us',
+        //     link: links.about,
+        // },
+        // {
+        //     text: 'support us',
+        //     link: links.supportUs,
+        // },
     ];
 
     return (

@@ -16,26 +16,30 @@ export const webPageSchema = (
         datePublished,
         dateModified,
     }: WebPageSchemaProps
-) => `{
-	"@type"	: "WebPage",
-	"@id": "${pageURL}/#webpage",
-	"url" : "${pageURL}",
-    "name": "${title}",
-	"inLanguage": "en-US",
-    "isPartOf": {"@id": "${siteURL}/#website"},
-    "image": {
-        "@type":"ImageObject",
-        "@id":"${pageURL}/#primaryimage",
-        "url": "${image.url}",
-        "caption": "${image.alt}",
-    }
-    "primaryImageOfPage": {
-        "@id": ${pageURL}/#primaryimage"
-    },
-    "datePublished": ${datePublished},
-    "dateModified": ${dateModified},
-    "description": "${description}"
-}`;
+): string => {
+    const schema = {
+        '@type': 'WebPage',
+        '@id': `${pageURL}/#webpage`,
+        url: pageURL,
+        name: title,
+        inLanguage: 'en-US',
+        isPartOf: { '@id': `${siteURL}/#website` },
+        image: {
+            '@type': 'ImageObject',
+            '@id': `${pageURL}/#primaryimage`,
+            url: image.url,
+            caption: image.alt,
+        },
+        primaryImageOfPage: {
+            '@id': `${pageURL}/#primaryimage`,
+        },
+        datePublished,
+        dateModified,
+        description,
+    };
+
+    return JSON.stringify(schema);
+};
 
 export interface WebPageSchemaProps {
     pageURL: string;

@@ -34,7 +34,7 @@ export const GlobalSEO: React.FC = () => {
             <meta property="og:locale" content="en_US" />
             <meta property="og:type" content="website" />
             <meta property="og:sitename" content={data.name} />
-            <meta name="og:email" content={data.email} />
+            <meta name="og:email" content={data.contact_email} />
             <meta name="og:country-name" content="USA" />
             <meta name="og:region" content={data.location_state_code} />
             <meta name="og:postal-code" content={data.location_zip} />

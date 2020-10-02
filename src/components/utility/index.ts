@@ -14,5 +14,5 @@
 
 export * from './GlobalSEO/GlobalSEO';
 export * from './Link/Link';
-export * from './PageSEO/PageSEO';
+export * from './PageBasicSEO/PageBasicSEO';
 export * from './StructuredData/StructuredData';

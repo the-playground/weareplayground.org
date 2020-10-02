@@ -7,8 +7,7 @@ import { Show } from '@type/show';
 import { useConfigContext } from '@context';
 import { useGetMetaImage, useCurrentURL, useShowStatus } from '@hooks';
 
-// Import components
-import { Layout } from '@components/layout';
+import { PageBasicSEO, StructuredData } from '@components/utility';
 import { LegacyContentNotice, SubscribeSection } from '@components/ui';
 
 const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
@@ -25,7 +24,28 @@ const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     const { status } = useShowStatus(show.performances);
 
     return (
-        <Layout noHeader={false} noFooter={false}>
+        <>
+            <PageBasicSEO
+                url={url}
+                title={show.seo_title}
+                description={show.seo_description}
+                image={metaImage}
+                hideSEO={show.seo_hide}
+            />
+            {/* Do not output structured data if this page will be hidden from SEO */}
+            {show.seo_hide ? null : (
+                <StructuredData
+                    siteConfig={siteConfig}
+                    pageSchemaData={{
+                        pageURL: url,
+                        title: show.seo_title,
+                        description: show.seo_description,
+                        image: metaImage,
+                        datePublished: data.prismicShow.first_publication_date,
+                        dateModified: data.prismicShow.last_publication_date,
+                    }}
+                />
+            )}
             <LegacyContentNotice
                 title={show.title}
                 subTitle={`by ${show.author}`}
@@ -34,7 +54,7 @@ const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 legacyURLText="see show on old website"
             />
             <SubscribeSection />
-        </Layout>
+        </>
     );
 };
 
@@ -82,22 +102,22 @@ export const query = graphql`
                     talkback
                 }
 
-                ## SEO Data
+                ## Legacy Data
+                legacy_url {
+                    url
+                }
+
+                # SEO Config Data
                 seo_title
                 seo_description
+                seo_hide
                 seo_image {
+                    url(imgixParams: { q: 100 })
                     alt
-                    url
                     dimensions {
                         width
                         height
                     }
-                }
-                seo_hide
-
-                ## Legacy Data
-                legacy_url {
-                    url
                 }
             }
         }
@@ -112,6 +132,8 @@ export const query = graphql`
 
 interface PageData {
     prismicShow: {
+        first_publication_date: string;
+        last_publication_date: string;
         data: Show;
     };
 }

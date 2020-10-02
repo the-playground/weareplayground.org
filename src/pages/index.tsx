@@ -21,7 +21,6 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     const pageData = data.prismicHomePage.data;
     return (
         <PageTemplate
-            slug={uid}
             pageConfig={data.prismicHomePage}
             currentLocation={location.pathname}
         >
@@ -53,11 +52,11 @@ export const query = graphql`
                 seo_hide
                 seo_title
                 seo_image {
+                    url(imgixParams: { q: 100 })
                     alt
-                    url
                     dimensions {
-                        height
                         width
+                        height
                     }
                 }
 

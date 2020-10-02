@@ -20,11 +20,7 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     const shows = data.allPrismicShow.nodes;
 
     return (
-        <PageTemplate
-            slug={uid}
-            pageConfig={pageData}
-            currentLocation={location.pathname}
-        >
+        <PageTemplate pageConfig={pageData} currentLocation={location.pathname}>
             <SimpleHero
                 title={pageData.data.hero_title}
                 subTitle={pageData.data.hero_sub_title}
@@ -48,11 +44,11 @@ export const query = graphql`
                 seo_hide
                 seo_title
                 seo_image {
+                    url(imgixParams: { q: 100 })
                     alt
-                    url
                     dimensions {
-                        height
                         width
+                        height
                     }
                 }
 

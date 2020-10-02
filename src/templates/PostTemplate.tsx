@@ -7,6 +7,9 @@ import parseISO from 'date-fns/parseISO';
 import { GatsbyPageContext } from '@type/gatsby';
 import { PrismicImage } from '@type/prismic';
 import { Author } from '@type/artist';
+
+import { PageBasicSEO, StructuredData } from '@components/utility';
+
 import {
     BodyText,
     Heading,
@@ -21,7 +24,7 @@ import { useConfigContext } from '@context';
 import { useGetMetaImage, useCurrentURL } from '@hooks';
 import { animation, appNavBreakpoint, borders, spacing } from '@tokens';
 
-import { Layout, Container } from '@components/layout';
+import { Container } from '@components/layout';
 
 const BlogHero = styled.div`
     padding-top: ${spacing.layout.m};
@@ -142,7 +145,28 @@ const PostLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     const postedOnDate = format(rawPostedOnDate, 'PP');
 
     return (
-        <Layout noHeader={false} noFooter={false}>
+        <>
+            <PageBasicSEO
+                url={url}
+                title={postData.seo_title}
+                description={postData.seo_description}
+                image={metaImage}
+                hideSEO={postData.seo_hide}
+            />
+            {/* Do not output structured data if this page will be hidden from SEO */}
+            {postData.seo_hide ? null : (
+                <StructuredData
+                    siteConfig={siteConfig}
+                    pageSchemaData={{
+                        pageURL: url,
+                        title: postData.seo_title,
+                        description: postData.seo_description,
+                        image: metaImage,
+                        datePublished: post.first_publication_date,
+                        dateModified: post.last_publication_date,
+                    }}
+                />
+            )}
             <Container maxWidth="s">
                 <BlogHero>
                     <Heading tag="h1" size="s" color="light" className="title">
@@ -173,7 +197,7 @@ const PostLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 />
             </Container>
             <SubscribeSection />
-        </Layout>
+        </>
     );
 };
 
@@ -222,8 +246,8 @@ export const query = graphql`
                 seo_title
                 seo_description
                 seo_image {
+                    url(imgixParams: { q: 100 })
                     alt
-                    url
                     dimensions {
                         width
                         height

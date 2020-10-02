@@ -44,8 +44,8 @@ export const DesktopNavBar: React.FC = () => {
                     />
                 )} */}
 
-                <LinkItem slug={archive} text="archive" key="archive" />
-                <LinkItem slug={about} text="about" key="about" />
+                <LinkItem slug={archive} text="the archive" key="archive" />
+                {/* <LinkItem slug={about} text="about" key="about" />
                 <LinkItem slug={contact} text="connect" key="connect" />
                 <li className="highlight">
                     <FillButton
@@ -58,7 +58,7 @@ export const DesktopNavBar: React.FC = () => {
                     >
                         support us
                     </FillButton>
-                </li>
+                </li> */}
             </ul>
         </styled.DesktopNavBar>
     );

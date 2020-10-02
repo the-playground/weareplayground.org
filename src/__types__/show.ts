@@ -41,11 +41,12 @@ export interface Show {
     artists: [] | undefined;
     location: [] | undefined;
     sponsors: [] | undefined;
+    legacy_url: PrismicExternalLink;
+
     seo_title: string;
     seo_description: string;
     seo_image: PrismicImage;
     seo_hide: boolean;
-    legacy_url: PrismicExternalLink;
 }
 
 export interface ShowSnippet {
