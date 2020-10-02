@@ -6,14 +6,13 @@
  * @link https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/
  */
 exports.redirects = [
-    // Will enable for launch
     // Redirect Netlify URL to final production URL
-    // {
-    //     fromPath: 'https://thenerve.netlify.app/*',
-    //     toPath: 'https://nervetheatre.org/:splat',
-    //     statusCode: 301,
-    //     isPermanent: true,
-    // },
+    {
+        fromPath: 'https://thenerve.netlify.app/*',
+        toPath: 'https://nervetheatre.org/:splat',
+        statusCode: 301,
+        isPermanent: true,
+    },
 
     // Temp redirect since /blog doesn't exist
     {
