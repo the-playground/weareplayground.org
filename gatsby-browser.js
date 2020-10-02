@@ -17,7 +17,13 @@ import {
     UIProvider,
 } from './src/__context__';
 
-// Handle Application wrapper
+import { Layout } from './src/components/layout/index.ts';
+
+// Persist our core layout across the entire app
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export const wrapPageElement = ({ element, props }) => (
+    <Layout {...props}>{element}</Layout>
+);
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const wrapRootElement = ({ element }) => (

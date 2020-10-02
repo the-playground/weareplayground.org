@@ -5,7 +5,7 @@ import { PrismicImage } from '@type/prismic';
 import { useConfigContext } from '@context';
 import { useCurrentURL, useGetMetaImage } from '@hooks';
 
-import { Layout } from '@components/layout';
+import { PageBasicSEO, StructuredData } from '@components/utility';
 
 /**
  * This template handles retrieving and generating all dynamic content for
@@ -13,21 +13,39 @@ import { Layout } from '@components/layout';
  */
 const PageTemplate: React.FC<PageTemplateProps> = ({
     pageConfig,
-    slug,
     currentLocation,
     children,
 }) => {
     const siteConfig = useConfigContext();
     const url = useCurrentURL(currentLocation);
+    const { data } = pageConfig;
     const metaImage = useGetMetaImage('page', pageConfig.data.seo_image);
 
     return (
-        <Layout
-            noHeader={pageConfig.data.remove_header}
-            noFooter={pageConfig.data.remove_footer}
-        >
+        <>
+            <PageBasicSEO
+                url={url}
+                title={data.seo_title}
+                description={data.seo_description}
+                image={metaImage}
+                hideSEO={data.seo_hide}
+            />
+            {/* Do not output structured data if this page will be hidden from SEO */}
+            {data.seo_hide ? null : (
+                <StructuredData
+                    siteConfig={siteConfig}
+                    pageSchemaData={{
+                        pageURL: url,
+                        title: data.seo_title,
+                        description: data.seo_description,
+                        image: metaImage,
+                        datePublished: pageConfig.first_publication_date,
+                        dateModified: pageConfig.last_publication_date,
+                    }}
+                />
+            )}
             {children}
-        </Layout>
+        </>
     );
 };
 
@@ -45,7 +63,6 @@ interface PageTemplateProps {
             [key: string]: any; // We only want to focus on our core metadata here, so we don't care about other props that exist on "data".
         };
     };
-    slug: string;
     currentLocation: string;
 }
 

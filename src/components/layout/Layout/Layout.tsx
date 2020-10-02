@@ -1,6 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
+import { GlobalSEO } from '@components/utility';
+
 import { Header } from './Header/Header';
 import { Footer } from './Footer/Footer';
 import { StylesReset, StylesGlobal } from './styles';
@@ -12,6 +14,7 @@ export const Layout: React.FC<LayoutProps> = ({
     noFooter,
 }) => (
     <>
+        <GlobalSEO />
         <StylesReset />
         <StylesGlobal />
         <Helmet>

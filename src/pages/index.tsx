@@ -52,11 +52,11 @@ export const query = graphql`
                 seo_hide
                 seo_title
                 seo_image {
+                    url(imgixParams: { q: 100 })
                     alt
-                    url
                     dimensions {
-                        height
                         width
+                        height
                     }
                 }
 

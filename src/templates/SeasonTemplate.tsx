@@ -9,9 +9,7 @@ import { SubscribeSection, LegacyContentNotice } from '@components/ui';
 import { useConfigContext } from '@context';
 import { useGetMetaImage, useCurrentURL } from '@hooks';
 
-// Import components
-
-import { Layout } from '@components/layout';
+import { PageBasicSEO, StructuredData } from '@components/utility';
 import { FluidImageProps } from '@components/foundations';
 
 const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
@@ -29,7 +27,28 @@ const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     const metaImage = useGetMetaImage('season', seasonData.seo_image);
 
     return (
-        <Layout noHeader={false} noFooter={false}>
+        <>
+            <PageBasicSEO
+                url={url}
+                title={seasonData.seo_title}
+                description={seasonData.seo_description}
+                image={metaImage}
+                hideSEO={seasonData.seo_hide}
+            />
+            {/* Do not output structured data if this page will be hidden from SEO */}
+            {seasonData.seo_hide ? null : (
+                <StructuredData
+                    siteConfig={siteConfig}
+                    pageSchemaData={{
+                        pageURL: url,
+                        title: seasonData.seo_title,
+                        description: seasonData.seo_description,
+                        image: metaImage,
+                        datePublished: season.first_publication_date,
+                        dateModified: season.last_publication_date,
+                    }}
+                />
+            )}
             <LegacyContentNotice
                 contentType="season"
                 title={`${seasonData.title} Season`}
@@ -38,7 +57,7 @@ const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 legacyURLText="See season on old website"
             />
             <SubscribeSection />
-        </Layout>
+        </>
     );
 };
 
@@ -83,15 +102,15 @@ export const query = graphql`
                 ## SEO Data
                 seo_title
                 seo_description
+                seo_hide
                 seo_image {
+                    url(imgixParams: { q: 100 })
                     alt
-                    url
                     dimensions {
                         width
                         height
                     }
                 }
-                seo_hide
 
                 ## Legacy Data
                 legacy_url {
@@ -110,6 +129,8 @@ export const query = graphql`
 
 interface PageData {
     prismicSeason: {
+        first_publication_date: string;
+        last_publication_date: string;
         data: {
             title: string;
             tagline: string;

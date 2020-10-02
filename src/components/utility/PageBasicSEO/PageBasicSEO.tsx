@@ -13,7 +13,7 @@ import { PrismicImage } from '@type/prismic';
  * @param hideSEO Should this page be hidden fro search engines?
  *
  */
-export const PageSEO: React.FC<PageBasicSEOProps> = ({
+export const PageBasicSEO: React.FC<PageBasicSEOProps> = ({
     url,
     title,
     description,
@@ -25,9 +25,9 @@ export const PageSEO: React.FC<PageBasicSEOProps> = ({
     return (
         <Helmet>
             {/* Standard meta data for search engines */}
-            <title>{`${title} • Ascend`}</title>
+            <title>{title}</title>
             <meta name="description" content={description} />
-            <meta name="image" content={image?.url} />
+            <meta name="image" content={image.url} />
             <link rel="canonical" href={url} />
 
             {/* Search engine visibility & directives */}
@@ -42,22 +42,21 @@ export const PageSEO: React.FC<PageBasicSEOProps> = ({
             />
 
             {/* Opengraph meta tags for Facebook & LinkedIn */}
+            <meta property="og:type" content="website" />
             <meta property="og:url" content={url} />
             <meta property="og:title" content={`${title}`} />
             <meta property="og:description" content={description} />
 
-            <meta property="og:image" content={image?.url} />
-            <meta property="og:image:secure_url" content={image?.url} />
+            <meta property="og:image" content={image.url} />
+            <meta property="og:image:secure_url" content={image.url} />
 
-            <meta property="og:image:alt" content={image?.alt} />
+            {image.alt && <meta property="og:image:alt" content={image.alt} />}
+
             <meta
                 property="og:image:height"
-                content={image?.dimensions?.height}
+                content={image.dimensions?.height}
             />
-            <meta
-                property="og:image:width"
-                content={image?.dimensions?.width}
-            />
+            <meta property="og:image:width" content={image.dimensions?.width} />
         </Helmet>
     );
 };
@@ -66,6 +65,6 @@ interface PageBasicSEOProps {
     url: string;
     title: string;
     description: string;
-    image?: PrismicImage;
+    image: PrismicImage;
     hideSEO?: boolean;
 }
