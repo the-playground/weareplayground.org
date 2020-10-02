@@ -79,9 +79,7 @@
                 "thumbnails": [],
                 "label": "Hero Image"
             }
-        }
-    },
-    "Rebrand": {
+        },
         "rebrand_link_text": {
             "type": "Text",
             "config": {

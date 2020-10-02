@@ -4,14 +4,11 @@ import { breakpoints, spacing, zIndex } from '@tokens';
 import whiteGrit from '@assets/grit-white.png';
 import blackGrit from '@assets/grit-black.png';
 
-import { PrismicInternalLink } from '@type/prismic';
-
 import { useLinkMapContext } from '@context';
 import { getChildPageSlug } from '@lib/url';
 
 import { Container, Section } from '@components/layout';
-import { TextButton } from '@components/actions';
-import { Heading, Icon, Logo } from '@components/foundations';
+import { Heading, Logo } from '@components/foundations';
 
 const sectionBreakpoint = breakpoints.m;
 
@@ -69,13 +66,7 @@ const StyledRebrandSection = styled(Section)`
     }
 `;
 
-export const RebrandSection: React.FC<RebrandSectionProps> = ({
-    link,
-    linkText,
-}) => {
-    const links = useLinkMapContext();
-    const blogLink = getChildPageSlug(links.blog, link.uid);
-
+export const RebrandSection: React.FC = () => {
     return (
         <StyledRebrandSection bgColor="light">
             <Container>
@@ -86,22 +77,7 @@ export const RebrandSection: React.FC<RebrandSectionProps> = ({
                     </Heading>
                     <Logo type="Lockup" size="xl" color="dark" />
                 </div>
-                <TextButton
-                    to={blogLink}
-                    color="secondary"
-                    size="m"
-                    className="action"
-                    endIcon={<Icon name="ArrowRight" size="xs" />}
-                    animateIconOnHover
-                >
-                    {linkText}
-                </TextButton>
             </Container>
         </StyledRebrandSection>
     );
 };
-
-interface RebrandSectionProps {
-    link: PrismicInternalLink;
-    linkText: string;
-}

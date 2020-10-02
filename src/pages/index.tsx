@@ -30,11 +30,10 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 title={pageData.hero_title}
                 copy={pageData.hero_copy}
                 bgImage={pageData.hero_image}
+                rebrandLink={pageData.rebrand_link}
+                rebrandLinkText={pageData.rebrand_link_text}
             />
-            <RebrandSection
-                linkText={pageData.rebrand_link_text}
-                link={pageData.rebrand_link}
-            />
+            <RebrandSection />
             <ArchiveSection />
             <SubscribeSection />
         </PageTemplate>
@@ -70,8 +69,6 @@ export const query = graphql`
                         ...GatsbyPrismicImageFluid
                     }
                 }
-
-                # Rebrand
                 rebrand_link_text
                 rebrand_link {
                     uid
