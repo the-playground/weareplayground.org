@@ -11,7 +11,6 @@ export const organizationSchema = (config: SiteConfig): string => {
     const schema = {
         '@type': 'Organization',
         '@id': `${siteURL}/#organization`,
-        inLanguage: 'EN',
         name: config.name,
         email: config.contact_email,
         url: siteURL,
