@@ -15,31 +15,6 @@ export const onRenderBody = ({ setHeadComponents }) => {
      * Load external css SSR
      */
     setHeadComponents([
-        <link
-            key="regular-body-font"
-            rel="preload"
-            href="/fonts/stage-1/GreycliffCF-Regular--stage1.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-        />,
-        <link
-            key="bold-body-font"
-            rel="preload"
-            href="/fonts/stage-1/GreycliffCF-Bold--stage1.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-        />,
-        <link
-            key="heading-font"
-            rel="preload"
-            href="/fonts/stage-1/GreycliffCF-Heavy--stage1.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-        />,
-
         // Snipcart v3
         // <link
         //     key="css-snipcart"

@@ -104,6 +104,14 @@ module.exports = {
                 // Add any options here
             },
         },
+
+        /**
+         * Preload Fonts
+         *
+         * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-preload-fonts/
+         */
+        `gatsby-plugin-preload-fonts`,
+
         /**
          * Query data from our CMS
          *

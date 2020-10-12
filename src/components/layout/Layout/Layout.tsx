@@ -6,7 +6,6 @@ import { GlobalSEO } from '@components/utility';
 import { Header } from './Header/Header';
 import { Footer } from './Footer/Footer';
 import { StylesReset, StylesGlobal } from './styles';
-import { loadStage2Fonts, stage1FontDeclarations } from './fonts';
 
 export const Layout: React.FC<LayoutProps> = ({
     children,
@@ -17,10 +16,6 @@ export const Layout: React.FC<LayoutProps> = ({
         <GlobalSEO />
         <StylesReset />
         <StylesGlobal />
-        <Helmet>
-            <style>{stage1FontDeclarations}</style>
-            <script type="text/javascript">{loadStage2Fonts()}</script>
-        </Helmet>
 
         {noHeader ? `` : <Header />}
         <main>{children}</main>
