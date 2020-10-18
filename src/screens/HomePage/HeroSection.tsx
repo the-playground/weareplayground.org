@@ -27,7 +27,7 @@ const StyledHeroSection = styled(Section)`
     }
 
     .action {
-        margin-top: ${spacing.component.xl};
+        margin-top: ${spacing.component.xxl};
     }
 `;
 
@@ -64,7 +64,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <FillButton
                     to={blogLink}
                     color="primary"
-                    size="s"
+                    size="m"
                     className="action"
                     endIcon={<Icon name="ArrowRight" size="xs" />}
                     animateIconOnHover
