@@ -5,6 +5,7 @@ import blackGrit from '@assets/grit-black.png';
 import { GrittyHeadingProps } from './__types';
 
 const GRITTY_HEADING_LINE_HEIGHT = 1.3;
+const GRITTY_HEADING_LETTER_SPACING = 2;
 
 export const GrittyHeading = styled.div<
     Pick<GrittyHeadingProps, 'offset' | 'bgColor' | 'size'>
@@ -15,6 +16,7 @@ export const GrittyHeading = styled.div<
         background: ${({ theme, bgColor }) => theme.backgrounds[bgColor].color};
         display: inline;
         line-height: ${GRITTY_HEADING_LINE_HEIGHT};
+        letter-spacing: ${GRITTY_HEADING_LETTER_SPACING}px;
         position: relative;
         z-index: ${zIndex.base};
     }
