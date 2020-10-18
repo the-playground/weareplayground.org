@@ -23,7 +23,7 @@ export const fonts = {
         font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
             'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
         font-style: normal;
-        font-weight: 700;
+        font-weight: 600;
     `,
 
     // Greycliff CF Heavy
