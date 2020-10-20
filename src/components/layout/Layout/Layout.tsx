@@ -5,7 +5,7 @@ import { GlobalSEO } from '@components/utility';
 
 import { Header } from './Header/Header';
 import { Footer } from './Footer/Footer';
-import { StylesReset, StylesGlobal } from './styles';
+import { StylesReset, StylesGlobal, FontDefinitions } from './styles';
 
 export const Layout: React.FC<LayoutProps> = ({
     children,
@@ -14,8 +14,12 @@ export const Layout: React.FC<LayoutProps> = ({
 }) => (
     <>
         <GlobalSEO />
+
         <StylesReset />
         <StylesGlobal />
+        <Helmet>
+            <style>{FontDefinitions}</style>
+        </Helmet>
 
         {noHeader ? `` : <Header />}
         <main>{children}</main>

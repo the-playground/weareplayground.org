@@ -106,13 +106,6 @@ module.exports = {
         },
 
         /**
-         * Preload Fonts
-         *
-         * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-preload-fonts/
-         */
-        `gatsby-plugin-preload-fonts`,
-
-        /**
          * Query data from our CMS
          *
          * @link https://www.gatsbyjs.org/packages/gatsby-source-prismic

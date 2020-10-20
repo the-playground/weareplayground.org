@@ -3,7 +3,6 @@
  *
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
-
 import React from 'react';
 
 // Direct-export our browser wrapper for SSR
@@ -15,6 +14,30 @@ export const onRenderBody = ({ setHeadComponents }) => {
      * Load external css SSR
      */
     setHeadComponents([
+        <link
+            key="regular-body-font"
+            rel="preload"
+            href="/fonts/inter-black.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+        />,
+        <link
+            key="bold-body-font"
+            rel="preload"
+            href="/fonts/inter-semibold.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+        />,
+        <link
+            key="heading-font"
+            rel="preload"
+            href="/fonts/inter-regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+        />,
         // Snipcart v3
         // <link
         //     key="css-snipcart"
