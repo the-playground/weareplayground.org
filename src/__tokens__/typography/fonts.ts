@@ -12,7 +12,7 @@ import { css } from 'styled-components';
 export const fonts = {
     // Greycliff CF Regular
     bodyText: css`
-        font-family: 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont,
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
             'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
         font-style: normal;
         font-weight: 400;
@@ -20,15 +20,15 @@ export const fonts = {
 
     // Greycliff CF Bold
     bodyBold: css`
-        font-family: 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont,
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
             'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
         font-style: normal;
-        font-weight: 700;
+        font-weight: 600;
     `,
 
     // Greycliff CF Heavy
     heading: css`
-        font-family: 'Greycliff', system-ui, -apple-system, BlinkMacSystemFont,
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
             'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
         font-style: normal;
         font-weight: 900;

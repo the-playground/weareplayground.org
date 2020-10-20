@@ -1,6 +1,5 @@
 import { LinkProps } from '@components/utility';
 import { IconProps } from '@components/foundations';
-import { WithOptional } from '@type/utils';
 
 export type ButtonSize = 's' | 'm';
 

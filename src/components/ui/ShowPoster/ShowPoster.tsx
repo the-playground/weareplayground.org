@@ -48,7 +48,12 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
                     >
                         by {author}
                     </BodyText>
-                    <BodyText className="season" size="s" color="light" tag="p">
+                    <BodyText
+                        className="season"
+                        size="s"
+                        color="medium"
+                        tag="p"
+                    >
                         {season.title}
                     </BodyText>
                 </div>

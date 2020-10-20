@@ -109,7 +109,7 @@ const StyledContent = styled.div`
 
     /* Grunge heading */
     > div {
-        margin-bottom: ${spacing.component.m};
+        margin-bottom: ${spacing.component.l};
         margin-top: ${spacing.component.xxl};
     }
 

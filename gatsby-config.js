@@ -104,6 +104,7 @@ module.exports = {
                 // Add any options here
             },
         },
+
         /**
          * Query data from our CMS
          *
