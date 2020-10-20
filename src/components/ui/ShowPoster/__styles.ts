@@ -26,11 +26,12 @@ export const ShowPoster = styled.article`
 
     .title {
         text-transform: uppercase;
+        margin-bottom: ${spacing.component.xxs};
     }
 
     .season {
         text-transform: lowercase;
-        margin-top: ${spacing.component.xs};
+        margin-top: ${spacing.component.s};
     }
 
     &:hover {
