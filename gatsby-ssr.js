@@ -15,7 +15,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
      */
     setHeadComponents([
         <link
-            key="regular-body-font"
+            key="heading-font"
             rel="preload"
             href="/fonts/inter-black.woff2"
             as="font"
@@ -31,7 +31,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
             crossOrigin="anonymous"
         />,
         <link
-            key="heading-font"
+            key="regular-body-font"
             rel="preload"
             href="/fonts/inter-regular.woff2"
             as="font"
