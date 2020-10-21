@@ -20,7 +20,6 @@
 export * from './AuthorCard/AuthorCard';
 export * from './Cart/Cart';
 export * from './LegacyContentNotice/LegacyContentNotice';
-export * from './Modal/Modal';
 export * from './PosterGrid/PosterGrid';
 export * from './SimpleHero/SimpleHero';
 export * from './SubscribeSection/SubscribeSection';
