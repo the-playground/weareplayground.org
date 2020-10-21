@@ -31,11 +31,10 @@ export const AuthorCard = styled.div`
 
     .byline {
         position: relative;
-        top: 6px;
     }
 
     .bio {
-        margin-top: ${spacing.component.xxs};
+        margin-top: ${spacing.component.s};
     }
 
     .follow {
