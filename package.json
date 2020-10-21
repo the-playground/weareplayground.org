@@ -72,14 +72,15 @@
 		"typescript": "^4.0.3"
 	},
 	"scripts": {
-		"dev": "rm -rf .cache && gatsby develop",
+		"dev": "gatsby develop",
 		"build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
 		"serve": "gatsby build && gatsby serve",
 		"clean": "gatsby clean",
 		"lint:js": "eslint . --ext .js,.jsx,.ts,.tsx",
 		"lint:js:fix": "npm run lint:js --fix",
 		"lint:css": "stylelint 'src/**/*.css' --syntax css",
-		"lint:css:fix": "npm run lint:css --fix"
+		"lint:css:fix": "npm run lint:css --fix",
+		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"lint-staged": {
 		"src/**/*.{js,jsx,ts,tsx}": [
