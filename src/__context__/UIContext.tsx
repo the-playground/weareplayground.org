@@ -1,7 +1,4 @@
 import React, { createContext, useContext } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import { useModal, UseModalReturnProps } from '@hooks';
-import { Modal } from '@components/ui';
 
 export const UIContext = createContext<UIContextProps>({} as UIContextProps);
 
@@ -14,26 +11,14 @@ export const UIContext = createContext<UIContextProps>({} as UIContextProps);
  */
 export const UIProvider: React.FC = ({ children }) => {
     // Bring in state handlers
-    const modal = useModal();
 
     // Build our state object
-    const state: UIContextProps = {
-        modal: {
-            ...modal,
-        },
-    };
+    const state: UIContextProps = {};
 
-    return (
-        <UIContext.Provider value={state}>
-            {children}
-            <AnimatePresence> {modal.isModalOpen && <Modal />}</AnimatePresence>
-        </UIContext.Provider>
-    );
+    return <UIContext.Provider value={state}>{children}</UIContext.Provider>;
 };
 
-export interface UIContextProps {
-    modal: UseModalReturnProps;
-}
+export interface UIContextProps {}
 
 /**
  * A saucy little thin wrapper for fetching and using our App Context
