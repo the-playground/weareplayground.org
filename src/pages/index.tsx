@@ -65,7 +65,7 @@ export const query = graphql`
                 hero_copy
                 hero_image {
                     fluid(imgixParams: { sat: -100 }) {
-                        ...GatsbyPrismicImageFluid
+                        ...GatsbyPrismicImageFluid_noBase64
                     }
                 }
                 rebrand_link_text

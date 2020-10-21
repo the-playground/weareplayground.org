@@ -93,7 +93,7 @@ export const useQuerySiteConfig = (): SiteConfig => {
                     subscribe_copy
                     subscribe_image {
                         fluid(imgixParams: { sat: -100 }) {
-                            ...GatsbyPrismicImageFluid
+                            ...GatsbyPrismicImageFluid_noBase64
                         }
                     }
                 }
