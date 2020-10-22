@@ -1,5 +1,5 @@
 /* eslint-disable global-require */
-module.exports = {
+export default {
     about_page: require('./about_page.json'),
     archive_page: require('./archive_page.json'),
     artist: require('./artist.json'),

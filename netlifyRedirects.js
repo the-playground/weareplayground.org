@@ -5,7 +5,7 @@
  *
  * @link https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/
  */
-exports.redirects = [
+export default [
     // Redirect Netlify URL to final production URL
     {
         fromPath: 'https://thenerve.netlify.app/*',

@@ -1,7 +1,12 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-require(`dotenv`).config({
-    path: `.env.${process.env.NODE_ENV}`,
-});
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+
+import dotenv from 'dotenv';
+
+// Prismic Data Schemas
+import schemas from './src/__schemas__';
+
+// Config environment variables
+dotenv.config({ path: `.env` });
 
 /**
  * Get information about the Production & Netlify environments to make sure
@@ -16,7 +21,7 @@ const {
 const isNetlifyProduction = NETLIFY_ENV === 'production';
 const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 
-module.exports = {
+export default {
     siteMetadata: {
         siteUrl,
     },
@@ -122,7 +127,7 @@ module.exports = {
                  * Provide an object of Prismic custom type JSON schemas to load into
                  * Gatsby. This is required.
                  */
-                schemas: require('./src/__schemas__'), // eslint-disable-line global-require
+                schemas,
 
                 /**
                  * Set a default language when fetching documents. The default value is
