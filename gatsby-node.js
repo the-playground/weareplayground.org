@@ -4,8 +4,9 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { redirects } = require('./netlifyRedirects');
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+
+import redirects from './netlifyRedirects';
 
 /**
  * Build a single season page
@@ -13,7 +14,7 @@ const { redirects } = require('./netlifyRedirects');
  * @param {*} seasonConfig
  * @param {*} createPage
  */
-function buildSeasonPage(seasonConfig, createPage) {
+const buildSeasonPage = (seasonConfig, createPage) => {
     console.log(`🗓️  Season: ${seasonConfig.url}`);
 
     createPage({
@@ -25,7 +26,7 @@ function buildSeasonPage(seasonConfig, createPage) {
             seasonURL: seasonConfig.url,
         },
     });
-}
+};
 
 /**
  * Build a single show page
@@ -33,7 +34,7 @@ function buildSeasonPage(seasonConfig, createPage) {
  * @param {*} showConfig
  * @param {*} createPage
  */
-function buildShowPage(showConfig, createPage) {
+const buildShowPage = (showConfig, createPage) => {
     console.log(`🎭 Show: ${showConfig.url}`);
 
     createPage({
@@ -47,7 +48,7 @@ function buildShowPage(showConfig, createPage) {
             id: showConfig.id,
         },
     });
-}
+};
 
 /**
  * Query the "Blog" parent page.
@@ -55,7 +56,7 @@ function buildShowPage(showConfig, createPage) {
  * @param {*} graphql graphql instance from createPages
  * @param {*} reporter reporter instance from createPages
  */
-async function getBlogPostParentPage(graphql, reporter) {
+const getBlogPostParentPage = async (graphql, reporter) => {
     console.log(`👨‍👧‍👧 Retrieving "Blog" parent page uid...`);
 
     const { data } = await graphql(`
@@ -80,7 +81,7 @@ async function getBlogPostParentPage(graphql, reporter) {
     }
 
     return blogPostParentPage.uid;
-}
+};
 
 /**
  * Build a single blog page
@@ -88,7 +89,7 @@ async function getBlogPostParentPage(graphql, reporter) {
  * @param {*} showConfig
  * @param {*} createPage
  */
-function buildBlogPost(blogConfig, createPage) {
+const buildBlogPost = (blogConfig, createPage) => {
     console.log(`✏️ Blog: ${blogConfig.url}`);
 
     createPage({
@@ -99,7 +100,7 @@ function buildBlogPost(blogConfig, createPage) {
             id: blogConfig.id,
         },
     });
-}
+};
 
 /**
  * Query all available seasons and shows and dynamically
@@ -107,7 +108,7 @@ function buildBlogPost(blogConfig, createPage) {
  *
  * @param {*} params destructured instances of createPages params
  */
-async function generateSeasonsAndShows({ graphql, actions, reporter }) {
+const generateSeasonsAndShows = async ({ graphql, actions, reporter }) => {
     // Query Season and Show data
     const { data } = await graphql(`
         {
@@ -173,14 +174,14 @@ async function generateSeasonsAndShows({ graphql, actions, reporter }) {
         });
     });
     console.log(`🎉 Done creating Season and Show pages!`);
-}
+};
 
 /**
  * Query all available posts and dynamically and generate pages from the results,
  *
  * @param {*} params destructured instances of createPages params
  */
-async function generateBlogPosts({ graphql, actions, reporter }) {
+const generateBlogPosts = async ({ graphql, actions, reporter }) => {
     const blogParentPage = await getBlogPostParentPage(graphql, reporter);
 
     // Query Blog data
@@ -217,23 +218,24 @@ async function generateBlogPosts({ graphql, actions, reporter }) {
     });
 
     console.log(`🎉 Done creating Blog pages!`);
-}
+};
 
 /**
  * Build redirects for our application based on the config.
  *
  * @param {*} actions destructured action instance from creatPages
  */
-async function generateRedirects({ actions }) {
+const generateRedirects = async ({ actions }) => {
     // Build all app redirects
     const { createRedirect } = actions;
     await redirects.forEach((redirect) => createRedirect(redirect));
-}
+};
 
 /**
  * When Gatsby attempts to crete pages, run the requested functionality
  */
-exports.createPages = async (params) => {
+// eslint-disable-next-line
+export const createPages = async (params) => {
     await Promise.all([
         generateRedirects(params),
         generateSeasonsAndShows(params),
