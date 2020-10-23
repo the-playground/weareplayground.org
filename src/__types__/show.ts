@@ -1,4 +1,7 @@
-import { FluidImageProps, LocalFileImageProps } from '@components/foundations';
+import {
+    FluidImageProps,
+    LocalFileImageProps,
+} from '@nerve/core/components/foundations';
 import { PrismicExternalLink, PrismicImage } from './prismic';
 
 export interface Performance {

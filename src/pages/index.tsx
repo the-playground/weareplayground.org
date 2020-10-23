@@ -7,10 +7,15 @@ import {
     PrismicInternalLink,
 } from '@type/prismic';
 
-import PageTemplate from '@templates/PageTemplate';
-import { SubscribeSection } from '@components/ui';
+import { SubscribeSection } from '@nerve/domains/marketing';
 
-import { ArchiveSection, HeroSection, RebrandSection } from '@screens/HomePage';
+import {
+    ArchiveSection,
+    HeroSection,
+    RebrandSection,
+} from '@nerve/domains/page/home';
+
+import PageTemplate from '@nerve/domains/page/PageTemplate';
 
 const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,

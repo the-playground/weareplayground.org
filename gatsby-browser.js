@@ -8,7 +8,9 @@
 import React from 'react';
 
 import { ThemeProvider } from 'styled-components';
-import { theme } from './src/__themes__/default';
+
+import { theme } from './@nerve/core/themes/default';
+import { Layout } from './@nerve/core/components/layout';
 
 import {
     ConfigProvider,
@@ -17,8 +19,6 @@ import {
     ShowProvider,
     UIProvider,
 } from './src/__context__';
-
-import { Layout } from './src/components/layout/index.ts';
 
 // Persist our core layout across the entire app
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types

@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-
 import dotenv from 'dotenv';
 
 // Prismic Data Schemas
-import schemas from './src/__schemas__';
+import schemas from './@app/data/prismic-schemas';
 
 // Config environment variables
 dotenv.config({ path: `.env` });
@@ -82,18 +81,15 @@ export default {
         {
             resolve: 'gatsby-plugin-module-resolver',
             options: {
-                root: './src', // <- will be used as a root dir
+                root: '', // <- will be used as a root dir
                 aliases: {
-                    '@assets': './assets',
-                    '@context': './__context__', // <- will become ./src/__context__
-                    '@components': './components',
-                    '@hooks': './__hooks__',
-                    '@lib': './__lib__',
-                    '@screens': './screens',
-                    '@templates': './templates',
-                    '@themes': './__themes__',
-                    '@tokens': './__tokens__',
-                    '@type': './__types__',
+                    '@context': './src/__context__', // <- will become ./src/__context__
+                    '@hooks': './src/__hooks__',
+                    '@type': './src/__types__',
+                    '@nerve/core': './@nerve/core',
+                    '@nerve/domains': './@nerve/domains',
+                    '@nerve/assets': './@nerve/assets',
+                    '@nerve/shared': './@nerve/shared',
                 },
             },
         },

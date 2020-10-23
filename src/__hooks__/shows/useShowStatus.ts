@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react';
-import parseISO from 'date-fns/parseISO';
-import sub from 'date-fns/sub';
-import isPast from 'date-fns/isPast';
-import isWithinInterval from 'date-fns/isWithinInterval';
+import { parseISO, sub, isPast, isWithinInterval } from 'date-fns';
 
 import { Performance } from '@type/show';
 

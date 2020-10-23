@@ -4,7 +4,7 @@ import {
     getShowSlug,
     getSeasonSlug,
     normalizeSlug,
-} from '@lib/url';
+} from '@nerve/shared/lib';
 
 export const useLinkMap = (): LinkMap => {
     // Get all of our predefined site links from Prismic

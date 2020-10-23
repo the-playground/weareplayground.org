@@ -3,38 +3,30 @@
 		"project": "./tsconfig.json",
 	},
 	"compilerOptions": {
-		"baseUrl": "src/",
+		"baseUrl": "",
 		"paths": {
-			"@assets/*": [
-				"./assets/*"
-			],
 			"@context": [
-				"./__context__/"
+				"./src/__context__/"
 			],
 			"@hooks": [
-				"./__hooks__/"
+				"./src/__hooks__/"
 			],
 			"@type/*": [
-				"./__types__/*"
+				"./src/__types__/*"
 			],
-			"@lib/*": [
-				"./__lib__/*"
+			// New architecture
+			"@nerve/core/*": [
+				"./@nerve/core/*"
 			],
-			"@themes/*": [
-				"./__themes__/*"
+			"@nerve/assets": [
+				"./@nerve/assets/"
 			],
-			"@tokens": [
-				"./__tokens__/"
+			"@nerve/domains/*": [
+				"./@nerve/domains/*"
 			],
-			"@components/*": [
-				"./components/*"
+			"@nerve/shared/*": [
+				"./@nerve/shared/*"
 			],
-			"@screens/*": [
-				"./screens/*"
-			],
-			"@templates/*": [
-				"./templates/*"
-			]
 		},
 		"module": "commonjs",
 		"target": "esnext",
@@ -64,7 +56,8 @@
 	],
 	"include": [
 		"src",
+		"@app",
+		"@nerve",
 		"gatsby-*",
-		"@typings/*",
 	]
 }

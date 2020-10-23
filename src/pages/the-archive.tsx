@@ -5,10 +5,12 @@ import { GatsbyPageContext } from '@type/gatsby';
 import { PrismicImage } from '@type/prismic';
 import { ShowSnippet } from '@type/show';
 
-import PageTemplate from '@templates/PageTemplate';
-import { SimpleHero, PosterGrid, SubscribeSection } from '@components/ui';
+import { SimpleHero } from '@nerve/shared/components';
+import { PosterGrid } from '@nerve/domains/show';
+import { SubscribeSection } from '@nerve/domains/marketing';
 
-import { sortShows } from '@lib/shows';
+import { sortShows } from '@nerve/shared/lib';
+import PageTemplate from '@nerve/domains/page/PageTemplate';
 
 const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
