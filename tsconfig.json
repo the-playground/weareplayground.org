@@ -1,7 +1,4 @@
 {
-	"parserOptions": {
-		"project": "./tsconfig.json",
-	},
 	"compilerOptions": {
 		"baseUrl": "",
 		"paths": {
@@ -29,7 +26,7 @@
 			],
 		},
 		"module": "commonjs",
-		"target": "esnext",
+		"target": "es5",
 		"strict": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
@@ -55,9 +52,9 @@
 		"static",
 	],
 	"include": [
-		"src",
-		"@app",
-		"@nerve",
-		"gatsby-*",
+		"src/**/*",
+		"@app/**/*",
+		"@nerve/**/*",
+		"gatsby-*.js",
 	]
 }
