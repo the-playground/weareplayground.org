@@ -9,7 +9,7 @@ import { useEffect, RefObject } from 'react';
 export const useOnClickOutside = (
     ref: RefObject<HTMLElement> | null,
     handler: Handler | null
-) => {
+): void => {
     useEffect(() => {
         if (!ref || !handler) {
             return;
