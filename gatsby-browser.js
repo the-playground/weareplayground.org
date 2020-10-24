@@ -10,7 +10,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import { theme } from './@nerve/core/themes/default';
-import { Layout } from './@nerve/core/components/layout';
+import { Layout } from './@nerve/domains/app';
 
 import {
     ConfigProvider,

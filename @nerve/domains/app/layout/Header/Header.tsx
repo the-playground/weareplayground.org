@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from '@nerve/core/components/utility';
 import { Logo } from '@nerve/core/components/foundations';
-import { Container } from '../../Container/Container';
+import { Container } from '@nerve/core/components/layout';
 
 import { DesktopNavBar } from './DesktopNavBar/DesktopNavBar';
 

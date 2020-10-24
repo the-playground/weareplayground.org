@@ -7,7 +7,7 @@ import {
     PrismicInternalLink,
 } from '@type/prismic';
 
-import { SubscribeSection } from '@nerve/domains/marketing';
+import { SubscribeSection } from '@nerve/domains/engagement';
 
 import {
     ArchiveSection,

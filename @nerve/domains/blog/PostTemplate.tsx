@@ -20,7 +20,7 @@ import {
 } from '@nerve/core/components/foundations';
 
 import { AuthorCard } from '@nerve/domains/blog';
-import { SubscribeSection } from '@nerve/domains/marketing';
+import { SubscribeSection } from '@nerve/domains/engagement';
 
 import { useConfigContext } from '@context';
 import { useGetMetaImage, useCurrentURL } from '@hooks';

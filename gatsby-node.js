@@ -6,7 +6,7 @@
 
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 
-import redirects from './@app/configs/redirects';
+import redirects from './@app/config/redirects';
 
 /**
  * Build a single season page

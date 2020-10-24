@@ -7,14 +7,14 @@ import { ShowPoster } from '../ShowPoster/ShowPoster';
 
 import * as styled from './__styles';
 
-export const PosterGrid: React.FC<PosterGridProps> = ({ items }) => {
+export const ShowPosterGrid: React.FC<ShowPosterGridProps> = ({ items }) => {
     /**
      * Todo: 1. Sort shows based on performance dates
      * Todo: 2. Turn sorting methodology into reuseable hook
      */
 
     return (
-        <styled.PosterGrid>
+        <styled.ShowPosterGrid>
             <BodyText className="instructions" tag="p" size="m" color="medium">
                 Select a show to see detailed information
             </BodyText>
@@ -33,15 +33,15 @@ export const PosterGrid: React.FC<PosterGridProps> = ({ items }) => {
                                 title: show.season.document.data.title,
                                 uid: show.season.uid,
                             }}
-                            performances={show.performances!}
+                            performances={show.performances}
                         />
                     );
                 })}
             </div>
-        </styled.PosterGrid>
+        </styled.ShowPosterGrid>
     );
 };
 
-export interface PosterGridProps {
+export interface ShowPosterGridProps {
     items: Omit<ShowSnippet, 'card_image'>[];
 }

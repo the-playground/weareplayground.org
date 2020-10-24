@@ -17,4 +17,4 @@
  * * syntax of `@package/${componentName}`.
  */
 
-export * from './PosterGrid/PosterGrid';
+export * from './ShowPosterGrid/ShowPosterGrid';

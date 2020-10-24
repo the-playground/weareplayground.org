@@ -8,7 +8,7 @@ import { useConfigContext } from '@context';
 import { useGetMetaImage, useCurrentURL, useShowStatus } from '@hooks';
 
 import { LegacyContentNotice } from '@nerve/domains/migrations';
-import { SubscribeSection } from '@nerve/domains/marketing';
+import { SubscribeSection } from '@nerve/domains/engagement';
 
 import { PageBasicSEO, StructuredData } from '@nerve/core/components/utility';
 

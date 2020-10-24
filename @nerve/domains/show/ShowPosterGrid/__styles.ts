@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { breakpoints, spacing } from '@nerve/core/tokens';
 
-export const PosterGrid = styled.section`
+export const ShowPosterGrid = styled.section`
     .instructions {
         margin-bottom: ${spacing.component.l};
         padding-left: ${spacing.component.m};

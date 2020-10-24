@@ -6,8 +6,8 @@ import { PrismicImage } from '@type/prismic';
 import { ShowSnippet } from '@type/show';
 
 import { SimpleHero } from '@nerve/shared/components';
-import { PosterGrid } from '@nerve/domains/show';
-import { SubscribeSection } from '@nerve/domains/marketing';
+import { ShowPosterGrid } from '@nerve/domains/show';
+import { SubscribeSection } from '@nerve/domains/engagement';
 
 import { sortShows } from '@nerve/shared/lib';
 import PageTemplate from '@nerve/domains/page/PageTemplate';
@@ -27,7 +27,7 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 title={pageData.data.hero_title}
                 subTitle={pageData.data.hero_sub_title}
             />
-            <PosterGrid items={sortShows(shows)} />
+            <ShowPosterGrid items={sortShows(shows)} />
             <SubscribeSection />
         </PageTemplate>
     );

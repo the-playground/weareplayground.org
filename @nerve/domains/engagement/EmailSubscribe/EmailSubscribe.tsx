@@ -10,7 +10,7 @@ import { FillButton } from '@nerve/core/components/actions';
 import { BodyText, Heading } from '@nerve/core/components/foundations';
 import { CircularProgress } from '@nerve/core/components/progress';
 
-import { EmailSubscribeProps } from './EmailSubscribe.d';
+import { EmailSubscribeProps } from './EmailSubscribe';
 import * as styled from './EmailSubscribe.styles';
 
 export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {

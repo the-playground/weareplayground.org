@@ -5,7 +5,10 @@ import { GlobalSEO } from '@nerve/core/components/utility';
 
 import { Header } from './Header/Header';
 import { Footer } from './Footer/Footer';
-import { StylesReset, StylesGlobal, FontDefinitions } from './styles';
+import { StylesGlobal, FontDefinitions } from './styles';
+
+// CSS Reset
+import '@nerve/assets/reset.css';
 
 export const Layout: React.FC<LayoutProps> = ({
     children,
@@ -15,7 +18,6 @@ export const Layout: React.FC<LayoutProps> = ({
     <>
         <GlobalSEO />
 
-        <StylesReset />
         <StylesGlobal />
         <Helmet>
             <style>{FontDefinitions}</style>

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Layout, Container } from '@nerve/core/components/layout';
+import { Container } from '@nerve/core/components/layout';
+import { Layout } from '@nerve/domains/app';
 
 const NoPageFound: React.FC = () => {
     return (
