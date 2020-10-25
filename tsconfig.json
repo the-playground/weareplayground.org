@@ -2,16 +2,13 @@
 	"compilerOptions": {
 		"baseUrl": "",
 		"paths": {
-			"@context": [
-				"./src/__context__/"
-			],
-			"@hooks": [
-				"./src/__hooks__/"
-			],
 			"@type/*": [
 				"./src/__types__/*"
 			],
 			// New architecture
+			"@app/config/*": [
+				"./@app/config/*"
+			],
 			"@nerve/core/*": [
 				"./@nerve/core/*"
 			],

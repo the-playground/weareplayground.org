@@ -2,11 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import { breakpoints, spacing } from '@nerve/core/tokens';
 
-import { useLinkMapContext } from '@context';
+import { useLinkMapContext } from '@nerve/shared/context';
 
-import { Container } from '@nerve/core/components/layout';
-import { Heading, BodyText, Icon } from '@nerve/core/components/foundations';
-import { TextButton } from '@nerve/core/components/actions';
+import {
+    BodyText,
+    Container,
+    Heading,
+    Icon,
+    TextButton,
+} from '@nerve/core/components';
 
 const StyledArchiveSection = styled.section`
     padding: ${spacing.layout.l} 0;

@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { Container } from '@nerve/core/components/layout';
-import { BodyText, Heading } from '@nerve/core/components/foundations';
+import { BodyText, Container, Heading } from '@nerve/core/components';
 
 import * as styled from './__styles';
 
-export const SimpleHero: React.FC<SimpleHero> = ({ title, subTitle }) => (
+export const SimpleHero: React.FC<SimpleHeroProps> = ({ title, subTitle }) => (
     <styled.SimpleHero>
         <Container>
             <Heading color="light" tag="h1" size="l" className="title">
@@ -18,7 +17,7 @@ export const SimpleHero: React.FC<SimpleHero> = ({ title, subTitle }) => (
     </styled.SimpleHero>
 );
 
-interface SimpleHero {
+interface SimpleHeroProps {
     title: string;
     subTitle: string;
 }

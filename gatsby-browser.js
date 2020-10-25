@@ -15,10 +15,10 @@ import { Layout } from './@nerve/domains/app';
 import {
     ConfigProvider,
     LinkMapProvider,
-    SeasonProvider,
-    ShowProvider,
     UIProvider,
-} from './src/__context__';
+} from './@nerve/shared/context';
+
+import { SeasonProvider, ShowProvider } from './@nerve/domains/performance';
 
 // Persist our core layout across the entire app
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types

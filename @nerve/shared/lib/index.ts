@@ -5,6 +5,5 @@ export * from './src/links';
 export * from './src/netlify';
 export * from './src/numbers';
 export * from './src/prismic';
-export * from './src/shows';
 export * from './src/ssr';
 export * from './src/url';

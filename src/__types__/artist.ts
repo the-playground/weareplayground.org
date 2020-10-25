@@ -1,7 +1,4 @@
-import {
-    FluidImageProps,
-    FixedImageProps,
-} from '@nerve/core/components/foundations';
+import { FluidImageProps, FixedImageProps } from '@nerve/core/components';
 import { PrismicExternalLink } from './prismic';
 
 export type ArtistRole =

@@ -12,10 +12,10 @@ import {
 import { getChildPageSlug, normalizeSlug } from '@nerve/shared/lib';
 
 import { Link } from '@nerve/core/components/utility';
-import { BodyText } from '../BodyText/BodyText';
-import { Heading } from '../Heading/Heading';
-import { GrittyHeading } from '../GrittyHeading/GrittyHeading';
-import { Image } from '../Image/Image';
+import { BodyText } from '../../typography/BodyText/BodyText';
+import { Heading } from '../../typography/Heading/Heading';
+import { GrittyHeading } from '../../typography/GrittyHeading/GrittyHeading';
+import { Image } from '../../media/Image/Image';
 
 /**
  * Handles resolving internal links

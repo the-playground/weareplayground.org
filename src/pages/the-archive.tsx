@@ -6,10 +6,9 @@ import { PrismicImage } from '@type/prismic';
 import { ShowSnippet } from '@type/show';
 
 import { SimpleHero } from '@nerve/shared/components';
-import { ShowPosterGrid } from '@nerve/domains/show';
+import { ShowPosterGrid, sortShows } from '@nerve/domains/performance';
 import { SubscribeSection } from '@nerve/domains/engagement';
 
-import { sortShows } from '@nerve/shared/lib';
 import PageTemplate from '@nerve/domains/page/PageTemplate';
 
 const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({

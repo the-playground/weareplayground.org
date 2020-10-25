@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useConfigContext } from '@context';
+import { useConfigContext } from '@nerve/shared/context';
 
 /**
  * Handle generating the global basic meta information for the site.

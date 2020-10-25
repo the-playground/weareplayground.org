@@ -1,8 +1,7 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import styled from 'styled-components';
-import format from 'date-fns/format';
-import parseISO from 'date-fns/parseISO';
+import { format, parseISO } from 'date-fns';
 
 import { GatsbyPageContext } from '@type/gatsby';
 import { PrismicImage } from '@type/prismic';
@@ -14,24 +13,23 @@ import {
     BodyText,
     Heading,
     Image,
+    Container,
     PrismicCMSRichTextProps,
     RichTextDisplay,
     FluidImageProps,
-} from '@nerve/core/components/foundations';
+} from '@nerve/core/components';
 
 import { AuthorCard } from '@nerve/domains/blog';
 import { SubscribeSection } from '@nerve/domains/engagement';
 
-import { useConfigContext } from '@context';
-import { useGetMetaImage, useCurrentURL } from '@hooks';
+import { useConfigContext } from '@nerve/shared/context';
+import { useGetMetaImage, useCurrentURL } from '@nerve/shared/hooks';
 import {
     animation,
     appNavBreakpoint,
     borders,
     spacing,
 } from '@nerve/core/tokens';
-
-import { Container } from '@nerve/core/components/layout';
 
 const BlogHero = styled.div`
     padding-top: ${spacing.layout.m};

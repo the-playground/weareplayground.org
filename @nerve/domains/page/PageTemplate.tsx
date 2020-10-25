@@ -2,8 +2,8 @@ import React from 'react';
 
 import { PrismicImage } from '@type/prismic';
 
-import { useConfigContext } from '@context';
-import { useCurrentURL, useGetMetaImage } from '@hooks';
+import { useConfigContext } from '@nerve/shared/context';
+import { useCurrentURL, useGetMetaImage } from '@nerve/shared/hooks';
 
 import { PageBasicSEO, StructuredData } from '@nerve/core/components/utility';
 

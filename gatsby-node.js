@@ -149,7 +149,7 @@ const generateSeasonsAndShows = async ({ graphql, actions, reporter }) => {
             url: `/${URLBase}/${season.uid}`,
             id: season.id,
             template: require.resolve(
-                `./@nerve/domains/season/SeasonTemplate.tsx`
+                `./@nerve/domains/performance/templates/SeasonTemplate.tsx`
             ),
         };
 
@@ -169,7 +169,7 @@ const generateSeasonsAndShows = async ({ graphql, actions, reporter }) => {
                 url: `${seasonConfig.url}/${show.uid}`,
                 id: show.id,
                 template: require.resolve(
-                    `./@nerve/domains/show/ShowTemplate.tsx`
+                    `./@nerve/domains/performance/templates/ShowTemplate.tsx`
                 ),
                 season: seasonConfig,
             };

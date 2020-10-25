@@ -1,1 +1,1 @@
-export * from './AuthorCard/AuthorCard';
+export * from './components';

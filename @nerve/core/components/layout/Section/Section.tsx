@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BackgroundOverlay } from '@nerve/core/components/foundations';
+import { BackgroundOverlay } from '@nerve/core/components';
 
 import { SectionProps } from './__types';
 import * as styled from './__styles';

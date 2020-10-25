@@ -1,1 +1,1 @@
-export * from './LegacyContentNotice/LegacyContentNotice';
+export * from './components';

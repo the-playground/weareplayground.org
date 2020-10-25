@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { SiteConfig } from '@hooks';
+import { SiteConfig } from '@nerve/shared/hooks';
 
 import {
     organizationSchema,

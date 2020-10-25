@@ -1,7 +1,7 @@
 import React from 'react';
 import { UseFormMethods } from 'react-hook-form';
 
-import { BodyText } from '@nerve/core/components/foundations';
+import { BodyText } from '@nerve/core/components/typography';
 
 import { InputProps } from './Input.d';
 import * as styled from './Input.styles';

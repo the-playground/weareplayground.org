@@ -83,9 +83,8 @@ export default {
             options: {
                 root: '', // <- will be used as a root dir
                 aliases: {
-                    '@context': './src/__context__', // <- will become ./src/__context__
-                    '@hooks': './src/__hooks__',
                     '@type': './src/__types__',
+                    '@app/config': './@app/config',
                     '@nerve/core': './@nerve/core',
                     '@nerve/domains': './@nerve/domains',
                     '@nerve/assets': './@nerve/assets',

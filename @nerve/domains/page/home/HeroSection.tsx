@@ -4,22 +4,18 @@ import styled from 'styled-components';
 import { PrismicInternalLink } from '@type/prismic';
 import { breakpoints, grid, spacing } from '@nerve/core/tokens';
 
-import { useLinkMapContext } from '@context';
+import { useLinkMapContext } from '@nerve/shared/context';
 import { getChildPageSlug } from '@nerve/shared/lib';
 
 import {
-    Container,
-    Section,
-    SectionProps,
-} from '@nerve/core/components/layout';
-
-import {
     BodyText,
+    Container,
+    FillButton,
     GrittyHeading,
     Icon,
-} from '@nerve/core/components/foundations';
-
-import { FillButton } from '@nerve/core/components/actions';
+    Section,
+    SectionProps,
+} from '@nerve/core/components';
 
 const StyledHeroSection = styled(Section)`
     padding: ${spacing.layout.l} 0 ${spacing.layout.xl} 0;

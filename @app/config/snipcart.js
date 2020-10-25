@@ -1,0 +1,2 @@
+export const SNIPCART_SCRIPT_VERSION = '3.0.15';
+export const SNIPCART_STYLESHEET_VERSION = '3.0.15';

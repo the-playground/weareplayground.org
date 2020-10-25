@@ -1,4 +1,4 @@
-import { SiteConfig } from '@hooks';
+import { SiteConfig } from '@nerve/shared/hooks';
 
 /**
  * https://schema.org/Organization
