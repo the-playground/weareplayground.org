@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Performance } from '@type/show';
 import { getShowSlug } from '@nerve/shared/lib';
-import { Link } from '@nerve/core/components/utility';
+import { Link } from '@nerve/core/routing';
 
 import {
     BodyText,

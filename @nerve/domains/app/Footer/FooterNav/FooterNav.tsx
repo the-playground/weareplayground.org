@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { useConfigContext, useLinkMapContext } from '@nerve/shared/context';
 
-import { Link } from '@nerve/core/components/utility';
+import { Link } from '@nerve/core/routing';
 import { BodyText, Logo } from '@nerve/core/components';
 
 import * as styled from './__styles';

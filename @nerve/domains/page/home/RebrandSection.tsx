@@ -4,9 +4,6 @@ import { breakpoints, spacing, zIndex } from '@nerve/core/tokens';
 import whiteGrit from '@nerve/assets/grit-white.png';
 import blackGrit from '@nerve/assets/grit-black.png';
 
-import { useLinkMapContext } from '@nerve/shared/context';
-import { getChildPageSlug } from '@nerve/shared/lib';
-
 import { Container, Heading, Logo, Section } from '@nerve/core/components';
 
 const sectionBreakpoint = breakpoints.m;

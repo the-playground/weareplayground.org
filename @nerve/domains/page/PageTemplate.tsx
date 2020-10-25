@@ -5,7 +5,7 @@ import { PrismicImage } from '@type/prismic';
 import { useConfigContext } from '@nerve/shared/context';
 import { useCurrentURL, useGetMetaImage } from '@nerve/shared/hooks';
 
-import { PageBasicSEO, StructuredData } from '@nerve/core/components/utility';
+import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
 
 /**
  * This template handles retrieving and generating all dynamic content for

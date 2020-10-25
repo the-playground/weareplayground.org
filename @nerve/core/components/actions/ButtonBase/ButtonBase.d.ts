@@ -1,4 +1,4 @@
-import { LinkProps } from '@nerve/core/components/utility';
+import { LinkProps } from '@nerve/core/routing';
 import { IconProps } from '@nerve/core/components/media';
 
 export type ButtonSize = 's' | 'm';

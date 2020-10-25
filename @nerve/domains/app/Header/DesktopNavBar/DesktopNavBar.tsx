@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useLinkMapContext } from '@nerve/shared/context';
 
-import { Link } from '@nerve/core/components/utility';
+import { Link } from '@nerve/core/routing';
 import { BodyText, FillButton } from '@nerve/core/components';
 
 import * as styled from './__styles';

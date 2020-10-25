@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from '@nerve/core/components/utility';
+import { Link } from '@nerve/core/routing';
 import { BodyText, Container } from '@nerve/core/components';
 import { useConfigContext, useLinkMapContext } from '@nerve/shared/context';
 

@@ -11,7 +11,7 @@ import {
 
 import { getChildPageSlug, normalizeSlug } from '@nerve/shared/lib';
 
-import { Link } from '@nerve/core/components/utility';
+import { Link } from '@nerve/core/routing';
 import { BodyText } from '../../typography/BodyText/BodyText';
 import { Heading } from '../../typography/Heading/Heading';
 import { GrittyHeading } from '../../typography/GrittyHeading/GrittyHeading';

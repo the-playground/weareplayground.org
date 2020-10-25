@@ -10,7 +10,7 @@ import { useGetMetaImage, useCurrentURL } from '@nerve/shared/hooks';
 import { LegacyContentNotice } from '@nerve/domains/migrations';
 import { SubscribeSection } from '@nerve/domains/engagement';
 
-import { PageBasicSEO, StructuredData } from '@nerve/core/components/utility';
+import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
 
 import { useShowStatus } from '../__hooks__';
 

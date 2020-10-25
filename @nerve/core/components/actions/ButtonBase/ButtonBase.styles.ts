@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Link } from '@nerve/core/components/utility';
+import { Link } from '@nerve/core/routing';
 
 import { animation, borders, spacing, typography } from '@nerve/core/tokens';
 import { ButtonBaseProps } from './ButtonBase.d';

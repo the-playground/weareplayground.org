@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from '@nerve/core/components/utility';
+import { Link } from '@nerve/core/routing';
 
 import { Container, Logo } from '@nerve/core/components';
 

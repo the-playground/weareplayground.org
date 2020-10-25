@@ -7,7 +7,7 @@ import { GatsbyPageContext } from '@type/gatsby';
 import { PrismicImage } from '@type/prismic';
 import { Author } from '@type/artist';
 
-import { PageBasicSEO, StructuredData } from '@nerve/core/components/utility';
+import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
 
 import {
     BodyText,
