@@ -6,7 +6,7 @@
 
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 
-import redirects from './@app/config/redirects';
+import redirects from './@app/config/redirects.ts';
 
 /**
  * Build a single season page
@@ -215,7 +215,7 @@ const generateBlogPosts = async ({ graphql, actions, reporter }) => {
             slug: post.uid,
             url: `/${blogParentPage}/${post.uid}`,
             id: post.id,
-            template: require.resolve(`./@nerve/domains/blog/PostTemplate.tsx`),
+            template: require.resolve(`./@nerve/domains/blog/templates/PostTemplate.tsx`),
         };
 
         buildBlogPost(blogConfig, createPage);

@@ -5,7 +5,7 @@
  */
 import React from 'react';
 
-import { SNIPCART_STYLESHEET_VERSION } from '@app/config/redirects';
+// import { SNIPCART_STYLESHEET_VERSION } from '@app/config/snipcart';
 
 // Direct-export our browser wrapper for SSR
 export { wrapRootElement, wrapPageElement } from './gatsby-browser';

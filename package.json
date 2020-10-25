@@ -1,14 +1,14 @@
 {
 	"name": "the-nerve-web",
 	"version": "1.0.0",
-	"description": "A modern web app for The Nerve",
+	"description": "A modern web app frontend for The Nerve",
 	"main": "index.js",
 	"repository": "https://github.com/the-nerve/nervetheatre.org",
 	"author": "Chris Hahn <chris@chrishahn.me>",
 	"license": "MIT",
 	"private": false,
 	"dependencies": {
-		"@sentry/gatsby": "^5.27.0",
+		"@sentry/gatsby": "^5.27.1",
 		"classnames": "^2.2.6",
 		"date-fns": "^2.16.1",
 		"dotenv": "^8.2.0",
@@ -35,7 +35,7 @@
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
 		"react-helmet": "^6.1.0",
-		"react-hook-form": "^6.9.5",
+		"react-hook-form": "^6.9.6",
 		"styled-components": "^5.2.0"
 	},
 	"devDependencies": {
@@ -51,7 +51,7 @@
 		"@typescript-eslint/parser": "^4.5.0",
 		"babel-eslint": "^10.1.0",
 		"babel-plugin-styled-components": "^1.11.1",
-		"eslint": "^7.11.0",
+		"eslint": "^7.12.0",
 		"eslint-config-airbnb": "^18.2.0",
 		"eslint-config-airbnb-typescript": "^12.0.0",
 		"eslint-config-prettier": "^6.14.0",
@@ -86,21 +86,5 @@
 		"hooks": {
 			"pre-commit": "npm run lint:js:fix && npm run lint:css:fix"
 		}
-	},
-	"eslintConfig": {
-		"extends": [
-			"@codingwithchris/eslint-config/react-typescript"
-		],
-		"rules": {
-			"@typescript-eslint/no-explicit-any": "off",
-			"@typescript-eslint/no-empty-interfaces": "off"
-		}
-	},
-	"eslintIgnore": [
-		"node_modules/",
-		".github/",
-		".cache/",
-		"public/",
-		"static/"
-	]
+	}
 }
