@@ -6,16 +6,16 @@
 				"./@app/config/*"
 			],
 			"@nerve/core/*": [
-				"./src/@nerve/core/*"
+				"./@nerve/core/*"
 			],
 			"@nerve/assets": [
-				"./src/@nerve/assets/"
+				"./@nerve/assets/"
 			],
 			"@nerve/domains/*": [
-				"./src/@nerve/domains/*"
+				"./@nerve/domains/*"
 			],
 			"@nerve/shared/*": [
-				"./src/@nerve/shared/*"
+				"./@nerve/shared/*"
 			],
 		},
 		"module": "commonjs",
