@@ -1,6 +1,6 @@
 import { rgba } from 'polished';
 import { palette } from './__palette';
-import { ActionTheme, ActionThemes } from '../theme.d';
+import { ActionTheme, ActionThemes } from '../index.d';
 
 const primary: ActionTheme = {
     color: {

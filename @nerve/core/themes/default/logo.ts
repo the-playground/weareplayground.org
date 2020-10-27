@@ -1,5 +1,5 @@
 import { palette } from './__palette';
-import { LogoTheme, LogoThemes } from '../theme';
+import { LogoTheme, LogoThemes } from '../index.d';
 
 const light: LogoTheme = {
     bracketColor: palette.primary.main,

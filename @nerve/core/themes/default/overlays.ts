@@ -1,5 +1,5 @@
 import { rgba } from 'polished';
-import { OverlayTheme, OverlayThemes } from '../theme.d';
+import { OverlayTheme, OverlayThemes } from '../index.d';
 import { palette } from './__palette';
 
 const verticalGradientDark: OverlayTheme = {

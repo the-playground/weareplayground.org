@@ -1,4 +1,4 @@
-import { AppTheme } from '../theme';
+import { AppTheme } from '../index.d';
 
 import { palette } from './__palette';
 import { actions } from './actions';

@@ -1,4 +1,4 @@
-import { IconTheme, IconThemes } from '../theme.d';
+import { IconTheme, IconThemes } from '../index.d';
 import { palette } from './__palette';
 
 const light: IconTheme = {

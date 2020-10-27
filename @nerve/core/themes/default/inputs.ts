@@ -1,5 +1,5 @@
 import { palette } from './__palette';
-import { InputTheme, InputThemes } from '../theme';
+import { InputTheme, InputThemes } from '../index.d';
 
 const light: InputTheme = {
     background: {

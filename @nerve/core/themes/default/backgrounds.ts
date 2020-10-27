@@ -1,4 +1,4 @@
-import { BackgroundTheme, BackgroundThemes } from '../theme.d';
+import { BackgroundTheme, BackgroundThemes } from '../index.d';
 import { palette } from './__palette';
 
 const light: BackgroundTheme = {
