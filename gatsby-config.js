@@ -84,10 +84,10 @@ export default {
                 root: '', // <- will be used as a root dir
                 aliases: {
                     '@app/config': './@app/config',
-                    '@nerve/core': './@nerve/core',
-                    '@nerve/domains': './@nerve/domains',
-                    '@nerve/assets': './@nerve/assets',
-                    '@nerve/shared': './@nerve/shared',
+                    '@nerve/core': './src/@nerve/core',
+                    '@nerve/domains': './src/@nerve/domains',
+                    '@nerve/assets': './src/@nerve/assets',
+                    '@nerve/shared': './src/@nerve/shared',
                 },
             },
         },

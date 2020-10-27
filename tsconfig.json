@@ -6,16 +6,16 @@
 				"./@app/config/*"
 			],
 			"@nerve/core/*": [
-				"./@nerve/core/*"
+				"./src/@nerve/core/*"
 			],
 			"@nerve/assets": [
-				"./@nerve/assets/"
+				"./src/@nerve/assets/"
 			],
 			"@nerve/domains/*": [
-				"./@nerve/domains/*"
+				"./src/@nerve/domains/*"
 			],
 			"@nerve/shared/*": [
-				"./@nerve/shared/*"
+				"./src/@nerve/shared/*"
 			],
 		},
 		"module": "commonjs",
@@ -47,7 +47,6 @@
 	"include": [
 		"src/**/*",
 		"@app/**/*",
-		"@nerve/**/*",
 		"gatsby-*.js",
 	]
 }
