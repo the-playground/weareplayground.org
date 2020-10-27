@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Performance } from '@type/show';
+import { Performance } from '../../index.d';
 import { getShowSlug } from '@nerve/shared/lib';
 import { Link } from '@nerve/core/routing';
 

@@ -3,7 +3,7 @@ import {
     PrismicImage,
     PrismicFluidImage,
     PrismicExternalLink,
-} from '@type/prismic';
+} from '@nerve/shared/types';
 
 export const useQuerySiteConfig = (): SiteConfig => {
     /**

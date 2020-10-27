@@ -1,12 +1,12 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 
-import { GatsbyPageContext } from '@type/gatsby';
-import { PrismicImage } from '@type/prismic';
-import { ShowSnippet } from '@type/show';
+import { GatsbyPageContext } from '@nerve/shared/types';
+import { PrismicImage } from '@nerve/shared/types';
 
 import { SimpleHero } from '@nerve/shared/components';
 import { ShowPosterGrid, sortShows } from '@nerve/domains/performance';
+import { ShowSnippet } from '@nerve/domains/performance/index.d';
 import { SubscribeSection } from '@nerve/domains/engagement';
 
 import PageTemplate from '@nerve/domains/page/PageTemplate';

@@ -1,5 +1,5 @@
 import { AvailableBackgroundTheme, AvailableOverlayTheme } from '@nerve/core/themes';
-import { PrismicFluidImage } from '@type/prismic';
+import { PrismicFluidImage } from '@nerve/shared/types';
 
 type BackgroundPosition =
     | 'center top'

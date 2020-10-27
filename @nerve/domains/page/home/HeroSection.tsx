@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { PrismicInternalLink } from '@type/prismic';
+import { PrismicInternalLink } from '@nerve/shared/types';
 import { breakpoints, grid, spacing } from '@nerve/core/tokens';
 
 import { useLinkMapContext } from '@nerve/shared/context';

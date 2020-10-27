@@ -1,5 +1,5 @@
 import { compareDesc, parseISO } from 'date-fns';
-import { ShowSnippet } from '@type/show';
+import { ShowSnippet } from '../index.d';
 
 /**
  * Sort shows from newest to oldest based on their performance dates

@@ -83,7 +83,6 @@ export default {
             options: {
                 root: '', // <- will be used as a root dir
                 aliases: {
-                    '@type': './src/__types__',
                     '@app/config': './@app/config',
                     '@nerve/core': './@nerve/core',
                     '@nerve/domains': './@nerve/domains',

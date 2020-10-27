@@ -2,10 +2,6 @@
 	"compilerOptions": {
 		"baseUrl": "",
 		"paths": {
-			"@type/*": [
-				"./src/__types__/*"
-			],
-			// New architecture
 			"@app/config/*": [
 				"./@app/config/*"
 			],

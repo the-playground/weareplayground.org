@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 
-import { GatsbyPageContext } from '@type/gatsby';
-import { Show } from '@type/show';
+import { GatsbyPageContext } from '@nerve/shared/types';
+import { Show } from '../index.d';
 
 import { useConfigContext } from '@nerve/shared/context';
 import { useGetMetaImage, useCurrentURL } from '@nerve/shared/hooks';

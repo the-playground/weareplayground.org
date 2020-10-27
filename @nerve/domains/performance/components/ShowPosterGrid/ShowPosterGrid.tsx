@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ShowSnippet } from '@type/show';
+import { ShowSnippet } from '../../index.d';
 
 import { BodyText } from '@nerve/core/components';
 import { ShowPoster } from '../ShowPoster/ShowPoster';

@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 
-import { GatsbyPageContext } from '@type/gatsby';
-import { PrismicImage, PrismicExternalLink } from '@type/prismic';
-import { ShowSnippet } from '@type/show';
+import { GatsbyPageContext } from '@nerve/shared/types';
+import { PrismicImage, PrismicExternalLink } from '@nerve/shared/types';
+import { ShowSnippet } from '../index.d';
 
 import { useConfigContext } from '@nerve/shared/context';
 import { useGetMetaImage, useCurrentURL } from '@nerve/shared/hooks';

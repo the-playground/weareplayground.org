@@ -1,4 +1,4 @@
-import { PrismicImage } from '@type/prismic';
+import { PrismicImage } from '@nerve/shared/types';
 
 /**
  * https://schema.org/WebPage

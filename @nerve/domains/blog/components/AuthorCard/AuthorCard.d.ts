@@ -1,6 +1,3 @@
-import { Author } from '@type/artist';
+import { Author } from '../../index.d';
 
-export type AuthorCardProps = Pick<
-    Author,
-    'name' | 'bio' | 'headshot' | 'instagram'
->;
+export type AuthorCardProps = Author;

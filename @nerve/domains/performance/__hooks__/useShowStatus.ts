@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { parseISO, sub, isPast, isWithinInterval } from 'date-fns';
 
-import { Performance } from '@type/show';
+import { Performance } from '../index.d';
 
 /**
  * Using all of the available performances of a show, determine the current status.

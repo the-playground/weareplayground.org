@@ -3,11 +3,13 @@ import { graphql, PageProps } from 'gatsby';
 import styled from 'styled-components';
 import { format, parseISO } from 'date-fns';
 
-import { GatsbyPageContext } from '@type/gatsby';
-import { PrismicImage } from '@type/prismic';
-import { Author } from '@type/artist';
+import { PrismicImage, GatsbyPageContext } from '@nerve/shared/types';
+import { Author } from '../index.d';
+
 
 import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
+import { AuthorCard } from '@nerve/domains/blog';
+
 
 import {
     BodyText,
@@ -19,7 +21,6 @@ import {
     FluidImageProps,
 } from '@nerve/core/components';
 
-import { AuthorCard } from '@nerve/domains/blog';
 import { SubscribeSection } from '@nerve/domains/engagement';
 
 import { useConfigContext } from '@nerve/shared/context';

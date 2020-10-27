@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
-import { GatsbyPageContext } from '@type/gatsby';
+import { GatsbyPageContext } from '@nerve/shared/types';
 import {
     PrismicImage,
     PrismicFluidImage,
     PrismicInternalLink,
-} from '@type/prismic';
+} from '@nerve/shared/types';
 
 import { SubscribeSection } from '@nerve/domains/engagement';
 

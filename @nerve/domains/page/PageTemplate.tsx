@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PrismicImage } from '@type/prismic';
+import { PrismicImage } from '@nerve/shared/types';
 
 import { useConfigContext } from '@nerve/shared/context';
 import { useCurrentURL, useGetMetaImage } from '@nerve/shared/hooks';

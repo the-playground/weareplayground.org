@@ -1,4 +1,4 @@
-import { PrismicImage } from '@type/prismic';
+import { PrismicImage } from '@nerve/shared/types';
 
 import { SiteConfig } from '@nerve/shared/hooks';
 import { useConfigContext } from '@nerve/shared/context';
