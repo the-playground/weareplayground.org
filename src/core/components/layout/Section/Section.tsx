@@ -21,7 +21,7 @@ export const Section: React.FC<SectionProps> = ({
                     bgColor={bgColor}
                     bgPosition={bgPosition}
                     fluid={bgImage.fluid}
-                    as="section"
+                    Tag="section"
                     fadeIn="1"
                 >
                     {overlay && <BackgroundOverlay variant={overlay} />}

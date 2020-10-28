@@ -1,4 +1,7 @@
-import { AvailableBackgroundTheme, AvailableOverlayTheme } from '@nerve/core/themes';
+import {
+    AvailableBackgroundTheme,
+    AvailableOverlayTheme,
+} from '@nerve/core/themes';
 import { PrismicFluidImage } from '@nerve/shared/types';
 
 type BackgroundPosition =
