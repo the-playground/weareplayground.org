@@ -11,14 +11,12 @@ Theatres have a reputation for being out of touch with the times when it comes t
 **@app/data**
 **@app/typings**
 
-### @nerve
-**@nerve/assets**
-**@nerve/core**
-**@nerve/domains**
-**@nerve/shared**
-
 ### src
 **src/pages**
+**src/assets**
+**src/core**
+**src/domains**
+**src/shared**
 
 ## 📝 Technical Docs
 Everything in here serves as a holding place for important technical information we may need to reference later.
