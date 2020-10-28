@@ -38,6 +38,7 @@ export const NotFoundContent: React.FC = () => {
                     color="dark"
                     size="s"
                     className="title"
+                    as="h1"
                 >
                     Page Not Found
                 </GrittyHeading>
@@ -46,7 +47,7 @@ export const NotFoundContent: React.FC = () => {
                     either doesn't exist or has been moved. Try heading back to
                     the home page and starting your journey from there.
                 </BodyText>
-                <FillButton to="/" color="primary" size="m" className="action">
+                <FillButton to="/" color="primary" size="m">
                     Take me home
                 </FillButton>
             </Container>
