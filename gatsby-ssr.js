@@ -5,6 +5,8 @@
  */
 import React from 'react';
 
+// import { SNIPCART_STYLESHEET_VERSION } from '@app/config/snipcart';
+
 // Direct-export our browser wrapper for SSR
 export { wrapRootElement, wrapPageElement } from './gatsby-browser';
 
@@ -43,7 +45,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
         //     key="css-snipcart"
         //     rel="stylesheet"
         //     id="snipcart-css"
-        //     href="https://cdn.snipcart.com/themes/v3.0.15/default/snipcart.css"
+        //     href={`https://cdn.snipcart.com/themes/v${SNIPCART_STYLESHEET_VERSION}/default/snipcart.css`}
         //     type="text/css"
         // />,
     ]);

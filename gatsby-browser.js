@@ -8,17 +8,17 @@
 import React from 'react';
 
 import { ThemeProvider } from 'styled-components';
-import { theme } from './src/__themes__/default';
+
+import { theme } from './src/core/themes/default';
+import { Layout } from './src/domains/app';
 
 import {
     ConfigProvider,
     LinkMapProvider,
-    SeasonProvider,
-    ShowProvider,
     UIProvider,
-} from './src/__context__';
+} from './src/shared/context';
 
-import { Layout } from './src/components/layout/index.ts';
+import { SeasonProvider, ShowProvider } from './src/domains/performance';
 
 // Persist our core layout across the entire app
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types

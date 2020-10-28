@@ -6,7 +6,7 @@
 
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 
-import redirects from './netlifyRedirects';
+import redirects from './@app/config/redirects.ts';
 
 /**
  * Build a single season page
@@ -148,7 +148,9 @@ const generateSeasonsAndShows = async ({ graphql, actions, reporter }) => {
             slug: season.uid,
             url: `/${URLBase}/${season.uid}`,
             id: season.id,
-            template: require.resolve(`./src/templates/SeasonTemplate.tsx`),
+            template: require.resolve(
+                `./src/domains/performance/templates/SeasonTemplate.tsx`
+            ),
         };
 
         buildSeasonPage(seasonConfig, createPage);
@@ -166,7 +168,9 @@ const generateSeasonsAndShows = async ({ graphql, actions, reporter }) => {
                 slug: show.uid,
                 url: `${seasonConfig.url}/${show.uid}`,
                 id: show.id,
-                template: require.resolve(`./src/templates/ShowTemplate.tsx`),
+                template: require.resolve(
+                    `./src/domains/performance/templates/ShowTemplate.tsx`
+                ),
                 season: seasonConfig,
             };
 
@@ -211,7 +215,9 @@ const generateBlogPosts = async ({ graphql, actions, reporter }) => {
             slug: post.uid,
             url: `/${blogParentPage}/${post.uid}`,
             id: post.id,
-            template: require.resolve(`./src/templates/PostTemplate.tsx`),
+            template: require.resolve(
+                `./src/domains/blog/templates/PostTemplate.tsx`
+            ),
         };
 
         buildBlogPost(blogConfig, createPage);

@@ -21,6 +21,9 @@
         ]
     },
     "ignoreFiles": [
-        "node_modules/*"
+        "node_modules/*",
+        "docs/*",
+        "cache/*",
+        "public/*",
     ]
 }

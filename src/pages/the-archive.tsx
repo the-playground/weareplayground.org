@@ -1,14 +1,14 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 
-import { GatsbyPageContext } from '@type/gatsby';
-import { PrismicImage } from '@type/prismic';
-import { ShowSnippet } from '@type/show';
+import { GatsbyPageContext, PrismicImage } from '@nerve/shared/types';
 
-import PageTemplate from '@templates/PageTemplate';
-import { SimpleHero, PosterGrid, SubscribeSection } from '@components/ui';
+import { SimpleHero } from '@nerve/shared/components';
+import { ShowPosterGrid, sortShows } from '@nerve/domains/performance';
+import { ShowSnippet } from '@nerve/domains/performance/index.d';
+import { SubscribeSection } from '@nerve/domains/engagement';
 
-import { sortShows } from '@lib/shows';
+import PageTemplate from '@nerve/domains/page/PageTemplate';
 
 const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
@@ -25,7 +25,7 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 title={pageData.data.hero_title}
                 subTitle={pageData.data.hero_sub_title}
             />
-            <PosterGrid items={sortShows(shows)} />
+            <ShowPosterGrid items={sortShows(shows)} />
             <SubscribeSection />
         </PageTemplate>
     );

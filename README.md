@@ -6,6 +6,20 @@ Theatres have a reputation for being out of touch with the times when it comes t
 
 ## 📁 Project Structure
 
+### @app
+**@app/config**
+**@app/data**
+**@app/typings**
+
+### @nerve
+**@nerve/assets**
+**@nerve/core**
+**@nerve/domains**
+**@nerve/shared**
+
+### src
+**src/pages**
+
 ## 📝 Technical Docs
 Everything in here serves as a holding place for important technical information we may need to reference later.
 

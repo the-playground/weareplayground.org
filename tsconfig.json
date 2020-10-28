@@ -1,43 +1,25 @@
 {
-	"parserOptions": {
-		"project": "./tsconfig.json",
-	},
 	"compilerOptions": {
-		"baseUrl": "src/",
+		"baseUrl": "",
 		"paths": {
-			"@assets/*": [
-				"./assets/*"
+			"@app/config/*": [
+				"./@app/config/*"
 			],
-			"@context": [
-				"./__context__/"
+			"@nerve/core/*": [
+				"./src/core/*"
 			],
-			"@hooks": [
-				"./__hooks__/"
+			"@nerve/assets": [
+				"./src/assets/"
 			],
-			"@type/*": [
-				"./__types__/*"
+			"@nerve/domains/*": [
+				"./src/domains/*"
 			],
-			"@lib/*": [
-				"./__lib__/*"
+			"@nerve/shared/*": [
+				"./src/shared/*"
 			],
-			"@themes/*": [
-				"./__themes__/*"
-			],
-			"@tokens": [
-				"./__tokens__/"
-			],
-			"@components/*": [
-				"./components/*"
-			],
-			"@screens/*": [
-				"./screens/*"
-			],
-			"@templates/*": [
-				"./templates/*"
-			]
 		},
 		"module": "commonjs",
-		"target": "esnext",
+		"target": "es5",
 		"strict": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
@@ -63,8 +45,9 @@
 		"static",
 	],
 	"include": [
-		"src",
-		"gatsby-*",
-		"@typings/*",
+		"src/**/*",
+		"@app/**/*",
+		"gatsby-*.js",
+		".eslintrc.js",
 	]
 }
