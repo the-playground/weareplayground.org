@@ -27,7 +27,8 @@ export const PageBasicSEO: React.FC<PageBasicSEOProps> = ({
             {/* Standard meta data for search engines */}
             <title>{title}</title>
             <meta name="description" content={description} />
-            <meta name="image" content={image.url} />
+            {image && <meta name="image" content={image.url} />}
+
             <link rel="canonical" href={url} />
 
             {/* Search engine visibility & directives */}
@@ -47,16 +48,26 @@ export const PageBasicSEO: React.FC<PageBasicSEOProps> = ({
             <meta property="og:title" content={`${title}`} />
             <meta property="og:description" content={description} />
 
-            <meta property="og:image" content={image.url} />
-            <meta property="og:image:secure_url" content={image.url} />
+            {/* Meta images */}
+            {image && <meta property="og:image" content={image.url} />}
+            {image && (
+                <meta property="og:image:secure_url" content={image.url} />
+            )}
 
-            {image.alt && <meta property="og:image:alt" content={image.alt} />}
+            {image?.alt && <meta property="og:image:alt" content={image.alt} />}
 
-            <meta
-                property="og:image:height"
-                content={image.dimensions?.height}
-            />
-            <meta property="og:image:width" content={image.dimensions?.width} />
+            {image && (
+                <meta
+                    property="og:image:height"
+                    content={image.dimensions?.height}
+                />
+            )}
+            {image && (
+                <meta
+                    property="og:image:width"
+                    content={image.dimensions?.width}
+                />
+            )}
         </Helmet>
     );
 };
@@ -65,6 +76,6 @@ interface PageBasicSEOProps {
     url: string;
     title: string;
     description: string;
-    image: PrismicImage;
+    image?: PrismicImage;
     hideSEO?: boolean;
 }

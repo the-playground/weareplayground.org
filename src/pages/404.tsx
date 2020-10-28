@@ -1,13 +1,26 @@
 import * as React from 'react';
-import { Container } from '@nerve/core/components';
-import { Layout } from '@nerve/domains/app';
+import { PageProps } from 'gatsby';
 
-const NoPageFound: React.FC = () => {
+import { GatsbyPageContext } from '@nerve/shared/types';
+import { useCurrentURL } from '@nerve/shared/hooks';
+
+import { PageBasicSEO } from '@nerve/domains/seo';
+import { NotFoundContent } from '@nerve/domains/page/404';
+
+const NotFound: React.FC<PageProps<GatsbyPageContext>> = ({ location }) => {
+    const url = useCurrentURL(location.pathname);
+
     return (
-        <Layout noHeader noFooter>
-            <Container>404 Error</Container>
-        </Layout>
+        <>
+            <PageBasicSEO
+                url={url}
+                title="Page Not Found (404) | The Nerve"
+                description="We couldn't find the page you're looking for."
+                hideSEO
+            />
+            <NotFoundContent />
+        </>
     );
 };
 
-export default NoPageFound;
+export default NotFound;
