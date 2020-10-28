@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
-import { GatsbyPageContext } from '@nerve/shared/types';
 import {
+    GatsbyPageContext,
     PrismicImage,
     PrismicFluidImage,
     PrismicInternalLink,
@@ -9,13 +9,12 @@ import {
 
 import { SubscribeSection } from '@nerve/domains/engagement';
 
+import PageTemplate from '@nerve/domains/page/PageTemplate';
 import {
     ArchiveSection,
     HeroSection,
     RebrandSection,
 } from '@nerve/domains/page/home';
-
-import PageTemplate from '@nerve/domains/page/PageTemplate';
 
 const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,

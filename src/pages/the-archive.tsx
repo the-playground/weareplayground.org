@@ -1,8 +1,7 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 
-import { GatsbyPageContext } from '@nerve/shared/types';
-import { PrismicImage } from '@nerve/shared/types';
+import { GatsbyPageContext, PrismicImage } from '@nerve/shared/types';
 
 import { SimpleHero } from '@nerve/shared/components';
 import { ShowPosterGrid, sortShows } from '@nerve/domains/performance';

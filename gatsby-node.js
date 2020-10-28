@@ -149,7 +149,7 @@ const generateSeasonsAndShows = async ({ graphql, actions, reporter }) => {
             url: `/${URLBase}/${season.uid}`,
             id: season.id,
             template: require.resolve(
-                `./@nerve/domains/performance/templates/SeasonTemplate.tsx`
+                `./src/domains/performance/templates/SeasonTemplate.tsx`
             ),
         };
 
@@ -169,7 +169,7 @@ const generateSeasonsAndShows = async ({ graphql, actions, reporter }) => {
                 url: `${seasonConfig.url}/${show.uid}`,
                 id: show.id,
                 template: require.resolve(
-                    `./@nerve/domains/performance/templates/ShowTemplate.tsx`
+                    `./src/domains/performance/templates/ShowTemplate.tsx`
                 ),
                 season: seasonConfig,
             };
@@ -215,7 +215,9 @@ const generateBlogPosts = async ({ graphql, actions, reporter }) => {
             slug: post.uid,
             url: `/${blogParentPage}/${post.uid}`,
             id: post.id,
-            template: require.resolve(`./@nerve/domains/blog/templates/PostTemplate.tsx`),
+            template: require.resolve(
+                `./src/domains/blog/templates/PostTemplate.tsx`
+            ),
         };
 
         buildBlogPost(blogConfig, createPage);

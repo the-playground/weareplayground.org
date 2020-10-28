@@ -9,16 +9,16 @@ import React from 'react';
 
 import { ThemeProvider } from 'styled-components';
 
-import { theme } from './@nerve/core/themes/default';
-import { Layout } from './@nerve/domains/app';
+import { theme } from './src/core/themes/default';
+import { Layout } from './src/domains/app';
 
 import {
     ConfigProvider,
     LinkMapProvider,
     UIProvider,
-} from './@nerve/shared/context';
+} from './src/shared/context';
 
-import { SeasonProvider, ShowProvider } from './@nerve/domains/performance';
+import { SeasonProvider, ShowProvider } from './src/domains/performance';
 
 // Persist our core layout across the entire app
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
