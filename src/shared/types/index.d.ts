@@ -1,2 +1,2 @@
-export * from './gatsby'
-export * from './prismic'
+export * from './gatsby';
+export * from './prismic';
