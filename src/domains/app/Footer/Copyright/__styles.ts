@@ -4,7 +4,6 @@ import { breakpoints, spacing } from '@nerve/core/tokens';
 
 export const Copyright = styled.div`
     background-color: ${({ theme }) => theme.surfaces.paper};
-    border-top: 1px solid ${({ theme }) => theme.palette.secondary.l1};
     padding: ${spacing.component.l} 0;
 
     .container {

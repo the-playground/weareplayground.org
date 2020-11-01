@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useConfigContext, useLinkMapContext } from '@nerve/shared/context';
 
-import { Container, Icon } from '@nerve/core/components';
+import { Container, Divider, Icon } from '@nerve/core/components';
 
 import { Copyright } from './Copyright/Copyright';
 import { FooterNav } from './FooterNav/FooterNav';
@@ -102,6 +102,7 @@ export const Footer: React.FC = () => {
                     menuItems={menuItems}
                 />
             </Container>
+            <Divider color="paperLight" />
             <Copyright />
         </styled.Footer>
     );

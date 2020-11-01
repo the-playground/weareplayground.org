@@ -1,4 +1,6 @@
+import { AvailableSurface } from '@nerve/core/themes';
+
 export interface DividerProps {
-    color: any;
+    color: AvailableSurface;
     className?: string;
 }
