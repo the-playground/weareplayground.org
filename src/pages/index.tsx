@@ -16,6 +16,8 @@ import {
     RebrandSection,
 } from '@nerve/domains/page/home';
 
+import { Paper } from '@nerve/core/components';
+
 const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
     pageContext,
@@ -29,7 +31,6 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
             currentLocation={location.pathname}
         >
             <HeroSection
-                bgColor="extraDark"
                 title={pageData.hero_title}
                 copy={pageData.hero_copy}
                 bgImage={pageData.hero_image}

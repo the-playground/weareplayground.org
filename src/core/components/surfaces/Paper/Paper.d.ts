@@ -1,8 +1,8 @@
-import { AvailableSurfaceTheme } from '@nerve/core/themes';
+import { AvailableSurface } from '@nerve/core/themes';
 
 export interface PaperProps {
+    bgColor?: AvailableSurface;
     variant?: 'default' | 'outlined';
-    bgColor: AvailableSurfaceTheme;
-    borderColor?: AvailableSurfaceTheme;
-    className: string;
+    borderColor?: AvailableSurface;
+    className?: string;
 }
