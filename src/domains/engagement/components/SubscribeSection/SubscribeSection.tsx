@@ -32,10 +32,10 @@ export const SubscribeSection: React.FC = () => {
         >
             <Container maxWidth="xs">
                 <GrittyHeading
-                    size="xs"
+                    size="s"
                     color="dark"
                     as="h3"
-                    bgColor="light"
+                    bgColor="neutralLight"
                     offset={-2}
                     className="intro-title"
                 >

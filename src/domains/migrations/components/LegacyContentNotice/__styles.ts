@@ -11,7 +11,7 @@ export const LegacyContentNotice = styled.div`
     }
 
     .divider {
-        background-color: ${(props) => props.theme.backgrounds.accent.color};
+        background-color: ${(props) => props.theme.palette.primary.base};
         display: block;
         height: 1px;
         margin-bottom: ${spacing.layout.s};

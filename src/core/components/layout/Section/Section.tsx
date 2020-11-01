@@ -2,8 +2,8 @@ import React from 'react';
 
 import { BackgroundOverlay } from '@nerve/core/components';
 
-import { SectionProps } from './__types';
-import * as styled from './__styles';
+import { SectionProps } from './Section.d';
+import * as styled from './Section.styles';
 
 export const Section: React.FC<SectionProps> = ({
     children,
@@ -36,4 +36,5 @@ export const Section: React.FC<SectionProps> = ({
     );
 };
 
-export * from './__types';
+export * from './Section';
+export * from './Section.d';

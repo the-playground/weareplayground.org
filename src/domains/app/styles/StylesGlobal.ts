@@ -16,7 +16,7 @@ export const StylesGlobal = createGlobalStyle`
 
 	body{
 		${fonts.bodyText};
-		background-color: ${(props) => props.theme.backgrounds.extraDark.color};
+		background-color: ${(props) => props.theme.surfaces.default};
 		line-height: 1.6;
 		min-height: 100%;
 		overflow-x: hidden;
@@ -26,10 +26,10 @@ export const StylesGlobal = createGlobalStyle`
 	}
 
 	::selection {
-  		background: ${(props) => props.theme.backgrounds.accent.color};
+  		background: ${(props) => props.theme.palette.primary.base};
 	}
 	::-moz-selection {
-		background:  ${(props) => props.theme.backgrounds.accent.color};
+		background:  ${(props) => props.theme.palette.primary.base};
 	}
 
 	/**

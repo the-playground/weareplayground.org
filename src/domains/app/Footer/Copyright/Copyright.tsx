@@ -45,9 +45,9 @@ export const Copyright: React.FC = () => {
                         />
                     )}
 
-                    {sitemap && (
+                    {/* {sitemap && (
                         <LinkItem slug={sitemap} text="sitemap" key="sitemap" />
-                    )}
+                    )} */}
                 </ul>
             </Container>
         </styled.Copyright>

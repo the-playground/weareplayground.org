@@ -49,7 +49,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
     return (
         <StyledHeroSection
-            bgColor="extraDark"
             bgImage={bgImage}
             bgPosition="center center"
             overlay="dark85"
@@ -57,7 +56,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <Container>
                 <GrittyHeading
                     as="h1"
-                    bgColor="light"
+                    bgColor="neutralLight"
                     color="dark"
                     size="l"
                     className="title"

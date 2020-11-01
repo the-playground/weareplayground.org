@@ -1,25 +1,29 @@
-import { PaletteColor, Grey, SystemColors } from './palette';
+import { PaletteColor, Neutral, SystemColors } from './palette';
 
 const orange: PaletteColor = {
-    light: '#FA7223',
-    main: '#F25C05',
-    dark: '#D75204',
+    l2: '#FB7F37',
+    l1: '#FA7223',
+    base: '#F25C05',
+    d1: '#D75204',
+    d2: '#D75204',
 };
 
 const blue: PaletteColor = {
-    extraLight: '#173A5F',
-    light: '#122D4A',
-    main: '#0C1E31',
-    dark: '#07121D',
+    l2: '#173A5F',
+    l1: '#122D4A',
+    base: '#0C1E31',
+    d1: '#07121D',
+    d2: '#020508',
 };
 
-const grey: Grey = {
-    100: '#F2F2F3',
-    200: '#D6D6D9',
-    300: '#A2A2A9',
-    400: '#888891',
-    500: '#67676F',
-    600: '#343438',
+const neutral: Neutral = {
+    100: '#FFFFFF',
+    200: '#F2F2F3',
+    300: '#D6D6D9',
+    400: '#A2A2A9',
+    500: '#888891',
+    600: '#67676F',
+    700: '#343438',
 };
 
 const system: SystemColors = {
@@ -30,6 +34,6 @@ const system: SystemColors = {
 export const brandColors = {
     orange,
     blue,
-    grey,
+    neutral,
     system,
 };

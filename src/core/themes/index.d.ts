@@ -1,5 +1,5 @@
 import { FlattenSimpleInterpolation } from 'styled-components';
-import { Palette, TypographyPalette } from './palette';
+import { Palette } from './palette';
 
 /**
  * This file contains Typescript typings for all of our
@@ -34,10 +34,9 @@ export interface ActionTheme {
     };
 }
 
-export interface BackgroundTheme {
-    color: string;
-}
-
+/**
+ * Input Themes
+ */
 export interface InputTheme {
     background: {
         default: string;
@@ -54,6 +53,9 @@ export interface InputTheme {
     };
 }
 
+/**
+ * Icon Themes
+ */
 export interface IconTheme {
     color: {
         default: string;
@@ -62,13 +64,48 @@ export interface IconTheme {
     };
 }
 
+/**
+ * Logo Themes
+ */
 export interface LogoTheme {
     bracketColor: string;
     textColor: string;
 }
 
+/**
+ * Overlay Themes
+ */
 export interface OverlayTheme {
     color: string | FlattenSimpleInterpolation;
+}
+
+/**
+ * App Surfaces
+ */
+export interface Surfaces {
+    default: string;
+    paperAccent: string;
+    paperLight: string;
+    paper: string;
+    paperDark: string;
+    neutralLight: string;
+    neutral: string;
+    neutralDark: string;
+}
+
+/**
+ * Typography Themes
+ */
+export interface TypographyThemes {
+    light: string;
+    medium: string;
+    dark: string;
+    accentLight: string;
+    accent: string;
+    accentDark: string;
+    highlight: string;
+    danger: string;
+    success: string;
 }
 
 export interface AppTheme {
@@ -79,18 +116,12 @@ export interface AppTheme {
         tertiary: ActionTheme;
         danger: ActionTheme;
     };
-    backgrounds: {
-        light: BackgroundTheme;
-        medium: BackgroundTheme;
-        dark: BackgroundTheme;
-        extraDark: BackgroundTheme;
-        accent: BackgroundTheme;
-    };
     icons: {
         light: IconTheme;
         medium: IconTheme;
         dark: IconTheme;
         accent: IconTheme;
+        highlight: IconTheme;
     };
     inputs: {
         light: InputTheme;
@@ -105,7 +136,8 @@ export interface AppTheme {
         dark85: OverlayTheme;
         dark90: OverlayTheme;
     };
-    typography: TypographyPalette;
+    surfaces: Surfaces;
+    typography: TypographyThemes;
 }
 
 // Props that later will be injected by styled-components
@@ -121,8 +153,7 @@ export * from './palette';
 export type ActionThemes = AppTheme['actions'];
 export type AvailableActionTheme = keyof ActionThemes;
 
-export type BackgroundThemes = AppTheme['backgrounds'];
-export type AvailableBackgroundTheme = keyof BackgroundThemes;
+export type AvailableSurface = keyof Surfaces;
 
 // export type InputThemes = AppTheme['inputs'];
 // export type AvailableInputTheme = keyof InputThemes;
@@ -139,5 +170,4 @@ export type AvailableLogoTheme = keyof LogoThemes;
 export type OverlayThemes = AppTheme['overlays'];
 export type AvailableOverlayTheme = keyof OverlayThemes;
 
-export type TypographyThemes = AppTheme['typography'];
 export type AvailableTypographyTheme = keyof TypographyThemes;

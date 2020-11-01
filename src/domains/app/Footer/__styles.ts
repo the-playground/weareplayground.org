@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { animation, breakpoints, spacing } from '@nerve/core/tokens';
 
 export const Footer = styled.footer`
-    background-color: ${(props) => props.theme.backgrounds.dark.color};
-
     .footer-container {
         padding: ${spacing.layout.m} 0;
         ${breakpoints.s} {

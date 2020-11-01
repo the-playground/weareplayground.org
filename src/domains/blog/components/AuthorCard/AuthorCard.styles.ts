@@ -6,7 +6,7 @@ const componentBreakpoint = breakpoints.s;
 
 export const AuthorCard = styled.div`
     align-items: center;
-    border-top: 1px solid ${({ theme }) => theme.palette.secondary.light};
+    border-top: 1px solid ${({ theme }) => theme.palette.secondary.l1};
     display: flex;
     flex-direction: column;
     padding: ${spacing.layout.m} 0;
