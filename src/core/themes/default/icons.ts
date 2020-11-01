@@ -29,9 +29,17 @@ const accent: IconTheme = {
     },
 };
 
+const highlight: IconTheme = {
+    color: {
+        default: palette.secondary.l1,
+        hover: palette.secondary.l2,
+    },
+};
+
 export const icons: IconThemes = {
     light,
     medium,
     dark,
     accent,
+    highlight,
 };

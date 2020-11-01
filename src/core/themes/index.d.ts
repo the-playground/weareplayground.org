@@ -121,6 +121,7 @@ export interface AppTheme {
         medium: IconTheme;
         dark: IconTheme;
         accent: IconTheme;
+        highlight: IconTheme;
     };
     inputs: {
         light: InputTheme;
