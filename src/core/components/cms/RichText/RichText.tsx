@@ -58,7 +58,7 @@ const customHTMLSerializer: PrismicHTMLSerializer<React.ReactNode> = (
                     as="h2"
                     key={key}
                     color="dark"
-                    bgColor="light"
+                    bgColor="neutralLight"
                     offset={-1}
                 >
                     {children}

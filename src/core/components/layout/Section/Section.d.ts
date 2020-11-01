@@ -1,7 +1,4 @@
-import {
-    AvailableBackgroundTheme,
-    AvailableOverlayTheme,
-} from '@nerve/core/themes';
+import { AvailableSurface, AvailableOverlayTheme } from '@nerve/core/themes';
 import { PrismicFluidImage } from '@nerve/shared/types';
 
 type BackgroundPosition =
@@ -16,7 +13,7 @@ type BackgroundPosition =
     | 'right bottom';
 
 export interface SectionProps {
-    bgColor?: AvailableBackgroundTheme;
+    bgColor?: AvailableSurface;
     overlay?: AvailableOverlayTheme;
     bgImage?: PrismicFluidImage;
     bgPosition?: BackgroundPosition;

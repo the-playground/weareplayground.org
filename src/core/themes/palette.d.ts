@@ -3,39 +3,29 @@ export interface SystemColors {
     white: string;
 }
 
-export interface Grey {
+export interface Neutral {
     100: string;
     200: string;
     300: string;
     400: string;
     500: string;
     600: string;
+    700: string;
 }
 
 export interface PaletteColor {
-    extraLight?: string;
-    light: string;
-    main: string;
-    dark: string;
-    extraDark?: string;
+    l2: string;
+    l1: string;
+    base: string;
+    d1: string;
+    d2: string;
 }
-
-export interface TypographyPalette {
-    light: string;
-    medium: string;
-    dark: string;
-    accent: string;
-    accentDark: string;
-    danger: string;
-}
-
-export type AvailableTypographyPalette = keyof TypographyPalette;
 
 export interface Palette {
     primary: PaletteColor;
     secondary: PaletteColor;
     danger: PaletteColor;
-    grey: Grey;
+    success: PaletteColor;
+    neutral: Neutral;
     system: SystemColors;
-    typography: TypographyPalette;
 }

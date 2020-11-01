@@ -1,6 +1,6 @@
 import React from 'react';
-import { ContainerProps } from './__types';
-import * as styled from './__styles';
+import { ContainerProps } from './Container.d';
+import * as styled from './Container.styles';
 
 export const Container: React.FC<ContainerProps> = ({
     children,
@@ -19,4 +19,4 @@ export const Container: React.FC<ContainerProps> = ({
     </styled.Container>
 );
 
-export type { ContainerProps } from './__types';
+export type { ContainerProps } from './Container.d';

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
 import { zIndex } from '@nerve/core/tokens';
-import { SectionProps } from './__types';
+import { SectionProps } from './Section.d';
 
 export const SectionWithBackgroundImage = styled(BackgroundImage)<SectionProps>`
     background-position: ${({ bgPosition }) => bgPosition} !important;
@@ -12,7 +12,6 @@ export const SectionWithBackgroundImage = styled(BackgroundImage)<SectionProps>`
 `;
 
 export const Section = styled.section<SectionProps>`
-    background: ${({ theme, bgColor }) =>
-        bgColor && theme.backgrounds[bgColor].color};
+    background: ${({ theme, bgColor }) => bgColor && theme.surfaces[bgColor]};
     position: relative;
 `;

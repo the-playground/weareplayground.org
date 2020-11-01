@@ -35,7 +35,7 @@ export const SubscribeSection: React.FC = () => {
                     size="xs"
                     color="dark"
                     as="h3"
-                    bgColor="light"
+                    bgColor="neutralLight"
                     offset={-2}
                     className="intro-title"
                 >

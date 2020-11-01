@@ -2,13 +2,13 @@ import { palette } from './__palette';
 import { LogoTheme, LogoThemes } from '../index.d';
 
 const light: LogoTheme = {
-    bracketColor: palette.primary.main,
-    textColor: palette.system.white,
+    bracketColor: palette.primary.base,
+    textColor: palette.neutral[100],
 };
 
 const dark: LogoTheme = {
-    bracketColor: palette.primary.main,
-    textColor: palette.secondary.main,
+    bracketColor: palette.primary.base,
+    textColor: palette.secondary.base,
 };
 
 export const logo: LogoThemes = {

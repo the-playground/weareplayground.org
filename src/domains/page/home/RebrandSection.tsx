@@ -64,7 +64,7 @@ const StyledRebrandSection = styled(Section)`
 
 export const RebrandSection: React.FC = () => {
     return (
-        <StyledRebrandSection bgColor="light">
+        <StyledRebrandSection bgColor="neutralLight">
             <Container>
                 <div className="content">
                     <Logo type="Playground" size="xl" />

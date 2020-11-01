@@ -1,68 +1,69 @@
 import { rgba } from 'polished';
 import { palette } from './__palette';
+import { typography } from './__typography';
 import { ActionTheme, ActionThemes } from '../index.d';
 
 const primary: ActionTheme = {
     color: {
-        default: palette.typography.light,
-        inverted: palette.typography.dark,
+        default: typography.light,
+        inverted: typography.dark,
     },
     background: {
-        default: palette.primary.main,
-        hover: palette.primary.dark,
-        ghost: rgba(palette.primary.main, 0.2),
+        default: palette.primary.base,
+        hover: palette.primary.d1,
+        ghost: rgba(palette.primary.base, 0.2),
     },
     border: {
-        default: palette.primary.main,
-        hover: palette.primary.dark,
+        default: palette.primary.base,
+        hover: palette.primary.d1,
     },
 };
 
 const secondary: ActionTheme = {
     color: {
-        default: palette.typography.light,
-        inverted: palette.typography.dark,
+        default: typography.light,
+        inverted: typography.dark,
     },
     background: {
-        default: palette.secondary.main,
-        hover: palette.secondary.light,
-        ghost: rgba(palette.secondary.main, 0.2),
+        default: palette.secondary.base,
+        hover: palette.secondary.l1,
+        ghost: rgba(palette.secondary.base, 0.2),
     },
     border: {
-        default: palette.secondary.main,
-        hover: palette.secondary.light,
+        default: palette.secondary.base,
+        hover: palette.secondary.l1,
     },
 };
 
 const tertiary: ActionTheme = {
     color: {
-        default: palette.typography.dark,
-        inverted: palette.typography.light,
+        default: typography.dark,
+        inverted: typography.light,
     },
     background: {
-        default: palette.grey[100],
-        hover: palette.grey[200],
-        ghost: rgba(palette.grey[100], 0.2),
+        default: palette.neutral[200],
+        hover: palette.neutral[300],
+        ghost: rgba(palette.neutral[200], 0.2),
     },
     border: {
-        default: palette.grey[100],
-        hover: palette.grey[200],
+        default: palette.neutral[200],
+        hover: palette.neutral[300],
     },
 };
 
 const danger: ActionTheme = {
     color: {
-        default: palette.typography.light,
-        inverted: palette.typography.dark,
+        default: typography.light,
+        inverted: typography.dark,
     },
     background: {
-        default: palette.danger.main,
-        hover: palette.danger.dark,
-        ghost: rgba(palette.danger.main, 0.2),
+        default: palette.danger.base,
+        hover: palette.danger.d1,
+        ghost: rgba(palette.danger.base, 0.2),
     },
     border: {
-        default: palette.danger.main,
-        hover: palette.danger.dark,
+        default: palette.danger.base,
+        hover: palette.danger.d1,
     },
 };
 

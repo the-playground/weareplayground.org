@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { breakpoints, spacing } from '@nerve/core/tokens';
 
 export const Copyright = styled.div`
-    background-color: var(--blueD1);
-    border-top: 1px solid ${({ theme }) => theme.palette.secondary.light};
+    background-color: ${({ theme }) => theme.surfaces.paper};
+    border-top: 1px solid ${({ theme }) => theme.palette.secondary.l1};
     padding: ${spacing.component.l} 0;
 
     .container {

@@ -13,7 +13,7 @@ export const GrittyHeading = styled.div<
     transform: rotate(${({ offset }) => offset}deg);
 
     > .text {
-        background: ${({ theme, bgColor }) => theme.backgrounds[bgColor].color};
+        background: ${({ theme, bgColor }) => theme.surfaces[bgColor]};
         display: inline;
         line-height: ${GRITTY_HEADING_LINE_HEIGHT};
         letter-spacing: ${GRITTY_HEADING_LETTER_SPACING}px;
