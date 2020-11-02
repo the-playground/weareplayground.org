@@ -1,6 +1,3 @@
-**/node_modules/**
-/.github/**
 /.cache/**
 /public/**
 /static/**
-!.eslintrc.js
