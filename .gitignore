@@ -8,6 +8,7 @@ logs
 # Distribution directories
 dist
 build
+public
 
 # Cache Files
 .cache
