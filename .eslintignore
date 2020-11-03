@@ -1,4 +1,6 @@
-**/node_modules/**
-/.github/**
-/.vscode/**
+**/.cache/*
+**/public/*
+**/static/*
+/.github/*
+/.vscode/*
 !.eslintrc.js

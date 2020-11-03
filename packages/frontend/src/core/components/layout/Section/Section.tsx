@@ -36,5 +36,4 @@ export const Section: React.FC<SectionProps> = ({
     );
 };
 
-export * from './Section';
 export * from './Section.d';
