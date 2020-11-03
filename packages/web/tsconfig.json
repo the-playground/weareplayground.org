@@ -25,10 +25,4 @@
 		".cache",
 		"static",
 	],
-	"include": [
-		"src/**/*",
-		"@app/**/*",
-		"gatsby-*.js",
-		".eslintrc.js",
-	]
 }

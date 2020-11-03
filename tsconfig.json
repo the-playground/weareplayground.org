@@ -18,9 +18,17 @@
         "isolatedModules": true,
         "jsx": "preserve"
     },
+    "includes": [
+        "packages/**/*.ts",
+        "packages/**/*.tsx",
+        "packages/**/*.js",
+        "packages/**/*.jsx",
+        ".eslintrc.js",
+    ],
     "exclude": [
         "node_modules",
         ".vscode",
         ".github",
+        "**/*.spec.ts",
     ],
 }
