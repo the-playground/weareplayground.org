@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "target": "es5",
+        "target": "es6",
         "strict": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
@@ -26,9 +26,9 @@
         ".eslintrc.js",
     ],
     "exclude": [
-        "node_modules",
+        "**/node_modules",
         ".vscode",
         ".github",
-        "**/*.spec.ts",
+        "**/*.spec.ts"
     ],
 }
