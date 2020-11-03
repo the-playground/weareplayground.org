@@ -42,15 +42,15 @@
 		"@types/classnames": "^2.2.11",
 		"@types/react-helmet": "^6.1.0",
 		"@types/styled-components": "^5.1.4",
-		"babel-plugin-styled-components": "^1.11.1",
-		"esm": "^3.2.25"
+		"babel-plugin-styled-components": "^1.11.1"
 	},
 	"scripts": {
 		"clean": "gatsby clean",
-		"start": "NODE_OPTIONS=\"-r esm\" gatsby develop",
+		"start": "gatsby develop",
 		"netlify": "netlify dev",
-		"build": "NODE_OPTIONS=\"-r esm\" GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
-		"gatsby:serve": "NODE_OPTIONS=\"-r esm\" npm run build && gatsby serve",
+		"build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+		"gatsby:build": "npm run build",
+		"gatsby:serve": "npm run build && gatsby serve",
 		"empty-cache": "npm run clean",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	}

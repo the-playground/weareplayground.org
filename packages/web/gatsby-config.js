@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import dotenv from 'dotenv';
-
 // Prismic Data Schemas
-import schemas from './@app/data/prismic-schemas';
+const dotenv = require('dotenv'); // eslint-disable-line @typescript-eslint/no-var-requires
+const schemas = require('./@app/data/prismic-schemas'); // eslint-disable-line @typescript-eslint/no-var-requires
 
 // Config environment variables
 dotenv.config({ path: `.env` });
@@ -20,7 +18,7 @@ const {
 const isNetlifyProduction = NETLIFY_ENV === 'production';
 const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 
-export default {
+module.exports = {
     siteMetadata: {
         siteUrl,
     },

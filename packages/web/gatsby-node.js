@@ -1,12 +1,11 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+
 /**
  * Implement Gatsby's Node APIs in this file.
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
-
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-
-import redirects from './@app/config/redirects.ts';
+const redirects = require('./@app/config/redirects'); // eslint-disable-line @typescript-eslint/no-var-requires
 
 /**
  * Build a single season page
@@ -241,7 +240,7 @@ const generateRedirects = async ({ actions }) => {
  * When Gatsby attempts to crete pages, run the requested functionality
  */
 // eslint-disable-next-line
-export const createPages = async (params) => {
+exports.createPages = async = async (params) => {
     await Promise.all([
         generateRedirects(params),
         generateSeasonsAndShows(params),
