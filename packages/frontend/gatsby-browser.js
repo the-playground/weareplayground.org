@@ -42,10 +42,10 @@ export const wrapRootElement = ({ element }) => (
 );
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export const onClientEntry = () => {
+export const onClientEntry = async () => {
     // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
     if (!('IntersectionObserver' in window)) {
-        import('intersection-observer');
-        console.log('# IntersectionObserver is polyfilled!');
+        await import('intersection-observer');
+        console.log('IntersectionObserver is polyfilled!');
     }
 };
