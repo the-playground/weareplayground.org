@@ -1,6 +1,9 @@
 # Dependencies
 node_modules
 
+# Local Netlify folder
+.netlify
+
 # Logs
 logs
 *.log
