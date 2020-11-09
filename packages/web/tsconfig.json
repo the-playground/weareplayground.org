@@ -17,12 +17,12 @@
 			],
 			"@nerve/shared/*": [
 				"./src/shared/*"
-			],
-		},
+			]
+		}
 	},
-	"exclude": [
-		"public",
-		".cache",
-		"static",
-	],
+	"includes": [
+		"src/**/*",
+		"@app/**/*",
+		"gatsby-*.js"
+	]
 }

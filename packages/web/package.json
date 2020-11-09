@@ -1,8 +1,8 @@
 {
-	"name": "the-nerve-web",
+	"name": "@nerve/web",
 	"version": "1.0.0",
 	"description": "A modern web app frontend for The Nerve",
-	"main": "index.js",
+	"main": "package.json",
 	"repository": "https://github.com/the-nerve/nervetheatre.org",
 	"author": "Chris Hahn <chris@chrishahn.me>",
 	"license": "MIT",
@@ -39,10 +39,33 @@
 		"styled-components": "^5.2.1"
 	},
 	"devDependencies": {
+		"@codingwithchris/eslint-config": "1.0.6",
 		"@types/classnames": "^2.2.11",
+		"@types/react": "^16.9.55",
+		"@types/react-dom": "^16.9.9",
 		"@types/react-helmet": "^6.1.0",
 		"@types/styled-components": "^5.1.4",
-		"babel-plugin-styled-components": "^1.11.1"
+		"@typescript-eslint/eslint-plugin": "^4.6.1",
+		"@typescript-eslint/parser": "^4.6.1",
+		"babel-eslint": "^10.1.0",
+		"babel-plugin-styled-components": "^1.11.1",
+		"eslint": "^7.12.1",
+		"eslint-config-airbnb": "^18.2.0",
+		"eslint-config-airbnb-typescript": "^12.0.0",
+		"eslint-config-prettier": "^6.15.0",
+		"eslint-plugin-html": "^6.1.0",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-json": "^2.1.2",
+		"eslint-plugin-jsx-a11y": "^6.4.1",
+		"eslint-plugin-prettier": "^3.1.4",
+		"eslint-plugin-react": "^7.21.5",
+		"eslint-plugin-react-hooks": "^4.2.0",
+		"prettier": "^2.1.2",
+		"stylelint": "^13.7.2",
+		"stylelint-config-recommended": "^3.0.0",
+		"stylelint-config-styled-components": "^0.1.1",
+		"stylelint-processor-styled-components": "^1.10.0",
+		"typescript": "4.0.5"
 	},
 	"scripts": {
 		"clean": "gatsby clean",
@@ -52,6 +75,10 @@
 		"gatsby:build": "npm run build",
 		"gatsby:serve": "npm run build && gatsby serve",
 		"empty-cache": "npm run clean",
+		"lint:js": "eslint . --cache --cache-location node_modules/.cache/eslint --ext js,jsx,ts,tsx",
+		"lint:js:fix": "eslint . --cache --cache-location node_modules/.cache/eslint --ext js,jsx,ts,tsx --fix",
+		"lint:clean": "rm -rf node_modules/.cache/eslint",
+		"lint:css": "./node_modules/.bin/stylelint '**/*.css' --syntax css",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	}
 }

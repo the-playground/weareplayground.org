@@ -1,7 +1,5 @@
-**/*.lock
-**/.cache/*
-**/public/*
-**/static/*
-/.github/*
-/.vscode/*
-!.eslintrc.js
+**/node_modules/**
+**/public/**
+**/static/**
+**/*.test.{js,jsx,ts,tsx}
+**/*.spec.{js,jsx,ts,tsx}

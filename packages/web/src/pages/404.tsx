@@ -5,6 +5,7 @@ import { GatsbyPageContext } from '@nerve/shared/types';
 import { useCurrentURL } from '@nerve/shared/hooks';
 
 import { PageBasicSEO } from '@nerve/domains/seo';
+
 import { NotFoundContent } from '@nerve/domains/page/404';
 
 const NotFound: React.FC<PageProps<GatsbyPageContext>> = ({ location }) => {
