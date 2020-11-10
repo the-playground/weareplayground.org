@@ -61,9 +61,11 @@ module.exports = {
         },
 
         /**
-         * The official Sentry implementtion for Gatsby
+         * The official Sentry implementation for Gatsby
          * @link https://docs.sentry.io/platforms/javascript/guides/gatsby/
          */
+        // TODO - build custom tags with env variables (most likely will do this in gatsby-browser.js)
+        // https://docs.sentry.io/platforms/javascript/enriching-events/tags/
         {
             resolve: '@sentry/gatsby',
             options: {
