@@ -10,14 +10,14 @@ dotenv.config({ path: `.env` });
  * bots cannot crawl dev or dev-preview URLS, thus harming our SEO.
  */
 
-const deployURL = process.env.DEPLOY_PRIME_URL ?? '';
-const prodURL = process.env.URL ?? '';
+const deployURL = process.env.DEPLOY_PRIME_URL || '';
+const prodURL = process.env.URL || '';
 const appVersion = process.env.npm_package_version;
-const deployContext = process.env.CONTEXT ?? '';
-const deployID = process.env.DEPLOY_ID ?? '';
-const commitRef = process.env.COMMIT_REF ?? '';
-const prevCommitRef = process.env.CACHED_COMMIT_REF ?? '';
-const environment = deployContext ?? 'development';
+const deployContext = process.env.CONTEXT || '';
+const deployID = process.env.DEPLOY_ID || '';
+const commitRef = process.env.COMMIT_REF || '';
+const prevCommitRef = process.env.CACHED_COMMIT_REF || '';
+const environment = deployContext || 'development';
 
 module.exports = {
     siteMetadata: {
