@@ -26,7 +26,7 @@ export const EnvironmentProvider: React.FC = ({ children }) => {
         app: {
             version: queryData.appVersion,
             environment: queryData.environment,
-            currentURL: queryData.deployURL,
+            deployURL: queryData.deployURL,
             prodURL: queryData.prodURL,
         },
         release: {
