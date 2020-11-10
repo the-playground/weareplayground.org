@@ -6,9 +6,6 @@
   "repository": "https://github.com/the-nerve/nerve.web",
   "author": "Chris Hahn <chris@chrishahn.me>",
   "license": "MIT",
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "lerna": "lerna",
     "postinstall": "lerna bootstrap",
@@ -18,6 +15,7 @@
     "clean:nuke": "yarn clean:cache && yarn lint:clean && yarn clean:packages && rimraf yarn.lock && yarn clean:root",
     "clean:nuke:rebuild": "yarn clean:nuke && yarn install",
     "start": "yarn clean:cache && lerna run start --parallel",
+    "build": "yarn clean:cache && lerna run build --parallel",
     "cms:init": "cd packages/cms && sanity init",
     "cms:deploy": "lerna run deploy",
     "cms:deploy:sanity": "lerna run deploy:sanity",
