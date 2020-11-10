@@ -5,6 +5,7 @@
 [build]
     # This is where we will look for package.json/.nvmrc/etc.
     command = "yarn build"
+    ignore = "git diff --quiet HEAD^ HEAD sub_dir/"
 
 # Add and configure Netlify Plugins
 [[plugins]]
