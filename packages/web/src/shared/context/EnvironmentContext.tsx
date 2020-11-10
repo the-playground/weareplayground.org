@@ -11,7 +11,7 @@ export const EnvironmentProvider: React.FC = ({ children }) => {
                     appVersion
                     prodURL
                     deployURL
-                    # environment
+                    environment
                     deployContext
                     deployID
                     commitRef
