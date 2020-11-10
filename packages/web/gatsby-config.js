@@ -18,6 +18,8 @@ const deployID = process.env.DEPLOY_ID || '';
 const commitRef = process.env.COMMIT_REF || '';
 const prevCommitRef = process.env.CACHED_COMMIT_REF || '';
 const environment = deployContext || 'development';
+const isDev = environment === 'development';
+const isProd = environment === 'production';
 
 module.exports = {
     siteMetadata: {
@@ -190,7 +192,7 @@ module.exports = {
                 dataset: process.env.SANITY_DATASET,
                 token: process.env.SANITY_TOKEN,
                 overlayDrafts: false,
-                watchMode: true,
+                watchMode: isDev,
             },
         },
 
