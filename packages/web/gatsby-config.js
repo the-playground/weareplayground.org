@@ -171,6 +171,22 @@ module.exports = {
         },
 
         /**
+         * Query data from our CMS
+         *
+         * @link https://www.gatsbyjs.org/packages/gatsby-source-sanity
+         */
+        {
+            resolve: `gatsby-source-sanity`,
+            options: {
+                projectId: process.env.SANITY_PROJECT_ID,
+                dataset: process.env.SANITY_DATASET,
+                token: process.env.SANITY_TOKEN,
+                overlayDrafts: false,
+                watchMode: true,
+            },
+        },
+
+        /**
          * A helper plugin for subscribing new email addresses to a Mailchimp email list.
          *
          * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-mailchimp/

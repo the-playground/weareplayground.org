@@ -9,7 +9,9 @@
   "scripts": {
     "start": "sanity start",
     "test": "sanity check",
-    "sanity-deploy": "sanity deploy"
+    "deploy": "npm run deploy:graphql && npm run deploy:sanity",
+    "deploy:sanity": "sanity deploy",
+    "deploy:graphql": "sanity graphql deploy --playground"
   },
   "keywords": [
     "sanity"
@@ -26,5 +28,7 @@
     "react": "^16.2",
     "react-dom": "^16.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@sanity/cli": "^2.0.9"
+  }
 }

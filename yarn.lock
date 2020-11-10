@@ -2626,6 +2626,11 @@
     fs-extra "^6.0.1"
     promise-props-recursive "^1.0.0"
 
+"@sanity/cli@^2.0.9":
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/@sanity/cli/-/cli-2.0.9.tgz#1ba41179b58c7302d2bc144e874e2676a766d128"
+  integrity sha512-bFjtABpXvG69NkVSdJ/jplpnNev3prbQh9w5PX3xbgU9phIakzDYGHfjbF7bvP1W68GQWAE8c6igUyBM7J2I2Q==
+
 "@sanity/client@2.0.9":
   version "2.0.9"
   resolved "https://registry.yarnpkg.com/@sanity/client/-/client-2.0.9.tgz#17b20357144c1aa02d47854b80002a7e0e747dbd"
