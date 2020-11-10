@@ -9,18 +9,26 @@ dotenv.config({ path: `.env` });
  * Get information about the Production & Netlify environments to make sure
  * bots cannot crawl dev or dev-preview URLS, thus harming our SEO.
  */
-const {
-    NODE_ENV,
-    URL: NETLIFY_SITE_URL = 'https://nervetheatre.org', // Final production URL
-    DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
-    CONTEXT: NETLIFY_ENV = NODE_ENV,
-} = process.env;
-const isNetlifyProduction = NETLIFY_ENV === 'production';
-const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+
+const deployURL = process.env.DEPLOY_PRIME_URL ?? '';
+const prodURL = process.env.URL ?? '';
+const appVersion = process.env.npm_package_version;
+const deployContext = process.env.CONTEXT ?? '';
+const deployID = process.env.DEPLOY_ID ?? '';
+const commitRef = process.env.COMMIT_REF ?? '';
+const prevCommitRef = process.env.CACHED_COMMIT_REF ?? '';
+const environment = deployContext ?? 'development';
 
 module.exports = {
     siteMetadata: {
-        siteUrl,
+        appVersion,
+        environment,
+        prodURL,
+        deployURL,
+        deployContext,
+        deployID,
+        commitRef,
+        prevCommitRef,
     },
     plugins: [
         /**
@@ -209,7 +217,7 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-robots-txt',
             options: {
-                resolveEnv: () => NETLIFY_ENV,
+                resolveEnv: () => environment,
                 env: {
                     production: {
                         policy: [{ userAgent: '*', allow: '/' }],
@@ -218,6 +226,7 @@ module.exports = {
                     development: {
                         policy: [{ userAgent: '*', disallow: ['/'] }],
                         sitemap: null,
+                        host: null,
                     },
                     'branch-deploy': {
                         policy: [{ userAgent: '*', disallow: ['/'] }],

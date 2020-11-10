@@ -6,22 +6,6 @@
     # This is where we will look for package.json/.nvmrc/etc.
     command = "yarn build"
 
-# Add and configure Netlify Plugins
-[[plugins]]
-  package = "netlify-plugin-gatsby-cache"
-
-[[plugins]]
-  package = "@netlify/plugin-sitemap"
-
-  [plugins.inputs]
-  buildDir = "public"
-
-  exclude = [
-    # Never sitemap 404
-    './public/404.html',
-    './public/404',
-  ]
-
 # Production context: all deploys from the Production branch set in your site's
 # deploy contexts will inherit these settings.
 # [context.production]
@@ -33,8 +17,7 @@
 
 # Branch Deploy context: all deploys that are not from a pull/merge request or
 # from the Production branch will inherit these settings.
-[context.branch-deploy]
-    command = "yarn start"
+# [context.branch-deploy]
 
 
 # Redirects and headers are GLOBAL for all builds – they do not get scoped to

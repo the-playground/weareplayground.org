@@ -14,6 +14,7 @@ import { Layout } from './src/domains/app';
 
 import {
     ConfigProvider,
+    EnvironmentProvider,
     LinkMapProvider,
     UIProvider,
 } from './src/shared/context';
@@ -28,17 +29,19 @@ export const wrapPageElement = ({ element, props }) => (
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const wrapRootElement = ({ element }) => (
-    <ConfigProvider>
-        <LinkMapProvider>
-            <SeasonProvider>
-                <ShowProvider>
-                    <ThemeProvider theme={theme}>
-                        <UIProvider>{element}</UIProvider>
-                    </ThemeProvider>
-                </ShowProvider>
-            </SeasonProvider>
-        </LinkMapProvider>
-    </ConfigProvider>
+    <EnvironmentProvider>
+        <ConfigProvider>
+            <LinkMapProvider>
+                <SeasonProvider>
+                    <ShowProvider>
+                        <ThemeProvider theme={theme}>
+                            <UIProvider>{element}</UIProvider>
+                        </ThemeProvider>
+                    </ShowProvider>
+                </SeasonProvider>
+            </LinkMapProvider>
+        </ConfigProvider>
+    </EnvironmentProvider>
 );
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
