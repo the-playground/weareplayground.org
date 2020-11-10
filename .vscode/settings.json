@@ -21,9 +21,5 @@
     },
     "[typescriptreact]": {
         "editor.formatOnSave": false
-    },
-    // Monorepo Settings
-    // "eslint.workingDirectories": [
-    //     "packages/*"
-    // ]
+    }
 }
