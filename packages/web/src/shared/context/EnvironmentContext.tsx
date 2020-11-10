@@ -16,6 +16,8 @@ export const EnvironmentProvider: React.FC = ({ children }) => {
                     deployID
                     commitRef
                     prevCommitRef
+                    isDev
+                    isProd
                 }
             }
         }
@@ -25,9 +27,13 @@ export const EnvironmentProvider: React.FC = ({ children }) => {
     const config = {
         app: {
             version: queryData.appVersion,
-            environment: queryData.environment,
             deployURL: queryData.deployURL,
             prodURL: queryData.prodURL,
+        },
+        environment: {
+            context: queryData.environment,
+            isDev: queryData.isDev,
+            isProd: queryData.isProd,
         },
         release: {
             id: queryData.commitRef,
@@ -52,9 +58,15 @@ export const useEnvironmentContext = (): Environment =>
 export interface Environment {
     app: {
         version: string;
-        environment: string;
-        currentURL: string;
+        deployURL: string;
         prodURL: string;
+    };
+    environment: {
+        context: string;
+        isDev: boolean;
+        isProd: boolean;
+        // isNetlifyPreview: boolean;
+        // isStaging: boolean;
     };
     release: {
         id: string;

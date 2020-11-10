@@ -6,8 +6,8 @@ const schemas = require('./@app/data/prismic-schemas'); // eslint-disable-line @
 dotenv.config({ path: `.env` });
 
 /**
- * Get information about the Production & Netlify environments to make sure
- * bots cannot crawl dev or dev-preview URLS, thus harming our SEO.
+ * Get information about the current environment so w can share important
+ * details to various facets of our application.
  */
 
 const deployURL = process.env.DEPLOY_PRIME_URL || '';
@@ -21,6 +21,9 @@ const environment = deployContext || 'development';
 const isDev = environment === 'development';
 const isProd = environment === 'production';
 
+//  Todo: isNetlifyPreview (for deploy-preview and branch-deploy)
+//  Todo: isStaging (one we get a staging environment set up)
+
 module.exports = {
     siteMetadata: {
         appVersion,
@@ -31,6 +34,8 @@ module.exports = {
         deployID,
         commitRef,
         prevCommitRef,
+        isDev,
+        isProd,
     },
     plugins: [
         /**
@@ -191,7 +196,7 @@ module.exports = {
                 projectId: process.env.SANITY_PROJECT_ID,
                 dataset: process.env.SANITY_DATASET,
                 token: process.env.SANITY_TOKEN,
-                overlayDrafts: false,
+                overlayDrafts: isDev,
                 watchMode: isDev,
             },
         },
