@@ -1,8 +1,10 @@
-export default {
+import { performance } from './__fragments__/show';
+
+export const showSchema = {
     name: 'show',
     title: 'Shows',
     type: 'document',
-    icon: () => '🎭',
+    icon: (): string => '🎭',
     fields: [
         {
             name: 'title',
@@ -15,9 +17,19 @@ export default {
             type: 'slug',
             options: {
                 source: 'title',
-                slugify: (input) =>
+                slugify: (input: string): string =>
                     input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
             },
+        },
+        {
+            name: 'performances',
+            title: 'Performances',
+            type: 'array',
+            options: {
+                collapsible: true,
+                collapsed: true,
+            },
+            of: [performance],
         },
     ],
 };
