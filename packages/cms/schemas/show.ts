@@ -1,4 +1,5 @@
-import { performance } from './__fragments__/show';
+import * as showSchemaFragment from './__fragments__/show';
+import * as seoSchemaFragment from './__fragments__/seo';
 
 export const showSchema = {
     name: 'show',
@@ -22,14 +23,31 @@ export const showSchema = {
             },
         },
         {
-            name: 'performances',
-            title: 'Performances',
-            type: 'array',
+            name: 'openDate',
+            title: 'Opening Date',
+            description: 'The date of the first performance',
+            type: 'datetime',
+            readOnly: true,
             options: {
-                collapsible: true,
-                collapsed: true,
+                dateFormat: 'ddd » YYYY-MM-DD',
+                timeFormat: 'h:mm:a',
+                timeStep: 30,
             },
-            of: [performance],
         },
+        {
+            name: 'closingDate',
+            title: 'Closing Date',
+            description: 'The date of the last performance',
+            type: 'datetime',
+            readOnly: true,
+            options: {
+                dateFormat: 'YYYY-MM-DD',
+                timeFormat: 'h:mm:a',
+                timeStep: 30,
+            },
+        },
+        showSchemaFragment.performance,
+        seoSchemaFragment.basicSEO,
+        showSchemaFragment.legacyOptions,
     ],
 };
