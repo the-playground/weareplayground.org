@@ -12,14 +12,14 @@ export const basicSEO = {
             name: 'title',
             title: 'Meta Title',
             type: 'string',
-            validation: (Rule) => Rule.required().min(40).max(70),
+            validation: (Rule: any) => Rule.required().min(40).max(70),
         },
         {
             name: 'description',
             title: 'Meta Description',
             type: 'text',
             rows: 3,
-            validation: (Rule) => Rule.required().min(50).max(160),
+            validation: (Rule: any) => Rule.required().min(50).max(160),
         },
         {
             name: 'hide',
