@@ -1,3 +1,4 @@
+import { isThisQuarter } from 'date-fns';
 import * as showSchemaFragment from './__fragments__/show';
 import * as seoSchemaFragment from './__fragments__/seo';
 
@@ -6,6 +7,21 @@ export const showSchema = {
     title: 'Shows',
     type: 'document',
     icon: (): string => '🎭',
+    fieldsets: [
+        {
+            name: 'basic',
+            title: 'Basic Info',
+            description: '',
+            options: { collapsible: true, collapsed: true },
+        },
+        {
+            name: 'dates',
+            title: 'Opening & Closing Dates',
+            description:
+                '(auto-generated based on configured performance occurrences)',
+            options: { collapsible: true, collapsed: true },
+        },
+    ],
     fields: [
         {
             name: 'title',
@@ -14,7 +30,7 @@ export const showSchema = {
         },
         {
             name: 'slug',
-            title: 'Slug',
+            title: 'Show Slug',
             type: 'slug',
             options: {
                 source: 'title',
@@ -22,30 +38,10 @@ export const showSchema = {
                     input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
             },
         },
-        {
-            name: 'openDate',
-            title: 'Opening Date',
-            description: 'The date of the first performance',
-            type: 'datetime',
-            readOnly: true,
-            options: {
-                dateFormat: 'ddd » YYYY-MM-DD',
-                timeFormat: 'h:mm:a',
-                timeStep: 30,
-            },
-        },
-        {
-            name: 'closingDate',
-            title: 'Closing Date',
-            description: 'The date of the last performance',
-            type: 'datetime',
-            readOnly: true,
-            options: {
-                dateFormat: 'YYYY-MM-DD',
-                timeFormat: 'h:mm:a',
-                timeStep: 30,
-            },
-        },
+        ...showSchemaFragment.basicInfo,
+        showSchemaFragment.authorInfo,
+        showSchemaFragment.images,
+        ...showSchemaFragment.importantDates,
         showSchemaFragment.performance,
         seoSchemaFragment.basicSEO,
         showSchemaFragment.legacyOptions,

@@ -82,8 +82,8 @@ const performancesConfig = {
  *
  */
 const singlePerformance = {
-    name: 'performance',
-    title: 'Performance',
+    name: 'occurrence',
+    title: 'Performance Occurrence',
     type: 'object',
     preview: {
         select: {

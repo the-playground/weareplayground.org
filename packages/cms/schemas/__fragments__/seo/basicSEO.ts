@@ -28,5 +28,13 @@ export const basicSEO = {
                 'Do you want to hide this document from search engines?',
             type: 'boolean',
         },
+        {
+            name: 'image',
+            title: 'Meta Image',
+            type: 'image',
+            options: {
+                accept: '.jpg',
+            },
+        },
     ],
 };
