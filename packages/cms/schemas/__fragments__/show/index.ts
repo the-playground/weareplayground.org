@@ -7,7 +7,5 @@ export * from './importantDates';
 export * from './legacy';
 export * from './location';
 export * from './performance';
-export * from './photoGallery';
-export * from './soundtrack';
+export * from './promo';
 export * from './sponsors';
-export * from './trailers';
