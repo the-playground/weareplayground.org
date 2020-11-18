@@ -16,12 +16,12 @@ export const orgSchema = {
             type: 'text',
         },
         {
-            logo: 'logo',
+            name: 'logo',
             title: 'Logo',
             type: 'image',
         },
         {
-            website: 'website',
+            name: 'website',
             title: 'Website',
             type: 'url',
         },

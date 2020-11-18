@@ -43,8 +43,14 @@ export const locationSchema = {
             type: 'geopoint',
         },
         {
-            name: 'parkingInfo',
-            title: 'Parking Info',
+            name: 'directions',
+            title: 'Directions',
+            type: 'array',
+            of: [{ type: 'block', styles: [] }],
+        },
+        {
+            name: 'parking',
+            title: 'Parking',
             type: 'array',
             of: [{ type: 'block', styles: [] }],
         },

@@ -1,5 +1,5 @@
 export const legacyOptions = {
-    name: 'legacyOptions',
+    name: 'legacy',
     title: 'Legacy Options',
     type: 'object',
     options: {

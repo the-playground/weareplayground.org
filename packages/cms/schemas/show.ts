@@ -59,6 +59,12 @@ export const showSchema = {
             type: 'boolean',
             validation: (Rule: any) => Rule.required(),
         },
+        {
+            name: 'season',
+            title: 'Season',
+            type: 'reference',
+            to: [{ type: 'season' }],
+        },
         showSchemaFragment.authorInfo,
         ...showSchemaFragment.basicInfo,
         showSchemaFragment.collaboration,

@@ -9,6 +9,13 @@ export const basicSEO = {
     },
     fields: [
         {
+            name: 'hide',
+            title: 'Hide Document?',
+            description:
+                'Do you want to hide this document from search engines?',
+            type: 'boolean',
+        },
+        {
             name: 'title',
             title: 'Meta Title',
             type: 'string',
@@ -20,13 +27,6 @@ export const basicSEO = {
             type: 'text',
             rows: 3,
             validation: (Rule: any) => Rule.required().min(50).max(160),
-        },
-        {
-            name: 'hide',
-            title: 'Hide Document?',
-            description:
-                'Do you want to hide this document from search engines?',
-            type: 'boolean',
         },
         {
             name: 'image',
