@@ -1,4 +1,3 @@
-import { isThisQuarter } from 'date-fns';
 import * as showSchemaFragment from './__fragments__/show';
 import * as seoSchemaFragment from './__fragments__/seo';
 
@@ -38,6 +37,7 @@ export const showSchema = {
                 slugify: (input: string): string =>
                     input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
             },
+            validation: (Rule: any) => Rule.required(),
         },
         {
             name: 'type',
@@ -49,6 +49,14 @@ export const showSchema = {
                     { title: 'Virtual', value: 'virtual' },
                 ],
             },
+            validation: (Rule: any) => Rule.required(),
+        },
+        {
+            name: 'isCollaboration',
+            title: 'This show is a collaboration',
+            description:
+                'Turn "on" if this show is a collaborative effort with another company',
+            type: 'boolean',
             validation: (Rule: any) => Rule.required(),
         },
         showSchemaFragment.authorInfo,

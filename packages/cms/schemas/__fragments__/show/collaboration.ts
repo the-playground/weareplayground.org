@@ -1,19 +1,13 @@
 export const collaboration = {
     name: 'collaboration',
     title: 'Collaboration Setup',
+    description: 'If this show is a collaboration, add the details here',
     type: 'object',
     options: {
         collapsible: true,
         collapsed: true,
     },
     fields: [
-        {
-            name: 'is',
-            title: 'This is a collaboration',
-            description: 'Set to "true" if this show is a collaborative effort',
-            type: 'boolean',
-            validation: (Rule: any) => Rule.required(),
-        },
         // {
         //     name: 'with',
         //     title: 'With',
