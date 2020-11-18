@@ -2,6 +2,7 @@ export * from './articles';
 export * from './artists';
 export * from './authorInfo';
 export * from './basicInfo';
+export * from './collaboration';
 export * from './images';
 export * from './importantDates';
 export * from './legacy';
