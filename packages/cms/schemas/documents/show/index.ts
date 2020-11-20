@@ -1,7 +1,20 @@
-import * as showSchemaFragment from './__fragments__/show';
-import * as seoSchemaFragment from './__fragments__/seo';
+import { pageSEO } from '../../shared';
 
-export const showSchema = {
+import articles from './fragments/articles';
+import artists from './fragments/artists';
+import author from './fragments/author';
+import basicInfo from './fragments/basicInfo';
+import collaboration from './fragments/collaboration';
+import images from './fragments/images';
+import legacy from './fragments/legacy';
+import location from './fragments/location';
+import openCloseDates from './fragments/openCloseDates';
+import performance from './fragments/performance';
+import promo from './fragments/promo';
+import season from './fragments/season';
+import sponsors from './fragments/sponsors';
+
+export default {
     name: 'show',
     title: 'Shows',
     type: 'document',
@@ -11,13 +24,6 @@ export const showSchema = {
             name: 'basic',
             title: 'Basic Info',
             description: '',
-            options: { collapsible: true, collapsed: true },
-        },
-        {
-            name: 'dates',
-            title: 'Opening & Closing Dates',
-            description:
-                '(auto-generated based on configured performance occurrences)',
             options: { collapsible: true, collapsed: true },
         },
     ],
@@ -59,19 +65,15 @@ export const showSchema = {
             type: 'boolean',
             validation: (Rule: any) => Rule.required(),
         },
-        {
-            name: 'season',
-            title: 'Season',
-            type: 'reference',
-            to: [{ type: 'season' }],
-        },
-        showSchemaFragment.authorInfo,
-        ...showSchemaFragment.basicInfo,
-        showSchemaFragment.collaboration,
-        ...showSchemaFragment.importantDates,
-        showSchemaFragment.performance,
-        showSchemaFragment.images,
-        seoSchemaFragment.basicSEO,
-        showSchemaFragment.legacyOptions,
+        season,
+        location,
+        ...openCloseDates,
+        author,
+        ...basicInfo,
+        performance,
+        collaboration,
+        images,
+        pageSEO,
+        legacy,
     ],
 };

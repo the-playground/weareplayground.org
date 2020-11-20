@@ -1,4 +1,4 @@
-export const orgSchema = {
+export default {
     name: 'organization',
     title: 'Organizations',
     type: 'document',

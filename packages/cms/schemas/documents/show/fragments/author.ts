@@ -1,4 +1,4 @@
-export const authorInfo = {
+export default {
     name: 'author',
     title: 'Author Info',
     type: 'object',

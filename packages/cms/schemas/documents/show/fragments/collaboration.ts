@@ -1,4 +1,4 @@
-export const collaboration = {
+export default {
     name: 'collaboration',
     title: 'Collaboration Setup',
     description: 'If this show is a collaboration, add the details here',
@@ -8,12 +8,12 @@ export const collaboration = {
         collapsed: true,
     },
     fields: [
-        // {
-        //     name: 'with',
-        //     title: 'With',
-        //     type: 'reference',
-        //     to: [{ type: 'company' }],
-        // },
+        {
+            name: 'with',
+            title: 'What organization is the collaboration with?',
+            type: 'reference',
+            to: [{ type: 'organization' }],
+        },
         {
             name: 'details',
             title: 'Details',

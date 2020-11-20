@@ -1,7 +1,12 @@
-export const basicSEO = {
-    name: 'basicSEO',
-    title: 'Basic SEO',
-    descriptions: '',
+/**
+ * An object for managing SEO at a page level.
+ *
+ * Allows you to set meta title, description, image, etc.
+ */
+export const pageSEO = {
+    name: 'pageSEO',
+    title: 'SEO Configuration',
+    descriptions: 'Optimize this document for search engines',
     type: 'object',
     options: {
         collapsible: true,
@@ -19,7 +24,7 @@ export const basicSEO = {
             name: 'title',
             title: 'Meta Title',
             type: 'string',
-            validation: (Rule: any) => Rule.required().min(40).max(70),
+            validation: (Rule: any) => Rule.required().min(30).max(70),
         },
         {
             name: 'description',

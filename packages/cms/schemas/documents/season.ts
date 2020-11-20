@@ -1,6 +1,6 @@
-import * as seoSchemaFragment from './__fragments__/seo';
+import { pageSEO } from '../shared';
 
-export const seasonSchema = {
+export default {
     name: 'season',
     title: 'Seasons',
     type: 'document',
@@ -24,6 +24,11 @@ export const seasonSchema = {
             validation: (Rule: any) => Rule.required(),
         },
         {
+            name: 'heroImage',
+            title: 'Hero Image',
+            type: 'image',
+        },
+        {
             name: 'tagline',
             title: 'Tagline',
             type: 'string',
@@ -33,7 +38,7 @@ export const seasonSchema = {
             title: 'Description',
             type: 'text',
         },
-        seoSchemaFragment.basicSEO,
+        pageSEO,
         {
             name: 'legacy',
             title: 'Legacy Options',

@@ -1,4 +1,4 @@
-export const legacyOptions = {
+export default {
     name: 'legacy',
     title: 'Legacy Options',
     type: 'object',

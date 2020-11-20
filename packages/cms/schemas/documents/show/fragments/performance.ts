@@ -136,7 +136,7 @@ const performanceOccurrences = {
 /**
  *
  */
-export const performance = {
+export default {
     name: 'performance',
     title: 'Performance Setup',
     description:

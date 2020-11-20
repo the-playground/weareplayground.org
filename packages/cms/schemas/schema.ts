@@ -4,10 +4,10 @@ import createSchema from 'part:@sanity/base/schema-creator';
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
-import { locationSchema } from './location';
-import { showSchema } from './show';
-import { seasonSchema } from './season';
-import { orgSchema } from './organization';
+import location from './documents/location';
+import show from './documents/show';
+import season from './documents/season';
+import organization from './documents/organization';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -15,10 +15,5 @@ export default createSchema({
     name: 'default',
     // Then proceed to concatenate our document type
     // to the ones provided by any plugins that are installed
-    types: schemaTypes.concat([
-        showSchema,
-        orgSchema,
-        locationSchema,
-        seasonSchema,
-    ]),
+    types: schemaTypes.concat([show, season, location, organization]),
 });

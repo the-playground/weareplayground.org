@@ -1,4 +1,4 @@
-export const basicInfo = [
+export default [
     {
         name: 'description',
         title: 'Description',

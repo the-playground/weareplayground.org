@@ -1,4 +1,4 @@
-export const promo = {
+export default {
     name: 'promo',
     title: 'Promo',
     description: '',

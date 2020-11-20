@@ -1,4 +1,4 @@
-export const locationSchema = {
+export default {
     name: 'location',
     title: 'Locations',
     type: 'document',
@@ -28,6 +28,11 @@ export const locationSchema = {
                 {
                     name: 'state',
                     title: 'State',
+                    type: 'string',
+                },
+                {
+                    name: 'stateCode',
+                    title: 'State Code',
                     type: 'string',
                 },
                 {

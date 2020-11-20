@@ -1,4 +1,4 @@
-export const images = {
+export default {
     name: 'images',
     title: 'Images',
     description: 'Core images for representing this show in various places',
