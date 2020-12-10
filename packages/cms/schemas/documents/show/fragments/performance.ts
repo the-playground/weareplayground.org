@@ -3,9 +3,9 @@ import { format } from 'date-fns';
 /**
  *
  */
-const performancesConfig = {
-    name: 'config',
-    title: 'Configuration',
+export const performancesConfig = {
+    name: 'performancesConfig',
+    title: 'Performance Configuration',
     description: 'Configurations that apply to all performances for this show',
     type: 'object',
     options: {
@@ -13,6 +13,19 @@ const performancesConfig = {
         collapsed: true,
     },
     fields: [
+        {
+            name: 'status',
+            title: 'Status',
+            type: 'string',
+            options: {
+                layout: 'radio',
+                direction: 'horizontal',
+                list: [
+                    { value: 'active', title: 'Active' },
+                    { value: 'cancelled', title: 'Cancelled' },
+                ],
+            },
+        },
         {
             name: 'runtimeHours',
             title: 'Runtime Hours',
@@ -82,7 +95,7 @@ const performancesConfig = {
  *
  */
 const singlePerformance = {
-    name: 'occurrence',
+    name: 'performance',
     title: 'Performance Occurrence',
     type: 'object',
     preview: {
@@ -104,47 +117,90 @@ const singlePerformance = {
             description: 'The starting date and time of the show.',
             validation: (Rule: any) => Rule.required(),
             options: {
-                dateFormat: 'YYYY-MM-DD',
+                dateFormat: 'MM-DD-YYYY',
                 timeFormat: 'h:mm:a',
                 timeStep: 30,
             },
         },
         {
-            name: 'ticketDefaultPrice',
-            title: 'Default Ticket Price',
-            type: 'number',
-            validation: (Rule: any) => Rule.positive(),
+            name: 'status',
+            title: 'Status',
+            type: 'string',
+            options: {
+                layout: 'radio',
+                direction: 'horizontal',
+                list: [
+                    { value: 'active', title: 'Active' },
+                    { value: 'cancelled', title: 'Cancelled' },
+                ],
+            },
         },
         {
-            name: 'ticketInitialQuantity',
-            title: 'Initial Number of Tickets Available',
-            type: 'number',
-            validation: (Rule: any) => Rule.positive(),
+            name: 'ticket',
+            title: 'Ticket',
+            type: 'object',
+            fields: [
+                {
+                    name: 'type',
+                    title: 'Type',
+                    type: 'string',
+                    options: {
+                        layout: 'radio',
+                        direction: 'horizontal',
+                        list: [
+                            { value: 'internal', title: 'Internal' },
+                            { value: 'external', title: 'External' },
+                            { value: 'door', title: 'Door' },
+                        ],
+                    },
+                },
+                {
+                    name: 'externalLink',
+                    title: 'External Link',
+                    description:
+                        'If tickets for this performance are being sold externally, provide a link',
+                    type: 'url',
+                },
+                {
+                    name: 'price',
+                    title: 'Price',
+                    type: 'number',
+                    validation: (Rule: any) => Rule.positive(),
+                },
+                {
+                    name: 'initialQuantity',
+                    title: 'Initial Number of Tickets Available',
+                    type: 'number',
+                    validation: (Rule: any) => Rule.positive(),
+                },
+            ],
+        },
+        {
+            name: 'isPreview',
+            title: 'Preview Performance',
+            type: 'boolean',
+        },
+        {
+            name: 'isPayWhatYouCan',
+            title: 'Pay What You Can',
+            type: 'boolean',
+        },
+        {
+            name: 'hasTalkback',
+            title: 'Talkback After Performance',
+            type: 'boolean',
         },
     ],
-};
-
-const performanceOccurrences = {
-    name: 'occurrences',
-    title: 'Occurrences',
-    description: 'Set up and configure performance occurrences',
-    type: 'array',
-    validation: (Rule: any) => Rule.unique(),
-    of: [singlePerformance],
 };
 
 /**
  *
  */
-export default {
-    name: 'performance',
-    title: 'Performance Setup',
-    description:
-        'Set up performance options for this show (including performance dates)',
-    type: 'object',
-    options: {
-        collapsible: true,
-        collapsed: true,
-    },
-    fields: [performancesConfig, performanceOccurrences],
+export const performances = {
+    name: 'performances',
+    title: 'Performances',
+    description: 'Set up and configure performance occurrences',
+    type: 'array',
+    validation: (Rule: any) => Rule.unique(),
+    of: [singlePerformance],
 };

@@ -1,7 +1,7 @@
 export default {
     name: 'location',
     title: 'Location',
-    description: 'Where the show will take place',
+    description: 'Where will the show take place?',
     type: 'reference',
     to: [{ type: 'location' }],
 };

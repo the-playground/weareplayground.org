@@ -24,7 +24,7 @@ export const pageSEO = {
             name: 'title',
             title: 'Meta Title',
             type: 'string',
-            validation: (Rule: any) => Rule.required().min(30).max(70),
+            validation: (Rule: any) => Rule.required().min(25).max(70),
         },
         {
             name: 'description',
@@ -37,6 +37,13 @@ export const pageSEO = {
             name: 'image',
             title: 'Meta Image',
             type: 'image',
+            fields: [
+                {
+                    title: 'Alternative Text',
+                    name: 'alt',
+                    type: 'string',
+                },
+            ],
             options: {
                 accept: '.jpg',
             },

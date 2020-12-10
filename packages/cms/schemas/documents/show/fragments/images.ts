@@ -17,16 +17,37 @@ export default {
             name: 'poster',
             title: 'Poster Image',
             type: 'image',
+            fields: [
+                {
+                    title: 'Alternative Text',
+                    name: 'alt',
+                    type: 'string',
+                },
+            ],
         },
         {
             name: 'card',
             title: 'Card Image',
             type: 'image',
+            fields: [
+                {
+                    title: 'Alternative Text',
+                    name: 'alt',
+                    type: 'string',
+                },
+            ],
         },
         {
             name: 'thumbnail',
             title: 'Thumbnail Image',
             type: 'image',
+            fields: [
+                {
+                    title: 'Alternative Text',
+                    name: 'alt',
+                    type: 'string',
+                },
+            ],
         },
     ],
 };

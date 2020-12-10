@@ -9,7 +9,7 @@ import images from './fragments/images';
 import legacy from './fragments/legacy';
 import location from './fragments/location';
 import openCloseDates from './fragments/openCloseDates';
-import performance from './fragments/performance';
+import { performances, performancesConfig } from './fragments/performance';
 import promo from './fragments/promo';
 import season from './fragments/season';
 import sponsors from './fragments/sponsors';
@@ -50,6 +50,8 @@ export default {
             title: 'Show Type',
             type: 'string',
             options: {
+                layout: 'radio',
+                direction: 'horizontal',
                 list: [
                     { title: 'Live', value: 'live' },
                     { title: 'Virtual', value: 'virtual' },
@@ -67,13 +69,34 @@ export default {
         },
         season,
         location,
-        ...openCloseDates,
         author,
         ...basicInfo,
-        performance,
         collaboration,
         images,
         pageSEO,
         legacy,
+        ...openCloseDates,
+        performancesConfig,
+        performances,
     ],
+    initialValue: {
+        type: 'live',
+        isCollaboration: false,
+        pageSEO: {
+            _type: 'object',
+            hide: false,
+        },
+    },
+    preview: {
+        select: {
+            title: 'title',
+            season: 'season.title',
+        },
+        prepare({ title, season }) {
+            return {
+                title,
+                subtitle: season,
+            };
+        },
+    },
 };
