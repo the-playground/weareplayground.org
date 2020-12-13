@@ -1,20 +1,22 @@
-import { pageSEO } from '../../shared';
+import { bindFieldsToFieldset } from '../../../lib/fieldset';
 
-import articles from './fragments/articles';
-import artists from './fragments/artists';
-import author from './fragments/author';
-import basicInfo from './fragments/basicInfo';
-import collaboration from './fragments/collaboration';
-import images from './fragments/images';
-import legacy from './fragments/legacy';
-import location from './fragments/location';
-import openCloseDates from './fragments/openCloseDates';
-import { performances, performancesConfig } from './fragments/performance';
-import promo from './fragments/promo';
-import season from './fragments/season';
-import sponsors from './fragments/sponsors';
+import articles from './fields/articles';
+import artists from './fields/artists';
+import author from './fields/author';
+import basicInfo from './fields/basicInfo';
+import collaboration from './fields/collaboration';
+import images from './fields/images';
+import location from './fields/location';
+import openCloseDates from './fields/openCloseDates';
+import { performances, performanceConfig } from './fields/performance';
+import promo from './fields/promo';
+import season from './fields/season';
+import seo from './fields/seo';
+import sponsors from './fields/sponsors';
 
-export default {
+import * as showObjects from './objects';
+
+export const schema = {
     name: 'show',
     title: 'Shows',
     type: 'document',
@@ -25,6 +27,14 @@ export default {
             title: 'Basic Info',
             description: '',
             options: { collapsible: true, collapsed: true },
+        },
+        {
+            name: 'images',
+            title: 'Images',
+            description:
+                'Core images for representing this show in various places',
+            type: 'object',
+            options: { collapsed: true, collapsible: true },
         },
     ],
     fields: [
@@ -59,33 +69,19 @@ export default {
             },
             validation: (Rule: any) => Rule.required(),
         },
-        {
-            name: 'isCollaboration',
-            title: 'This show is a collaboration',
-            description:
-                'Turn "on" if this show is a collaborative effort with another company',
-            type: 'boolean',
-            validation: (Rule: any) => Rule.required(),
-        },
         season,
         location,
         author,
-        ...basicInfo,
+        ...bindFieldsToFieldset('basic', basicInfo),
         collaboration,
-        images,
-        pageSEO,
-        legacy,
+        ...bindFieldsToFieldset('images', images),
+        seo,
         ...openCloseDates,
-        performancesConfig,
+        performanceConfig,
         performances,
     ],
     initialValue: {
         type: 'live',
-        isCollaboration: false,
-        pageSEO: {
-            _type: 'object',
-            hide: false,
-        },
     },
     preview: {
         select: {
@@ -100,3 +96,11 @@ export default {
         },
     },
 };
+
+export const objects = [
+    showObjects.collaboration,
+    showObjects.performance,
+    showObjects.performanceConfig,
+    showObjects.ticket,
+    showObjects.scriptAuthor,
+];

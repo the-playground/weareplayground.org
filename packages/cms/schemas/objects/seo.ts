@@ -5,8 +5,8 @@
  */
 export const pageSEO = {
     name: 'pageSEO',
-    title: 'SEO Configuration',
-    descriptions: 'Optimize this document for search engines',
+    title: 'Page SEO',
+    description: 'Optimize this document for search engines',
     type: 'object',
     options: {
         collapsible: true,
@@ -36,14 +36,7 @@ export const pageSEO = {
         {
             name: 'image',
             title: 'Meta Image',
-            type: 'image',
-            fields: [
-                {
-                    title: 'Alternative Text',
-                    name: 'alt',
-                    type: 'string',
-                },
-            ],
+            type: 'imageWithAlt',
             options: {
                 accept: '.jpg',
             },

@@ -1,12 +1,8 @@
 import { format } from 'date-fns';
 
-/**
- *
- */
-export const performancesConfig = {
-    name: 'performancesConfig',
-    title: 'Performance Configuration',
-    description: 'Configurations that apply to all performances for this show',
+export const performanceConfig = {
+    name: 'performanceConfig',
+    title: 'Performance Config',
     type: 'object',
     options: {
         collapsible: true,
@@ -64,29 +60,18 @@ export const performancesConfig = {
                 ],
             },
         },
+
         {
-            name: 'advisories',
-            title: 'Effect & Content Advisories',
-            type: 'object',
-            options: {
-                collapsible: true,
-                collapsed: true,
-            },
-            fields: [
-                {
-                    name: 'content',
-                    title: 'Content Advisory',
-                    type: 'array',
-                    of: [{ type: 'block', styles: [] }],
-                },
-                {
-                    name: 'effects',
-                    title: 'Effects Advisory',
-                    type: 'array',
-                    styles: [],
-                    of: [{ type: 'block', styles: [] }],
-                },
-            ],
+            name: 'contentAdvisory',
+            title: 'Content Advisory',
+            type: 'text',
+            rows: 4,
+        },
+        {
+            name: 'effectAdvisory',
+            title: 'Effects Advisory',
+            type: 'text',
+            rows: 4,
         },
     ],
 };
@@ -94,7 +79,7 @@ export const performancesConfig = {
 /**
  *
  */
-const singlePerformance = {
+export const performance = {
     name: 'performance',
     title: 'Performance Occurrence',
     type: 'object',
@@ -138,42 +123,7 @@ const singlePerformance = {
         {
             name: 'ticket',
             title: 'Ticket',
-            type: 'object',
-            fields: [
-                {
-                    name: 'type',
-                    title: 'Type',
-                    type: 'string',
-                    options: {
-                        layout: 'radio',
-                        direction: 'horizontal',
-                        list: [
-                            { value: 'internal', title: 'Internal' },
-                            { value: 'external', title: 'External' },
-                            { value: 'door', title: 'Door' },
-                        ],
-                    },
-                },
-                {
-                    name: 'externalLink',
-                    title: 'External Link',
-                    description:
-                        'If tickets for this performance are being sold externally, provide a link',
-                    type: 'url',
-                },
-                {
-                    name: 'price',
-                    title: 'Price',
-                    type: 'number',
-                    validation: (Rule: any) => Rule.positive(),
-                },
-                {
-                    name: 'initialQuantity',
-                    title: 'Initial Number of Tickets Available',
-                    type: 'number',
-                    validation: (Rule: any) => Rule.positive(),
-                },
-            ],
+            type: 'ticket',
         },
         {
             name: 'isPreview',
@@ -191,16 +141,4 @@ const singlePerformance = {
             type: 'boolean',
         },
     ],
-};
-
-/**
- *
- */
-export const performances = {
-    name: 'performances',
-    title: 'Performances',
-    description: 'Set up and configure performance occurrences',
-    type: 'array',
-    validation: (Rule: any) => Rule.unique(),
-    of: [singlePerformance],
 };

@@ -1,10 +1,9 @@
-import { pageSEO } from '../shared';
-
-export default {
+export const schema = {
     name: 'season',
     title: 'Seasons',
     type: 'document',
     icon: (): string => '',
+
     fields: [
         {
             name: 'title',
@@ -38,28 +37,10 @@ export default {
             title: 'Description',
             type: 'text',
         },
-        pageSEO,
         {
-            name: 'legacy',
-            title: 'Legacy Options',
-            type: 'object',
-            options: {
-                collapsible: true,
-                collapsed: true,
-            },
-            fields: [
-                {
-                    name: 'url',
-                    title: 'Legacy URL',
-                    description:
-                        'The URL for this season on the Playground website',
-                    type: 'url',
-                    validation: (Rule: any) =>
-                        Rule.uri({
-                            scheme: ['https'],
-                        }),
-                },
-            ],
+            name: 'seo',
+            title: 'SEO',
+            type: 'pageSEO',
         },
     ],
 };

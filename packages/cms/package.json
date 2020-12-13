@@ -12,18 +12,18 @@
     "test": "sanity check",
     "deploy": "npm run deploy:graphql && npm run deploy:sanity",
     "deploy:sanity": "sanity deploy",
-    "deploy:graphql": "sanity graphql deploy --playground"
+    "deploy:graphql": "sanity graphql deploy --generation gen3 --playground"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.1.1",
+    "@sanity/base": "^2.1.2",
     "@sanity/components": "^2.1.0",
-    "@sanity/core": "^2.1.0",
-    "@sanity/default-layout": "^2.1.1",
+    "@sanity/core": "^2.1.2",
+    "@sanity/default-layout": "^2.1.2",
     "@sanity/default-login": "^2.1.0",
-    "@sanity/desk-tool": "^2.1.1",
+    "@sanity/desk-tool": "^2.1.2",
     "@sanity/vision": "^2.1.0",
     "date-fns": "^2.16.1",
     "prop-types": "^15.7",

@@ -1,4 +1,4 @@
-export default {
+export const schema = {
     name: 'organization',
     title: 'Organizations',
     type: 'document',

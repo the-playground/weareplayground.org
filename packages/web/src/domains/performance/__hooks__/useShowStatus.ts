@@ -64,7 +64,13 @@ export const useShowStatus = (performances: Performance[]): ShowStatusProps => {
     return { status, setStatus };
 };
 
-type ShowStatus = 'inactive' | 'archived' | 'active' | 'upcoming' | 'future';
+type ShowStatus =
+    | 'inactive'
+    | 'archived'
+    | 'active'
+    | 'upcoming'
+    | 'future'
+    | 'cancelled';
 
 interface ShowStatusProps {
     status: ShowStatus;

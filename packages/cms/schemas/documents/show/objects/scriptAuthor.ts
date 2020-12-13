@@ -1,6 +1,6 @@
-export default {
-    name: 'author',
-    title: 'Author Info',
+export const scriptAuthor = {
+    name: 'scriptAuthor',
+    title: 'Author',
     type: 'object',
     options: {
         collapsible: true,
