@@ -4,6 +4,7 @@ import createSchema from 'part:@sanity/base/schema-creator';
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
+import { schema as artistSchema } from './documents/artist';
 import { schema as locationSchema } from './documents/location';
 import { schema as showSchema, objects as showObjects } from './documents/show';
 import { schema as seasonSchema } from './documents/season';
@@ -18,6 +19,7 @@ export default createSchema({
     // Then proceed to concatenate our document type
     // to the ones provided by any plugins that are installed
     types: schemaTypes.concat([
+        artistSchema,
         showSchema,
         ...showObjects,
         seasonSchema,

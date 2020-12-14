@@ -121,11 +121,6 @@ export const performance = {
             },
         },
         {
-            name: 'ticket',
-            title: 'Ticket',
-            type: 'ticket',
-        },
-        {
             name: 'isPreview',
             title: 'Preview Performance',
             type: 'boolean',

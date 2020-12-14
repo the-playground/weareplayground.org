@@ -5,6 +5,7 @@ import artists from './fields/artists';
 import author from './fields/author';
 import basicInfo from './fields/basicInfo';
 import collaboration from './fields/collaboration';
+import directors from './fields/directors';
 import images from './fields/images';
 import location from './fields/location';
 import openCloseDates from './fields/openCloseDates';
@@ -70,15 +71,16 @@ export const schema = {
             validation: (Rule: any) => Rule.required(),
         },
         season,
-        location,
         author,
+        directors,
+        location,
         ...bindFieldsToFieldset('basic', basicInfo),
         collaboration,
         ...bindFieldsToFieldset('images', images),
-        seo,
         ...openCloseDates,
         performanceConfig,
         performances,
+        seo,
     ],
     initialValue: {
         type: 'live',
@@ -95,6 +97,13 @@ export const schema = {
             };
         },
     },
+    orderings: [
+        {
+            title: 'Show Date, Newest to Oldest',
+            name: 'showDateDesc',
+            by: [{ field: 'closeDate', direction: 'desc' }],
+        },
+    ],
 };
 
 export const objects = [

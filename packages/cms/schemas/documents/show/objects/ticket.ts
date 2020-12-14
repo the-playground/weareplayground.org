@@ -17,10 +17,9 @@ export const ticket = {
             },
         },
         {
-            name: 'externalLink',
-            title: 'External Link',
-            description:
-                'If tickets for this performance are being sold externally, provide a link',
+            name: 'ticketLink',
+            title: 'Ticket Link',
+            description: 'Provide a link to the ticketing page',
             type: 'url',
         },
         {

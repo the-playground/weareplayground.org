@@ -3,24 +3,18 @@ export default [
         name: 'openDate',
         title: 'Opening Date',
         description: 'The date of the first performance',
-        type: 'datetime',
-        readOnly: true,
+        type: 'date',
         options: {
-            dateFormat: 'ddd » YYYY-MM-DD',
-            timeFormat: 'h:mm:a',
-            timeStep: 30,
+            dateFormat: 'ddd » MMM DD, YYYY',
         },
     },
     {
         name: 'closeDate',
         title: 'Closing Date',
         description: 'The date of the last performance',
-        type: 'datetime',
-        readOnly: true,
+        type: 'date',
         options: {
-            dateFormat: 'YYYY-MM-DD',
-            timeFormat: 'h:mm:a',
-            timeStep: 30,
+            dateFormat: 'ddd » MMM DD, YYYY',
         },
     },
 ];
