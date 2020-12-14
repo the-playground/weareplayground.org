@@ -63,8 +63,8 @@ const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
 };
 
 export const showQuery = graphql`
-    query showData($uid: String!) {
-        prismicShow(uid: { eq: $uid }, lang: { eq: "en-us" }) {
+    query showData($slug: String!) {
+        prismicShow(uid: { eq: $slug }, lang: { eq: "en-us" }) {
             first_publication_date
             last_publication_date
             data {

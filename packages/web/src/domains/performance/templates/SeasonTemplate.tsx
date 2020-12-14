@@ -67,8 +67,8 @@ const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
 };
 
 export const seasonQuery = graphql`
-    query seasonData($id: String!) {
-        prismicSeason(id: { eq: $id }, lang: { eq: "en-us" }) {
+    query seasonData($slug: String!) {
+        prismicSeason(uid: { eq: $slug }, lang: { eq: "en-us" }) {
             first_publication_date
             last_publication_date
 
