@@ -38,6 +38,13 @@ export const schema = {
             type: 'text',
         },
         {
+            name: 'shows',
+            title: 'Shows',
+            description: 'The shows that were a part of this season',
+            type: 'array',
+            of: [{ type: 'reference', to: { type: 'show' } }],
+        },
+        {
             name: 'seo',
             title: 'SEO',
             type: 'pageSEO',

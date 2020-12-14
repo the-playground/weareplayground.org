@@ -86,11 +86,13 @@ export const performance = {
     preview: {
         select: {
             title: 'datetime',
+            status: 'status',
         },
         prepare(selection: any) {
-            const { title } = selection;
+            const { title, status } = selection;
             return {
                 title: format(new Date(title), 'cccc » MMM dd, yyyy @ h:mm a'),
+                subtitle: status,
             };
         },
     },

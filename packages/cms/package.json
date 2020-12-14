@@ -10,9 +10,9 @@
     "start": "sanity start",
     "build": "sanity build",
     "test": "sanity check",
-    "deploy": "npm run deploy:graphql && npm run deploy:sanity",
+    "deploy": "npm run deploy:sanity && npm run deploy:graphql",
     "deploy:sanity": "sanity deploy",
-    "deploy:graphql": "sanity graphql deploy --generation gen3 --playground"
+    "deploy:graphql": "sanity graphql deploy --generation gen3"
   },
   "keywords": [
     "sanity"

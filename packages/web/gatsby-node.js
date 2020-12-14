@@ -6,6 +6,7 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 const redirects = require('./@app/config/redirects'); // eslint-disable-line @typescript-eslint/no-var-requires
+const { SHOW_PAGE_ROOT_SLUG } = require('./@app/config/nodePages'); // eslint-disable-line @typescript-eslint/no-var-requires
 
 /**
  * Build a single season page
@@ -13,10 +14,10 @@ const redirects = require('./@app/config/redirects'); // eslint-disable-line @ty
  * @param {*} seasonConfig
  * @param {*} createPage
  */
-const buildSeasonPage = (seasonConfig, createPage) => {
+const buildSeasonPage = async (seasonConfig, createPage) => {
     console.log(`🗓️  Season: ${seasonConfig.url}`);
 
-    createPage({
+    await createPage({
         path: seasonConfig.url,
         component: seasonConfig.template,
         context: {
@@ -33,10 +34,10 @@ const buildSeasonPage = (seasonConfig, createPage) => {
  * @param {*} showConfig
  * @param {*} createPage
  */
-const buildShowPage = (showConfig, createPage) => {
+const buildShowPage = async (showConfig, createPage) => {
     console.log(`🎭 Show: ${showConfig.url}`);
 
-    createPage({
+    await createPage({
         path: showConfig.url,
         component: showConfig.template,
         context: {
@@ -88,10 +89,10 @@ const getBlogPostParentPage = async (graphql, reporter) => {
  * @param {*} showConfig
  * @param {*} createPage
  */
-const buildBlogPost = (blogConfig, createPage) => {
+const buildBlogPost = async (blogConfig, createPage) => {
     console.log(`✏️ Blog: ${blogConfig.url}`);
 
-    createPage({
+    await createPage({
         path: blogConfig.url,
         component: blogConfig.template,
         context: {
@@ -111,16 +112,17 @@ const generateSeasonsAndShows = async ({ graphql, actions, reporter }) => {
     // Query Season and Show data
     const { data } = await graphql(`
         {
-            allPrismicSeason {
+            allSanitySeason {
                 nodes {
-                    uid
-                    id
-                    data {
-                        shows {
-                            show {
-                                id
-                                uid
-                            }
+                    _id
+                    slug {
+                        current
+                    }
+
+                    shows {
+                        _id
+                        slug {
+                            current
                         }
                     }
                 }
@@ -140,13 +142,12 @@ const generateSeasonsAndShows = async ({ graphql, actions, reporter }) => {
     console.log(`🚀 Begin creating dynamic Season and Show pages...`);
 
     const { createPage } = actions;
-    const URLBase = `s`;
 
-    await data.allPrismicSeason.nodes.forEach(async (season) => {
+    await data.allSanitySeason.nodes.forEach(async (season) => {
         const seasonConfig = {
-            slug: season.uid,
-            url: `/${URLBase}/${season.uid}`,
-            id: season.id,
+            slug: season.slug.current,
+            url: `/${SHOW_PAGE_ROOT_SLUG}/${season.slug.current}`,
+            id: season._id,
             template: require.resolve(
                 `./src/domains/performance/templates/SeasonTemplate.tsx`
             ),
@@ -155,18 +156,18 @@ const generateSeasonsAndShows = async ({ graphql, actions, reporter }) => {
         buildSeasonPage(seasonConfig, createPage);
 
         // Bail if there are no shows linked to the season
-        if (!season.data || !season.data.shows) {
+        if (!season.shows) {
             return;
         }
 
         /**
          * Begin building pages for each Show in the current Season
          */
-        season.data.shows.forEach(async ({ show }) => {
+        season.shows.forEach((show) => {
             const showConfig = {
-                slug: show.uid,
-                url: `${seasonConfig.url}/${show.uid}`,
-                id: show.id,
+                slug: show.slug.current,
+                url: `${seasonConfig.url}/${show.slug.current}`,
+                id: show._id,
                 template: require.resolve(
                     `./src/domains/performance/templates/ShowTemplate.tsx`
                 ),
@@ -209,7 +210,7 @@ const generateBlogPosts = async ({ graphql, actions, reporter }) => {
 
     const { createPage } = actions;
 
-    await data.allPrismicPost.nodes.forEach(async (post) => {
+    await data.allPrismicPost.nodes.forEach((post) => {
         const blogConfig = {
             slug: post.uid,
             url: `/${blogParentPage}/${post.uid}`,
