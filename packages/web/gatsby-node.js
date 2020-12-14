@@ -22,7 +22,7 @@ const buildSeasonPage = async (seasonConfig, createPage) => {
         component: seasonConfig.template,
         context: {
             id: seasonConfig.id,
-            uid: seasonConfig.slug,
+            slug: seasonConfig.slug,
             seasonURL: seasonConfig.url,
         },
     });
@@ -44,7 +44,7 @@ const buildShowPage = async (showConfig, createPage) => {
             seasonID: showConfig.season.id,
             seasonUID: showConfig.season.slug,
             seasonURL: showConfig.season.url,
-            uid: showConfig.slug,
+            slug: showConfig.slug,
             id: showConfig.id,
         },
     });
