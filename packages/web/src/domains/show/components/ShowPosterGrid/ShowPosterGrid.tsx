@@ -2,12 +2,12 @@ import React from 'react';
 
 import { BodyText } from '@nerve/core/components';
 
-import { ShowCore } from '../../types';
-import { ShowPoster, ShowPosterProps } from '../ShowPoster/ShowPoster';
+import { ShowCoreWithPoster } from '../../types';
+import { ShowPoster } from '../ShowPoster/ShowPoster';
 
 import * as styled from './__styles';
 
-export const ShowPosterGrid: React.FC<ShowPosterGridProps> = ({ items }) => {
+export const ShowPosterGrid: React.FC<ShowPosterGridProps> = ({ shows }) => {
     /**
      * Todo: 1. Sort shows based on performance dates
      * Todo: 2. Turn sorting methodology into reuseable hook
@@ -19,21 +19,20 @@ export const ShowPosterGrid: React.FC<ShowPosterGridProps> = ({ items }) => {
                 Select a show to see detailed information
             </BodyText>
             <div className="grid">
-                {items.map(({ uid, data }) => {
-                    const show = data;
-
+                {shows.map((show) => {
                     return (
                         <ShowPoster
                             key={show.title}
                             title={show.title}
-                            author={show.author}
-                            uid={uid}
+                            authorName={show.author.name}
+                            slug={show.slug.current}
                             image={show.posterImage}
                             season={{
                                 title: show.season.title,
                                 slug: show.season.slug.current,
                             }}
-                            performances={show.performances}
+                            openingDate={show.openDate}
+                            closingDate={show.closeDate}
                         />
                     );
                 })}
@@ -43,5 +42,5 @@ export const ShowPosterGrid: React.FC<ShowPosterGridProps> = ({ items }) => {
 };
 
 export interface ShowPosterGridProps {
-    items: ShowPosterProps[];
+    shows: ShowCoreWithPoster[];
 }

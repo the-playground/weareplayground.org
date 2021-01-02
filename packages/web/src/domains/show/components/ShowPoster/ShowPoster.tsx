@@ -2,13 +2,13 @@ import React from 'react';
 
 import { getShowSlug } from '@nerve/shared/lib';
 import { Link } from '@nerve/core/routing';
+import { SanityFluidImage } from '@nerve/shared/types';
 
 import {
     BodyText,
     Heading,
     Image,
     BackgroundOverlay,
-    FluidImageProps,
 } from '@nerve/core/components';
 
 import * as styled from './__styles';
@@ -28,7 +28,11 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
     return (
         <styled.ShowPoster>
             <Link className="wrapper" to={getShowSlug(slug, season.slug)}>
-                <Image fluid={image.fluid} alt={image.alt} className="image" />
+                <Image
+                    fluid={image.asset.fluid}
+                    alt={image.alt}
+                    className="image"
+                />
                 <BackgroundOverlay
                     variant="verticalGradientDark"
                     className="overlay"
@@ -63,5 +67,7 @@ export interface ShowPosterProps {
         slug: string;
         title: string;
     };
-    image: FluidImageProps;
+    image: SanityFluidImage;
+    openingDate: string;
+    closingDate: string;
 }

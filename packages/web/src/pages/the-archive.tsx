@@ -4,8 +4,12 @@ import { graphql, PageProps } from 'gatsby';
 import { GatsbyPageContext, PrismicImage } from '@nerve/shared/types';
 
 import { SimpleHero } from '@nerve/shared/components';
-import { ShowPosterGrid, sortShows } from '@nerve/domains/show';
-import { ShowSnippet } from '@nerve/domains/show/types';
+import {
+    ShowPosterGrid,
+    sortShows,
+    ShowCoreWithPoster,
+} from '@nerve/domains/show';
+
 import { SubscribeSection } from '@nerve/domains/engagement';
 
 import PageTemplate from '@nerve/domains/page/PageTemplate';
@@ -15,9 +19,10 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     pageContext,
     location,
 }) => {
-    const { uid } = pageContext;
     const pageData = data.prismicArchivePage;
-    const shows = data.allPrismicShow.nodes;
+    const { nodes: shows } = data.allSanityShow;
+
+    const sortedShows = sortShows(shows);
 
     return (
         <PageTemplate pageConfig={pageData} currentLocation={location.pathname}>
@@ -25,7 +30,7 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 title={pageData.data.hero_title}
                 subTitle={pageData.data.hero_sub_title}
             />
-            {/* <ShowPosterGrid items={sortShows(shows)} /> */}
+            <ShowPosterGrid shows={sortedShows} />
             <SubscribeSection />
         </PageTemplate>
     );
@@ -58,33 +63,29 @@ export const query = graphql`
             }
         }
 
-        allPrismicShow {
+        allSanityShow {
             nodes {
-                uid
-                data {
-                    performances {
-                        datetime
-                        external_ticket_link {
-                            url
-                        }
-                    }
-                    poster_image {
+                title
+                slug {
+                    current
+                }
+                openDate
+                closeDate
+                posterImage {
+                    alt
+                    asset {
                         fluid {
-                            ...GatsbyPrismicImageFluid
+                            ...GatsbySanityImageFluid
                         }
                     }
+                }
+                author {
+                    name
+                }
+                season {
                     title
-                    author
-                    # Query related season info
-                    season {
-                        uid
-                        document {
-                            ... on PrismicSeason {
-                                data {
-                                    title
-                                }
-                            }
-                        }
+                    slug {
+                        current
                     }
                 }
             }
@@ -116,8 +117,8 @@ interface PageData {
             hero_sub_title: string;
         };
     };
-    allPrismicShow: {
-        nodes: Omit<ShowSnippet, 'card_image'>[];
+    allSanityShow: {
+        nodes: ShowCoreWithPoster[];
     };
 }
 

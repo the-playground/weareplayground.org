@@ -1,27 +1,22 @@
 import { compareDesc, parseISO } from 'date-fns';
-import { ShowSnippet } from '../types';
+import { SortableShows } from '../types';
 
 /**
  * Sort shows from newest to oldest based on their performance dates
  *
  * @param shows An array of shows to sort
  */
-export const sortShows = (shows: ShowSnippet[]): ShowSnippet[] =>
-    shows.sort((a, b) => {
-        const performancesA = a.data.performances;
-        const performancesB = b.data.performances;
+export const sortShows = (shows: any): any =>
+    shows.sort((a: any, b: any) => {
+        const performanceA = a.closeDate;
+        const performanceB = b.closeDate;
 
-        if (!performancesA || !performancesB) {
+        if (!performanceA || !performanceB) {
             return 0;
         }
 
-        const finalPerformanceA =
-            performancesA[performancesA.length - 1].datetime;
-        const finalPerformanceB =
-            performancesB[performancesB.length - 1].datetime;
-
-        const dateA = parseISO(finalPerformanceA);
-        const dateB = parseISO(finalPerformanceB);
+        const dateA = parseISO(a.closeDate);
+        const dateB = parseISO(b.closeDate);
 
         return compareDesc(dateA, dateB);
     });

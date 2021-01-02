@@ -3,7 +3,11 @@ import {
     LocalFileImageProps,
     FixedImageProps,
 } from '@nerve/core/components';
-import { SanityFluidImage, SanityDocument } from '@nerve/shared/types';
+import {
+    SanityDocument,
+    SanityFluidImage,
+    SanityFixedImage,
+} from '@nerve/shared/types';
 import { SeasonReference } from '@nerve/domains/season';
 
 /**
@@ -12,7 +16,7 @@ import { SeasonReference } from '@nerve/domains/season';
 export interface ShowPage extends SanityDocument {
     author: ShowAuthor;
     heroImage: SanityFluidImage;
-    thumbnailImage: FixedImageProps;
+    thumbnailImage: SanityFixedImage;
     performances: ShowPerformance[];
 }
 
@@ -31,15 +35,15 @@ export interface ShowCore {
 }
 
 export interface ShowCoreWithPoster extends ShowCore {
-    posterImage: FluidImageProps;
+    posterImage: SanityFluidImage;
 }
 
 export interface ShowCoreWithCard extends ShowCore {
-    cardImage: FluidImageProps;
+    cardImage: SanityFluidImage;
 }
 
 export interface ShowCoreWithThumbnail {
-    thumbnailImage: FixedImageProps;
+    thumbnailImage: SanityFixedImage;
 }
 
 /**
@@ -57,4 +61,10 @@ export interface ShowPerformance {
     isPreview: boolean;
     isPayWhatYouCan: boolean;
     hasTalkback: boolean;
+}
+
+export interface SortableShows {
+    openDate: string;
+    closeDate: string;
+    [key: string]: any;
 }

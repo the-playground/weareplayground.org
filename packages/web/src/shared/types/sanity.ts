@@ -1,4 +1,4 @@
-import { IFluidObject, IFixedObject } from 'gatsby-background-image';
+import { FluidObject, FixedObject } from 'gatsby-image';
 
 export interface SanityDocument {
     _createdAt: string;
@@ -6,7 +6,7 @@ export interface SanityDocument {
     title: string;
     slug: {
         current: string;
-    }
+    };
     seo: SanityDocumentSEO;
 }
 
@@ -24,38 +24,36 @@ export interface SanityImage {
     alt?: string;
     asset: {
         url: string;
-    }
+    };
 }
-
 
 /**
  *
  */
 export interface SanityFluidImage {
+    alt?: string;
     asset: {
-        alt?: string;
-        fluid: IFluidObject;
+        fluid: FluidObject;
         dimensions?: {
             width: string;
             height: string;
         };
-    }
-};
+    };
+}
 
 /**
  *
  */
 export type SanityFixedImage = {
+    alt?: string;
     asset: {
-        alt?: string;
-        fixed: IFixedObject;
+        fixed: FixedObject;
         dimensions: {
             width: string;
             height: string;
         };
-    }
+    };
 };
-
 
 /**
  *
@@ -63,5 +61,5 @@ export type SanityFixedImage = {
 export type SanitySlug = {
     slug: {
         current: string;
-    }
+    };
 };
