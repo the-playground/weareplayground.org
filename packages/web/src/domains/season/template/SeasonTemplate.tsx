@@ -15,7 +15,6 @@ import { SubscribeSection } from '@nerve/domains/engagement';
 import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
 
 import { FluidImageProps } from '@nerve/core/components';
-import { ShowSnippet } from '../types';
 
 const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
@@ -23,7 +22,6 @@ const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     location,
 }) => {
     const season = data.prismicSeason;
-    const { shows } = season.data;
     const seasonData = data.prismicSeason.data;
 
     const { uid } = pageContext;
@@ -82,27 +80,6 @@ export const seasonQuery = graphql`
                         ...GatsbyPrismicImageFluid
                     }
                 }
-                shows {
-                    show {
-                        document {
-                            ... on PrismicShow {
-                                data {
-                                    author
-                                    title
-                                    performances {
-                                        datetime
-                                    }
-                                    card_image {
-                                        alt
-                                        fluid {
-                                            ...GatsbyPrismicImageFluid
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
 
                 ## SEO Data
                 seo_title
@@ -142,13 +119,6 @@ interface PageData {
             description: string;
             hero_image: FluidImageProps;
 
-            shows: {
-                show: {
-                    document: {
-                        data: ShowSnippet;
-                    };
-                };
-            }[];
             seo_title: string;
             seo_description: string;
             seo_image: PrismicImage;

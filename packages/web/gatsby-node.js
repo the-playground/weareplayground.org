@@ -5,8 +5,8 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
-const redirects = require('./@app/config/redirects'); // eslint-disable-line @typescript-eslint/no-var-requires
-const { SHOW_PAGE_ROOT_SLUG } = require('./@app/config/nodePages'); // eslint-disable-line @typescript-eslint/no-var-requires
+const redirects = require('./@app/constants/redirects'); // eslint-disable-line @typescript-eslint/no-var-requires
+const { SHOW_PAGE_ROOT_SLUG } = require('./@app/constants/nodePages'); // eslint-disable-line @typescript-eslint/no-var-requires
 
 /**
  * Build a single season page
@@ -42,7 +42,7 @@ const buildShowPage = async (showConfig, createPage) => {
         component: showConfig.template,
         context: {
             seasonID: showConfig.season.id,
-            seasonUID: showConfig.season.slug,
+            seasonSlug: showConfig.season.slug,
             seasonURL: showConfig.season.url,
             slug: showConfig.slug,
             id: showConfig.id,
@@ -149,7 +149,7 @@ const generateSeasonsAndShows = async ({ graphql, actions, reporter }) => {
             url: `/${SHOW_PAGE_ROOT_SLUG}/${season.slug.current}`,
             id: season._id,
             template: require.resolve(
-                `./src/domains/performance/templates/SeasonTemplate.tsx`
+                `./src/domains/season/template/SeasonTemplate.tsx`
             ),
         };
 
@@ -169,7 +169,7 @@ const generateSeasonsAndShows = async ({ graphql, actions, reporter }) => {
                 url: `${seasonConfig.url}/${show.slug.current}`,
                 id: show._id,
                 template: require.resolve(
-                    `./src/domains/performance/templates/ShowTemplate.tsx`
+                    `./src/domains/show/template/ShowTemplate.tsx`
                 ),
                 season: seasonConfig,
             };

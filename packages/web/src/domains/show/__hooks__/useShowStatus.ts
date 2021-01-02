@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import { parseISO, sub, isPast, isWithinInterval } from 'date-fns';
 
-import { Performance } from '../types';
+import { ShowPerformance } from '../types';
 
 /**
  * Using all of the available performances of a show, determine the current status.
  *
  * @param performances All of the available performances of the show.
  */
-export const useShowStatus = (performances: Performance[]): ShowStatusProps => {
+export const useShowStatus = (
+    performances: ShowPerformance[]
+): ShowStatusProps => {
     const [status, setStatus] = useState<ShowStatus>('inactive');
 
     useEffect(() => {

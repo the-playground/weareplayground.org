@@ -1,7 +1,7 @@
 export type GatsbyPageContext = {
     id: string;
-    uid: string;
+    slug: string;
     seasonID?: string;
-    seasonUID?: string;
+    seasonSlug?: string;
     seasonURL?: string;
 };

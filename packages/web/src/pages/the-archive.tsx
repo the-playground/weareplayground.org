@@ -4,8 +4,8 @@ import { graphql, PageProps } from 'gatsby';
 import { GatsbyPageContext, PrismicImage } from '@nerve/shared/types';
 
 import { SimpleHero } from '@nerve/shared/components';
-import { ShowPosterGrid, sortShows } from '@nerve/domains/performance';
-import { ShowSnippet } from '@nerve/domains/performance/types';
+import { ShowPosterGrid, sortShows } from '@nerve/domains/show';
+import { ShowSnippet } from '@nerve/domains/show/types';
 import { SubscribeSection } from '@nerve/domains/engagement';
 
 import PageTemplate from '@nerve/domains/page/PageTemplate';
@@ -25,7 +25,7 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 title={pageData.data.hero_title}
                 subTitle={pageData.data.hero_sub_title}
             />
-            <ShowPosterGrid items={sortShows(shows)} />
+            {/* <ShowPosterGrid items={sortShows(shows)} /> */}
             <SubscribeSection />
         </PageTemplate>
     );

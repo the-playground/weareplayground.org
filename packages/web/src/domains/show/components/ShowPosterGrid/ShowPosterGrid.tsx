@@ -2,6 +2,7 @@ import React from 'react';
 
 import { BodyText } from '@nerve/core/components';
 
+import { ShowCore } from '../../types';
 import { ShowPoster, ShowPosterProps } from '../ShowPoster/ShowPoster';
 
 import * as styled from './__styles';

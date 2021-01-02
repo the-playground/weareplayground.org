@@ -40,13 +40,5 @@ export const onRenderBody = ({ setHeadComponents }) => {
             type="font/woff2"
             crossOrigin="anonymous"
         />,
-        // Snipcart v3
-        // <link
-        //     key="css-snipcart"
-        //     rel="stylesheet"
-        //     id="snipcart-css"
-        //     href={`https://cdn.snipcart.com/themes/v${SNIPCART_STYLESHEET_VERSION}/default/snipcart.css`}
-        //     type="text/css"
-        // />,
     ]);
 };

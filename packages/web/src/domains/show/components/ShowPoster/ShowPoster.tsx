@@ -10,13 +10,13 @@ import {
     BackgroundOverlay,
     FluidImageProps,
 } from '@nerve/core/components';
-import { ShowCore, SeasonReference } from '../../types';
 
 import * as styled from './__styles';
 
 export const ShowPoster: React.FC<ShowPosterProps> = ({
     title,
-    author,
+    slug,
+    authorName,
     image,
     season,
 }) => {
@@ -27,7 +27,7 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
 
     return (
         <styled.ShowPoster>
-            <Link className="wrapper" to={getShowSlug(uid, season.uid)}>
+            <Link className="wrapper" to={getShowSlug(slug, season.slug)}>
                 <Image fluid={image.fluid} alt={image.alt} className="image" />
                 <BackgroundOverlay
                     variant="verticalGradientDark"
@@ -44,7 +44,7 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
                         color="light"
                         weight="bold"
                     >
-                        by {author}
+                        by {authorName}
                     </BodyText>
                     <BodyText className="season" size="s" color="medium">
                         {season.title}
@@ -55,6 +55,13 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
     );
 };
 
-export interface ShowPosterProps extends ShowCore {
+export interface ShowPosterProps {
+    title: string;
+    slug: string;
+    authorName: string;
+    season: {
+        slug: string;
+        title: string;
+    };
     image: FluidImageProps;
 }

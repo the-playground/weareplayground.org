@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { SNIPCART_SCRIPT_VERSION } from '@app/config/snipcart';
+import { SNIPCART_SCRIPT_VERSION } from '@app/constants/snipcart';
 
 export const Snipcart: React.FC = () => (
     <>

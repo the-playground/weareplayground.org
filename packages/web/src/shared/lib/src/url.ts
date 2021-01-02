@@ -40,15 +40,15 @@ export const seasonSlugBase = 's';
 
 /**
  *
- * @param showUID
- * @param seasonUID
+ * @param showSlug
+ * @param seasonSlug
  */
-export const getShowSlug = (showUID: string, seasonUID: string) =>
-    normalizeSlug(`${seasonSlugBase}/${seasonUID}/${showUID}`);
+export const getShowSlug = (showSlug: string, seasonSlug: string) =>
+    normalizeSlug(`${seasonSlugBase}/${seasonSlug}/${showSlug}`);
 
 /**
  *
- * @param seasonUID
+ * @param seasonSlug
  */
-export const getSeasonSlug = (seasonUID: string) =>
-    seasonUID ? normalizeSlug(`${seasonSlugBase}/${seasonUID}`) : undefined;
+export const getSeasonSlug = (seasonSlug: string) =>
+    seasonSlug ? normalizeSlug(`${seasonSlugBase}/${seasonSlug}`) : undefined;

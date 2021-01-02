@@ -19,8 +19,6 @@ import {
     UIProvider,
 } from './src/shared/context';
 
-import { SeasonProvider, ShowProvider } from './src/domains/performance';
-
 // Persist our core layout across the entire app
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const wrapPageElement = ({ element, props }) => (
@@ -32,13 +30,9 @@ export const wrapRootElement = ({ element }) => (
     <EnvironmentProvider>
         <ConfigProvider>
             <LinkMapProvider>
-                <SeasonProvider>
-                    <ShowProvider>
-                        <ThemeProvider theme={theme}>
-                            <UIProvider>{element}</UIProvider>
-                        </ThemeProvider>
-                    </ShowProvider>
-                </SeasonProvider>
+                <ThemeProvider theme={theme}>
+                    <UIProvider>{element}</UIProvider>
+                </ThemeProvider>
             </LinkMapProvider>
         </ConfigProvider>
     </EnvironmentProvider>
