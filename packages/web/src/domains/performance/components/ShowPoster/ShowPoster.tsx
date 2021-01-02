@@ -10,17 +10,15 @@ import {
     BackgroundOverlay,
     FluidImageProps,
 } from '@nerve/core/components';
-import { Performance } from '../../index.d';
+import { ShowCore, SeasonReference } from '../../types';
 
 import * as styled from './__styles';
 
 export const ShowPoster: React.FC<ShowPosterProps> = ({
     title,
     author,
-    uid,
     image,
     season,
-    performances,
 }) => {
     /**
      * Todo: 1. Use performance date range to extract a "prettified" version of the dates. Ex. April 23-28, 2019
@@ -57,14 +55,6 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
     );
 };
 
-export interface ShowPosterProps {
-    title: string;
-    author: string;
-    uid: string;
+export interface ShowPosterProps extends ShowCore {
     image: FluidImageProps;
-    season: {
-        title: string;
-        uid: string;
-    };
-    performances?: Pick<Performance, 'datetime'>[];
 }

@@ -11,7 +11,7 @@ import { SubscribeSection } from '@nerve/domains/engagement';
 
 import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
 
-import { Show } from '../index.d';
+import { Show } from '../types';
 import { useShowStatus } from '../__hooks__';
 
 const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({

@@ -5,7 +5,7 @@ import { GatsbyPageContext, PrismicImage } from '@nerve/shared/types';
 
 import { SimpleHero } from '@nerve/shared/components';
 import { ShowPosterGrid, sortShows } from '@nerve/domains/performance';
-import { ShowSnippet } from '@nerve/domains/performance/index.d';
+import { ShowSnippet } from '@nerve/domains/performance/types';
 import { SubscribeSection } from '@nerve/domains/engagement';
 
 import PageTemplate from '@nerve/domains/page/PageTemplate';

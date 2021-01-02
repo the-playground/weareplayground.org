@@ -15,7 +15,7 @@ import { SubscribeSection } from '@nerve/domains/engagement';
 import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
 
 import { FluidImageProps } from '@nerve/core/components';
-import { ShowSnippet } from '../index.d';
+import { ShowSnippet } from '../types';
 
 const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,

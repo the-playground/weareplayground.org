@@ -1,9 +1,8 @@
 import React from 'react';
 
 import { BodyText } from '@nerve/core/components';
-import { ShowSnippet } from '../../index.d';
 
-import { ShowPoster } from '../ShowPoster/ShowPoster';
+import { ShowPoster, ShowPosterProps } from '../ShowPoster/ShowPoster';
 
 import * as styled from './__styles';
 
@@ -28,10 +27,10 @@ export const ShowPosterGrid: React.FC<ShowPosterGridProps> = ({ items }) => {
                             title={show.title}
                             author={show.author}
                             uid={uid}
-                            image={show.poster_image}
+                            image={show.posterImage}
                             season={{
-                                title: show.season.document.data.title,
-                                uid: show.season.uid,
+                                title: show.season.title,
+                                slug: show.season.slug.current,
                             }}
                             performances={show.performances}
                         />
@@ -43,5 +42,5 @@ export const ShowPosterGrid: React.FC<ShowPosterGridProps> = ({ items }) => {
 };
 
 export interface ShowPosterGridProps {
-    items: Omit<ShowSnippet, 'card_image'>[];
+    items: ShowPosterProps[];
 }
