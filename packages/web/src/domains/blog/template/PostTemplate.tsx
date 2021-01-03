@@ -28,7 +28,7 @@ import {
     borders,
     spacing,
 } from '@nerve/core/tokens';
-import { Author } from '../types';
+import { BlogAuthor } from '../types';
 
 const BlogHero = styled.div`
     padding-top: ${spacing.layout.m};
@@ -138,8 +138,6 @@ const PostLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     const post = data.prismicPost;
     const postData = data.prismicPost.data;
     const author = postData.author.document.data;
-
-    const { uid } = pageContext;
     const siteConfig = useConfigContext();
     const url = useCurrentURL(location.pathname);
     const metaImage = useGetMetaImage('post', postData.seo_image);
@@ -276,7 +274,7 @@ interface PageData {
             content: PrismicCMSRichTextProps;
             author: {
                 document: {
-                    data: Author;
+                    data: BlogAuthor;
                 };
             };
 

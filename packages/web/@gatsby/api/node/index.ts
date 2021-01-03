@@ -251,7 +251,7 @@ const generateBlogPosts: GatsbyNode['createPages'] = async ({
             url: `/${blogParentPage}/${post.uid}`,
             id: post.id,
             template: require.resolve(
-                `../../../src/domains/blog/templates/PostTemplate.tsx`
+                `../../../src/domains/blog/template/PostTemplate.tsx`
             ),
         };
 
