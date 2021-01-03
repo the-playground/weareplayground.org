@@ -9,7 +9,7 @@ import {
     BuildArgs as GatsbyNodeBuildArgs,
 } from 'gatsby';
 
-import { redirects } from '@netlify/redirects';
+import { redirects } from '@netlify';
 
 import { SEASON_ROOT_SLUG } from '@nerve/domains/season';
 

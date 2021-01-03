@@ -5,7 +5,14 @@
  *
  * @link https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/
  */
-export const redirects = [
+
+import { redirects as blogRedirects } from '@nerve/domains/blog';
+import { redirects as seasonRedirects } from '@nerve/domains/season';
+import { redirects as showRedirects } from '@nerve/domains/show';
+
+import { NetlifyRedirect } from './types';
+
+export const redirects: NetlifyRedirect[] = [
     // Redirect Netlify URL to final production URL
     {
         fromPath: 'https://thenerve.netlify.app/*',
@@ -14,13 +21,18 @@ export const redirects = [
         isPermanent: true,
     },
 
-    // Temp redirect since /blog doesn't exist
+    // Temp redirect since /blog doesn't exist yet
     {
         fromPath: '/blog',
         toPath: '/',
         statusCode: 301,
         isPermanent: true,
     },
+
+    // Domain-level redirects
+    ...blogRedirects,
+    ...seasonRedirects,
+    ...showRedirects,
 
     /**
      * Old Playground WP Site Redirects
