@@ -4,7 +4,7 @@
  */
 export const FontDefinitions = `
 
-    /* Heading Font -- Inter */
+    /* Heading Font -- Inter Black */
     @font-face {
 		font-family: "Inter";
 		src: local('Inter Black'),
@@ -14,7 +14,7 @@ export const FontDefinitions = `
 		font-display: swap;
 	}
 
-    /* Body Font Bold -- Inter */
+    /* Body Font Bold -- Inter Semi Bold */
     @font-face {
 		font-family: "Inter";
         src: local('Inter Semibold'),
@@ -24,7 +24,7 @@ export const FontDefinitions = `
 		font-display: swap;
 	}
 
-    /* Body Font Common -- Inter */
+    /* Body Font Common -- Inter Regular */
 	@font-face {
 		font-family: "Inter";
         src: local('Inter Regular'),

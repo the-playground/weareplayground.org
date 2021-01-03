@@ -10,7 +10,7 @@
 import { css } from 'styled-components';
 
 export const fonts = {
-    // Greycliff CF Regular
+    // Inter Regular
     bodyText: css`
         font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
             'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
@@ -18,7 +18,7 @@ export const fonts = {
         font-weight: 400;
     `,
 
-    // Greycliff CF Bold
+    // Inter Semi Bold
     bodyBold: css`
         font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
             'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
@@ -26,7 +26,7 @@ export const fonts = {
         font-weight: 600;
     `,
 
-    // Greycliff CF Heavy
+    // Inter Black
     heading: css`
         font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
             'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
