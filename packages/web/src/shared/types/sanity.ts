@@ -1,4 +1,5 @@
 import { FluidObject, FixedObject } from 'gatsby-image';
+import { IFluidObject as BackgroundFluidObject } from 'gatsby-background-image';
 
 export interface SanityDocument {
     _createdAt: string;
@@ -24,6 +25,10 @@ export interface SanityImage {
     alt?: string;
     asset: {
         url: string;
+        dimensions?: {
+            width: string;
+            height: string;
+        };
     };
 }
 
@@ -54,6 +59,15 @@ export type SanityFixedImage = {
         };
     };
 };
+
+/**
+ *
+ */
+export interface SanityBackgroundImage {
+    asset: {
+        fluid: BackgroundFluidObject;
+    };
+}
 
 /**
  *

@@ -1,11 +1,7 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 
-import {
-    GatsbyPageContext,
-    PrismicImage,
-    PrismicExternalLink,
-} from '@nerve/shared/types';
+import { PrismicImage, PrismicExternalLink } from '@nerve/shared/types';
 
 import { useConfigContext } from '@nerve/shared/context';
 import { useGetMetaImage, useCurrentURL } from '@nerve/shared/hooks';
@@ -16,7 +12,9 @@ import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
 
 import { FluidImageProps } from '@nerve/core/components';
 
-const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
+import { SeasonPageContext } from '../types';
+
+const SeasonLanding: React.FC<PageProps<PageData, SeasonPageContext>> = ({
     data,
     pageContext,
     location,
@@ -24,7 +22,7 @@ const SeasonLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     const season = data.prismicSeason;
     const seasonData = data.prismicSeason.data;
 
-    const { uid } = pageContext;
+    const { id } = pageContext;
     const siteConfig = useConfigContext();
     const url = useCurrentURL(location.pathname);
     const metaImage = useGetMetaImage('season', seasonData.seo_image);

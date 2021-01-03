@@ -1,3 +1,5 @@
+import { SEASON_ROOT_SLUG } from '@nerve/domains/season';
+import { BLOG_ROOT_SLUG } from '@nerve/domains/blog';
 import { isSSR } from './ssr';
 
 /**
@@ -27,16 +29,7 @@ export const normalizeSlug = (slug: string) => {
  * @param childUID The slug of the child page
  */
 export const getChildPageSlug = (parentUID: string, childUID: string) =>
-    parentUID && childUID
-        ? normalizeSlug(`${parentUID}/${childUID}`)
-        : undefined;
-/**
- * Set the base URL identifier for shows and seasons.
- * To be constructed as such: `base/season/show`.
- *
- * Example: `/s/2018-2019/assistance`
- */
-export const seasonSlugBase = 's';
+    parentUID && childUID ? normalizeSlug(`${parentUID}/${childUID}`) : null;
 
 /**
  *
@@ -44,11 +37,18 @@ export const seasonSlugBase = 's';
  * @param seasonSlug
  */
 export const getShowSlug = (showSlug: string, seasonSlug: string) =>
-    normalizeSlug(`${seasonSlugBase}/${seasonSlug}/${showSlug}`);
+    normalizeSlug(`${SEASON_ROOT_SLUG}/${seasonSlug}/${showSlug}`);
 
 /**
  *
  * @param seasonSlug
  */
 export const getSeasonSlug = (seasonSlug: string) =>
-    seasonSlug ? normalizeSlug(`${seasonSlugBase}/${seasonSlug}`) : undefined;
+    seasonSlug ? normalizeSlug(`${SEASON_ROOT_SLUG}/${seasonSlug}`) : null;
+
+/**
+ *
+ * @param blogSlug
+ */
+export const getBlogSlug = (blogSlug: string) =>
+    blogSlug ? normalizeSlug(`${BLOG_ROOT_SLUG}/${blogSlug}`) : null;

@@ -28,7 +28,7 @@ import {
     borders,
     spacing,
 } from '@nerve/core/tokens';
-import { Author } from '../index.d';
+import { Author } from '../types';
 
 const BlogHero = styled.div`
     padding-top: ${spacing.layout.m};

@@ -71,5 +71,8 @@
       "npm run lint:js:fix",
       "git add"
     ]
+  },
+  "dependencies": {
+    "gatsby": "^2.29.3"
   }
 }

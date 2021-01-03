@@ -1,8 +1,5 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
-
-import { GatsbyPageContext } from '@nerve/shared/types';
-
 import { useConfigContext } from '@nerve/shared/context';
 import { useGetMetaImage, useCurrentURL } from '@nerve/shared/hooks';
 
@@ -10,10 +7,10 @@ import { SubscribeSection } from '@nerve/domains/engagement';
 
 import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
 
-import { ShowPage } from '../types';
+import { ShowPage, ShowPageContext } from '../types';
 import { useShowStatus } from '../__hooks__';
 
-const ShowLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
+const ShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({
     data,
     pageContext,
     location,

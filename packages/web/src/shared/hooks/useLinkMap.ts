@@ -43,23 +43,6 @@ export const useLinkMap = (): LinkMap => {
                     sitemap {
                         url
                     }
-
-                    current_season_page {
-                        uid
-                    }
-
-                    current_show_page {
-                        uid
-                        document {
-                            ... on PrismicShow {
-                                data {
-                                    season {
-                                        uid
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
         }
@@ -80,11 +63,6 @@ export const useLinkMap = (): LinkMap => {
         sitemap: links.sitemap?.url,
         supportUs: normalizeSlug(links.support_us_page?.uid),
         terms: getChildPageSlug(legal, links.terms_page?.uid),
-        currentSeason: getSeasonSlug(links.current_season_page?.uid),
-        currentShow: getShowSlug(
-            links.current_show_page?.uid,
-            links.current_show_page?.document?.data?.season?.uid
-        ),
     };
 };
 
@@ -95,10 +73,8 @@ export interface LinkMap {
     blog: string;
     contact: string;
     legal: string;
-    privacyPolicy: string | undefined;
+    privacyPolicy: string | null;
     supportUs: string;
     sitemap: string;
-    terms: string | undefined;
-    currentSeason: string | undefined;
-    currentShow: string | undefined;
+    terms: string | null;
 }

@@ -1,3 +1,3 @@
-import { Author } from '../../index.d';
+import { BlogAuthor } from '../../types';
 
-export type AuthorCardProps = Author;
+export type AuthorCardProps = BlogAuthor;

@@ -1,7 +1,4 @@
-export type GatsbyPageContext = {
+export interface GatsbyPageContext {
     id: string;
     slug: string;
-    seasonID?: string;
-    seasonSlug?: string;
-    seasonURL?: string;
-};
+}

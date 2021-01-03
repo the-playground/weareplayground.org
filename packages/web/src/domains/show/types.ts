@@ -20,6 +20,14 @@ export interface ShowPage extends SanityDocument {
     performances: ShowPerformance[];
 }
 
+export interface ShowPageContext {
+    id: string;
+    slug: string;
+    seasonID: string;
+    seasonSlug: string;
+    seasonURL: string;
+}
+
 /**
  *
  */
@@ -61,10 +69,4 @@ export interface ShowPerformance {
     isPreview: boolean;
     isPayWhatYouCan: boolean;
     hasTalkback: boolean;
-}
-
-export interface SortableShows {
-    openDate: string;
-    closeDate: string;
-    [key: string]: any;
 }
