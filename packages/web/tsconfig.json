@@ -3,8 +3,14 @@
 	"compilerOptions": {
 		"baseUrl": "",
 		"paths": {
-			"@app/constants/*": [
-				"@app/constants/*"
+			"@app/*": [
+				"./@app/*"
+			],
+			"@gatsby/*": [
+				"./@gatsby/*"
+			],
+			"@netlify/*": [
+				"./@netlify/*"
 			],
 			"@nerve/core/*": [
 				"./src/core/*"

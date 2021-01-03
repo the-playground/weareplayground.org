@@ -4,8 +4,8 @@
 
 [build]
     # This is where we will look for package.json/.nvmrc/etc.
-    command = "yarn build"
-    ignore = "git diff --quiet HEAD^ HEAD"
+    command = "npm run build"
+    ignore = "git diff --quiet HEAD^ HEAD packages/web"
 
 # Add and configure Netlify Plugins
 [[plugins]]
@@ -35,7 +35,7 @@
 # Branch Deploy context: all deploys that are not from a pull/merge request or
 # from the Production branch will inherit these settings.
 [context.branch-deploy]
-    command = "yarn start"
+    command = "npm run start"
 
 
 # Redirects and headers are GLOBAL for all builds – they do not get scoped to

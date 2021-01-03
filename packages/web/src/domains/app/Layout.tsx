@@ -10,11 +10,7 @@ import { StylesGlobal, FontDefinitions } from './styles';
 // CSS Reset
 import '@nerve/assets/reset.css';
 
-export const Layout: React.FC<LayoutProps> = ({
-    children,
-    noHeader,
-    noFooter,
-}) => (
+export const Layout: React.FC = ({ children }) => (
     <>
         <GlobalSEO />
 
@@ -23,13 +19,8 @@ export const Layout: React.FC<LayoutProps> = ({
             <style>{FontDefinitions}</style>
         </Helmet>
 
-        {noHeader ? `` : <Header />}
+        <Header />
         <main>{children}</main>
-        {noFooter ? `` : <Footer />}
+        <Footer />
     </>
 );
-
-export interface LayoutProps {
-    noHeader: boolean;
-    noFooter: boolean;
-}

@@ -9,9 +9,10 @@ import {
     BuildArgs as GatsbyNodeBuildArgs,
 } from 'gatsby';
 
+import { redirects } from '@netlify/redirects';
+
 import { SEASON_ROOT_SLUG } from '@nerve/domains/season';
 
-import { redirects } from './redirects';
 import {
     SeasonPageConfig,
     ShowPageConfig,
@@ -176,7 +177,7 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
             url: `/${SEASON_ROOT_SLUG}/${season.slug.current}`,
             id: season._id,
             template: require.resolve(
-                `../src/domains/season/template/SeasonTemplate.tsx`
+                `../../../src/domains/season/template/SeasonTemplate.tsx`
             ),
         };
 
@@ -199,7 +200,7 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
                 url: `${seasonConfig.url}/${show.slug.current}`,
                 id: show._id,
                 template: require.resolve(
-                    `../src/domains/show/template/ShowTemplate.tsx`
+                    `../../../src/domains/show/template/ShowTemplate.tsx`
                 ),
                 season: seasonConfig,
             };
@@ -250,7 +251,7 @@ const generateBlogPosts: GatsbyNode['createPages'] = async ({
             url: `/${blogParentPage}/${post.uid}`,
             id: post.id,
             template: require.resolve(
-                `../src/domains/blog/templates/PostTemplate.tsx`
+                `../../../src/domains/blog/templates/PostTemplate.tsx`
             ),
         };
 
