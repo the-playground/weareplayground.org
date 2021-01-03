@@ -1,4 +1,4 @@
-import type { GatsbyConfig } from 'gatsby';
+import { GatsbyConfig } from 'gatsby';
 
 import dotenv from 'dotenv';
 import schemas from '@app/data/prismic-schemas';
@@ -25,7 +25,7 @@ const isProd = environment === 'production';
 //  Todo: isNetlifyPreview (for deploy-preview and branch-deploy)
 //  Todo: isStaging (one we get a staging environment set up)
 
-export const config: GatsbyConfig = {
+export default <GatsbyConfig>{
     siteMetadata: {
         appVersion,
         environment,
@@ -100,6 +100,8 @@ export const config: GatsbyConfig = {
                 root: '', // <- will be used as a root dir
                 aliases: {
                     '@app/config': './@app/config',
+                    '@gatsby': './@gatsby',
+                    '@netlify': './@netlify',
                     '@nerve/core': './src/core',
                     '@nerve/domains': './src/domains',
                     '@nerve/assets': './src/assets',
@@ -284,5 +286,3 @@ export const config: GatsbyConfig = {
         },
     ],
 };
-
-export default config;

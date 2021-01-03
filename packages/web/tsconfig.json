@@ -29,6 +29,8 @@
 	"includes": [
 		"src/**/*",
 		"@app/**/*",
+		"@gatsby/**/*",
+		"@netlify/**/*",
 		"gatsby-*.js"
 	]
 }
