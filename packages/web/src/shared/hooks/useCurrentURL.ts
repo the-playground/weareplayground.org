@@ -20,7 +20,7 @@ export const useCurrentURL = (path?: string): string => {
     const config = useConfigContext();
 
     const currentURL = path
-        ? `${config.website.url}${path}`
+        ? `${config?.website?.url}${path}`
         : getCurrentRootURL();
 
     return currentURL;
