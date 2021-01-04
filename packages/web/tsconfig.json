@@ -9,9 +9,6 @@
 			"@gatsby/*": [
 				"./@gatsby/*"
 			],
-			"@netlify/*": [
-				"./@netlify/*"
-			],
 			"@nerve/core/*": [
 				"./src/core/*"
 			],
@@ -30,7 +27,6 @@
 		"src/**/*",
 		"@app/**/*",
 		"@gatsby/**/*",
-		"@netlify/**/*",
 		"gatsby-*.js"
 	]
 }

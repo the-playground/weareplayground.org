@@ -1,3 +1,3 @@
-import { NetlifyRedirect } from '@netlify';
+import { GatsbyNetlifyRedirect } from '@gatsby/types';
 
-export const redirects: NetlifyRedirect[] = [];
+export const redirects: GatsbyNetlifyRedirect[] = [];

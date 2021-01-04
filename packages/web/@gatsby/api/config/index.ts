@@ -100,7 +100,6 @@ export default <GatsbyConfig>{
                 root: '', // <- will be used as a root dir
                 aliases: {
                     '@gatsby': './@gatsby',
-                    '@netlify': './@netlify',
                     '@nerve/core': './src/core',
                     '@nerve/domains': './src/domains',
                     '@nerve/assets': './src/assets',

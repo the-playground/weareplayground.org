@@ -1,5 +1,5 @@
 // This type is referenced from  'Actions['createRedirect']' in 'gatsby'
-export interface NetlifyRedirect {
+export interface GatsbyNetlifyRedirect {
     fromPath: string;
     isPermanent?: boolean;
     toPath: string;

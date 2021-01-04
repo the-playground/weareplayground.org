@@ -6,13 +6,13 @@
  * @link https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/
  */
 
-import { redirects as blogRedirects } from '@nerve/domains/blog';
-import { redirects as seasonRedirects } from '@nerve/domains/season';
-import { redirects as showRedirects } from '@nerve/domains/show';
+// import { redirects as blogRedirects } from '@nerve/domains/blog';
+// import { redirects as seasonRedirects } from '@nerve/domains/season';
+// import { redirects as showRedirects } from '@nerve/domains/show';
 
-import { NetlifyRedirect } from './types';
+import { GatsbyNetlifyRedirect } from './types';
 
-export const redirects: NetlifyRedirect[] = [
+export const redirects: GatsbyNetlifyRedirect[] = [
     // Redirect Netlify URL to final production URL
     {
         fromPath: 'https://thenerve.netlify.app/*',
@@ -30,9 +30,9 @@ export const redirects: NetlifyRedirect[] = [
     },
 
     // Domain-level redirects
-    ...blogRedirects,
-    ...seasonRedirects,
-    ...showRedirects,
+    // ...blogRedirects,
+    // ...seasonRedirects,
+    // ...showRedirects,
 
     /**
      * Old Playground WP Site Redirects
