@@ -36,7 +36,7 @@
     "update:all": "npm run update:root && npm run update:cms && npm run update:web"
   },
   "devDependencies": {
-    "@codingwithchris/eslint-config": "1.0.6",
+    "@codingwithchris/eslint-config": "1.1.0",
     "@types/node": "^14.14.19",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
