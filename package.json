@@ -12,7 +12,7 @@
     "clean:packages": "lerna clean --yes",
     "clean:cache": "lerna run empty-cache",
     "clean:root": "rimraf node_modules",
-    "clean:nuke": "npm run clean:cache && npm run lint:clean && npm run clean:packages && rimraf npm package.lock && npm run clean:root",
+    "clean:nuke": "npm run clean:cache && npm run lint:clean && npm run clean:packages && rimraf npm package-lock.json && npm run clean:root",
     "clean:nuke:rebuild": "yarn clean:nuke && npm install",
     "start": "npm run clean:cache && lerna run start --parallel",
     "build": "npm run clean:cache && lerna run build --parallel",
