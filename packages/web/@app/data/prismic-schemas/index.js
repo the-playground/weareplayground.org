@@ -12,8 +12,6 @@ module.exports = {
     legal_page: require('./legal_page.json'),
     post: require('./post.json'),
     privacy_page: require('./privacy_page.json'),
-    season: require('./season.json'),
-    show: require('./show.json'),
     site_config: require('./site_config.json'),
     support_us_page: require('./support_us_page.json'),
     terms_page: require('./terms_page.json'),
