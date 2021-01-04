@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { PrismicImage } from '@nerve/shared/types';
+import { PrismicImage, SanityImage } from '@nerve/shared/types';
 
 /**
  * Handle generating the basic meta information for a page.
