@@ -31,7 +31,6 @@
     "react-dom": "^17.0"
   },
   "devDependencies": {
-    "@sanity/cli": "^2.1.0",
-    "yarn": "^1.22.10"
+    "@sanity/cli": "^2.1.0"
   }
 }
