@@ -11,6 +11,8 @@ import { getCurrentRootURL } from '@nerve/shared/lib';
  * 2. If for whatever reason no pathname is provided, we fallback to getting
  * the current url based on window attributes.
  *
+ * TODO: Use production deploy variable from our EnvironmentContext when possible, fall back to other methods when needed
+ *
  * @param path The pathname to append to the main site URL
  * @return currentURL The current page URL
  */

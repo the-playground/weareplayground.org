@@ -16,7 +16,6 @@ const SeasonLanding: React.FC<PageProps<PageData, SeasonPageContext>> = ({
 }) => {
     const { sanitySeason: season } = data;
 
-    const { id } = pageContext;
     const siteConfig = useConfigContext();
     const url = useCurrentURL(location.pathname);
     const metaImage = useGetMetaImage('season', season.seo.image.asset);
