@@ -78,7 +78,7 @@ export const schema = {
             subtitle: 'seo.publishedAt',
             media: 'featuredImage',
         },
-        prepare({ title, subtitle, media }) {
+        prepare({ title, subtitle, media }: any) {
             return {
                 title,
                 subtitle: `Published on: ${format(

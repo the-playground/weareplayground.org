@@ -50,6 +50,13 @@ export const schema = {
             type: 'pageSEO',
         },
     ],
+    orderings: [
+        {
+            title: 'Season, Newest to Oldest',
+            name: 'title',
+            by: [{ field: 'title', direction: 'desc' }],
+        },
+    ],
     preview: {
         select: {
             title: 'title',

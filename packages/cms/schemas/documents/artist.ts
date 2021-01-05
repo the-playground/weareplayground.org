@@ -22,7 +22,7 @@ export const schema = {
             firstName: 'firstName',
             lastName: 'lastName',
         },
-        prepare({ firstName, lastName }) {
+        prepare({ firstName, lastName }: any) {
             return {
                 title: `${firstName} ${lastName}`,
                 subtitle: '',

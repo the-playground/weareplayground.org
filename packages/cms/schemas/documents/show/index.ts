@@ -92,11 +92,13 @@ export const schema = {
         select: {
             title: 'title',
             season: 'season.title',
+            media: 'posterImage',
         },
-        prepare({ title, season }) {
+        prepare({ title, season, media }: any) {
             return {
                 title,
                 subtitle: season,
+                media,
             };
         },
     },
