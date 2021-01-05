@@ -24,9 +24,13 @@ export const contentBlock = {
                 ],
                 annotations: [
                     {
+                        name: 'externalLink',
+                        title: 'External Link',
                         type: 'externalLink',
                     },
                     {
+                        name: 'internalLink',
+                        title: 'Internal Link',
                         type: 'internalLink',
                     },
                 ],
