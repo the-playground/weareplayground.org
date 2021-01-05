@@ -1,9 +1,19 @@
-import { FixedImageProps } from '@nerve/core/components';
-import { PrismicExternalLink } from '@nerve/shared/types';
+import {
+    SanityDocument,
+    SanityFluidImage,
+    SanityFixedImage,
+} from '@nerve/shared/types';
 
 export interface BlogAuthor {
     name: string;
-    bio: string;
-    instagram: PrismicExternalLink;
-    headshot: FixedImageProps;
+    brief: string;
+    instagram?: string;
+    website?: string;
+    headshot: SanityFixedImage;
+}
+
+export interface BlogPost extends SanityDocument {
+    featuredImage: SanityFluidImage;
+    content: any;
+    authors: BlogAuthor[];
 }

@@ -72,6 +72,11 @@ export const schema = {
             type: 'pageSEO',
         },
     ],
+    initialValue: {
+        seo: {
+            publishedAt: new Date().toISOString(),
+        },
+    },
     preview: {
         select: {
             title: 'title',

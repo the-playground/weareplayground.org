@@ -33,7 +33,7 @@ export const AuthorCard = styled.div`
         position: relative;
     }
 
-    .bio {
+    .brief {
         margin-top: ${spacing.component.s};
     }
 

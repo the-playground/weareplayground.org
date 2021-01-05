@@ -7,7 +7,7 @@ import * as styled from './AuthorCard.styles';
 
 export const AuthorCard: React.FC<AuthorCardProps> = ({
     name,
-    bio,
+    brief,
     headshot,
     instagram,
 }) => {
@@ -15,7 +15,7 @@ export const AuthorCard: React.FC<AuthorCardProps> = ({
         <styled.AuthorCard>
             {headshot && (
                 <div className="media">
-                    <Image fixed={headshot.fixed} alt={headshot.alt} />
+                    <Image fixed={headshot.asset.fixed} alt={headshot.alt} />
                 </div>
             )}
             <div className="content">
@@ -25,16 +25,16 @@ export const AuthorCard: React.FC<AuthorCardProps> = ({
                 <BodyText size="l" weight="bold" color="light" className="name">
                     {name}
                 </BodyText>
-                {bio && (
-                    <BodyText size="m" color="medium" className="bio">
-                        {bio}
+                {brief && (
+                    <BodyText size="m" color="medium" className="brief">
+                        {brief}
                     </BodyText>
                 )}
             </div>
             {instagram && (
                 <div className="follow">
                     <GhostButton
-                        to={instagram.url}
+                        to={instagram}
                         color="tertiary"
                         size="s"
                         endIcon={<Icon name="Instagram" size="xs" />}

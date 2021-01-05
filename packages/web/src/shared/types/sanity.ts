@@ -2,7 +2,6 @@ import { FluidObject, FixedObject } from 'gatsby-image';
 import { IFluidObject as BackgroundFluidObject } from 'gatsby-background-image';
 
 export interface SanityDocument {
-    _createdAt: string;
     _updatedAt: string;
     title: string;
     slug: {

@@ -1,3 +1,13 @@
-import { BlogAuthor } from '../../types';
+import { FixedImageProps } from '@nerve/core/components';
 
-export type AuthorCardProps = BlogAuthor;
+export interface AuthorCardProps {
+    name: string;
+    brief: string;
+    instagram?: string;
+    website?: string;
+    // TODO: This image pattern needs to find its way to our core image component typings once the Sanity migration is complete
+    headshot: {
+        alt: string;
+        asset: FixedImageProps;
+    };
+}
