@@ -21,7 +21,6 @@ import { SubscribeSection } from '@nerve/domains/engagement';
 import { useConfigContext } from '@nerve/shared/context';
 import { useGetMetaImage, useCurrentURL } from '@nerve/shared/hooks';
 
-import { BlogAuthor } from '../types';
 import * as styled from './PostTemplate.styles';
 
 /**

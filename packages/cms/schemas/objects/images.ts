@@ -17,12 +17,6 @@ export const imageWithAlt = {
             },
         },
     ],
-    preview: {
-        select: {
-            imageUrl: 'asset.url',
-            title: 'alt',
-        },
-    },
 };
 
 export const imageWithFullMeta = {

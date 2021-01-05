@@ -4,5 +4,6 @@ export * from './inputs';
 export * from './layout';
 export * from './media';
 export * from './progress';
+export * from './sanity';
 export * from './surfaces';
 export * from './typography';

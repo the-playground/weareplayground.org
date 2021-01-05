@@ -36,35 +36,9 @@ export const schema = {
             type: 'imageWithAlt',
         },
         {
-            name: 'tldr',
-            title: 'TLDR',
-            type: 'text',
-        },
-        {
             name: 'content',
             title: 'Content',
-            type: 'array',
-            of: [
-                {
-                    type: 'block',
-                    styles: [
-                        { title: 'Paragraph', value: 'normal' },
-                        { title: 'Heading 2', value: 'h2' },
-                        { title: 'Heading 3', value: 'h3' },
-                        { title: 'Heading 4', value: 'h4' },
-                        { title: 'Quote', value: 'blockquote' },
-                    ],
-                    marks: {
-                        decorators: [
-                            { title: 'Strong', value: 'strong' },
-                            { title: 'Emphasis', value: 'em' },
-                            { title: 'Underline', value: 'underline' },
-                        ],
-                    },
-                },
-                { type: 'imageWithFullMeta' },
-            ],
-            validation: (Rule: any) => Rule.required(),
+            type: 'contentBlock',
         },
         {
             name: 'seo',
