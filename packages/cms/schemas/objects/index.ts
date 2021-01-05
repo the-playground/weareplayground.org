@@ -1,5 +1,5 @@
 import { address } from './address';
-import { contentBlock } from './blocks';
+
 import { imageWithAlt, imageWithFullMeta } from './images';
 import {
     internalPostLink,
@@ -9,6 +9,7 @@ import {
     externalLink,
 } from './links';
 import { pageSEO } from './seo';
+import { contentBlock } from './blocks';
 
 export default [
     address,

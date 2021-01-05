@@ -91,7 +91,7 @@ export const externalLink = {
             type: 'url',
             validation: (Rule: any) =>
                 Rule.uri({
-                    allowRelative: true,
+                    allowRelative: false,
                     scheme: ['https', 'http', 'mailto', 'tel'],
                 }),
         },
