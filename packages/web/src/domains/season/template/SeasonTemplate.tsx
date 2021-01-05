@@ -38,7 +38,7 @@ const SeasonLanding: React.FC<PageProps<PageData, SeasonPageContext>> = ({
                         title: season.seo.title,
                         description: season.seo.description,
                         image: metaImage,
-                        datePublished: season._createdAt,
+                        datePublished: season.seo.publishedAt,
                         dateModified: season._updatedAt,
                     }}
                 />
@@ -51,7 +51,6 @@ const SeasonLanding: React.FC<PageProps<PageData, SeasonPageContext>> = ({
 export const seasonQuery = graphql`
     query seasonData($id: String!) {
         sanitySeason(_id: { eq: $id }) {
-            _createdAt
             _updatedAt
             title
             slug {
@@ -67,6 +66,7 @@ export const seasonQuery = graphql`
                         url
                     }
                 }
+                publishedAt
             }
         }
     }

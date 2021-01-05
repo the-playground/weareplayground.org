@@ -84,6 +84,9 @@ export const schema = {
     ],
     initialValue: {
         type: 'live',
+        seo: {
+            publishedAt: new Date().toISOString(),
+        },
     },
     preview: {
         select: {

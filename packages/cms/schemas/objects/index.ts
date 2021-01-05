@@ -1,5 +1,5 @@
 import { address } from './address';
-import { imageWithAlt } from './images';
+import { imageWithAlt, imageWithFullMeta } from './images';
 import { pageSEO } from './seo';
 
-export default [address, imageWithAlt, pageSEO];
+export default [address, imageWithAlt, imageWithFullMeta, pageSEO];

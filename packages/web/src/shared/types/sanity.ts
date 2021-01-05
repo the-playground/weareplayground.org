@@ -16,6 +16,7 @@ export interface SanityDocumentSEO {
     description: string;
     hide: boolean;
     image: SanityImage;
+    publishedAt: string;
 }
 
 /**

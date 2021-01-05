@@ -42,7 +42,7 @@ const ShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({
                         title: show.seo.title,
                         description: show.seo.description,
                         image: metaImage,
-                        datePublished: show._createdAt,
+                        datePublished: show.seo.publishedAt,
                         dateModified: show._updatedAt,
                     }}
                 />
@@ -75,6 +75,7 @@ export const showQuery = graphql`
                         url
                     }
                 }
+                publishedAt
             }
         }
     }

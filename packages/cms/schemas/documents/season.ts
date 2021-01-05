@@ -50,4 +50,11 @@ export const schema = {
             type: 'pageSEO',
         },
     ],
+    preview: {
+        select: {
+            title: 'title',
+            subtitle: 'tagline',
+            media: 'seo.image',
+        },
+    },
 };

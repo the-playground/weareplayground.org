@@ -41,5 +41,17 @@ export const pageSEO = {
                 accept: '.jpg',
             },
         },
+        {
+            name: 'publishedAt',
+            title: 'Published At',
+            description:
+                'Set a date and time to use for the original creation date of this document.',
+            type: 'datetime',
+            options: {
+                dateFormat: 'MM-DD-YYYY',
+                timeFormat: 'h:mm:a',
+                timeStep: 30,
+            },
+        },
     ],
 };
