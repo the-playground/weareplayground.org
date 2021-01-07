@@ -3,8 +3,8 @@
   "compilerOptions": {},
   "include": [
     "./node_modules/@sanity/base/types/**/*.ts",
-    "plugins/**/*",
-    "schemas/**/*",
+    "./**/*.ts",
+    "./**/*.tsx",
     ".eslintrc.js"
   ],
 }
