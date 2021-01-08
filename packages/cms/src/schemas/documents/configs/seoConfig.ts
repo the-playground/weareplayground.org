@@ -1,6 +1,6 @@
 export const schema = {
-    name: 'companyConfig',
-    title: 'Company Config',
+    name: 'seoConfig',
+    title: 'SEO Config',
     type: 'document',
     icon: (): string => '',
     // __experimental_actions: ['update', 'publish'],
