@@ -3,13 +3,24 @@ export const schema = {
     title: 'Site Config',
     type: 'document',
     icon: (): string => '',
-    // __experimental_actions: ['update', 'publish'],
+    __experimental_actions: ['update', 'publish'],
     fields: [
         {
-            name: 'name',
-            title: 'Name',
+            name: 'verificationGoogle',
+            title: 'Google Verification',
             type: 'string',
             validation: (Rule: any) => Rule.required(),
+        },
+        {
+            name: 'verificationBing',
+            title: 'Bing Verification',
+            type: 'string',
+            validation: (Rule: any) => Rule.required(),
+        },
+        {
+            name: 'verificationNorton',
+            title: 'Norton Verification',
+            type: 'string',
         },
     ],
 };

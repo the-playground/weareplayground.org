@@ -3,7 +3,7 @@ export const schema = {
     title: 'SEO Config',
     type: 'document',
     icon: (): string => '',
-    // __experimental_actions: ['update', 'publish'],
+    __experimental_actions: ['update', 'publish'],
     fields: [
         {
             name: 'fallbackPageMetaImage',
