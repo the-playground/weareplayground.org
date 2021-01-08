@@ -6,7 +6,7 @@ export interface AuthorCardProps {
     instagram?: string;
     website?: string;
     // TODO: This image pattern needs to find its way to our core image component typings once the Sanity migration is complete
-    headshot: {
+    avatar: {
         alt: string;
         asset: FixedImageProps;
     };

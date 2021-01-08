@@ -1,52 +1,52 @@
-import { SiteConfig } from '@nerve/shared/hooks';
+import { CompanyConfig } from '@nerve/shared/hooks';
 
 /**
  * https://schema.org/Organization
  *
  * @param config The configuration object for the site
  */
-export const organizationSchema = (config: SiteConfig): string => {
-    const siteURL = config.website?.url;
+export const organizationSchema = (config: CompanyConfig): string => {
+    const siteURL = config.website;
 
     const schema = {
         '@type': 'Organization',
         '@id': `${siteURL}/#organization`,
         name: config.name,
-        email: config.contact_email,
+        email: config.emailGeneral,
         url: siteURL,
         logo: {
             '@type': 'ImageObject',
             '@id': `${siteURL}/#logo`,
-            url: config.logo?.url,
-            caption: config.name,
+            url: config.logoOnLight.asset.url,
+            caption: config.logoOnLight.alt,
         },
         image: {
             '@id': `${siteURL}/#logo`,
         },
-        legalName: config.legal_name,
-        foundingDate: '2014',
+        legalName: config.legalName,
+        taxID: config.ein,
+        foundingDate: new Date(config.foundingDate),
         address: {
             '@type': 'PostalAddress',
             addressCountry: 'US',
-            addressLocality: config.location_city,
-            addressRegion: config.location_state,
-            postalCode: config.location_zip,
+            addressLocality: config.city,
+            addressRegion: config.state,
+            postalCode: config.zip,
         },
         contactPoint: [
             {
                 '@type': 'ContactPoint',
-                email: config.contact_email,
+                email: config.emailGeneral,
                 contactType: 'general contact',
                 availableLanguage: 'English',
             },
         ],
         sameAs: [
-            config.facebook?.url,
-            config.instagram?.url,
-            config.spotify?.url,
-            config.youtube?.url,
-            config.github?.url,
-            'https://theplaygroundtheatre.org',
+            config.facebook,
+            config.instagram,
+            config.spotify,
+            config.youtube,
+            config.github,
         ],
         founders: [
             {
@@ -59,7 +59,6 @@ export const organizationSchema = (config: SiteConfig): string => {
                 '@type': 'Person',
                 givenName: 'Jenna',
                 familyName: 'Burnette',
-                birthPlace: '',
                 jobTitle: 'Artistic Director',
             },
         ],

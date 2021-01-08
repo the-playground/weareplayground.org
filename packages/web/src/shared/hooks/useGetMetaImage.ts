@@ -1,31 +1,31 @@
-import { PrismicImage } from '@nerve/shared/types';
+import { PrismicImage, SanityImage } from '@nerve/shared/types';
 
-import { SiteConfig } from '@nerve/shared/hooks';
+import { SEOConfig } from '@nerve/shared/hooks';
 import { useConfigContext } from '@nerve/shared/context';
 
 /**
  * Retrieve a fallback meta image from the site config based on the content type
  *
  * @param type The content type to get the fallback image for
- * @param siteConfig The config object for the app
+ * @param seoConfig The config object for the app
  */
 const getFallbackImage = (
     type: MetaImageContentType,
-    siteConfig: SiteConfig
-): PrismicImage => {
+    seoConfig: SEOConfig
+): PrismicImage | SanityImage => {
     switch (type) {
         case 'page':
-            return siteConfig.fallback_page_meta_image;
+            return seoConfig.fallbackPageMetaImage;
         case 'post':
-            return siteConfig.fallback_post_meta_image;
+            return seoConfig.fallbackPostMetaImage;
         case 'season':
-            return siteConfig.fallback_season_meta_image;
+            return seoConfig.fallbackSeasonMetaImage;
 
         case 'show':
-            return siteConfig.fallback_season_meta_image;
+            return seoConfig.fallbackShowMetaImage;
 
         default:
-            return siteConfig.fallback_page_meta_image;
+            return seoConfig.fallbackPageMetaImage;
     }
 };
 
@@ -39,10 +39,10 @@ const getFallbackImage = (
 export const useGetMetaImage = (
     type: MetaImageContentType,
     image?: PrismicImage
-): PrismicImage => {
-    const siteConfig = useConfigContext();
+): PrismicImage | SanityImage => {
+    const { seo } = useConfigContext();
 
-    const metaImage = image?.url ? image : getFallbackImage(type, siteConfig);
+    const metaImage = image?.url ? image : getFallbackImage(type, seo);
 
     return metaImage;
 };

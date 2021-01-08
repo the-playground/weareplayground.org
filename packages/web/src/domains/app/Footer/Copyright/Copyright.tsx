@@ -18,14 +18,14 @@ const LinkItem: React.FC<{ slug: string; text: string }> = ({ slug, text }) => (
 
 export const Copyright: React.FC = () => {
     const currentYear = new Date().getFullYear();
-    const config = useConfigContext();
+    const { company } = useConfigContext();
     const { privacyPolicy, terms, sitemap } = useLinkMapContext();
 
     return (
         <styled.Copyright>
             <Container className="container">
                 <BodyText size="s" color="medium">
-                    &copy; {currentYear} {config.legal_name} All rights
+                    &copy; {currentYear} {company.legalName} All rights
                     reserved.
                 </BodyText>
                 <ul className="links">

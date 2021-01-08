@@ -1,4 +1,4 @@
-import { useConfigContext } from '@nerve/shared/context';
+import { useConfigContext, useEnvironmentContext } from '@nerve/shared/context';
 import { getCurrentRootURL } from '@nerve/shared/lib';
 
 /**
@@ -17,11 +17,14 @@ import { getCurrentRootURL } from '@nerve/shared/lib';
  * @return currentURL The current page URL
  */
 export const useCurrentURL = (path?: string): string => {
-    const config = useConfigContext();
+    const { company } = useConfigContext();
+    const { app } = useEnvironmentContext();
 
-    const currentURL = path
-        ? `${config?.website?.url}${path}`
-        : getCurrentRootURL();
+    // Default to the site defined in our CMS and fall back to the prod url from deploy context
+    const liveURL = company.website ?? app.prodURL;
+
+    const currentURL =
+        liveURL && path ? `${liveURL}${path}` : getCurrentRootURL();
 
     return currentURL;
 };

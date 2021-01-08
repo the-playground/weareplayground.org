@@ -18,7 +18,6 @@ import {
 
 import { SubscribeSection } from '@nerve/domains/engagement';
 
-import { useConfigContext } from '@nerve/shared/context';
 import { useGetMetaImage, useCurrentURL } from '@nerve/shared/hooks';
 
 import * as styled from './PostTemplate.styles';
@@ -39,7 +38,6 @@ const PostLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     const { sanityPost: post } = data;
 
     const { authors } = post;
-    const siteConfig = useConfigContext();
     const url = useCurrentURL(location.pathname);
     const metaImage = useGetMetaImage('post', post.seo.image.asset);
 
@@ -59,7 +57,6 @@ const PostLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
             {/* Do not output structured data if this page will be hidden from SEO */}
             {post.seo.hide ? null : (
                 <StructuredData
-                    siteConfig={siteConfig}
                     pageSchemaData={{
                         pageURL: url,
                         title: post.seo.title,
@@ -92,9 +89,9 @@ const PostLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                     <AuthorCard
                         name={author.name}
                         brief={author.brief}
-                        headshot={{
-                            alt: author.headshot.alt!,
-                            asset: author.headshot.asset,
+                        avatar={{
+                            alt: author.avatar.alt!,
+                            asset: author.avatar.asset,
                         }}
                         instagram={author.instagram}
                         key={author.name}
@@ -131,7 +128,7 @@ export const query = graphql`
                 name
                 brief
                 instagram
-                headshot {
+                avatar {
                     alt
                     asset {
                         fixed(width: 80, height: 80) {

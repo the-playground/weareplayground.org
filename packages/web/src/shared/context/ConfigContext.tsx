@@ -1,17 +1,36 @@
 import React, { createContext, useContext } from 'react';
-import { useQuerySiteConfig, SiteConfig } from '@nerve/shared/hooks';
-// Use static query to get config data from prismic.
 
-export const ConfigContext = createContext({} as SiteConfig);
+import {
+    CompanyConfig,
+    useCompanyConfig,
+    SiteConfig,
+    useSiteConfig,
+    SEOConfig,
+    useSEOConfig,
+    LinkMapConfig,
+    useLinkMapConfig,
+} from '@nerve/shared/hooks/configs';
+
+export const ConfigContext = createContext({} as GlobalConfigs);
 
 export const ConfigProvider: React.FC = ({ children }) => {
-    const config = useQuerySiteConfig();
+    const company = useCompanyConfig();
+    const site = useSiteConfig();
+    const seo = useSEOConfig();
+    // const links = useLinkMapConfig();
 
     return (
-        <ConfigContext.Provider value={config}>
+        <ConfigContext.Provider value={{ company, site, seo }}>
             {children}
         </ConfigContext.Provider>
     );
 };
 
-export const useConfigContext = (): SiteConfig => useContext(ConfigContext);
+export const useConfigContext = (): GlobalConfigs => useContext(ConfigContext);
+
+export interface GlobalConfigs {
+    company: CompanyConfig;
+    site: SiteConfig;
+    seo: SEOConfig;
+    // links: LinkMapConfig;
+}

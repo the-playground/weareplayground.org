@@ -16,7 +16,6 @@ const PageTemplate: React.FC<PageTemplateProps> = ({
     currentLocation,
     children,
 }) => {
-    const siteConfig = useConfigContext();
     const url = useCurrentURL(currentLocation);
     const { data } = pageConfig;
     const metaImage = useGetMetaImage('page', pageConfig.data.seo_image);
@@ -33,7 +32,6 @@ const PageTemplate: React.FC<PageTemplateProps> = ({
             {/* Do not output structured data if this page will be hidden from SEO */}
             {data.seo_hide ? null : (
                 <StructuredData
-                    siteConfig={siteConfig}
                     pageSchemaData={{
                         pageURL: url,
                         title: data.seo_title,

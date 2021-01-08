@@ -11,7 +11,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({
     socialAccounts,
     menuItems,
 }) => {
-    const config = useConfigContext();
+    const { company } = useConfigContext();
     const links = useLinkMapContext();
     const activeClass = '--is-active';
 
@@ -99,14 +99,14 @@ export const FooterNav: React.FC<FooterNavProps> = ({
 
                     <div className="company">
                         <BodyText size="s" color="medium">
-                            {config.name.toLowerCase()}
+                            {company.name.toLowerCase()}
                         </BodyText>
                         <BodyText size="s" color="medium">
-                            {config.location_city.toLowerCase()},{' '}
-                            {config.location_state.toLowerCase()}
+                            {company.city.toLowerCase()},{' '}
+                            {company.state.toLowerCase()}
                         </BodyText>
                         <BodyText size="s" color="medium">
-                            {config.contact_email}
+                            {company.emailGeneral}
                         </BodyText>
                     </div>
                     {/* <ul>

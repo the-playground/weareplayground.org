@@ -8,14 +8,14 @@ import * as styled from './AuthorCard.styles';
 export const AuthorCard: React.FC<AuthorCardProps> = ({
     name,
     brief,
-    headshot,
+    avatar,
     instagram,
 }) => {
     return (
         <styled.AuthorCard>
-            {headshot && (
-                <div className="media">
-                    <Image fixed={headshot.asset.fixed} alt={headshot.alt} />
+            {avatar && (
+                <div className="avatar">
+                    <Image fixed={avatar.asset.fixed} alt={avatar.alt} />
                 </div>
             )}
             <div className="content">

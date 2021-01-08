@@ -1,12 +1,12 @@
-import { SiteConfig } from '@nerve/shared/hooks';
+import { CompanyConfig } from '@nerve/shared/hooks';
 
 /**
  * https://schema.org/WebSite
  *
  * @param config The configuration object for the site
  */
-export const webSiteSchema = (config: SiteConfig): string => {
-    const siteURL = config.website?.url;
+export const webSiteSchema = (config: CompanyConfig): string => {
+    const siteURL = config.website;
 
     const schema = {
         '@type': 'Website',
@@ -14,7 +14,7 @@ export const webSiteSchema = (config: SiteConfig): string => {
         url: siteURL,
         name: config.name,
         publisher: { '@id': `${siteURL}/#organization` },
-        copyrightYear: '2015',
+        copyrightYear: '2014',
         copyrightHolder: {
             '@id': `${siteURL}/#organization`,
         },

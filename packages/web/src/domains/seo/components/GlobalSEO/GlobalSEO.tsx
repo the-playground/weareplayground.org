@@ -6,9 +6,9 @@ import { useConfigContext } from '@nerve/shared/context';
  * Handle generating the global basic meta information for the site.
  */
 export const GlobalSEO: React.FC = () => {
-    const data = useConfigContext();
+    const { company } = useConfigContext();
 
-    if (!data) {
+    if (!company) {
         console.log(
             'Data could not be retrieved from `useConfigContext`. Global SEO not rendered.'
         );
@@ -24,20 +24,17 @@ export const GlobalSEO: React.FC = () => {
             <meta name="google" content="nositelinkssearchbox" />
 
             {/* Set geo location for business */}
-            <meta
-                name="geo.region"
-                content={`US-${data.location_state_code}`}
-            />
-            <meta name="geo.placename" content={data.location_city} />
+            <meta name="geo.region" content={`US-${company.stateCode}`} />
+            <meta name="geo.placename" content={company.city} />
 
             {/* Global OpenGraph meta */}
             <meta property="og:locale" content="en_US" />
             <meta property="og:type" content="website" />
-            <meta property="og:sitename" content={data.name} />
-            <meta name="og:email" content={data.contact_email} />
+            <meta property="og:sitename" content={company.name} />
+            <meta name="og:email" content={company.emailGeneral} />
             <meta name="og:country-name" content="USA" />
-            <meta name="og:region" content={data.location_state_code} />
-            <meta name="og:postal-code" content={data.location_zip} />
+            <meta name="og:region" content={company.stateCode} />
+            <meta name="og:postal-code" content={company.zip} />
         </Helmet>
     );
 };

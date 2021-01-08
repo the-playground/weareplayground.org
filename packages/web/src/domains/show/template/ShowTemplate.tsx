@@ -18,7 +18,6 @@ const ShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({
     const { sanityShow: show } = data;
     const { slug, seasonSlug, seasonURL } = pageContext;
 
-    const siteConfig = useConfigContext();
     const url = useCurrentURL(location.pathname);
     const metaImage = useGetMetaImage('season', show.seo.image.asset);
 
@@ -36,7 +35,6 @@ const ShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({
             {/* Do not output structured data if this page will be hidden from SEO */}
             {show.seo.hide ? null : (
                 <StructuredData
-                    siteConfig={siteConfig}
                     pageSchemaData={{
                         pageURL: url,
                         title: show.seo.title,

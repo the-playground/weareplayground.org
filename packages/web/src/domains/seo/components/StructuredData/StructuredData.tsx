@@ -1,8 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-
-import { SiteConfig } from '@nerve/shared/hooks';
-
+import { useConfigContext } from '@nerve/shared/context';
 import {
     organizationSchema,
     webSiteSchema,
@@ -26,15 +24,16 @@ import {
  * @param otherSchemas An array of additional custom schemas to add to the schema graph.
  */
 export const StructuredData: React.FC<StructuredDataProps> = ({
-    siteConfig,
     pageSchemaData,
     otherSchemas = [],
 }) => {
+    const { company } = useConfigContext();
+
     // These schemas are generated on every site page regardless of their type.
     const defaultSchemas = [
-        organizationSchema(siteConfig),
-        webSiteSchema(siteConfig),
-        webPageSchema(siteConfig.website.url, { ...pageSchemaData }),
+        organizationSchema(company),
+        webSiteSchema(company),
+        webPageSchema(company.website, { ...pageSchemaData }),
     ];
 
     const schemas = [...defaultSchemas, ...otherSchemas];
@@ -52,7 +51,6 @@ export const StructuredData: React.FC<StructuredDataProps> = ({
 };
 
 export interface StructuredDataProps {
-    siteConfig: SiteConfig;
     pageSchemaData: WebPageSchemaProps;
     otherSchemas?: CallableFunction[];
 }

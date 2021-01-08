@@ -33,8 +33,8 @@ export const schema = {
             validation: (Rule: any) => Rule.required(),
         },
         {
-            name: 'headshot',
-            title: 'Headshot',
+            name: 'avatar',
+            title: 'Avatar',
             type: 'imageWithAlt',
         },
         {

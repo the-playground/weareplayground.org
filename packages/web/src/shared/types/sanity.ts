@@ -25,9 +25,11 @@ export interface SanityImage {
     alt?: string;
     asset: {
         url: string;
-        dimensions?: {
-            width: string;
-            height: string;
+        metadata: {
+            dimensions: {
+                width: number;
+                height: number;
+            };
         };
     };
 }
@@ -39,9 +41,11 @@ export interface SanityFluidImage {
     alt?: string;
     asset: {
         fluid: FluidObject;
-        dimensions?: {
-            width: string;
-            height: string;
+        metadata?: {
+            dimensions?: {
+                width: number;
+                height: number;
+            };
         };
     };
 }
@@ -53,9 +57,11 @@ export type SanityFixedImage = {
     alt?: string;
     asset: {
         fixed: FixedObject;
-        dimensions: {
-            width: string;
-            height: string;
+        metadata: {
+            dimensions: {
+                width: number;
+                height: number;
+            };
         };
     };
 };
@@ -72,7 +78,7 @@ export interface SanityBackgroundImage {
 /**
  *
  */
-export type SanitySlug = {
+export type SanityInternalLink = {
     slug: {
         current: string;
     };

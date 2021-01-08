@@ -9,13 +9,13 @@ import { FooterNav } from './FooterNav/FooterNav';
 import * as styled from './__styles';
 
 export const Footer: React.FC = () => {
-    const config = useConfigContext();
+    const { company } = useConfigContext();
     const links = useLinkMapContext();
 
     const socialAccounts = [
         {
             name: 'facebook',
-            link: config.facebook.url,
+            link: company.facebook,
             icon: (
                 <Icon
                     name="Facebook"
@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
         },
         {
             name: 'instagram',
-            link: config.instagram.url,
+            link: company.instagram,
             icon: (
                 <Icon
                     name="Instagram"
@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
         },
         {
             name: 'spotify',
-            link: config.spotify.url,
+            link: company.spotify,
             icon: (
                 <Icon
                     name="Spotify"
@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
         },
         {
             name: 'youtube',
-            link: config.youtube.url,
+            link: company.youtube,
             icon: (
                 <Icon
                     name="Youtube"
@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
         },
         {
             name: 'github',
-            link: config.github.url,
+            link: company.github,
             icon: (
                 <Icon
                     name="Github"

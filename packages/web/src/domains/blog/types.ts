@@ -9,7 +9,7 @@ export interface BlogAuthor {
     brief: string;
     instagram?: string;
     website?: string;
-    headshot: SanityFixedImage;
+    avatar: SanityFixedImage;
 }
 
 export interface BlogPost extends SanityDocument {

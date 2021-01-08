@@ -17,7 +17,7 @@ export const AuthorCard = styled.div`
         text-align: left;
     }
 
-    .media {
+    .avatar {
         border-radius: 50%;
         line-height: 0;
         overflow: hidden;
