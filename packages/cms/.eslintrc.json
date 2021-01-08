@@ -4,5 +4,8 @@
     ],
     "parserOptions": {
         "project": "./tsconfig.json"
+    },
+    "rules": {
+        "react/display-name": "off"
     }
 }

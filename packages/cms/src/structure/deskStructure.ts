@@ -16,8 +16,9 @@ const filterList = [
 
 export default () =>
     S.list()
-        .title('Content')
+        .title('Content Root')
         .items([
+            // All global configs
             S.listItem()
                 .title('Configs')
                 .icon(Settings)
@@ -28,6 +29,7 @@ export default () =>
                         .showIcons(false)
                 ),
             S.divider(),
+            // All blog-related documents
             S.listItem()
                 .title('Blog')
                 .icon(Radio)
@@ -39,6 +41,7 @@ export default () =>
                             S.documentTypeListItem('post'),
                         ])
                 ),
+            // All theatre-related documents
             S.listItem()
                 .title('Theatre')
                 .icon(Radio)

@@ -5,6 +5,7 @@ export const schema = {
     name: 'organization',
     title: 'Organizations',
     type: 'document',
+
     icon: () => <Briefcase />,
     fields: [
         {
