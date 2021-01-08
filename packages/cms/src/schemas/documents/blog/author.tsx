@@ -1,8 +1,11 @@
+import React from 'react';
+import { Edit2 } from 'react-feather';
+
 export const schema = {
     name: 'author',
     title: 'Authors',
     type: 'document',
-    icon: (): string => '',
+    icon: () => <Edit2 />,
 
     fields: [
         {

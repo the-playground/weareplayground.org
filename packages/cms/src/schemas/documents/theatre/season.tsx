@@ -1,8 +1,11 @@
+import React from 'react';
+import { Hexagon } from 'react-feather';
+
 export const schema = {
     name: 'season',
     title: 'Seasons',
     type: 'document',
-    icon: (): string => '',
+    icon: () => <Hexagon />,
 
     fields: [
         {

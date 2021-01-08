@@ -7,14 +7,11 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 // Site Configs
 import { configSchemas } from './documents/configs';
 
-// Other DOcument Schemas
-import { schema as authorSchema } from './documents/author';
-import { schema as artistSchema } from './documents/artist';
-import { schema as postSchema } from './documents/post';
-import { schema as locationSchema } from './documents/location';
-import { schema as showSchema, objects as showObjects } from './documents/show';
-import { schema as seasonSchema } from './documents/season';
-import { schema as organizationSchema } from './documents/organization';
+// Performance Schemas
+import { theatreSchemas } from './documents/theatre';
+
+// Blog Schemas
+import { blogSchemas } from './documents/blog';
 
 import globalObjects from './objects';
 
@@ -26,14 +23,8 @@ export default createSchema({
     // to the ones provided by any plugins that are installed
     types: schemaTypes.concat([
         ...configSchemas,
-        artistSchema,
-        authorSchema,
-        postSchema,
-        showSchema,
-        ...showObjects,
-        seasonSchema,
-        locationSchema,
-        organizationSchema,
+        ...theatreSchemas,
+        ...blogSchemas,
         ...globalObjects,
     ]),
 });

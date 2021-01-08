@@ -1,8 +1,11 @@
+import React from 'react';
+import { Smile } from 'react-feather';
+
 export const schema = {
     name: 'artist',
     title: 'Artists',
     type: 'document',
-    icon: (): string => '🎨',
+    icon: () => <Smile />,
     fields: [
         {
             name: 'firstName',
@@ -16,16 +19,23 @@ export const schema = {
             type: 'string',
             validation: (Rule: any) => Rule.required(),
         },
+        {
+            name: 'headshot',
+            title: 'Headshot',
+            type: 'imageWithFullMeta',
+        },
     ],
     preview: {
         select: {
             firstName: 'firstName',
             lastName: 'lastName',
+            media: 'headshot',
         },
-        prepare({ firstName, lastName }: any) {
+        prepare({ firstName, lastName, media }: any) {
             return {
                 title: `${firstName} ${lastName}`,
-                subtitle: '',
+                subtitle: 'something interesting here',
+                media,
             };
         },
     },

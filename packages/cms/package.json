@@ -28,7 +28,8 @@
 		"date-fns": "^2.16.1",
 		"prop-types": "^15.7",
 		"react": "^17.0",
-		"react-dom": "^17.0"
+		"react-dom": "^17.0",
+		"react-feather": "^2.0.9"
 	},
 	"devDependencies": {
 		"@sanity/cli": "^2.1.0"

@@ -1,4 +1,7 @@
-import { bindFieldsToFieldset } from '../../../lib/fieldset';
+import React from 'react';
+import { Star } from 'react-feather';
+
+import { bindFieldsToFieldset } from '../../../../lib/fieldset';
 
 import articles from './fields/articles';
 import artists from './fields/artists';
@@ -21,7 +24,7 @@ export const schema = {
     name: 'show',
     title: 'Shows',
     type: 'document',
-    icon: (): string => '🎭',
+    icon: () => <Star />,
     fieldsets: [
         {
             name: 'basic',

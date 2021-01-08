@@ -1,8 +1,11 @@
+import React from 'react';
+import { Briefcase } from 'react-feather';
+
 export const schema = {
     name: 'organization',
     title: 'Organizations',
     type: 'document',
-    icon: (): string => '',
+    icon: () => <Briefcase />,
     fields: [
         {
             name: 'title',

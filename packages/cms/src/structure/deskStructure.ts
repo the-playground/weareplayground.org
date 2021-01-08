@@ -1,7 +1,18 @@
 import S from '@sanity/desk-tool/structure-builder';
-import { configListItems, configDocumentFilterList } from './configListItems';
+import { Radio, Settings } from 'react-feather';
 
-const filterList = [configDocumentFilterList].flat();
+import { configListItems, configDocumentFilterList } from './configListItems';
+import { blogListItems, blogDocumentFilterList } from './blogListItems';
+import {
+    theatreListItems,
+    theatreDocumentFilterList,
+} from './theatreListItems';
+
+const filterList = [
+    configDocumentFilterList,
+    blogDocumentFilterList,
+    theatreDocumentFilterList,
+].flat();
 
 export default () =>
     S.list()
@@ -9,8 +20,39 @@ export default () =>
         .items([
             S.listItem()
                 .title('Configs')
-                .child(S.list().title('Configs').items(configListItems)),
+                .icon(Settings)
+                .child(
+                    S.list()
+                        .title('Configs')
+                        .items(configListItems)
+                        .showIcons(false)
+                ),
             S.divider(),
+            S.listItem()
+                .title('Blog')
+                .icon(Radio)
+                .child(
+                    S.list()
+                        .title('Blog')
+                        .items([
+                            S.documentTypeListItem('author'),
+                            S.documentTypeListItem('post'),
+                        ])
+                ),
+            S.listItem()
+                .title('Theatre')
+                .icon(Radio)
+                .child(
+                    S.list()
+                        .title('Theatre')
+                        .items([
+                            S.documentTypeListItem('artist'),
+                            S.documentTypeListItem('location'),
+                            S.documentTypeListItem('organization'),
+                            S.documentTypeListItem('show'),
+                            S.documentTypeListItem('season'),
+                        ])
+                ),
             // List out the rest of the document types, but filter out the config type
             ...S.documentTypeListItems().filter(
                 (listItem: any) => !filterList.includes(listItem.getId())
