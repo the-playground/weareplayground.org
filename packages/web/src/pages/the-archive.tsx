@@ -4,11 +4,7 @@ import { graphql, PageProps } from 'gatsby';
 import { GatsbyPageContext, PrismicImage } from '@nerve/shared/types';
 
 import { SimpleHero } from '@nerve/shared/components';
-import {
-    ShowPosterGrid,
-    sortShows,
-    ShowCoreWithPoster,
-} from '@nerve/domains/show';
+import { ShowPosterGrid, ShowCoreWithPoster } from '@nerve/domains/show';
 
 import { SubscribeSection } from '@nerve/domains/engagement';
 
@@ -22,15 +18,13 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     const pageData = data.prismicArchivePage;
     const { nodes: shows } = data.allSanityShow;
 
-    const sortedShows = sortShows(shows);
-
     return (
         <PageTemplate pageConfig={pageData} currentLocation={location.pathname}>
             <SimpleHero
                 title={pageData.data.hero_title}
                 subTitle={pageData.data.hero_sub_title}
             />
-            <ShowPosterGrid shows={sortedShows} />
+            <ShowPosterGrid shows={shows} />
             <SubscribeSection />
         </PageTemplate>
     );
@@ -63,7 +57,7 @@ export const query = graphql`
             }
         }
 
-        allSanityShow {
+        allSanityShow(sort: { order: DESC, fields: closeDate }) {
             nodes {
                 title
                 slug {
