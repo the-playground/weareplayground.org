@@ -1,3 +1,4 @@
+import { useEnvironmentContext } from '@nerve/shared/context';
 import { CompanyConfig } from '@nerve/shared/hooks';
 
 /**
@@ -7,6 +8,7 @@ import { CompanyConfig } from '@nerve/shared/hooks';
  */
 export const webSiteSchema = (config: CompanyConfig): string => {
     const siteURL = config.website;
+    const { app } = useEnvironmentContext();
 
     const schema = {
         '@type': 'Website',
@@ -18,6 +20,7 @@ export const webSiteSchema = (config: CompanyConfig): string => {
         copyrightHolder: {
             '@id': `${siteURL}/#organization`,
         },
+        version: app.version,
     };
 
     return JSON.stringify(schema);
