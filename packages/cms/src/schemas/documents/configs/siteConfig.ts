@@ -17,10 +17,5 @@ export const schema = {
             type: 'string',
             validation: (Rule: any) => Rule.required(),
         },
-        {
-            name: 'verificationNorton',
-            title: 'Norton Verification',
-            type: 'string',
-        },
     ],
 };

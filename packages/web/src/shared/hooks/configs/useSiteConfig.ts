@@ -10,7 +10,6 @@ export const useSiteConfig = (): SiteConfig => {
             sanitySiteConfig {
                 verificationGoogle
                 verificationBing
-                verificationNorton
             }
         }
     `);
@@ -21,5 +20,4 @@ export const useSiteConfig = (): SiteConfig => {
 export interface SiteConfig {
     verificationGoogle: string;
     verificationBing: string;
-    verificationNorton: string;
 }
