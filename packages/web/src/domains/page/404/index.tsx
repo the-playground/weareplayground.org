@@ -45,7 +45,8 @@ export const NotFoundContent: React.FC = () => {
                 <BodyText color="light" size="m" className="copy">
                     well shit. it looks like the page you were looking for
                     either doesn't exist or has been moved. Try heading back to
-                    the home page and starting your journey from there.
+                    the home page and starting your journey from there. Best
+                    wishes.
                 </BodyText>
                 <FillButton to="/" color="primary" size="m">
                     Take me home
