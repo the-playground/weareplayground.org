@@ -3,12 +3,11 @@ import { format } from 'date-fns';
 import React from 'react';
 import { FileText } from 'react-feather';
 
-
 export const schema = {
     name: 'post',
     title: 'Posts',
     type: 'document',
-    icon: (): string => <FileText />,
+    icon: () => <FileText />,
 
     fields: [
         {

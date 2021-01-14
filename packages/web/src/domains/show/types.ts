@@ -11,13 +11,16 @@ import {
 import { SeasonReference } from '@nerve/domains/season';
 
 /**
- *
+ * Types for a single Show landing page
  */
 export interface ShowPage extends SanityDocument {
     author: ShowAuthor;
     heroImage: SanityFluidImage;
     thumbnailImage: SanityFixedImage;
     performances: ShowPerformance[];
+    season: SeasonReference;
+    openDate: string;
+    closeDate: string;
 }
 
 export interface ShowPageContext {
@@ -69,4 +72,12 @@ export interface ShowPerformance {
     isPreview: boolean;
     isPayWhatYouCan: boolean;
     hasTalkback: boolean;
+}
+
+/**
+ * Types for Filter & Sort Functions -- anywhere a show needs
+ */
+
+export interface ComparableShow extends ShowCore {
+    [key: string]: any;
 }
