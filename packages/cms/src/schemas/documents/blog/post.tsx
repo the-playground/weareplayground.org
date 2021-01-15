@@ -3,12 +3,12 @@ import { format } from 'date-fns';
 import React from 'react';
 import { FileText } from 'react-feather';
 
-export const schema = {
+import { DocumentCollection } from '../../../types';
+
+export const schema: DocumentCollection = {
     name: 'post',
     title: 'Posts',
-    type: 'document',
-    icon: () => <FileText />,
-
+    icon: <FileText />,
     fields: [
         {
             name: 'title',
@@ -42,11 +42,6 @@ export const schema = {
             name: 'content',
             title: 'Content',
             type: 'contentBlock',
-        },
-        {
-            name: 'seo',
-            title: 'SEO',
-            type: 'pageSEO',
         },
     ],
     initialValue: {

@@ -5,13 +5,7 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // Site Configs
-import { configSchemas } from './documents/configs';
-
-// Performance Schemas
-import { theatreSchemas } from './documents/theatre';
-
-// Blog Schemas
-import { blogSchemas } from './documents/blog';
+import { schemas } from '../buildDocuments';
 
 import globalObjects from './objects';
 
@@ -21,10 +15,5 @@ export default createSchema({
     name: 'default',
     // Then proceed to concatenate our document type
     // to the ones provided by any plugins that are installed
-    types: schemaTypes.concat([
-        ...configSchemas,
-        ...theatreSchemas,
-        ...blogSchemas,
-        ...globalObjects,
-    ]),
+    types: schemaTypes.concat([...schemas, ...globalObjects]),
 });

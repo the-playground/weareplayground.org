@@ -1,11 +1,13 @@
 import React from 'react';
 import { Smile } from 'react-feather';
 
-export const schema = {
+import { DocumentCollection } from '../../../types';
+
+export const schema: DocumentCollection = {
     name: 'artist',
     title: 'Artists',
-    type: 'document',
-    icon: () => <Smile />,
+    icon: <Smile />,
+    disableSEO: true,
     fields: [
         {
             name: 'firstName',

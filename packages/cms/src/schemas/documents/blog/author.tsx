@@ -1,12 +1,13 @@
 import React from 'react';
 import { Edit2 } from 'react-feather';
 
-export const schema = {
+import { DocumentCollection } from '../../../types';
+
+export const schema: DocumentCollection = {
     name: 'author',
     title: 'Authors',
-    type: 'document',
-    icon: () => <Edit2 />,
-
+    icon: <Edit2 />,
+    disableSEO: true,
     fields: [
         {
             name: 'name',

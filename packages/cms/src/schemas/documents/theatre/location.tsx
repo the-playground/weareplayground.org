@@ -1,11 +1,13 @@
 import React from 'react';
 import { MapPin } from 'react-feather';
 
-export const schema = {
+import { DocumentCollection } from '../../../types';
+
+export const schema: DocumentCollection = {
     name: 'location',
     title: 'Locations',
-    type: 'document',
-    icon: () => <MapPin />,
+    icon: <MapPin />,
+    disableSEO: true,
     fields: [
         {
             name: 'title',

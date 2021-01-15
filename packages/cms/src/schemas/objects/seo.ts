@@ -5,7 +5,7 @@
  */
 export const pageSEO = {
     name: 'pageSEO',
-    title: 'Page SEO',
+    title: 'SEO Config',
     description: 'Optimize this document for search engines',
     type: 'object',
     options: {

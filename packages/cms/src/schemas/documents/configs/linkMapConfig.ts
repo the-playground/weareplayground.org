@@ -1,9 +1,10 @@
-export const schema = {
+import { ConfigDocument } from '../../../types';
+
+export const schema: ConfigDocument = {
     name: 'linkMapConfig',
     title: 'Link Map Config',
-    type: 'document',
-    icon: (): string => '',
-    __experimental_actions: ['update', 'publish'],
+    icon: '',
+    disabledActions: ['create', 'delete'],
     fields: [
         // {
         //     name: 'showArchive',

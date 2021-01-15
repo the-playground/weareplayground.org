@@ -1,12 +1,12 @@
 import React from 'react';
 import { Hexagon } from 'react-feather';
 
-export const schema = {
+import { DocumentCollection } from '../../../types';
+
+export const schema: DocumentCollection = {
     name: 'season',
     title: 'Seasons',
-    type: 'document',
-    icon: () => <Hexagon />,
-
+    icon: <Hexagon />,
     fields: [
         {
             name: 'title',
@@ -46,11 +46,6 @@ export const schema = {
             description: 'The shows that were a part of this season',
             type: 'array',
             of: [{ type: 'reference', to: { type: 'show' } }],
-        },
-        {
-            name: 'seo',
-            title: 'SEO',
-            type: 'pageSEO',
         },
     ],
     orderings: [

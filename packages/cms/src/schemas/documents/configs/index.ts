@@ -3,7 +3,7 @@ import { schema as linkMapConfigSchema } from './linkMapConfig';
 import { schema as siteConfigSchema } from './siteConfig';
 import { schema as seoConfigSchema } from './seoConfig';
 
-export const configSchemas = [
+export const configDocuments = [
     companyConfigSchema,
     siteConfigSchema,
     linkMapConfigSchema,

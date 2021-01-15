@@ -4,6 +4,7 @@ import {
     CreatePageDocument,
     CreateConfigDocument,
     CreateDocumentCollection,
+    CreateDocumentReturn,
 } from '../types';
 
 /**
@@ -30,16 +31,19 @@ export const createPageDocument: CreatePageDocument = ({
     name,
     title,
     icon,
-    disabledActions,
-    maxSlugLength = 200,
+    disabledActions = [],
+    maxSlugLength = 100,
+    fieldsets,
     fields,
+    initialValue,
 }) => {
     const schema = {
         name,
         title,
-        icon,
+        icon: () => icon,
         type: 'document',
         __experimental_actions: getDocumentActions(disabledActions),
+        fieldsets: fieldsets ? [...fieldsets] : [],
         fields: [
             {
                 name: 'title',
@@ -68,6 +72,7 @@ export const createPageDocument: CreatePageDocument = ({
                 type: 'pageSEO',
             },
         ],
+        initialValue,
         preview: {
             select: {
                 title: 'title',
@@ -77,11 +82,7 @@ export const createPageDocument: CreatePageDocument = ({
         },
     };
 
-    return {
-        ID: name,
-        TITLE: title,
-        schema,
-    };
+    return { ID: name, TITLE: title, schema };
 };
 
 /**
@@ -96,32 +97,37 @@ export const createDocumentCollection: CreateDocumentCollection = ({
     name,
     title,
     icon,
-    disabledActions,
+    disabledActions = [],
+    disableSEO = false,
+    fieldsets,
     fields,
+    initialValue,
     preview,
+    orderings,
 }) => {
     const schema = {
         name,
         title,
-        icon,
+        icon: () => icon,
         type: 'document',
         __experimental_actions: getDocumentActions(disabledActions),
-        fields: [
-            ...fields,
-            {
-                name: 'seo',
-                title: 'SEO',
-                type: 'pageSEO',
-            },
-        ],
+        fieldsets: fieldsets ? [...fieldsets] : [],
+        fields: disableSEO
+            ? [...fields]
+            : [
+                  ...fields,
+                  {
+                      name: 'seo',
+                      title: 'SEO',
+                      type: 'pageSEO',
+                  },
+              ],
+        initialValue,
         preview,
+        orderings,
     };
 
-    return {
-        ID: name,
-        TITLE: title,
-        schema,
-    };
+    return { ID: name, TITLE: title, schema };
 };
 
 /**
@@ -132,27 +138,27 @@ export const createDocumentCollection: CreateDocumentCollection = ({
  * @param disableCreateDelete
  * @param fields
  */
-export const createConfigDocument = (
-    name: string,
-    title: string,
-    icon: JSX.Element,
-    disabledActions: string[] = [],
-    fields: unknown[]
-) => {
+export const createConfigDocument: CreateConfigDocument = ({
+    name,
+    title,
+    icon,
+    disabledActions = [],
+    fields,
+}) => {
     const schema = {
         name,
         title,
-        icon,
+        icon: () => icon,
         type: 'document',
         __experimental_actions: getDocumentActions(disabledActions),
         fields: [...fields],
     };
 
-    return {
-        ID: name,
-        TITLE: title,
-        schema,
-    };
+    return { ID: name, TITLE: title, schema };
 };
 
-const createImage = () => {};
+export const getCreatedDocumentMeta = (documents: CreateDocumentReturn[]) =>
+    documents.map((schema) => [schema.ID, schema.TITLE]);
+
+export const getCreatedDocumentIDs = (documents: CreateDocumentReturn[]) =>
+    documents.map((schema) => schema.ID);

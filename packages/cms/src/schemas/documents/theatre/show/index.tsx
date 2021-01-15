@@ -1,6 +1,7 @@
 import React from 'react';
 import { Star } from 'react-feather';
 
+import { DocumentCollection } from '../../../../types';
 import { bindFieldsToFieldset } from '../../../../lib/fieldset';
 
 import articles from './fields/articles';
@@ -15,16 +16,14 @@ import openCloseDates from './fields/openCloseDates';
 import { performances, performanceConfig } from './fields/performance';
 import promo from './fields/promo';
 import season from './fields/season';
-import seo from './fields/seo';
 import sponsors from './fields/sponsors';
 
 import * as showObjects from './objects';
 
-export const schema = {
+export const schema: DocumentCollection = {
     name: 'show',
     title: 'Shows',
-    type: 'document',
-    icon: () => <Star />,
+    icon: <Star />,
     fieldsets: [
         {
             name: 'basic',
@@ -83,11 +82,14 @@ export const schema = {
         ...openCloseDates,
         performanceConfig,
         performances,
-        seo,
     ],
     initialValue: {
         type: 'live',
+        collaoration: {
+            is: false,
+        },
         seo: {
+            hideDocument: false,
             publishedAt: new Date().toISOString(),
         },
     },

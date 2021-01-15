@@ -20,10 +20,6 @@ export const internalPostLink = {
             to: [{ type: 'post' }],
         },
     ],
-    blockEditor: {
-        icon: () => '🔗',
-        render: InternalLinkRender,
-    },
 };
 
 export const internalSeasonLink = {
@@ -38,10 +34,6 @@ export const internalSeasonLink = {
             to: [{ type: 'season' }],
         },
     ],
-    blockEditor: {
-        icon: () => '🔗',
-        render: InternalLinkRender,
-    },
 };
 
 export const internalShowLink = {
@@ -56,10 +48,6 @@ export const internalShowLink = {
             to: [{ type: 'show' }],
         },
     ],
-    blockEditor: {
-        icon: () => '🔗',
-        render: InternalLinkRender,
-    },
 };
 
 export const internalLink = {

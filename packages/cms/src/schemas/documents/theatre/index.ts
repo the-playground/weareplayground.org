@@ -5,11 +5,12 @@ import { schema as showSchema, objects as showObjects } from './show';
 import { schema as seasonSchema } from './season';
 import { schema as organizationSchema } from './organization';
 
-export const theatreSchemas = [
+export const theatreDocuments = [
     artistSchema,
     locationSchema,
     organizationSchema,
-    ...showObjects,
     showSchema,
     seasonSchema,
 ];
+
+export const theatreObjects = [...showObjects];

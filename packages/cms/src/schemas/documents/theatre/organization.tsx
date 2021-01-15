@@ -1,12 +1,13 @@
 import React from 'react';
 import { Briefcase } from 'react-feather';
 
-export const schema = {
+import { DocumentCollection } from '../../../types';
+
+export const schema: DocumentCollection = {
     name: 'organization',
     title: 'Organizations',
-    type: 'document',
-
-    icon: () => <Briefcase />,
+    icon: <Briefcase />,
+    disableSEO: true,
     fields: [
         {
             name: 'title',

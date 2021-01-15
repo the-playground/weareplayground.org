@@ -8,12 +8,12 @@ declare type DocumentActions = typeof DOCUMENT_ACTIONS;
 interface Document {
     name: string;
     title: string;
-    icon: JSX.Element | string;
-    disabledActions: DocumentActions;
+    icon?: JSX.Element | string;
+    disabledActions?: DocumentActions;
     fields: unknown[];
 }
 
-interface CreateDocumentReturn {
+export interface CreateDocumentReturn {
     ID: string;
     TITLE: string;
     schema: unknown;
@@ -21,10 +21,16 @@ interface CreateDocumentReturn {
 
 interface PageDocument extends Document {
     maxSlugLength?: number;
+    initialValue?: unknown;
+    fieldsets?: unknown[];
 }
 
 interface DocumentCollection extends Document {
+    disableSEO?: boolean;
+    initialValue?: unknown;
+    fieldsets?: unknown[];
     preview?: unknown;
+    orderings?: unknown[];
 }
 
 interface ConfigDocument extends Document {
