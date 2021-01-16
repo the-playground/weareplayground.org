@@ -20,7 +20,7 @@ export const Section: React.FC<SectionProps> = ({
                     className={className}
                     bgColor={bgColor}
                     bgPosition={bgPosition}
-                    fluid={bgImage.fluid}
+                    fluid={bgImage.asset.fluid}
                     Tag="section"
                     fadeIn="1"
                 >

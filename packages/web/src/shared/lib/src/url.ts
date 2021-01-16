@@ -60,9 +60,6 @@ export const buildNestedSlugPath = (slugs: string[]) => {
         return null;
     }
 
-    console.log('slugs: ', slugs);
-    console.log('joined slug: ', slugs.join('/'));
-
     const normalizedSlugs = slugs.map((slug) =>
         stripTrailingLeadingSlashes(slug).toLowerCase()
     );

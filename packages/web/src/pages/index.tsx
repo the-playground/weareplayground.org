@@ -4,9 +4,6 @@ import {
     GatsbyPageContext,
     SanityDocument,
     SanityFluidImage,
-    PrismicImage,
-    PrismicFluidImage,
-    PrismicInternalLink,
 } from '@nerve/shared/types';
 
 import { SubscribeSection } from '@nerve/domains/engagement';
@@ -18,14 +15,13 @@ import {
     RebrandSection,
 } from '@nerve/domains/page/home';
 
-import { Paper } from '@nerve/core/components';
-
 const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
     pageContext,
     location,
 }) => {
     const { sanityHomePage: page } = data;
+
     return (
         <PageTemplate
             seo={page.seo}
@@ -48,7 +44,7 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
 
 export const query = graphql`
     query {
-        sanityHomePage(_id: { eq: "homePage" }) {
+        sanityHomePage {
             title
             slug {
                 current

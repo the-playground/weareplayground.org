@@ -33,7 +33,7 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
 
 export const query = graphql`
     query {
-        sanityArchivePage(_id: { eq: "archivePage" }) {
+        sanityArchivePage {
             title
             slug {
                 current
