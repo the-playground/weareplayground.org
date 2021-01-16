@@ -77,30 +77,30 @@ const getBlogPostParentPage = async (
     graphql: GatsbyNodeBuildArgs['graphql'],
     reporter: GatsbyNodeBuildArgs['reporter']
 ) => {
-    console.log(`👨‍👧‍👧 Retrieving "Blog" parent page uid...`);
+    console.log(`👨‍👧‍👧 Retrieving "Blog" parent page slug...`);
 
     const { data, errors }: any = await graphql(`
         query {
-            prismicSiteConfig {
-                data {
-                    blog_page {
-                        uid
+            sanityLinkMapConfig {
+                blogPage {
+                    slug {
+                        current
                     }
                 }
             }
         }
     `);
 
-    const blogPostParentPage = data.prismicSiteConfig.data.blog_page;
+    const blogPostParentPage = data.sanityLinkMapConfig.blogPage;
 
-    if (errors || !blogPostParentPage || !blogPostParentPage.uid) {
+    if (errors || !blogPostParentPage || !blogPostParentPage.slug) {
         reporter.panicOnBuild(
             `🔥 Error attempting to retrieve "Blog" posts parent page.`
         );
         return;
     }
 
-    return blogPostParentPage.uid;
+    return blogPostParentPage.slug.current;
 };
 
 /**
