@@ -1,21 +1,41 @@
+/**
+ * This file allows us to build a custom UI structure within Sanity.
+ */
 import S from '@sanity/desk-tool/structure-builder';
+
+// Icons we are using for our menu UI
 import { Layout, Radio, Settings, Zap } from 'react-feather';
 
-import { configListItems, configDocumentFilterList } from './configListItems';
-import { blogListItems, blogDocumentFilterList } from './blogListItems';
+import { buildConfigListItem, buildPageListItem } from './builders';
+
 import {
-    theatreListItems,
-    theatreDocumentFilterList,
-} from './theatreListItems';
+    blogDocumentIDs,
+    configDocumentMeta,
+    configDocumentIDs,
+    pageDocumentIDs,
+    theatreDocumentIDs,
+} from '../generateDocuments';
 
-import { pageListItems, pageDocumentFilterList } from './pageListItems';
+// Build Config List Items from generated document meta data
+export const configListItems = configDocumentMeta.map(([ID, NAME]) =>
+    buildConfigListItem(NAME, ID)
+);
 
-const filterList = [
-    configDocumentFilterList,
-    blogDocumentFilterList,
-    theatreDocumentFilterList,
-    pageDocumentFilterList,
-].flat();
+// Build Page List Items from generated document meta data
+export const pageListItems = pageDocumentIDs.map((documentID) =>
+    buildPageListItem(documentID)
+);
+
+/**
+ * Because we are building a custom Sanity structure, we have to remove all
+ * of our documents from the default Sanity document list.
+ */
+const documentFilterList = [
+    ...configDocumentIDs,
+    ...blogDocumentIDs,
+    ...theatreDocumentIDs,
+    ...pageDocumentIDs,
+];
 
 export default () =>
     S.list()
@@ -32,6 +52,7 @@ export default () =>
                         .showIcons(false)
                 ),
             S.divider(),
+
             // All blog-related documents
             S.listItem()
                 .title('Blog')
@@ -44,6 +65,7 @@ export default () =>
                             S.documentTypeListItem('post'),
                         ])
                 ),
+
             // All theatre-related documents
             S.listItem()
                 .title('Theatre')
@@ -60,14 +82,16 @@ export default () =>
                             S.documentTypeListItem('organization'),
                         ])
                 ),
-            // All single page documents
 
+            // All single page documents
             S.listItem()
                 .title('Pages')
                 .icon(Layout)
                 .child(S.list().title('Pages').items(pageListItems)),
+
             // List out the rest of the document types, but filter out the config type
             ...S.documentTypeListItems().filter(
-                (listItem: any) => !filterList.includes(listItem.getId())
+                (listItem: any) =>
+                    !documentFilterList.includes(listItem.getId())
             ),
         ]);

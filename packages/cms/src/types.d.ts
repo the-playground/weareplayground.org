@@ -1,9 +1,8 @@
 import { DOCUMENT_ACTIONS } from './constants';
 
-// Get rid of types errors for desk builder
 declare module '@sanity/desk-tool/structure-builder';
 
-declare type DocumentActions = typeof DOCUMENT_ACTIONS;
+type DocumentActions = typeof DOCUMENT_ACTIONS;
 
 interface Document {
     name: string;

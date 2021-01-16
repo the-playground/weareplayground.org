@@ -8,8 +8,12 @@ import {
 } from '../types';
 
 /**
+ * Allows for easy disabling of Sanity __experimental_actions in documents.
  *
- * @param disabledActions
+ * * By default, we assume you want all document actions: ['create', 'update', 'publish', 'delete'].
+ * * By passing in an array of actions to disable, you can "toggle off" any undesired actions.
+ *
+ * @param disabledActions An array of actions to disable
  */
 const getDocumentActions = (
     disabledActions: Partial<DocumentActions>
@@ -20,12 +24,23 @@ const getDocumentActions = (
 };
 
 /**
+ * Retrieves the IDs and Titles of an array of created documents
+ */
+export const getCreatedDocumentMeta = (documents: CreateDocumentReturn[]) =>
+    documents.map((schema) => [schema.ID, schema.TITLE]);
+
+/**
+ * Retrieves the IDs of an array of created documents
+ */
+export const getCreatedDocumentIDs = (documents: CreateDocumentReturn[]) =>
+    documents.map((schema) => schema.ID);
+
+/**
+ * A factory function to assist with templating out new single page documents.
+ * IE: 'home page', 'blog page' etc.
  *
- * @param name
- * @param title
- * @param icon
- * @param disableCreateDelete
- * @param fields
+ * * Not only does it dry out code and help standardize schema options,
+ * * it returns the document ID and Title in addition to the fully hydrated schema.
  */
 export const createPageDocument: CreatePageDocument = ({
     name,
@@ -95,12 +110,11 @@ export const createPageDocument: CreatePageDocument = ({
 };
 
 /**
+ * A factory function to assist with templating out new document collections.
+ * IE: 'seasons', 'shows' etc.
  *
- * @param name
- * @param title
- * @param icon
- * @param fields
- * @param preview
+ * * Not only does it dry out code and help standardize schema options,
+ * * it returns the document ID and Title in addition to the fully hydrated schema.
  */
 export const createDocumentCollection: CreateDocumentCollection = ({
     name,
@@ -140,12 +154,12 @@ export const createDocumentCollection: CreateDocumentCollection = ({
 };
 
 /**
+ * A factory function to assist with templating out new configuration document.
+ * IE: 'site config', 'company config' etc.
  *
- * @param name
- * @param title
- * @param icon
- * @param disableCreateDelete
- * @param fields
+ * * Not only does it dry out code and help standardize schema options,
+ * * it returns the document ID and Title in addition to the fully hydrated schema.
+ *
  */
 export const createConfigDocument: CreateConfigDocument = ({
     name,
@@ -165,9 +179,3 @@ export const createConfigDocument: CreateConfigDocument = ({
 
     return { ID: name, TITLE: title, schema };
 };
-
-export const getCreatedDocumentMeta = (documents: CreateDocumentReturn[]) =>
-    documents.map((schema) => [schema.ID, schema.TITLE]);
-
-export const getCreatedDocumentIDs = (documents: CreateDocumentReturn[]) =>
-    documents.map((schema) => schema.ID);
