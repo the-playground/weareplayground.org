@@ -34,8 +34,8 @@ export const NotFoundContent: React.FC = () => {
         <StyledSection bgColor="default">
             <Container className="container">
                 <GrittyHeading
-                    bgColor="paperDark"
-                    color="light"
+                    bgColor="neutralLight"
+                    color="dark"
                     size="s"
                     className="title"
                     as="h1"
