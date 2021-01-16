@@ -1,21 +1,21 @@
-import { buildDocumentSingletonListItem } from './helpers';
+import { buildConfigDocumentListItem } from './helpers';
 
-const companyConfigListItem = buildDocumentSingletonListItem(
+const companyConfigListItem = buildConfigDocumentListItem(
     'Company Config',
     'companyConfig'
 );
 
-const siteConfigListItem = buildDocumentSingletonListItem(
+const siteConfigListItem = buildConfigDocumentListItem(
     'Site Config',
     'siteConfig'
 );
 
-const linkMapConfigListItem = buildDocumentSingletonListItem(
+const linkMapConfigListItem = buildConfigDocumentListItem(
     'Link Map Config',
     'linkMapConfig'
 );
 
-const seoConfigListItem = buildDocumentSingletonListItem(
+const seoConfigListItem = buildConfigDocumentListItem(
     'SEO Config',
     'seoConfig'
 );

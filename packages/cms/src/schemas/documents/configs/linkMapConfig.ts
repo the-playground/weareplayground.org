@@ -6,10 +6,18 @@ export const schema: ConfigDocument = {
     icon: '',
     disabledActions: ['create', 'delete'],
     fields: [
-        // {
-        //     name: 'showArchive',
-        //     title: 'The Archive',
-        // },
+        {
+            name: 'showArchivePage',
+            title: 'The Archive Page',
+            type: 'reference',
+            to: [{ type: 'archivePage' }],
+        },
+        {
+            name: 'blogPage',
+            title: 'Blog Page',
+            type: 'reference',
+            to: [{ type: 'blogPage' }],
+        },
         {
             name: 'sitemap',
             title: 'Sitemap',

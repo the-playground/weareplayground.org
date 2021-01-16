@@ -1,5 +1,5 @@
 import S from '@sanity/desk-tool/structure-builder';
-import { Radio, Settings, Zap } from 'react-feather';
+import { Layout, Radio, Settings, Zap } from 'react-feather';
 
 import { configListItems, configDocumentFilterList } from './configListItems';
 import { blogListItems, blogDocumentFilterList } from './blogListItems';
@@ -8,10 +8,13 @@ import {
     theatreDocumentFilterList,
 } from './theatreListItems';
 
+import { pageListItems, pageDocumentFilterList } from './pageListItems';
+
 const filterList = [
     configDocumentFilterList,
     blogDocumentFilterList,
     theatreDocumentFilterList,
+    pageDocumentFilterList,
 ].flat();
 
 export default () =>
@@ -57,6 +60,12 @@ export default () =>
                             S.documentTypeListItem('organization'),
                         ])
                 ),
+            // All single page documents
+
+            S.listItem()
+                .title('Pages')
+                .icon(Layout)
+                .child(S.list().title('Pages').items(pageListItems)),
             // List out the rest of the document types, but filter out the config type
             ...S.documentTypeListItems().filter(
                 (listItem: any) => !filterList.includes(listItem.getId())

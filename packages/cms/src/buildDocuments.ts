@@ -1,5 +1,6 @@
 import {
     createConfigDocument,
+    createPageDocument,
     createDocumentCollection,
     getCreatedDocumentMeta,
     getCreatedDocumentIDs,
@@ -79,6 +80,18 @@ export const theatreDocumentIDs = getCreatedDocumentIDs(
  * Document Group: Single Pages
  * **********************
  */
+const createdPageDocuments = pageDocuments.map((settings) =>
+    createPageDocument(settings)
+);
+
+// get the schema property to send to sanity
+const pageSchemas = createdPageDocuments.map((schema) => schema.schema);
+
+// get an array of titles with ids
+export const pageDocumentsMeta = getCreatedDocumentMeta(createdPageDocuments);
+
+// get an array of document ids
+export const pageDocumentIDs = getCreatedDocumentIDs(createdPageDocuments);
 
 /**
  * Array of fully generated schemas
@@ -88,4 +101,5 @@ export const schemas = [
     ...blogSchemas,
     ...theatreObjects,
     ...theatreSchemas,
+    ...pageSchemas,
 ];

@@ -85,7 +85,7 @@ export const schema: DocumentCollection = {
     ],
     initialValue: {
         type: 'live',
-        collaoration: {
+        collaboration: {
             is: false,
         },
         seo: {

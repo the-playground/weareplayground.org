@@ -32,10 +32,9 @@ export const createPageDocument: CreatePageDocument = ({
     title,
     icon,
     disabledActions = [],
-    maxSlugLength = 100,
+    maxSlugLength = 50,
     fieldsets,
     fields,
-    initialValue,
 }) => {
     const schema = {
         name,
@@ -72,12 +71,22 @@ export const createPageDocument: CreatePageDocument = ({
                 type: 'pageSEO',
             },
         ],
-        initialValue,
+        seo: {
+            hideDocument: false,
+            publishedAt: new Date().toISOString(),
+        },
         preview: {
             select: {
                 title: 'title',
-                subtitle: 'slug',
+                subtitle: 'slug.current',
                 media: 'seo.image',
+            },
+            prepare({ title, subtitle, media }: any) {
+                return {
+                    title,
+                    subtitle: subtitle === 'home' ? '' : subtitle,
+                    media,
+                };
             },
         },
     };

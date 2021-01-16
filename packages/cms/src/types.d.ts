@@ -21,7 +21,6 @@ export interface CreateDocumentReturn {
 
 interface PageDocument extends Document {
     maxSlugLength?: number;
-    initialValue?: unknown;
     fieldsets?: unknown[];
 }
 
