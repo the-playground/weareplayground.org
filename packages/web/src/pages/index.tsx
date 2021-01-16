@@ -25,7 +25,6 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     pageContext,
     location,
 }) => {
-    const { uid } = pageContext;
     const { sanityHomePage: page } = data;
     return (
         <PageTemplate

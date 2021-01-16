@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { useConfigContext, useLinkMapContext } from '@nerve/shared/context';
+import { useConfigContext } from '@nerve/shared/context';
 
 import { Link } from '@nerve/core/routing';
 import { BodyText, Logo } from '@nerve/core/components';
@@ -12,7 +12,6 @@ export const FooterNav: React.FC<FooterNavProps> = ({
     menuItems,
 }) => {
     const { company } = useConfigContext();
-    const links = useLinkMapContext();
     const activeClass = '--is-active';
 
     return (

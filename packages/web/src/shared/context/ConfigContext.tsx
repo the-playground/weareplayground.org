@@ -20,7 +20,7 @@ export const ConfigProvider: React.FC = ({ children }) => {
     const links = useLinkMapConfig();
 
     return (
-        <ConfigContext.Provider value={{ company, site, seo }}>
+        <ConfigContext.Provider value={{ company, site, seo, links }}>
             {children}
         </ConfigContext.Provider>
     );

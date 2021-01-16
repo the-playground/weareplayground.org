@@ -3,8 +3,7 @@ import styled from 'styled-components';
 
 import { breakpoints, grid, spacing } from '@nerve/core/tokens';
 
-import { useLinkMapContext } from '@nerve/shared/context';
-import { getChildPageSlug } from '@nerve/shared/lib';
+import { useConfigContext } from '@nerve/shared/context';
 
 import {
     BodyText,
@@ -43,8 +42,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     rebrandLink,
     rebrandLinkText,
 }) => {
-    const links = useLinkMapContext();
-    const blogLink = getChildPageSlug(links.blog, rebrandLink);
+    const { links } = useConfigContext();
+    const blogLink = links.getPost(rebrandLink);
 
     return (
         <StyledHeroSection

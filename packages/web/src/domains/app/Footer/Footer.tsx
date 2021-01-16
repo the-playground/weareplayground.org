@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useConfigContext, useLinkMapContext } from '@nerve/shared/context';
+import { useConfigContext } from '@nerve/shared/context';
 
 import { Container, Divider, Icon } from '@nerve/core/components';
 
@@ -9,8 +9,7 @@ import { FooterNav } from './FooterNav/FooterNav';
 import * as styled from './__styles';
 
 export const Footer: React.FC = () => {
-    const { company } = useConfigContext();
-    const links = useLinkMapContext();
+    const { company, links } = useConfigContext();
 
     const socialAccounts = [
         {
@@ -78,11 +77,11 @@ export const Footer: React.FC = () => {
     const menuItems = [
         // {
         //     text: 'current season',
-        //     link: links.currentSeason,
+        //     link: links.currentSeasonPage,
         // },
         {
             text: 'the archive',
-            link: links.archive,
+            link: links.archivePage,
         },
         // {
         //     text: 'about us',
@@ -90,7 +89,7 @@ export const Footer: React.FC = () => {
         // },
         // {
         //     text: 'support us',
-        //     link: links.supportUs,
+        //     link: links.supportUsPage,
         // },
     ];
 

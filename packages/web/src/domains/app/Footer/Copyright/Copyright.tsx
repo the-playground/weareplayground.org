@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from '@nerve/core/routing';
 import { BodyText, Container } from '@nerve/core/components';
-import { useConfigContext, useLinkMapContext } from '@nerve/shared/context';
+import { useConfigContext } from '@nerve/shared/context';
 
 import * as styled from './__styles';
 
@@ -18,8 +18,7 @@ const LinkItem: React.FC<{ slug: string; text: string }> = ({ slug, text }) => (
 
 export const Copyright: React.FC = () => {
     const currentYear = new Date().getFullYear();
-    const { company } = useConfigContext();
-    const { privacyPolicy, terms, sitemap } = useLinkMapContext();
+    const { company, links } = useConfigContext();
 
     return (
         <styled.Copyright>
@@ -29,21 +28,21 @@ export const Copyright: React.FC = () => {
                     reserved.
                 </BodyText>
                 <ul className="links">
-                    {privacyPolicy && (
+                    {/* {links.privacyPolicyPage && (
                         <LinkItem
-                            slug={privacyPolicy}
+                            slug={links.privacyPolicyPage}
                             text="privacy policy"
                             key="privacy policy"
                         />
                     )}
 
-                    {terms && (
+                    {links.termsPage && (
                         <LinkItem
-                            slug={terms}
+                            slug={links.termsPage}
                             text="terms & conditions"
                             key="terms"
                         />
-                    )}
+                    )} */}
 
                     {/* {sitemap && (
                         <LinkItem slug={sitemap} text="sitemap" key="sitemap" />

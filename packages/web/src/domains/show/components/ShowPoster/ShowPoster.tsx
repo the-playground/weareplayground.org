@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { getShowSlug } from '@nerve/shared/lib';
 import { Link } from '@nerve/core/routing';
 import { SanityFluidImage } from '@nerve/shared/types';
 
@@ -11,6 +10,7 @@ import {
     BackgroundOverlay,
 } from '@nerve/core/components';
 
+import { useConfigContext } from '@nerve/shared/context';
 import * as styled from './__styles';
 
 export const ShowPoster: React.FC<ShowPosterProps> = ({
@@ -25,9 +25,14 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
      * Todo: 2, Turn date extraction methodology into custom hook
      */
 
+    const { links } = useConfigContext();
+
     return (
         <styled.ShowPoster>
-            <Link className="wrapper" to={getShowSlug(slug, season.slug)}>
+            <Link
+                className="wrapper"
+                to={links.getShow(season.slug, slug) ?? '/'}
+            >
                 <Image
                     fluid={image.asset.fluid}
                     alt={image.alt}

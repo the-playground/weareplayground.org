@@ -17,7 +17,6 @@ import { Layout } from '@nerve/domains/app';
 import {
     ConfigProvider,
     EnvironmentProvider,
-    LinkMapProvider,
     SeasonProvider,
     ShowProvider,
     UIProvider,
@@ -36,15 +35,13 @@ export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
 }) => (
     <EnvironmentProvider>
         <ConfigProvider>
-            <LinkMapProvider>
-                <SeasonProvider>
-                    <ShowProvider>
-                        <ThemeProvider theme={theme}>
-                            <UIProvider>{element} </UIProvider>
-                        </ThemeProvider>
-                    </ShowProvider>
-                </SeasonProvider>
-            </LinkMapProvider>
+            <SeasonProvider>
+                <ShowProvider>
+                    <ThemeProvider theme={theme}>
+                        <UIProvider>{element} </UIProvider>
+                    </ThemeProvider>
+                </ShowProvider>
+            </SeasonProvider>
         </ConfigProvider>
     </EnvironmentProvider>
 );

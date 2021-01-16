@@ -1,5 +1,3 @@
-import { SEASON_ROOT_SLUG } from '@nerve/domains/season';
-import { BLOG_ROOT_SLUG } from '@nerve/domains/blog';
 import { isSSR } from './ssr';
 
 /**
@@ -11,44 +9,60 @@ export const getCurrentRootURL = () =>
         : `${window.location.protocol}//${window.location.hostname}${window.location.pathname}`;
 
 /**
- * Strip all leading and trailing slashes from slugs
+ *
+ * @param slug
+ */
+const stripTrailingLeadingSlashes = (slug: string) =>
+    slug.replace(/^\/|\/$/g, '');
+
+/**
+ * Checks to see if a slug is valid.
+ *
+ * A valid slug should be a string whose length is greater than 0
+ *
+ * @param slug The slug to check
+ */
+const isValidSlug = (slug: string) =>
+    typeof slug === 'string' && slug.length > 0;
+
+/**
+ * Strip all leading and trailing slashes from slugs, then return the slug with
+ * a single leading slash.
  *
  * @link https://stackoverflow.com/questions/3840600/javascript-regular-expression-remove-first-and-last-slash
  *
  * @param slug The slug to process
  */
-export const normalizeSlug = (slug: string) => {
-    const normalizedSlug = slug.replace(/^\/|\/$/g, '');
+export const normalizeSlug = (slug: string, validate = true) => {
+    if (validate && !isValidSlug(slug)) {
+        console.log(
+            'Slug failed validation. Slug will not be normalized: ',
+            slug
+        );
+        return null;
+    }
+
+    const normalizedSlug = stripTrailingLeadingSlashes(slug);
     return `/${normalizedSlug}`;
 };
 
 /**
  * Build a multi-layerd slug with a parent/child relationship
  *
- * @param parentUID The slug of the parent page
- * @param childUID The slug of the child page
+ * @param slugs
  */
-export const getChildPageSlug = (parentUID: string, childUID: string) =>
-    parentUID && childUID ? normalizeSlug(`${parentUID}/${childUID}`) : null;
+export const buildNestedSlugPath = (slugs: string[]) => {
+    if (!slugs.every(isValidSlug)) {
+        console.log(
+            'One or more slugs failed validation when attempting to build a nested slug path. No path can be built: ',
+            slugs
+        );
+        return null;
+    }
 
-/**
- *
- * @param showSlug
- * @param seasonSlug
- */
-export const getShowSlug = (showSlug: string, seasonSlug: string) =>
-    normalizeSlug(`${SEASON_ROOT_SLUG}/${seasonSlug}/${showSlug}`);
+    const normalizedSlugs = slugs.map((slug) =>
+        stripTrailingLeadingSlashes(slug).toLowerCase()
+    );
 
-/**
- *
- * @param seasonSlug
- */
-export const getSeasonSlug = (seasonSlug: string) =>
-    seasonSlug ? normalizeSlug(`${SEASON_ROOT_SLUG}/${seasonSlug}`) : null;
-
-/**
- *
- * @param blogSlug
- */
-export const getBlogSlug = (blogSlug: string) =>
-    blogSlug ? normalizeSlug(`${BLOG_ROOT_SLUG}/${blogSlug}`) : null;
+    return normalizeSlug(normalizedSlugs.join('/'));
+};

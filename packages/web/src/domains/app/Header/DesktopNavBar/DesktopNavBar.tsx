@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useLinkMapContext } from '@nerve/shared/context';
+import { useConfigContext } from '@nerve/shared/context';
 
 import { Link } from '@nerve/core/routing';
 import { BodyText, FillButton } from '@nerve/core/components';
@@ -19,12 +19,8 @@ const LinkItem: React.FC<{ slug: string; text: string }> = ({ slug, text }) => (
 
 export const DesktopNavBar: React.FC = () => {
     const {
-        currentSeason,
-        archive,
-        about,
-        contact,
-        supportUs,
-    } = useLinkMapContext();
+        links: { archivePage },
+    } = useConfigContext();
 
     return (
         <styled.DesktopNavBar
@@ -43,7 +39,7 @@ export const DesktopNavBar: React.FC = () => {
                     />
                 )} */}
 
-                <LinkItem slug={archive} text="the archive" key="archive" />
+                <LinkItem slug={archivePage} text="the archive" key="archive" />
                 {/* <LinkItem slug={about} text="about" key="about" />
                 <LinkItem slug={contact} text="connect" key="connect" />
                 <li className="highlight">

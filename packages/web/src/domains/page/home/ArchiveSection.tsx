@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { breakpoints, spacing } from '@nerve/core/tokens';
 
-import { useLinkMapContext } from '@nerve/shared/context';
+import { useConfigContext } from '@nerve/shared/context';
 
 import {
     BodyText,
@@ -43,7 +43,7 @@ const StyledArchiveSection = styled.section`
 `;
 
 export const ArchiveSection: React.FC = () => {
-    const { archive } = useLinkMapContext();
+    const { links } = useConfigContext();
 
     return (
         <StyledArchiveSection>
@@ -65,7 +65,7 @@ export const ArchiveSection: React.FC = () => {
                 <TextButton
                     color="primary"
                     size="m"
-                    to={archive}
+                    to={links.archivePage}
                     endIcon={<Icon name="ArrowRight" size="xs" />}
                     animateIconOnHover
                 >
