@@ -11,7 +11,7 @@ export const useLinkMapConfig = (): LinkMapConfig => {
      */
     const { sanityLinkMapConfig } = useStaticQuery(graphql`
         query LinkMapConfigQuery {
-            sanityLinkMapConfig(_id: { eq: "linkMapConfig" }) {
+            sanityLinkMapConfig {
                 blogPage {
                     slug {
                         current
@@ -31,7 +31,7 @@ export const useLinkMapConfig = (): LinkMapConfig => {
 
     return {
         blogPage: normalizeSlug(links?.blogPage?.slug?.current),
-        archivePage: normalizeSlug(links?.archivePage?.slug?.current),
+        archivePage: normalizeSlug(links?.showArchivePage?.slug?.current),
         sitemap: links?.sitemap,
         getShow: (season, show) =>
             buildNestedSlugPath([SEASON_ROOT_SLUG, season, show]),
