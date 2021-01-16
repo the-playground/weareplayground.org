@@ -5,5 +5,15 @@ export const schema: PageDocument = {
     title: 'Home',
     icon: '',
     disabledActions: ['create', 'delete'],
-    fields: [],
+    fields: [
+        {
+            name: 'hero',
+            title: 'Hero Section',
+            type: 'heroWithImage',
+            options: {
+                collapsible: true,
+                collapsed: true,
+            },
+        },
+    ],
 };

@@ -1,6 +1,9 @@
+import { simpleInternalAction, simpleExternalAction } from './actions';
+
 import { address } from './address';
 
 import { imageWithAlt, imageWithFullMeta } from './images';
+
 import {
     internalPostLink,
     internalSeasonLink,
@@ -8,8 +11,12 @@ import {
     internalLink,
     externalLink,
 } from './links';
+
 import { pageSEO } from './seo';
+
 import { contentBlock } from './blocks';
+
+import { components } from './components';
 
 export default [
     address,
@@ -22,4 +29,7 @@ export default [
     externalLink,
     pageSEO,
     contentBlock,
+    simpleInternalAction,
+    simpleExternalAction,
+    ...components,
 ];

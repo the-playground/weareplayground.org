@@ -31,11 +31,11 @@ const StyledSection = styled(Section)`
 
 export const NotFoundContent: React.FC = () => {
     return (
-        <StyledSection bgColor="dark">
+        <StyledSection bgColor="default">
             <Container className="container">
                 <GrittyHeading
-                    bgColor="light"
-                    color="dark"
+                    bgColor="paperDark"
+                    color="light"
                     size="s"
                     className="title"
                     as="h1"

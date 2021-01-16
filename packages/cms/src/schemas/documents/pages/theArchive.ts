@@ -5,5 +5,11 @@ export const schema: PageDocument = {
     title: 'The Archive',
     icon: '',
     disabledActions: ['create', 'delete'],
-    fields: [],
+    fields: [
+        {
+            name: 'hero',
+            title: 'Hero',
+            type: 'simpleHero',
+        },
+    ],
 };
