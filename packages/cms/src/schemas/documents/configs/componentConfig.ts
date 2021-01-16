@@ -11,10 +11,5 @@ export const schema: ConfigDocument = {
             title: 'Subscribe Component',
             type: 'subscribe',
         },
-        {
-            name: 'notFound',
-            title: 'Not Found Component (404)',
-            type: 'notFound',
-        },
     ],
 };

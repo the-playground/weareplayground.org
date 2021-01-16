@@ -1,5 +1,5 @@
 import { AvailableSurface, AvailableOverlayTheme } from '@nerve/core/themes';
-import { PrismicFluidImage } from '@nerve/shared/types';
+import { SanityFluidImage } from '@nerve/shared/types';
 
 type BackgroundPosition =
     | 'center top'
@@ -15,7 +15,7 @@ type BackgroundPosition =
 export interface SectionProps {
     bgColor?: AvailableSurface;
     overlay?: AvailableOverlayTheme;
-    bgImage?: PrismicFluidImage;
+    bgImage?: SanityFluidImage;
     bgPosition?: BackgroundPosition;
     className?: string;
 }

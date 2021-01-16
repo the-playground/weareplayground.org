@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { PrismicInternalLink } from '@nerve/shared/types';
 import { breakpoints, grid, spacing } from '@nerve/core/tokens';
 
 import { useLinkMapContext } from '@nerve/shared/context';
@@ -45,7 +44,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     rebrandLinkText,
 }) => {
     const links = useLinkMapContext();
-    const blogLink = getChildPageSlug(links.blog, rebrandLink.uid);
+    const blogLink = getChildPageSlug(links.blog, rebrandLink);
 
     return (
         <StyledHeroSection
@@ -86,5 +85,5 @@ interface HeroSectionProps extends SectionProps {
     title: string;
     copy: string;
     rebrandLinkText: string;
-    rebrandLink: PrismicInternalLink;
+    rebrandLink: string;
 }

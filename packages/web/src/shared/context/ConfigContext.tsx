@@ -17,7 +17,7 @@ export const ConfigProvider: React.FC = ({ children }) => {
     const company = useCompanyConfig();
     const site = useSiteConfig();
     const seo = useSEOConfig();
-    // const links = useLinkMapConfig();
+    const links = useLinkMapConfig();
 
     return (
         <ConfigContext.Provider value={{ company, site, seo }}>
@@ -32,5 +32,5 @@ export interface GlobalConfigs {
     company: CompanyConfig;
     site: SiteConfig;
     seo: SEOConfig;
-    // links: LinkMapConfig;
+    links: LinkMapConfig;
 }

@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { PrismicImage } from '@nerve/shared/types';
+import { SanityDocumentSEO } from '@nerve/shared/types';
 
-import { useConfigContext } from '@nerve/shared/context';
 import { useCurrentURL, useGetMetaImage } from '@nerve/shared/hooks';
 
 import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
@@ -12,33 +11,33 @@ import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
  * each "Page" that exists in our CMS.
  */
 const PageTemplate: React.FC<PageTemplateProps> = ({
-    pageConfig,
+    seo,
     currentLocation,
+    lastUpdated,
     children,
 }) => {
     const url = useCurrentURL(currentLocation);
-    const { data } = pageConfig;
-    const metaImage = useGetMetaImage('page', pageConfig.data.seo_image);
+    const metaImage = useGetMetaImage('page', seo.image);
 
     return (
         <>
             <PageBasicSEO
                 url={url}
-                title={data.seo_title}
-                description={data.seo_description}
+                title={seo.title}
+                description={seo.description}
                 image={metaImage}
-                hideSEO={data.seo_hide}
+                hideSEO={seo.hide}
             />
             {/* Do not output structured data if this page will be hidden from SEO */}
-            {data.seo_hide ? null : (
+            {seo.hide ? null : (
                 <StructuredData
                     pageSchemaData={{
                         pageURL: url,
-                        title: data.seo_title,
-                        description: data.seo_description,
+                        title: seo.title,
+                        description: seo.description,
                         image: metaImage,
-                        datePublished: pageConfig.first_publication_date,
-                        dateModified: pageConfig.last_publication_date,
+                        datePublished: seo.publishedAt,
+                        dateModified: lastUpdated,
                     }}
                 />
             )}
@@ -48,19 +47,8 @@ const PageTemplate: React.FC<PageTemplateProps> = ({
 };
 
 interface PageTemplateProps {
-    pageConfig: {
-        first_publication_date: string;
-        last_publication_date: string;
-        data: {
-            remove_header: boolean;
-            remove_footer: boolean;
-            seo_title: string;
-            seo_description: string;
-            seo_image?: PrismicImage;
-            seo_hide: boolean;
-            [key: string]: any; // We only want to focus on our core metadata here, so we don't care about other props that exist on "data".
-        };
-    };
+    seo: SanityDocumentSEO;
+    lastUpdated: string;
     currentLocation: string;
 }
 

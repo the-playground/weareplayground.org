@@ -1,4 +1,4 @@
-import { PrismicImage } from '@nerve/shared/types';
+import { SanityImage } from '@nerve/shared/types';
 
 /**
  * https://schema.org/WebPage
@@ -27,7 +27,7 @@ export const webPageSchema = (
         image: {
             '@type': 'ImageObject',
             '@id': `${pageURL}/#primaryimage`,
-            url: image.url,
+            url: image.asset.url,
             caption: image.alt,
         },
         primaryImageOfPage: {
@@ -45,7 +45,7 @@ export interface WebPageSchemaProps {
     pageURL: string;
     title: string;
     description: string;
-    image: PrismicImage;
+    image: SanityImage;
     datePublished: string;
     dateModified: string;
 }

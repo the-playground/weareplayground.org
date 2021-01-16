@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { PrismicImage, SanityImage } from '@nerve/shared/types';
+import { SanityImage } from '@nerve/shared/types';
 
 /**
  * Handle generating the basic meta information for a page.
@@ -27,7 +27,9 @@ export const PageBasicSEO: React.FC<PageBasicSEOProps> = ({
             {/* Standard meta data for search engines */}
             <title>{title}</title>
             <meta name="description" content={description} />
-            {image && <meta name="image" content={image.url} />}
+            {image?.asset?.url && (
+                <meta name="image" content={image.asset.url} />
+            )}
 
             <link rel="canonical" href={url} />
 
@@ -49,23 +51,28 @@ export const PageBasicSEO: React.FC<PageBasicSEOProps> = ({
             <meta property="og:description" content={description} />
 
             {/* Meta images */}
-            {image && <meta property="og:image" content={image.url} />}
-            {image && (
-                <meta property="og:image:secure_url" content={image.url} />
+            {image?.asset?.url && (
+                <meta property="og:image" content={image.asset.url} />
+            )}
+            {image?.asset?.url && (
+                <meta
+                    property="og:image:secure_url"
+                    content={image.asset.url}
+                />
             )}
 
             {image?.alt && <meta property="og:image:alt" content={image.alt} />}
 
-            {image && (
+            {image?.asset?.metadata?.dimensions && (
                 <meta
                     property="og:image:height"
-                    content={image.dimensions?.height}
+                    content={`${image.asset.metadata.dimensions.height}`}
                 />
             )}
-            {image && (
+            {image?.asset?.metadata?.dimensions && (
                 <meta
                     property="og:image:width"
-                    content={image.dimensions?.width}
+                    content={`${image.asset.metadata.dimensions.width}`}
                 />
             )}
         </Helmet>
@@ -76,6 +83,6 @@ interface PageBasicSEOProps {
     url: string;
     title: string;
     description: string;
-    image?: PrismicImage;
+    image?: SanityImage;
     hideSEO?: boolean;
 }

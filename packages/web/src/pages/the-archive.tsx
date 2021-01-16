@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 
-import { GatsbyPageContext, PrismicImage } from '@nerve/shared/types';
+import { GatsbyPageContext, SanityDocumentSEO } from '@nerve/shared/types';
 
 import { SimpleHero } from '@nerve/shared/components';
 import { ShowPosterGrid, ShowCoreWithPoster } from '@nerve/domains/show';
@@ -15,15 +15,16 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     pageContext,
     location,
 }) => {
-    const pageData = data.prismicArchivePage;
+    const { sanityArchivePage: page } = data;
     const { nodes: shows } = data.allSanityShow;
 
     return (
-        <PageTemplate pageConfig={pageData} currentLocation={location.pathname}>
-            <SimpleHero
-                title={pageData.data.hero_title}
-                subTitle={pageData.data.hero_sub_title}
-            />
+        <PageTemplate
+            seo={page.seo}
+            lastUpdated={page._updatedAt}
+            currentLocation={location.pathname}
+        >
+            <SimpleHero title={page.hero.title} subTitle={page.hero.subtitle} />
             <ShowPosterGrid shows={shows} />
             <SubscribeSection />
         </PageTemplate>
@@ -32,28 +33,28 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
 
 export const query = graphql`
     query {
-        prismicArchivePage {
-            last_publication_date
-            first_publication_date
-            data {
-                # Config & SEO
-                remove_footer
-                remove_header
-                seo_description
-                seo_hide
-                seo_title
-                seo_image {
-                    url(imgixParams: { q: 100 })
+        sanityArchivePage(_id: { eq: "archivePage" }) {
+            title
+            slug {
+                current
+            }
+            _updatedAt
+            seo {
+                title
+                description
+                hide
+                publishedAt
+                image {
                     alt
-                    dimensions {
-                        width
-                        height
+                    asset {
+                        url
                     }
                 }
+            }
 
-                # Hero
-                hero_title
-                hero_sub_title
+            hero {
+                subtitle
+                title
             }
         }
 
@@ -94,21 +95,12 @@ export const query = graphql`
  */
 
 interface PageData {
-    prismicArchivePage: {
-        first_publication_date: string;
-        last_publication_date: string;
-        data: {
-            // Config & SEO
-            remove_header: boolean;
-            remove_footer: boolean;
-            seo_title: string;
-            seo_description: string;
-            seo_image?: PrismicImage;
-            seo_hide: boolean;
-
-            // Hero
-            hero_title: string;
-            hero_sub_title: string;
+    sanityArchivePage: {
+        _updatedAt: string;
+        seo: SanityDocumentSEO;
+        hero: {
+            title: string;
+            subtitle: string;
         };
     };
     allSanityShow: {
