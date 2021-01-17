@@ -93,9 +93,11 @@ const getBlogPostParentPage = async (
         }
     `);
 
+    console.log('sanityLinkMapConfig query: ', data);
+
     const blogPage = data?.sanityLinkMapConfig?.blogPage?.slug?.current;
 
-    if (errors || !blogPage) {
+    if (errors) {
         reporter.panicOnBuild(
             `🔥 Error attempting to retrieve "Blog" posts parent page.`,
             errors
