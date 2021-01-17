@@ -97,7 +97,8 @@ const getBlogPostParentPage = async (
 
     if (errors || !blogPage) {
         reporter.panicOnBuild(
-            `🔥 Error attempting to retrieve "Blog" posts parent page.`
+            `🔥 Error attempting to retrieve "Blog" posts parent page.`,
+            errors
         );
         return;
     }
@@ -161,7 +162,8 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
 
     if (errors) {
         reporter.panicOnBuild(
-            `🔥 Error while running GraphQL query on Seasons & Shows.`
+            `🔥 Error while running GraphQL query on Seasons & Shows.`,
+            errors
         );
     }
 
@@ -239,7 +241,10 @@ const generateBlogPosts: GatsbyNode['createPages'] = async ({
     `);
 
     if (errors) {
-        reporter.panicOnBuild(`🔥 Error while running GraphQL query on Blogs.`);
+        reporter.panicOnBuild(
+            `🔥 Error while running GraphQL query on Blogs.`,
+            errors
+        );
     }
 
     /**
