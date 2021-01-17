@@ -93,17 +93,16 @@ const getBlogPostParentPage = async (
         }
     `);
 
-    const blogPostParentPage =
-        data?.sanityLinkMapConfig?.blogPage?.slug?.current;
+    const blogPage = data?.sanityLinkMapConfig?.blogPage?.slug?.current;
 
-    if (errors || !blogPostParentPage) {
+    if (errors || !blogPage) {
         reporter.panicOnBuild(
             `🔥 Error attempting to retrieve "Blog" posts parent page.`
         );
         return;
     }
 
-    return blogPostParentPage;
+    return blogPage;
 };
 
 /**
