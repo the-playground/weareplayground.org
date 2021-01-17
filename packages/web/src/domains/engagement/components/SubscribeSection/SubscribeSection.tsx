@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useStaticQuery, graphql } from 'gatsby';
 import { breakpoints, spacing } from '@nerve/core/tokens';
 import { useConfigContext } from '@nerve/shared/context';
+import { SanityFluidImage } from '@nerve/shared/types';
 
 import {
     Container,
@@ -22,11 +24,32 @@ const StyledSubscribeSection = styled(Section)`
 `;
 
 export const SubscribeSection: React.FC = () => {
-    const config = useConfigContext();
+    /**
+     * Query for all the configs our site might need to use for every page.
+     */
+    const { sanityComponentConfig } = useStaticQuery(graphql`
+        query SubscribeComponentConfigQuery {
+            sanityComponentConfig {
+                subscribe {
+                    subtitle
+                    title
+                    image {
+                        asset {
+                            fluid {
+                                ...GatsbySanityImageFluid_noBase64
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `);
+
+    const { subscribe }: SubscribeComponentData = sanityComponentConfig;
 
     return (
         <StyledSubscribeSection
-            bgImage={config.subscribe_image}
+            bgImage={subscribe.image}
             overlay="dark90"
             bgPosition="center center"
         >
@@ -39,13 +62,21 @@ export const SubscribeSection: React.FC = () => {
                     offset={-2}
                     className="intro-title"
                 >
-                    {config.subscribe_title}
+                    {subscribe.title}
                 </GrittyHeading>
                 <BodyText color="light" size="m" className="intro-copy">
-                    {config.subscribe_copy}
+                    {subscribe.subtitle}
                 </BodyText>
                 <EmailSubscribe />
             </Container>
         </StyledSubscribeSection>
     );
 };
+
+interface SubscribeComponentData {
+    subscribe: {
+        title: string;
+        subtitle: string;
+        image: SanityFluidImage;
+    };
+}
