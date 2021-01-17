@@ -84,7 +84,7 @@ export const Content = styled.div`
         height: auto;
     }
 
-    > figure .copyright {
+    > figure figcaption {
         margin-top: ${spacing.component.s};
     }
 
@@ -94,15 +94,15 @@ export const Content = styled.div`
         margin-top: ${spacing.component.xxl};
     }
 
-    h2,
-    h3,
-    h4 {
+    .h2,
+    .h3,
+    .h4 {
         margin-bottom: ${spacing.component.s};
         margin-top: ${spacing.component.xxl};
     }
 
     /* Any heading tags that are followed immediately by a standard paragraph */
-    > :is(div, h2, h3, h4, h5, h6) + p {
+    > :is(div, .h2, .h3, .h4, .h5, .h6) + .p {
         margin-top: 0;
     }
 `;

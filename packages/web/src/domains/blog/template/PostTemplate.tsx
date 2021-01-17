@@ -12,8 +12,7 @@ import {
     Heading,
     Image,
     Container,
-    PrismicCMSRichTextProps,
-    RichTextDisplay,
+    PortableText,
 } from '@nerve/core/components';
 
 import { SubscribeSection } from '@nerve/domains/engagement';
@@ -34,12 +33,11 @@ const PostLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     pageContext,
     location,
 }) => {
-    const prismicPostData = data.prismicPost.data;
     const { sanityPost: post } = data;
 
     const { authors } = post;
     const url = useCurrentURL(location.pathname);
-    const metaImage = useGetMetaImage('post', post.seo.image.asset);
+    const metaImage = useGetMetaImage('post', post.seo.image);
 
     // Format the posted-on date
     const rawPostedOnDate = parseISO(post.seo.publishedAt);
@@ -83,14 +81,14 @@ const PostLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                     />
                 </styled.BlogHero>
                 <styled.Content>
-                    <RichTextDisplay content={prismicPostData.content} />
+                    <PortableText content={post._rawContent} />
                 </styled.Content>
                 {authors.map((author) => (
                     <AuthorCard
                         name={author.name}
                         brief={author.brief}
                         avatar={{
-                            alt: author.avatar.alt!,
+                            alt: author.avatar.alt,
                             asset: author.avatar.asset,
                         }}
                         instagram={author.instagram}
@@ -105,13 +103,6 @@ const PostLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
 
 export const query = graphql`
     query postData($uid: String!) {
-        prismicPost(uid: { eq: $uid }, lang: { eq: "en-us" }) {
-            data {
-                content {
-                    raw
-                }
-            }
-        }
         sanityPost(slug: { current: { eq: $uid } }) {
             title
 
@@ -123,6 +114,8 @@ export const query = graphql`
                     }
                 }
             }
+
+            _rawContent(resolveReferences: { maxDepth: 10 })
 
             authors {
                 name

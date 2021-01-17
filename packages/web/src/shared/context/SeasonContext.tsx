@@ -1,5 +1,4 @@
 import React, { createContext, useContext } from 'react';
-// Use static query to get default data from prismic.
 
 export const SeasonContext = createContext({} as SeasonContextProps);
 

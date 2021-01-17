@@ -19,14 +19,14 @@ export const Image: React.FC<FixedImageProps | FluidImageProps> = ({
 
 // Localize Gatsby Image Props into this component
 export interface FixedImageProps extends GatsbyImageFixedProps {
-    // Multiple size possibilities from Prismic
+    // Multiple size possibilities from Sanity
     thumbnails?: {
         [key: string]: FixedImageProps;
     };
 }
 
 export interface FluidImageProps extends GatsbyImageFluidProps {
-    // Multiple size possibilities from Prismic
+    // Multiple size possibilities from Sanity
     thumbnails?: {
         [key: string]: FluidImageProps;
     };

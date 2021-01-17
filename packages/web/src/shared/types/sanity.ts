@@ -24,6 +24,7 @@ export interface SanityDocumentSEO {
 export interface SanityImage {
     alt?: string;
     asset: {
+        _id?: string;
         url: string;
         metadata: {
             dimensions: {
@@ -40,6 +41,7 @@ export interface SanityImage {
 export interface SanityFluidImage {
     alt?: string;
     asset: {
+        _id?: string;
         fluid: FluidObject;
         metadata?: {
             dimensions?: {
@@ -48,6 +50,9 @@ export interface SanityFluidImage {
             };
         };
     };
+    // These only exist when querying an object type of "imageWithFullMeta" in Sanity
+    caption?: string;
+    credit?: string;
 }
 
 /**
@@ -56,6 +61,7 @@ export interface SanityFluidImage {
 export type SanityFixedImage = {
     alt?: string;
     asset: {
+        _id?: string;
         fixed: FixedObject;
         metadata: {
             dimensions: {
@@ -64,6 +70,9 @@ export type SanityFixedImage = {
             };
         };
     };
+    // These only exist when querying an object type of "imageWithFullMeta" in Sanity
+    caption?: string;
+    credit?: string;
 };
 
 /**

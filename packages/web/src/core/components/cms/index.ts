@@ -1,1 +1,1 @@
-export * from './RichText/RichText';
+export * from './PortableText/PortableText';

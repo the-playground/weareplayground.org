@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import { breakpoints, spacing } from '@nerve/core/tokens';
-import { useConfigContext } from '@nerve/shared/context';
 import { SanityFluidImage } from '@nerve/shared/types';
 
 import {
@@ -65,7 +64,7 @@ export const SubscribeSection: React.FC = () => {
                     {subscribe.title}
                 </GrittyHeading>
                 <BodyText color="light" size="m" className="intro-copy">
-                    {subscribe.subtitle}
+                    {subscribe.copy}
                 </BodyText>
                 <EmailSubscribe />
             </Container>
@@ -76,7 +75,7 @@ export const SubscribeSection: React.FC = () => {
 interface SubscribeComponentData {
     subscribe: {
         title: string;
-        subtitle: string;
+        copy: string;
         image: SanityFluidImage;
     };
 }

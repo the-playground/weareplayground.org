@@ -1,7 +1,7 @@
 import { GatsbyConfig } from 'gatsby';
 
 import dotenv from 'dotenv';
-import schemas from '@app/data/prismic-schemas';
+import { clientConfig } from '@app/configs';
 
 // Config environment variables
 dotenv.config({ path: `.env` });
@@ -99,6 +99,7 @@ export default <GatsbyConfig>{
             options: {
                 root: '', // <- will be used as a root dir
                 aliases: {
+                    '@app': './@app',
                     '@gatsby': './@gatsby',
                     '@nerve/core': './src/core',
                     '@nerve/domains': './src/domains',
@@ -123,81 +124,12 @@ export default <GatsbyConfig>{
         /**
          * Query data from our CMS
          *
-         * @link https://www.gatsbyjs.org/packages/gatsby-source-prismic
-         */
-        {
-            resolve: 'gatsby-source-prismic',
-            options: {
-                /**
-                 * The name of your prismic.io repository. This is required.
-                 */
-                repositoryName: 'thenerveweb',
-
-                /**
-                 * Provide an object of Prismic custom type JSON schemas to load into
-                 * Gatsby. This is required.
-                 */
-                schemas,
-
-                /**
-                 * Set a default language when fetching documents. The default value is
-                 * '*' which will fetch all languages.
-                 *
-                 * @link https://prismic.io/docs/javascript/query-the-api/query-by-language
-                 */
-                lang: 'en-us',
-
-                /**
-                 * Set a function to determine if images are downloaded locally and made
-                 * available for gatsby-transformer-sharp for use with gatsby-image.
-                 * The document node, field key (i.e. API ID), and field value are
-                 * provided to the function, as seen below. This allows you to use
-                 * different logic for each field if necessary.
-                 *
-                 * This defaults to always return false.
-                 */
-                shouldDownloadImage: ({ key }: any) => {
-                    // For any field that includes the word "hero", we are going to process locally to
-                    // open up expanded image loading capabilities as per the `gatsby-source-prismic` docs.
-                    return !!key.includes('hero');
-                },
-
-                /**
-                 * Provide a default set of Imgix image transformations applied to
-                 * Imgix-backed gatsby-image fields. These options will override the
-                 * defaults set by Prismic.
-                 * https://docs.imgix.com/apis/url
-                 */
-
-                imageImgixParams: {
-                    q: 90,
-                },
-
-                /**
-                 * Provide a default set of Imgix image transformations applied to
-                 * the placeholder images of Imgix-backed gatsby-image fields. These
-                 * parameters will be applied over those provided in the above
-                 * `imageImgixParams` option.
-                 *
-                 * @link https://docs.imgix.com/apis/url
-                 */
-                imagePlaceholderImgixParams: {
-                    w: 50,
-                    blur: 100,
-                },
-            },
-        },
-
-        /**
-         * Query data from our CMS
-         *
          * @link https://www.gatsbyjs.org/packages/gatsby-source-sanity
          */
         {
             resolve: `gatsby-source-sanity`,
             options: {
-                projectId: process.env.SANITY_PROJECT_ID,
-                dataset: process.env.SANITY_DATASET,
+                ...clientConfig.sanity,
                 token: process.env.SANITY_TOKEN,
                 overlayDrafts: isDev,
                 watchMode: isDev,

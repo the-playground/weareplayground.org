@@ -30,7 +30,7 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
         >
             <HeroSection
                 title={page.hero.title}
-                copy={page.hero.subtitle}
+                copy={page.hero.copy}
                 bgImage={page.hero.image}
                 rebrandLink={page.hero.action.link.slug.current}
                 rebrandLinkText={page.hero.action.text}
@@ -95,7 +95,7 @@ interface PageData {
 interface HomePageData extends SanityDocument {
     hero: {
         title: string;
-        subtitle: string;
+        copy: string;
         action: {
             text: string;
             link: {

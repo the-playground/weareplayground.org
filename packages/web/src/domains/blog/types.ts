@@ -14,6 +14,6 @@ export interface BlogAuthor {
 
 export interface BlogPost extends SanityDocument {
     featuredImage: SanityFluidImage;
-    content: any;
+    _rawContent: any[];
     authors: BlogAuthor[];
 }
