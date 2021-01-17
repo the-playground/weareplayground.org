@@ -13,6 +13,17 @@ export interface ShowPageConfig extends NodeCreatePageConfig {
 
 export type BlogPostConfig = NodeCreatePageConfig;
 
+export interface SanityBlogPostData {
+    allSanityPost: {
+        nodes: {
+            _id: string;
+            slug: {
+                current: string;
+            };
+        }[];
+    };
+}
+
 export interface SanityShowData {
     _id: string;
     slug: {

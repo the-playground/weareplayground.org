@@ -33,11 +33,11 @@ export const BlogHero = styled.div`
 export const Content = styled.div`
     padding-bottom: ${spacing.layout.m};
 
-    p {
+    .p {
         margin-top: ${spacing.component.xl};
     }
 
-    p strong {
+    .p strong {
         color: ${({ theme }) => theme.typography.accent};
     }
 
@@ -73,23 +73,21 @@ export const Content = styled.div`
         --linkScaleX: 1.03;
     }
 
-    > figure {
+    figure {
         margin-top: ${spacing.layout.m};
         margin-bottom: ${spacing.layout.m};
     }
 
-    > figure img {
+    figure img {
         border-radius: ${borders.imageRadius};
-        width: 100%;
-        height: auto;
     }
 
-    > figure figcaption {
+    figure figcaption {
         margin-top: ${spacing.component.s};
     }
 
     /* Grunge heading */
-    > div {
+    .h2 {
         margin-bottom: ${spacing.component.l};
         margin-top: ${spacing.component.xxl};
     }

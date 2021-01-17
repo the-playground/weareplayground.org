@@ -16,6 +16,7 @@ import {
     SeasonPageConfig,
     ShowPageConfig,
     BlogPostConfig,
+    SanityBlogPostData,
     SanitySeasonShowQueryData,
 } from './types';
 
@@ -223,12 +224,14 @@ const generateBlogPosts: GatsbyNode['createPages'] = async ({
     const blogParentPage = await getBlogPostParentPage(graphql, reporter);
 
     // Query Blog data
-    const { data, errors }: any = await graphql(`
+    const { data, errors } = await graphql<SanityBlogPostData>(`
         {
-            allPrismicPost {
+            allSanityPost {
                 nodes {
-                    id
-                    uid
+                    _id
+                    slug {
+                        current
+                    }
                 }
             }
         }
@@ -244,11 +247,11 @@ const generateBlogPosts: GatsbyNode['createPages'] = async ({
 
     const { createPage } = actions;
 
-    await data.allPrismicPost.nodes.forEach((post: any) => {
+    await data?.allSanityPost.nodes.forEach((post: any) => {
         const blogConfig: BlogPostConfig = {
-            slug: post.uid,
-            url: `/${blogParentPage}/${post.uid}`,
-            id: post.id,
+            slug: post.slug.current,
+            url: `/${blogParentPage}/${post.slug.current}`,
+            id: post._id,
             template: require.resolve(
                 `../../../src/domains/blog/template/PostTemplate.tsx`
             ),
