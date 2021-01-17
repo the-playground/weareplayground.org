@@ -83,7 +83,7 @@ const getBlogPostParentPage = async (
 
     const { data, errors } = await graphql<SanityBlogPageData>(`
         {
-            sanityLinkMapConfig {
+            sanityLinkMapConfig(_id: { eq: "linkMapConfig" }) {
                 blogPage {
                     slug {
                         current
@@ -93,14 +93,11 @@ const getBlogPostParentPage = async (
         }
     `);
 
-    console.log('sanityLinkMapConfig query: ', data);
-
     const blogPage = data?.sanityLinkMapConfig?.blogPage?.slug?.current;
 
-    if (errors) {
+    if (errors || !blogPage) {
         reporter.panicOnBuild(
-            `🔥 Error attempting to retrieve "Blog" posts parent page.`,
-            errors
+            `🔥 Error attempting to retrieve "Blog" posts parent page.`
         );
         return;
     }
@@ -164,8 +161,7 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
 
     if (errors) {
         reporter.panicOnBuild(
-            `🔥 Error while running GraphQL query on Seasons & Shows.`,
-            errors
+            `🔥 Error while running GraphQL query on Seasons & Shows.`
         );
     }
 
@@ -243,10 +239,7 @@ const generateBlogPosts: GatsbyNode['createPages'] = async ({
     `);
 
     if (errors) {
-        reporter.panicOnBuild(
-            `🔥 Error while running GraphQL query on Blogs.`,
-            errors
-        );
+        reporter.panicOnBuild(`🔥 Error while running GraphQL query on Blogs.`);
     }
 
     /**
