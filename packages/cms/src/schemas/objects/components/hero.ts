@@ -11,7 +11,7 @@ export const simpleHero = {
             type: 'string',
         },
         {
-            name: 'subtitle',
+            name: 'copy',
             type: 'text',
             rows: 3,
         },
@@ -29,8 +29,8 @@ export const simpleHeroWithImage = {
             type: 'string',
         },
         {
-            name: 'subtitle',
-            title: 'Subtitle',
+            name: 'copy',
+            title: 'Copy',
             type: 'text',
             rows: 3,
         },
@@ -55,7 +55,7 @@ export const hero = {
             type: 'string',
         },
         {
-            name: 'subtitle',
+            name: 'copy',
             type: 'text',
             rows: 3,
         },
@@ -77,7 +77,7 @@ export const heroWithImage = {
             type: 'string',
         },
         {
-            name: 'subtitle',
+            name: 'copy',
             type: 'text',
             rows: 3,
         },

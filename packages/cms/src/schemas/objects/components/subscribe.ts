@@ -12,8 +12,8 @@ export const subscribe = {
             type: 'string',
         },
         {
-            name: 'subtitle',
-            title: 'Subtitle',
+            name: 'copy',
+            title: 'Copy',
             type: 'text',
             rows: 3,
         },

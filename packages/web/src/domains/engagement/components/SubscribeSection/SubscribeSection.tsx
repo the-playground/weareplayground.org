@@ -31,8 +31,8 @@ export const SubscribeSection: React.FC = () => {
         query SubscribeComponentConfigQuery {
             sanityComponentConfig {
                 subscribe {
-                    subtitle
                     title
+                    copy
                     image {
                         asset {
                             fluid {

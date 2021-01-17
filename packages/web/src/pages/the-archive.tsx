@@ -53,8 +53,8 @@ export const query = graphql`
             }
 
             hero {
-                subtitle
                 title
+                copy
             }
         }
 
