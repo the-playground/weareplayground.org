@@ -153,11 +153,6 @@ export const query = graphql`
  */
 
 interface PageData {
-    prismicPost: {
-        data: {
-            content: PrismicCMSRichTextProps;
-        };
-    };
     sanityPost: BlogPost;
 }
 

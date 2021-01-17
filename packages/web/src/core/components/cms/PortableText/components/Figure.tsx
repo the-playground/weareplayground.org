@@ -1,11 +1,7 @@
 import React from 'react';
 
-import {
-    getFluidGatsbyImage,
-    GatsbyFluidImageProps,
-} from 'gatsby-source-sanity';
+import { getFluidGatsbyImage } from 'gatsby-source-sanity';
 
-import { SanityFluidImage } from '@nerve/shared/types';
 import { clientConfig } from '@app/configs';
 
 import { Image } from '../../../media';
