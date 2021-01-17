@@ -24,10 +24,13 @@ export interface SanityBlogPostData {
     };
 }
 
-export interface SanityShowData {
-    _id: string;
-    slug: {
-        current: string;
+export interface SanityBlogPageData {
+    sanityLinkMapConfig: {
+        blogPage: {
+            slug: {
+                current: string;
+            };
+        };
     };
 }
 

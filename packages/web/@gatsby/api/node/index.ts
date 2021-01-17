@@ -17,6 +17,7 @@ import {
     ShowPageConfig,
     BlogPostConfig,
     SanityBlogPostData,
+    SanityBlogPageData,
     SanitySeasonShowQueryData,
 } from './types';
 
@@ -80,8 +81,8 @@ const getBlogPostParentPage = async (
 ) => {
     console.log(`👨‍👧‍👧 Retrieving "Blog" parent page slug...`);
 
-    const { data, errors }: any = await graphql(`
-        query {
+    const { data, errors } = await graphql<SanityBlogPageData>(`
+        {
             sanityLinkMapConfig {
                 blogPage {
                     slug {
@@ -92,7 +93,7 @@ const getBlogPostParentPage = async (
         }
     `);
 
-    const blogPostParentPage = data.sanityLinkMapConfig.blogPage;
+    const blogPostParentPage = data?.sanityLinkMapConfig.blogPage;
 
     if (errors || !blogPostParentPage || !blogPostParentPage.slug) {
         reporter.panicOnBuild(
