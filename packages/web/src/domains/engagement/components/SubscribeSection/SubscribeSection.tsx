@@ -28,7 +28,7 @@ export const SubscribeSection: React.FC = () => {
      */
     const { sanityComponentConfig } = useStaticQuery(graphql`
         query SubscribeComponentConfigQuery {
-            sanityComponentConfig {
+            sanityComponentConfig(_id: { eq: "componentConfig" }) {
                 subscribe {
                     title
                     copy

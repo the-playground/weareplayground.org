@@ -7,7 +7,7 @@ export const useCompanyConfig = (): CompanyConfig => {
      */
     const { sanityCompanyConfig } = useStaticQuery(graphql`
         query CompanyConfigQuery {
-            sanityCompanyConfig {
+            sanityCompanyConfig(_id: { eq: "companyConfig" }) {
                 city
                 ein
                 emailAuditions

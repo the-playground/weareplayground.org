@@ -29,7 +29,7 @@ Everything in here serves as a holding place for important technical information
 
 Frontend » [React](https://reactjs.org/) + [Gatsby](https://www.gatsbyjs.org/) + [Graphql](https://graphql.org/)\
 Design Framework » [Custom-built design system](https://www.figma.com/) w/ [Styled Components](https://www.styled-components.com/)\
-Headless CMS » [Prismic](https://prismic.io/)\
+Headless CMS » [Sanity](https://sanity.io/)\
 On-site Ticket Sales » [Snipcart](https://snipcart.com/)\
 On-site Payments (for classes & donations) » [Stripe](https://stripe.com/)\
 Email Sending  » [nodemailer](https://nodemailer.com/) + [Postmark](https://postmarkapp.com/)\

@@ -7,7 +7,7 @@ export const useSiteConfig = (): SiteConfig => {
      */
     const { sanitySiteConfig } = useStaticQuery(graphql`
         query SiteConfigQuery {
-            sanitySiteConfig {
+            sanitySiteConfig(_id: { eq: "siteConfig" }) {
                 verificationGoogle
                 verificationBing
             }

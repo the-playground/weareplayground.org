@@ -11,7 +11,7 @@ export const useLinkMapConfig = (): LinkMapConfig => {
      */
     const { sanityLinkMapConfig } = useStaticQuery(graphql`
         query LinkMapConfigQuery {
-            sanityLinkMapConfig {
+            sanityLinkMapConfig(_id: { eq: "linkMapConfig" }) {
                 blogPage {
                     slug {
                         current

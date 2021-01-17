@@ -7,7 +7,7 @@ export const useSEOConfig = (): SEOConfig => {
      */
     const { sanitySeoConfig } = useStaticQuery(graphql`
         query SEOConfigQuery {
-            sanitySeoConfig {
+            sanitySeoConfig(_id: { eq: "seoConfig" }) {
                 fallbackPageMetaImage {
                     alt
                     asset {

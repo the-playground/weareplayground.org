@@ -19,7 +19,7 @@ const ShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({
     const { slug, seasonSlug, seasonURL } = pageContext;
 
     const url = useCurrentURL(location.pathname);
-    const metaImage = useGetMetaImage('season', show.seo.image.asset);
+    const metaImage = useGetMetaImage('season', show.seo.image);
 
     const { status } = useShowStatus(show.performances);
 
