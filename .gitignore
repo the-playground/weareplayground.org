@@ -17,10 +17,8 @@ public
 .cache
 
 # Lock files
-yarn.lock
-package-lock.json
 # ignore any lock file other than main lock file
-!/yarn.lock
+!/package-lock.json
 
 # Misc files
 .DS_Store

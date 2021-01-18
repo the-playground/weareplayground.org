@@ -93,11 +93,18 @@ const getBlogPostParentPage = async (
         }
     `);
 
-    const blogPage = data?.sanityLinkMapConfig?.blogPage?.slug?.current;
-
-    if (errors || !blogPage) {
+    if (errors) {
         reporter.panicOnBuild(
             `🔥 Error attempting to retrieve "Blog" posts parent page.`
+        );
+        return;
+    }
+
+    const blogPage = data?.sanityLinkMapConfig?.blogPage?.slug?.current;
+
+    if (!blogPage) {
+        reporter.panicOnBuild(
+            `🔥 The GraphQL query for retrieving the Blog parent page ran, but no data was returned.`
         );
         return;
     }
@@ -160,9 +167,16 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
         }
     `);
 
-    if (errors || !data) {
+    if (errors) {
         reporter.panicOnBuild(
             `🔥 Error while running GraphQL query on Seasons & Shows.`
+        );
+        return;
+    }
+
+    if (!data) {
+        reporter.panicOnBuild(
+            `🔥 Error: The GraphQL query for Seasons & Shows ran, but not data was returned.`
         );
         return;
     }
@@ -187,8 +201,8 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
         buildSeasonPage(seasonConfig, createPage);
 
         // Bail if there are no shows linked to the season
-        if (!season.shows) {
-            console.log(
+        if (season.shows.length === 0) {
+            reporter.log(
                 `The season ${season.slug} was created successfully but there are no shows to link to it.`
             );
             return;
@@ -198,8 +212,9 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
          * Begin building pages for each Show in the current Season
          */
         season.shows.forEach((show) => {
+            // Don't display specified shows
             if (show.doNotDisplay) {
-                console.log(
+                reporter.log(
                     `Creation of the show: "${show.slug.current}" is being skipped because "doNotDisplay" is set to true.`
                 );
                 return;
@@ -248,8 +263,17 @@ const generateBlogPosts: GatsbyNode['createPages'] = async ({
         }
     `);
 
-    if (errors || !data) {
-        reporter.panicOnBuild(`🔥 Error while running GraphQL query on Blogs.`);
+    if (errors) {
+        reporter.panicOnBuild(
+            `🔥 Error while running GraphQL query on Blog Posts.`
+        );
+        return;
+    }
+
+    if (!data) {
+        reporter.panicOnBuild(
+            `🔥 The GraphQL query for Blog Posts ran, but not data was returned.`
+        );
         return;
     }
 

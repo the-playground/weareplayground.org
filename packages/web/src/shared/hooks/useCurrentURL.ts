@@ -18,8 +18,12 @@ export const useCurrentURL = (path?: string): string => {
     const { company } = useConfigContext();
     const { app } = useEnvironmentContext();
 
+    if (!app) {
+        throw new Error('App contains no data.');
+    }
+
     // Default to the site defined in our CMS and fall back to the prod url from deploy context
-    const liveURL = company.website ?? app.prodURL;
+    const liveURL = app.prodURL ?? company.website;
 
     const currentURL =
         liveURL && path ? `${liveURL}${path}` : getCurrentRootURL();

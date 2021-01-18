@@ -22,7 +22,8 @@ export const EnvironmentProvider: React.FC = ({ children }) => {
             }
         }
     `);
-    const queryData = data.site.siteMetadata;
+
+    const queryData = data?.site?.siteMetadata;
 
     const config = {
         app: {
