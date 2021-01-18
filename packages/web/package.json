@@ -51,7 +51,7 @@
 		"clean": "gatsby clean",
 		"start": "npm run clean && gatsby develop",
 		"netlify": "npm run clean && netlify dev",
-		"build": "npm run clean && GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+		"build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
 		"gatsby:build": "npm run build",
 		"gatsby:serve": "npm run build && gatsby serve",
 		"empty-cache": "npm run clean",
