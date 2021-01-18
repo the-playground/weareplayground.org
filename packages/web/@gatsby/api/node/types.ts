@@ -34,6 +34,14 @@ export interface SanityBlogPageData {
     };
 }
 
+interface SanityShowData {
+    doNotDisplay: boolean;
+    _id: string;
+    slug: {
+        current: string;
+    };
+}
+
 export interface SanitySeasonShowQueryData {
     allSanitySeason: {
         nodes: {

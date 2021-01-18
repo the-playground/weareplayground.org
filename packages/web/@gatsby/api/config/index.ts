@@ -1,7 +1,6 @@
 import { GatsbyConfig } from 'gatsby';
 
 import dotenv from 'dotenv';
-import { clientConfig } from '@app/configs';
 
 // Config environment variables
 dotenv.config({ path: `.env` });
@@ -129,7 +128,8 @@ export default <GatsbyConfig>{
         {
             resolve: `gatsby-source-sanity`,
             options: {
-                ...clientConfig.sanity,
+                projectId: process.env.GATSBY_SANITY_PROJECT_ID,
+                dataset: process.env.GATSBY_SANITY_DATASET,
                 token: process.env.SANITY_TOKEN,
                 overlayDrafts: isDev,
                 watchMode: isDev,

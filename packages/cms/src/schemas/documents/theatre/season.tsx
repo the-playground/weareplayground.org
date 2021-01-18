@@ -26,6 +26,13 @@ export const schema: DocumentCollection = {
             validation: (Rule: any) => Rule.required(),
         },
         {
+            name: 'doNotDisplay',
+            title: 'Do not display on website',
+            description:
+                'Toggling this on will prevent this season from being displayed on the frontend of the website.',
+            type: 'boolean',
+        },
+        {
             name: 'heroImage',
             title: 'Hero Image',
             type: 'image',
@@ -55,6 +62,9 @@ export const schema: DocumentCollection = {
             by: [{ field: 'title', direction: 'desc' }],
         },
     ],
+    initialValue: {
+        doNotDisplay: false,
+    },
     preview: {
         select: {
             title: 'title',

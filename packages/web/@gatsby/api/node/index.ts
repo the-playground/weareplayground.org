@@ -141,7 +141,7 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
     // Query Season and Show data
     const { data, errors } = await graphql<SanitySeasonShowQueryData>(`
         {
-            allSanitySeason {
+            allSanitySeason(filter: { doNotDisplay: { eq: false } }) {
                 nodes {
                     _id
                     slug {
@@ -149,6 +149,7 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
                     }
 
                     shows {
+                        doNotDisplay
                         _id
                         slug {
                             current
@@ -159,10 +160,11 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
         }
     `);
 
-    if (errors) {
+    if (errors || !data) {
         reporter.panicOnBuild(
             `🔥 Error while running GraphQL query on Seasons & Shows.`
         );
+        return;
     }
 
     /**
@@ -172,7 +174,7 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
 
     const { createPage } = actions;
 
-    await data?.allSanitySeason.nodes.forEach(async (season) => {
+    data.allSanitySeason.nodes.forEach((season) => {
         const seasonConfig: SeasonPageConfig = {
             slug: season.slug.current,
             url: `/${SEASON_ROOT_SLUG}/${season.slug.current}`,
@@ -196,6 +198,13 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
          * Begin building pages for each Show in the current Season
          */
         season.shows.forEach((show) => {
+            if (show.doNotDisplay) {
+                console.log(
+                    `Creation of the show: "${show.slug.current}" is being skipped because "doNotDisplay" is set to true.`
+                );
+                return;
+            }
+
             const showConfig: ShowPageConfig = {
                 slug: show.slug.current,
                 url: `${seasonConfig.url}/${show.slug.current}`,
@@ -209,6 +218,7 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
             buildShowPage(showConfig, createPage);
         });
     });
+
     console.log(`🎉 Done creating Season and Show pages!`);
 };
 
@@ -227,7 +237,7 @@ const generateBlogPosts: GatsbyNode['createPages'] = async ({
     // Query Blog data
     const { data, errors } = await graphql<SanityBlogPostData>(`
         {
-            allSanityPost {
+            allSanityPost(filter: { doNotDisplay: { eq: false } }) {
                 nodes {
                     _id
                     slug {
@@ -238,8 +248,9 @@ const generateBlogPosts: GatsbyNode['createPages'] = async ({
         }
     `);
 
-    if (errors) {
+    if (errors || !data) {
         reporter.panicOnBuild(`🔥 Error while running GraphQL query on Blogs.`);
+        return;
     }
 
     /**
@@ -248,7 +259,7 @@ const generateBlogPosts: GatsbyNode['createPages'] = async ({
 
     const { createPage } = actions;
 
-    await data?.allSanityPost.nodes.forEach((post: any) => {
+    data.allSanityPost.nodes.forEach((post) => {
         const blogConfig: BlogPostConfig = {
             slug: post.slug.current,
             url: `/${blogParentPage}/${post.slug.current}`,
@@ -281,8 +292,8 @@ const generateRedirects: GatsbyNode['createPages'] = async ({ actions }) => {
 
 export const createPages: GatsbyNode['createPages'] = async (params) => {
     await Promise.all([
-        generateRedirects(params),
         generateSeasonsAndShows(params),
         generateBlogPosts(params),
+        generateRedirects(params),
     ]);
 };

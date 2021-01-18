@@ -28,6 +28,13 @@ export const schema: DocumentCollection = {
             validation: (Rule: any) => Rule.required(),
         },
         {
+            name: 'doNotDisplay',
+            title: 'Do not display on website',
+            description:
+                'Toggling this on will prevent this post from being displayed on the frontend of the website.',
+            type: 'boolean',
+        },
+        {
             name: 'authors',
             title: 'Authors',
             type: 'array',
@@ -45,6 +52,7 @@ export const schema: DocumentCollection = {
         },
     ],
     initialValue: {
+        doNotDisplay: false,
         seo: {
             publishedAt: new Date().toISOString(),
         },

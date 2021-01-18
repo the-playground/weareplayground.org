@@ -59,6 +59,13 @@ export const schema: DocumentCollection = {
             validation: (Rule: any) => Rule.required(),
         },
         {
+            name: 'doNotDisplay',
+            title: 'Do not display on website',
+            description:
+                'Toggling this on will prevent this show from being displayed on the frontend of the website.',
+            type: 'boolean',
+        },
+        {
             name: 'type',
             title: 'Show Type',
             type: 'string',
@@ -84,6 +91,7 @@ export const schema: DocumentCollection = {
         performances,
     ],
     initialValue: {
+        doNotDisplay: false,
         type: 'live',
         collaboration: {
             is: false,
