@@ -10,14 +10,14 @@ dotenv.config({ path: `.env` });
  * details to various facets of our application.
  */
 
-const deployURL = process.env.DEPLOY_PRIME_URL || '';
-const prodURL = process.env.URL || '';
-const appVersion = process.env.npm_package_version || '';
-const deployContext = process.env.CONTEXT || '';
-const deployID = process.env.DEPLOY_ID || '';
-const commitRef = process.env.COMMIT_REF || '';
-const prevCommitRef = process.env.CACHED_COMMIT_REF || '';
-const environment = deployContext || 'development';
+const deployURL = process.env.DEPLOY_PRIME_URL ?? '';
+const prodURL = process.env.URL ?? '';
+const appVersion = process.env.npm_package_version ?? '';
+const deployContext = process.env.CONTEXT ?? '';
+const deployID = process.env.DEPLOY_ID ?? '';
+const commitRef = process.env.COMMIT_REF ?? '';
+const prevCommitRef = process.env.CACHED_COMMIT_REF ?? '';
+const environment = deployContext ?? 'development';
 const isDev = environment === 'development';
 const isProd = environment === 'production';
 
