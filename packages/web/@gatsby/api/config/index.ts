@@ -12,7 +12,7 @@ dotenv.config({ path: `.env` });
 
 const deployURL = process.env.DEPLOY_PRIME_URL || '';
 const prodURL = process.env.URL || '';
-const appVersion = process.env.npm_package_version;
+const appVersion = process.env.npm_package_version || '';
 const deployContext = process.env.CONTEXT || '';
 const deployID = process.env.DEPLOY_ID || '';
 const commitRef = process.env.COMMIT_REF || '';

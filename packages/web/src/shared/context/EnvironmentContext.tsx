@@ -5,7 +5,7 @@ export const EnvironmentContext = createContext({} as Environment);
 
 export const EnvironmentProvider: React.FC = ({ children }) => {
     const data = useStaticQuery(graphql`
-        query {
+        query EnvironmentConfigQuery {
             site {
                 siteMetadata {
                     appVersion

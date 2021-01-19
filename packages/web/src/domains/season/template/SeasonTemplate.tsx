@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 
-import { useConfigContext } from '@nerve/shared/context';
 import { useGetMetaImage, useCurrentURL } from '@nerve/shared/hooks';
 
 import { SubscribeSection } from '@nerve/domains/engagement';
