@@ -13,7 +13,7 @@
     "clean:cache": "lerna run empty-cache",
     "clean:root": "rimraf node_modules",
     "clean:nuke": "npm run clean:cache && npm run lint:clean && npm run clean:packages && rimraf npm package-lock.json && npm run clean:root",
-    "clean:nuke:rebuild": "yarn clean:nuke && npm install",
+    "clean:nuke:rebuild": "npm run clean:nuke && npm install",
     "start": "npm run clean:cache && lerna run start --parallel",
     "build": "npm run clean:cache && lerna run build --parallel",
     "cms:init": "cd packages/cms && sanity init",
@@ -36,8 +36,8 @@
     "update:all": "npm run update:root && npm run update:cms && npm run update:web"
   },
   "devDependencies": {
-    "@codingwithchris/eslint-config": "1.1.0",
-    "@types/node": "^14.14.21",
+    "@codingwithchris/eslint-config": "^1.1.2",
+    "@types/node": "^14.14.22",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.14.0",
@@ -73,6 +73,6 @@
     ]
   },
   "dependencies": {
-    "gatsby": "^2.30.3"
+    "gatsby": "^2.31.0"
   }
 }
