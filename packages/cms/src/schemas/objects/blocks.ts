@@ -28,11 +28,6 @@ export const contentBlock = {
                         title: 'External Link',
                         type: 'externalLink',
                     },
-                    {
-                        name: 'internalLink',
-                        title: 'Internal Link',
-                        type: 'internalLink',
-                    },
                 ],
             },
         },
