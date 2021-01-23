@@ -29,7 +29,8 @@
 		"prop-types": "^15.7",
 		"react": "^17.0",
 		"react-dom": "^17.0",
-		"react-feather": "^2.0.9"
+		"react-feather": "^2.0.9",
+		"sanity-plugin-media": "^1.0.0"
 	},
 	"devDependencies": {
 		"@sanity/cli": "^2.1.4"

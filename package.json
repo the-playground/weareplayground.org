@@ -21,7 +21,7 @@
     "cms:deploy": "cd packages/cms && npm run deploy",
     "web:start": "cd packages/web && npm run start",
     "web:build": "cd packages/web && npm run build",
-    "web:serve": "lerna run gatsby:serve",
+    "web:serve": "cd packages/web && npm run serve",
     "web:netlify": "cd packages/web && npm run netlify",
     "lint:js": "lerna run lint:js",
     "lint:js:fix": "lerna run lint:js:fix",
