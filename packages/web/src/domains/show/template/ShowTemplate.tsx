@@ -6,6 +6,7 @@ import { useGetMetaImage, useCurrentURL } from '@nerve/shared/hooks';
 import { SubscribeSection } from '@nerve/domains/engagement';
 
 import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
+import { LegacyContentNotice } from '@nerve/domains/migrations';
 
 import { ShowPage, ShowPageContext } from '../types';
 import { useShowStatus } from '../__hooks__';
@@ -45,6 +46,13 @@ const ShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({
                     }}
                 />
             )}
+            <LegacyContentNotice
+                title={show.title}
+                subTitle={`by ${show.author.name}`}
+                contentType="show"
+                legacyURL={`https://theplaygroundtheatre.org/shows/${slug}`}
+                legacyURLText="see show on old website"
+            />
 
             <SubscribeSection />
         </>
