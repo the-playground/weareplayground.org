@@ -9,8 +9,10 @@ import {
     BuildArgs as GatsbyNodeBuildArgs,
 } from 'gatsby';
 
+import path from 'path';
+
 import { SEASON_ROOT_SLUG } from '@nerve/domains/season';
-import { redirects } from '../../redirects';
+import { redirects } from '../redirects';
 
 import {
     SeasonPageConfig,
@@ -193,8 +195,8 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
             slug: season.slug.current,
             url: `/${SEASON_ROOT_SLUG}/${season.slug.current}`,
             id: season._id,
-            template: require.resolve(
-                `../../../src/domains/season/template/SeasonTemplate.tsx`
+            template: path.resolve(
+                `./src/domains/season/template/SeasonTemplate.tsx`
             ),
         };
 
@@ -224,8 +226,8 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
                 slug: show.slug.current,
                 url: `${seasonConfig.url}/${show.slug.current}`,
                 id: show._id,
-                template: require.resolve(
-                    `../../../src/domains/show/template/ShowTemplate.tsx`
+                template: path.resolve(
+                    `./src/domains/show/template/ShowTemplate.tsx`
                 ),
                 season: seasonConfig,
             };
@@ -288,8 +290,8 @@ const generateBlogPosts: GatsbyNode['createPages'] = async ({
             slug: post.slug.current,
             url: `/${blogParentPage}/${post.slug.current}`,
             id: post._id,
-            template: require.resolve(
-                `../../../src/domains/blog/template/PostTemplate.tsx`
+            template: path.resolve(
+                `./src/domains/blog/template/PostTemplate.tsx`
             ),
         };
 

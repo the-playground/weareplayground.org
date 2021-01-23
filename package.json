@@ -73,6 +73,6 @@
     ]
   },
   "dependencies": {
-    "gatsby": "^2.31.0"
+    "gatsby": "^2.31.1"
   }
 }
