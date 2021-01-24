@@ -37,19 +37,19 @@ This folder holds any assets that are part of our build process but do not need 
 Inside its configuration files, Gatsby provides a rich set of lifecycle APIs to hook into its bootstrap, build, and client runtime operations. They allow sourcing data, creating pages, and customizing generated HTML pages.
 
 **gatsby-browser.js**\
-This file contains the layout and context components that wrap our site. The Gatsby Browser API gives us many options for interacting with the client-side of Gatsby.
+This file contains the layout and context components that wrap our site. The Gatsby Browser API gives us many options for interacting with the client-side of Gatsby.\
 [Learn More](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/)
 
 **gatsby-config.js**\
-This file defines our site’s metadata, plugins, and other general configurations.
+This file defines our site’s metadata, plugins, and other general configurations.\
 [Learn More](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/)
 
 **gatsby-ssr.js**\
-This file lets us alter the contents of static HTML files as they are being Server-Side Rendered (SSR) by Gatsby and Node.js.
+This file lets us alter the contents of static HTML files as they are being Server-Side Rendered (SSR) by Gatsby and Node.js.\
 [Learn More](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/)
 
 **gatsby-node.js**\
-This file is used to create all of our dynamic pages and can be used to add nodes in GraphQL, or respond to events during the build lifecycle.
+This file is used to create all of our dynamic pages and can be used to add nodes in GraphQL, or respond to events during the build lifecycle.\
 [Learn More](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/)
 
 *NOTE: At present, this file is just a proxy that loads up TS Node as well as required Typescript dependencies and then runs the Typescript file located at `@gatsby/node-api`. This lets use use ES6 import syntax among other things. Eventually, once `"type": "module"` is stable in Node 14+ and Gatsby supports it, we will probably switch over to this setup.*
