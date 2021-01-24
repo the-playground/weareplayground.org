@@ -1,53 +1,27 @@
 {
-	"compilerOptions": {
-		"baseUrl": "",
-		"paths": {
-			"@app/config/*": [
-				"./@app/config/*"
-			],
-			"@nerve/core/*": [
-				"./src/core/*"
-			],
-			"@nerve/assets": [
-				"./src/assets/"
-			],
-			"@nerve/domains/*": [
-				"./src/domains/*"
-			],
-			"@nerve/shared/*": [
-				"./src/shared/*"
-			],
-		},
-		"module": "commonjs",
-		"target": "es5",
-		"strict": true,
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"lib": [
-			"dom",
-			"dom.iterable",
-			"esnext"
-		],
-		"allowJs": true,
-		"skipLibCheck": true,
-		"noEmit": true,
-		"moduleResolution": "node",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"jsx": "preserve"
-	},
-	"exclude": [
-		"node_modules",
-		".vscode",
-		".github",
-		"public",
-		".cache",
-		"static",
-	],
-	"include": [
-		"src/**/*",
-		"@app/**/*",
-		"gatsby-*.js",
-		".eslintrc.js",
-	]
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "strict": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "noEmit": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve"
+    },
+    "include": [
+        "packages/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
 }
