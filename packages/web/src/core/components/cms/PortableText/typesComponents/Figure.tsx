@@ -2,7 +2,7 @@ import React from 'react';
 
 import { getFluidGatsbyImage } from 'gatsby-source-sanity';
 
-import { clientConfig } from '@app/configs';
+import { clientConfig } from '@nerve/shared/configs';
 
 import { Image } from '../../../media';
 import { BodyText } from '../../../typography';

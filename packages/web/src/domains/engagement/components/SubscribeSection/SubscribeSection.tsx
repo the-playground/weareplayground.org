@@ -34,7 +34,7 @@ export const SubscribeSection: React.FC = () => {
                     copy
                     image {
                         asset {
-                            fluid {
+                            fluid(maxWidth: 1200) {
                                 ...GatsbySanityImageFluid_noBase64
                             }
                         }

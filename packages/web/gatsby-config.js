@@ -1,3 +1,8 @@
+/**
+ * Implement Gatsby's Config APIs in this file.
+ * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
+ */
+
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const dotenv = require('dotenv');
 

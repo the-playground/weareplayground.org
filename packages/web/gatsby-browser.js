@@ -1,7 +1,6 @@
 /**
  * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
+ * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/
  */
 
 // global imports

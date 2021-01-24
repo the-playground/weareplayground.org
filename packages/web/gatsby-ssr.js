@@ -1,7 +1,6 @@
 /**
  * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *RenderBodyArgs
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
+ * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/
  */
 import React from 'react';
 

@@ -68,7 +68,7 @@ export const query = graphql`
                 copy
                 image {
                     asset {
-                        fluid {
+                        fluid(maxWidth: 1800) {
                             ...GatsbySanityImageFluid_noBase64
                         }
                     }
