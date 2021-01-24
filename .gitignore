@@ -1,26 +1,30 @@
-# dependencies
-node_modules/
+# Dependencies
+node_modules
 
-## Testing
+# Local Netlify folder
+.netlify
 
-# Gatsby
-.cache/
-public/
+# Logs
+logs
+*.log
 
-# Production
-/build
+# Distribution directories
+dist
+build
+public
 
-# Misc
+# Cache Files
+.cache
+
+# Lock files
+# ignore any lock file other than main lock file
+!/package-lock.json
+
+# Misc files
 .DS_Store
+
+# Environment variables
 .env
 .env.build
 .env.development
 .env.production
-
-# Debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Local Netlify
-.netlify

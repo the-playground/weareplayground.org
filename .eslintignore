@@ -1,6 +1,5 @@
 **/node_modules/**
-/.github/**
-/.cache/**
-/public/**
-/static/**
-!.eslintrc.js
+**/public/**
+**/static/**
+**/*.test.{js,jsx,ts,tsx}
+**/*.spec.{js,jsx,ts,tsx}
