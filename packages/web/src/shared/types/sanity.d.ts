@@ -3,6 +3,9 @@ import { IFluidObject as BackgroundFluidObject } from 'gatsby-background-image';
 
 declare module '@sanity/block-content-to-react';
 
+/**
+ * The shape of a standard Sanity Document (page or collection)
+ */
 export interface SanityDocument {
     _updatedAt: string;
     title: string;
@@ -12,6 +15,10 @@ export interface SanityDocument {
     seo: SanityDocumentSEO;
 }
 
+/**
+ * Any document that should be visible to Google should have an SEO object
+ * with this shape.
+ */
 export interface SanityDocumentSEO {
     title: string;
     description: string;
@@ -21,7 +28,7 @@ export interface SanityDocumentSEO {
 }
 
 /**
- *
+ * A standard (not fluid or fixed) image coming in from a Sanity query.
  */
 export interface SanityImage {
     alt?: string;
@@ -38,7 +45,7 @@ export interface SanityImage {
 }
 
 /**
- *
+ * A "Fluid" image coming in from a Sanity query
  */
 export interface SanityFluidImage {
     alt?: string;
@@ -58,7 +65,7 @@ export interface SanityFluidImage {
 }
 
 /**
- *
+ * A "Fixed" image coming in from a Sanity query
  */
 export type SanityFixedImage = {
     alt?: string;
@@ -78,7 +85,8 @@ export type SanityFixedImage = {
 };
 
 /**
- *
+ * A "Fluid" image coming in from a Sanity query that should be used as a background image.
+ * * Note that the main difference between this and "SanityFluidImage" is that we are not querying any metadata.
  */
 export interface SanityBackgroundImage {
     asset: {
@@ -87,7 +95,7 @@ export interface SanityBackgroundImage {
 }
 
 /**
- *
+ * A link that contains a reference to an internal document.
  */
 export type SanityInternalLink = {
     slug: {

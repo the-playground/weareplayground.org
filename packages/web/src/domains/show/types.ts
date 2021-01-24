@@ -1,9 +1,5 @@
 import {
-    FluidImageProps,
-    LocalFileImageProps,
-    FixedImageProps,
-} from '@nerve/core/components';
-import {
+    GatsbyPageContext,
     SanityDocument,
     SanityFluidImage,
     SanityFixedImage,
@@ -23,16 +19,15 @@ export interface ShowPage extends SanityDocument {
     closeDate: string;
 }
 
-export interface ShowPageContext {
-    id: string;
-    slug: string;
+export interface ShowPageContext extends GatsbyPageContext {
     seasonID: string;
     seasonSlug: string;
     seasonURL: string;
 }
 
 /**
- *
+ * The "required" data for displaying instances of shows anywhere across our site
+ * other than a Single Show page.
  */
 export interface ShowCore {
     title: string;
@@ -58,8 +53,9 @@ export interface ShowCoreWithThumbnail {
 }
 
 /**
- *
+ * Metadata associated with a show.
  */
+
 export interface ShowAuthor {
     name: string;
     bioLink?: string;
@@ -75,7 +71,9 @@ export interface ShowPerformance {
 }
 
 /**
- * Types for Filter & Sort Functions -- anywhere a show needs
+ * Types for show filter & sort functions anywhere an instance of a show needs
+ * to be filtered or sorted by date. This can be any shape as long as it extends
+ * ShowCore. We don't want to be too prescriptive here.
  */
 
 export interface ComparableShow extends ShowCore {

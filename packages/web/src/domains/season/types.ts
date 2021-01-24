@@ -1,4 +1,4 @@
-import { SanityDocument } from '@nerve/shared/types';
+import { GatsbyPageContext, SanityDocument } from '@nerve/shared/types';
 
 export interface SeasonReference {
     slug: {
@@ -16,8 +16,6 @@ export interface SeasonPage extends SanityDocument {
     description: string;
 }
 
-export type SeasonPageContext = {
-    id: string;
-    slug: string;
+export interface SeasonPageContext extends GatsbyPageContext {
     seasonURL: string;
-};
+}

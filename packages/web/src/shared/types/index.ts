@@ -1,2 +1,2 @@
-export * from './gatsby';
-export * from './sanity';
+export * from './gatsby.d';
+export * from './sanity.d';
