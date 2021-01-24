@@ -102,7 +102,6 @@ module.exports = {
             options: {
                 root: '', // <- will be used as a root dir
                 aliases: {
-                    '@app': './@app',
                     '@gatsby': './@gatsby',
                     '@nerve/core': './src/core',
                     '@nerve/domains': './src/domains',

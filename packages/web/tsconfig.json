@@ -25,7 +25,6 @@
 	},
 	"includes": [
 		"src/**/*",
-		"@app/**/*",
 		"@gatsby/**/*",
 		"gatsby-*.js"
 	]
