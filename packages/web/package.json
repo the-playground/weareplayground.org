@@ -48,7 +48,7 @@
 	},
 	"scripts": {
 		"clean": "gatsby clean",
-		"start": "npm run clean && gatsby develop",
+		"start": "npm run clean && gatsby develop --https",
 		"netlify": "npm run clean && netlify dev",
 		"build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
 		"serve": "npm run build && gatsby serve",
