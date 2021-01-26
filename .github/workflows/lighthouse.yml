@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  lhci:
+  audit:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,13 +19,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
-
-      - name: Install
-        run: |
-          npm ci
-      - name: Build
-        run: |
-          npm run build
 
       ## Wait for our Netlify Deploy to succeed before continuing
       - name: Wait for Netlify Deploy
