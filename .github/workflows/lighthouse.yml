@@ -1,0 +1,45 @@
+name: Lighthouse
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  lhci:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # Set up node in order to run Lighthouse CI
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: Install
+        run: |
+          npm ci
+      - name: Build
+        run: |
+          npm run build
+
+      ## Wait for our Netlify Deploy to succeed before continuing
+      - name: Wait for Netlify Deploy
+        uses: probablyup/wait-for-netlify-action@3.2.0
+        id: waitForDeployment
+        with:
+          site_id: ${{ secrets.NETLIFY_SITE_ID }}
+        env:
+          NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+
+      ## Run the lighthouse CI tests
+      - name: run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.6.x
+          lhci autorun --upload.target=temporary-public-storage --collect.url=${{ steps.waitForDeployment.outputs.url }} || echo "LHCI failed!"
+         env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
