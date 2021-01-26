@@ -1,12 +1,17 @@
 import React from 'react';
 
+import { SanityFluidImage } from '@nerve/shared/types';
 import { BodyText, Container, Heading } from '@nerve/core/components';
-import { useCurrentURL } from '@nerve/shared/hooks';
 import * as styled from './Hero.styles';
 
-export const Hero: React.FC<any> = ({ title, author, statusBar }) => {
+export const Hero: React.FC<HeroProps> = ({
+    title,
+    author,
+    bgImage,
+    statusBar,
+}) => {
     return (
-        <styled.Hero>
+        <styled.Hero bgImage={bgImage} bgColor="default">
             <Container className="container">
                 {title}
                 by {author}
@@ -15,3 +20,10 @@ export const Hero: React.FC<any> = ({ title, author, statusBar }) => {
         </styled.Hero>
     );
 };
+
+interface HeroProps {
+    title: string;
+    author: string;
+    bgImage: SanityFluidImage;
+    statusBar: JSX.Element;
+}
