@@ -1,4 +1,4 @@
-name: Lighthouse
+name: Lighthouse Performance Audit
 
 on:
   pull_request:
