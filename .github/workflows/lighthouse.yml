@@ -1,35 +1,44 @@
-name: Lighthouse Performance Audit
+# Run a Lighthouse performance audit on critical pages of our site
+name: Lighthouse
 
 on:
   pull_request:
-    branches: [main]
+    # Only run on PRs to our main branch
+    branches:
+      - main
+    # Only run when changes exist in packages/web
+    paths:
+      - "packages/web/**"
 
 jobs:
   audit:
+    name: Running Lighthouse Performance Audit on Critical Routes
     runs-on: ubuntu-latest
 
     steps:
 
-      # Set up node in order to run Lighthouse CI
+      # Configure Github Actions
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
+      # Declare NodeJS Version
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
 
-      ## Wait for our Netlify Deploy to succeed before continuing
+      # Wait for our Netlify Deploy to succeed before continuing
       - name: Wait for Netlify Deploy
         uses: probablyup/wait-for-netlify-action@3.2.0
         id: waitForDeployment
         with:
           site_id: ${{ secrets.NETLIFY_SITE_ID }}
+          max_timeout: 60
         env:
           NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
 
-      ## Run the lighthouse CI tests
+      # Run the lighthouse CI tests
       - name: run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.6.x
