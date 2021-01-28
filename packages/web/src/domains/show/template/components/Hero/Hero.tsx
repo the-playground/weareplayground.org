@@ -13,10 +13,12 @@ export const Hero: React.FC<HeroProps> = ({
     return (
         <styled.Hero bgImage={bgImage} bgColor="default">
             <Container className="container">
-                {title}
+                <Heading size="xl" color="light">
+                    {title}
+                </Heading>
                 by {author}
             </Container>
-            <div className="status">{statusBar}</div>
+            {statusBar && <div className="status">{statusBar}</div>}
         </styled.Hero>
     );
 };
@@ -25,5 +27,5 @@ interface HeroProps {
     title: string;
     author: string;
     bgImage: SanityFluidImage;
-    statusBar: JSX.Element;
+    statusBar?: JSX.Element;
 }

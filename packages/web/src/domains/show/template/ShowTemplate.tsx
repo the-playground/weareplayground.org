@@ -11,7 +11,10 @@ import { LegacyContentNotice } from '@nerve/domains/migrations';
 import { ShowPage, ShowPageContext } from '../types';
 import { useShowStatus } from '../__hooks__';
 
-const ShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({
+// local template components
+import { Hero } from './components';
+
+const SingleShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({
     data,
     pageContext,
     location,
@@ -46,6 +49,11 @@ const ShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({
                     }}
                 />
             )}
+            <Hero
+                bgImage={show.heroImage}
+                title={show.title}
+                author={show.author.name}
+            />
             <LegacyContentNotice
                 title={show.title}
                 subTitle={`by ${show.author.name}`}
@@ -64,6 +72,20 @@ export const showQuery = graphql`
         sanityShow(_id: { eq: $id }) {
             _createdAt
             _updatedAt
+            heroImage {
+                asset {
+                    fluid(maxWidth: 1600) {
+                        ...GatsbySanityImageFluid_noBase64
+                    }
+                    metadata {
+                        palette {
+                            darkMuted {
+                                background
+                            }
+                        }
+                    }
+                }
+            }
             title
             author {
                 name
@@ -97,4 +119,4 @@ interface PageData {
     sanityShow: ShowPage;
 }
 
-export default ShowLanding;
+export default SingleShowLanding;

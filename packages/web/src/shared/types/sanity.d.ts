@@ -57,6 +57,18 @@ export interface SanityFluidImage {
                 width: number;
                 height: number;
             };
+            // Just in case we want to set a background image color on a container
+            palette?: {
+                muted?: {
+                    background: string;
+                };
+                darkMuted?: {
+                    background: string;
+                };
+                darkVibrant?: {
+                    background: string;
+                };
+            };
         };
     };
     // These only exist when querying an object type of "imageWithFullMeta" in Sanity
@@ -76,6 +88,18 @@ export type SanityFixedImage = {
             dimensions: {
                 width: number;
                 height: number;
+            };
+            // Just in case we want to set a background image color on a container
+            palette?: {
+                muted?: {
+                    background: string;
+                };
+                darkMuted?: {
+                    background: string;
+                };
+                darkVibrant?: {
+                    background: string;
+                };
             };
         };
     };
