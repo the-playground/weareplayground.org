@@ -50,7 +50,11 @@ const SingleShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({
                 />
             )}
             <Hero
-                bgImage={show.heroImage}
+                bgImage={show.heroImage.asset.fluid}
+                bgColorCustom={
+                    show.heroImage.asset.metadata?.palette?.darkMuted
+                        ?.background
+                }
                 title={show.title}
                 author={show.author.name}
             />
@@ -75,7 +79,7 @@ export const showQuery = graphql`
             heroImage {
                 asset {
                     fluid(maxWidth: 1600) {
-                        ...GatsbySanityImageFluid_noBase64
+                        ...GatsbySanityImageFluid
                     }
                     metadata {
                         palette {

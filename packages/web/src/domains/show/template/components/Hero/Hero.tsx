@@ -1,7 +1,11 @@
 import React from 'react';
 
-import { SanityFluidImage } from '@nerve/shared/types';
-import { BodyText, Container, Heading } from '@nerve/core/components';
+import {
+    BodyText,
+    Container,
+    Heading,
+    SectionWithBGProps,
+} from '@nerve/core/components';
 import * as styled from './Hero.styles';
 
 export const Hero: React.FC<HeroProps> = ({
@@ -11,21 +15,22 @@ export const Hero: React.FC<HeroProps> = ({
     statusBar,
 }) => {
     return (
-        <styled.Hero bgImage={bgImage} bgColor="default">
+        <styled.Hero bgImage={bgImage}>
             <Container className="container">
                 <Heading size="xl" color="light">
                     {title}
                 </Heading>
-                by {author}
+                <BodyText size="xl" color="light" weight="bold">
+                    by {author}
+                </BodyText>
             </Container>
             {statusBar && <div className="status">{statusBar}</div>}
         </styled.Hero>
     );
 };
 
-interface HeroProps {
+interface HeroProps extends SectionWithBGProps {
     title: string;
     author: string;
-    bgImage: SanityFluidImage;
     statusBar?: JSX.Element;
 }

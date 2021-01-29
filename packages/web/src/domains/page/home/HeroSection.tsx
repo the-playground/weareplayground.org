@@ -11,11 +11,11 @@ import {
     FillButton,
     GrittyHeading,
     Icon,
-    Section,
-    SectionProps,
+    SectionWithBG,
+    SectionWithBGProps,
 } from '@nerve/core/components';
 
-const StyledHeroSection = styled(Section)`
+const StyledHeroSection = styled(SectionWithBG)`
     padding: ${spacing.layout.l} 0 ${spacing.layout.xl} 0;
     ${breakpoints.m} {
         padding: ${spacing.layout.xxl} 0 ${spacing.layout.xxl} 0;
@@ -80,7 +80,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     );
 };
 
-interface HeroSectionProps extends SectionProps {
+interface HeroSectionProps extends SectionWithBGProps {
     title: string;
     copy: string;
     rebrandLinkText: string;

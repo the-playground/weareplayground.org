@@ -6,14 +6,14 @@ import { SanityFluidImage } from '@nerve/shared/types';
 
 import {
     Container,
-    Section,
+    SectionWithBG,
     BodyText,
     GrittyHeading,
 } from '@nerve/core/components';
 
 import { EmailSubscribe } from '../EmailSubscribe/EmailSubscribe';
 
-const StyledSubscribeSection = styled(Section)`
+const StyledSubscribeSection = styled(SectionWithBG)`
     padding: ${spacing.layout.l} 0;
 
     .intro-copy {
@@ -48,7 +48,7 @@ export const SubscribeSection: React.FC = () => {
 
     return (
         <StyledSubscribeSection
-            bgImage={subscribe.image}
+            bgImage={subscribe.image.asset.fluid}
             overlay="dark90"
             bgPosition="center center"
         >

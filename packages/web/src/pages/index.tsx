@@ -31,7 +31,7 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
             <HeroSection
                 title={page.hero.title}
                 copy={page.hero.copy}
-                bgImage={page.hero.image}
+                bgImage={page.hero.image.asset.fluid}
                 rebrandLink={page.hero.action.link.slug.current}
                 rebrandLinkText={page.hero.action.text}
             />
