@@ -51,12 +51,11 @@ const SingleShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({
             )}
             <Hero
                 bgImage={show.heroImage.asset.fluid}
-                bgColorCustom={
-                    show.heroImage.asset.metadata?.palette?.darkMuted
-                        ?.background
-                }
                 title={show.title}
                 author={show.author.name}
+                openDate={show.openDate}
+                closeDate={show.closeDate}
+                status={status}
             />
             <LegacyContentNotice
                 title={show.title}

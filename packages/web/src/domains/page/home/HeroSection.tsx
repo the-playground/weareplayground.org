@@ -16,9 +16,16 @@ import {
 } from '@nerve/core/components';
 
 const StyledHeroSection = styled(SectionWithBG)`
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
     padding: ${spacing.layout.l} 0 ${spacing.layout.xl} 0;
     ${breakpoints.m} {
         padding: ${spacing.layout.xxl} 0 ${spacing.layout.xxl} 0;
+    }
+
+    .content {
+        flex: 1;
     }
 
     .title {
@@ -27,7 +34,7 @@ const StyledHeroSection = styled(SectionWithBG)`
     }
     .copy {
         margin-top: ${spacing.layout.m};
-        max-width: ${grid.xs};
+        max-width: 615px; /* magic number to avoid a widow with current messaging */
     }
 
     .action {
@@ -48,7 +55,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     return (
         <StyledHeroSection
             bgImage={bgImage}
-            bgPosition="center center"
+            bgPosition="center top"
             overlay="dark85"
         >
             <Container>

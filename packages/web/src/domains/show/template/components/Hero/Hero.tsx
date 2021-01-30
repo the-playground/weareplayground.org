@@ -6,25 +6,47 @@ import {
     Heading,
     SectionWithBGProps,
 } from '@nerve/core/components';
+import { DateRange } from '@nerve/shared/components';
 import * as styled from './Hero.styles';
 
 export const Hero: React.FC<HeroProps> = ({
     title,
     author,
     bgImage,
-    statusBar,
+    openDate,
+    closeDate,
+    status,
 }) => {
     return (
-        <styled.Hero bgImage={bgImage}>
+        <styled.Hero bgImage={bgImage} overlay="black45">
             <Container className="container">
-                <Heading size="xl" color="light">
+                <Heading className="title" size="xl" color="light">
                     {title}
                 </Heading>
-                <BodyText size="xl" color="light" weight="bold">
+                <BodyText
+                    className="author"
+                    size="xl"
+                    color="light"
+                    weight="bold"
+                >
                     by {author}
                 </BodyText>
             </Container>
-            {statusBar && <div className="status">{statusBar}</div>}
+            <div className="actions">
+                <Container>
+                    <div className="dates">
+                        <BodyText color="light" size="l" weight="bold">
+                            <DateRange
+                                startDate={openDate}
+                                endDate={closeDate}
+                            />
+                        </BodyText>
+                    </div>
+                    <div className="status" />
+                    <div className="tickets" />
+                    <div className="share" />
+                </Container>
+            </div>
         </styled.Hero>
     );
 };
@@ -32,5 +54,7 @@ export const Hero: React.FC<HeroProps> = ({
 interface HeroProps extends SectionWithBGProps {
     title: string;
     author: string;
-    statusBar?: JSX.Element;
+    openDate: string;
+    closeDate: string;
+    status: string;
 }

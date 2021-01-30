@@ -15,9 +15,4 @@ export const SimpleHero = styled.section`
             margin-bottom: ${spacing.component.xs};
         }
     }
-
-    .title,
-    .sub-title {
-        text-transform: lowercase;
-    }
 `;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 
 import { BackgroundOverlay } from '@nerve/core/components';
 
@@ -12,13 +12,16 @@ export const SectionWithBG: React.FC<SectionWithBGProps> = ({
     overlay,
     className,
 }) => {
+    const [isLoading, setIsLoading] = useState(true);
+
     return (
         <styled.Section
             className={className}
             bgPosition={bgPosition}
             fluid={bgImage}
             Tag="section"
-            fadeIn="soft"
+            onLoad={() => setIsLoading(false)}
+            data-image-loading={isLoading}
         >
             {overlay && <BackgroundOverlay variant={overlay} />}
             <div className="content">{children}</div>

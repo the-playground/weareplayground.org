@@ -27,17 +27,12 @@ const StyledArchiveSection = styled.section`
         }
     }
 
-    .title > i {
-        color: ${({ theme }) => theme.typography.accentDark};
-        margin-right: ${spacing.component.m};
-    }
-
     .title .period {
         color: ${({ theme }) => theme.typography.accentDark};
     }
 
     .copy {
-        max-width: 525px;
+        max-width: 450px;
         margin-bottom: ${spacing.component.l};
     }
 `;
@@ -49,23 +44,18 @@ export const ArchiveSection: React.FC = () => {
         <StyledArchiveSection>
             <Container>
                 <Heading color="light" size="m" as="h2" className="title">
-                    <Icon
-                        name="Rocket"
-                        size="l"
-                        responsive={{ breakpoint: 'm', size: 'm' }}
-                    />
                     <span>
-                        blast to the past<span className="period">.</span>
+                        The Archive<span className="period">.</span>
                     </span>
                 </Heading>
                 <BodyText color="medium" size="m" className="copy">
-                    check out out our show archives and discover why our brand
-                    of theatre will get under your skin.
+                    Check out our past shows and discover why our brand of
+                    theatre will get under your skin.
                 </BodyText>
                 <TextButton
                     color="primary"
                     size="m"
-                    to={links.archivePage}
+                    to={links.archivePage!}
                     endIcon={<Icon name="ArrowRight" size="xs" />}
                     animateIconOnHover
                 >
