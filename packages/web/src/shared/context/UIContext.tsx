@@ -1,4 +1,6 @@
 import React, { createContext, useContext } from 'react';
+import { Drawer, Modal } from '@nerve/core/components';
+import { useDynamicContent, UseDynamicContentReturn } from '../hooks';
 
 export const UIContext = createContext<UIContextProps>({} as UIContextProps);
 
@@ -11,14 +13,33 @@ export const UIContext = createContext<UIContextProps>({} as UIContextProps);
  */
 export const UIProvider: React.FC = ({ children }) => {
     // Bring in state handlers
+    const modal = useDynamicContent();
+    const drawer = useDynamicContent();
 
     // Build our state object
-    const state: UIContextProps = {};
+    const state: UIContextProps = {
+        modal,
+        drawer,
+    };
 
-    return <UIContext.Provider value={state}>{children}</UIContext.Provider>;
+    // Checks to see if a feedback type component is visible so we can male the necessary UI changes
+    const feedbackComponentVisible = modal.isOpen || drawer.isOpen;
+
+    return (
+        <UIContext.Provider value={state}>
+            <div id="content-root" aria-hidden={feedbackComponentVisible}>
+                {children}
+            </div>
+            {modal.isOpen && <Modal />}
+            {drawer.isOpen && <Drawer />}
+        </UIContext.Provider>
+    );
 };
 
-export interface UIContextProps {}
+export interface UIContextProps {
+    modal: UseDynamicContentReturn;
+    drawer: UseDynamicContentReturn;
+}
 
 /**
  * A saucy little thin wrapper for fetching and using our App Context

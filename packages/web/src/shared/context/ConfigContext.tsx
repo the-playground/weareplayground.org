@@ -9,7 +9,7 @@ import {
     useSEOConfig,
     LinkMapConfig,
     useLinkMapConfig,
-} from '@nerve/shared/hooks/configs';
+} from '../hooks/configs';
 
 export const ConfigContext = createContext({} as GlobalConfigs);
 
