@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
             icon: (
                 <Icon
                     name="Facebook"
-                    size="s"
+                    size="m"
                     color="medium"
                     title="Facebook icon"
                 />
@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
             icon: (
                 <Icon
                     name="Instagram"
-                    size="s"
+                    size="m"
                     color="medium"
                     title="Instagram icon"
                 />
@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
             icon: (
                 <Icon
                     name="Spotify"
-                    size="s"
+                    size="m"
                     color="medium"
                     title="Spotify icon"
                 />
@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
             icon: (
                 <Icon
                     name="Youtube"
-                    size="s"
+                    size="m"
                     color="medium"
                     title="Youtube icon"
                 />
@@ -66,7 +66,7 @@ export const Footer: React.FC = () => {
             icon: (
                 <Icon
                     name="Github"
-                    size="s"
+                    size="m"
                     color="medium"
                     title="Github icon"
                 />

@@ -29,6 +29,7 @@ export const Modal: React.FC = () => {
                     aria-label={modal.label}
                     ref={modalContentRef}
                 >
+                    {/* Close Button Here */}
                     {modal.content}
                 </div>
             </section>

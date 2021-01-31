@@ -1,10 +1,11 @@
 export const iconSizes = {
     xxs: '12px',
     xs: '16px',
-    s: '24px',
-    m: '36px',
-    l: '48px',
-    xl: '64px',
+    s: '20px',
+    m: '24px',
+    l: '36px',
+    xl: '48px',
+    xxl: '64px',
 };
 
 export type IconSizes = typeof iconSizes;

@@ -29,6 +29,7 @@ export const Drawer: React.FC = () => {
                     aria-label={drawer.label}
                     ref={drawerContentRef}
                 >
+                    {/* Close Button Here */}
                     {drawer.content}
                 </div>
             </section>
