@@ -7,3 +7,5 @@ export const useToggle = () => {
 
     return { isToggled, setIsToggled, toggle };
 };
+
+export type UseToggleReturn = ReturnType<typeof useToggle>;
