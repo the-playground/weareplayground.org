@@ -26,6 +26,7 @@
 	"includes": [
 		"src/**/*",
 		"@gatsby/**/*",
+		"@types/**/*",
 		"gatsby-*.js"
 	]
 }

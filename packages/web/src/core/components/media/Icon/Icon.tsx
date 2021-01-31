@@ -31,7 +31,7 @@ export const Icon: React.FC<IconProps> = ({
             color={color}
             size={size}
             responsive={responsive}
-            {...others}
+            aria-hidden="true"
         >
             <SVGElement
                 name={name}

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { SectionWithBG } from '@nerve/core/components';
+import { rgba } from 'polished';
 
 import { spacing } from '@nerve/core/tokens';
 
@@ -10,17 +11,10 @@ export const Hero = styled(SectionWithBG)`
     position: relative;
 
     .content {
-        align-items: stretch;
+        align-items: center;
         display: flex;
         flex: 1;
         margin-top: -${spacing.component.xxl};
-    }
-
-    .container {
-        justify-content: center;
-        display: flex;
-        flex: 1;
-        flex-direction: column;
     }
 
     .title {

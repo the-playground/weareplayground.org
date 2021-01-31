@@ -1,8 +1,6 @@
 import { FluidObject, FixedObject } from 'gatsby-image';
 import { IFluidObject as BackgroundFluidObject } from 'gatsby-background-image';
 
-declare module '@sanity/block-content-to-react';
-
 /**
  * The shape of a standard Sanity Document (page or collection)
  */

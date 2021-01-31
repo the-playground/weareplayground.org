@@ -19,6 +19,7 @@ import { NewTab } from './defs/NewTab';
 import { Next } from './defs/Next';
 import { Previous } from './defs/Previous';
 import { Rocket } from './defs/Rocket';
+import { Share } from './defs/Share';
 import { Spotify } from './defs/Spotify';
 import { Ticket } from './defs/Ticket';
 import { Warning } from './defs/Warning';
@@ -46,6 +47,7 @@ export const availableIcons = {
     Next,
     Previous,
     Rocket,
+    Share,
     Spotify,
     Ticket,
     Warning,

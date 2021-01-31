@@ -12,5 +12,7 @@ import { AppTheme } from '@nerve/core/themes';
 
 // Finally, use our theme type as the base for the typed SC `DefaultTheme`
 declare module 'styled-components' {
-    export type DefaultTheme = AppTheme;
+    // 'type' doesn't work here and we have to force an empty interface
+    // eslint-disable-next-line @typescript-eslint/no-empty-interface
+    export interface DefaultTheme extends AppTheme {}
 }

@@ -4,6 +4,7 @@ import {
     BodyText,
     Container,
     Heading,
+    Icon,
     SectionWithBGProps,
 } from '@nerve/core/components';
 import { DateRange } from '@nerve/shared/components';
@@ -37,6 +38,7 @@ export const Hero: React.FC<HeroProps> = ({
                     <div className="dates">
                         <BodyText color="light" size="l" weight="bold">
                             <DateRange
+                                icon={<Icon name="Calendar" size="m" />}
                                 startDate={openDate}
                                 endDate={closeDate}
                             />

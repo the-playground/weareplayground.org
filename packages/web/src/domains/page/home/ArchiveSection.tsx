@@ -56,7 +56,7 @@ export const ArchiveSection: React.FC = () => {
                     color="primary"
                     size="m"
                     to={links.archivePage!}
-                    endIcon={<Icon name="ArrowRight" size="xs" />}
+                    endIcon={<Icon name="ArrowRight" size="s" />}
                     animateIconOnHover
                 >
                     take me there
