@@ -1,6 +1,11 @@
 import React, { createContext, useContext } from 'react';
 import { Drawer, Modal } from '@nerve/core/components';
-import { useDynamicContent, UseDynamicContentReturn } from '../hooks';
+import {
+    useDynamicContent,
+    UseDynamicContentReturn,
+    useToggle,
+    UseToggleReturn,
+} from '../hooks';
 
 export const UIContext = createContext<UIContextProps>({} as UIContextProps);
 
@@ -12,33 +17,28 @@ export const UIContext = createContext<UIContextProps>({} as UIContextProps);
  * from anywhere in our app.
  */
 export const UIProvider: React.FC = ({ children }) => {
-    // Bring in state handlers
-    const modal = useDynamicContent();
-    const drawer = useDynamicContent();
+    const overlay = useToggle();
 
     // Build our state object
     const state: UIContextProps = {
-        modal,
-        drawer,
+        overlay,
     };
 
     // Checks to see if a feedback type component is visible so we can male the necessary UI changes
-    const feedbackComponentVisible = modal.isOpen || drawer.isOpen;
+    const overlayComponentVisible = overlay.isToggled;
 
     return (
         <UIContext.Provider value={state}>
-            <div id="content-root" aria-hidden={feedbackComponentVisible}>
+            <div id="content-root" aria-hidden={overlayComponentVisible}>
                 {children}
             </div>
-            {modal.isOpen && <Modal />}
-            {drawer.isOpen && <Drawer />}
+            <div id="overlay-root" aria-hidden={!overlayComponentVisible} />
         </UIContext.Provider>
     );
 };
 
 export interface UIContextProps {
-    modal: UseDynamicContentReturn;
-    drawer: UseDynamicContentReturn;
+    overlay: UseToggleReturn;
 }
 
 /**
