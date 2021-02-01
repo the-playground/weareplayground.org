@@ -12,6 +12,7 @@ export const StylesGlobal = createGlobalStyle`
 	html {
 		font-size: ${appBaseFontSize}px;
 		text-size-adjust: 100%;
+		width: 100vw;
 	}
 
 	body{
