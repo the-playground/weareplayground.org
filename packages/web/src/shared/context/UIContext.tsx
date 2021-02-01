@@ -17,29 +17,13 @@ export const UIContext = createContext<UIContextProps>({} as UIContextProps);
  * from anywhere in our app.
  */
 export const UIProvider: React.FC = ({ children }) => {
-    const overlay = useToggle();
-
     // Build our state object
-    const state: UIContextProps = {
-        overlay,
-    };
+    const state: UIContextProps = {};
 
-    // Checks to see if a feedback type component is visible so we can male the necessary UI changes
-    const overlayComponentVisible = overlay.isToggled;
-
-    return (
-        <UIContext.Provider value={state}>
-            <div id="content-root" aria-hidden={overlayComponentVisible}>
-                {children}
-            </div>
-            <div id="overlay-root" aria-hidden={!overlayComponentVisible} />
-        </UIContext.Provider>
-    );
+    return <UIContext.Provider value={state}>{children}</UIContext.Provider>;
 };
 
-export interface UIContextProps {
-    overlay: UseToggleReturn;
-}
+export interface UIContextProps {}
 
 /**
  * A saucy little thin wrapper for fetching and using our App Context

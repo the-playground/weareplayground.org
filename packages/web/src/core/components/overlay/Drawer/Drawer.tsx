@@ -1,7 +1,6 @@
 import * as React from 'react';
 
-import { useOnClickOutside, useScrollFreeze } from '@nerve/shared/hooks';
-import { useUIContext } from '@nerve/shared/context';
+import { IOverlayBase } from '../OverlayBase/OverlayBase';
 
 import * as styled from './Drawer.styles';
 
@@ -11,28 +10,24 @@ import * as styled from './Drawer.styles';
  *
  * It also handles locking the user's ability to scroll when open.
  */
-export const Drawer: React.FC = () => {
-    const { drawer } = useUIContext();
-    useScrollFreeze(); // lock scrolling
-
-    // Close the drawer when the user clicks outside of the drawer content
-    const drawerContentRef = React.useRef(null);
-    useOnClickOutside(drawerContentRef, () => drawer.setIsOpen(false));
-
+export const Drawer: React.FC<IDrawer> = ({
+    title,
+    test,
+    isOpen,
+    onRequestClose,
+    children,
+}) => {
     return (
-        <styled.Drawer>
-            <div className="backdrop" />
-            <section>
-                <div
-                    className="content"
-                    role="dialog"
-                    aria-label={drawer.label}
-                    ref={drawerContentRef}
-                >
-                    {/* Close Button Here */}
-                    {drawer.content}
-                </div>
-            </section>
+        <styled.Drawer
+            isOpen={isOpen}
+            onRequestClose={onRequestClose}
+            title={title}
+        >
+            Hello there from a drawer!
         </styled.Drawer>
     );
 };
+
+interface IDrawer extends IOverlayBase {
+    test?: string;
+}

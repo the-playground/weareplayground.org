@@ -6,6 +6,7 @@ export const zIndex = {
     nav: 3,
     modal: 4,
     heaven: 5,
+    portal: 10,
 };
 
 export type AvailableZIndices = typeof zIndex;

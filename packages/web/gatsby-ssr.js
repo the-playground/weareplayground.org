@@ -3,11 +3,12 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/
  */
 import React from 'react';
+import { PORTAL_ROOT } from './src/shared/constants';
 
 // Direct-export our browser wrapper for SSR
 export { wrapRootElement, wrapPageElement } from './gatsby-browser';
 
-export const onRenderBody = ({ setHeadComponents }) => {
+export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
     /**
      * Load external css SSR
      */
@@ -37,4 +38,9 @@ export const onRenderBody = ({ setHeadComponents }) => {
             crossOrigin="anonymous"
         />,
     ]);
+
+    /**
+     *
+     */
+    setPostBodyComponents([<div id={PORTAL_ROOT} />]);
 };

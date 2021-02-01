@@ -1,80 +1,88 @@
-import React, { useEffect } from 'react';
-import { createPortal } from 'react-dom';
-import { AnimatePresence } from 'framer-motion';
-import cx from 'classnames';
+import React from 'react';
+import { AnimatePresence, MotionProps, motion } from 'framer-motion';
 
 import { useOnClickOutside, useScrollFreeze } from '@nerve/shared/hooks';
-import { isSSR } from '@nerve/shared/lib';
 
-const overlayRoot = isSSR ? null : document.getElementById('overlay-root');
+import { Portal } from '../../utility';
 
 // https://dev.to/spukas/react-portals-flexible-modal-implementation-5310
 // https://reactjs.org/docs/portals.html
+// https://github.com/reactjs/react-modal/blob/master/src/components/Modal.js
+// https://nainacodes.com/blog/create-an-accessible-and-reusable-react-modal
+// https://blog.logrocket.com/learn-react-portals-by-example/
 
 export const OverlayBase: React.FC<IOverlayBase> = ({
+    className,
     autofocus = true,
     canEscapeKeyClose = true,
     hasBackdrop = true,
-    isOpen,
-    setIsOpen,
     title,
     children,
+    isOpen,
+    onRequestClose,
+    rootAnimation,
+    backdropAnimation,
+    containerAnimation,
+    contentAnimation,
 }) => {
-    // element to which the modal will be rendered
-    const container = isSSR ? null : document.createElement('div');
-
-    useScrollFreeze(); // lock scrolling when overlay is open
-
-    // Close the overlay when the user clicks outside of the modal container
+    /**
+     * Lock scrolling when overlay is open & close the overlay when
+     * the user clicks outside of the modal container.
+     */
     const modalContentRef = React.useRef(null);
-    useOnClickOutside(modalContentRef, () => setIsOpen(false));
+    // useScrollFreeze();
+    useOnClickOutside(modalContentRef, () => onRequestClose);
 
-    useEffect(() => {
-        if (overlayRoot && container) {
-            // append to root when the children of Modal are mounted
-            overlayRoot.appendChild(container);
-        }
-
-        // do a cleanup
-        return () => {
-            if (overlayRoot && container) {
-                overlayRoot.removeChild(container);
-            }
-        };
-    }, [container]);
-
-    // TODO: Pass animation configs to motion.div modal component
     return (
-        <AnimatePresence>
-            {isOpen &&
-                createPortal(
-                    <div className="modal">
-                        {hasBackdrop && <div className="backdrop" />}
-                        <section>
-                            <div
+        <Portal>
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        className={className}
+                        key={title}
+                        {...rootAnimation}
+                    >
+                        {hasBackdrop && (
+                            <motion.div
+                                className="backdrop"
+                                key={`backdrop-${title}`}
+                                {...backdropAnimation}
+                            />
+                        )}
+                        <motion.section
+                            className="container"
+                            key={`container-${title}`}
+                            {...containerAnimation}
+                        >
+                            <motion.div
                                 className="content"
                                 role="dialog"
+                                aria-modal="true"
                                 aria-label={title}
                                 ref={modalContentRef}
+                                key={`content-${title}`}
+                                {...contentAnimation}
                             >
-                                {/* close button here */}
-                                {/* maybe render title here */}
                                 {children}
-                            </div>
-                        </section>
-                    </div>,
-                    container
+                            </motion.div>
+                        </motion.section>
+                    </motion.div>
                 )}
-        </AnimatePresence>
+            </AnimatePresence>
+        </Portal>
     );
 };
 
 export interface IOverlayBase {
+    title: string;
+    isOpen: boolean;
+    onRequestClose: React.Dispatch<React.SetStateAction<boolean>>;
+    className?: string;
     autofocus?: boolean;
     canEscapeKeyClose?: number;
-    transitionDuration?: number;
     hasBackdrop?: boolean;
-    isOpen: boolean;
-    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-    title: string;
+    rootAnimation?: MotionProps;
+    backdropAnimation?: MotionProps;
+    containerAnimation?: MotionProps;
+    contentAnimation?: MotionProps;
 }

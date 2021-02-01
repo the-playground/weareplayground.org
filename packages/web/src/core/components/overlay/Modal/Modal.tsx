@@ -1,7 +1,6 @@
 import * as React from 'react';
 
-import { useOnClickOutside, useScrollFreeze } from '@nerve/shared/hooks';
-import { useUIContext } from '@nerve/shared/context';
+import { IOverlayBase } from '../OverlayBase/OverlayBase';
 
 import * as styled from './Modal.styles';
 
@@ -11,28 +10,24 @@ import * as styled from './Modal.styles';
  *
  * It also handles locking the user's ability to scroll when open.
  */
-export const Modal: React.FC = () => {
-    const { modal } = useUIContext();
-    useScrollFreeze(); // lock scrolling
-
-    // Close the modal when the user clicks outside of the modal container
-    const modalContentRef = React.useRef(null);
-    useOnClickOutside(modalContentRef, () => modal.setIsOpen(false));
-
+export const Modal: React.FC<IModal> = ({
+    title,
+    test,
+    isOpen,
+    onRequestClose,
+    children,
+}) => {
     return (
-        <styled.Modal>
-            <div className="backdrop" />
-            <section>
-                <div
-                    className="content"
-                    role="dialog"
-                    aria-label={modal.label}
-                    ref={modalContentRef}
-                >
-                    {/* Close Button Here */}
-                    {modal.content}
-                </div>
-            </section>
+        <styled.Modal
+            isOpen={isOpen}
+            onRequestClose={onRequestClose}
+            title={title}
+        >
+            {children}
         </styled.Modal>
     );
 };
+
+interface IModal extends IOverlayBase {
+    test?: string;
+}
