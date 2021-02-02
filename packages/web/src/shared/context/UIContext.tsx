@@ -1,11 +1,5 @@
 import React, { createContext, useContext } from 'react';
-import { Drawer, Modal } from '@nerve/core/components';
-import {
-    useDynamicContent,
-    UseDynamicContentReturn,
-    useToggle,
-    UseToggleReturn,
-} from '../hooks';
+import { useOverlay, UseOverlayReturn } from '../hooks';
 
 export const UIContext = createContext<UIContextProps>({} as UIContextProps);
 
@@ -17,13 +11,19 @@ export const UIContext = createContext<UIContextProps>({} as UIContextProps);
  * from anywhere in our app.
  */
 export const UIProvider: React.FC = ({ children }) => {
+    const overlay = useOverlay();
+
     // Build our state object
-    const state: UIContextProps = {};
+    const state: UIContextProps = {
+        overlay,
+    };
 
     return <UIContext.Provider value={state}>{children}</UIContext.Provider>;
 };
 
-export interface UIContextProps {}
+export interface UIContextProps {
+    overlay: UseOverlayReturn;
+}
 
 /**
  * A saucy little thin wrapper for fetching and using our App Context

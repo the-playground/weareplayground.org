@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { AnimatePresence, MotionProps, motion } from 'framer-motion';
 
 import { useOnClickOutside, useScrollFreeze } from '@nerve/shared/hooks';
@@ -29,8 +29,8 @@ export const OverlayBase: React.FC<IOverlayBase> = ({
      * Lock scrolling when overlay is open & close the overlay when
      * the user clicks outside of the modal container.
      */
+    useScrollFreeze(isOpen);
     const modalContentRef = React.useRef(null);
-    // useScrollFreeze();
     useOnClickOutside(modalContentRef, () => onRequestClose);
 
     return (
