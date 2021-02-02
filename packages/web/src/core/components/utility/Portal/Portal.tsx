@@ -15,5 +15,5 @@ export const Portal: React.FC = ({ children }) => {
         return () => mount.removeChild(element);
     }, [element, mount]);
 
-    return createPortal(children, element);
+    return element ? createPortal(children, element) : null;
 };
