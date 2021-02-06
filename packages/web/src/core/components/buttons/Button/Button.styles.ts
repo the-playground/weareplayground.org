@@ -6,7 +6,8 @@ import {
     GhostButtonProps,
     TextButtonProps,
 } from './Button.d';
-import { ButtonBase } from '../ButtonBase/BaseButton';
+
+import { ButtonBase } from '../ButtonBase/ButtonBase';
 
 export const FillButton = styled(ButtonBase)<FillButtonProps>`
     border: none;

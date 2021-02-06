@@ -42,5 +42,7 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
     /**
      *
      */
-    setPostBodyComponents([<div id={PORTAL_ROOT} aria-hidden="false" />]);
+    setPostBodyComponents([
+        <div id={PORTAL_ROOT} aria-hidden="false" key={PORTAL_ROOT} />,
+    ]);
 };

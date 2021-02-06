@@ -56,6 +56,7 @@ const SingleShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({
                 openDate={show.openDate}
                 closeDate={show.closeDate}
                 status={status}
+                url={url}
             />
             <LegacyContentNotice
                 title={show.title}

@@ -1,13 +1,20 @@
 import React from 'react';
 
+import { useOverlay } from '@nerve/shared/hooks';
+
 import {
     BodyText,
+    OutlineButton,
     Container,
     Heading,
     Icon,
+    List,
+    ListItem,
+    Modal,
     SectionWithBGProps,
 } from '@nerve/core/components';
 import { DateRange } from '@nerve/shared/components';
+
 import * as styled from './Hero.styles';
 
 export const Hero: React.FC<HeroProps> = ({
@@ -18,6 +25,8 @@ export const Hero: React.FC<HeroProps> = ({
     closeDate,
     status,
 }) => {
+    const [isShareOpen, setIsShareOpen, toggleShare] = useOverlay();
+
     return (
         <styled.Hero bgImage={bgImage} overlay="black45">
             <Container className="container">
@@ -34,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({
                 </BodyText>
             </Container>
             <div className="actions">
-                <Container>
+                <Container className="container">
                     <div className="dates">
                         <BodyText color="light" size="l" weight="bold">
                             <DateRange
@@ -46,7 +55,26 @@ export const Hero: React.FC<HeroProps> = ({
                     </div>
                     <div className="status" />
                     <div className="tickets" />
-                    <div className="share" />
+                    <div className="share">
+                        <OutlineButton
+                            size="s"
+                            onClick={toggleShare}
+                            color="tertiary"
+                            endIcon={<Icon name="Share" size="s" />}
+                            animateOnClick
+                        >
+                            Share
+                        </OutlineButton>
+                        <Modal
+                            title="Social Share"
+                            isOpen={isShareOpen}
+                            onCloseHandler={setIsShareOpen}
+                        >
+                            <List>
+                                <ListItem>Item</ListItem>
+                            </List>
+                        </Modal>
+                    </div>
                 </Container>
             </div>
         </styled.Hero>
@@ -59,4 +87,5 @@ interface HeroProps extends SectionWithBGProps {
     openDate: string;
     closeDate: string;
     status: string;
+    url: string;
 }
