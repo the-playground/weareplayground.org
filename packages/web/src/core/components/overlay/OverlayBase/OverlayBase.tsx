@@ -2,7 +2,11 @@ import React, { useLayoutEffect } from 'react';
 import { AnimatePresence, MotionProps, motion } from 'framer-motion';
 
 import { useOnClickOutside, useScrollFreeze } from '@nerve/shared/hooks';
-import { CONTENT_ROOT, PORTAL_ROOT } from '@nerve/shared/constants';
+import {
+    CONTENT_ROOT,
+    CONTENT_ROOT_OVERLAY_CLASS,
+    PORTAL_ROOT,
+} from '@nerve/shared/constants';
 import { isSSR } from '@nerve/shared/lib';
 
 import { Portal } from '../../utility';
@@ -49,14 +53,14 @@ export const OverlayBase: React.FC<IOverlayBase> = ({
 
     useLayoutEffect(() => {
         if (isOpen && contentRoot && portalRoot) {
-            contentRoot.classList.add('--is-overlaid');
+            contentRoot.classList.add(CONTENT_ROOT_OVERLAY_CLASS);
             contentRoot.setAttribute('aria-hidden', 'true');
             portalRoot.setAttribute('aria-hidden', 'false');
         }
 
         return () => {
             if (contentRoot && portalRoot) {
-                contentRoot.classList.remove('--is-overlaid');
+                contentRoot.classList.remove(CONTENT_ROOT_OVERLAY_CLASS);
                 contentRoot.setAttribute('aria-hidden', 'false');
                 portalRoot.setAttribute('aria-hidden', 'true');
             }

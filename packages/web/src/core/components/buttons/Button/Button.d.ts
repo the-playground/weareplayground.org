@@ -1,5 +1,5 @@
 import { AvailableActionTheme } from '@nerve/core/themes';
-import { ButtonBaseProps } from '../ButtonBase/BaseButton';
+import { ButtonBaseProps } from '../ButtonBase/ButtonBase';
 
 export interface FillButtonProps extends ButtonBaseProps {
     color: AvailableActionTheme;
