@@ -7,9 +7,9 @@ import { useLayoutEffect } from 'react';
  * For Web: The `html` element must have overflow hidden applied. `body` doesn't work.
  * For Mobile: The `body` element must have overflow hidden applied. `html` doesn't work.
  *
- * @param isFrozen A boolean flag that determines if scrolling should be frozen or not
+ * @param freezeHandler A boolean flag that determines if scrolling should be frozen or not
  */
-export const useScrollFreeze = (isFrozen: boolean): void => {
+export const useScrollFreeze = (freezeHandler: boolean): void => {
     useLayoutEffect(() => {
         // Get original html & body overflow
         const originalHTMLOverflow = window.getComputedStyle(
@@ -20,7 +20,7 @@ export const useScrollFreeze = (isFrozen: boolean): void => {
         const originalBodyOverflow = window.getComputedStyle(document.body)
             .overflow;
 
-        if (isFrozen) {
+        if (freezeHandler) {
             // Prevent scrolling on mount
             document.documentElement.style.overflow = `hidden`;
             document.body.style.overflow = `hidden`;
@@ -30,5 +30,5 @@ export const useScrollFreeze = (isFrozen: boolean): void => {
             document.documentElement.style.overflow = originalHTMLOverflow;
             document.body.style.overflow = originalBodyOverflow;
         };
-    }, [isFrozen]);
+    }, [freezeHandler]);
 };

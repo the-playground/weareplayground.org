@@ -16,7 +16,7 @@ import {
 } from '@nerve/domains/page/home';
 
 import { OutlineButton, Modal } from '@nerve/core/components';
-import { useUIContext } from '@nerve/shared/context';
+import { useOverlay } from '@nerve/shared/hooks';
 
 const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
@@ -24,7 +24,7 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     location,
 }) => {
     const { sanityHomePage: page } = data;
-    const { overlay } = useUIContext();
+    const [isOpen, setIsOpen, toggle] = useOverlay();
 
     return (
         <PageTemplate
@@ -39,12 +39,12 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 rebrandLink={page.hero.action.link.slug.current}
                 rebrandLinkText={page.hero.action.text}
             />
-            <OutlineButton onClick={overlay.toggle} color="primary" size="m">
+            <OutlineButton onClick={toggle} color="primary" size="m">
                 Open Modal
             </OutlineButton>
             <Modal
-                isOpen={overlay.isOpen}
-                onRequestClose={() => overlay.setIsOpen(false)}
+                isOpen={isOpen}
+                onRequestClose={() => setIsOpen(false)}
                 title="modal test"
             >
                 This is a modal and I have opened it.

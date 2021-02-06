@@ -11,8 +11,14 @@ export const Portal: React.FC = ({ children }) => {
     const element = isSSR ? null : document.createElement('div');
 
     useEffect(() => {
-        mount.appendChild(element);
-        return () => mount.removeChild(element);
+        if (mount && element) {
+            mount.appendChild(element);
+        }
+        return () => {
+            if (mount && element) {
+                mount.removeChild(element);
+            }
+        };
     }, [element, mount]);
 
     return element ? createPortal(children, element) : null;

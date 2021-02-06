@@ -2,6 +2,8 @@ import React, { useLayoutEffect } from 'react';
 import { AnimatePresence, MotionProps, motion } from 'framer-motion';
 
 import { useOnClickOutside, useScrollFreeze } from '@nerve/shared/hooks';
+import { CONTENT_ROOT, PORTAL_ROOT } from '@nerve/shared/constants';
+import { isSSR } from '@nerve/shared/lib';
 
 import { Portal } from '../../utility';
 
@@ -31,7 +33,24 @@ export const OverlayBase: React.FC<IOverlayBase> = ({
      */
     useScrollFreeze(isOpen);
     const modalContentRef = React.useRef(null);
-    useOnClickOutside(modalContentRef, () => onRequestClose);
+    useOnClickOutside(modalContentRef, onRequestClose);
+
+    const contentRoot = isSSR ? null : document.getElementById(CONTENT_ROOT);
+    const portalRoot = isSSR ? null : document.getElementById(PORTAL_ROOT);
+
+    useLayoutEffect(() => {
+        if (isOpen && contentRoot && portalRoot) {
+            contentRoot.setAttribute('aria-hidden', 'true');
+            portalRoot.setAttribute('aria-hidden', 'false');
+        }
+
+        return () => {
+            if (contentRoot && portalRoot) {
+                contentRoot.setAttribute('aria-hidden', 'false');
+                portalRoot.setAttribute('aria-hidden', 'true');
+            }
+        };
+    });
 
     return (
         <Portal>
