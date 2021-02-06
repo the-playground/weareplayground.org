@@ -11,4 +11,5 @@ export interface ButtonBaseProps extends LinkProps {
     startIcon?: React.ReactElement<IconProps>;
     endIcon?: React.ReactElement<IconProps>;
     isLoading?: boolean;
+    onClick?: () => void;
 }

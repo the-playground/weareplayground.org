@@ -17,6 +17,7 @@ export const ButtonBase: React.FC<ButtonBaseProps> = (props) => {
         startIcon,
         endIcon,
         isLoading,
+        onClick,
         ...others
     } = props;
 
@@ -33,7 +34,12 @@ export const ButtonBase: React.FC<ButtonBaseProps> = (props) => {
     const loaderIconSize = size === 'm' ? 's' : 'xs';
 
     return (
-        <styled.ButtonBase className={classes} size={size} {...others}>
+        <styled.ButtonBase
+            className={classes}
+            size={size}
+            onClick={onClick}
+            {...others}
+        >
             {isLoading ? (
                 <div className="loader">
                     <CircularProgress size={loaderIconSize} />

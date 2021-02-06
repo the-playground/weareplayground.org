@@ -13,6 +13,11 @@ import { Portal } from '../../utility';
 // https://nainacodes.com/blog/create-an-accessible-and-reusable-react-modal
 // https://blog.logrocket.com/learn-react-portals-by-example/
 
+/**
+ * A mid-level primitive component that creates a base for other overlay instances
+ * to extend. This component handles all of the business logic needed for an overlay
+ * to function properly but leaves all content, styling, and animation options up to the consumer.
+ */
 export const OverlayBase: React.FC<IOverlayBase> = ({
     className,
     autofocus = true,
@@ -21,7 +26,7 @@ export const OverlayBase: React.FC<IOverlayBase> = ({
     title,
     children,
     isOpen,
-    onRequestClose,
+    onCloseHandler,
     rootAnimation,
     backdropAnimation,
     containerAnimation,
@@ -33,19 +38,25 @@ export const OverlayBase: React.FC<IOverlayBase> = ({
      */
     useScrollFreeze(isOpen);
     const modalContentRef = React.useRef(null);
-    useOnClickOutside(modalContentRef, onRequestClose);
+    useOnClickOutside(modalContentRef, () => onCloseHandler(false));
 
+    /**
+     * Handle setting proper attributes on contend and modal roots
+     * when the overlay is opened & closed
+     */
     const contentRoot = isSSR ? null : document.getElementById(CONTENT_ROOT);
     const portalRoot = isSSR ? null : document.getElementById(PORTAL_ROOT);
 
     useLayoutEffect(() => {
         if (isOpen && contentRoot && portalRoot) {
+            contentRoot.classList.add('--is-overlaid');
             contentRoot.setAttribute('aria-hidden', 'true');
             portalRoot.setAttribute('aria-hidden', 'false');
         }
 
         return () => {
             if (contentRoot && portalRoot) {
+                contentRoot.classList.remove('--is-overlaid');
                 contentRoot.setAttribute('aria-hidden', 'false');
                 portalRoot.setAttribute('aria-hidden', 'true');
             }
@@ -95,7 +106,7 @@ export const OverlayBase: React.FC<IOverlayBase> = ({
 export interface IOverlayBase {
     title: string;
     isOpen: boolean;
-    onRequestClose: React.Dispatch<React.SetStateAction<boolean>>;
+    onCloseHandler: React.Dispatch<React.SetStateAction<boolean>>;
     className?: string;
     autofocus?: boolean;
     canEscapeKeyClose?: number;

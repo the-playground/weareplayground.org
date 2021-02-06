@@ -4,7 +4,7 @@ import { PORTAL_ROOT } from '@nerve/shared/constants';
 import { isSSR } from '@nerve/shared/lib';
 
 /**
- * A low-level primitive for working with Portals
+ * A low-level primitive for creating React Portals
  */
 export const Portal: React.FC = ({ children }) => {
     const mount = isSSR ? null : document.getElementById(PORTAL_ROOT);
