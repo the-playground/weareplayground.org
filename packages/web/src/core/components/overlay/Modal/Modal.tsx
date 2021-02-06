@@ -5,24 +5,13 @@ import { IOverlayBase } from '../OverlayBase/OverlayBase';
 import * as styled from './Modal.styles';
 
 /**
- * Our modal is getting its data entirely from context and can therefore
- * be dynamically populated from anywhere in the app.
  *
- * It also handles locking the user's ability to scroll when open.
  */
-export const Modal: React.FC<IModal> = ({
-    title,
-    test,
-    isOpen,
-    onRequestClose,
-    children,
-}) => {
+export const Modal: React.FC<IModal> = ({ test, children, ...props }) => {
     return (
-        <styled.Modal
-            isOpen={isOpen}
-            onRequestClose={onRequestClose}
-            title={title}
-        >
+        <styled.Modal {...props}>
+            {/* Close button goes here */}
+            {/* Optiomal header goes here */}
             {children}
         </styled.Modal>
     );
