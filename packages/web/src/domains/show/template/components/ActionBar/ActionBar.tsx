@@ -24,7 +24,10 @@ export const ActionBar: React.FC<IActionBar> = ({
                     </BodyText>
                 </div>
                 <div className="share">
-                    <SocialShareModal url={url} />
+                    <SocialShareModal
+                        url={url}
+                        shareText="Check out this show at The Nerve!"
+                    />
                 </div>
             </Container>
         </styled.ActionBar>

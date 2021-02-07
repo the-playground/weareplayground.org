@@ -30,7 +30,7 @@ export const Modal = styled(OverlayBase)<IModal>`
         border-radius: ${borders.modalRadius};
         display: flex;
         flex-direction: column;
-        padding: ${spacing.component.l};
+        padding: ${spacing.component.xl};
         margin: 0 auto;
         max-height: 100%;
         max-width: ${({ containerSize }) => grid[containerSize!]};
