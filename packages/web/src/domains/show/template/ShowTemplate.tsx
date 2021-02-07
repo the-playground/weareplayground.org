@@ -12,7 +12,7 @@ import { ShowPage, ShowPageContext } from '../types';
 import { useShowStatus } from '../__hooks__';
 
 // local template components
-import { Hero } from './components';
+import { ActionBar, Hero } from './components';
 
 const SingleShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({
     data,
@@ -53,10 +53,13 @@ const SingleShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({
                 bgImage={show.heroImage.asset.fluid}
                 title={show.title}
                 author={show.author.name}
-                openDate={show.openDate}
-                closeDate={show.closeDate}
-                status={status}
-                url={url}
+                actionBar={
+                    <ActionBar
+                        url={url}
+                        openDate={show.openDate}
+                        closeDate={show.closeDate}
+                    />
+                }
             />
             <LegacyContentNotice
                 title={show.title}

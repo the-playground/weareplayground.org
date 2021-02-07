@@ -4,6 +4,7 @@ export const grid = {
     m: '960px',
     s: '768px',
     xs: '568px',
+    xxs: '480px',
 };
 
 export type GridSizes = typeof grid;
