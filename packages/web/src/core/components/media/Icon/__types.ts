@@ -13,3 +13,5 @@ export interface IconProps {
     title?: string;
     desc?: string;
 }
+
+export type { AvailableIconName } from './__manifest__';

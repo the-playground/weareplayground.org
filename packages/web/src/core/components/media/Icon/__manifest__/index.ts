@@ -4,15 +4,19 @@ import { ArrowRight } from './defs/ArrowRight';
 import { ArrowUp } from './defs/ArrowUp';
 import { Calendar } from './defs/Calendar';
 import { Cancel } from './defs/Cancel';
+import { Copy } from './defs/Copy';
 import { CircleDown } from './defs/CircleDown';
 import { CircleLeft } from './defs/CircleLeft';
 import { CircleRight } from './defs/CircleRight';
 import { CircleUp } from './defs/CircleUp';
+import { Envelope } from './defs/Envelope';
 import { Facebook } from './defs/Facebook';
+import { FacebookAlt } from './defs/FacebookAlt';
 import { Fire } from './defs/Fire';
 import { Github } from './defs/Github';
 import { Info } from './defs/Info';
 import { Instagram } from './defs/Instagram';
+import { LinkedInAlt } from './defs/LinkedInAlt';
 import { Location } from './defs/Location';
 import { Lock } from './defs/Lock';
 import { NewTab } from './defs/NewTab';
@@ -22,6 +26,7 @@ import { Rocket } from './defs/Rocket';
 import { Share } from './defs/Share';
 import { Spotify } from './defs/Spotify';
 import { Ticket } from './defs/Ticket';
+import { TwitterAlt } from './defs/TwitterAlt';
 import { Warning } from './defs/Warning';
 import { Youtube } from './defs/Youtube';
 
@@ -32,15 +37,19 @@ export const availableIcons = {
     ArrowUp,
     Calendar,
     Cancel,
+    Copy,
     CircleDown,
     CircleLeft,
     CircleRight,
     CircleUp,
+    Envelope,
     Facebook,
+    FacebookAlt,
     Fire,
     Github,
     Info,
     Instagram,
+    LinkedInAlt,
     Location,
     Lock,
     NewTab,
@@ -50,6 +59,7 @@ export const availableIcons = {
     Share,
     Spotify,
     Ticket,
+    TwitterAlt,
     Warning,
     Youtube,
 };
