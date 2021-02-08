@@ -59,7 +59,7 @@ export const ArchiveSection: React.FC = () => {
                     endIcon={<Icon name="ArrowRight" size="s" />}
                     animateIconOnHover
                 >
-                    take me there
+                    Take me there
                 </TextButton>
             </Container>
         </StyledArchiveSection>
