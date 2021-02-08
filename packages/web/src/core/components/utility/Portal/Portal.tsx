@@ -7,7 +7,10 @@ import { isSSR } from '@nerve/shared/lib';
  * A low-level primitive for creating React Portals
  */
 export const Portal: React.FC = ({ children }) => {
-    // We don't need to fetch or create portal-related nodes on each render
+    /**
+     * * Note: We don't want to fetch or create portal elements on each render
+     * * so we use `useMemo`.
+     */
     const mount = isSSR
         ? null
         : useMemo(() => document.getElementById(PORTAL_ROOT), []);
