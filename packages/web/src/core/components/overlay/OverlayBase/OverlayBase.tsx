@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useMemo } from 'react';
 import { AnimatePresence, MotionProps, motion } from 'framer-motion';
 
 import { useOnClickOutside, useScrollFreeze } from '@nerve/shared/hooks';
@@ -47,10 +47,16 @@ export const OverlayBase: React.FC<IOverlayBase> = ({
 
     /**
      * Handle setting proper attributes on contend and modal roots
-     * when the overlay is opened & closed
+     * when the overlay is opened & closed.
+     * * Note: We don't want to fetch portal elements on each render so
+     * * we use `useMemo`.
      */
-    const contentRoot = isSSR ? null : document.getElementById(CONTENT_ROOT);
-    const portalRoot = isSSR ? null : document.getElementById(PORTAL_ROOT);
+    const contentRoot = isSSR
+        ? null
+        : useMemo(() => document.getElementById(CONTENT_ROOT), []);
+    const portalRoot = isSSR
+        ? null
+        : useMemo(() => document.getElementById(PORTAL_ROOT), []);
 
     useLayoutEffect(() => {
         if (isOpen && contentRoot && portalRoot) {
