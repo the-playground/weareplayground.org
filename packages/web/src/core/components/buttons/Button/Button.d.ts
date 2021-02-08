@@ -13,6 +13,10 @@ export interface GhostButtonProps extends ButtonBaseProps {
     color: AvailableActionTheme;
 }
 
+export interface IconButtonProps extends ButtonBaseProps {
+    color: AvailableActionTheme;
+}
+
 export interface TextButtonProps extends ButtonBaseProps {
     color: AvailableActionTheme;
 }

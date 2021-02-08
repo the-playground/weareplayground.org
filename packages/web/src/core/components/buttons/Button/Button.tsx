@@ -4,6 +4,7 @@ import {
     FillButtonProps,
     GhostButtonProps,
     OutlineButtonProps,
+    IconButtonProps,
     TextButtonProps,
 } from './Button.d';
 
@@ -36,6 +37,16 @@ export const OutlineButton: React.FC<OutlineButtonProps> = (props) => {
         <styled.OutlineButton color={color} {...others}>
             {children}
         </styled.OutlineButton>
+    );
+};
+
+export const IconButton: React.FC<IconButtonProps> = (props) => {
+    const { color, children, ...others } = props;
+
+    return (
+        <styled.IconButton color={color} {...others}>
+            {children}
+        </styled.IconButton>
     );
 };
 
