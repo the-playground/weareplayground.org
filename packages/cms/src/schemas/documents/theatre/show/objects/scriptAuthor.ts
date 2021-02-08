@@ -1,6 +1,7 @@
 export const scriptAuthor = {
     name: 'scriptAuthor',
     title: 'Author',
+    description: 'Information about the person who wrote the show',
     type: 'object',
     options: {
         collapsible: true,
