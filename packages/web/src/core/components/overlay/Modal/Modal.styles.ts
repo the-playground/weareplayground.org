@@ -35,6 +35,7 @@ export const Modal = styled(OverlayBase)<IModal>`
         max-height: 100%;
         max-width: ${({ containerSize }) => grid[containerSize!]};
         overflow: hidden;
+        --webkit-overflow-scrolling: touch;
         position: relative;
         width: 100%;
     }

@@ -1,4 +1,5 @@
 export * from './configs';
+export * from './useCopyToClipboard';
 export * from './useCurrentURL';
 export * from './useGetMetaImage';
 export * from './useLocalStorage';
