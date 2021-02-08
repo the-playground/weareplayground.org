@@ -49,6 +49,7 @@ export const schema: DocumentCollection = {
             name: 'content',
             title: 'Content',
             type: 'contentBlock',
+            validation: (Rule: any) => Rule.required(),
         },
     ],
     initialValue: {

@@ -33,5 +33,4 @@ export const contentBlock = {
         },
         { type: 'imageWithFullMeta' },
     ],
-    validation: (Rule: any) => Rule.required(),
 };

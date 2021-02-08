@@ -2,6 +2,8 @@ import { simpleInternalAction, simpleExternalAction } from './actions';
 
 import { address } from './address';
 
+import { singleIcon } from './icons';
+
 import { imageWithAlt, imageWithFullMeta } from './images';
 
 import {
@@ -31,5 +33,6 @@ export default [
     contentBlock,
     simpleInternalAction,
     simpleExternalAction,
+    singleIcon,
     ...components,
 ];
