@@ -1,21 +1,17 @@
-import React, { useLayoutEffect, useMemo } from 'react';
+import React, { useEffect, useLayoutEffect, useMemo } from 'react';
 import { AnimatePresence, MotionProps, motion } from 'framer-motion';
+import FocusTrap from 'focus-trap-react';
 
-import { useOnClickOutside, useScrollFreeze } from '@nerve/shared/hooks';
 import {
     CONTENT_ROOT,
     CONTENT_ROOT_OVERLAY_CLASS,
     PORTAL_ROOT,
 } from '@nerve/shared/constants';
+
+import { useOnClickOutside, useScrollFreeze } from '@nerve/shared/hooks';
 import { isSSR } from '@nerve/shared/lib';
 
 import { Portal } from '../../utility';
-
-// https://dev.to/spukas/react-portals-flexible-modal-implementation-5310
-// https://reactjs.org/docs/portals.html
-// https://github.com/reactjs/react-modal/blob/master/src/components/Modal.js
-// https://nainacodes.com/blog/create-an-accessible-and-reusable-react-modal
-// https://blog.logrocket.com/learn-react-portals-by-example/
 
 /**
  * A mid-level primitive component that creates a base for other overlay instances
@@ -46,6 +42,18 @@ export const OverlayBase: React.FC<IOverlayBase> = ({
     useOnClickOutside(modalContentRef, () => onCloseHandler(false));
 
     /**
+     * Close the modal when the escape key is pressed
+     */
+    const onKeyDown = (event: KeyboardEvent) => {
+        if (
+            canEscapeKeyClose &&
+            (event.key === 'Escape' || event.key === 'Esc')
+        ) {
+            onCloseHandler(false);
+        }
+    };
+
+    /**
      * Handle setting proper attributes on contend and modal roots
      * when the overlay is opened & closed.
      * * Note: We don't want to fetch portal elements on each render so
@@ -57,6 +65,16 @@ export const OverlayBase: React.FC<IOverlayBase> = ({
     const portalRoot = isSSR
         ? null
         : useMemo(() => document.getElementById(PORTAL_ROOT), []);
+
+    useEffect(() => {
+        if (isOpen && canEscapeKeyClose) {
+            window.addEventListener('keydown', onKeyDown);
+        }
+
+        return () => {
+            window.removeEventListener('keydown', onKeyDown);
+        };
+    });
 
     useLayoutEffect(() => {
         if (isOpen && contentRoot && portalRoot) {
@@ -76,39 +94,43 @@ export const OverlayBase: React.FC<IOverlayBase> = ({
 
     return (
         <Portal>
+            {/* Allow all aspects of the modal to be animated on mount/unmount */}
             <AnimatePresence>
                 {isOpen && (
-                    <motion.div
-                        className={className}
-                        key={title}
-                        {...rootAnimation}
-                    >
-                        {hasBackdrop && (
-                            <motion.div
-                                className="backdrop"
-                                key={`backdrop-${title}`}
-                                {...backdropAnimation}
-                            />
-                        )}
-                        <motion.section
-                            className="container"
-                            key={`container-${title}`}
-                            {...containerAnimation}
+                    // Autofocus the modal as soon as it mounts
+                    <FocusTrap>
+                        <motion.div
+                            className={className}
+                            key={title}
+                            {...rootAnimation}
                         >
-                            <motion.div
-                                className="content"
-                                role="dialog"
-                                aria-modal="true"
-                                aria-label={title}
-                                ref={modalContentRef}
-                                key={`content-${title}`}
-                                {...contentAnimation}
+                            {hasBackdrop && (
+                                <motion.div
+                                    className="backdrop"
+                                    key={`backdrop-${title}`}
+                                    {...backdropAnimation}
+                                />
+                            )}
+                            <motion.section
+                                className="container"
+                                key={`container-${title}`}
+                                {...containerAnimation}
                             >
-                                {header && <header>{header}</header>}
-                                <div className="body">{children}</div>
-                            </motion.div>
-                        </motion.section>
-                    </motion.div>
+                                <motion.div
+                                    className="content"
+                                    role="dialog"
+                                    aria-modal="true"
+                                    aria-label={title}
+                                    ref={modalContentRef}
+                                    key={`content-${title}`}
+                                    {...contentAnimation}
+                                >
+                                    {header && <header>{header}</header>}
+                                    <div className="body">{children}</div>
+                                </motion.div>
+                            </motion.section>
+                        </motion.div>
+                    </FocusTrap>
                 )}
             </AnimatePresence>
         </Portal>
