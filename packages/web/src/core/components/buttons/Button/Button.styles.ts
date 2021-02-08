@@ -4,6 +4,7 @@ import {
     FillButtonProps,
     OutlineButtonProps,
     GhostButtonProps,
+    IconButtonProps,
     TextButtonProps,
 } from './Button.d';
 
@@ -49,6 +50,24 @@ export const OutlineButton = styled(ButtonBase)<OutlineButtonProps>`
 
         &:hover {
             background-color: ${theme.actions[color].background.ghost};
+        }
+
+        &:disabled {
+        }
+    `};
+`;
+
+export const IconButton = styled(ButtonBase)<IconButtonProps>`
+    border: none;
+    border-radius: 50%;
+    ${({ theme, color }) => css`
+        background-color: ${theme.actions[color].background.default};
+
+        color: ${theme.actions[color].color.default};
+
+        &:hover {
+            background-color: ${theme.actions[color].background.hover};
+            color: ${theme.actions[color].color.hover};
         }
 
         &:disabled {

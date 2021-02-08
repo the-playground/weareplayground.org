@@ -28,6 +28,7 @@ export const OverlayBase: React.FC<IOverlayBase> = ({
     canEscapeKeyClose = true,
     hasBackdrop = true,
     title,
+    header,
     children,
     isOpen,
     onCloseHandler,
@@ -97,7 +98,8 @@ export const OverlayBase: React.FC<IOverlayBase> = ({
                                 key={`content-${title}`}
                                 {...contentAnimation}
                             >
-                                {children}
+                                {header && <header>{header}</header>}
+                                <div className="body">{children}</div>
                             </motion.div>
                         </motion.section>
                     </motion.div>
@@ -109,6 +111,7 @@ export const OverlayBase: React.FC<IOverlayBase> = ({
 
 export interface IOverlayBase {
     title: string;
+    header?: JSX.Element;
     isOpen: boolean;
     onCloseHandler: React.Dispatch<React.SetStateAction<boolean>>;
     className?: string;

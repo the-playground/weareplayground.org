@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { appBaseFontSize, fonts } from '@nerve/core/tokens';
+import { appBaseFontSize, fonts, zIndex } from '@nerve/core/tokens';
 
 /**
  * Define global styles and Stage 1 fonts. These are the fonts that will be preloaded and some of them will eventually
@@ -24,6 +24,11 @@ export const StylesGlobal = createGlobalStyle`
 		text-rendering: optimizeLegibility;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+	}
+
+	#portal-root {
+		position: relative;
+		z-index: ${zIndex.portal};
 	}
 
 	::selection {

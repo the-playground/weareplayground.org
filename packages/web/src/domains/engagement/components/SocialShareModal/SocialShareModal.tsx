@@ -9,6 +9,7 @@ import {
     List,
     ListItem,
     Modal,
+    CloseOverlay,
     OutlineButton,
 } from '@nerve/core/components';
 
@@ -23,6 +24,8 @@ export const SocialShareModal: React.FC<ISocialShare> = ({
     } = useConfigContext();
 
     const share = getShareConfig(url, shareText, facebookAppID);
+
+    // Create reusable hook that takes a ref, copies a given text, and then updates the text in the reffed div on a timeout
     const handleCopyURL = () => navigator.clipboard.writeText(url);
 
     return (
@@ -41,12 +44,27 @@ export const SocialShareModal: React.FC<ISocialShare> = ({
                 containerSize="xxs"
                 isOpen={isOpen}
                 onCloseHandler={setIsOpen}
+                header={<CloseOverlay onCloseHandler={setIsOpen} />}
             >
-                <List>
+                <List
+                    gutter="l"
+                    headingSpacing="l"
+                    itemSpacing="m"
+                    heading={
+                        <BodyText color="dark" size="l" weight="bold" as="h2">
+                            Share this show with some friends
+                        </BodyText>
+                    }
+                >
+                    {/* Handle social & email sharing */}
                     {share.map((item) => (
-                        <ListItem>
+                        <ListItem key={item.text}>
                             <Link to={item.url}>
-                                <Icon name={item.iconName} size="s" />
+                                <Icon
+                                    name={item.iconName}
+                                    size="s"
+                                    color="highlight"
+                                />
                                 <BodyText color="dark" size="m">
                                     {item.text}
                                 </BodyText>
@@ -55,8 +73,8 @@ export const SocialShareModal: React.FC<ISocialShare> = ({
                     ))}
 
                     {/* Copy URL button */}
-                    <ListItem>
-                        <button onClick={() => handleCopyURL} type="button">
+                    <ListItem key="Copy link">
+                        <button onClick={handleCopyURL} type="button">
                             <Icon name="Copy" size="s" />
                             <BodyText color="dark" size="m">
                                 Copy link

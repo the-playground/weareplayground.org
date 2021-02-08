@@ -22,19 +22,29 @@ export const Modal = styled(OverlayBase)<IModal>`
         display: flex;
         flex-direction: row;
         justify-content: center;
-        padding: ${spacing.component.s};
+        padding: ${spacing.component.xl};
     }
 
     .content {
         background-color: ${({ theme }) => theme.surfaces.neutralLight};
+        box-shadow: rgba(0, 0, 0, 0.28) 0px 8px 28px;
         border-radius: ${borders.modalRadius};
         display: flex;
         flex-direction: column;
-        padding: ${spacing.component.xl};
         margin: 0 auto;
         max-height: 100%;
         max-width: ${({ containerSize }) => grid[containerSize!]};
+        overflow: hidden;
         position: relative;
         width: 100%;
+    }
+
+    header {
+        flex: 0 0 56px; /* magic number for height o modal close container */
+        border-bottom: 1px solid ${({ theme }) => theme.palette.neutral[300]};
+    }
+
+    .body {
+        overflow: auto;
     }
 `;
