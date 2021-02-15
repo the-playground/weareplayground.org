@@ -67,8 +67,28 @@ export default [
         },
     },
     {
-        name: 'details',
-        title: 'Show Detail Items',
+        name: 'contentAdvisory',
+        description:
+            'Detailed content disclaimers and warnings with relevant info',
+        type: 'contentAdvisory',
+        options: {
+            collapsible: true,
+            collapsed: true,
+        },
+    },
+    {
+        name: 'effectsAdvisory',
+        type: 'effectsAdvisory',
+        description:
+            'Information about any dangerous or jarring effects used in the show',
+        options: {
+            collapsible: true,
+            collapsed: true,
+        },
+    },
+    {
+        name: 'additionalDetails',
+        title: 'Additional Show Details',
         description: '',
         type: 'array',
         options: {

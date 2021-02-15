@@ -85,6 +85,12 @@ export const schema: DocumentCollection = {
             type: 'live',
             status: 'active',
         },
+        contentAdvisory: {
+            hasModal: false,
+        },
+        effectsAdvisory: {
+            hasModal: false,
+        },
         seo: {
             hideDocument: false,
             publishedAt: new Date().toISOString(),
@@ -116,6 +122,8 @@ export const schema: DocumentCollection = {
 export const objects = [
     showObjects.artists,
     showObjects.collaboration,
+    showObjects.effectsAdvisory,
+    showObjects.contentAdvisory,
     showObjects.detailItem,
     showObjects.performance,
     showObjects.ticket,

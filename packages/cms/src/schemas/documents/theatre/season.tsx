@@ -43,6 +43,11 @@ export const schema: DocumentCollection = {
             type: 'string',
         },
         {
+            name: 'hashtag',
+            title: 'Hashtag',
+            type: 'string',
+        },
+        {
             name: 'description',
             title: 'Description',
             type: 'text',
