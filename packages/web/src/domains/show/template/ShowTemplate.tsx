@@ -77,19 +77,22 @@ const SingleShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({
 export const showQuery = graphql`
     query showData($id: String!) {
         sanityShow(_id: { eq: $id }) {
-            _createdAt
-            _updatedAt
+            # Toggles
+            toggles {
+                isCollaboration
+            }
+
+            # Selectors
+            selectors {
+                type
+                status
+            }
+
+            # Core Info
             heroImage {
                 asset {
                     fluid(maxWidth: 1600) {
                         ...GatsbySanityImageFluid
-                    }
-                    metadata {
-                        palette {
-                            darkMuted {
-                                background
-                            }
-                        }
                     }
                 }
             }
@@ -99,8 +102,57 @@ export const showQuery = graphql`
                 bioLink
                 scriptLink
             }
+
+            # Performance Details
             openDate
             closeDate
+
+            location {
+                googleTitle
+                address {
+                    city
+                    state
+                    stateCode
+                    street
+                    zipcode
+                }
+                Geolocation {
+                    lat
+                    lng
+                }
+                _rawDirections(resolveReferences: { maxDepth: 10 })
+                _rawParking(resolveReferences: { maxDepth: 10 })
+            }
+
+            rating
+            runtimeHours
+            runtimeMinutes
+            intermissionCount
+
+            contentAdvisory {
+                _rawModalContent(resolveReferences: { maxDepth: 10 })
+                copy
+                hasModal
+            }
+
+            effectsAdvisory {
+                _rawModalContent(resolveReferences: { maxDepth: 10 })
+                copy
+                hasModal
+            }
+
+            additionalDetails {
+                title
+                copy
+                icon
+                hasModal
+                modalTriggerText
+                _rawModalContent(resolveReferences: { maxDepth: 10 })
+            }
+
+            ## SEO Settings
+            _createdAt
+            _updatedAt
             seo {
                 title
                 hide

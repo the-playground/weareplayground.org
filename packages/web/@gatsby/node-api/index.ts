@@ -158,7 +158,9 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
                     }
 
                     shows {
-                        doNotDisplay
+                        toggles {
+                            isHiddenFromWebsite
+                        }
                         _id
                         slug {
                             current
@@ -215,9 +217,9 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
          */
         season.shows.forEach((show) => {
             // Don't display specified shows
-            if (show.doNotDisplay) {
+            if (show.toggles.isHiddenFromWebsite) {
                 reporter.log(
-                    `Creation of the show: "${show.slug.current}" is being skipped because "doNotDisplay" is set to true.`
+                    `Creation of the show: "${show.slug.current}" is being skipped because the toggle "isHiddenFromWebsite" is set to true.`
                 );
                 return;
             }
