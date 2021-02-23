@@ -35,7 +35,9 @@ export interface SanityBlogPageData {
 }
 
 interface SanityShowData {
-    doNotDisplay: boolean;
+    toggles: {
+        isHiddenFromWebsite: boolean;
+    };
     _id: string;
     slug: {
         current: string;
