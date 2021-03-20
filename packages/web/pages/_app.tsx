@@ -11,15 +11,11 @@ import {
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <>
-            <EnvironmentProvider>
-                <ConfigProvider>
-                    <ThemeProvider theme={theme}>
-                        <UIProvider>
-                            <Component {...pageProps} />
-                        </UIProvider>
-                    </ThemeProvider>
-                </ConfigProvider>
-            </EnvironmentProvider>
+            <ThemeProvider theme={theme}>
+                <UIProvider>
+                    <Component {...pageProps} />
+                </UIProvider>
+            </ThemeProvider>
         </>
     );
 }
