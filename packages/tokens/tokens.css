@@ -1,0 +1,88 @@
+/* Core Palettes */
+:root {
+    /* Orange pallette */
+    --brand-orange-l2: '#FB7F37';
+    --brand-orange-l1: '#FA7223';
+    --brand-orange: '#F25C05';
+    --brand-orange-d1: '#D75204';
+    --brand-orange-d2: '#D75204';
+
+    /* Blue pallette */
+    --brand-blue-l2: '#173A5F';
+    --brand-blue-l1: '#122D4A';
+    --brand-blue: '#0C1E31';
+    --brand-blue-d1: '#07121D';
+    --brand-blue-d2: '#020508';
+
+    /* Red Palette */
+    --brand-red-l2: '#FF242A';
+    --brand-red-l1: '#F50004';
+    --brand-red: '#DB0007';
+    --brand-red-d1: '#C20006';
+    --brand-red-d2: '#A80005';
+
+    /* Neutral pallette */
+    --neutral-100: '#FFFFFF';
+    --neutral-200: '#F2F2F3';
+    --neutral-300: '#D6D6D9';
+    --neutral-400: '#A2A2A9';
+    /* The following colors have purposefully been omitted due to poor contrast and brand fit */
+    /* --neutral-500: '#888891'; */
+    /* --neutral-600: '#67676F'; */
+    /* --neutral-700: '#343438';
+    --neutral-800: '#1D1D20'; */
+    --neutral-900: '#000000';
+}
+
+body {
+    /* Define our "surfaces" */
+
+        /* The default surface color for our application */
+        --surface: var(--brand-blue-d1);
+
+        /* "Paper" colors are in the same family as the surface color but provide slightly lighter and darker variations */
+        --surface-paper-accent: var(--brand-blue-l2);
+        --surface-paper-light: var(--brand-blue-l1);
+        --surface-paper: var(--brand-blue);
+        --surface-paper-dark: var(--brand-blue-d2);
+
+        /* Neutral surfaces are simply very light color options to create stark contrast */
+        --surface-neutral: var(--neutral-300);
+
+        --surface-neutral-accent: var(--neutral-100);
+        --surface-neutral-light: var(--neutral-200);
+        --surface-neutral-dark: var(--neutral-400);
+
+    /* Define Spacing */
+
+
+    /* Define Typography */
+        --body-font: '';
+        --body-bold-font: '';
+        --heading-font: '';
+
+}
+
+/* Section tokens */
+.section-theme--midnight {
+    background-color: var(--surface-paper-dark);
+}
+
+.section-theme--dark {
+    background-color: var(--surface);
+}
+
+.section-theme--moonlight {
+    background-color: var(--surface-paper);
+}
+
+
+.section-theme--light {
+    background-color: var(--surface-neutral-light);
+}
+
+.section-theme--white {
+    background-color: var(--surface-neutral-accent);
+}
+
+/* Accent tokens */

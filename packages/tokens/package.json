@@ -1,0 +1,18 @@
+{
+    "name": "@nerve/tokens",
+    "version": "1.0.0",
+    "description": "Nerve brand tokens",
+    "main": "package.json",
+    "license": "MIT",
+    "private": true,
+    "dependencies": {},
+    "devDependencies": {},
+    "scripts": {
+        "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+        "lint:js": "eslint . --cache --cache-location node_modules/.cache/eslint --ext js,jsx,ts,tsx",
+        "lint:js:fix": "eslint . --cache --cache-location node_modules/.cache/eslint --ext js,jsx,ts,tsx --fix",
+        "lint:clean": "rm -rf node_modules/.cache/eslint",
+        "lint:css": "./node_modules/.bin/stylelint '**/*.css' --syntax css",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
+}
