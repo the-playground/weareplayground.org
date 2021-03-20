@@ -1,6 +1,6 @@
 {
   "name": "nerve.website",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "description": "A modern website and cms monorepo, built for The Nerve",
   "repository": "https://github.com/the-nerve/nerve.web",
@@ -14,16 +14,14 @@
     "clean:root": "rimraf node_modules",
     "clean:nuke": "npm run clean:cache && npm run lint:clean && npm run clean:packages && rimraf npm package-lock.json && npm run clean:root",
     "clean:nuke:rebuild": "npm run clean:nuke && npm install",
-    "start": "npm run clean:cache && lerna run start --parallel",
+    "dev": "npm run clean:cache && lerna run dev --parallel",
     "build": "npm run clean:cache && lerna run build --parallel",
     "cms:init": "cd packages/cms && sanity init",
-    "cms:start": "cd packages/cms && npm run start",
+    "cms:dev": "cd packages/cms && npm run start",
     "cms:deploy": "cd packages/cms && npm run deploy",
-    "web:start": "cd packages/web && npm run start",
+    "web:dev": "cd packages/web && npm run dev",
     "web:build": "cd packages/web && npm run build",
     "web:serve": "cd packages/web && npm run serve",
-    "web:netlify:start": "cd packages/web && npm run netlify:start",
-    "web:netlify:build": "cd packages/web && npm run netlify:build",
     "lint:js": "lerna run lint:js",
     "lint:js:fix": "lerna run lint:js:fix",
     "lint:clean": "lerna run lint:clean",
@@ -37,30 +35,30 @@
     "update:all": "npm run update:root && npm run update:cms && npm run update:web"
   },
   "devDependencies": {
-    "@codingwithchris/eslint-config": "^1.1.2",
-    "@types/node": "^14.14.22",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.14.0",
-    "@typescript-eslint/parser": "^4.14.0",
+    "@codingwithchris/eslint-config": "^1.2.0",
+    "@types/node": "^14.14.35",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^1.12.0",
-    "eslint": "^7.18.0",
-    "eslint-config-airbnb-typescript": "^12.0.0",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-html": "^6.1.1",
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-html": "^6.1.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-json": "^2.1.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^4.3.8",
-    "lerna": "^3.22.1",
-    "lint-staged": "^10.5.3",
+    "husky": "^5.1.3",
+    "lerna": "^4.0.0",
+    "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
-    "typescript": "4.1.3"
+    "typescript": "4.2.3"
   },
   "husky": {
     "hooks": {
@@ -72,8 +70,5 @@
       "npm run lint:js:fix",
       "git add"
     ]
-  },
-  "dependencies": {
-    "gatsby": "^2.31.1"
   }
 }

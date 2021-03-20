@@ -1,14 +1,15 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "target": "es6",
+        "module": "esnext",
+        "target": "esnext",
         "strict": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "lib": [
             "dom",
             "dom.iterable",
-            "esnext"
+            "es2017",
+            "esnext",
         ],
         "allowJs": true,
         "skipLibCheck": true,

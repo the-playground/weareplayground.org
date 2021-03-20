@@ -3,12 +3,6 @@
 	"compilerOptions": {
 		"baseUrl": "",
 		"paths": {
-			"@app/*": [
-				"./@app/*"
-			],
-			"@gatsby/*": [
-				"./@gatsby/*"
-			],
 			"@nerve/core/*": [
 				"./src/core/*"
 			],
@@ -25,7 +19,6 @@
 	},
 	"includes": [
 		"src/**/*",
-		"@gatsby/**/*",
-		"gatsby-*.js"
+		"pages/**/*",
 	]
 }
