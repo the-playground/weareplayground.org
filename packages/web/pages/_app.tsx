@@ -8,7 +8,10 @@ import {
     UIProvider,
 } from '@nerve/shared/context';
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function NerveApp({
+    Component,
+    pageProps,
+}: AppProps): JSX.Element {
     return (
         <>
             <ThemeProvider theme={theme}>
