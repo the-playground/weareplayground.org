@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { Link } from '@nerve/core/routing';
 
 import { animation, borders, spacing, typography } from '@nerve/core/tokens';
 import { ButtonBaseProps } from './ButtonBase.d';
@@ -33,7 +32,7 @@ const buttonClickScaleAmount = 0.96;
  * It contains core styling. sizing, & hover logic
  */
 
-export const ButtonBase = styled(Link)<ButtonBaseProps>`
+export const ButtonBase = styled.button<ButtonBaseProps>`
     align-items: center;
     border-radius: ${borders.defaultRadius};
     cursor: pointer;

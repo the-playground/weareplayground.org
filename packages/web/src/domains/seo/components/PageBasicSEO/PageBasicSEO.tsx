@@ -1,6 +1,4 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-
+import Head from 'next/head';
 import { SanityImage } from '@nerve/shared/types';
 
 /**
@@ -23,7 +21,7 @@ export const PageBasicSEO: React.FC<PageBasicSEOProps> = ({
     const robots = hideSEO ? 'noindex, nofollow' : 'index, follow';
 
     return (
-        <Helmet>
+        <Head>
             {/* Standard meta data for search engines */}
             <title>{title}</title>
             <meta name="description" content={description} />
@@ -75,7 +73,7 @@ export const PageBasicSEO: React.FC<PageBasicSEOProps> = ({
                     content={`${image.asset.metadata.dimensions.width}`}
                 />
             )}
-        </Helmet>
+        </Head>
     );
 };
 

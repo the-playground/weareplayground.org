@@ -36,10 +36,10 @@ export const GrittyHeading = styled.div<
     }
 
     > .text:before {
-        background-image: url(${blackGrit});
+        background-image: url(/images/black-grit.png);
     }
 
     > .text:after {
-        background-image: url(${whiteGrit});
+        background-image: url(/images/white-grit.png);
     }
 `;

@@ -1,5 +1,3 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
 import { useConfigContext } from '@nerve/shared/context';
 
 /**
@@ -16,10 +14,7 @@ export const GlobalSEO: React.FC = () => {
     }
 
     return (
-        <Helmet>
-            {/* Default language and direction */}
-            <html lang="en" dir="ltr" />
-
+        <>
             {/* Google Specific Tags -- prevent search box from showing up on Google */}
             <meta name="google" content="nositelinkssearchbox" />
 
@@ -35,6 +30,6 @@ export const GlobalSEO: React.FC = () => {
             <meta name="og:country-name" content="USA" />
             <meta name="og:region" content={company.stateCode} />
             <meta name="og:postal-code" content={company.zip} />
-        </Helmet>
+        </>
     );
 };

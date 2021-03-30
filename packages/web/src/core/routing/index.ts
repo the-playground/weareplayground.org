@@ -1,1 +1,2 @@
-export * from './Link/Link';
+export * from './ExternalLink/ExternalLink';
+export * from './InternalLink/InternalLink';

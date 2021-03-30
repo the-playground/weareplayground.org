@@ -1,6 +1,6 @@
 import React from 'react';
 import BasePortableText from '@sanity/block-content-to-react';
-import { clientConfig } from '@nerve/shared/configs';
+import { sanityConfig } from '@nerve/shared/configs';
 
 import { serializers } from './serializers';
 
@@ -13,7 +13,7 @@ export const PortableText: React.FC<PortableTextProps> = ({
             blocks={content}
             serializers={serializers}
             className={className}
-            {...clientConfig.sanity}
+            {...sanityConfig}
         />
     );
 };

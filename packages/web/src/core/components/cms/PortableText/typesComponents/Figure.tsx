@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { getFluidGatsbyImage } from 'gatsby-source-sanity';
-
-import { clientConfig } from '@nerve/shared/configs';
+import { sanityConfig } from '@nerve/shared/configs';
 
 import { Image } from '../../../media';
 import { BodyText } from '../../../typography';
@@ -17,26 +15,28 @@ export const Figure: React.FC<FigureProps> = ({ node }) => {
         return null;
     }
 
-    const fluidProps = getFluidGatsbyImage(
-        node.asset._id,
-        { maxWidth: 768 },
-        clientConfig.sanity
-    );
+    // const fluidProps = getFluidGatsbyImage(
+    //     node.asset._id,
+    //     { maxWidth: 768 },
+    //     clientConfig.sanity
+    // );
 
-    if (!fluidProps) {
-        return null;
-    }
+    // if (!fluidProps) {
+    //     return null;
+    // }
 
-    return (
-        <figure key={node._key}>
-            <Image fluid={fluidProps} alt={node.alt} />
-            {node.caption && node.credit && (
-                <BodyText as="figcaption" color="medium" size="s">
-                    {node.caption}; photo credit: {node.credit}
-                </BodyText>
-            )}
-        </figure>
-    );
+    // return (
+    //     <figure key={node._key}>
+    //         <Image fluid={fluidProps} alt={node.alt} />
+    //         {node.caption && node.credit && (
+    //             <BodyText as="figcaption" color="medium" size="s">
+    //                 {node.caption}; photo credit: {node.credit}
+    //             </BodyText>
+    //         )}
+    //     </figure>
+    // );
+
+    return null;
 };
 
 interface FigureProps {

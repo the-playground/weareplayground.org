@@ -1,5 +1,4 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import Head from 'next/head';
 import { useConfigContext } from '@nerve/shared/context';
 import {
     organizationSchema,
@@ -44,9 +43,9 @@ export const StructuredData: React.FC<StructuredDataProps> = ({
     }`;
 
     return (
-        <Helmet>
+        <Head>
             <script type="application/ld+json">{data}</script>
-        </Helmet>
+        </Head>
     );
 };
 

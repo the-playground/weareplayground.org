@@ -3,11 +3,13 @@ import { BLOG_ROOT_SLUG } from '@nerve/domains/blog';
 
 import { buildNestedSlugPath, normalizeSlug } from '@nerve/shared/lib';
 
-export const useLinkMapConfig = (links: ILinkMapQueryData): ILinkMapConfig => {
+export const buildLinkMapConfig = (
+    links: ILinkMapConfigQueryData
+): ILinkMapConfig => {
     return {
-        blogPage: normalizeSlug(links?.blogPage?.slug?.current),
-        archivePage: normalizeSlug(links?.showArchivePage?.slug?.current),
-        sitemap: links?.sitemap,
+        blogPage: normalizeSlug(links.blogPage),
+        archivePage: normalizeSlug(links.showArchivePage),
+        sitemap: links.sitemap,
         getShow: (season, show) =>
             buildNestedSlugPath([SEASON_ROOT_SLUG, season, show]),
         getSeason: (season) => buildNestedSlugPath([SEASON_ROOT_SLUG, season]),
@@ -16,17 +18,15 @@ export const useLinkMapConfig = (links: ILinkMapQueryData): ILinkMapConfig => {
     };
 };
 
-export interface ILinkMapQueryData {
-    blogPage: {
-        slug: {
-            current: string;
-        };
-    };
-    showArchivePage: {
-        slug: {
-            current: string;
-        };
-    };
+export const linkMapConfigQuery = `*[_type == "linkMapConfig"][0] {
+    "blogPage": blogPage->slug.current,
+    "showArchivePage": showArchivePage->slug.current,
+    sitemap
+}`;
+
+export interface ILinkMapConfigQueryData {
+    blogPage: string;
+    showArchivePage: string;
     sitemap: string;
 }
 

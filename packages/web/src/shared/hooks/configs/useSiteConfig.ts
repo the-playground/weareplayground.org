@@ -1,7 +1,4 @@
-import { useStaticQuery, graphql } from 'gatsby';
-import {} from '@nerve/shared/types';
-
-export const useSiteConfig = (): SiteConfig => {
+export const useSiteConfig = (): ISiteConfig => {
     /**
      * Query for all the configs our site might need to use for every page.
      */
@@ -17,7 +14,7 @@ export const useSiteConfig = (): SiteConfig => {
     return sanitySiteConfig;
 };
 
-export interface SiteConfig {
+export interface ISiteConfig {
     verificationGoogle: string;
     verificationBing: string;
 }

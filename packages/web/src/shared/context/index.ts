@@ -1,4 +1,4 @@
-export * from './ConfigContext';
+export * from './ConfigContext/ConfigContext';
 export * from './EnvironmentContext';
 export * from './SeasonContext';
 export * from './ShowContext';

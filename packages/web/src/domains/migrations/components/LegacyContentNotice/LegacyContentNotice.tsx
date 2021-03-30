@@ -7,6 +7,8 @@ import {
     Heading,
 } from '@nerve/core/components';
 
+import { InternalLink } from '@nerve/core/routing';
+
 import * as styled from './__styles';
 
 export const LegacyContentNotice: React.FC<LegacyContentNoticeProps> = ({
@@ -57,8 +59,8 @@ export const LegacyContentNotice: React.FC<LegacyContentNoticeProps> = ({
                 <FillButton
                     color="tertiary"
                     size="s"
-                    to={legacyURL}
                     className="action"
+                    component={InternalLink}
                 >
                     {legacyURLText}
                 </FillButton>

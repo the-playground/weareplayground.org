@@ -1,7 +1,6 @@
-import { useStaticQuery, graphql } from 'gatsby';
 import { SanityImage } from '@nerve/shared/types';
 
-export const useCompanyConfig = (): CompanyConfig => {
+export const useCompanyConfig = (): ICompanyConfig => {
     /**
      * Query for all the configs our site might need to use for every page.
      */
@@ -50,7 +49,7 @@ export const useCompanyConfig = (): CompanyConfig => {
     return sanityCompanyConfig;
 };
 
-export interface CompanyConfig {
+export interface ICompanyConfig {
     city: string;
     ein: string;
     emailAuditions: string;
