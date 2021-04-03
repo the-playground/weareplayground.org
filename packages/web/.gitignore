@@ -1,2 +1,5 @@
 # Local NextJS folder
 .next
+
+# Linaria
+.linaria-cache/

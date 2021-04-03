@@ -5,7 +5,7 @@ import addToMailchimp, { MailchimpResponse } from 'gatsby-plugin-mailchimp';
 
 import { emailRegexPattern } from '@nerve/shared/lib';
 
-import { BodyText, FillButton, Heading, Input } from '@nerve/core/components';
+import { BodyText, Button, Heading, Input } from '@nerve/core/components';
 
 import { EmailSubscribeProps } from './EmailSubscribe.d';
 import * as styled from './EmailSubscribe.styles';
@@ -98,15 +98,16 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
                             ref={register}
                         />
 
-                        <FillButton
+                        <Button
                             size="m"
+                            variant="fill"
                             color="primary"
                             isLoading={loading}
+                            type="submit"
                             fullWidth
-                            isSubmit
                         >
                             subscribe
-                        </FillButton>
+                        </Button>
                     </form>
 
                     {errors.email && (

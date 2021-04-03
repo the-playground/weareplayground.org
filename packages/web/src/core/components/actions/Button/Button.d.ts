@@ -1,18 +1,23 @@
+import { IconProps } from '@nerve/core/components/media';
+import type { PolymorphicPropsWithRef } from 'react-polymorphic-types';
 import { AvailableActionTheme } from '@nerve/core/themes';
-import { ButtonBaseProps } from '../ButtonBase/BaseButton';
 
-export interface FillButtonProps extends ButtonBaseProps {
-    color: AvailableActionTheme;
-}
+export const ButtonDefaultElement = 'button';
 
-export interface OutlineButtonProps extends ButtonBaseProps {
-    color: AvailableActionTheme;
-}
+export type ButtonSize = 's' | 'm';
 
-export interface GhostButtonProps extends ButtonBaseProps {
+export type CoreButtonProps = {
+    size: ButtonSize;
+    fullWidth?: true | undefined;
+    animateOnClick?: true | undefined;
+    animateIconOnHover?: true | undefined;
+    startIcon?: React.ReactElement<IconProps>;
+    endIcon?: React.ReactElement<IconProps>;
+    isLoading?: boolean;
     color: AvailableActionTheme;
-}
+    variant: 'fill' | 'outline' | 'ghost' | 'text';
+};
 
-export interface TextButtonProps extends ButtonBaseProps {
-    color: AvailableActionTheme;
-}
+export type ButtonProps<
+    T extends React.ElementType = typeof ButtonDefaultElement
+> = PolymorphicPropsWithRef<CoreButtonProps, T>;

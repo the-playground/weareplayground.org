@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { BodyText, GhostButton, Icon, Image } from '@nerve/core/components';
+import { ExternalLink } from '@nerve/core/routing';
+import { BodyText, Button, Icon, Image } from '@nerve/core/components';
 
 import { AuthorCardProps } from './AuthorCard.d';
 import * as styled from './AuthorCard.styles';
@@ -33,15 +34,17 @@ export const AuthorCard: React.FC<AuthorCardProps> = ({
             </div>
             {instagram && (
                 <div className="follow">
-                    <GhostButton
-                        to={instagram}
+                    <Button
+                        href={instagram}
+                        variant="ghost"
                         color="tertiary"
                         size="s"
                         endIcon={<Icon name="Instagram" size="xs" />}
+                        as={ExternalLink}
                         animateOnClick
                     >
                         follow
-                    </GhostButton>
+                    </Button>
                 </div>
             )}
         </styled.AuthorCard>

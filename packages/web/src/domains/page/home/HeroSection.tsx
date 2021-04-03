@@ -8,12 +8,13 @@ import { useConfigContext } from '@nerve/shared/context';
 import {
     BodyText,
     Container,
-    FillButton,
+    Button,
     GrittyHeading,
     Icon,
     Section,
     SectionProps,
 } from '@nerve/core/components';
+import { InternalLink } from '@nerve/core/routing';
 
 const StyledHeroSection = styled(Section)`
     padding: ${spacing.layout.l} 0 ${spacing.layout.xl} 0;
@@ -64,17 +65,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <BodyText color="light" size="l" className="copy">
                     {copy}
                 </BodyText>
-                <FillButton
-                    to={blogLink}
-                    color="primary"
+                <Button
                     size="m"
+                    variant="fill"
+                    color="primary"
                     className="action"
                     endIcon={<Icon name="ArrowRight" size="xs" />}
+                    href={blogLink}
+                    as={InternalLink}
                     animateIconOnHover
                     animateOnClick
                 >
                     {rebrandLinkText}
-                </FillButton>
+                </Button>
             </Container>
         </StyledHeroSection>
     );

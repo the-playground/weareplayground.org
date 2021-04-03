@@ -3,11 +3,12 @@ import styled from 'styled-components';
 
 import {
     BodyText,
-    FillButton,
+    Button,
     GrittyHeading,
     Section,
     Container,
 } from '@nerve/core/components';
+import { InternalLink } from '@nerve/core/routing';
 
 import { spacing } from '@nerve/core/tokens';
 
@@ -48,9 +49,15 @@ export const NotFoundContent: React.FC = () => {
                     the home page and starting your journey from there. Best
                     wishes.
                 </BodyText>
-                <FillButton to="/" color="primary" size="m">
+                <Button
+                    size="m"
+                    variant="fill"
+                    color="primary"
+                    href="/"
+                    as={InternalLink}
+                >
                     Take me home
-                </FillButton>
+                </Button>
             </Container>
         </StyledSection>
     );

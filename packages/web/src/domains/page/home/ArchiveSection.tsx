@@ -9,8 +9,10 @@ import {
     Container,
     Heading,
     Icon,
-    TextButton,
+    Button,
 } from '@nerve/core/components';
+
+import { InternalLink } from '@nerve/core/routing';
 
 const StyledArchiveSection = styled.section`
     padding: ${spacing.layout.l} 0;
@@ -62,15 +64,17 @@ export const ArchiveSection: React.FC = () => {
                     check out out our show archives and discover why our brand
                     of theatre will get under your skin.
                 </BodyText>
-                <TextButton
+                <Button
                     color="primary"
+                    variant="text"
                     size="m"
-                    to={links.archivePage}
+                    href={links.archivePage!}
                     endIcon={<Icon name="ArrowRight" size="xs" />}
+                    as={InternalLink}
                     animateIconOnHover
                 >
                     take me there
-                </TextButton>
+                </Button>
             </Container>
         </StyledArchiveSection>
     );

@@ -1,13 +1,8 @@
 import React from 'react';
 
-import {
-    BodyText,
-    Container,
-    FillButton,
-    Heading,
-} from '@nerve/core/components';
+import { BodyText, Container, Button, Heading } from '@nerve/core/components';
 
-import { InternalLink } from '@nerve/core/routing';
+import { ExternalLink } from '@nerve/core/routing';
 
 import * as styled from './__styles';
 
@@ -56,14 +51,16 @@ export const LegacyContentNotice: React.FC<LegacyContentNoticeProps> = ({
                     to date with what we're up to!
                 </BodyText>
 
-                <FillButton
-                    color="tertiary"
+                <Button
                     size="s"
+                    variant="fill"
+                    color="tertiary"
+                    href={legacyURL}
                     className="action"
-                    component={InternalLink}
+                    as={ExternalLink}
                 >
                     {legacyURLText}
-                </FillButton>
+                </Button>
 
                 {/* Subscribe feature here */}
             </Container>

@@ -2,18 +2,18 @@ import React from 'react';
 
 import { useConfigContext } from '@nerve/shared/context';
 
-import { Link } from '@nerve/core/routing';
-import { BodyText, FillButton } from '@nerve/core/components';
+import { InternalLink } from '@nerve/core/routing';
+import { BodyText } from '@nerve/core/components';
 
 import * as styled from './__styles';
 
 const LinkItem: React.FC<{ slug: string; text: string }> = ({ slug, text }) => (
     <li>
-        <Link to={slug} activeClassName="--is-active">
+        <InternalLink href={slug}>
             <BodyText as="span" size="m" weight="bold" color="light">
                 {text}
             </BodyText>
-        </Link>
+        </InternalLink>
     </li>
 );
 
@@ -39,20 +39,26 @@ export const DesktopNavBar: React.FC = () => {
                     />
                 )} */}
 
-                <LinkItem slug={archivePage} text="the archive" key="archive" />
+                <LinkItem
+                    slug={archivePage ?? ''}
+                    text="the archive"
+                    key="archive"
+                />
                 {/* <LinkItem slug={about} text="about" key="about" />
                 <LinkItem slug={contact} text="connect" key="connect" />
                 <li className="highlight">
-                    <FillButton
+                    <Button
                         size="s"
                         color="primary"
-                        to={supportUs}
+                        variant={fill}
+                        href={supportUs}
                         key="support us"
                         className="button"
+                        as={InternalLink}
                         animateOnClick
                     >
                         support us
-                    </FillButton>
+                    </Button>
                 </li> */}
             </ul>
         </styled.DesktopNavBar>

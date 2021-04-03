@@ -18,7 +18,7 @@ export const DesktopNavBar = styled.nav`
         }
 
         /* Current page link item text */
-        a.--is-active {
+        a.--selected {
             opacity: 0.6;
         }
 
