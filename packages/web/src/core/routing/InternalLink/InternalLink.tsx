@@ -1,16 +1,25 @@
 import React from 'react';
-
+import classnames from 'classnames';
 import NextLink, { LinkProps as NextLinkProps } from 'next/link';
+import { useRouter } from 'next/router';
 
 export const InternalLink = React.forwardRef<
     HTMLAnchorElement,
     InternalLinkProps
 >((props, ref) => {
-    const { children, href, passHref, ...rest } = props;
+    const { className, children, href, passHref, ...rest } = props;
+    const router = useRouter();
+    const classes = classnames(
+        {
+            // Add a "selected" class to the currently active page link
+            '--selected': router.pathname === href,
+        },
+        className
+    );
 
     return (
         <NextLink {...{ href }} passHref>
-            <a ref={ref} {...rest}>
+            <a className={classes} ref={ref} {...rest}>
                 {children}
             </a>
         </NextLink>
