@@ -11,5 +11,8 @@ module.exports = (phase, { defaultConfig }) => {
         linaria: {
             /* linaria options here */
         },
+        future: {
+            webpack5: true,
+        },
     });
 };
