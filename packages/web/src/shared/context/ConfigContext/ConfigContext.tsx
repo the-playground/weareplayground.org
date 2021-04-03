@@ -11,10 +11,13 @@ export const ConfigContext = createContext({} as IGlobalConfigs);
 
 export const ConfigProvider: React.FC<IGlobalConfigs> = ({
     children,
-    configs,
+    company,
+    site,
+    seo,
+    links,
 }) => {
     return (
-        <ConfigContext.Provider value={{ configs }}>
+        <ConfigContext.Provider value={{ company, site, seo, links }}>
             {children}
         </ConfigContext.Provider>
     );
@@ -23,12 +26,10 @@ export const ConfigProvider: React.FC<IGlobalConfigs> = ({
 export const useConfigContext = (): IGlobalConfigs => useContext(ConfigContext);
 
 export interface IGlobalConfigs {
-    configs: {
-        company: ICompanyConfig;
-        site: ISiteConfig;
-        seo: ISEOConfig;
-        links: ILinkMapConfig;
-    };
+    company: ICompanyConfig;
+    site: ISiteConfig;
+    seo: ISEOConfig;
+    links: ILinkMapConfig;
 }
 
 export {

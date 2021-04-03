@@ -17,9 +17,15 @@ import { sanityClient } from '@nerve/shared/lib';
 
 function NerveApp({ Component, pageProps }: AppProps): JSX.Element {
     console.log('Custom App Props:', pageProps);
+    const { company, seo, site, links } = pageProps.configs;
     return (
         <>
-            <ConfigProvider configs={pageProps.configs}>
+            <ConfigProvider
+                company={company}
+                site={site}
+                seo={seo}
+                links={links}
+            >
                 <ThemeProvider theme={theme}>
                     <Component {...pageProps} />
                 </ThemeProvider>
