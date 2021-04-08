@@ -1,10 +1,10 @@
 import React from 'react';
-import Img, {
-    GatsbyImageFixedProps,
-    GatsbyImageFluidProps,
-    FixedObject,
-    FluidObject,
-} from 'gatsby-image';
+
+import {
+    GatsbyImage,
+    StaticImage as StaticGatsbyImage,
+    getImage,
+} from 'gatsby-plugin-image';
 
 /**
  * A thin wrapper for Gatsby Image to allow us to easily add
@@ -13,41 +13,10 @@ import Img, {
  *
  * @param props All Gatsby image props as a destructured object
  */
-export const Image: React.FC<FixedImageProps | FluidImageProps> = ({
-    ...props
-}) => <Img {...props} durationFadeIn={1000} />;
+export const Image: typeof GatsbyImage = ({ ...props }) => {
+    return <GatsbyImage {...props} />;
+};
 
-// Localize Gatsby Image Props into this component
-export interface FixedImageProps extends GatsbyImageFixedProps {
-    // Multiple size possibilities from Sanity
-    thumbnails?: {
-        [key: string]: FixedImageProps;
-    };
-}
-
-export interface FluidImageProps extends GatsbyImageFluidProps {
-    // Multiple size possibilities from Sanity
-    thumbnails?: {
-        [key: string]: FluidImageProps;
-    };
-}
-
-// The interfaces below will never be directly consumed as props for the
-// `Image` component, but they will allow us to more easily
-// work with images from `localFile` queries more easily, as those props
-// differ from standard `GatsbyImageProps`.
-export interface LocalFileImageProps {
-    alt: string;
-    localFile: {
-        childImageSharp: {
-            fixed?: FixedObject | FixedObject[];
-            fluid?: FluidObject | FluidObject[];
-            resolutions?: FixedObject;
-            sizes?: FluidObject;
-        };
-    };
-}
-
-export type ImageFixedObjectProps = FixedObject;
-
-export type ImageFluidObjectProps = FluidObject;
+export const StaticImage: typeof StaticGatsbyImage = ({ ...props }) => {
+    return <StaticGatsbyImage {...props} />;
+};
