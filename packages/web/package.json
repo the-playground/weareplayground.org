@@ -15,6 +15,7 @@
 		"gatsby-background-image": "^1.5.0",
 		"gatsby-image": "^3.2.0",
 		"gatsby-plugin-gtag": "^1.0.13",
+		"gatsby-plugin-image": "^1.2.1",
 		"gatsby-plugin-mailchimp": "^5.2.2",
 		"gatsby-plugin-manifest": "^3.2.0",
 		"gatsby-plugin-module-resolver": "^1.0.3",
