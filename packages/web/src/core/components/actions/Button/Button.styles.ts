@@ -1,5 +1,5 @@
 // import styled, { css } from 'styled-components';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 
 import { animation, borders, spacing, typography } from '@nerve/core/tokens';
 
