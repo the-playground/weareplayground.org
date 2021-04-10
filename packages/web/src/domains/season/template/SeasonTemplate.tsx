@@ -3,7 +3,7 @@ import { graphql, PageProps } from 'gatsby';
 
 import { useGetMetaImage, useCurrentURL } from '@nerve/shared/hooks';
 
-import { SubscribeSection } from '@nerve/domains/engagement';
+// import { SubscribeSection } from '@nerve/domains/engagement';
 import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
 import { LegacyContentNotice } from '@nerve/domains/migrations';
 
@@ -49,7 +49,7 @@ const SeasonLanding: React.FC<PageProps<PageData, SeasonPageContext>> = ({
                 legacyURL={`https://theplaygroundtheatre.org/season/${slug}`}
                 legacyURLText="See season on old website"
             />
-            <SubscribeSection />
+            {/* <SubscribeSection /> */}
         </>
     );
 };

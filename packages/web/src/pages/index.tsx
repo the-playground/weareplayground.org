@@ -1,10 +1,6 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
-import {
-    GatsbyPageContext,
-    SanityDocument,
-    SanityFluidImage,
-} from '@nerve/shared/types';
+import { GatsbyPageContext, SanityDocument } from '@nerve/shared/types';
 
 import { SubscribeSection } from '@nerve/domains/engagement';
 
@@ -90,7 +86,7 @@ interface HomePageData extends SanityDocument {
                 };
             };
         };
-        image: SanityFluidImage;
+        // image: SanityFluidImage;
     };
 }
 

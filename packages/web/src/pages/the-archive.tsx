@@ -68,7 +68,9 @@ export const query = graphql`
                 closeDate
                 posterImage {
                     alt
-                    asset
+                    asset {
+                        url
+                    }
                 }
                 author {
                     name

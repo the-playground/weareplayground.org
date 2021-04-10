@@ -108,7 +108,9 @@ export const query = graphql`
 
             featuredImage {
                 alt
-                asset
+                asset {
+                    url
+                }
             }
 
             _rawContent(resolveReferences: { maxDepth: 10 })
@@ -119,7 +121,9 @@ export const query = graphql`
                 instagram
                 avatar {
                     alt
-                    asset
+                    asset {
+                        url
+                    }
                 }
             }
 
