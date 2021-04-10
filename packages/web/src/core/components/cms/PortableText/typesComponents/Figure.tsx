@@ -19,7 +19,7 @@ export const Figure: React.FC<FigureProps> = ({ node }) => {
 
     const imageData = getGatsbyImageData(
         node,
-        { maxWidth: 768 },
+        { fit: 'fillmax' },
         clientConfig.sanity
     );
 
