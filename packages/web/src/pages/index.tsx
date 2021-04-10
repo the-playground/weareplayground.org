@@ -28,16 +28,10 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
             lastUpdated={page._updatedAt}
             currentLocation={location.pathname}
         >
-            <HeroSection
-                title={page.hero.title}
-                copy={page.hero.copy}
-                bgImage={page.hero.image}
-                rebrandLink={page.hero.action.link.slug.current}
-                rebrandLinkText={page.hero.action.text}
-            />
+
             <RebrandSection />
             <ArchiveSection />
-            <SubscribeSection />
+            {/* <SubscribeSection /> */}
         </PageTemplate>
     );
 };
@@ -66,13 +60,6 @@ export const query = graphql`
             hero {
                 title
                 copy
-                image {
-                    asset {
-                        fluid(maxWidth: 1800) {
-                            ...GatsbySanityImageFluid_noBase64
-                        }
-                    }
-                }
                 action {
                     text
                     link {

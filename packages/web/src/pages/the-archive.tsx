@@ -68,11 +68,7 @@ export const query = graphql`
                 closeDate
                 posterImage {
                     alt
-                    asset {
-                        fluid(maxWidth: 500) {
-                            ...GatsbySanityImageFluid
-                        }
-                    }
+                    asset
                 }
                 author {
                     name

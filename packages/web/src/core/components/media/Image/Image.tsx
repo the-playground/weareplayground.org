@@ -3,8 +3,13 @@ import React from 'react';
 import {
     GatsbyImage,
     StaticImage as StaticGatsbyImage,
-    getImage as getGatsbyImage,
 } from 'gatsby-plugin-image';
+
+import { getGatsbyImageData as getSanityGatsbyImageData } from 'gatsby-source-sanity'
+import { clientConfig } from '@nerve/shared/configs';
+
+import { SanityImageProps } from './__types'
+
 
 /**
  * A general note about this file: We are wrapping the Gatsby Image API in order to:
@@ -12,19 +17,25 @@ import {
  * 1. Provide a reference to a core component that lives in our design system instead of importing from a node module in our project.
  * 2. Give us flexibility to set global defaults or apply logic globally if needed
  * 3. Allow us to change the underlying API without affecting implementation.
+ * 4. Allow us to more easily work with images coming from a gatsby-source plugin (CMS) that have their own API for working with Gatsby Images
  *
  * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-image/
  * @link https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/
  */
 
 /**
- * A thin wrapper for Gatsby Image
- * @link https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#gatsbyimage
+ * A wrapper for Gatsby Image that allows it to work seamlessly with the Sanity CMS Image API.
+ * * Note: Only use this component when consuming images that come from Sanity GraphQL Queries
  *
- * @param image Accepts any kind of allowed gatsby image object and prepares it to pass to the image component.
- * @param props All available Gatsby image props
+ * @link https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#gatsbyimage
+ * @link https://www.gatsbyjs.com/plugins/gatsby-source-sanity/#using-images
+ *
+ * @param image Accepts an image reference from a Sanity GraphQL Query
+ * @param queryConfig The configuration for the Sanity image url builder query
+ * @param alt The alt tag for the image
+ * @param rest (as a spread) All params allowed by the underlying GatsbyImage component, minus the 'image' param (this is handled by Sanity helper utilities)
  */
-export const Image: typeof GatsbyImage = ({ image, alt, ...props }) => {
+export const SanityImage: React.FC<SanityImageProps> = ({image, config, alt, ...rest}) => {
 
     /**
      * This makes our Image component easier to work with, because it allows us to pass in the entire image stack without
@@ -34,18 +45,19 @@ export const Image: typeof GatsbyImage = ({ image, alt, ...props }) => {
      * It also allows the underlying Gatsby Image API to change without us having to worry about changing all of our
      * image queries.
      */
-    const _image = getImage(image)
+    const imageData = getSanityGatsbyImageData(image, {...config}, clientConfig.sanity)
 
-    if(!_image){
-        console.error('There was an error loading the requested image from the Image component. Request details available in the output object:', {requestedImageData: image, getImageResults: _image, alt});
+    if(!imageData){
+        console.error('There was an error loading the requested image from the Image component. Request details available in the output object:', {requestedSanityImageData: image, imageDataResults: imageData, alt});
         return null;
     }
-    return <GatsbyImage image={_image} alt={alt} {...props} />;
+
+    return <GatsbyImage image={imageData} alt={alt} {...rest} />;
 };
 
 /**
- * A thin wrapper for Gatsby Static Image
- * @link https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#staticimage
+ * A thin wrapper for a Gatsby Static Image
+ * @link https://www.gatsbyjs.com/docs/reference/built-in-compon ents/gatsby-plugin-image/#staticimage
  *
  * @param props All available StaticGatsbyImage props
  */
@@ -55,9 +67,9 @@ export const StaticImage: typeof StaticGatsbyImage = ({ ...props }) => {
 
 
 /**
- * A thin wrapper for getGatsbyImage–used for composing images to pass into the Image component.
+ * A thin wrapper for getGatsbyImageData–used for composing images retrieved from the Sanity CMS to pass into the Image component.
  * @link https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#getimage
  *
  * @param props all available getGatsbyImage props
  */
-export const getImage: typeof getGatsbyImage = ({...props}) => getGatsbyImage({...props})
+export const getSanityImage: typeof getSanityGatsbyImageData = (image, { ...args }, location) => getSanityGatsbyImageData(image, {...args}, location)
