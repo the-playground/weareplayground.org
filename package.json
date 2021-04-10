@@ -13,7 +13,7 @@
     "clean:cache": "lerna run empty-cache",
     "clean:root": "rimraf node_modules",
     "clean:nuke": "npm run clean:cache && npm run lint:clean && npm run clean:packages && rimraf npm package-lock.json && npm run clean:root",
-    "clean:nuke:rebuild": "npm run clean:nuke && npm install",
+    "clean:nuke:rebuild": "npm run clean:nuke && npm install --legacy-peer-deps",
     "start": "npm run clean:cache && lerna run start --parallel",
     "build": "npm run clean:cache && lerna run build --parallel",
     "cms:init": "cd packages/cms && sanity init",
