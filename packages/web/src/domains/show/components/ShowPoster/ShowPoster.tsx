@@ -34,7 +34,7 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
                 to={links.getShow(season.slug, slug) ?? '/'}
             >
                 <Image
-                    fluid={image.asset.fluid}
+                    image={image}
                     alt={image.alt}
                     className="image"
                 />
