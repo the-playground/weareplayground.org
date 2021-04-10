@@ -24,6 +24,7 @@
 		}
 	},
 	"includes": [
+		"types/**/*",
 		"src/**/*",
 		"@gatsby/**/*",
 		"gatsby-*.js"
