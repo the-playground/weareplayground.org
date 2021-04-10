@@ -37,7 +37,7 @@
     "update:all": "npm run update:root && npm run update:cms && npm run update:web"
   },
   "devDependencies": {
-    "@codingwithchris/eslint-config": "^1.2.0",
+    "@codingwithchris/eslint-config": "^1.2.1",
     "@types/node": "^14.14.37",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
@@ -45,7 +45,7 @@
     "@typescript-eslint/parser": "^4.21.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^1.12.0",
-    "eslint": "^7.23.0",
+    "eslint": "^7.24.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-html": "^6.1.2",
@@ -53,7 +53,7 @@
     "eslint-plugin-json": "^2.1.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^6.0.0",
     "lerna": "^4.0.0",
