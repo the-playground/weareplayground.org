@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Link } from '@nerve/core/routing';
-import { SanityFluidImage } from '@nerve/shared/types';
+import { SanityImageData } from '@nerve/shared/types';
 
 import {
     BodyText,
@@ -34,9 +34,9 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
                 to={links.getShow(season.slug, slug) ?? '/'}
             >
                 <SanityImage
-                    image={image}
-                    config={{width: 500}}
-                    alt={image.alt}
+                    image={image.asset}
+                    config={{ width: 500 }}
+                    alt={image.alt ?? ''}
                     className="image"
                 />
                 <BackgroundOverlay
@@ -73,7 +73,7 @@ export interface ShowPosterProps {
         slug: string;
         title: string;
     };
-    image: SanityFluidImage;
+    image: SanityImageData;
     openingDate: string;
     closingDate: string;
 }

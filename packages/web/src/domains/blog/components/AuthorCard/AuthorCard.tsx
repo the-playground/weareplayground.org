@@ -1,6 +1,11 @@
 import React from 'react';
 
-import { BodyText, GhostButton, Icon, Image } from '@nerve/core/components';
+import {
+    BodyText,
+    GhostButton,
+    Icon,
+    SanityImage,
+} from '@nerve/core/components';
 
 import { AuthorCardProps } from './AuthorCard.d';
 import * as styled from './AuthorCard.styles';
@@ -15,7 +20,11 @@ export const AuthorCard: React.FC<AuthorCardProps> = ({
         <styled.AuthorCard>
             {avatar && (
                 <div className="avatar">
-                    <Image fixed={avatar.asset.fixed} alt={avatar.alt} />
+                    <SanityImage
+                        image={avatar.asset}
+                        alt={avatar.alt}
+                        config={{ width: 80, height: 80 }}
+                    />
                 </div>
             )}
             <div className="content">

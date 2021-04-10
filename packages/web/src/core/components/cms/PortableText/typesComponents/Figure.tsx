@@ -1,10 +1,6 @@
 import React from 'react';
 
-import { getGatsbyImageData } from 'gatsby-source-sanity';
-
-import { clientConfig } from '@nerve/shared/configs';
-
-import { Image } from '../../../media';
+import { SanityImage } from '../../../media';
 import { BodyText } from '../../../typography';
 
 /**
@@ -17,19 +13,13 @@ export const Figure: React.FC<FigureProps> = ({ node }) => {
         return null;
     }
 
-    const imageData = getGatsbyImageData(
-        node,
-        { fit: 'fillmax' },
-        clientConfig.sanity
-    );
-
-    if (!imageData) {
-        return null;
-    }
-
     return (
         <figure key={node._key}>
-            <Image image={imageData} alt={node.alt} />
+            <SanityImage
+                image={node.asset}
+                config={{ fit: 'fillmax', width: 768 }}
+                alt={node.alt ?? ''}
+            />
             {node.caption && node.credit && (
                 <BodyText as="figcaption" color="medium" size="s">
                     {node.caption}; photo credit: {node.credit}

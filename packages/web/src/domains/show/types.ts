@@ -1,8 +1,7 @@
 import {
     GatsbyPageContext,
     SanityDocument,
-    SanityFluidImage,
-    SanityFixedImage,
+    SanityImageData,
 } from '@nerve/shared/types';
 import { SeasonReference } from '@nerve/domains/season';
 
@@ -11,8 +10,8 @@ import { SeasonReference } from '@nerve/domains/season';
  */
 export interface ShowPage extends SanityDocument {
     author: ShowAuthor;
-    heroImage: SanityFluidImage;
-    thumbnailImage: SanityFixedImage;
+    heroImage: SanityImageData;
+    thumbnailImage: SanityImageData;
     performances: ShowPerformance[];
     season: SeasonReference;
     openDate: string;
@@ -41,15 +40,15 @@ export interface ShowCore {
 }
 
 export interface ShowCoreWithPoster extends ShowCore {
-    posterImage: SanityFluidImage;
+    posterImage: SanityImageData;
 }
 
 export interface ShowCoreWithCard extends ShowCore {
-    cardImage: SanityFluidImage;
+    cardImage: SanityImageData;
 }
 
 export interface ShowCoreWithThumbnail {
-    thumbnailImage: SanityFixedImage;
+    thumbnailImage: SanityImageData;
 }
 
 /**

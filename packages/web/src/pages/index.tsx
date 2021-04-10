@@ -28,7 +28,6 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
             lastUpdated={page._updatedAt}
             currentLocation={location.pathname}
         >
-
             <RebrandSection />
             <ArchiveSection />
             {/* <SubscribeSection /> */}

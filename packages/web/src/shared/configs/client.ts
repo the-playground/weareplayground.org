@@ -1,4 +1,3 @@
-
 export const clientConfig = {
     sanity: {
         projectId: process.env.GATSBY_SANITY_PROJECT_ID ?? 'sanity-projectID',

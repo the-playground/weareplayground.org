@@ -1,5 +1,8 @@
 import { GatsbyImageProps } from 'gatsby-plugin-image';
-import { getGatsbyImageData as getSanityGatsbyImageData, GatsbyImageDataArgs as SanityGatsbyImageDataArgs } from 'gatsby-source-sanity'
+import {
+    getGatsbyImageData as getSanityGatsbyImageData,
+    GatsbyImageDataArgs as SanityGatsbyImageDataArgs,
+} from 'gatsby-source-sanity';
 
 /**
  * Unfortunately Sanity doesn't expose its 'ImageNode' type properly, so that makes typing our SanityImage component a little more difficult :/
@@ -10,10 +13,10 @@ import { getGatsbyImageData as getSanityGatsbyImageData, GatsbyImageDataArgs as 
  *
  * * Note: This method is somewhat fragile and could easily break if Sanity changes the name or position of the underlying type param.
  */
-export type GetSanityImageParams = Parameters<typeof getSanityGatsbyImageData>
+export type GetSanityImageParams = Parameters<typeof getSanityGatsbyImageData>;
 export type SanityImageNode = GetSanityImageParams[0];
 
 export interface SanityImageProps extends Omit<GatsbyImageProps, 'image'> {
-    image: SanityImageNode,
-    config?: SanityGatsbyImageDataArgs
+    image: SanityImageNode;
+    config?: SanityGatsbyImageDataArgs;
 }
