@@ -29,6 +29,7 @@
 		"gatsby-source-sanity": "^7.0.2",
 		"gatsby-transformer-sharp": "^3.2.0",
 		"polished": "^4.1.1",
+		"postcss": "^8.2.9",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-helmet": "^6.1.0",
@@ -60,5 +61,12 @@
 		"lint:clean": "rm -rf node_modules/.cache/eslint",
 		"lint:css": "./node_modules/.bin/stylelint '**/*.css' --syntax css",
 		"test": "echo \"Error: no test specified\" && exit 1"
-	}
+	},
+	"browserslist": [
+		"last 2 versions",
+		"last 1 year",
+		">0.5%",
+		"not IE > 0",
+		"not dead"
+	]
 }

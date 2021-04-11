@@ -69,7 +69,15 @@ export const query = graphql`
                 posterImage {
                     alt
                     asset {
+                        _id
+                        id
                         url
+                        metadata {
+                            dimensions {
+                                height
+                                width
+                            }
+                        }
                     }
                 }
                 author {

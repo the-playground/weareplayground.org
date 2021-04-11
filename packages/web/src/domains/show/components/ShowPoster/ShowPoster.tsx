@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Link } from '@nerve/core/routing';
-import { SanityImageData } from '@nerve/shared/types';
+import { SanityImageDataWithAlt } from '@nerve/shared/types';
 
 import {
     BodyText,
@@ -73,7 +73,7 @@ export interface ShowPosterProps {
         slug: string;
         title: string;
     };
-    image: SanityImageData;
+    image: SanityImageDataWithAlt;
     openingDate: string;
     closingDate: string;
 }

@@ -5,7 +5,10 @@ import {
     StaticImage as StaticGatsbyImage,
 } from 'gatsby-plugin-image';
 
-import { getGatsbyImageData as getSanityGatsbyImageData } from 'gatsby-source-sanity';
+import {
+    getGatsbyImageData as getSanityGatsbyImageData,
+    GatsbyImageDataArgs,
+} from 'gatsby-source-sanity';
 import { clientConfig } from '@nerve/shared/configs';
 
 import { SanityImageProps } from './__types';
@@ -30,7 +33,7 @@ import { SanityImageProps } from './__types';
  * @link https://www.gatsbyjs.com/plugins/gatsby-source-sanity/#using-images
  *
  * @param image Accepts an image reference from a Sanity GraphQL Query
- * @param queryConfig The configuration for the Sanity image url builder query
+ * @param config The configuration for the Sanity image url builder query
  * @param alt The alt tag for the image
  * @param rest (as a spread) All params allowed by the underlying GatsbyImage component, minus the 'image' param (this is handled by Sanity helper utilities)
  */
@@ -48,9 +51,16 @@ export const SanityImage: React.FC<SanityImageProps> = ({
      * It also allows the underlying Gatsby Image API to change without us having to worry about changing all of our
      * image queries.
      */
+
+    // Specify a default configuration to apply to all images.These can be easily overridden with the 'config' prop
+    const defaultConfig: GatsbyImageDataArgs = {
+        fit: 'fillmax',
+        placeholder: 'blurred',
+    };
+
     const imageData = getSanityGatsbyImageData(
         image,
-        { ...config },
+        { ...defaultConfig, ...config },
         clientConfig.sanity
     );
 
@@ -78,15 +88,3 @@ export const SanityImage: React.FC<SanityImageProps> = ({
 export const StaticImage: typeof StaticGatsbyImage = ({ ...props }) => {
     return <StaticGatsbyImage {...props} />;
 };
-
-/**
- * A thin wrapper for getGatsbyImageData–used for composing images retrieved from the Sanity CMS to pass into the Image component.
- * @link https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#getimage
- *
- * @param props all available getGatsbyImage props
- */
-export const getSanityImage: typeof getSanityGatsbyImageData = (
-    image,
-    { ...args },
-    location
-) => getSanityGatsbyImageData(image, { ...args }, location);
