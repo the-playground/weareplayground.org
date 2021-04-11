@@ -70,13 +70,13 @@ export const query = graphql`
                     alt
                     asset {
                         _id
-                        id
                         url
                         metadata {
                             dimensions {
                                 height
                                 width
                             }
+                            lqip
                         }
                     }
                 }
