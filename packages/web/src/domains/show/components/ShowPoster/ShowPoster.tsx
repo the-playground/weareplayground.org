@@ -6,7 +6,7 @@ import { SanityImageDataWithAlt } from '@nerve/shared/types';
 import {
     BodyText,
     Heading,
-    SanityImage,
+    Image,
     BackgroundOverlay,
 } from '@nerve/core/components';
 
@@ -33,9 +33,8 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
                 className="wrapper"
                 to={links.getShow(season.slug, slug) ?? '/'}
             >
-                <SanityImage
+                <Image
                     image={image.asset}
-                    config={{ width: 500 }}
                     alt={image.alt ?? ''}
                     className="image"
                 />

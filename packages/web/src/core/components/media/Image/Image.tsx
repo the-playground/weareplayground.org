@@ -3,15 +3,14 @@ import React from 'react';
 import {
     GatsbyImage,
     StaticImage as StaticGatsbyImage,
+    getImage as getGatsbyImage,
+    GatsbyImageProps,
 } from 'gatsby-plugin-image';
 
-import {
-    getGatsbyImageData as getSanityGatsbyImageData,
-    GatsbyImageDataArgs,
-} from 'gatsby-source-sanity';
+import { getGatsbyImageData as getSanityImageData } from 'gatsby-source-sanity';
 import { clientConfig } from '@nerve/shared/configs';
 
-import { SanityImageProps } from './__types';
+import { ImageProps } from './__types';
 
 /**
  * A general note about this file: We are wrapping the Gatsby Image API in order to:
@@ -37,10 +36,10 @@ import { SanityImageProps } from './__types';
  * @param alt The alt tag for the image
  * @param rest (as a spread) All params allowed by the underlying GatsbyImage component, minus the 'image' param (this is handled by Sanity helper utilities)
  */
-export const SanityImage: React.FC<SanityImageProps> = ({
+export const Image: React.FC<ImageProps> = ({
     image,
-    config,
     alt,
+    sanityConfig,
     ...rest
 }) => {
     /**
@@ -51,24 +50,15 @@ export const SanityImage: React.FC<SanityImageProps> = ({
      * It also allows the underlying Gatsby Image API to change without us having to worry about changing all of our
      * image queries.
      */
-
-    // Specify a default configuration to apply to all images.These can be easily overridden with the 'config' prop
-    const defaultConfig: GatsbyImageDataArgs = {
-        fit: 'fillmax',
-        placeholder: 'blurred',
-    };
-
-    const imageData = getSanityGatsbyImageData(
-        image,
-        { ...defaultConfig, ...config },
-        clientConfig.sanity
-    );
+    const imageData = image.gatsbyImageData
+        ? getGatsbyImage(image.gatsbyImageData)
+        : getSanityImageData(image, { ...sanityConfig }, clientConfig.sanity);
 
     if (!imageData) {
         console.error(
             'There was an error loading the requested image from the Image component. Request details available in the output object:',
             {
-                requestedSanityImageData: image,
+                requestedImageData: image,
                 imageDataResults: imageData,
                 alt,
             }
@@ -78,7 +68,6 @@ export const SanityImage: React.FC<SanityImageProps> = ({
 
     return <GatsbyImage image={imageData} alt={alt} {...rest} />;
 };
-
 /**
  * A thin wrapper for a Gatsby Static Image
  * @link https://www.gatsbyjs.com/docs/reference/built-in-compon ents/gatsby-plugin-image/#staticimage

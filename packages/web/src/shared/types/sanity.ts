@@ -89,7 +89,8 @@ type SanityImageAssetStub = {
     extension: string;
     metadata: SanityImageMetadata;
 };
-type SanityImageAsset = SanityImageAssetStub & {
+
+export type SanityImageAsset = SanityImageAssetStub & {
     _id: string;
 };
 type SanityImageRef = {

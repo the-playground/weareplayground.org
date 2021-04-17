@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SanityImage } from '../../../media';
+import { Image } from '../../../media';
 import { BodyText } from '../../../typography';
 
 /**
@@ -15,9 +15,9 @@ export const Figure: React.FC<FigureProps> = ({ node }) => {
 
     return (
         <figure key={node._key}>
-            <SanityImage
+            <Image
                 image={node.asset}
-                config={{ fit: 'fillmax', width: 768 }}
+                sanityConfig={{ fit: 'fillmax', width: 768 }}
                 alt={node.alt ?? ''}
             />
             {node.caption && node.credit && (
