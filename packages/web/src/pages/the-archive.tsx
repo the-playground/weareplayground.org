@@ -70,14 +70,7 @@ export const query = graphql`
                     alt
                     asset {
                         _id
-                        url
-                        metadata {
-                            dimensions {
-                                height
-                                width
-                            }
-                            lqip
-                        }
+                        gatsbyImageData(placeholder: BLURRED)
                     }
                 }
                 author {
