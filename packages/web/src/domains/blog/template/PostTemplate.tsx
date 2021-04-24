@@ -10,7 +10,7 @@ import { AuthorCard, BlogPost } from '@nerve/domains/blog';
 import {
     BodyText,
     Heading,
-    SanityImage,
+    Image,
     Container,
     PortableText,
 } from '@nerve/core/components';
@@ -74,7 +74,7 @@ const PostLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                         {postedOnDate} • by{' '}
                         {authors.map((author) => author.name).join(' & ')}
                     </BodyText>
-                    <SanityImage
+                    <Image
                         image={post.featuredImage.asset}
                         alt={post.featuredImage.alt ?? ''}
                         className="featured-image"
@@ -109,7 +109,11 @@ export const query = graphql`
             featuredImage {
                 alt
                 asset {
-                    url
+                    gatsbyImageData(
+                        width: 768
+                        placeholder: BLURRED
+                        fit: FILLMAX
+                    )
                 }
             }
 
@@ -122,7 +126,11 @@ export const query = graphql`
                 avatar {
                     alt
                     asset {
-                        url
+                        gatsbyImageData(
+                            width: 80
+                            height: 80
+                            placeholder: BLURRED
+                        )
                     }
                 }
             }

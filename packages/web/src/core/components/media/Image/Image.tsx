@@ -58,6 +58,7 @@ export const Image: React.FC<ImageProps> = ({
         console.error(
             'There was an error loading the requested image from the Image component. Request details available in the output object:',
             {
+                dataSourceType: image.gatsbyImageData ? 'gatsby' : 'sanity',
                 requestedImageData: image,
                 imageDataResults: imageData,
                 alt,

@@ -17,7 +17,11 @@ export const Figure: React.FC<FigureProps> = ({ node }) => {
         <figure key={node._key}>
             <Image
                 image={node.asset}
-                sanityConfig={{ fit: 'fillmax', width: 768 }}
+                sanityConfig={{
+                    fit: 'fillmax',
+                    width: 768,
+                    placeholder: 'blurred',
+                }}
                 alt={node.alt ?? ''}
             />
             {node.caption && node.credit && (

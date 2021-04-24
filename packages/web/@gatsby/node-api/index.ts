@@ -103,14 +103,23 @@ const getBlogPostParentPage = async (
         return;
     }
 
+    if (!data) {
+        reporter.panicOnBuild(
+            `🔥 Error: The GraphQL query to retrieve the Blog parent page ran, but not data was returned.`
+        );
+        return;
+    }
+
     const blogPage = data?.sanityLinkMapConfig?.blogPage?.slug?.current;
 
     if (!blogPage) {
         reporter.panicOnBuild(
-            `🔥 The GraphQL query for retrieving the Blog parent page ran, but no data was returned.`
+            `🔥 Data was returned for the Blog parent page query, but the 'blogPage' could not be destructured.`
         );
         return;
     }
+
+    console.log(`👨‍👧‍👧 "Blog" parent page: /${blogPage}`);
 
     return blogPage;
 };
