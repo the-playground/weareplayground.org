@@ -4,7 +4,6 @@ import {
     GatsbyImage,
     StaticImage as StaticGatsbyImage,
     getImage as getGatsbyImage,
-    GatsbyImageProps,
 } from 'gatsby-plugin-image';
 
 import { getGatsbyImageData as getSanityImageData } from 'gatsby-source-sanity';
@@ -32,7 +31,7 @@ import { ImageProps } from './__types';
  * @link https://www.gatsbyjs.com/plugins/gatsby-source-sanity/#using-images
  *
  * @param image Accepts an image reference from a Sanity GraphQL Query
- * @param config The configuration for the Sanity image url builder query
+ * @param sanityConfig The configuration for the Sanity image url builder query
  * @param alt The alt tag for the image
  * @param rest (as a spread) All params allowed by the underlying GatsbyImage component, minus the 'image' param (this is handled by Sanity helper utilities)
  */
