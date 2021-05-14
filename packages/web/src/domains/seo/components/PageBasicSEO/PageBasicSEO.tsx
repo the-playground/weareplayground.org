@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { SanityImage } from '@nerve/shared/types';
+import { SanityImageDataWithAlt } from '@nerve/shared/types';
 
 /**
  * Handle generating the basic meta information for a page.
@@ -83,6 +83,6 @@ interface PageBasicSEOProps {
     url: string;
     title: string;
     description: string;
-    image?: SanityImage;
+    image?: SanityImageDataWithAlt;
     hideSEO?: boolean;
 }

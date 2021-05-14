@@ -1,4 +1,4 @@
-import { SanityImage } from '@nerve/shared/types';
+import { SanityImageDataWithAlt } from '@nerve/shared/types';
 
 /**
  * https://schema.org/WebPage
@@ -45,7 +45,7 @@ export interface WebPageSchemaProps {
     pageURL: string;
     title: string;
     description: string;
-    image: SanityImage;
+    image: SanityImageDataWithAlt;
     datePublished: string;
     dateModified: string;
 }

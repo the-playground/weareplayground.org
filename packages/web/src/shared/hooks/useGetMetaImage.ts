@@ -1,4 +1,4 @@
-import { SanityImage } from '@nerve/shared/types';
+import { SanityImageDataWithAlt } from '@nerve/shared/types';
 
 import { SEOConfig } from '@nerve/shared/hooks';
 import { useConfigContext } from '@nerve/shared/context';
@@ -12,7 +12,7 @@ import { useConfigContext } from '@nerve/shared/context';
 const getFallbackImage = (
     type: MetaImageContentType,
     seoConfig: SEOConfig
-): SanityImage => {
+): SanityImageDataWithAlt => {
     switch (type) {
         case 'page':
             return seoConfig.fallbackPageMetaImage;
@@ -38,8 +38,8 @@ const getFallbackImage = (
  */
 export const useGetMetaImage = (
     type: MetaImageContentType,
-    image?: SanityImage
-): SanityImage => {
+    image?: SanityImageDataWithAlt
+): SanityImageDataWithAlt => {
     const { seo } = useConfigContext();
 
     const metaImage = image?.asset?.url ? image : getFallbackImage(type, seo);

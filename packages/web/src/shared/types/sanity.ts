@@ -1,4 +1,5 @@
 import { IFluidObject as BackgroundFluidObject } from 'gatsby-background-image';
+import { GatsbyFileNode } from './gatsby';
 
 /**
  * The shape of a standard Sanity Document (page or collection)
@@ -66,6 +67,7 @@ type SanityImagePalette = {
     lightMuted?: SanityImagePaletteSwatch;
     muted?: SanityImagePaletteSwatch;
 };
+
 type SanityImagePaletteSwatch = {
     background?: string;
     foreground?: string;
@@ -78,27 +80,27 @@ type SanityImageDimensions = {
     height: number;
     aspectRatio: number;
 };
+
 type SanityImageMetadata = {
     palette?: SanityImagePalette;
     dimensions: SanityImageDimensions;
     lqip?: string;
 };
+
 type SanityImageAssetStub = {
     url: string;
     assetId: string;
     extension: string;
     metadata: SanityImageMetadata;
+    gatsbyImageData?: GatsbyFileNode;
 };
 
 export type SanityImageAsset = SanityImageAssetStub & {
     _id: string;
 };
-type SanityImageRef = {
-    _ref: string;
-};
 
 export type SanityImageObject = {
-    asset: SanityImageRef | SanityImageAsset;
+    asset: SanityImageAsset;
 };
 
 /**
@@ -107,14 +109,14 @@ export type SanityImageObject = {
 export type SanityImageNode =
     | SanityImageAsset
     | SanityImageObject
-    | SanityImageRef
     | string
     | null
     | undefined;
 
 /**
- * The expected data shape for an image being returned from a Sanity image query.
+ * The expected data shapes for an image being returned from a Sanity image query.
  */
+
 export type SanityImageData = SanityImageObject;
 
 export type SanityImageDataWithAlt = SanityImageData & {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BackgroundOverlay } from '@nerve/core/components';
+import { BackgroundOverlay, Image } from '@nerve/core/components';
 
 import { SectionProps } from './Section.d';
 import * as styled from './Section.styles';
@@ -20,10 +20,15 @@ export const Section: React.FC<SectionProps> = ({
                     className={className}
                     bgColor={bgColor}
                     bgPosition={bgPosition}
-                    fluid={bgImage.asset.fluid}
-                    Tag="section"
-                    fadeIn="1"
                 >
+                    <div className="bg-image">
+                        <Image
+                            image={bgImage.asset}
+                            alt=""
+                            aria-hidden="true"
+                        />
+                    </div>
+
                     {overlay && <BackgroundOverlay variant={overlay} />}
                     <div className="content">{children}</div>
                 </styled.SectionWithBackgroundImage>

@@ -68,6 +68,7 @@ export const Image: React.FC<ImageProps> = ({
 
     return <GatsbyImage image={imageData} alt={alt} {...rest} />;
 };
+
 /**
  * A thin wrapper for a Gatsby Static Image
  * @link https://www.gatsbyjs.com/docs/reference/built-in-compon ents/gatsby-plugin-image/#staticimage
