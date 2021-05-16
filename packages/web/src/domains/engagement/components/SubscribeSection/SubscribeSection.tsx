@@ -45,11 +45,7 @@ export const SubscribeSection: React.FC = () => {
     const { subscribe }: SubscribeComponentData = sanityComponentConfig;
 
     return (
-        <StyledSubscribeSection
-            bgImage={subscribe.image}
-            overlay="dark90"
-            bgPosition="center center"
-        >
+        <StyledSubscribeSection overlay="dark90">
             <Container maxWidth="xs">
                 <GrittyHeading
                     size="s"
@@ -74,6 +70,5 @@ interface SubscribeComponentData {
     subscribe: {
         title: string;
         copy: string;
-        image: SanityImageData;
     };
 }

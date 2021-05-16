@@ -1,21 +1,9 @@
 import { AvailableSurface, AvailableOverlayTheme } from '@nerve/core/themes';
-import { SanityImageData } from '@nerve/shared/types';
-
-type BackgroundPosition =
-    | 'center top'
-    | 'center center'
-    | 'center bottom'
-    | 'left top'
-    | 'left center'
-    | 'left bottom'
-    | 'right top'
-    | 'right center'
-    | 'right bottom';
+import { BackgroundImageProps } from '@nerve/core/components';
 
 export interface SectionProps {
     bgColor?: AvailableSurface;
     overlay?: AvailableOverlayTheme;
-    bgImage?: SanityImageData;
-    bgPosition?: BackgroundPosition;
+    bgImage?: BackgroundImageProps;
     className?: string;
 }

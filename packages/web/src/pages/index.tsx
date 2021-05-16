@@ -6,7 +6,7 @@ import {
     SanityImageData,
 } from '@nerve/shared/types';
 
-import { SubscribeSection } from '@nerve/domains/engagement';
+// import { SubscribeSection } from '@nerve/domains/engagement';
 
 import PageTemplate from '@nerve/domains/page/PageTemplate';
 import {
@@ -14,7 +14,6 @@ import {
     HeroSection,
     RebrandSection,
 } from '@nerve/domains/page/home';
-import { hero } from '../../../cms/src/schemas/objects/components/hero';
 
 const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,
@@ -34,7 +33,9 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 copy={page.hero.copy}
                 rebrandLink={page.hero.action.link.slug.current}
                 rebrandLinkText={page.hero.action.text}
-                bgImage={page.hero.image}
+                bgImage={{
+                    image: page.hero.image.asset,
+                }}
             />
             <RebrandSection />
             <ArchiveSection />

@@ -78,3 +78,5 @@ export const Image: React.FC<ImageProps> = ({
 export const StaticImage: typeof StaticGatsbyImage = ({ ...props }) => {
     return <StaticGatsbyImage {...props} />;
 };
+
+export type { ImageProps } from './__types';

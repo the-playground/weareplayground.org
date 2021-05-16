@@ -1,4 +1,3 @@
-import { IFluidObject as BackgroundFluidObject } from 'gatsby-background-image';
 import { GatsbyFileNode } from './gatsby';
 
 /**
@@ -23,16 +22,6 @@ export interface SanityDocumentSEO {
     hide: boolean;
     image: SanityImageData;
     publishedAt: string;
-}
-
-/**
- * A "Fluid" image coming in from a Sanity query that should be used as a background image.
- * * Note that the main difference between this and "SanityFluidImage" is that we are not querying any metadata.
- */
-export interface SanityBackgroundImage {
-    asset: {
-        fluid: BackgroundFluidObject;
-    };
 }
 
 /**
