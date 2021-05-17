@@ -15,11 +15,7 @@ export const AuthorCard: React.FC<AuthorCardProps> = ({
         <styled.AuthorCard>
             {avatar && (
                 <div className="avatar">
-                    <Image
-                        image={avatar.asset}
-                        alt={avatar.alt}
-                        config={{ width: 80, height: 80 }}
-                    />
+                    <Image image={avatar.asset} alt={avatar.alt} />
                 </div>
             )}
             <div className="content">
