@@ -36,6 +36,8 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
                 <Image
                     image={image.asset}
                     alt={image.alt ?? ''}
+                    objectFit="cover"
+                    objectPosition="center center"
                     className="image"
                 />
                 <BackgroundOverlay
