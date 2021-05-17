@@ -20,7 +20,7 @@ export interface SanityDocumentSEO {
     title: string;
     description: string;
     hide: boolean;
-    image: SanityImageData;
+    image: SanityImageDataWithAlt;
     publishedAt: string;
 }
 

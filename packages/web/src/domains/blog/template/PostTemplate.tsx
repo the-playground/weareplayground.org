@@ -130,6 +130,7 @@ export const query = graphql`
                             width: 80
                             height: 80
                             placeholder: BLURRED
+                            layout: FIXED
                         )
                     }
                 }

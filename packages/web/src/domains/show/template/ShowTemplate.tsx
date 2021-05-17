@@ -3,7 +3,7 @@ import { graphql, PageProps } from 'gatsby';
 import { useConfigContext } from '@nerve/shared/context';
 import { useGetMetaImage, useCurrentURL } from '@nerve/shared/hooks';
 
-// import { SubscribeSection } from '@nerve/domains/engagement';
+import { SubscribeSection } from '@nerve/domains/engagement';
 
 import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
 import { LegacyContentNotice } from '@nerve/domains/migrations';
@@ -54,7 +54,7 @@ const ShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({
                 legacyURLText="see show on old website"
             />
 
-            {/* <SubscribeSection /> */}
+            <SubscribeSection />
         </>
     );
 };
@@ -77,6 +77,7 @@ export const showQuery = graphql`
                 hide
                 description
                 image {
+                    alt
                     asset {
                         url
                     }

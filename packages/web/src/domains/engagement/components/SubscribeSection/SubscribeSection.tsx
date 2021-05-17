@@ -34,7 +34,12 @@ export const SubscribeSection: React.FC = () => {
                     copy
                     image {
                         asset {
-                            url
+                            _id
+                            gatsbyImageData(
+                                layout: FULL_WIDTH
+                                width: 1500
+                                placeholder: BLURRED
+                            )
                         }
                     }
                 }
@@ -45,7 +50,10 @@ export const SubscribeSection: React.FC = () => {
     const { subscribe }: SubscribeComponentData = sanityComponentConfig;
 
     return (
-        <StyledSubscribeSection overlay="dark90">
+        <StyledSubscribeSection
+            overlay="dark90"
+            bgImage={{ image: subscribe.image.asset }}
+        >
             <Container maxWidth="xs">
                 <GrittyHeading
                     size="s"
@@ -70,5 +78,6 @@ interface SubscribeComponentData {
     subscribe: {
         title: string;
         copy: string;
+        image: SanityImageData;
     };
 }
