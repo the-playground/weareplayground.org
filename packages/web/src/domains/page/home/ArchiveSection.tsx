@@ -49,18 +49,13 @@ export const ArchiveSection: React.FC = () => {
         <StyledArchiveSection>
             <Container>
                 <Heading color="light" size="m" as="h2" className="title">
-                    <Icon
-                        name="Rocket"
-                        size="l"
-                        responsive={{ breakpoint: 'm', size: 'm' }}
-                    />
                     <span>
-                        blast to the past<span className="period">.</span>
+                        The Archive<span className="period">.</span>
                     </span>
                 </Heading>
                 <BodyText color="medium" size="m" className="copy">
-                    check out out our show archives and discover why our brand
-                    of theatre will get under your skin.
+                    Check out our past shows and discover why our brand of
+                    theatre will get under your skin.
                 </BodyText>
                 <TextButton
                     color="primary"
@@ -69,7 +64,7 @@ export const ArchiveSection: React.FC = () => {
                     endIcon={<Icon name="ArrowRight" size="xs" />}
                     animateIconOnHover
                 >
-                    take me there
+                    Take me there
                 </TextButton>
             </Container>
         </StyledArchiveSection>
