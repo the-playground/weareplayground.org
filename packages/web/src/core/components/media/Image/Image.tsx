@@ -1,10 +1,6 @@
 import React from 'react';
 
-import {
-    GatsbyImage,
-    StaticImage as StaticGatsbyImage,
-    getImage as getGatsbyImage,
-} from 'gatsby-plugin-image';
+import { GatsbyImage, getImage as getGatsbyImage } from 'gatsby-plugin-image';
 
 import { getGatsbyImageData as getSanityImageData } from 'gatsby-source-sanity';
 import { clientConfig } from '@nerve/shared/configs';
@@ -67,16 +63,6 @@ export const Image: React.FC<ImageProps> = ({
     }
 
     return <GatsbyImage image={imageData} alt={alt} {...rest} />;
-};
-
-/**
- * A thin wrapper for a Gatsby Static Image
- * @link https://www.gatsbyjs.com/docs/reference/built-in-compon ents/gatsby-plugin-image/#staticimage
- *
- * @param props All available StaticGatsbyImage props
- */
-export const StaticImage: typeof StaticGatsbyImage = ({ ...props }) => {
-    return <StaticGatsbyImage {...props} />;
 };
 
 export type { ImageProps } from './__types';
