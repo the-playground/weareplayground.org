@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import addToMailchimp, { MailchimpResponse } from 'gatsby-plugin-mailchimp';
+import { useLocation } from '@reach/router';
 
-import { emailRegexPattern } from '@nerve/shared/lib';
+import { emailRegexPattern, getReferrer } from '@nerve/shared/lib';
 
 import { BodyText, FillButton, Heading, Input } from '@nerve/core/components';
 
@@ -23,6 +24,8 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
 
     // Email Subscription state handlers
     const [subscription, setSubscription] = useState({} as MailchimpResponse);
+
+    const { pathname } = useLocation();
 
     // The name of the form
     const formName = 'subscribe';
@@ -89,12 +92,12 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
                         {/* Hidden form to collect expanded data */}
                         <input
                             type="hidden"
-                            value="/"
+                            value={getReferrer()}
                             {...register('referrer')}
                         />
                         <input
                             type="hidden"
-                            value="/"
+                            value={pathname}
                             {...register('signupLocation')}
                         />
 
