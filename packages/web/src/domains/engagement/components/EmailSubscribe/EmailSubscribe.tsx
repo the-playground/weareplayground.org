@@ -12,7 +12,11 @@ import * as styled from './EmailSubscribe.styles';
 
 export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
     // Form Data handlers
-    const { register, handleSubmit, errors } = useForm<UseFormInputs>();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<UseFormInputs>();
 
     // Form UI state handlers
     const [loading, setLoading] = useState(false);
@@ -62,10 +66,9 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
                         {/* Hidden field required by Netlify */}
                         <Input
                             color="light"
-                            name="email"
                             type="text"
                             placeholder="your email address"
-                            ref={register({
+                            {...register('email', {
                                 required:
                                     'An email address is required in order to subscribe.',
                                 pattern: {
@@ -80,22 +83,19 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
                         <input
                             type="hidden"
                             value="16"
-                            name="group[33097][16]"
-                            ref={register}
+                            {...register('group[33097][16]')}
                         />
 
                         {/* Hidden form to collect expanded data */}
                         <input
                             type="hidden"
-                            name="referrer"
                             value="/"
-                            ref={register}
+                            {...register('referrer')}
                         />
                         <input
                             type="hidden"
-                            name="signupLocation"
                             value="/"
-                            ref={register}
+                            {...register('signupLocation')}
                         />
 
                         <FillButton
@@ -126,6 +126,7 @@ export interface UseFormInputs {
     email: string;
     signupLocation: string;
     referrer: string;
+    'group[33097][16]': string;
 }
 
 type FormUIStatus = 'initial' | 'loading';

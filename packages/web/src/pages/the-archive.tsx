@@ -69,9 +69,12 @@ export const query = graphql`
                 posterImage {
                     alt
                     asset {
-                        fluid(maxWidth: 500) {
-                            ...GatsbySanityImageFluid
-                        }
+                        _id
+                        gatsbyImageData(
+                            width: 500
+                            placeholder: DOMINANT_COLOR
+                            layout: FULL_WIDTH
+                        )
                     }
                 }
                 author {

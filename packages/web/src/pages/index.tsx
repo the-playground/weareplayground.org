@@ -3,7 +3,7 @@ import { graphql, PageProps } from 'gatsby';
 import {
     GatsbyPageContext,
     SanityDocument,
-    SanityFluidImage,
+    SanityImageData,
 } from '@nerve/shared/types';
 
 import { SubscribeSection } from '@nerve/domains/engagement';
@@ -31,9 +31,11 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
             <HeroSection
                 title={page.hero.title}
                 copy={page.hero.copy}
-                bgImage={page.hero.image}
                 rebrandLink={page.hero.action.link.slug.current}
                 rebrandLinkText={page.hero.action.text}
+                bgImage={{
+                    image: page.hero.image.asset,
+                }}
             />
             <RebrandSection />
             <ArchiveSection />
@@ -66,13 +68,6 @@ export const query = graphql`
             hero {
                 title
                 copy
-                image {
-                    asset {
-                        fluid(maxWidth: 1800) {
-                            ...GatsbySanityImageFluid_noBase64
-                        }
-                    }
-                }
                 action {
                     text
                     link {
@@ -81,6 +76,15 @@ export const query = graphql`
                                 current
                             }
                         }
+                    }
+                }
+                image {
+                    asset {
+                        _id
+                        gatsbyImageData(
+                            placeholder: BLURRED
+                            layout: FULL_WIDTH
+                        )
                     }
                 }
             }
@@ -104,7 +108,7 @@ interface HomePageData extends SanityDocument {
                 };
             };
         };
-        image: SanityFluidImage;
+        image: SanityImageData;
     };
 }
 

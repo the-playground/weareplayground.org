@@ -1,3 +1,4 @@
+export * from './BackgroundImage/BackgroundImage';
 export * from './BackgroundOverlay/BackgroundOverlay';
 export * from './Icon/Icon';
 export * from './Image/Image';

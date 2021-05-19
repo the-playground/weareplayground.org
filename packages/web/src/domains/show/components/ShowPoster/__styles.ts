@@ -11,12 +11,14 @@ export const ShowPoster = styled.article`
     .image {
         filter: grayscale(1);
         transition: ${animation.cardHover};
+        z-index: ${zIndex.behind};
     }
 
     .overlay {
         pointer-events: none;
         transition: ${animation.cardHover};
     }
+
     .content {
         bottom: 0;
         position: absolute;

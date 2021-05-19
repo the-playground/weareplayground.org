@@ -5,6 +5,7 @@
  */
 import {
     GatsbyNode,
+    CreatePagesArgs,
     Actions as GatsbyNodeActions,
     BuildArgs as GatsbyNodeBuildArgs,
 } from 'gatsby';
@@ -97,7 +98,15 @@ const getBlogPostParentPage = async (
 
     if (errors) {
         reporter.panicOnBuild(
-            `🔥 Error attempting to retrieve "Blog" posts parent page.`
+            `🔥 Error attempting to retrieve "Blog" posts parent page ->`,
+            errors
+        );
+        return;
+    }
+
+    if (!data) {
+        reporter.panicOnBuild(
+            `🔥 Error: The GraphQL query to retrieve the Blog parent page ran, but not data was returned.`
         );
         return;
     }
@@ -106,10 +115,12 @@ const getBlogPostParentPage = async (
 
     if (!blogPage) {
         reporter.panicOnBuild(
-            `🔥 The GraphQL query for retrieving the Blog parent page ran, but no data was returned.`
+            `🔥 Data was returned for the Blog parent page query, but the 'blogPage' could not be destructured.`
         );
         return;
     }
+
+    console.log(`👨‍👧‍👧 "Blog" parent page: /${blogPage}`);
 
     return blogPage;
 };
@@ -142,11 +153,11 @@ const buildBlogPost = async (
  *
  * @param {*} params destructured instances of createPages params
  */
-const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
+const generateSeasonsAndShows = async ({
     graphql,
     actions,
     reporter,
-}) => {
+}: CreatePagesArgs) => {
     // Query Season and Show data
     const { data, errors } = await graphql<SanitySeasonShowQueryData>(`
         {
@@ -171,7 +182,8 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
 
     if (errors) {
         reporter.panicOnBuild(
-            `🔥 Error while running GraphQL query on Seasons & Shows.`
+            `🔥 Error while running GraphQL query on Seasons & Shows ->`,
+            errors
         );
         return;
     }
@@ -244,11 +256,11 @@ const generateSeasonsAndShows: GatsbyNode['createPages'] = async ({
  *
  * @param {*} params destructured instances of createPages params
  */
-const generateBlogPosts: GatsbyNode['createPages'] = async ({
+const generateBlogPosts = async ({
     graphql,
     actions,
     reporter,
-}) => {
+}: CreatePagesArgs) => {
     const blogParentPage = await getBlogPostParentPage(graphql, reporter);
 
     // Query Blog data
@@ -267,7 +279,8 @@ const generateBlogPosts: GatsbyNode['createPages'] = async ({
 
     if (errors) {
         reporter.panicOnBuild(
-            `🔥 Error while running GraphQL query on Blog Posts.`
+            `🔥 Error while running GraphQL query on Blog Posts ->`,
+            errors
         );
         return;
     }
@@ -306,9 +319,10 @@ const generateBlogPosts: GatsbyNode['createPages'] = async ({
  *
  * @param {*} actions destructured action instance from creatPages
  */
-const generateRedirects: GatsbyNode['createPages'] = async ({ actions }) => {
-    // Build all app redirects
+const generateRedirects = async ({ actions }: CreatePagesArgs) => {
     const { createRedirect } = actions;
+
+    // Build all app redirects
     await redirects.forEach((redirect) => createRedirect(redirect));
 };
 
@@ -316,10 +330,10 @@ const generateRedirects: GatsbyNode['createPages'] = async ({ actions }) => {
  * When Gatsby attempts to crete pages, run the requested functionality
  */
 
-export const createPages: GatsbyNode['createPages'] = async (params) => {
+export const createPages: GatsbyNode['createPages'] = async (args) => {
     await Promise.all([
-        generateSeasonsAndShows(params),
-        generateBlogPosts(params),
-        generateRedirects(params),
+        generateSeasonsAndShows(args),
+        generateBlogPosts(args),
+        generateRedirects(args),
     ]);
 };

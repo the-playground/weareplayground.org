@@ -1,5 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import { SanityImage } from '@nerve/shared/types';
+import { SanityImageDataWithAlt } from '@nerve/shared/types';
 
 export const useSEOConfig = (): SEOConfig => {
     /**
@@ -64,8 +64,8 @@ export const useSEOConfig = (): SEOConfig => {
 };
 
 export interface SEOConfig {
-    fallbackPageMetaImage: SanityImage;
-    fallbackPostMetaImage: SanityImage;
-    fallbackSeasonMetaImage: SanityImage;
-    fallbackShowMetaImage: SanityImage;
+    fallbackPageMetaImage: SanityImageDataWithAlt;
+    fallbackPostMetaImage: SanityImageDataWithAlt;
+    fallbackSeasonMetaImage: SanityImageDataWithAlt;
+    fallbackShowMetaImage: SanityImageDataWithAlt;
 }

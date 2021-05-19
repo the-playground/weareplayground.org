@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import { breakpoints, spacing } from '@nerve/core/tokens';
-import { SanityFluidImage } from '@nerve/shared/types';
+import { SanityImageData } from '@nerve/shared/types';
 
 import {
     Container,
@@ -34,9 +34,12 @@ export const SubscribeSection: React.FC = () => {
                     copy
                     image {
                         asset {
-                            fluid(maxWidth: 1200) {
-                                ...GatsbySanityImageFluid_noBase64
-                            }
+                            _id
+                            gatsbyImageData(
+                                layout: FULL_WIDTH
+                                width: 1500
+                                placeholder: BLURRED
+                            )
                         }
                     }
                 }
@@ -48,9 +51,8 @@ export const SubscribeSection: React.FC = () => {
 
     return (
         <StyledSubscribeSection
-            bgImage={subscribe.image}
             overlay="dark90"
-            bgPosition="center center"
+            bgImage={{ image: subscribe.image.asset }}
         >
             <Container maxWidth="xs">
                 <GrittyHeading
@@ -76,6 +78,6 @@ interface SubscribeComponentData {
     subscribe: {
         title: string;
         copy: string;
-        image: SanityFluidImage;
+        image: SanityImageData;
     };
 }

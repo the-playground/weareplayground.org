@@ -77,6 +77,7 @@ export const showQuery = graphql`
                 hide
                 description
                 image {
+                    alt
                     asset {
                         url
                     }

@@ -75,8 +75,8 @@ const PostLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                         {authors.map((author) => author.name).join(' & ')}
                     </BodyText>
                     <Image
-                        fluid={post.featuredImage.asset.fluid}
-                        alt={post.featuredImage.alt}
+                        image={post.featuredImage.asset}
+                        alt={post.featuredImage.alt ?? ''}
                         className="featured-image"
                     />
                 </styled.BlogHero>
@@ -109,9 +109,11 @@ export const query = graphql`
             featuredImage {
                 alt
                 asset {
-                    fluid {
-                        ...GatsbySanityImageFluid
-                    }
+                    gatsbyImageData(
+                        width: 768
+                        placeholder: BLURRED
+                        fit: FILLMAX
+                    )
                 }
             }
 
@@ -124,9 +126,12 @@ export const query = graphql`
                 avatar {
                     alt
                     asset {
-                        fixed(width: 80, height: 80) {
-                            ...GatsbySanityImageFixed
-                        }
+                        gatsbyImageData(
+                            width: 80
+                            height: 80
+                            placeholder: BLURRED
+                            layout: FIXED
+                        )
                     }
                 }
             }

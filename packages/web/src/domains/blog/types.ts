@@ -1,19 +1,15 @@
-import {
-    SanityDocument,
-    SanityFluidImage,
-    SanityFixedImage,
-} from '@nerve/shared/types';
+import { SanityDocument, SanityImageDataWithAlt } from '@nerve/shared/types';
 
 export interface BlogAuthor {
     name: string;
     brief: string;
     instagram?: string;
     website?: string;
-    avatar: SanityFixedImage;
+    avatar: SanityImageDataWithAlt;
 }
 
 export interface BlogPost extends SanityDocument {
-    featuredImage: SanityFluidImage;
+    featuredImage: SanityImageDataWithAlt;
     _rawContent: any[];
     authors: BlogAuthor[];
 }

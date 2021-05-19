@@ -43,7 +43,7 @@ module.exports = {
     },
     plugins: [
         /**
-         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-typescript
+         * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-typescript/
          */
         {
             resolve: `gatsby-plugin-typescript`,
@@ -55,7 +55,7 @@ module.exports = {
         /**
          * Simplify redirect & header generation on Netlify
          *
-         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/
+         * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-netlify/
          */
         {
             resolve: `gatsby-plugin-netlify`,
@@ -80,6 +80,9 @@ module.exports = {
             },
         },
 
+        /**
+         * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-gtag
+         */
         {
             resolve: `gatsby-plugin-gtag`,
             options: {
@@ -95,7 +98,7 @@ module.exports = {
         /**
          * Implement the babel module resolver for a really nice global import syntax
          *
-         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-module-resolver
+         * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-module-resolver/
          */
         {
             resolve: 'gatsby-plugin-module-resolver',
@@ -114,7 +117,7 @@ module.exports = {
         /**
          * Styled Components support
          *
-         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-styled-components/
+         * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-styled-components/
          */
         {
             resolve: `gatsby-plugin-styled-components`,
@@ -126,7 +129,7 @@ module.exports = {
         /**
          * Query data from our CMS
          *
-         * @link https://www.gatsbyjs.org/packages/gatsby-source-sanity
+         * @link https://www.gatsbyjs.com/plugins/gatsby-source-sanity/
          */
         {
             resolve: `gatsby-source-sanity`,
@@ -153,17 +156,22 @@ module.exports = {
         },
 
         /**
-         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/
+         * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/
          */
         `gatsby-plugin-react-helmet`,
 
         /**
-         * @link https://www.gatsbyjs.org/packages/gatsby-plugin-sharp/
+         * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-image/
+         */
+        `gatsby-plugin-image`,
+
+        /**
+         * @link https://www.gatsbyjs.com/plugins/gatsby-plugin-sharp/
          */
         `gatsby-plugin-sharp`,
 
         /**
-         * @link https://www.gatsbyjs.org/packages/gatsby-transformer-sharp
+         * @link https://www.gatsbyjs.com/plugins/gatsby-transformer-sharp/
          */
         `gatsby-transformer-sharp`,
 

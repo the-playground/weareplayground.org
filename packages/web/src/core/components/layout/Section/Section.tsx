@@ -1,38 +1,23 @@
 import React from 'react';
 
-import { BackgroundOverlay } from '@nerve/core/components';
+import { BackgroundOverlay, BackgroundImage } from '@nerve/core/components';
 
 import { SectionProps } from './Section.d';
 import * as styled from './Section.styles';
 
 export const Section: React.FC<SectionProps> = ({
     children,
+    className,
     bgColor,
     bgImage,
-    bgPosition,
     overlay,
-    className,
 }) => {
     return (
-        <>
-            {bgImage ? (
-                <styled.SectionWithBackgroundImage
-                    className={className}
-                    bgColor={bgColor}
-                    bgPosition={bgPosition}
-                    fluid={bgImage.asset.fluid}
-                    Tag="section"
-                    fadeIn="1"
-                >
-                    {overlay && <BackgroundOverlay variant={overlay} />}
-                    <div className="content">{children}</div>
-                </styled.SectionWithBackgroundImage>
-            ) : (
-                <styled.Section className={className} bgColor={bgColor}>
-                    {children}
-                </styled.Section>
-            )}
-        </>
+        <styled.Section className={className} bgColor={bgColor}>
+            {bgImage && <BackgroundImage {...bgImage} />}
+            {overlay && <BackgroundOverlay variant={overlay} />}
+            <div className="content">{children}</div>
+        </styled.Section>
     );
 };
 

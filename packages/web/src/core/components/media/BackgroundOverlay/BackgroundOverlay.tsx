@@ -12,7 +12,7 @@ const StyledOverlay = styled.div<BackgroundOverlayProps>`
     right: 0;
     top: 0;
     width: 100%;
-    z-index: ${zIndex.base};
+    z-index: ${zIndex.behind};
 `;
 
 export const BackgroundOverlay: React.FC<BackgroundOverlayProps> = ({

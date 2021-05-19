@@ -1,9 +1,5 @@
 import React from 'react';
 
-import { getFluidGatsbyImage } from 'gatsby-source-sanity';
-
-import { clientConfig } from '@nerve/shared/configs';
-
 import { Image } from '../../../media';
 import { BodyText } from '../../../typography';
 
@@ -13,23 +9,21 @@ import { BodyText } from '../../../typography';
  * TODO: Improve Types based on what we expect from Sanity
  */
 export const Figure: React.FC<FigureProps> = ({ node }) => {
-    if (!node || !node.asset || !node.asset._id) {
-        return null;
-    }
-
-    const fluidProps = getFluidGatsbyImage(
-        node.asset._id,
-        { maxWidth: 768 },
-        clientConfig.sanity
-    );
-
-    if (!fluidProps) {
+    if (!node || !node.asset) {
         return null;
     }
 
     return (
         <figure key={node._key}>
-            <Image fluid={fluidProps} alt={node.alt} />
+            <Image
+                image={node.asset}
+                sanityConfig={{
+                    fit: 'fillmax',
+                    width: 768,
+                    placeholder: 'blurred',
+                }}
+                alt={node.alt ?? ''}
+            />
             {node.caption && node.credit && (
                 <BodyText as="figcaption" color="medium" size="s">
                     {node.caption}; photo credit: {node.credit}
