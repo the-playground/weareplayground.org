@@ -7,29 +7,6 @@ import {
     spacing,
 } from '@nerve/core/tokens';
 
-export const BlogHero = styled.div`
-    padding-top: ${spacing.layout.m};
-    padding-bottom: ${spacing.layout.s};
-
-    ${appNavBreakpoint} {
-        padding-bottom: ${spacing.layout.m};
-        padding-top: ${spacing.layout.xl};
-    }
-
-    .title {
-        margin-bottom: ${spacing.component.m};
-    }
-
-    .featured-image {
-        border-radius: ${borders.imageRadius};
-        margin-top: ${spacing.layout.m};
-
-        ${appNavBreakpoint} {
-            margin-top: ${spacing.layout.l};
-        }
-    }
-`;
-
 export const Content = styled.div`
     padding-bottom: ${spacing.layout.m};
 
@@ -102,5 +79,31 @@ export const Content = styled.div`
     /* Any heading tags that are followed immediately by a standard paragraph */
     > :is(div, .h2, .h3, .h4, .h5, .h6) + .p {
         margin-top: 0;
+    }
+`;
+
+export const BlogHero = styled.div`
+    padding-top: ${spacing.layout.m};
+    padding-bottom: ${spacing.layout.s};
+
+    ${appNavBreakpoint} {
+        padding-bottom: ${spacing.layout.m};
+        padding-top: ${spacing.layout.xl};
+    }
+
+    .title {
+        margin-bottom: ${spacing.component.m};
+    }
+
+    .featured-image {
+        margin-top: ${spacing.layout.m};
+
+        ${appNavBreakpoint} {
+            margin-top: ${spacing.layout.l};
+        }
+    }
+
+    .featured-image img {
+        border-radius: ${borders.imageRadius};
     }
 `;
