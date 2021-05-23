@@ -29,7 +29,6 @@ export const AuthorCard = styled.div`
 
     .avatar img {
         border-radius: 50%;
-        overflow: hidden;
     }
 
     .byline {
