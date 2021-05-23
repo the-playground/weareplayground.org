@@ -19,7 +19,7 @@ export const Header = styled.header<HeaderProps>`
         position: absolute;
         top: 0;
         width: 100%;
-        z-index: ${zIndex.base};
+        z-index: ${zIndex.nav};
     }
 
     .container {

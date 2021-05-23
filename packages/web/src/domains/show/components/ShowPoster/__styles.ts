@@ -1,14 +1,21 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { animation, breakpoints, spacing, zIndex } from '@nerve/core/tokens';
 
-export const ShowPoster = styled.article`
+const posterBorderStyles = css`
     border-radius: 7px;
     overflow: hidden;
+`;
+
+export const ShowPoster = styled.article`
+    ${posterBorderStyles}
     position: relative;
     transition: ${animation.cardHover};
 
     .image {
+        ${posterBorderStyles}
+        border-radius: 7px;
+        overflow: hidden;
         filter: grayscale(1);
         transition: ${animation.cardHover};
         z-index: ${zIndex.behind};
