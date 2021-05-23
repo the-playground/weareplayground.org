@@ -131,5 +131,3 @@ export interface UseFormInputs {
     referrer: string;
     'group[33097][16]': string;
 }
-
-type FormUIStatus = 'initial' | 'loading';
