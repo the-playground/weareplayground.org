@@ -13,7 +13,7 @@ const StyledBackgroundImage = styled.div`
         right: 0;
         top: 0;
         width: 100%;
-        z-index: ${zIndex.behind};
+        z-index: ${zIndex.zero};
     }
 `;
 
