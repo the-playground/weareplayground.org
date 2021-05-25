@@ -18,15 +18,17 @@ export const AuthorCard = styled.div`
     }
 
     .avatar {
-        border-radius: 50%;
         line-height: 0;
-        overflow: hidden;
         margin-bottom: ${spacing.component.s};
 
         ${componentBreakpoint} {
             margin-bottom: 0;
             margin-right: ${spacing.component.l};
         }
+    }
+
+    .avatar img {
+        border-radius: 50%;
     }
 
     .byline {
