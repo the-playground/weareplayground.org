@@ -7,14 +7,48 @@ import addToMailchimp, {
 
 import { getReferrer } from '@nerve/shared/lib';
 
-const tagMap = {
-    GENERAL_SUBSCRIBER: {
-        groupName: 'group[33097][16]',
-        groupID: '16',
+/**
+ * A defined set of messages for communicating Mailchimp responses to users
+ */
+const messages = {
+    error: {
+        invalidEmail:
+            "Hmmm... it doesn't look like this is a valid email address...",
+        requiredEmail: 'An email address is required in order to subscribe.',
+    },
+    success: {
+        default: {
+            title: 'Sweet!',
+            copy: 'Your signup was successful 🎉! Welcome to The Nerve.',
+        },
     },
 };
 
-const getTagGroups = (groups: string[]) => {};
+/**
+ * A map available "Groups" users can be subscribed to in our Mailchimp account
+ */
+const groups = {
+    GENERAL_NEWS: {
+        name: 'General News Updates',
+        inputName: 'group[33097][16]',
+        inputID: '16',
+    },
+    AUDITIONS: {
+        name: 'Auditions',
+        inputName: 'group[33097][4]',
+        inputID: '4',
+    },
+    CLASSES: {
+        name: 'Classes',
+        inputName: 'group[33097][8]',
+        inputID: '8',
+    },
+};
+
+export const config = {
+    messages,
+    groups,
+};
 
 export const useMailchimpSubscribe = () => {
     const [loading, setLoading] = useState(false);
@@ -22,17 +56,14 @@ export const useMailchimpSubscribe = () => {
     const { pathname } = useLocation();
 
     const subscribe: MailchimpSubscribeFn = async (email, listFields) => {
-        const fields = {
-            ...listFields,
-        };
-
         setLoading(true);
-        const results = await addToMailchimp(email, fields);
+        const results = await addToMailchimp(email, listFields);
         setResponse(results);
         setLoading(false);
     };
 
     return {
+        config,
         loading,
         response,
         subscribe,

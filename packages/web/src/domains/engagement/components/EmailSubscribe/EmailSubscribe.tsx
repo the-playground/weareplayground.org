@@ -1,10 +1,9 @@
 // Inspo https://deliciousbrains.com/
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
-import addToMailchimp, { MailchimpResponse } from 'gatsby-plugin-mailchimp';
-import { useLocation } from '@reach/router';
 
-import { emailRegexPattern, getReferrer } from '@nerve/shared/lib';
+import { emailRegexPattern } from '@nerve/shared/lib';
+import { useMailchimpSubscribe } from '@nerve/shared/hooks';
 
 import { BodyText, FillButton, Heading, Input } from '@nerve/core/components';
 
@@ -17,39 +16,36 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<UseFormInputs>();
+    } = useForm<NewsSubscribeInputs>();
 
-    // Form UI state handlers
-    const [loading, setLoading] = useState(false);
-
-    // Email Subscription state handlers
-    const [subscription, setSubscription] = useState({} as MailchimpResponse);
-
-    const { pathname } = useLocation();
-
-    // The name of the form
-    const formName = 'subscribe';
+    // Mailchimp subscription handlers
+    const {
+        config: { messages, groups },
+        loading,
+        currentPath,
+        subscribe,
+        referrer,
+        response,
+    } = useMailchimpSubscribe();
 
     /**
      * Handle subscribing users to an email service on submit
      *
      * @param data -The data from the submitted form
      */
-    const onSubmit = async (data: UseFormInputs) => {
-        setLoading(true);
-        const results = await addToMailchimp(data.email, {
+    const onSubmit = async (data: NewsSubscribeInputs) => {
+        await subscribe(data.email, {
             SIGNUPLOC: data.signupLocation,
             REFERRER: data.referrer,
-            'group[33097][16]': '16',
+            [groups.GENERAL_NEWS.inputName]: groups.GENERAL_NEWS.inputID,
         });
-
-        setSubscription(results);
-        setLoading(false);
     };
+
+    const FORM_NAME = 'subscribe';
 
     return (
         <>
-            {subscription.result === 'success' ? (
+            {response.result === 'success' ? (
                 <styled.SubscriptionSuccess>
                     <Heading
                         as="h3"
@@ -57,47 +53,45 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
                         size="xs"
                         className="success-title"
                     >
-                        Sweet!
+                        {messages.success.default.title}
                     </Heading>
                     <BodyText color="light" size="m" className="success-copy">
-                        Your signup was successful 🎉! Welcome to The Nerve.
+                        {messages.success.default.copy}
                     </BodyText>
                 </styled.SubscriptionSuccess>
             ) : (
                 <styled.EmailSubscribe>
-                    <form name={formName} onSubmit={handleSubmit(onSubmit)}>
+                    <form name={FORM_NAME} onSubmit={handleSubmit(onSubmit)}>
                         {/* Hidden field required by Netlify */}
                         <Input
                             color="light"
                             type="text"
                             placeholder="your email address"
                             {...register('email', {
-                                required:
-                                    'An email address is required in order to subscribe.',
+                                required: messages.error.requiredEmail,
                                 pattern: {
                                     value: emailRegexPattern,
-                                    message:
-                                        "Hmmm... it doesn't look like this is a valid email address.",
+                                    message: messages.error.invalidEmail,
                                 },
                             })}
                         />
 
-                        {/* Automatically add to "General News Updates" group */}
+                        {/* Automatically add to "General Subscriber" group */}
                         <input
                             type="hidden"
-                            value="16"
-                            {...register('group[33097][16]')}
+                            value={[groups.GENERAL_NEWS.inputID]}
+                            {...register(groups.GENERAL_NEWS.inputName)}
                         />
 
                         {/* Hidden form to collect expanded data */}
                         <input
                             type="hidden"
-                            value={getReferrer()}
+                            value={referrer}
                             {...register('referrer')}
                         />
                         <input
                             type="hidden"
-                            value={pathname}
+                            value={currentPath}
                             {...register('signupLocation')}
                         />
 
@@ -119,15 +113,28 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
                             </BodyText>
                         </div>
                     )}
+
+                    {!loading && !errors.email && response.msg && (
+                        <div className="response-info">
+                            <BodyText color="accent" size="m">
+                                <span
+                                    // eslint-disable-next-line react/no-danger
+                                    dangerouslySetInnerHTML={{
+                                        __html: response.msg,
+                                    }}
+                                />
+                            </BodyText>
+                        </div>
+                    )}
                 </styled.EmailSubscribe>
             )}
         </>
     );
 };
 
-export interface UseFormInputs {
+export interface NewsSubscribeInputs {
     email: string;
     signupLocation: string;
     referrer: string;
-    'group[33097][16]': string;
+    [key: string]: string;
 }

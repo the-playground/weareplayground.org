@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breakpoints, spacing } from '@nerve/core/tokens';
+import { breakpoints, fonts, spacing } from '@nerve/core/tokens';
 
 const componentBreakpoint = breakpoints.s;
 
@@ -52,6 +52,15 @@ export const EmailSubscribe = styled.div`
         ${componentBreakpoint} {
             text-align: left;
         }
+    }
+
+    .response-info {
+        margin-top: ${spacing.component.m};
+    }
+
+    .response-info a {
+        ${fonts.bodyBold}
+        text-decoration: underline;
     }
 `;
 
