@@ -66,11 +66,3 @@ export const buildNestedSlugPath = (slugs: string[]) => {
 
     return normalizeSlug(normalizedSlugs.join('/'));
 };
-
-/**
- * Get the referring page for the current route
- */
-export const getReferrer = () => {
-    const referrer = isSSR ? '' : document.referrer;
-    return referrer ?? 'unknown';
-};
