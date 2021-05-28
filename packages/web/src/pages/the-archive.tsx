@@ -6,7 +6,7 @@ import { GatsbyPageContext, SanityDocumentSEO } from '@nerve/shared/types';
 import { SimpleHero } from '@nerve/shared/components';
 import { ShowPosterGrid, ShowCoreWithPoster } from '@nerve/domains/show';
 
-import { SubscribeSection } from '@nerve/domains/engagement';
+import { NewsSubscribeCTA } from '@nerve/domains/engagement';
 
 import PageTemplate from '@nerve/domains/page/PageTemplate';
 
@@ -26,7 +26,7 @@ const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
         >
             <SimpleHero title={page.hero.title} subTitle={page.hero.subtitle} />
             <ShowPosterGrid shows={shows} />
-            <SubscribeSection />
+            <NewsSubscribeCTA />
         </PageTemplate>
     );
 };

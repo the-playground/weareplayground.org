@@ -6,7 +6,7 @@ import {
     SanityImageData,
 } from '@nerve/shared/types';
 
-import { SubscribeSection } from '@nerve/domains/engagement';
+import { NewsSubscribeCTA } from '@nerve/domains/engagement';
 
 import PageTemplate from '@nerve/domains/page/PageTemplate';
 import {
@@ -39,7 +39,7 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
             />
             <RebrandSection />
             <ArchiveSection />
-            <SubscribeSection />
+            <NewsSubscribeCTA />
         </PageTemplate>
     );
 };

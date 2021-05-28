@@ -15,7 +15,7 @@ import {
     PortableText,
 } from '@nerve/core/components';
 
-import { SubscribeSection } from '@nerve/domains/engagement';
+import { NewsSubscribeCTA } from '@nerve/domains/engagement';
 
 import { useGetMetaImage, useCurrentURL } from '@nerve/shared/hooks';
 
@@ -96,7 +96,7 @@ const PostLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                     />
                 ))}
             </Container>
-            <SubscribeSection />
+            <NewsSubscribeCTA />
         </>
     );
 };

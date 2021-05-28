@@ -1,1 +1,1 @@
-export * from './SubscribeSection/SubscribeSection';
+export * from './NewsSubscribeCTA/NewsSubscribeCTA';

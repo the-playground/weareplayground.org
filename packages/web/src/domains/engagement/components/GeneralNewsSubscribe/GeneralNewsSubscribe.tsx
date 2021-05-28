@@ -7,15 +7,15 @@ import { useMailchimpSubscribe } from '@nerve/shared/hooks';
 
 import { BodyText, FillButton, Heading, Input } from '@nerve/core/components';
 
-import * as styled from './EmailSubscribe.styles';
+import * as styled from './GeneralNewsSubscribe.styles';
 
-export const EmailSubscribe: React.FC = () => {
+export const GeneralNewsSubscribe: React.FC = () => {
     // Form Data handlers
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<NewsSubscribeInputs>();
+    } = useForm<GeneralNewsSubscribeInputs>();
 
     // Mailchimp subscription handlers
     const {
@@ -32,7 +32,7 @@ export const EmailSubscribe: React.FC = () => {
      *
      * @param data -The data from the submitted form
      */
-    const onSubmit = async (data: NewsSubscribeInputs) => {
+    const onSubmit = async (data: GeneralNewsSubscribeInputs) => {
         await subscribe(data.email, {
             [FIELDS.SIGNUP_LOCATION]: data.signupLocation,
             [FIELDS.EXTERNAL_REFERRER]: data.externalReferrer,
@@ -59,7 +59,7 @@ export const EmailSubscribe: React.FC = () => {
                     </BodyText>
                 </styled.SubscriptionSuccess>
             ) : (
-                <styled.EmailSubscribe>
+                <styled.GeneralNewsSubscribe>
                     <form name={FORM_NAME} onSubmit={handleSubmit(onSubmit)}>
                         {/* Hidden field required by Netlify */}
                         <Input
@@ -125,13 +125,13 @@ export const EmailSubscribe: React.FC = () => {
                             </BodyText>
                         </div>
                     )}
-                </styled.EmailSubscribe>
+                </styled.GeneralNewsSubscribe>
             )}
         </>
     );
 };
 
-export interface NewsSubscribeInputs {
+export interface GeneralNewsSubscribeInputs {
     email: string;
     signupLocation: string;
     referrer: string;

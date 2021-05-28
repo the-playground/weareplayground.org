@@ -3,7 +3,7 @@ import { breakpoints, fonts, spacing } from '@nerve/core/tokens';
 
 const componentBreakpoint = breakpoints.s;
 
-export const EmailSubscribe = styled.div`
+export const GeneralNewsSubscribe = styled.div`
     form {
         display: block;
         ${componentBreakpoint} {
