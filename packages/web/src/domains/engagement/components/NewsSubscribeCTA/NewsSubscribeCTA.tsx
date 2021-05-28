@@ -11,9 +11,9 @@ import {
     GrittyHeading,
 } from '@nerve/core/components';
 
-import { EmailSubscribe } from '../EmailSubscribe/EmailSubscribe';
+import { GeneralNewsSubscribe } from '../GeneralNewsSubscribe/GeneralNewsSubscribe';
 
-const StyledSubscribeSection = styled(Section)`
+const StyledNewsSubscribeCTA = styled(Section)`
     padding: ${spacing.layout.l} 0;
 
     .intro-copy {
@@ -22,7 +22,7 @@ const StyledSubscribeSection = styled(Section)`
     }
 `;
 
-export const SubscribeSection: React.FC = () => {
+export const NewsSubscribeCTA: React.FC = () => {
     /**
      * Query for all the configs our site might need to use for every page.
      */
@@ -50,7 +50,7 @@ export const SubscribeSection: React.FC = () => {
     const { subscribe }: SubscribeComponentData = sanityComponentConfig;
 
     return (
-        <StyledSubscribeSection
+        <StyledNewsSubscribeCTA
             overlay="dark90"
             bgImage={{ image: subscribe.image.asset }}
         >
@@ -68,9 +68,9 @@ export const SubscribeSection: React.FC = () => {
                 <BodyText color="light" size="m" className="intro-copy">
                     {subscribe.copy}
                 </BodyText>
-                <EmailSubscribe />
+                <GeneralNewsSubscribe />
             </Container>
-        </StyledSubscribeSection>
+        </StyledNewsSubscribeCTA>
     );
 };
 

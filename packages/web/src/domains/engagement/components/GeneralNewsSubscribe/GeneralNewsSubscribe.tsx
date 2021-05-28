@@ -1,52 +1,50 @@
 // Inspo https://deliciousbrains.com/
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
-import addToMailchimp, { MailchimpResponse } from 'gatsby-plugin-mailchimp';
 
 import { emailRegexPattern } from '@nerve/shared/lib';
+import { useMailchimpSubscribe } from '@nerve/shared/hooks';
 
 import { BodyText, FillButton, Heading, Input } from '@nerve/core/components';
 
-import { EmailSubscribeProps } from './EmailSubscribe.d';
-import * as styled from './EmailSubscribe.styles';
+import * as styled from './GeneralNewsSubscribe.styles';
 
-export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
+export const GeneralNewsSubscribe: React.FC = () => {
     // Form Data handlers
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<UseFormInputs>();
+    } = useForm<GeneralNewsSubscribeInputs>();
 
-    // Form UI state handlers
-    const [loading, setLoading] = useState(false);
-
-    // Email Subscription state handlers
-    const [subscription, setSubscription] = useState({} as MailchimpResponse);
-
-    // The name of the form
-    const formName = 'subscribe';
+    // Mailchimp subscription handlers
+    const {
+        config: { messages, groups, FIELDS },
+        loading,
+        currentPath,
+        subscribe,
+        referrer,
+        response,
+    } = useMailchimpSubscribe();
 
     /**
      * Handle subscribing users to an email service on submit
      *
      * @param data -The data from the submitted form
      */
-    const onSubmit = async (data: UseFormInputs) => {
-        setLoading(true);
-        const results = await addToMailchimp(data.email, {
-            SIGNUPLOC: data.signupLocation,
-            REFERRER: data.referrer,
-            'group[33097][16]': '16',
+    const onSubmit = async (data: GeneralNewsSubscribeInputs) => {
+        await subscribe(data.email, {
+            [FIELDS.SIGNUP_LOCATION]: data.signupLocation,
+            [FIELDS.EXTERNAL_REFERRER]: data.externalReferrer,
+            [groups.GENERAL_NEWS.inputName]: groups.GENERAL_NEWS.inputID,
         });
-
-        setSubscription(results);
-        setLoading(false);
     };
+
+    const FORM_NAME = 'subscribe';
 
     return (
         <>
-            {subscription.result === 'success' ? (
+            {response.result === 'success' ? (
                 <styled.SubscriptionSuccess>
                     <Heading
                         as="h3"
@@ -54,47 +52,46 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
                         size="xs"
                         className="success-title"
                     >
-                        Sweet!
+                        {messages.success.default.title}
                     </Heading>
                     <BodyText color="light" size="m" className="success-copy">
-                        Your signup was successful 🎉! Welcome to The Nerve.
+                        {messages.success.default.copy}
                     </BodyText>
                 </styled.SubscriptionSuccess>
             ) : (
-                <styled.EmailSubscribe>
-                    <form name={formName} onSubmit={handleSubmit(onSubmit)}>
+                <styled.GeneralNewsSubscribe>
+                    <form name={FORM_NAME} onSubmit={handleSubmit(onSubmit)}>
                         {/* Hidden field required by Netlify */}
                         <Input
                             color="light"
                             type="text"
+                            label="Email Address"
                             placeholder="your email address"
                             {...register('email', {
-                                required:
-                                    'An email address is required in order to subscribe.',
+                                required: messages.error.requiredEmail,
                                 pattern: {
                                     value: emailRegexPattern,
-                                    message:
-                                        "Hmmm... it doesn't look like this is a valid email address.",
+                                    message: messages.error.invalidEmail,
                                 },
                             })}
                         />
 
-                        {/* Automatically add to "General News Updates" group */}
+                        {/* Automatically add to "General Subscriber" group */}
                         <input
                             type="hidden"
-                            value="16"
-                            {...register('group[33097][16]')}
+                            value={[groups.GENERAL_NEWS.inputID]}
+                            {...register(groups.GENERAL_NEWS.inputName)}
                         />
 
                         {/* Hidden form to collect expanded data */}
                         <input
                             type="hidden"
-                            value="/"
-                            {...register('referrer')}
+                            value={referrer}
+                            {...register('externalReferrer')}
                         />
                         <input
                             type="hidden"
-                            value="/"
+                            value={currentPath}
                             {...register('signupLocation')}
                         />
 
@@ -116,17 +113,28 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
                             </BodyText>
                         </div>
                     )}
-                </styled.EmailSubscribe>
+
+                    {!loading && !errors.email && response.msg && (
+                        <div className="response-info">
+                            <BodyText color="accent" size="m">
+                                <span
+                                    // eslint-disable-next-line react/no-danger
+                                    dangerouslySetInnerHTML={{
+                                        __html: response.msg,
+                                    }}
+                                />
+                            </BodyText>
+                        </div>
+                    )}
+                </styled.GeneralNewsSubscribe>
             )}
         </>
     );
 };
 
-export interface UseFormInputs {
+export interface GeneralNewsSubscribeInputs {
     email: string;
     signupLocation: string;
     referrer: string;
-    'group[33097][16]': string;
+    [key: string]: string;
 }
-
-type FormUIStatus = 'initial' | 'loading';
