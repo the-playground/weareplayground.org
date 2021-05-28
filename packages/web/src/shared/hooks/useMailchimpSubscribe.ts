@@ -5,7 +5,7 @@ import addToMailchimp, {
     MailchimpResponse,
 } from 'gatsby-plugin-mailchimp';
 
-import { useReferrer } from '@nerve/shared/hooks';
+import { getExternalReferrer } from '@nerve/shared/lib';
 
 /**
  * A defined set of messages for communicating Mailchimp responses to users
@@ -45,16 +45,25 @@ const groups = {
     },
 };
 
+export enum FIELDS {
+    EMAIL = 'EMAIL',
+    FIRST_NAME = 'FNAME',
+    LAST_NAME = 'LNAME',
+    EVENT_NAME = 'EVENT',
+    SIGNUP_LOCATION = 'SIGNUPLOC',
+    EXTERNAL_REFERRER = 'EXT_REF',
+}
+
 export const config = {
     messages,
     groups,
+    FIELDS,
 };
 
 export const useMailchimpSubscribe = () => {
     const [loading, setLoading] = useState(false);
     const [response, setResponse] = useState({} as MailchimpResponse);
     const { pathname } = useLocation();
-    const [referrer] = useReferrer();
 
     const subscribe: MailchimpSubscribeFn = async (email, listFields) => {
         setLoading(true);
@@ -69,7 +78,7 @@ export const useMailchimpSubscribe = () => {
         response,
         subscribe,
         currentPath: pathname,
-        referrer,
+        referrer: getExternalReferrer(),
     };
 };
 

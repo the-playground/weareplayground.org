@@ -7,10 +7,9 @@ import { useMailchimpSubscribe } from '@nerve/shared/hooks';
 
 import { BodyText, FillButton, Heading, Input } from '@nerve/core/components';
 
-import { EmailSubscribeProps } from './EmailSubscribe.d';
 import * as styled from './EmailSubscribe.styles';
 
-export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
+export const EmailSubscribe: React.FC = () => {
     // Form Data handlers
     const {
         register,
@@ -20,7 +19,7 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
 
     // Mailchimp subscription handlers
     const {
-        config: { messages, groups },
+        config: { messages, groups, FIELDS },
         loading,
         currentPath,
         subscribe,
@@ -35,8 +34,8 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
      */
     const onSubmit = async (data: NewsSubscribeInputs) => {
         await subscribe(data.email, {
-            SIGNUPLOC: data.signupLocation,
-            REFERRER: data.referrer,
+            [FIELDS.SIGNUP_LOCATION]: data.signupLocation,
+            [FIELDS.EXTERNAL_REFERRER]: data.externalReferrer,
             [groups.GENERAL_NEWS.inputName]: groups.GENERAL_NEWS.inputID,
         });
     };
@@ -87,7 +86,7 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = () => {
                         <input
                             type="hidden"
                             value={referrer}
-                            {...register('referrer')}
+                            {...register('externalReferrer')}
                         />
                         <input
                             type="hidden"

@@ -66,3 +66,12 @@ export const buildNestedSlugPath = (slugs: string[]) => {
 
     return normalizeSlug(normalizedSlugs.join('/'));
 };
+
+/**
+ * Get the referring external website page. This is the entry point where
+ * a user entered the website
+ */
+export const getExternalReferrer = () => {
+    const referrer = isSSR ? '' : document.referrer;
+    return referrer ?? 'direct';
+};

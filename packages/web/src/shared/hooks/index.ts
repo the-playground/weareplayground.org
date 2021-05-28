@@ -4,6 +4,5 @@ export * from './useGetMetaImage';
 export * from './useLocalStorage';
 export * from './useMailchimpSubscribe';
 export * from './useOnClickOutside';
-export * from './useReferrer';
 export * from './useScrollFreeze';
 export * from './useToggle';
