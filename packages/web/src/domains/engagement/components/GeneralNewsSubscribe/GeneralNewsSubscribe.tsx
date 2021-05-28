@@ -65,6 +65,7 @@ export const GeneralNewsSubscribe: React.FC = () => {
                         <Input
                             color="light"
                             type="text"
+                            label="Email Address"
                             placeholder="your email address"
                             {...register('email', {
                                 required: messages.error.requiredEmail,
