@@ -25,7 +25,7 @@ const messages = {
 };
 
 /**
- * A map available "Groups" users can be subscribed to in our Mailchimp account
+ * A map available of "Groups" users can be subscribed to in our Mailchimp account
  */
 const groups = {
     GENERAL_NEWS: {
@@ -45,7 +45,13 @@ const groups = {
     },
 };
 
-export enum FIELDS {
+/**
+ * The set of defined fields (merge tags) available in our Mailchimp List.
+ *
+ * These are the fields that data will be attached to before it is sent
+ * along in a subscription request.
+ */
+enum FIELDS {
     EMAIL = 'EMAIL',
     FIRST_NAME = 'FNAME',
     LAST_NAME = 'LNAME',
@@ -54,17 +60,39 @@ export enum FIELDS {
     EXTERNAL_REFERRER = 'EXT_REF',
 }
 
+/**
+ * A composed config that holds all of the form and group data that
+ * we might need to reference throughout our app
+ */
 export const config = {
     messages,
     groups,
     FIELDS,
 };
 
+/**
+ * A handy little hook that holds all of the functionality needed in order
+ * to subscribe a user to our mailchimp list with support for custom
+ * meta data.
+ *
+ * All available messaging, groups, and fields are returned from this hook,
+ * along with loading state and response from Mailchimp.
+ */
 export const useMailchimpSubscribe = () => {
     const [loading, setLoading] = useState(false);
     const [response, setResponse] = useState({} as MailchimpResponse);
     const { pathname } = useLocation();
 
+    /**
+     * Subscribe a specified user to our mailchimp list with the
+     * requested metadata attached
+     *
+     ** The `addToMailchimp` function is provided by a Gatsby plugin. We can build our own at a later date if it makes sense.
+     ** Note that we do not need to handle errors here since Mailchimp returns a 200 even on failed requests
+     *
+     * @param email The email of the user to subscribe
+     * @param listFields The fields & field data to associate with this user subscribe event
+     */
     const subscribe: MailchimpSubscribeFn = async (email, listFields) => {
         setLoading(true);
         const results = await addToMailchimp(email, listFields);

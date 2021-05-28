@@ -9,6 +9,14 @@ import { BodyText, FillButton, Heading, Input } from '@nerve/core/components';
 
 import * as styled from './GeneralNewsSubscribe.styles';
 
+/**
+ * This component handles composing form data and Mailchimp subscription logic
+ * into a single email input field (along with some other hidden metadata fields)
+ * that, when submitted, will subscribe a user to our Mailchimp list and add
+ * them to the group associated with general news updates.
+ *
+ * All state and data for this component is entirely self-contained.
+ */
 export const GeneralNewsSubscribe: React.FC = () => {
     // Form Data handlers
     const {
@@ -44,6 +52,7 @@ export const GeneralNewsSubscribe: React.FC = () => {
 
     return (
         <>
+            {/* Displays when a user was successfully subscribed */}
             {response.result === 'success' ? (
                 <styled.SubscriptionSuccess>
                     <Heading
@@ -61,7 +70,6 @@ export const GeneralNewsSubscribe: React.FC = () => {
             ) : (
                 <styled.GeneralNewsSubscribe>
                     <form name={FORM_NAME} onSubmit={handleSubmit(onSubmit)}>
-                        {/* Hidden field required by Netlify */}
                         <Input
                             color="light"
                             type="text"
@@ -76,19 +84,21 @@ export const GeneralNewsSubscribe: React.FC = () => {
                             })}
                         />
 
-                        {/* Automatically add to "General Subscriber" group */}
+                        {/* Auto-associate this form with "General News Updates" group */}
                         <input
                             type="hidden"
                             value={[groups.GENERAL_NEWS.inputID]}
                             {...register(groups.GENERAL_NEWS.inputName)}
                         />
 
-                        {/* Hidden form to collect expanded data */}
+                        {/* The referring external URL (if user did not come here directly) */}
                         <input
                             type="hidden"
                             value={referrer}
                             {...register('externalReferrer')}
                         />
+
+                        {/* The current page the user is on where this form appears */}
                         <input
                             type="hidden"
                             value={currentPath}
@@ -106,6 +116,7 @@ export const GeneralNewsSubscribe: React.FC = () => {
                         </FillButton>
                     </form>
 
+                    {/* Displays form validation errors */}
                     {errors.email && (
                         <div className="errors">
                             <BodyText color="danger" size="m">
@@ -114,6 +125,7 @@ export const GeneralNewsSubscribe: React.FC = () => {
                         </div>
                     )}
 
+                    {/* Displays response information from Mailchimp if the subscribe attempt was not successful */}
                     {!loading && !errors.email && response.msg && (
                         <div className="response-info">
                             <BodyText color="accent" size="m">
