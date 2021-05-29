@@ -11,9 +11,6 @@ import { LegacyContentNotice } from '@nerve/domains/migrations';
 import { ShowPage, ShowPageContext } from '../types';
 import { useShowStatus } from '../__hooks__';
 
-// local template components
-import { ActionBar, Hero } from './components';
-
 const SingleShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({
     data,
     pageContext,
