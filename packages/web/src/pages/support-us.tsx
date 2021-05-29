@@ -15,42 +15,42 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     pageContext,
     location,
 }) => {
-    const { sanitySupportUsPage: page } = data;
+    // const { sanitySupportUsPage: page } = data;
 
     return (
-        <PageTemplate
-            seo={page.seo}
-            lastUpdated={page._updatedAt}
-            currentLocation={location.pathname}
-        >
-            <NewsSubscribeCTA />
-        </PageTemplate>
+        // <PageTemplate
+        //     seo={page.seo}
+        //     lastUpdated={page._updatedAt}
+        //     currentLocation={location.pathname}
+        // >
+        <NewsSubscribeCTA />
+        // </PageTemplate>
     );
 };
 
-export const query = graphql`
-    query {
-        sanitySupportUsPage {
-            title
-            slug {
-                current
-            }
-            _updatedAt
-            seo {
-                title
-                description
-                hide
-                publishedAt
-                image {
-                    alt
-                    asset {
-                        url
-                    }
-                }
-            }
-        }
-    }
-`;
+// export const query = graphql`
+//     query {
+//         sanitySupportUsPage {
+//             title
+//             slug {
+//                 current
+//             }
+//             _updatedAt
+//             seo {
+//                 title
+//                 description
+//                 hide
+//                 publishedAt
+//                 image {
+//                     alt
+//                     asset {
+//                         url
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// `;
 
 interface PageData {
     sanitySupportUsPage: SupportUsPageData;
