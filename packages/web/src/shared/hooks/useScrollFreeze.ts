@@ -17,8 +17,9 @@ export const useScrollFreeze = (freezeHandler: boolean): void => {
         ).overflow;
 
         // Get original html & body overflow
-        const originalBodyOverflow = window.getComputedStyle(document.body)
-            .overflow;
+        const originalBodyOverflow = window.getComputedStyle(
+            document.body
+        ).overflow;
 
         if (freezeHandler) {
             // Prevent scrolling on mount
