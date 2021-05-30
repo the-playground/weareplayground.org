@@ -32,6 +32,7 @@ export const GeneralNewsSubscribe: React.FC = () => {
         currentPath,
         subscribe,
         referrer,
+        queryParams,
         response,
     } = useMailchimpSubscribe();
 
@@ -44,6 +45,7 @@ export const GeneralNewsSubscribe: React.FC = () => {
         await subscribe(data.email, {
             [FIELDS.SIGNUP_LOCATION]: data.signupLocation,
             [FIELDS.EXTERNAL_REFERRER]: data.externalReferrer,
+            [FIELDS.CAMPAIGN]: data.campaign,
             [groups.GENERAL_NEWS.inputName]: groups.GENERAL_NEWS.inputID,
         });
     };
@@ -105,6 +107,13 @@ export const GeneralNewsSubscribe: React.FC = () => {
                             {...register('signupLocation')}
                         />
 
+                        {/* The current set of query parameters from the URL */}
+                        <input
+                            type="hidden"
+                            value={queryParams}
+                            {...register('campaign')}
+                        />
+
                         <FillButton
                             size="m"
                             color="primary"
@@ -148,5 +157,6 @@ export interface GeneralNewsSubscribeInputs {
     email: string;
     signupLocation: string;
     referrer: string;
+    campaign: string;
     [key: string]: string;
 }

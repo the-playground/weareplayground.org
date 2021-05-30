@@ -58,6 +58,7 @@ enum FIELDS {
     EVENT_NAME = 'EVENT',
     SIGNUP_LOCATION = 'SIGNUPLOC',
     EXTERNAL_REFERRER = 'EXT_REF',
+    CAMPAIGN = 'CAMPAIGN',
 }
 
 /**
@@ -81,7 +82,7 @@ export const config = {
 export const useMailchimpSubscribe = () => {
     const [loading, setLoading] = useState(false);
     const [response, setResponse] = useState({} as MailchimpResponse);
-    const { pathname } = useLocation();
+    const { pathname, search } = useLocation();
 
     /**
      * Subscribe a specified user to our mailchimp list with the
@@ -107,6 +108,7 @@ export const useMailchimpSubscribe = () => {
         subscribe,
         currentPath: pathname,
         referrer: getExternalReferrer(),
+        queryParams: search,
     };
 };
 
