@@ -9,7 +9,7 @@ import {
     useSEOConfig,
     LinkMapConfig,
     useLinkMapConfig,
-} from '../hooks/configs';
+} from '../hooks';
 
 export const ConfigContext = createContext({} as GlobalConfigs);
 
