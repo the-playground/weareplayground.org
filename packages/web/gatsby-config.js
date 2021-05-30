@@ -74,7 +74,7 @@ module.exports = {
             resolve: '@sentry/gatsby',
             options: {
                 dsn: process.env.SENTRY_DSN,
-                environment: environment,
+                environment,
                 release: `nerve.web@${appVersion}`,
                 // A rate of 1 means all traces will be sent, so it's good for testing.
                 // In production, you'll likely want to either choose a lower rate or use `tracesSampler` instead (see below).
