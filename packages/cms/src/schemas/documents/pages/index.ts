@@ -1,6 +1,7 @@
 import { schema as homePageSchema } from './home';
 import { schema as blogPageSchema } from './blog';
 import { schema as archivePageSchema } from './theArchive';
+import { schema as supportUsScheme } from './supportUs';
 
 /**
  * The schema configs exported from this file are directly iterated over to build
@@ -13,4 +14,5 @@ export const pageDocuments = [
     homePageSchema,
     blogPageSchema,
     archivePageSchema,
+    supportUsScheme,
 ];
