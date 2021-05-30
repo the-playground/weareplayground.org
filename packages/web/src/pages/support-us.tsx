@@ -6,6 +6,7 @@ import {
     SanityImageData,
 } from '@nerve/shared/types';
 
+import { SimpleHero } from '@nerve/shared/components';
 import { NewsSubscribeCTA } from '@nerve/domains/engagement';
 
 import PageTemplate from '@nerve/domains/page/PageTemplate';
@@ -15,42 +16,46 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     pageContext,
     location,
 }) => {
-    // const { sanitySupportUsPage: page } = data;
+    const { sanitySupportUsPage: page } = data;
 
     return (
-        // <PageTemplate
-        //     seo={page.seo}
-        //     lastUpdated={page._updatedAt}
-        //     currentLocation={location.pathname}
-        // >
-        <NewsSubscribeCTA />
-        // </PageTemplate>
+        <PageTemplate
+            seo={page.seo}
+            lastUpdated={page._updatedAt}
+            currentLocation={location.pathname}
+        >
+            <SimpleHero
+                title="Be Awesome"
+                subTitle="Support the future of theatre in Dayton"
+            />
+            <NewsSubscribeCTA />
+        </PageTemplate>
     );
 };
 
-// export const query = graphql`
-//     query {
-//         sanitySupportUsPage {
-//             title
-//             slug {
-//                 current
-//             }
-//             _updatedAt
-//             seo {
-//                 title
-//                 description
-//                 hide
-//                 publishedAt
-//                 image {
-//                     alt
-//                     asset {
-//                         url
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// `;
+export const query = graphql`
+    query {
+        sanitySupportUsPage {
+            title
+            slug {
+                current
+            }
+            _updatedAt
+            seo {
+                title
+                description
+                hide
+                publishedAt
+                image {
+                    alt
+                    asset {
+                        url
+                    }
+                }
+            }
+        }
+    }
+`;
 
 interface PageData {
     sanitySupportUsPage: SupportUsPageData;
