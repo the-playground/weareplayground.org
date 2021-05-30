@@ -133,6 +133,9 @@ export interface AppTheme {
     };
     overlays: {
         verticalGradientDark: OverlayTheme;
+        black45: OverlayTheme;
+        black65: OverlayTheme;
+        black85: OverlayTheme;
         dark85: OverlayTheme;
         dark90: OverlayTheme;
     };

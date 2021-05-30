@@ -10,6 +10,18 @@ const verticalGradientDark: OverlayTheme = {
         )`,
 };
 
+const black45: OverlayTheme = {
+    color: `${rgba(palette.system.black, 0.45)}`,
+};
+
+const black65: OverlayTheme = {
+    color: `${rgba(palette.system.black, 0.65)}`,
+};
+
+const black85: OverlayTheme = {
+    color: `${rgba(palette.system.black, 0.85)}`,
+};
+
 const dark85: OverlayTheme = {
     color: `${rgba(palette.secondary.d1, 0.85)}`,
 };
@@ -20,6 +32,9 @@ const dark90: OverlayTheme = {
 
 export const overlays: OverlayThemes = {
     verticalGradientDark,
+    black45,
+    black65,
+    black85,
     dark85,
     dark90,
 };
