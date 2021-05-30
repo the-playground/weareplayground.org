@@ -152,6 +152,6 @@ interface FooterNavProps {
     }[];
     menuItems: {
         text: string;
-        link: string | undefined;
+        link: string | null;
     }[];
 }

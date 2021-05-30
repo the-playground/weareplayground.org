@@ -12,7 +12,7 @@ export const DesktopNavBar = styled.nav`
         /* Standard link items (bot button links) */
         a:not(.button) {
             display: block;
-            padding: ${spacing.component.s} ${spacing.component.m};
+            padding: ${spacing.component.s} ${spacing.component.s};
             position: relative;
             transition: ${animation.linkHover};
         }

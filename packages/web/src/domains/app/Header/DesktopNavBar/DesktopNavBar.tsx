@@ -19,7 +19,7 @@ const LinkItem: React.FC<{ slug: string; text: string }> = ({ slug, text }) => (
 
 export const DesktopNavBar: React.FC = () => {
     const {
-        links: { archivePage },
+        links: { archivePage, supportUsPage },
     } = useConfigContext();
 
     return (
@@ -39,7 +39,16 @@ export const DesktopNavBar: React.FC = () => {
                     />
                 )} */}
 
-                <LinkItem slug={archivePage} text="the archive" key="archive" />
+                <LinkItem
+                    slug={archivePage!}
+                    text="the archive"
+                    key="archive"
+                />
+                <LinkItem
+                    slug={supportUsPage!}
+                    text="support us"
+                    key="support"
+                />
                 {/* <LinkItem slug={about} text="about" key="about" />
                 <LinkItem slug={contact} text="connect" key="connect" />
                 <li className="highlight">

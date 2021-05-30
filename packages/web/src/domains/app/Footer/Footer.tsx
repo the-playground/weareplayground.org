@@ -83,6 +83,10 @@ export const Footer: React.FC = () => {
             text: 'the archive',
             link: links.archivePage,
         },
+        {
+            text: 'support us',
+            link: links.supportUsPage,
+        },
         // {
         //     text: 'about us',
         //     link: links.about,
