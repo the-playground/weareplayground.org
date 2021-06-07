@@ -5,6 +5,7 @@ import { Image, ImageProps } from '@nerve/core/components';
 import { zIndex } from '@nerve/core/tokens';
 
 const StyledBackgroundImage = styled.div`
+    user-select: none;
     > .bg-image {
         bottom: 0;
         height: 100%;
