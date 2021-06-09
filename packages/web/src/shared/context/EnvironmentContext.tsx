@@ -17,6 +17,7 @@ export const EnvironmentProvider: React.FC = ({ children }) => {
                     commitRef
                     prevCommitRef
                     isDev
+                    isDeployPreview
                     isProd
                 }
             }
@@ -34,6 +35,7 @@ export const EnvironmentProvider: React.FC = ({ children }) => {
         environment: {
             context: queryData.environment,
             isDev: queryData.isDev,
+            isDeployPreview: queryData.isDeployPreview,
             isProd: queryData.isProd,
         },
         release: {
@@ -65,9 +67,8 @@ export interface Environment {
     environment: {
         context: string;
         isDev: boolean;
+        isDeployPreview: boolean;
         isProd: boolean;
-        // isNetlifyPreview: boolean;
-        // isStaging: boolean;
     };
     release: {
         id: string;

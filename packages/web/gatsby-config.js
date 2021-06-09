@@ -23,6 +23,7 @@ const commitRef = process.env.COMMIT_REF ?? '';
 const prevCommitRef = process.env.CACHED_COMMIT_REF ?? '';
 const environment = deployContext ?? 'development';
 const isDev = environment === 'development';
+const isDeployPreview = environment === 'deploy-preview';
 const isProd = environment === 'production';
 
 //  Todo: isNetlifyPreview (for deploy-preview and branch-deploy)
@@ -39,6 +40,7 @@ module.exports = {
         commitRef,
         prevCommitRef,
         isDev,
+        isDeployPreview,
         isProd,
     },
     plugins: [
@@ -76,7 +78,8 @@ module.exports = {
                 dsn: process.env.SENTRY_DSN,
                 // A rate of 1 means all traces will be sent, so it's good for testing.
                 // In production, you'll likely want to either choose a lower rate or use `tracesSampler` instead (see below).
-                // tracesSampleRate: isNetlifyProduction ? 0.5 : 1,
+                tracesSampleRate: 0.5,
+                enabled: !isDev,
             },
         },
 
