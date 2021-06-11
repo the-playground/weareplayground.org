@@ -6,10 +6,17 @@ import {
     SanityImageData,
 } from '@nerve/shared/types';
 
+import PageTemplate from '@nerve/domains/page/PageTemplate';
+
 import { SimpleHero } from '@nerve/shared/components';
 import { NewsSubscribeCTA } from '@nerve/domains/engagement';
 
-import PageTemplate from '@nerve/domains/page/PageTemplate';
+import {
+    WaysOfGivingSection,
+    DonateSection,
+    AlternateGivingSection,
+    TaxExemptSection,
+} from '@nerve/domains/page/support-us';
 
 const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,

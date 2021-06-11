@@ -1,9 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { isSSR } from '../../../shared/lib';
+import { isSSR } from '@nerve/shared/lib';
 
-export const DonateForm = () => {
+export const DonateForm = ({ campaignID }: DonateFormProps): JSX.Element => {
     return (
         <>
             <Helmet>
@@ -22,7 +22,7 @@ export const DonateForm = () => {
                     name="donorbox"
                     seamless="seamless"
                     scrolling="no"
-                    src="https://donorbox.org/embed/dare2havenerve-fundraiser"
+                    src={`https://donorbox.org/embed/${campaignID}`}
                     style={{}}
                     width="100%"
                 />
@@ -30,3 +30,7 @@ export const DonateForm = () => {
         </>
     );
 };
+
+interface DonateFormProps {
+    campaignID: string;
+}
