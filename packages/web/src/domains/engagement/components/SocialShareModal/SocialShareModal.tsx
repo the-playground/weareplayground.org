@@ -14,7 +14,8 @@ import {
 } from '@nerve/core/components';
 
 export const SocialShareModal: React.FC<ISocialShare> = ({
-    shareText,
+    title = 'Share this with some friends',
+    socialShareText,
     buttonText = 'Share',
     url,
 }) => {
@@ -23,7 +24,7 @@ export const SocialShareModal: React.FC<ISocialShare> = ({
         site: { facebookAppID },
     } = useConfigContext();
 
-    const share = getShareConfig(url, shareText, facebookAppID);
+    const share = getShareConfig(url, socialShareText, facebookAppID);
 
     // Create reusable hook that takes a ref, copies a given text, and then updates the text in the reffed div on a timeout
     const handleCopyURL = () => navigator.clipboard.writeText(url);
@@ -52,7 +53,7 @@ export const SocialShareModal: React.FC<ISocialShare> = ({
                     itemSpacing="m"
                     heading={
                         <BodyText color="dark" size="l" weight="bold" as="h2">
-                            Share this show with some friends
+                            {title}
                         </BodyText>
                     }
                 >
@@ -89,6 +90,7 @@ export const SocialShareModal: React.FC<ISocialShare> = ({
 
 export interface ISocialShare {
     url: string;
+    title?: string;
     buttonText?: string;
-    shareText: string;
+    socialShareText: string;
 }

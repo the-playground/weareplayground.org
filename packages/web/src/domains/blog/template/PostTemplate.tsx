@@ -8,6 +8,7 @@ import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
 import { AuthorCard, BlogPost } from '@nerve/domains/blog';
 
 import {
+    Avatar,
     BodyText,
     Heading,
     Image,
@@ -87,10 +88,16 @@ const PostLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                     <AuthorCard
                         name={author.name}
                         brief={author.brief}
-                        avatar={{
-                            alt: author.avatar.alt,
-                            asset: author.avatar.asset,
-                        }}
+                        avatar={
+                            <Avatar
+                                image={{
+                                    alt: author.avatar.alt,
+                                    asset: author.avatar.asset,
+                                }}
+                                size="xl"
+                                bgColor="paper"
+                            />
+                        }
                         instagram={author.instagram}
                         key={author.name}
                     />
@@ -130,7 +137,6 @@ export const query = graphql`
                             width: 80
                             height: 80
                             placeholder: BLURRED
-                            layout: FIXED
                         )
                     }
                 }

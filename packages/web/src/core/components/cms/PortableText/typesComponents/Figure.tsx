@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Image } from '../../../media';
-import { BodyText } from '../../../typography';
+import { BodyText } from '../../../data-display';
 
 /**
  * Handles rendering images added to a Sanity Block

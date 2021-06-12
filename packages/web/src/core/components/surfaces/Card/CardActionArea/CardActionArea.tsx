@@ -3,6 +3,13 @@ import styled, { css } from 'styled-components';
 import { Link, LinkProps } from '@nerve/core/routing';
 import { animation } from '@nerve/core/tokens';
 
+// TYPES
+export interface CardActionAreaProps extends LinkProps {
+    hoverOpacity?: number;
+    disableHoverOpacity?: true;
+}
+
+// STYLES
 const StyledCardActionArea = styled(Link)<CardActionAreaProps>`
     transition: ${animation.cardHover};
 
@@ -15,6 +22,7 @@ const StyledCardActionArea = styled(Link)<CardActionAreaProps>`
         `}
 `;
 
+// COMPONENT DEFINITION
 export const CardActionArea: React.FC<CardActionAreaProps> = ({
     children,
     hoverOpacity = 0.8,
@@ -31,8 +39,3 @@ export const CardActionArea: React.FC<CardActionAreaProps> = ({
         </StyledCardActionArea>
     );
 };
-
-export interface CardActionAreaProps extends LinkProps {
-    hoverOpacity?: number;
-    disableHoverOpacity?: true;
-}

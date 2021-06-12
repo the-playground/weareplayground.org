@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useLocation } from '@reach/router';
 
 import {
     BodyText,
     Card,
+    CardContent,
     Container,
     Divider,
     Heading,
@@ -33,6 +35,8 @@ const StyledAlternateGivingSection = styled(Section)`
 `;
 
 export const AlternateGivingSection = () => {
+    const { href } = useLocation();
+
     return (
         <>
             <Divider color="paperLight" />
@@ -54,19 +58,24 @@ export const AlternateGivingSection = () => {
                             bgColor="paper"
                             variant="outlined"
                             borderColor="paperDark"
-                            gutter="m"
                         >
-                            Hello Card
+                            <CardContent>Hello Card Content</CardContent>
                         </Card>
                         <Card
                             layout="stacked"
                             bgColor="paper"
                             variant="outlined"
                             borderColor="paperDark"
-                            gutter="m"
                         >
-                            Hello Card
+                            <CardContent>Hello Card Content</CardContent>
                         </Card>
+                    </div>
+                    <div className="share">
+                        <SocialShareModal
+                            socialShareText="Tell your friends"
+                            buttonText="share with your friends"
+                            url={href}
+                        />
                     </div>
                 </Container>
             </StyledAlternateGivingSection>

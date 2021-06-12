@@ -1,9 +1,9 @@
 import React from 'react';
 import BasePortableText from '@sanity/block-content-to-react';
 
-import { BodyText } from '../../../typography/BodyText/BodyText';
-import { Heading } from '../../../typography/Heading/Heading';
-import { GrittyHeading } from '../../../typography/GrittyHeading/GrittyHeading';
+import { BodyText } from '../../../data-display/BodyText/BodyText';
+import { Heading } from '../../../data-display/Heading/Heading';
+import { GrittyHeading } from '../../../data-display/GrittyHeading/GrittyHeading';
 
 /**
  * Handles rendering anything within 'types.block'

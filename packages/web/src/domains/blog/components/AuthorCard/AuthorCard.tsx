@@ -13,11 +13,7 @@ export const AuthorCard: React.FC<AuthorCardProps> = ({
 }) => {
     return (
         <styled.AuthorCard>
-            {avatar && (
-                <div className="avatar">
-                    <Image image={avatar.asset} alt={avatar.alt} />
-                </div>
-            )}
+            {avatar && <div className="avatar">{avatar}</div>}
             <div className="content">
                 <BodyText size="m" color="medium" className="byline">
                     written by
