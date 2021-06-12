@@ -2,14 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {
-    Heading,
     BodyText,
-    Section,
     Container,
+    Divider,
+    Heading,
     Logo,
     Paper,
-    Divider,
+    Section,
 } from '@nerve/core/components';
+
 import { breakpoints, grid, spacing } from '@nerve/core/tokens';
 
 const StyledTaxExemptSection = styled(Section)`

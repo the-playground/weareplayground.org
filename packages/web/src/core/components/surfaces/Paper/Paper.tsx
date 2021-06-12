@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PaperProps } from './Paper.d';
+import { PaperProps } from './Paper.types';
 import * as styled from './Paper.styles';
 
 export const Paper: React.FC<PaperProps> = ({

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { borders } from '@nerve/core/tokens';
-import { PaperProps } from './Paper.d';
+import { PaperProps } from './Paper.types';
 
 export const Paper = styled.div<PaperProps>`
     background-color: ${({ theme, bgColor }) =>
