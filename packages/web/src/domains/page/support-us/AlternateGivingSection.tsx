@@ -16,6 +16,8 @@ import {
     List,
     ListItem,
     Section,
+    FillButton,
+    OutlineButton,
 } from '@nerve/core/components';
 import { breakpoints, grid, spacing } from '@nerve/core/tokens';
 
@@ -46,6 +48,16 @@ const StyledAlternateGivingSection = styled(Section)`
     }
 `;
 
+const amazonSmile = {
+    url: '',
+    steps: [],
+};
+
+const krogerCommunityRewards = {
+    url: '',
+    steps: [],
+};
+
 const amazonSmileSteps = [
     'Sign into smile.amazon.com',
     'Go to "Your Account" and select the option to "Change your charity"',
@@ -53,9 +65,9 @@ const amazonSmileSteps = [
 ];
 
 const krogerCommunityRewardsSteps = [
-    {
-        text: '',
-    },
+    'Sign into smile.amazon.com',
+    'Go to "Your Account" and select the option to "Change your charity"',
+    'Select "The Nerve"',
 ];
 
 export const AlternateGivingSection = () => {
@@ -97,6 +109,7 @@ export const AlternateGivingSection = () => {
                                     You shop, we earn $$
                                 </BodyText>
                             </CardHeader>
+                            <Divider color="paperLight" />
                             <CardContent>
                                 <List itemSpacing="xs">
                                     {amazonSmileSteps.map((text) => (
@@ -113,6 +126,15 @@ export const AlternateGivingSection = () => {
                                     ))}
                                 </List>
                             </CardContent>
+                            <CardActions>
+                                <OutlineButton
+                                    size="m"
+                                    to="https://smile.amazon.com/"
+                                    color="primary"
+                                >
+                                    Get Started Now
+                                </OutlineButton>
+                            </CardActions>
                         </Card>
 
                         {/* Kroger Community Rewards */}
@@ -135,6 +157,7 @@ export const AlternateGivingSection = () => {
                                     You get groceries, we get $$
                                 </BodyText>
                             </CardHeader>
+                            <Divider color="paperLight" />
                             <CardContent>Hello Card Content</CardContent>
                         </Card>
                     </div>
