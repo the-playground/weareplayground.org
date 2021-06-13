@@ -7,7 +7,7 @@ import {
     BodyText,
     Icon,
     List,
-    ListItem,
+    ListItemAction,
     Modal,
     CloseOverlay,
     OutlineButton,
@@ -59,7 +59,7 @@ export const SocialShareModal: React.FC<ISocialShare> = ({
                 >
                     {/* Handle social & email sharing */}
                     {share.map((item) => (
-                        <ListItem key={item.text}>
+                        <ListItemAction key={item.text}>
                             <Link to={item.url}>
                                 <Icon
                                     name={item.iconName}
@@ -70,18 +70,18 @@ export const SocialShareModal: React.FC<ISocialShare> = ({
                                     {item.text}
                                 </BodyText>
                             </Link>
-                        </ListItem>
+                        </ListItemAction>
                     ))}
 
                     {/* Copy URL button */}
-                    <ListItem key="Copy link">
+                    <ListItemAction key="Copy link">
                         <button onClick={handleCopyURL} type="button">
                             <Icon name="Copy" size="s" />
                             <BodyText color="dark" size="m">
                                 Copy link
                             </BodyText>
                         </button>
-                    </ListItem>
+                    </ListItemAction>
                 </List>
             </Modal>
         </>

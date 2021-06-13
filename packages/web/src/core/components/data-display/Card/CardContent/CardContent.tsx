@@ -13,9 +13,6 @@ export const StyledCardContent = styled.div<CardContentProps>`
     --card-content-y-gutter: var(--card-spacing);
     --card-content-x-gutter: var(--card-spacing);
 
-    align-items: center;
-    display: flex;
-
     ${({ verticalSpacing }) =>
         verticalSpacing &&
         css`

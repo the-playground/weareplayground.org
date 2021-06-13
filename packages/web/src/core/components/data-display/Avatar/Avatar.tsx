@@ -1,17 +1,19 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, ThemeConsumer } from 'styled-components';
 
-import { AvailableSurface } from '@nerve/core/themes';
+import { AvailableSurface, AvailableTypographyTheme } from '@nerve/core/themes';
 import { SanityImageDataWithAlt } from '@nerve/shared/types';
 import { Image } from '@nerve/core/components';
-import { borders } from '@nerve/core/tokens';
+import { borders, fonts } from '@nerve/core/tokens';
 
 // TYPES
 export interface AvatarProps {
     image?: SanityImageDataWithAlt;
     bgColor?: AvailableSurface;
+    borderWidth?: number;
     borderColor?: AvailableSurface;
-    size: 's' | 'm' | 'l' | 'xl';
+    textColor?: AvailableTypographyTheme;
+    size?: 's' | 'm' | 'l' | 'xl';
     className?: string;
 }
 
@@ -25,16 +27,21 @@ const avatarSizes = {
 };
 
 export const StyledAvatar = styled.div<AvatarProps>`
-    --avatar-size: ${({ size }) => avatarSizes[size]};
+    --avatar-size: ${({ size }) => avatarSizes[size!]};
+    --avatar-font-divider: 2;
+    --avatar-margin-divider: 3;
 
     border-radius: ${borders.circle};
+    color: ${({ textColor, theme }) => theme.typography[textColor!]};
+    font-size: calc(var(--avatar-size) / var(--avatar-font-divider));
+    margin-right: calc(var(--avatar-size) / var(--avatar-margin-divider));
     width: var(--avatar-size);
     height: var(--avatar-size);
+    ${fonts.bodyText}
 
     display: flex;
     overflow: hidden;
     position: relative;
-    font-size: 1.25rem;
     align-items: center;
     flex-shrink: 0;
     line-height: 1;
@@ -55,10 +62,10 @@ export const StyledAvatar = styled.div<AvatarProps>`
         `};
 
     /* Optional Border Color */
-    ${({ borderColor, theme }) =>
+    ${({ borderColor, borderWidth, theme }) =>
         borderColor &&
         css`
-            border: 1px solid ${theme.surfaces[borderColor]};
+            border: ${borderWidth}px solid ${theme.surfaces[borderColor]};
         `};
 `;
 
@@ -67,14 +74,18 @@ export const Avatar: React.FC<AvatarProps> = ({
     image,
     size = 'm',
     borderColor,
+    borderWidth = 1,
     bgColor,
+    textColor = 'light',
     className,
     children,
 }) => {
     return (
         <StyledAvatar
             size={size}
+            textColor={textColor}
             borderColor={borderColor}
+            borderWidth={borderWidth}
             bgColor={bgColor}
             className={className}
         >

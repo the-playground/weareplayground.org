@@ -3,13 +3,13 @@ import styled, { css } from 'styled-components';
 import { spacing, AvailableComponentSpacing } from '@nerve/core/tokens';
 
 // TYPES
-export interface CardActionProps {
+export interface CardActionsProps {
     disableSpacing?: true;
     itemSpacing?: AvailableComponentSpacing;
 }
 
 // STYLES
-export const StyledCardActions = styled.div<CardActionProps>`
+export const StyledCardActions = styled.div<CardActionsProps>`
     align-items: center;
     display: flex;
     ${({ disableSpacing }) =>
@@ -24,7 +24,7 @@ export const StyledCardActions = styled.div<CardActionProps>`
 `;
 
 // COMPONENT DEFINITION
-export const CardActions: React.FC<CardActionProps> = ({
+export const CardActions: React.FC<CardActionsProps> = ({
     disableSpacing,
     itemSpacing = 'm',
     children,

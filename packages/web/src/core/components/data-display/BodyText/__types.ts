@@ -10,6 +10,8 @@ export type AllowedTag =
     | 'h4'
     | 'h5'
     | 'h6'
+    | 'ul'
+    | 'ol'
     | 'figcaption';
 
 export interface BodyTextProps {

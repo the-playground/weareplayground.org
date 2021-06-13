@@ -4,8 +4,6 @@ import { spacing, AvailableComponentSpacing } from '@nerve/core/tokens';
 
 // TYPES
 export interface CardHeaderProps {
-    title: JSX.Element;
-    subtitle?: JSX.Element;
     avatar?: JSX.Element;
     action?: JSX.Element;
     verticalSpacing?: AvailableComponentSpacing;
@@ -36,23 +34,19 @@ export const StyledCardHeader = styled.div<
 `;
 
 // COMPONENT DEFINITION
-export const CardHeader = ({
+export const CardHeader: React.FC<CardHeaderProps> = ({
     verticalSpacing,
     disableSpacing,
-    title,
-    subtitle,
     avatar,
     action,
-}: CardHeaderProps) => (
+    children,
+}) => (
     <StyledCardHeader
         verticalSpacing={verticalSpacing}
         disableSpacing={disableSpacing}
     >
         {avatar && <div className="avatar">{avatar}</div>}
-        <div className="copy">
-            <div className="title">{title}</div>
-            {subtitle && <div className="subtitle">subtitle</div>}
-        </div>
+        <div className="copy">{children}</div>
         {action && <div className="action">{action}</div>}
     </StyledCardHeader>
 );

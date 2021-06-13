@@ -8,8 +8,8 @@ import {
     AvailableElevation,
 } from '@nerve/core/tokens';
 
-import { Paper } from '../../Paper/Paper.styles';
-import { PaperProps } from '../../Paper/Paper.types';
+import { Paper } from '../../surfaces/Paper/Paper.styles';
+import { PaperProps } from '../../surfaces/Paper/Paper.types';
 
 // TYPES
 export interface CardProps extends PaperProps {
@@ -58,3 +58,10 @@ export const Card: React.FC<CardProps> = ({
         </StyledCard>
     );
 };
+
+// Export composable Card components
+export * from './CardActionArea/CardActionArea';
+export * from './CardHeader/CardHeader';
+export * from './CardActions/CardActions';
+export * from './CardContent/CardContent';
+// export * from './CardMedia/CardMedia';
