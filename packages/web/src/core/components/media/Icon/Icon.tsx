@@ -7,6 +7,15 @@ import { SVGElement } from '../SVGElement/SVGElement';
 import * as Styled from './__styles';
 import { availableIcons, IconDefinition } from './__manifest__';
 
+/**
+ * Icon options we need to decide between:
+ * https://ionic.io/ionicons
+ * https://linearicons.com/
+ *
+ * @param param0
+ * @returns
+ */
+
 export const Icon: React.FC<IconProps> = ({
     name,
     color,

@@ -16,7 +16,7 @@ export type AllowedTag =
 
 export interface BodyTextProps {
     size: AvailableBodyTypography;
-    color: AvailableTypographyTheme;
+    color?: AvailableTypographyTheme;
     weight?: 'regular' | 'bold';
     className?: string;
     as?: AllowedTag;

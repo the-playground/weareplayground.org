@@ -3,14 +3,14 @@ import React from 'react';
 import { useConfigContext } from '@nerve/shared/context';
 
 import { Link } from '@nerve/core/routing';
-import { BodyText, FillButton } from '@nerve/core/components';
+import { BodyText, FillButton, Icon } from '@nerve/core/components';
 
 import * as styled from './__styles';
 
 const LinkItem: React.FC<{ slug: string; text: string }> = ({ slug, text }) => (
     <li>
         <Link to={slug} activeClassName="--is-active">
-            <BodyText as="span" size="m" weight="bold" color="light">
+            <BodyText as="span" size="s" weight="bold" color="medium">
                 {text}
             </BodyText>
         </Link>
