@@ -9,6 +9,10 @@ export const Modal = styled(OverlayBase)<IModal>`
     .container {
         inset: 0 !important;
         position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         z-index: ${zIndex.portal} !important;
     }
 
