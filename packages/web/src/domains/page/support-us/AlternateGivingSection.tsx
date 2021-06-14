@@ -68,6 +68,8 @@ const amazonSmile = {
         <>
             Search for/select <strong>The Nerve Theatre</strong>
         </>,
+        <>A percentage of personal purchases will directly support The Nerve</>,
+        <>OR you can purchase/donate items to us via our wishlist</>,
     ],
 };
 
@@ -83,11 +85,15 @@ const krogerRewards = {
             <strong>Community Rewards</strong> menu item
         </>,
         <>
-            Search for organization <strong>XM202</strong>.
+            Search for organization <strong>XM202</strong>
         </>,
         <>
             FYI: You will see <strong>Playground Theatre, Inc.</strong>, but we
-            are in the process of updating it.
+            are in the process of updating it post-rebrand.
+        </>,
+        <>
+            A percentage of your grocery purchases will directly support The
+            Nerve
         </>,
     ],
 };
