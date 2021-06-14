@@ -1,18 +1,40 @@
 import * as React from 'react';
 
 import { useConfigContext } from '@nerve/shared/context';
+import { useSocialProfilesConfig } from '@nerve/shared/hooks';
 
 import { Link } from '@nerve/core/routing';
-import { BodyText, Logo } from '@nerve/core/components';
+import { BodyText, Icon, Logo } from '@nerve/core/components';
 
 import * as styled from './__styles';
 
-export const FooterNav: React.FC<FooterNavProps> = ({
-    socialAccounts,
-    menuItems,
-}) => {
-    const { company } = useConfigContext();
+export const FooterNav = (): JSX.Element => {
+    const { company, links } = useConfigContext();
+    const socialAccounts = useSocialProfilesConfig();
     const activeClass = '--is-active';
+
+    const menuItems = [
+        // {
+        //     text: 'current season',
+        //     link: links.currentSeasonPage,
+        // },
+        {
+            text: 'the archive',
+            link: links.archivePage,
+        },
+        {
+            text: 'support us',
+            link: links.supportUsPage,
+        },
+        // {
+        //     text: 'about us',
+        //     link: links.about,
+        // },
+        // {
+        //     text: 'support us',
+        //     link: links.supportUsPage,
+        // },
+    ];
 
     return (
         <styled.FooterNav aria-labelledby="footermenulabel">
@@ -73,7 +95,13 @@ export const FooterNav: React.FC<FooterNavProps> = ({
                                     to={account.link}
                                     activeClassName={activeClass}
                                 >
-                                    {account.icon}
+                                    <Icon
+                                        name={account.iconName}
+                                        size="m"
+                                        color="medium"
+                                        title={`${account.name} icon`}
+                                    />
+
                                     <BodyText
                                         size="s"
                                         color="medium"
@@ -143,15 +171,3 @@ export const FooterNav: React.FC<FooterNavProps> = ({
         </styled.FooterNav>
     );
 };
-
-interface FooterNavProps {
-    socialAccounts: {
-        name: string;
-        link: string;
-        icon: React.ReactElement;
-    }[];
-    menuItems: {
-        text: string;
-        link: string | null;
-    }[];
-}

@@ -1,7 +1,7 @@
 import { AvailableIconName } from '@nerve/core/components';
 import { useConfigContext } from '@nerve/shared/context';
 
-export const useShareConfig = (
+export const useSocialShareConfig = (
     shareURL: string,
     shareText: string
 ): SocialShareConfig[] => {

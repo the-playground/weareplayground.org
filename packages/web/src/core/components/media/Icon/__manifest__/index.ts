@@ -4,6 +4,7 @@ import { ArrowRight } from './defs/ArrowRight';
 import { ArrowUp } from './defs/ArrowUp';
 import { Calendar } from './defs/Calendar';
 import { Cancel } from './defs/Cancel';
+import { Checkmark } from './defs/Checkmark';
 import { Copy } from './defs/Copy';
 import { CircleDown } from './defs/CircleDown';
 import { CircleLeft } from './defs/CircleLeft';
@@ -42,6 +43,7 @@ export const availableIcons = {
     CircleLeft,
     CircleRight,
     CircleUp,
+    Checkmark,
     Envelope,
     Facebook,
     FacebookAlt,

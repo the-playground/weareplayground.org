@@ -18,6 +18,7 @@ import {
     Section,
     FillButton,
     OutlineButton,
+    GhostButton,
 } from '@nerve/core/components';
 import { breakpoints, grid, spacing } from '@nerve/core/tokens';
 
@@ -56,9 +57,14 @@ const amazonSmile = {
     url: 'https://smile.amazon.com/',
     buttonText: 'Get Started Now',
     steps: [
-        'Sign into smile.amazon.com',
-        'Go to "Your Account" and select the option to "Change your charity"',
-        'Select "The Nerve"',
+        <>Sign into smile.amazon.com</>,
+        <>
+            Go to <strong>Your Account</strong> and select the option to{' '}
+            <strong>Change your charity</strong>
+        </>,
+        <>
+            Select <strong>The Nerve Theatre Inc.</strong>
+        </>,
     ],
 };
 
@@ -68,9 +74,14 @@ const krogerRewards = {
     url: 'https://smile.amazon.com/',
     buttonText: 'Get Started Now',
     steps: [
-        'Sign into smile.amazon.com',
-        'Go to "Your Account" and select the option to "Change your charity"',
-        'Select "The Nerve"',
+        <>Sign into smile.amazon.com</>,
+        <>
+            Go to <strong>Your Account</strong> and select the option to{' '}
+            <strong>Change your charity</strong>
+        </>,
+        <>
+            Select <strong>The Nerve Theatre Inc.</strong>
+        </>,
     ],
 };
 
@@ -120,11 +131,11 @@ export const AlternateGivingSection = () => {
                                     {amazonSmile.steps.map((text) => (
                                         <ListItem>
                                             <Icon
-                                                name="CircleRight"
-                                                size="s"
+                                                name="Checkmark"
+                                                size="xs"
                                                 color="accent"
                                             />
-                                            <BodyText size="m" color="light">
+                                            <BodyText size="m" color="medium">
                                                 {text}
                                             </BodyText>
                                         </ListItem>
@@ -132,13 +143,13 @@ export const AlternateGivingSection = () => {
                                 </List>
                             </CardContent>
                             <CardActions>
-                                <OutlineButton
-                                    size="m"
+                                <GhostButton
+                                    size="s"
                                     to={amazonSmile.url}
                                     color="primary"
                                 >
                                     {amazonSmile.buttonText}
-                                </OutlineButton>
+                                </GhostButton>
                             </CardActions>
                         </Card>
 
@@ -168,11 +179,11 @@ export const AlternateGivingSection = () => {
                                     {krogerRewards.steps.map((text) => (
                                         <ListItem>
                                             <Icon
-                                                name="CircleRight"
-                                                size="s"
+                                                name="Checkmark"
+                                                size="xs"
                                                 color="accent"
                                             />
-                                            <BodyText size="m" color="light">
+                                            <BodyText size="m" color="medium">
                                                 {text}
                                             </BodyText>
                                         </ListItem>
@@ -180,13 +191,13 @@ export const AlternateGivingSection = () => {
                                 </List>
                             </CardContent>
                             <CardActions>
-                                <OutlineButton
-                                    size="m"
+                                <GhostButton
+                                    size="s"
                                     to={krogerRewards.url}
                                     color="primary"
                                 >
                                     {krogerRewards.buttonText}
-                                </OutlineButton>
+                                </GhostButton>
                             </CardActions>
                         </Card>
                     </div>
@@ -201,6 +212,9 @@ export const AlternateGivingSection = () => {
                             >
                                 <BodyText weight="bold" color="light" size="l">
                                     Tell your friends about us
+                                </BodyText>
+                                <BodyText size="m" color="medium">
+                                    Say something cool
                                 </BodyText>
                             </CardHeader>
                             <CardContent verticalSpacing="s">
