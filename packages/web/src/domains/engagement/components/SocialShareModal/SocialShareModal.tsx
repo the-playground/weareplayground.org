@@ -1,7 +1,5 @@
 import React from 'react';
-import { useConfigContext } from '@nerve/shared/context';
-import { useOverlay } from '@nerve/shared/hooks';
-import { getShareConfig } from '@nerve/shared/configs';
+import { useOverlay, useShareConfig } from '@nerve/shared/hooks';
 import { Link } from '@nerve/core/routing';
 import {
     BodyText,
@@ -15,19 +13,15 @@ import {
 
 export const SocialShareModal: React.FC<ISocialShare> = ({
     title = 'Share this with some friends',
+    shareButtonText = 'Share',
     socialShareText,
-    buttonText = 'Share',
-    url,
+    shareURL,
 }) => {
     const [isOpen, setIsOpen, toggle] = useOverlay();
-    const {
-        site: { facebookAppID },
-    } = useConfigContext();
-
-    const share = getShareConfig(url, socialShareText, facebookAppID);
+    const share = useShareConfig(shareURL, socialShareText);
 
     // Create reusable hook that takes a ref, copies a given text, and then updates the text in the reffed div on a timeout
-    const handleCopyURL = () => navigator.clipboard.writeText(url);
+    const handleCopyURL = () => navigator.clipboard.writeText(shareURL);
 
     return (
         <>
@@ -38,7 +32,7 @@ export const SocialShareModal: React.FC<ISocialShare> = ({
                 startIcon={<Icon name="Share" size="xs" />}
                 animateOnClick
             >
-                {buttonText}
+                {shareButtonText}
             </OutlineButton>
             <Modal
                 title="Social Share"
@@ -89,8 +83,8 @@ export const SocialShareModal: React.FC<ISocialShare> = ({
 };
 
 export interface ISocialShare {
-    url: string;
+    shareURL: string;
     title?: string;
-    buttonText?: string;
+    shareButtonText?: string;
     socialShareText: string;
 }

@@ -37,6 +37,18 @@ export const Footer: React.FC = () => {
             ),
         },
         {
+            name: 'twitter',
+            link: company.twitter,
+            icon: (
+                <Icon
+                    name="TwitterAlt"
+                    size="m"
+                    color="medium"
+                    title="Twitter icon"
+                />
+            ),
+        },
+        {
             name: 'spotify',
             link: company.spotify,
             icon: (

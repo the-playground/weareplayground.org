@@ -23,6 +23,7 @@ import { breakpoints, grid, spacing } from '@nerve/core/tokens';
 
 import { SocialShareModal } from '@nerve/domains/engagement';
 
+// STYLES
 const StyledAlternateGivingSection = styled(Section)`
     padding: ${spacing.layout.l} 0;
 
@@ -34,9 +35,9 @@ const StyledAlternateGivingSection = styled(Section)`
         max-width: 550px;
     }
 
-    .free-giving {
+    .community-giving {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         grid-gap: ${spacing.component.xxxl};
         margin-top: ${spacing.layout.m};
         margin-bottom: ${spacing.layout.m};
@@ -48,27 +49,30 @@ const StyledAlternateGivingSection = styled(Section)`
     }
 `;
 
+// CONFIG
 const amazonSmile = {
-    url: '',
-    steps: [],
+    title: 'Amazon Smile',
+    subtitle: 'You shop, we earn $$',
+    url: 'https://smile.amazon.com/',
+    buttonText: 'Get Started Now',
+    steps: [
+        'Sign into smile.amazon.com',
+        'Go to "Your Account" and select the option to "Change your charity"',
+        'Select "The Nerve"',
+    ],
 };
 
-const krogerCommunityRewards = {
-    url: '',
-    steps: [],
+const krogerRewards = {
+    title: 'Kroger Community Rewards',
+    subtitle: 'You get groceries, we get $$',
+    url: 'https://smile.amazon.com/',
+    buttonText: 'Get Started Now',
+    steps: [
+        'Sign into smile.amazon.com',
+        'Go to "Your Account" and select the option to "Change your charity"',
+        'Select "The Nerve"',
+    ],
 };
-
-const amazonSmileSteps = [
-    'Sign into smile.amazon.com',
-    'Go to "Your Account" and select the option to "Change your charity"',
-    'Select "The Nerve"',
-];
-
-const krogerCommunityRewardsSteps = [
-    'Sign into smile.amazon.com',
-    'Go to "Your Account" and select the option to "Change your charity"',
-    'Select "The Nerve"',
-];
 
 export const AlternateGivingSection = () => {
     const { href } = useLocation();
@@ -88,7 +92,8 @@ export const AlternateGivingSection = () => {
                             few minutes of your time.
                         </BodyText>
                     </div>
-                    <div className="free-giving">
+
+                    <div className="community-giving">
                         {/* Amazon Smile */}
                         <Card
                             layout="stacked"
@@ -103,16 +108,16 @@ export const AlternateGivingSection = () => {
                                 }
                             >
                                 <BodyText weight="bold" color="light" size="l">
-                                    Amazon Smile
+                                    {amazonSmile.title}
                                 </BodyText>
                                 <BodyText size="m" color="medium">
-                                    You shop, we earn $$
+                                    {amazonSmile.subtitle}
                                 </BodyText>
                             </CardHeader>
                             <Divider color="paperLight" />
                             <CardContent>
                                 <List itemSpacing="xs">
-                                    {amazonSmileSteps.map((text) => (
+                                    {amazonSmile.steps.map((text) => (
                                         <ListItem>
                                             <Icon
                                                 name="CircleRight"
@@ -129,10 +134,10 @@ export const AlternateGivingSection = () => {
                             <CardActions>
                                 <OutlineButton
                                     size="m"
-                                    to="https://smile.amazon.com/"
+                                    to={amazonSmile.url}
                                     color="primary"
                                 >
-                                    Get Started Now
+                                    {amazonSmile.buttonText}
                                 </OutlineButton>
                             </CardActions>
                         </Card>
@@ -151,14 +156,38 @@ export const AlternateGivingSection = () => {
                                 }
                             >
                                 <BodyText weight="bold" color="light" size="l">
-                                    Kroger Community Rewards
+                                    {krogerRewards.title}
                                 </BodyText>
                                 <BodyText size="m" color="medium">
-                                    You get groceries, we get $$
+                                    {krogerRewards.subtitle}
                                 </BodyText>
                             </CardHeader>
                             <Divider color="paperLight" />
-                            <CardContent>Hello Card Content</CardContent>
+                            <CardContent>
+                                <List itemSpacing="xs">
+                                    {krogerRewards.steps.map((text) => (
+                                        <ListItem>
+                                            <Icon
+                                                name="CircleRight"
+                                                size="s"
+                                                color="accent"
+                                            />
+                                            <BodyText size="m" color="light">
+                                                {text}
+                                            </BodyText>
+                                        </ListItem>
+                                    ))}
+                                </List>
+                            </CardContent>
+                            <CardActions>
+                                <OutlineButton
+                                    size="m"
+                                    to={krogerRewards.url}
+                                    color="primary"
+                                >
+                                    {krogerRewards.buttonText}
+                                </OutlineButton>
+                            </CardActions>
                         </Card>
                     </div>
 
@@ -185,8 +214,8 @@ export const AlternateGivingSection = () => {
                             <CardActions>
                                 <SocialShareModal
                                     socialShareText="Tell your friends"
-                                    buttonText="help spread the word"
-                                    url={href}
+                                    shareButtonText="Help spread the word"
+                                    shareURL={href}
                                 />
                             </CardActions>
                         </Card>

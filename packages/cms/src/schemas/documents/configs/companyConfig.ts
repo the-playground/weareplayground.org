@@ -152,6 +152,21 @@ export const schema: ConfigDocument = {
                 }),
         },
         {
+            name: 'twitter',
+            title: 'Twitter Profile Link',
+            type: 'string',
+            validation: (Rule: any) =>
+                Rule.required().uri({
+                    scheme: ['https'],
+                }),
+        },
+        {
+            name: 'twitterUsername',
+            title: 'Twitter Profile Name',
+            type: 'string',
+            validation: (Rule: any) => Rule.required(),
+        },
+        {
             name: 'github',
             title: 'Github Profile Link',
             type: 'string',
