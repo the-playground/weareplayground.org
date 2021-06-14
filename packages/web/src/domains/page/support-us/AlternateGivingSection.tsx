@@ -68,7 +68,10 @@ const amazonSmile = {
         <>
             Search for/select <strong>The Nerve Theatre</strong>
         </>,
-        <>A percentage of personal purchases will directly support The Nerve</>,
+        <>
+            A percentage of personal purchases (at no extra cost) will directly
+            support The Nerve
+        </>,
         <>OR you can purchase/donate items to us via our wishlist</>,
     ],
 };
@@ -92,8 +95,8 @@ const krogerRewards = {
             are in the process of updating it post-rebrand.
         </>,
         <>
-            A percentage of your grocery purchases will directly support The
-            Nerve
+            A percentage of your grocery purchases (at no extra cost) will
+            directly support The Nerve
         </>,
     ],
 };
