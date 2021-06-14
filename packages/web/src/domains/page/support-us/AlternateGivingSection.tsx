@@ -56,14 +56,17 @@ const amazonSmile = {
     subtitle: 'You shop, we earn $$',
     url: 'https://smile.amazon.com/',
     buttonText: 'Get Started Now',
+    wishlistUrl:
+        'https://smile.amazon.com/hz/charitylist/ls/2IIOUNXC7E9IY/ref=smi_ext_lnk_lcl_cl',
+    wishlistButtonText: 'View Our Wishlist',
     steps: [
-        <>Sign into smile.amazon.com</>,
+        'Sign into smile.amazon.com',
         <>
             Go to <strong>Your Account</strong> and select the option to{' '}
             <strong>Change your charity</strong>
         </>,
         <>
-            Select <strong>The Nerve Theatre Inc.</strong>
+            Search for/select <strong>The Nerve Theatre</strong>
         </>,
     ],
 };
@@ -71,16 +74,20 @@ const amazonSmile = {
 const krogerRewards = {
     title: 'Kroger Community Rewards',
     subtitle: 'You get groceries, we get $$',
-    url: 'https://smile.amazon.com/',
+    url: 'https://www.kroger.com/i/community/community-rewards',
     buttonText: 'Get Started Now',
     steps: [
-        <>Sign into smile.amazon.com</>,
+        'Create/sign in to your account at kroger.com',
         <>
-            Go to <strong>Your Account</strong> and select the option to{' '}
-            <strong>Change your charity</strong>
+            Go to <strong>Your Account</strong> and select the{' '}
+            <strong>Community Rewards</strong> menu item
         </>,
         <>
-            Select <strong>The Nerve Theatre Inc.</strong>
+            Search for organization <strong>XM202</strong>.
+        </>,
+        <>
+            FYI: You will see <strong>Playground Theatre, Inc.</strong>, but we
+            are in the process of updating it.
         </>,
     ],
 };
@@ -149,6 +156,13 @@ export const AlternateGivingSection = () => {
                                     color="primary"
                                 >
                                     {amazonSmile.buttonText}
+                                </GhostButton>
+                                <GhostButton
+                                    size="s"
+                                    to={amazonSmile.wishlistUrl}
+                                    color="tertiary"
+                                >
+                                    {amazonSmile.wishlistButtonText}
                                 </GhostButton>
                             </CardActions>
                         </Card>
