@@ -3,9 +3,9 @@ import { Helmet } from 'react-helmet';
 
 import { GlobalSEO } from '@web/domains/app';
 
-import { Header } from './Header/Header';
-import { Footer } from './Footer/Footer';
-import { StylesGlobal, FontDefinitions } from './styles';
+import { Header } from '../Header/Header';
+import { Footer } from '../Footer/Footer';
+import { StylesGlobal, FontDefinitions } from '../styles';
 
 // CSS Reset
 import '@web/assets/reset.css';
