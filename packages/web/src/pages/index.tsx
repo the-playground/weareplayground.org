@@ -8,12 +8,13 @@ import {
 
 import { NewsSubscribeCTA } from '@web/ui/molecules';
 
-import PageTemplate from '@web/page-parts/PageTemplate';
+import PageTemplate from '@web/domains/page/template';
+
 import {
     ArchiveSection,
     HeroSection,
     RebrandSection,
-} from '@web/page-parts/home';
+} from '@web/domains/page/home';
 
 const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,

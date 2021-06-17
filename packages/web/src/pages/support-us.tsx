@@ -6,8 +6,7 @@ import {
     SanityImageData,
 } from '@web/shared/types';
 
-import PageTemplate from '@web/page-parts/PageTemplate';
-
+import PageTemplate from '@web/domains/page/template';
 import { SimpleHero, NewsSubscribeCTA } from '@web/ui/molecules';
 
 import {
@@ -15,7 +14,7 @@ import {
     DonateSection,
     AlternateGivingSection,
     TaxExemptSection,
-} from '@web/page-parts/support-us';
+} from '@web/domains/page/support-us';
 
 const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,

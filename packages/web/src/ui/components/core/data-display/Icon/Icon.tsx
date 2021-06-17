@@ -2,7 +2,7 @@ import React from 'react';
 
 import { IconProps } from './__types';
 
-import { SVGElement } from '../SVGElement/SVGElement';
+import { SVGElement } from '../../_utility';
 
 import * as Styled from './__styles';
 import { availableIcons, IconDefinition } from './__manifest__';

@@ -6,7 +6,7 @@ import { GatsbyPageContext, SanityDocumentSEO } from '@web/shared/types';
 import { SimpleHero, NewsSubscribeCTA } from '@web/ui/molecules';
 import { ShowPosterGrid, ShowCoreWithPoster } from '@web/domains/show';
 
-import PageTemplate from '@web/page-parts/PageTemplate';
+import PageTemplate from '@web/domains/page/template';
 
 const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,

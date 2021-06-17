@@ -11,7 +11,7 @@ import {
 import { useOnClickOutside, useScrollFreeze } from '@web/shared/hooks';
 import { isSSR } from '@web/shared/utils';
 
-import { Portal } from '../../utility';
+import { Portal } from '../../_utility';
 
 /**
  * A mid-level primitive component that creates a base for other overlay instances
