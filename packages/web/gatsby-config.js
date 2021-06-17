@@ -114,6 +114,7 @@ module.exports = {
                     '@nerve/core': './src/core',
                     '@nerve/domains': './src/domains',
                     '@nerve/assets': './src/assets',
+                    '@nerve/page-parts': './src/page-parts',
                     '@nerve/shared': './src/shared',
                 },
             },

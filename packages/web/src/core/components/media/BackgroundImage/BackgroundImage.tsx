@@ -20,7 +20,7 @@ const StyledBackgroundImage = styled.div`
 
 export const BackgroundImage: React.FC<BackgroundImageProps> = (props) => {
     return (
-        <StyledBackgroundImage>
+        <StyledBackgroundImage aria-hidden="true">
             <Image
                 className="bg-image"
                 {...props}

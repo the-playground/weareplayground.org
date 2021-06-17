@@ -18,6 +18,9 @@
 			"@nerve/domains/*": [
 				"./src/domains/*"
 			],
+			"@nerve/page-parts/*": [
+				"./src/page-parts/*"
+			],
 			"@nerve/shared/*": [
 				"./src/shared/*"
 			]

@@ -8,12 +8,12 @@ import {
 
 import { NewsSubscribeCTA } from '@nerve/domains/engagement';
 
-import PageTemplate from '@nerve/domains/page/PageTemplate';
+import PageTemplate from '@nerve/page-parts/PageTemplate';
 import {
     ArchiveSection,
     HeroSection,
     RebrandSection,
-} from '@nerve/domains/page/home';
+} from '@nerve/page-parts/home';
 
 const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,

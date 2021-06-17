@@ -8,7 +8,7 @@ import { ShowPosterGrid, ShowCoreWithPoster } from '@nerve/domains/show';
 
 import { NewsSubscribeCTA } from '@nerve/domains/engagement';
 
-import PageTemplate from '@nerve/domains/page/PageTemplate';
+import PageTemplate from '@nerve/page-parts/PageTemplate';
 
 const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,

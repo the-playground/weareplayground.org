@@ -64,4 +64,4 @@ export * from './CardActionArea/CardActionArea';
 export * from './CardHeader/CardHeader';
 export * from './CardActions/CardActions';
 export * from './CardContent/CardContent';
-// export * from './CardMedia/CardMedia';
+export * from './CardMedia/CardMedia';

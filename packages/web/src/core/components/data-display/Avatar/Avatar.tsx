@@ -13,7 +13,7 @@ export interface AvatarProps {
     borderWidth?: number;
     borderColor?: AvailableSurface;
     textColor?: AvailableTypographyTheme;
-    size?: 's' | 'm' | 'l' | 'xl';
+    size?: keyof typeof avatarSizes;
     className?: string;
 }
 
@@ -24,6 +24,7 @@ const avatarSizes = {
     m: '48px',
     l: '64px',
     xl: '80px',
+    xxl: '96px',
 };
 
 export const StyledAvatar = styled.div<AvatarProps>`
