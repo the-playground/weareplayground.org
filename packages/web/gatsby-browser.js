@@ -8,7 +8,7 @@ import React from 'react';
 
 import { ThemeProvider } from 'styled-components';
 
-import { theme } from './src/core/themes/default';
+import { theme } from './src/ui/themes/default';
 import { Layout } from './src/domains/app/Layout';
 
 import {

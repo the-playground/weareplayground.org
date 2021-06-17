@@ -21,20 +21,20 @@
 			"@web/shared/*": [
 				"./src/shared/*"
 			],
-			"@web/ui/core/*": [
-				"./src/ui/components/core/*"
+			"@web/ui/core": [
+				"./src/ui/components/core/"
 			],
-			"@web/ui/layout/*": [
-				"./src/ui/components/layout/*"
+			"@web/ui/layout": [
+				"./src/ui/components/layout/"
 			],
-			"@web/ui/molecules/*": [
-				"./src/ui/components/molecules/*"
+			"@web/ui/molecules": [
+				"./src/ui/components/molecules/"
 			],
-			"@web/ui/tokens/*": [
-				"./src/ui/tokens/*"
+			"@web/ui/tokens": [
+				"./src/ui/tokens/"
 			],
-			"@web/ui/themes/*": [
-				"./src/ui/themes/*"
+			"@web/ui/themes": [
+				"./src/ui/themes/"
 			]
 		}
 	},
