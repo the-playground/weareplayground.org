@@ -14,7 +14,7 @@ import {
     Image,
     Container,
     PortableText,
-} from '@web/core/components';
+} from '@web/ui/core';
 
 import { NewsSubscribeCTA } from '@web/domains/engagement';
 

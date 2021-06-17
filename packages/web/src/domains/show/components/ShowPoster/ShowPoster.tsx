@@ -8,7 +8,7 @@ import {
     Heading,
     Image,
     BackgroundOverlay,
-} from '@web/core/components';
+} from '@web/ui/core';
 
 import { useConfigContext } from '@web/shared/context';
 import * as styled from './__styles';

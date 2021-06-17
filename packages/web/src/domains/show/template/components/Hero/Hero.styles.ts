@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Section } from '@web/core/components';
+import { Section } from '@web/ui/core';
 import { rgba } from 'polished';
 
 import { spacing } from '@web/ui/tokens';

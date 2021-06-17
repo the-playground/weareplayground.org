@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 import { AvailableSurface, AvailableTypographyTheme } from '@web/ui/themes';
 import { SanityImageDataWithAlt } from '@web/shared/types';
-import { Image } from '@web/core/components';
+import { Image } from '@web/ui/core';
 import { borders, fonts } from '@web/ui/tokens';
 
 // TYPES

@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { emailRegexPattern } from '@web/shared/utils';
 import { useMailchimpSubscribe } from '@web/shared/hooks';
 
-import { BodyText, FillButton, Heading, Input } from '@web/core/components';
+import { BodyText, FillButton, Heading, Input } from '@web/ui/core';
 
 import * as styled from './GeneralNewsSubscribe.styles';
 

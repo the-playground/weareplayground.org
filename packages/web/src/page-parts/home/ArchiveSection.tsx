@@ -10,7 +10,7 @@ import {
     Heading,
     Icon,
     TextButton,
-} from '@web/core/components';
+} from '@web/ui/core';
 
 const StyledArchiveSection = styled.section`
     padding: ${spacing.layout.l} 0;

@@ -1,4 +1,4 @@
-import { AvailableIconName } from '@web/core/components';
+import { AvailableIconName } from '@web/ui/core';
 import { useConfigContext } from '@web/shared/context';
 
 export const useSocialShareConfig = (

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { spacing, AvailableComponentSpacing } from '@web/ui/tokens';
-import { Image } from '@web/core/components';
+import { Image } from '@web/ui/core';
 
 // TYPES
 export interface CardMediaProps {}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Link } from '@web/core/routing';
-import { BodyText, Container } from '@web/core/components';
+import { BodyText, Container } from '@web/ui/core';
 import { useConfigContext } from '@web/shared/context';
 
 import * as styled from './__styles';

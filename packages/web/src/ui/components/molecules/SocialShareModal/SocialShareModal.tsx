@@ -9,7 +9,7 @@ import {
     Modal,
     CloseOverlay,
     OutlineButton,
-} from '@web/core/components';
+} from '@web/ui/core';
 
 export const SocialShareModal: React.FC<ISocialShare> = ({
     title = 'Share this with some friends',

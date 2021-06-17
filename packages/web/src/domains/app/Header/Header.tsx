@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from '@web/core/routing';
 
-import { Container, Logo } from '@web/core/components';
+import { Container, Logo } from '@web/ui/core';
 
 import { DesktopNavBar } from './DesktopNavBar/DesktopNavBar';
 

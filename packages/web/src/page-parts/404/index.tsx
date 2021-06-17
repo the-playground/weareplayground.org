@@ -7,7 +7,7 @@ import {
     GrittyHeading,
     Section,
     Container,
-} from '@web/core/components';
+} from '@web/ui/core';
 
 import { spacing } from '@web/ui/tokens';
 

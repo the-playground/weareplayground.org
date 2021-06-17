@@ -19,7 +19,7 @@ import {
     FillButton,
     OutlineButton,
     GhostButton,
-} from '@web/core/components';
+} from '@web/ui/core';
 import { breakpoints, grid, spacing } from '@web/ui/tokens';
 
 import { SocialShareModal } from '@web/domains/engagement';

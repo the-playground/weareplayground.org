@@ -7,7 +7,7 @@ import {
     BodyText,
     Section,
     Container,
-} from '@web/core/components';
+} from '@web/ui/core';
 import { breakpoints, grid, spacing } from '@web/ui/tokens';
 
 const StyledWaysOfGivingSection = styled(Section)``;

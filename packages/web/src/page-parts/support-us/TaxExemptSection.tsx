@@ -9,7 +9,7 @@ import {
     Logo,
     Paper,
     Section,
-} from '@web/core/components';
+} from '@web/ui/core';
 
 import { breakpoints, grid, spacing } from '@web/ui/tokens';
 

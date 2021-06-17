@@ -5,7 +5,7 @@ import {
     Container,
     FillButton,
     Heading,
-} from '@web/core/components';
+} from '@web/ui/core';
 
 import * as styled from './__styles';
 

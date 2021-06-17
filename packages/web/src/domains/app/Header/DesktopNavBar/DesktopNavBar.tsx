@@ -3,7 +3,7 @@ import React from 'react';
 import { useConfigContext } from '@web/shared/context';
 
 import { Link } from '@web/core/routing';
-import { BodyText, FillButton, Icon } from '@web/core/components';
+import { BodyText, FillButton, Icon } from '@web/ui/core';
 
 import * as styled from './__styles';
 

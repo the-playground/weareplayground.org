@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BackgroundOverlay, BackgroundImage } from '@web/core/components';
+import { BackgroundOverlay, BackgroundImage } from '@web/ui/core';
 
 import { SectionProps } from './Section.d';
 import * as styled from './Section.styles';

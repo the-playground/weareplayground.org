@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Image, ImageProps } from '@web/core/components';
+import { Image, ImageProps } from '@web/ui/core';
 import { zIndex } from '@web/ui/tokens';
 
 const StyledBackgroundImage = styled.div`

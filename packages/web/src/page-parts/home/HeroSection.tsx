@@ -13,7 +13,7 @@ import {
     Icon,
     Section,
     SectionProps,
-} from '@web/core/components';
+} from '@web/ui/core';
 
 const StyledHeroSection = styled(Section)`
     padding: ${spacing.layout.l} 0 ${spacing.layout.xl} 0;

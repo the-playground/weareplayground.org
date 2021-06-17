@@ -1,4 +1,4 @@
-import { AvailableIconName } from '@web/core/components';
+import { AvailableIconName } from '@web/ui/core';
 
 export const getShareConfig = (
     url: string,

@@ -4,7 +4,7 @@ import { breakpoints, spacing, zIndex } from '@web/ui/tokens';
 import whiteGrit from '@web/assets/grit-white.png';
 import blackGrit from '@web/assets/grit-black.png';
 
-import { Container, Heading, Logo, Section } from '@web/core/components';
+import { Container, Heading, Logo, Section } from '@web/ui/core';
 
 const sectionBreakpoint = breakpoints.m;
 

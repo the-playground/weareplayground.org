@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BodyText, Container, Heading } from '@web/core/components';
+import { BodyText, Container, Heading } from '@web/ui/core';
 
 import * as styled from './__styles';
 

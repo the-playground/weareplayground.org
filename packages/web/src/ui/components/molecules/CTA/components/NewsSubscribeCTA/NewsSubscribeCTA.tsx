@@ -9,7 +9,7 @@ import {
     Section,
     BodyText,
     GrittyHeading,
-} from '@web/core/components';
+} from '@web/ui/core';
 
 import { GeneralNewsSubscribe } from '../GeneralNewsSubscribe/GeneralNewsSubscribe';
 

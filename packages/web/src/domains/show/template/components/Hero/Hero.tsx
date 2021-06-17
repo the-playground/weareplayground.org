@@ -9,7 +9,7 @@ import {
     ListItem,
     Modal,
     SectionProps,
-} from '@web/core/components';
+} from '@web/ui/core';
 
 import * as styled from './Hero.styles';
 

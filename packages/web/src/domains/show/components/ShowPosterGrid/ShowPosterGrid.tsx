@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BodyText } from '@web/core/components';
+import { BodyText } from '@web/ui/core';
 
 import { ShowCoreWithPoster } from '../../types';
 import { ShowPoster } from '../ShowPoster/ShowPoster';

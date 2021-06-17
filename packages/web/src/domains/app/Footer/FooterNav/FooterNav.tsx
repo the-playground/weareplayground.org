@@ -4,7 +4,7 @@ import { useConfigContext } from '@web/shared/context';
 import { useSocialProfilesConfig } from '@web/shared/hooks';
 
 import { Link } from '@web/core/routing';
-import { BodyText, Icon, Logo } from '@web/core/components';
+import { BodyText, Icon, Logo } from '@web/ui/core';
 
 import * as styled from './__styles';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from '@web/core/components';
+import { Icon } from '@web/ui/core';
 
 import { IOverlayBase } from '../OverlayBase/OverlayBase';
 import * as styled from './CloseOverlay.styles';
