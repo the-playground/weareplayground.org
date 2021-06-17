@@ -5,7 +5,7 @@ import { useGetMetaImage, useCurrentURL } from '@web/shared/hooks';
 
 import { NewsSubscribeCTA, LegacyContentNotice } from '@web/ui/molecules';
 
-import { PageBasicSEO, StructuredData } from '@web/domains/seo';
+import { PageBasicSEO, StructuredData } from '@web/domains/app';
 
 import { ShowPage, ShowPageContext } from '../types';
 import { useShowStatus } from '../__hooks__';

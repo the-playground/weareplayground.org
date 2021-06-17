@@ -4,7 +4,7 @@ import { graphql, PageProps } from 'gatsby';
 import { useGetMetaImage, useCurrentURL } from '@web/shared/hooks';
 
 // import { SubscribeSection } from '@web/ui/molecules';
-import { PageBasicSEO, StructuredData } from '@web/domains/seo';
+import { PageBasicSEO, StructuredData } from '@web/domains/app';
 import { LegacyContentNotice } from '@web/ui/molecules';
 
 import { SeasonPage, SeasonPageContext } from '../types';

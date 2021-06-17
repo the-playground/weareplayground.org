@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { GlobalSEO } from '@web/domains/seo';
+import { GlobalSEO } from '@web/domains/app';
 
 import { Header } from './Header/Header';
 import { Footer } from './Footer/Footer';
