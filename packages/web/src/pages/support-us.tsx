@@ -8,8 +8,7 @@ import {
 
 import PageTemplate from '@web/page-parts/PageTemplate';
 
-import { SimpleHero } from '@web/shared/components';
-import { NewsSubscribeCTA } from '@web/domains/engagement';
+import { SimpleHero, NewsSubscribeCTA } from '@web/ui/molecules';
 
 import {
     WaysOfGivingSection,

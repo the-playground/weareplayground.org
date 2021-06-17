@@ -16,7 +16,7 @@ import {
     PortableText,
 } from '@web/ui/core';
 
-import { NewsSubscribeCTA } from '@web/domains/engagement';
+import { NewsSubscribeCTA } from '@web/ui/molecules';
 
 import { useGetMetaImage, useCurrentURL } from '@web/shared/hooks';
 

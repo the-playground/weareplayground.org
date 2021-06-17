@@ -3,10 +3,8 @@ import { graphql, PageProps } from 'gatsby';
 
 import { GatsbyPageContext, SanityDocumentSEO } from '@web/shared/types';
 
-import { SimpleHero } from '@web/shared/components';
+import { SimpleHero, NewsSubscribeCTA } from '@web/ui/molecules';
 import { ShowPosterGrid, ShowCoreWithPoster } from '@web/domains/show';
-
-import { NewsSubscribeCTA } from '@web/domains/engagement';
 
 import PageTemplate from '@web/page-parts/PageTemplate';
 

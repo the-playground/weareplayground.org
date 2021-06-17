@@ -3,10 +3,9 @@ import { graphql, PageProps } from 'gatsby';
 import { useConfigContext } from '@web/shared/context';
 import { useGetMetaImage, useCurrentURL } from '@web/shared/hooks';
 
-import { NewsSubscribeCTA } from '@web/domains/engagement';
+import { NewsSubscribeCTA, LegacyContentNotice } from '@web/ui/molecules';
 
 import { PageBasicSEO, StructuredData } from '@web/domains/seo';
-import { LegacyContentNotice } from '@web/domains/migrations';
 
 import { ShowPage, ShowPageContext } from '../types';
 import { useShowStatus } from '../__hooks__';

@@ -22,7 +22,7 @@ import {
 } from '@web/ui/core';
 import { breakpoints, grid, spacing } from '@web/ui/tokens';
 
-import { SocialShareModal } from '@web/domains/engagement';
+import { SocialShareModal } from '@web/ui/molecules';
 
 // STYLES
 const StyledAlternateGivingSection = styled(Section)`

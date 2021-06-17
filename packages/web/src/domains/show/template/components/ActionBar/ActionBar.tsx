@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { BodyText, Container, Icon } from '@web/ui/core';
-import { SocialShareModal } from '@web/domains/engagement';
-import { DateRange } from '@web/shared/components';
+import { SocialShareModal, DateRange } from '@web/ui/molecules';
 
 import * as styled from './ActionBar.styles';
 

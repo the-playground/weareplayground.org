@@ -6,7 +6,7 @@ import {
     SanityImageData,
 } from '@web/shared/types';
 
-import { NewsSubscribeCTA } from '@web/domains/engagement';
+import { NewsSubscribeCTA } from '@web/ui/molecules';
 
 import PageTemplate from '@web/page-parts/PageTemplate';
 import {

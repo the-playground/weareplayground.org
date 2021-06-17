@@ -3,9 +3,9 @@ import { graphql, PageProps } from 'gatsby';
 
 import { useGetMetaImage, useCurrentURL } from '@web/shared/hooks';
 
-// import { SubscribeSection } from '@web/domains/engagement';
+// import { SubscribeSection } from '@web/ui/molecules';
 import { PageBasicSEO, StructuredData } from '@web/domains/seo';
-import { LegacyContentNotice } from '@web/domains/migrations';
+import { LegacyContentNotice } from '@web/ui/molecules';
 
 import { SeasonPage, SeasonPageContext } from '../types';
 
