@@ -1,5 +1,5 @@
-import { AvailableIconName } from '@nerve/core/components';
-import { useConfigContext } from '@nerve/shared/context';
+import { AvailableIconName } from '@web/core/components';
+import { useConfigContext } from '@web/shared/context';
 
 export const useSocialProfilesConfig = (): SocialProfilesConfig[] => {
     const { company } = useConfigContext();

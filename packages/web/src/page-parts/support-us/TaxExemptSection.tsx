@@ -9,9 +9,9 @@ import {
     Logo,
     Paper,
     Section,
-} from '@nerve/core/components';
+} from '@web/core/components';
 
-import { breakpoints, grid, spacing } from '@nerve/core/tokens';
+import { breakpoints, grid, spacing } from '@web/core/tokens';
 
 const StyledTaxExemptSection = styled(Section)`
     padding: ${spacing.layout.m} 0;

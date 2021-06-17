@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BodyText } from '@nerve/core/components';
+import { BodyText } from '@web/core/components';
 
 import { ShowCoreWithPoster } from '../../types';
 import { ShowPoster } from '../ShowPoster/ShowPoster';

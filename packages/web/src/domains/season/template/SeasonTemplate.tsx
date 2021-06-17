@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 
-import { useGetMetaImage, useCurrentURL } from '@nerve/shared/hooks';
+import { useGetMetaImage, useCurrentURL } from '@web/shared/hooks';
 
-// import { SubscribeSection } from '@nerve/domains/engagement';
-import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
-import { LegacyContentNotice } from '@nerve/domains/migrations';
+// import { SubscribeSection } from '@web/domains/engagement';
+import { PageBasicSEO, StructuredData } from '@web/domains/seo';
+import { LegacyContentNotice } from '@web/domains/migrations';
 
 import { SeasonPage, SeasonPageContext } from '../types';
 

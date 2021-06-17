@@ -5,7 +5,7 @@ import {
     Container,
     FillButton,
     Heading,
-} from '@nerve/core/components';
+} from '@web/core/components';
 
 import * as styled from './__styles';
 

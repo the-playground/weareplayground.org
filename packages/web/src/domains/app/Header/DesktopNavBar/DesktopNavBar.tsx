@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { useConfigContext } from '@nerve/shared/context';
+import { useConfigContext } from '@web/shared/context';
 
-import { Link } from '@nerve/core/routing';
-import { BodyText, FillButton, Icon } from '@nerve/core/components';
+import { Link } from '@web/core/routing';
+import { BodyText, FillButton, Icon } from '@web/core/components';
 
 import * as styled from './__styles';
 

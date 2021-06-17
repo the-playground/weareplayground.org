@@ -1,4 +1,4 @@
-import { AvailableSurface } from '@nerve/core/themes';
+import { AvailableSurface } from '@web/core/themes';
 import { HeadingProps } from '../Heading/Heading';
 
 export interface GrittyHeadingProps extends HeadingProps {

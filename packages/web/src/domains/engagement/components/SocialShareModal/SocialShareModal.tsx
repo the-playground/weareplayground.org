@@ -1,6 +1,6 @@
 import React from 'react';
-import { useOverlay, useSocialShareConfig } from '@nerve/shared/hooks';
-import { Link } from '@nerve/core/routing';
+import { useOverlay, useSocialShareConfig } from '@web/shared/hooks';
+import { Link } from '@web/core/routing';
 import {
     BodyText,
     Icon,
@@ -9,7 +9,7 @@ import {
     Modal,
     CloseOverlay,
     OutlineButton,
-} from '@nerve/core/components';
+} from '@web/core/components';
 
 export const SocialShareModal: React.FC<ISocialShare> = ({
     title = 'Share this with some friends',

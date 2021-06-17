@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { spacing, AvailableComponentSpacing } from '@nerve/core/tokens';
+import { spacing, AvailableComponentSpacing } from '@web/core/tokens';
 
 // TYPES
 export interface ListProps {

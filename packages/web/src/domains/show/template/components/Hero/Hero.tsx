@@ -9,7 +9,7 @@ import {
     ListItem,
     Modal,
     SectionProps,
-} from '@nerve/core/components';
+} from '@web/core/components';
 
 import * as styled from './Hero.styles';
 

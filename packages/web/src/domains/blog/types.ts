@@ -1,4 +1,4 @@
-import { SanityDocument, SanityImageDataWithAlt } from '@nerve/shared/types';
+import { SanityDocument, SanityImageDataWithAlt } from '@web/shared/types';
 
 export interface BlogAuthor {
     name: string;

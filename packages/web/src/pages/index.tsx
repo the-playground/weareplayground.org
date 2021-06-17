@@ -4,16 +4,16 @@ import {
     GatsbyPageContext,
     SanityDocument,
     SanityImageData,
-} from '@nerve/shared/types';
+} from '@web/shared/types';
 
-import { NewsSubscribeCTA } from '@nerve/domains/engagement';
+import { NewsSubscribeCTA } from '@web/domains/engagement';
 
-import PageTemplate from '@nerve/page-parts/PageTemplate';
+import PageTemplate from '@web/page-parts/PageTemplate';
 import {
     ArchiveSection,
     HeroSection,
     RebrandSection,
-} from '@nerve/page-parts/home';
+} from '@web/page-parts/home';
 
 const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,

@@ -4,19 +4,19 @@ import {
     GatsbyPageContext,
     SanityDocument,
     SanityImageData,
-} from '@nerve/shared/types';
+} from '@web/shared/types';
 
-import PageTemplate from '@nerve/page-parts/PageTemplate';
+import PageTemplate from '@web/page-parts/PageTemplate';
 
-import { SimpleHero } from '@nerve/shared/components';
-import { NewsSubscribeCTA } from '@nerve/domains/engagement';
+import { SimpleHero } from '@web/shared/components';
+import { NewsSubscribeCTA } from '@web/domains/engagement';
 
 import {
     WaysOfGivingSection,
     DonateSection,
     AlternateGivingSection,
     TaxExemptSection,
-} from '@nerve/page-parts/support-us';
+} from '@web/page-parts/support-us';
 
 const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,

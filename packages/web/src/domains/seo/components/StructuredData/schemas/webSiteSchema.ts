@@ -1,5 +1,5 @@
-import { useEnvironmentContext } from '@nerve/shared/context';
-import { CompanyConfig } from '@nerve/shared/hooks';
+import { useEnvironmentContext } from '@web/shared/context';
+import { CompanyConfig } from '@web/shared/hooks';
 
 /**
  * https://schema.org/WebSite

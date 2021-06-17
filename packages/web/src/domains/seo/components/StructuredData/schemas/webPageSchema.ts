@@ -1,4 +1,4 @@
-import { SanityImageDataWithAlt } from '@nerve/shared/types';
+import { SanityImageDataWithAlt } from '@web/shared/types';
 
 /**
  * https://schema.org/WebPage

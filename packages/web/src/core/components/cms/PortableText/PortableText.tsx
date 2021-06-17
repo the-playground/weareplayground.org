@@ -1,6 +1,6 @@
 import React from 'react';
 import BasePortableText from '@sanity/block-content-to-react';
-import { clientConfig } from '@nerve/shared/configs';
+import { clientConfig } from '@web/shared/configs';
 
 import { serializers } from './serializers';
 

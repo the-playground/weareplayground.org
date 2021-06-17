@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useConfigContext } from '@nerve/shared/context';
+import { useConfigContext } from '@web/shared/context';
 import {
     organizationSchema,
     webSiteSchema,

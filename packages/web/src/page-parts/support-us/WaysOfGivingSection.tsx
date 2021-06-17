@@ -7,8 +7,8 @@ import {
     BodyText,
     Section,
     Container,
-} from '@nerve/core/components';
-import { breakpoints, grid, spacing } from '@nerve/core/tokens';
+} from '@web/core/components';
+import { breakpoints, grid, spacing } from '@web/core/tokens';
 
 const StyledWaysOfGivingSection = styled(Section)``;
 

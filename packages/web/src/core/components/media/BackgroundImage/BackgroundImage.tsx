@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Image, ImageProps } from '@nerve/core/components';
-import { zIndex } from '@nerve/core/tokens';
+import { Image, ImageProps } from '@web/core/components';
+import { zIndex } from '@web/core/tokens';
 
 const StyledBackgroundImage = styled.div`
     user-select: none;

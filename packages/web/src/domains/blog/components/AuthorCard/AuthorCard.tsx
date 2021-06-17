@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BodyText, GhostButton, Icon, Image } from '@nerve/core/components';
+import { BodyText, GhostButton, Icon, Image } from '@web/core/components';
 
 import { AuthorCardProps } from './AuthorCard.d';
 import * as styled from './AuthorCard.styles';

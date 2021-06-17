@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { SanityImageDataWithAlt } from '@nerve/shared/types';
+import { SanityImageDataWithAlt } from '@web/shared/types';
 
 /**
  * Handle generating the basic meta information for a page.

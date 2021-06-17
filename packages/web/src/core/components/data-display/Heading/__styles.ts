@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from '@nerve/core/tokens';
+import { typography } from '@web/core/tokens';
 
 import { HeadingProps } from './__types';
 

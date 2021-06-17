@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { Link, LinkProps } from '@nerve/core/routing';
-import { animation } from '@nerve/core/tokens';
+import { Link, LinkProps } from '@web/core/routing';
+import { animation } from '@web/core/tokens';
 
 // TYPES
 export interface CardActionAreaProps extends LinkProps {

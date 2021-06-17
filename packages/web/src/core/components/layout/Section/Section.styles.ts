@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { zIndex } from '@nerve/core/tokens';
+import { zIndex } from '@web/core/tokens';
 import { SectionProps } from './Section.d';
 
 export const Section = styled.section<SectionProps>`

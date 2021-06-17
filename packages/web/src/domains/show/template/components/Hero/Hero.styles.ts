@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { Section } from '@nerve/core/components';
+import { Section } from '@web/core/components';
 import { rgba } from 'polished';
 
-import { spacing } from '@nerve/core/tokens';
+import { spacing } from '@web/core/tokens';
 
 export const Hero = styled(Section)`
     align-items: stretch;

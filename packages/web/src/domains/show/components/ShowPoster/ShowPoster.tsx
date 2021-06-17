@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { Link } from '@nerve/core/routing';
-import { SanityImageDataWithAlt } from '@nerve/shared/types';
+import { Link } from '@web/core/routing';
+import { SanityImageDataWithAlt } from '@web/shared/types';
 
 import {
     BodyText,
     Heading,
     Image,
     BackgroundOverlay,
-} from '@nerve/core/components';
+} from '@web/core/components';
 
-import { useConfigContext } from '@nerve/shared/context';
+import { useConfigContext } from '@web/shared/context';
 import * as styled from './__styles';
 
 export const ShowPoster: React.FC<ShowPosterProps> = ({

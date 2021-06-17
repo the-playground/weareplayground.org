@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { iconSizes } from '@nerve/core/tokens';
+import { iconSizes } from '@web/core/tokens';
 import { CircularProgressProps } from './CircularProgress.d';
 
 export const CircularProgress = styled.svg<CircularProgressProps>`

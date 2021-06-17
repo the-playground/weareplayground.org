@@ -3,26 +3,38 @@
 	"compilerOptions": {
 		"baseUrl": "",
 		"paths": {
-			"@app/*": [
-				"./@app/*"
-			],
 			"@gatsby/*": [
 				"./@gatsby/*"
 			],
-			"@nerve/core/*": [
+			"@web/core/*": [
 				"./src/core/*"
 			],
-			"@nerve/assets": [
+			"@web/assets": [
 				"./src/assets/"
 			],
-			"@nerve/domains/*": [
+			"@web/domains/*": [
 				"./src/domains/*"
 			],
-			"@nerve/page-parts/*": [
+			"@web/page-parts/*": [
 				"./src/page-parts/*"
 			],
-			"@nerve/shared/*": [
+			"@web/shared/*": [
 				"./src/shared/*"
+			],
+			"@web/ui/core/*": [
+				"./src/ui/components/core/*"
+			],
+			"@web/ui/layout/*": [
+				"./src/ui/components/layout/*"
+			],
+			"@web/ui/molecules/*": [
+				"./src/ui/components/molecules/*"
+			],
+			"@web/ui/tokens/*": [
+				"./src/ui/tokens/*"
+			],
+			"@web/ui/themes/*": [
+				"./src/ui/themes/*"
 			]
 		}
 	},

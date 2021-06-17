@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import { useConfigContext } from '@nerve/shared/context';
-import { useSocialProfilesConfig } from '@nerve/shared/hooks';
+import { useConfigContext } from '@web/shared/context';
+import { useSocialProfilesConfig } from '@web/shared/hooks';
 
-import { Link } from '@nerve/core/routing';
-import { BodyText, Icon, Logo } from '@nerve/core/components';
+import { Link } from '@web/core/routing';
+import { BodyText, Icon, Logo } from '@web/core/components';
 
 import * as styled from './__styles';
 

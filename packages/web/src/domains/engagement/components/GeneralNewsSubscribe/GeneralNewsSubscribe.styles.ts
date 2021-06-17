@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breakpoints, fonts, spacing } from '@nerve/core/tokens';
+import { breakpoints, fonts, spacing } from '@web/core/tokens';
 
 const componentBreakpoint = breakpoints.s;
 

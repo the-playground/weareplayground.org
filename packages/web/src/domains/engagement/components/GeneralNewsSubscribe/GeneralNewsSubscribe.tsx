@@ -2,10 +2,10 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-import { emailRegexPattern } from '@nerve/shared/utils';
-import { useMailchimpSubscribe } from '@nerve/shared/hooks';
+import { emailRegexPattern } from '@web/shared/utils';
+import { useMailchimpSubscribe } from '@web/shared/hooks';
 
-import { BodyText, FillButton, Heading, Input } from '@nerve/core/components';
+import { BodyText, FillButton, Heading, Input } from '@web/core/components';
 
 import * as styled from './GeneralNewsSubscribe.styles';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Link } from '@nerve/core/routing';
+import { Link } from '@web/core/routing';
 
-import { Container, Logo } from '@nerve/core/components';
+import { Container, Logo } from '@web/core/components';
 
 import { DesktopNavBar } from './DesktopNavBar/DesktopNavBar';
 

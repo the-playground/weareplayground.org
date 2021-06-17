@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { breakpoints, grid, spacing } from '@nerve/core/tokens';
+import { breakpoints, grid, spacing } from '@web/core/tokens';
 
-import { useConfigContext } from '@nerve/shared/context';
+import { useConfigContext } from '@web/shared/context';
 
 import {
     BodyText,
@@ -13,7 +13,7 @@ import {
     Icon,
     Section,
     SectionProps,
-} from '@nerve/core/components';
+} from '@web/core/components';
 
 const StyledHeroSection = styled(Section)`
     padding: ${spacing.layout.l} 0 ${spacing.layout.xl} 0;

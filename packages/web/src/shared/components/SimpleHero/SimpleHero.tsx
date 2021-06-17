@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BodyText, Container, Heading } from '@nerve/core/components';
+import { BodyText, Container, Heading } from '@web/core/components';
 
 import * as styled from './__styles';
 

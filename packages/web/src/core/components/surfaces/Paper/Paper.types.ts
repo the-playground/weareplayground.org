@@ -1,4 +1,4 @@
-import { AvailableSurface } from '@nerve/core/themes';
+import { AvailableSurface } from '@web/core/themes';
 
 export interface PaperProps {
     bgColor?: AvailableSurface;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { breakpoints, spacing } from '@nerve/core/tokens';
+import { breakpoints, spacing } from '@web/core/tokens';
 
 export const SimpleHero = styled.section`
     padding: ${spacing.layout.m} 0;

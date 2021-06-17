@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { animation, breakpoints, spacing } from '@nerve/core/tokens';
+import { animation, breakpoints, spacing } from '@web/core/tokens';
 
 export const Footer = styled.footer`
     .footer-container {

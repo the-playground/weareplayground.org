@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { PageProps } from 'gatsby';
 
-import { GatsbyPageContext } from '@nerve/shared/types';
+import { GatsbyPageContext } from '@web/shared/types';
 
-import { useCurrentURL } from '@nerve/shared/hooks';
+import { useCurrentURL } from '@web/shared/hooks';
 
-import { PageBasicSEO } from '@nerve/domains/seo';
-import { NotFoundContent } from '@nerve/page-parts/404';
+import { PageBasicSEO } from '@web/domains/seo';
+import { NotFoundContent } from '@web/page-parts/404';
 
 const NotFound: React.FC<PageProps<GatsbyPageContext>> = ({ location }) => {
     const url = useCurrentURL(location.pathname);

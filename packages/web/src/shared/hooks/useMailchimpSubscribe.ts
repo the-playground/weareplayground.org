@@ -5,7 +5,7 @@ import addToMailchimp, {
     MailchimpResponse,
 } from 'gatsby-plugin-mailchimp';
 
-import { getExternalReferrer } from '@nerve/shared/utils';
+import { getExternalReferrer } from '@web/shared/utils';
 
 /**
  * A defined set of messages for communicating Mailchimp responses to users

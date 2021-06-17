@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { SanityDocumentSEO } from '@nerve/shared/types';
+import { SanityDocumentSEO } from '@web/shared/types';
 
-import { useCurrentURL, useGetMetaImage } from '@nerve/shared/hooks';
+import { useCurrentURL, useGetMetaImage } from '@web/shared/hooks';
 
-import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
+import { PageBasicSEO, StructuredData } from '@web/domains/seo';
 
 /**
  * This template handles retrieving and generating all dynamic content for

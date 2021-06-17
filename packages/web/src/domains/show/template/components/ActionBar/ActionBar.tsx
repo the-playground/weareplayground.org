@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { BodyText, Container, Icon } from '@nerve/core/components';
-import { SocialShareModal } from '@nerve/domains/engagement';
-import { DateRange } from '@nerve/shared/components';
+import { BodyText, Container, Icon } from '@web/core/components';
+import { SocialShareModal } from '@web/domains/engagement';
+import { DateRange } from '@web/shared/components';
 
 import * as styled from './ActionBar.styles';
 

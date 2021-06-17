@@ -1,14 +1,14 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 
-import { GatsbyPageContext, SanityDocumentSEO } from '@nerve/shared/types';
+import { GatsbyPageContext, SanityDocumentSEO } from '@web/shared/types';
 
-import { SimpleHero } from '@nerve/shared/components';
-import { ShowPosterGrid, ShowCoreWithPoster } from '@nerve/domains/show';
+import { SimpleHero } from '@web/shared/components';
+import { ShowPosterGrid, ShowCoreWithPoster } from '@web/domains/show';
 
-import { NewsSubscribeCTA } from '@nerve/domains/engagement';
+import { NewsSubscribeCTA } from '@web/domains/engagement';
 
-import PageTemplate from '@nerve/page-parts/PageTemplate';
+import PageTemplate from '@web/page-parts/PageTemplate';
 
 const ArchivePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,

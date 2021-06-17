@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { zIndex } from '@nerve/core/tokens';
-import whiteGrit from '@nerve/assets/grit-white.png';
-import blackGrit from '@nerve/assets/grit-black.png';
+import { zIndex } from '@web/core/tokens';
+import whiteGrit from '@web/assets/grit-white.png';
+import blackGrit from '@web/assets/grit-black.png';
 import { GrittyHeadingProps } from './__types';
 
 const GRITTY_HEADING_LINE_HEIGHT = 1.3;

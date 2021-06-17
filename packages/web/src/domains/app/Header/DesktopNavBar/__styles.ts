@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { animation, spacing } from '@nerve/core/tokens';
+import { animation, spacing } from '@web/core/tokens';
 
 export const DesktopNavBar = styled.nav`
     ul {

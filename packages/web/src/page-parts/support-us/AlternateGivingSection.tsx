@@ -19,10 +19,10 @@ import {
     FillButton,
     OutlineButton,
     GhostButton,
-} from '@nerve/core/components';
-import { breakpoints, grid, spacing } from '@nerve/core/tokens';
+} from '@web/core/components';
+import { breakpoints, grid, spacing } from '@web/core/tokens';
 
-import { SocialShareModal } from '@nerve/domains/engagement';
+import { SocialShareModal } from '@web/domains/engagement';
 
 // STYLES
 const StyledAlternateGivingSection = styled(Section)`

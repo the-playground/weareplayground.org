@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { spacing } from '@nerve/core/tokens';
+import { spacing } from '@web/core/tokens';
 
 export const DateRange = styled.span`
     align-items: center;

@@ -1,5 +1,5 @@
-import { AvailableSurface, AvailableOverlayTheme } from '@nerve/core/themes';
-import { BackgroundImageProps } from '@nerve/core/components';
+import { AvailableSurface, AvailableOverlayTheme } from '@web/core/themes';
+import { BackgroundImageProps } from '@web/core/components';
 
 export interface SectionProps {
     bgColor?: AvailableSurface;

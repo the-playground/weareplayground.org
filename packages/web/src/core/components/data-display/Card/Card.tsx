@@ -6,7 +6,7 @@ import {
     spacing as spacingTokens,
     AvailableComponentSpacing,
     AvailableElevation,
-} from '@nerve/core/tokens';
+} from '@web/core/tokens';
 
 import { Paper } from '../../surfaces/Paper/Paper.styles';
 import { PaperProps } from '../../surfaces/Paper/Paper.types';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from '@nerve/core/routing';
+import { Link } from '@web/core/routing';
 
 /**
  * Handles rendering external links in a Sanity Block

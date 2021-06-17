@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoints, spacing, zIndex } from '@nerve/core/tokens';
-import whiteGrit from '@nerve/assets/grit-white.png';
-import blackGrit from '@nerve/assets/grit-black.png';
+import { breakpoints, spacing, zIndex } from '@web/core/tokens';
+import whiteGrit from '@web/assets/grit-white.png';
+import blackGrit from '@web/assets/grit-black.png';
 
-import { Container, Heading, Logo, Section } from '@nerve/core/components';
+import { Container, Heading, Logo, Section } from '@web/core/components';
 
 const sectionBreakpoint = breakpoints.m;
 

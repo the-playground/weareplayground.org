@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
-import { spacing } from '@nerve/core/tokens';
+import { spacing } from '@web/core/tokens';
 
 export const ActionBar = styled.div`
     background: ${({ theme }) => rgba(theme.surfaces.paperDark, 0.6)};

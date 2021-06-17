@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes } from 'react';
 
-import { AvailableInputTheme } from '@nerve/core/themes';
+import { AvailableInputTheme } from '@web/core/themes';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;

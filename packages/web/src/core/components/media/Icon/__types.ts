@@ -1,5 +1,5 @@
-import { AvailableIconSize, AvailableBreakpoint } from '@nerve/core/tokens';
-import { AvailableIconTheme } from '@nerve/core/themes';
+import { AvailableIconSize, AvailableBreakpoint } from '@web/core/tokens';
+import { AvailableIconTheme } from '@web/core/themes';
 import { AvailableIconName } from './__manifest__';
 
 export interface IconProps {

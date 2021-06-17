@@ -1,12 +1,12 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
-import { useConfigContext } from '@nerve/shared/context';
-import { useGetMetaImage, useCurrentURL } from '@nerve/shared/hooks';
+import { useConfigContext } from '@web/shared/context';
+import { useGetMetaImage, useCurrentURL } from '@web/shared/hooks';
 
-import { NewsSubscribeCTA } from '@nerve/domains/engagement';
+import { NewsSubscribeCTA } from '@web/domains/engagement';
 
-import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
-import { LegacyContentNotice } from '@nerve/domains/migrations';
+import { PageBasicSEO, StructuredData } from '@web/domains/seo';
+import { LegacyContentNotice } from '@web/domains/migrations';
 
 import { ShowPage, ShowPageContext } from '../types';
 import { useShowStatus } from '../__hooks__';

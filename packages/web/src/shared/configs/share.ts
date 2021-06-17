@@ -1,4 +1,4 @@
-import { AvailableIconName } from '@nerve/core/components';
+import { AvailableIconName } from '@web/core/components';
 
 export const getShareConfig = (
     url: string,

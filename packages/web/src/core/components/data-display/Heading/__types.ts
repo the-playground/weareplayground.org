@@ -1,5 +1,5 @@
-import { AvailableHeadingTypography } from '@nerve/core/tokens';
-import { AvailableTypographyTheme } from '@nerve/core/themes';
+import { AvailableHeadingTypography } from '@web/core/tokens';
+import { AvailableTypographyTheme } from '@web/core/themes';
 
 export type AllowedTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 

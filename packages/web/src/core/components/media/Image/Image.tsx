@@ -3,7 +3,7 @@ import React from 'react';
 import { GatsbyImage, getImage as getGatsbyImage } from 'gatsby-plugin-image';
 
 import { getGatsbyImageData as getSanityImageData } from 'gatsby-source-sanity';
-import { clientConfig } from '@nerve/shared/configs';
+import { clientConfig } from '@web/shared/configs';
 
 import { ImageProps } from './__types';
 

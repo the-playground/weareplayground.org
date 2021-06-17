@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import { CircularProgress } from '@nerve/core/components/progress';
+import { CircularProgress } from '@web/core/components/progress';
 
 import { ButtonBaseProps } from './ButtonBase.d';
 import * as styled from './ButtonBase.styles';

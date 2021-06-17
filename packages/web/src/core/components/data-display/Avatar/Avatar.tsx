@@ -1,10 +1,10 @@
 import React from 'react';
 import styled, { css, ThemeConsumer } from 'styled-components';
 
-import { AvailableSurface, AvailableTypographyTheme } from '@nerve/core/themes';
-import { SanityImageDataWithAlt } from '@nerve/shared/types';
-import { Image } from '@nerve/core/components';
-import { borders, fonts } from '@nerve/core/tokens';
+import { AvailableSurface, AvailableTypographyTheme } from '@web/core/themes';
+import { SanityImageDataWithAlt } from '@web/shared/types';
+import { Image } from '@web/core/components';
+import { borders, fonts } from '@web/core/tokens';
 
 // TYPES
 export interface AvatarProps {

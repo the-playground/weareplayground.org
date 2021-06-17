@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-import { breakpoints, spacing } from '@nerve/core/tokens';
-import { SanityImageData } from '@nerve/shared/types';
+import { breakpoints, spacing } from '@web/core/tokens';
+import { SanityImageData } from '@web/shared/types';
 
 import {
     Container,
     Section,
     BodyText,
     GrittyHeading,
-} from '@nerve/core/components';
+} from '@web/core/components';
 
 import { GeneralNewsSubscribe } from '../GeneralNewsSubscribe/GeneralNewsSubscribe';
 

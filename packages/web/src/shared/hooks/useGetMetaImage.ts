@@ -1,7 +1,7 @@
-import { SanityImageDataWithAlt } from '@nerve/shared/types';
+import { SanityImageDataWithAlt } from '@web/shared/types';
 
-import { SEOConfig } from '@nerve/shared/hooks';
-import { useConfigContext } from '@nerve/shared/context';
+import { SEOConfig } from '@web/shared/hooks';
+import { useConfigContext } from '@web/shared/context';
 
 /**
  * Retrieve a fallback meta image from the site config based on the content type

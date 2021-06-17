@@ -1,5 +1,5 @@
-import { AvailableIconTheme } from '@nerve/core/themes';
-import { AvailableIconSize } from '@nerve/core/tokens';
+import { AvailableIconTheme } from '@web/core/themes';
+import { AvailableIconSize } from '@web/core/tokens';
 
 export interface CircularProgressProps {
     size: AvailableIconSize;

@@ -1,5 +1,5 @@
-import { AvailableLogoTheme } from '@nerve/core/themes';
-import { AvailableBreakpoint } from '@nerve/core/tokens';
+import { AvailableLogoTheme } from '@web/core/themes';
+import { AvailableBreakpoint } from '@web/core/tokens';
 import { AvailableLogoType } from './__manifest__';
 
 export type AvailableLogoSizes = {

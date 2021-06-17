@@ -1,4 +1,4 @@
-import { AvailableGridSize } from '@nerve/core/tokens';
+import { AvailableGridSize } from '@web/core/tokens';
 
 export type AvailableContainerType = 'full' | 'contained';
 

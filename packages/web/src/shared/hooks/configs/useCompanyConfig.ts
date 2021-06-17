@@ -1,5 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import { SanityImageData } from '@nerve/shared/types';
+import { SanityImageData } from '@web/shared/types';
 
 export const useCompanyConfig = (): CompanyConfig => {
     /**

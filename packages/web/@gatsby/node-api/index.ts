@@ -12,7 +12,7 @@ import {
 
 import path from 'path';
 
-import { SEASON_ROOT_SLUG } from '@nerve/domains/season';
+import { SEASON_ROOT_SLUG } from '@web/domains/season';
 import { redirects } from '../redirects';
 
 import {

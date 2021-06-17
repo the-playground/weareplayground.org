@@ -2,10 +2,10 @@ import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import { format, parseISO } from 'date-fns';
 
-import { GatsbyPageContext } from '@nerve/shared/types';
+import { GatsbyPageContext } from '@web/shared/types';
 
-import { PageBasicSEO, StructuredData } from '@nerve/domains/seo';
-import { AuthorCard, BlogPost } from '@nerve/domains/blog';
+import { PageBasicSEO, StructuredData } from '@web/domains/seo';
+import { AuthorCard, BlogPost } from '@web/domains/blog';
 
 import {
     Avatar,
@@ -14,11 +14,11 @@ import {
     Image,
     Container,
     PortableText,
-} from '@nerve/core/components';
+} from '@web/core/components';
 
-import { NewsSubscribeCTA } from '@nerve/domains/engagement';
+import { NewsSubscribeCTA } from '@web/domains/engagement';
 
-import { useGetMetaImage, useCurrentURL } from '@nerve/shared/hooks';
+import { useGetMetaImage, useCurrentURL } from '@web/shared/hooks';
 
 import * as styled from './PostTemplate.styles';
 

@@ -1,5 +1,5 @@
-import { AvailableBodyTypography } from '@nerve/core/tokens';
-import { AvailableTypographyTheme } from '@nerve/core/themes';
+import { AvailableBodyTypography } from '@web/core/tokens';
+import { AvailableTypographyTheme } from '@web/core/themes';
 
 export type AllowedTag =
     | 'span'

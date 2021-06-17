@@ -1,4 +1,4 @@
-import { CompanyConfig } from '@nerve/shared/hooks';
+import { CompanyConfig } from '@web/shared/hooks';
 
 /**
  * https://schema.org/Organization

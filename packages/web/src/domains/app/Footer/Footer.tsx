@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Divider } from '@nerve/core/components';
+import { Container, Divider } from '@web/core/components';
 
 import { Copyright } from './Copyright/Copyright';
 import { FooterNav } from './FooterNav/FooterNav';

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { breakpoints } from '@nerve/core/tokens';
+import { breakpoints } from '@web/core/tokens';
 import { LogoProps, AvailableLogoSizes } from './__types';
 
 const logoWidth: AvailableLogoSizes = {

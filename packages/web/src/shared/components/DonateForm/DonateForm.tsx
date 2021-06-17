@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { isSSR } from '@nerve/shared/utils';
+import { isSSR } from '@web/shared/utils';
 
 export const DonateForm = ({ campaignID }: DonateFormProps): JSX.Element => {
     return (

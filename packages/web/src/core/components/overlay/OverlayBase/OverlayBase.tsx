@@ -6,10 +6,10 @@ import {
     CONTENT_ROOT,
     CONTENT_ROOT_OVERLAY_CLASS,
     PORTAL_ROOT,
-} from '@nerve/shared/constants';
+} from '@web/shared/constants';
 
-import { useOnClickOutside, useScrollFreeze } from '@nerve/shared/hooks';
-import { isSSR } from '@nerve/shared/utils';
+import { useOnClickOutside, useScrollFreeze } from '@web/shared/hooks';
+import { isSSR } from '@web/shared/utils';
 
 import { Portal } from '../../utility';
 

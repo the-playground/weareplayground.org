@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Link } from '@nerve/core/routing';
-import { BodyText, Container } from '@nerve/core/components';
-import { useConfigContext } from '@nerve/shared/context';
+import { Link } from '@web/core/routing';
+import { BodyText, Container } from '@web/core/components';
+import { useConfigContext } from '@web/shared/context';
 
 import * as styled from './__styles';
 

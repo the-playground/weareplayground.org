@@ -1,5 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import {} from '@nerve/shared/types';
+import {} from '@web/shared/types';
 
 export const useSiteConfig = (): SiteConfig => {
     /**

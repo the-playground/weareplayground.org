@@ -6,7 +6,7 @@ import {
     breakpoints,
     spacing,
     zIndex,
-} from '@nerve/core/tokens';
+} from '@web/core/tokens';
 
 export const ShowPoster = styled.article`
     position: relative;
