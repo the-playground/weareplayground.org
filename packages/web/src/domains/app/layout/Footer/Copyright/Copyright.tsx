@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from '@web/core/routing';
+import { Link } from '@web/domains/app';
 import { BodyText, Container } from '@web/ui/core';
 import { useConfigContext } from '@web/shared/context';
 

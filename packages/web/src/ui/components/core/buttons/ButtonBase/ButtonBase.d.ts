@@ -1,4 +1,4 @@
-import { LinkProps } from '@web/core/routing';
+import { LinkProps } from '@web/domains/app';
 import { IconProps } from '@web/ui/core/media';
 
 export type ButtonSize = 's' | 'm';

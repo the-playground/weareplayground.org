@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from '@web/core/routing';
+import { Link } from '@web/domains/app';
 
 import { Container, Logo } from '@web/ui/core';
 

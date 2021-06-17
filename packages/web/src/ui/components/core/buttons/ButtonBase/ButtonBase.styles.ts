@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Link } from '@web/core/routing';
+import { Link } from '@web/domains/app';
 
 import { animation, borders, spacing, typography } from '@web/ui/tokens';
 import { ButtonBaseProps } from './ButtonBase.d';

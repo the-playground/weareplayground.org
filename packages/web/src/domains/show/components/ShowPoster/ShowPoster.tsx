@@ -1,14 +1,9 @@
 import React from 'react';
 
-import { Link } from '@web/core/routing';
+import { Link } from '@web/domains/app';
 import { SanityImageDataWithAlt } from '@web/shared/types';
 
-import {
-    BodyText,
-    Heading,
-    Image,
-    BackgroundOverlay,
-} from '@web/ui/core';
+import { BodyText, Heading, Image, BackgroundOverlay } from '@web/ui/core';
 
 import { useConfigContext } from '@web/shared/context';
 import * as styled from './__styles';

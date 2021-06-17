@@ -1,6 +1,6 @@
 import React from 'react';
 import { useOverlay, useSocialShareConfig } from '@web/shared/hooks';
-import { Link } from '@web/core/routing';
+import { Link } from '@web/domains/app';
 import {
     BodyText,
     Icon,
