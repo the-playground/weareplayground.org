@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { PORTAL_ROOT } from '@nerve/shared/constants';
-import { isSSR } from '@nerve/shared/lib';
+import { isSSR } from '@nerve/shared/utils';
 
 /**
  * A low-level primitive for creating React Portals

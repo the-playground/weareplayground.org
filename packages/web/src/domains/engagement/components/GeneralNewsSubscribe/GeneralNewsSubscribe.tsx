@@ -2,7 +2,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-import { emailRegexPattern } from '@nerve/shared/lib';
+import { emailRegexPattern } from '@nerve/shared/utils';
 import { useMailchimpSubscribe } from '@nerve/shared/hooks';
 
 import { BodyText, FillButton, Heading, Input } from '@nerve/core/components';

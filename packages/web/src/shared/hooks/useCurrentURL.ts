@@ -1,5 +1,5 @@
 import { useConfigContext, useEnvironmentContext } from '@nerve/shared/context';
-import { getCurrentRootURL } from '@nerve/shared/lib';
+import { getCurrentRootURL } from '@nerve/shared/utils';
 
 /**
  * Get the current URL of a given page.

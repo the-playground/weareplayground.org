@@ -9,7 +9,7 @@ import {
 } from '@nerve/shared/constants';
 
 import { useOnClickOutside, useScrollFreeze } from '@nerve/shared/hooks';
-import { isSSR } from '@nerve/shared/lib';
+import { isSSR } from '@nerve/shared/utils';
 
 import { Portal } from '../../utility';
 

@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { SEASON_ROOT_SLUG } from '@nerve/domains/season';
 import { BLOG_ROOT_SLUG } from '@nerve/domains/blog';
 
-import { buildNestedSlugPath, normalizeSlug } from '@nerve/shared/lib';
+import { buildNestedSlugPath, normalizeSlug } from '@nerve/shared/utils';
 
 export const useLinkMapConfig = (): LinkMapConfig => {
     /**

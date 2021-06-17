@@ -2,7 +2,7 @@ import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-gtag';
 
-import { isLinkInternal } from '@nerve/shared/lib';
+import { isLinkInternal } from '@nerve/shared/utils';
 
 export const Link: React.FC<LinkProps> = ({
     to,
