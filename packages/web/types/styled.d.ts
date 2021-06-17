@@ -8,7 +8,7 @@
 
 // import all of Styled Components & original module declarations
 import 'styled-components';
-import { AppTheme } from '@web/core/themes';
+import { AppTheme } from '@web/ui/themes';
 
 // Finally, use our theme type as the base for the typed SC `DefaultTheme`
 declare module 'styled-components' {
