@@ -6,7 +6,7 @@ import {
     breakpoints,
     spacing,
     zIndex,
-} from '@web/core/tokens';
+} from '@web/ui/tokens';
 
 export const ShowPoster = styled.article`
     position: relative;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { animation } from '@web/core/tokens';
+import { animation } from '@web/ui/tokens';
 
 export const CloseOverlay = styled.button`
     height: 20px;

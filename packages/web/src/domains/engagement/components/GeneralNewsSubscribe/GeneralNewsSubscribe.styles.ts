@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breakpoints, fonts, spacing } from '@web/core/tokens';
+import { breakpoints, fonts, spacing } from '@web/ui/tokens';
 
 const componentBreakpoint = breakpoints.s;
 

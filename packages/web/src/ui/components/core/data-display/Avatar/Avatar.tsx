@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { AvailableSurface, AvailableTypographyTheme } from '@web/ui/themes';
 import { SanityImageDataWithAlt } from '@web/shared/types';
 import { Image } from '@web/core/components';
-import { borders, fonts } from '@web/core/tokens';
+import { borders, fonts } from '@web/ui/tokens';
 
 // TYPES
 export interface AvatarProps {

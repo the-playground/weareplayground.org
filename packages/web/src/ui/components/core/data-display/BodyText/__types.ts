@@ -1,4 +1,4 @@
-import { AvailableBodyTypography } from '@web/core/tokens';
+import { AvailableBodyTypography } from '@web/ui/tokens';
 import { AvailableTypographyTheme } from '@web/ui/themes';
 
 export type AllowedTag =

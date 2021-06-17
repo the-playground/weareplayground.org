@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { breakpoints, grid, spacing } from '@web/core/tokens';
+import { breakpoints, grid, spacing } from '@web/ui/tokens';
 
 import { useConfigContext } from '@web/shared/context';
 

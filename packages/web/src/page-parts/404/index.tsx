@@ -9,7 +9,7 @@ import {
     Container,
 } from '@web/core/components';
 
-import { spacing } from '@web/core/tokens';
+import { spacing } from '@web/ui/tokens';
 
 const StyledSection = styled(Section)`
     align-items: center;

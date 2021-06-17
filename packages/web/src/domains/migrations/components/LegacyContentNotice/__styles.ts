@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { breakpoints, spacing } from '@web/core/tokens';
+import { breakpoints, spacing } from '@web/ui/tokens';
 
 export const LegacyContentNotice = styled.div`
     .content {

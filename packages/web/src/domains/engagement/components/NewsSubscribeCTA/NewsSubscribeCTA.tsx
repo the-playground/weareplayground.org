@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-import { breakpoints, spacing } from '@web/core/tokens';
+import { breakpoints, spacing } from '@web/ui/tokens';
 import { SanityImageData } from '@web/shared/types';
 
 import {

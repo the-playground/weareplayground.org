@@ -1,5 +1,5 @@
 import { AvailableLogoTheme } from '@web/ui/themes';
-import { AvailableBreakpoint } from '@web/core/tokens';
+import { AvailableBreakpoint } from '@web/ui/tokens';
 import { AvailableLogoType } from './__manifest__';
 
 export type AvailableLogoSizes = {

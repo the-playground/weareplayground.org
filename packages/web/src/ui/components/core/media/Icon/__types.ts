@@ -1,4 +1,4 @@
-import { AvailableIconSize, AvailableBreakpoint } from '@web/core/tokens';
+import { AvailableIconSize, AvailableBreakpoint } from '@web/ui/tokens';
 import { AvailableIconTheme } from '@web/ui/themes';
 import { AvailableIconName } from './__manifest__';
 

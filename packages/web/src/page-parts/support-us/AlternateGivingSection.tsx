@@ -20,7 +20,7 @@ import {
     OutlineButton,
     GhostButton,
 } from '@web/core/components';
-import { breakpoints, grid, spacing } from '@web/core/tokens';
+import { breakpoints, grid, spacing } from '@web/ui/tokens';
 
 import { SocialShareModal } from '@web/domains/engagement';
 

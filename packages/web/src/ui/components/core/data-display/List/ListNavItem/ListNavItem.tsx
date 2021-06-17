@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { spacing } from '@web/core/tokens';
+import { spacing } from '@web/ui/tokens';
 
 export const StyledListNavItem = styled.li`
     align-items: center;

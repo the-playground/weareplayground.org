@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
-import { borders, grid, spacing, zIndex } from '@web/core/tokens';
+import { borders, grid, spacing, zIndex } from '@web/ui/tokens';
 import { OverlayBase } from '../OverlayBase/OverlayBase';
 import { IModal } from './Modal.d';
 

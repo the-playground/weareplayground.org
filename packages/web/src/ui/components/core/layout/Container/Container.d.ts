@@ -1,4 +1,4 @@
-import { AvailableGridSize } from '@web/core/tokens';
+import { AvailableGridSize } from '@web/ui/tokens';
 
 export type AvailableContainerType = 'full' | 'contained';
 

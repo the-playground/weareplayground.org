@@ -6,7 +6,7 @@ import {
     spacing as spacingTokens,
     AvailableComponentSpacing,
     AvailableElevation,
-} from '@web/core/tokens';
+} from '@web/ui/tokens';
 
 import { Paper } from '../../surfaces/Paper/Paper.styles';
 import { PaperProps } from '../../surfaces/Paper/Paper.types';

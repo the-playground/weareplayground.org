@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Section } from '@web/core/components';
 import { rgba } from 'polished';
 
-import { spacing } from '@web/core/tokens';
+import { spacing } from '@web/ui/tokens';
 
 export const Hero = styled(Section)`
     align-items: stretch;

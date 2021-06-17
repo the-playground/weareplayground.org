@@ -5,7 +5,7 @@ import {
     appNavBreakpoint,
     borders,
     spacing,
-} from '@web/core/tokens';
+} from '@web/ui/tokens';
 
 export const Content = styled.div`
     padding-bottom: ${spacing.layout.m};

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { zIndex } from '@web/core/tokens';
+import { zIndex } from '@web/ui/tokens';
 import whiteGrit from '@web/assets/grit-white.png';
 import blackGrit from '@web/assets/grit-black.png';
 import { GrittyHeadingProps } from './__types';

@@ -5,7 +5,7 @@ import {
     appNavBreakpoint,
     spacing,
     zIndex,
-} from '@web/core/tokens';
+} from '@web/ui/tokens';
 
 import { HeaderProps } from './__types';
 

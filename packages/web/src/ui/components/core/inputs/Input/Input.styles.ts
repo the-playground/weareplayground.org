@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { borders, spacing, typography } from '@web/core/tokens';
+import { borders, spacing, typography } from '@web/ui/tokens';
 import { InputProps } from './Input.d';
 
 export const Input = styled.div<Pick<InputProps, 'color'>>`

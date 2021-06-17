@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { spacing, AvailableComponentSpacing } from '@web/core/tokens';
+import { spacing, AvailableComponentSpacing } from '@web/ui/tokens';
 
 // TYPES
 export interface CardActionsProps {

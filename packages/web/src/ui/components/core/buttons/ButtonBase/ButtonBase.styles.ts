@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Link } from '@web/core/routing';
 
-import { animation, borders, spacing, typography } from '@web/core/tokens';
+import { animation, borders, spacing, typography } from '@web/ui/tokens';
 import { ButtonBaseProps } from './ButtonBase.d';
 
 /**

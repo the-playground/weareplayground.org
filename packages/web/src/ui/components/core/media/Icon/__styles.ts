@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { breakpoints, iconSizes } from '@web/core/tokens';
+import { breakpoints, iconSizes } from '@web/ui/tokens';
 import { IconProps } from './__types';
 
 /**

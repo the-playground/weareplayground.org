@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { appBaseFontSize, fonts, zIndex } from '@web/core/tokens';
+import { appBaseFontSize, fonts, zIndex } from '@web/ui/tokens';
 
 /**
  * Define global styles and Stage 1 fonts. These are the fonts that will be preloaded and some of them will eventually

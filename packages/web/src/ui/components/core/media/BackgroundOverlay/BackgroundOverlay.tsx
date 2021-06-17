@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { AvailableOverlayTheme } from '@web/ui/themes';
-import { zIndex } from '@web/core/tokens';
+import { zIndex } from '@web/ui/tokens';
 
 const StyledOverlay = styled.div<BackgroundOverlayProps>`
     background: ${({ theme, variant }) => theme.overlays[variant].color};

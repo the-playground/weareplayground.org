@@ -11,7 +11,7 @@ import {
     Section,
 } from '@web/core/components';
 
-import { breakpoints, grid, spacing } from '@web/core/tokens';
+import { breakpoints, grid, spacing } from '@web/ui/tokens';
 
 const StyledTaxExemptSection = styled(Section)`
     padding: ${spacing.layout.m} 0;

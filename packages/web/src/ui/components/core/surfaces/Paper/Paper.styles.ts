@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { borders } from '@web/core/tokens';
+import { borders } from '@web/ui/tokens';
 import { PaperProps } from './Paper.types';
 
 export const Paper = styled.div<PaperProps>`

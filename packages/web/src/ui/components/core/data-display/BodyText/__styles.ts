@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from '@web/core/tokens';
+import { typography } from '@web/ui/tokens';
 import { BodyTextProps } from './__types';
 
 export const BodyText = styled.p<BodyTextProps>`

@@ -1,4 +1,4 @@
-import { AvailableHeadingTypography } from '@web/core/tokens';
+import { AvailableHeadingTypography } from '@web/ui/tokens';
 import { AvailableTypographyTheme } from '@web/ui/themes';
 
 export type AllowedTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';

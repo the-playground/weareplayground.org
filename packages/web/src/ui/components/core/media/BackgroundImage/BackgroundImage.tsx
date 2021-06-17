@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Image, ImageProps } from '@web/core/components';
-import { zIndex } from '@web/core/tokens';
+import { zIndex } from '@web/ui/tokens';
 
 const StyledBackgroundImage = styled.div`
     user-select: none;
