@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 
-import {
-    animation,
-    appNavBreakpoint,
-    borders,
-    spacing,
-} from '@web/ui/tokens';
+import { animation, appNavBreakpoint, borders, spacing } from '@web/ui/tokens';
 
 export const Content = styled.div`
     padding-bottom: ${spacing.layout.m};

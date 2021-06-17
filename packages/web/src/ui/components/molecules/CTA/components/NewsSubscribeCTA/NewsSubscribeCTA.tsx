@@ -4,14 +4,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { breakpoints, spacing } from '@web/ui/tokens';
 import { SanityImageData } from '@web/shared/types';
 
-import {
-    Container,
-    Section,
-    BodyText,
-    GrittyHeading,
-} from '@web/ui/core';
+import { Container, Section, BodyText, GrittyHeading } from '@web/ui/core';
 
-import { GeneralNewsSubscribe } from '../GeneralNewsSubscribe/GeneralNewsSubscribe';
+import { GeneralNewsSubscribe } from '../../../GeneralNewsSubscribe/GeneralNewsSubscribe';
 
 const StyledNewsSubscribeCTA = styled(Section)`
     padding: ${spacing.layout.l} 0;

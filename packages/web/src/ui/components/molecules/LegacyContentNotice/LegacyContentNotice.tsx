@@ -1,11 +1,6 @@
 import React from 'react';
 
-import {
-    BodyText,
-    Container,
-    FillButton,
-    Heading,
-} from '@web/ui/core';
+import { BodyText, Container, FillButton, Heading } from '@web/ui/core';
 
 import * as styled from './__styles';
 

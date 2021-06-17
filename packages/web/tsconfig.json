@@ -6,17 +6,11 @@
 			"@gatsby/*": [
 				"./@gatsby/*"
 			],
-			"@web/core/*": [
-				"./src/core/*"
-			],
 			"@web/assets": [
 				"./src/assets/"
 			],
 			"@web/domains/*": [
 				"./src/domains/*"
-			],
-			"@web/page-parts/*": [
-				"./src/page-parts/*"
 			],
 			"@web/shared/*": [
 				"./src/shared/*"

@@ -21,7 +21,8 @@ export const handleFormSubmit = async (formName, formData, event) => {
     event.preventDefault();
 };
 
-export const emailRegexPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+export const emailRegexPattern =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 export const isValidEmail = (email: string): boolean =>
     emailRegexPattern.test(email);

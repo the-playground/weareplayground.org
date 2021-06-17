@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 
-import {
-    animation,
-    appNavBreakpoint,
-    spacing,
-    zIndex,
-} from '@web/ui/tokens';
+import { animation, appNavBreakpoint, spacing, zIndex } from '@web/ui/tokens';
 
 import { HeaderProps } from './__types';
 

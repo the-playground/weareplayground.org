@@ -111,10 +111,8 @@ module.exports = {
                 root: '', // <- will be used as a root dir
                 aliases: {
                     '@gatsby': './@gatsby',
-                    '@web/core': './src/core',
                     '@web/domains': './src/domains',
                     '@web/assets': './src/assets',
-                    '@web/page-parts': './src/page-parts',
                     '@web/shared': './src/shared',
                     '@web/ui/core': './src/ui/components/core',
                     '@web/ui/layout': './src/ui/components/layout',
