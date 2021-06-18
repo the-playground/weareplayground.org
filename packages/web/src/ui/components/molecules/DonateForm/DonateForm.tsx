@@ -1,9 +1,15 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import classnames from 'classnames';
 
 import { isSSR } from '@web/shared/utils';
 
-export const DonateForm = ({ campaignID }: DonateFormProps): JSX.Element => {
+export const DonateForm = ({
+    campaignID,
+    className,
+}: DonateFormProps): JSX.Element => {
+    const classNames = classnames('donation-form', className);
+
     return (
         <>
             <Helmet>
@@ -14,7 +20,7 @@ export const DonateForm = ({ campaignID }: DonateFormProps): JSX.Element => {
                     />
                 )}
             </Helmet>
-            <div className="donation-form">
+            <div className={classNames}>
                 <iframe
                     title="donate"
                     allowpaymentrequest=""
@@ -33,4 +39,5 @@ export const DonateForm = ({ campaignID }: DonateFormProps): JSX.Element => {
 
 interface DonateFormProps {
     campaignID: string;
+    className?: string;
 }

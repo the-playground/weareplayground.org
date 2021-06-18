@@ -13,7 +13,7 @@ import { PaperProps } from '../../surfaces/Paper/Paper.types';
 
 // TYPES
 export interface CardProps extends PaperProps {
-    layout: 'inline' | 'stacked';
+    layout?: 'inline' | 'stacked';
     spacing?: AvailableComponentSpacing;
     elevation?: AvailableElevation;
     withGutter?: true;

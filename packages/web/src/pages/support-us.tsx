@@ -33,6 +33,7 @@ const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                 title="Be Awesome"
                 subTitle="Support the future of theatre in Dayton"
             />
+            <DonateSection />
             <AlternateGivingSection />
             <TaxExemptSection />
             <NewsSubscribeCTA />
