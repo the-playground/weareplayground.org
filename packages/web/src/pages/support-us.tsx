@@ -6,7 +6,7 @@ import {
     SanityImageData,
 } from '@web/shared/types';
 
-import PageTemplate from '@web/domains/page/template';
+import PageTemplate from '@web/domains/page/__template__';
 import { SimpleHero, NewsSubscribeCTA } from '@web/ui/molecules';
 
 import {

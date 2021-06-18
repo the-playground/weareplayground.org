@@ -210,7 +210,7 @@ const generateSeasonsAndShows = async ({
             url: `/${SEASON_ROOT_SLUG}/${season.slug.current}`,
             id: season._id,
             template: path.resolve(
-                `./src/domains/season/template/SeasonTemplate.tsx`
+                `./src/domains/season/__template__/SeasonTemplate.tsx`
             ),
         };
 
@@ -241,7 +241,7 @@ const generateSeasonsAndShows = async ({
                 url: `${seasonConfig.url}/${show.slug.current}`,
                 id: show._id,
                 template: path.resolve(
-                    `./src/domains/show/template/ShowTemplate.tsx`
+                    `./src/domains/show/__template__/ShowTemplate.tsx`
                 ),
                 season: seasonConfig,
             };
@@ -306,7 +306,7 @@ const generateBlogPosts = async ({
             url: `/${blogParentPage}/${post.slug.current}`,
             id: post._id,
             template: path.resolve(
-                `./src/domains/blog/template/PostTemplate.tsx`
+                `./src/domains/blog/__template__/PostTemplate.tsx`
             ),
         };
 

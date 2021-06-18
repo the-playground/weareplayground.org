@@ -8,7 +8,7 @@ import {
 
 import { NewsSubscribeCTA } from '@web/ui/molecules';
 
-import PageTemplate from '@web/domains/page/template';
+import PageTemplate from '@web/domains/page/__template__';
 
 import {
     ArchiveSection,
