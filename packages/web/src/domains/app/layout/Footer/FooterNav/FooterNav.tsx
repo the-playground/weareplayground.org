@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useConfigContext } from '@web/shared/context';
 import { useSocialProfilesConfig } from '@web/shared/hooks';
 
-import { Link } from '@web/domains/app';
+import { Link } from '@web/domains/app/routing';
 import { BodyText, Icon, Logo } from '@web/ui/core';
 
 import * as styled from './__styles';

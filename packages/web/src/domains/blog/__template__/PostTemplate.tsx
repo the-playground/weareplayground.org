@@ -4,7 +4,7 @@ import { format, parseISO } from 'date-fns';
 
 import { GatsbyPageContext } from '@web/shared/types';
 
-import { PageBasicSEO, StructuredData } from '@web/domains/app';
+import { PageBasicSEO, StructuredData } from '@web/domains/app/seo';
 import { AuthorCard, BlogPost } from '@web/domains/blog';
 
 import {

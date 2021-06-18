@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { useConfigContext } from '@web/shared/context';
-
-import { Link } from '@web/domains/app';
 import { BodyText, FillButton, Icon } from '@web/ui/core';
+
+import { Link } from '@web/domains/app/routing';
 
 import * as styled from './__styles';
 

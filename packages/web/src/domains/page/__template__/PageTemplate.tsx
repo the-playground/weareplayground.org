@@ -4,7 +4,7 @@ import { SanityDocumentSEO } from '@web/shared/types';
 
 import { useCurrentURL, useGetMetaImage } from '@web/shared/hooks';
 
-import { PageBasicSEO, StructuredData } from '@web/domains/app';
+import { PageBasicSEO, StructuredData } from '@web/domains/app/seo';
 
 /**
  * This template handles retrieving and generating all dynamic content for

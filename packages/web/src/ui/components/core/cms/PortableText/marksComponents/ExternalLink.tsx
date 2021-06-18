@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from '@web/domains/app';
+import { Link } from '@web/domains/app/routing';
 
 /**
  * Handles rendering external links in a Sanity Block

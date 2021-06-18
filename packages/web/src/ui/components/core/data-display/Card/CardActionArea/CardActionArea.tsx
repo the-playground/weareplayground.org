@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { Link, LinkProps } from '@web/domains/app';
+import { Link, LinkProps } from '@web/domains/app/routing';
 import { animation } from '@web/ui/tokens';
 
 // TYPES

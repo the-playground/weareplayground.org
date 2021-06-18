@@ -1,5 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import { SanityImageData } from '@web/shared/types';
+import { SanityImageDataWithAlt } from '@web/shared/types';
 
 export const useCompanyConfig = (): CompanyConfig => {
     /**
@@ -66,8 +66,8 @@ export interface CompanyConfig {
     legacyName: string;
     legacyWebsite: string;
     legalName: string;
-    logoOnDark: SanityImageData;
-    logoOnLight: SanityImageData;
+    logoOnDark: SanityImageDataWithAlt;
+    logoOnLight: SanityImageDataWithAlt;
     name: string;
     spotify: string;
     state: string;

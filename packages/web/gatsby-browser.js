@@ -9,7 +9,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import { theme } from './src/ui/themes/default';
-import { Layout } from './src/domains/app';
+import { Layout } from './src/domains/app/layout';
 
 import {
     ConfigProvider,
