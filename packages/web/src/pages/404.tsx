@@ -5,7 +5,7 @@ import { GatsbyPageContext } from '@web/shared/types';
 
 import { useCurrentURL } from '@web/shared/hooks';
 
-import { PageBasicSEO } from '@web/domains/app';
+import { PageBasicSEO } from '@web/domains/app/seo';
 import { NotFoundContent } from '@web/domains/page/404';
 
 const NotFound: React.FC<PageProps<GatsbyPageContext>> = ({ location }) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from '@web/domains/app';
+import { Link } from '@web/domains/app/routing';
 import { SanityImageDataWithAlt } from '@web/shared/types';
 
 import { BodyText, Heading, Image, BackgroundOverlay } from '@web/ui/core';
