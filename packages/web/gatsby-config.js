@@ -21,7 +21,7 @@ const deployContext = process.env.CONTEXT ?? '';
 const deployID = process.env.DEPLOY_ID ?? '';
 const commitRef = process.env.COMMIT_REF ?? '';
 const prevCommitRef = process.env.CACHED_COMMIT_REF ?? '';
-const environment = deployContext ?? 'development';
+const environment = deployContext || 'development';
 const isDev = environment === 'development';
 const isDeployPreview = environment === 'deploy-preview';
 const isProd = environment === 'production';
