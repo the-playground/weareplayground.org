@@ -22,6 +22,18 @@ const black85: OverlayTheme = {
     color: `${rgba(palette.system.black, 0.85)}`,
 };
 
+const dark45: OverlayTheme = {
+    color: `${rgba(palette.secondary.d1, 0.45)}`,
+};
+
+const dark55: OverlayTheme = {
+    color: `${rgba(palette.secondary.d1, 0.55)}`,
+};
+
+const dark65: OverlayTheme = {
+    color: `${rgba(palette.secondary.d1, 0.65)}`,
+};
+
 const dark85: OverlayTheme = {
     color: `${rgba(palette.secondary.d1, 0.85)}`,
 };
@@ -35,6 +47,9 @@ export const overlays: OverlayThemes = {
     black45,
     black65,
     black85,
+    dark45,
+    dark55,
+    dark65,
     dark85,
     dark90,
 };

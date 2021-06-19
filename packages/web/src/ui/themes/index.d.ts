@@ -136,6 +136,10 @@ export interface AppTheme {
         black45: OverlayTheme;
         black65: OverlayTheme;
         black85: OverlayTheme;
+        dark45: OverlayTheme;
+        dark55: OverlayTheme;
+        dark65: OverlayTheme;
+        dark85: OverlayTheme;
         dark85: OverlayTheme;
         dark90: OverlayTheme;
     };
