@@ -46,7 +46,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     const blogLink = links.getPost(rebrandLink);
 
     return (
-        <StyledHeroSection bgImage={bgImage} overlay="dark85">
+        <StyledHeroSection bgImage={bgImage} overlay="dark55">
             <Container>
                 <GrittyHeading
                     as="h1"
