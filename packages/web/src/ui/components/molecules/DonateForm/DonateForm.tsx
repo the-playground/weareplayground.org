@@ -1,9 +1,34 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
+import styled, { css } from 'styled-components';
 
 import { isSSR } from '@web/shared/utils';
 
+// TYPES
+interface DonateFormProps {
+    campaignID: string;
+    className?: string;
+}
+
+// STYLES
+
+const maxWidth = '425px';
+const minWidth = '250px';
+const minHeight = '500px';
+
+export const StyledDonateForm = styled.div<Pick<DonateFormProps, 'className'>>`
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+
+    iframe {
+        background-color: ${({ theme }) => theme.surfaces.paper};
+        min-height: ${minHeight};
+    }
+`;
+
+// COMPONENT DEFINITION
 export const DonateForm = ({
     campaignID,
     className,
@@ -20,7 +45,7 @@ export const DonateForm = ({
                     />
                 )}
             </Helmet>
-            <div className={classNames}>
+            <StyledDonateForm className={classNames}>
                 <iframe
                     title="donate"
                     allowpaymentrequest=""
@@ -29,15 +54,15 @@ export const DonateForm = ({
                     seamless="seamless"
                     scrolling="no"
                     src={`https://donorbox.org/embed/${campaignID}`}
-                    style={{}}
+                    style={{
+                        maxWidth,
+                        minWidth,
+                        minHeight: '500px',
+                        maxHeight: 'none !important',
+                    }}
                     width="100%"
                 />
-            </div>
+            </StyledDonateForm>
         </>
     );
 };
-
-interface DonateFormProps {
-    campaignID: string;
-    className?: string;
-}

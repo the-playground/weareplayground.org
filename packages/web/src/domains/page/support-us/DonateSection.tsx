@@ -18,8 +18,8 @@ const StyledDonateSection = styled(Section)`
     padding: ${spacing.layout.m} 0;
 
     .container {
+        align-items: center;
         display: flex;
-        // grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         flex-wrap: wrap;
     }
 
@@ -27,13 +27,20 @@ const StyledDonateSection = styled(Section)`
     .form {
         flex: 1;
     }
+
+    .form {
+        height: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
 `;
 
 export const DonateSection = () => (
-    <StyledDonateSection>
+    <StyledDonateSection bgColor="neutralLight">
         <Container className="container">
             <Card
-                borderColor="neutralDark"
+                bgColor="paper"
+                borderColor="paperLight"
                 spacing="l"
                 variant="outlined"
                 className="copy"
@@ -43,7 +50,7 @@ export const DonateSection = () => (
                         It takes a fuckin’ village y’all
                     </BodyText>
                 </CardHeader>
-                <Divider color="neutralDark" />
+                <Divider color="paperLight" />
                 <CardContent>
                     <BodyText color="light" size="m">
                         With your generous support, we can put more money in an
