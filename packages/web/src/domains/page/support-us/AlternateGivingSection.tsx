@@ -106,7 +106,6 @@ export const AlternateGivingSection = () => {
 
     return (
         <>
-            <Divider color="paperLight" />
             <StyledAlternateGivingSection>
                 <Container>
                     <div className="intro">
