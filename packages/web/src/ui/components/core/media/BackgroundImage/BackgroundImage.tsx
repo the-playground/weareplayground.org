@@ -6,6 +6,7 @@ import { zIndex } from '@web/ui/tokens';
 
 const StyledBackgroundImage = styled.div`
     user-select: none;
+    z-index: ${zIndex.zero};
     > .bg-image {
         bottom: 0;
         height: 100%;
@@ -14,7 +15,6 @@ const StyledBackgroundImage = styled.div`
         right: 0;
         top: 0;
         width: 100%;
-        z-index: ${zIndex.zero};
     }
 `;
 
