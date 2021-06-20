@@ -46,7 +46,7 @@ export const NewsSubscribeCTA: React.FC = () => {
 
     return (
         <StyledNewsSubscribeCTA
-            overlay="dark90"
+            overlay="dark65"
             bgImage={{ image: subscribe.image.asset }}
         >
             <Container maxWidth="xs">
