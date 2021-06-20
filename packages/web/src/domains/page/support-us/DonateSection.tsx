@@ -19,7 +19,7 @@ const StyledDonateSection = styled(Section)`
     padding: ${spacing.layout.l} 0;
 
     .container {
-        align-items: center;
+        align-items: flex-start;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;

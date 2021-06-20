@@ -73,7 +73,7 @@ export const SellSection = () => (
                 Dayton stakes its claim on innovation, right? So, how can we
                 ensure that innovation is continuing to be encouraged in our
                 artistic community?{' '}
-                <BodyText as="span" color="accent" weight="bold" size="l">
+                <BodyText as="span" color="accent" weight="bold" size="xl">
                     That’s where you come in.
                 </BodyText>
                 The Nerve is the next step in the evolution of theatre in
