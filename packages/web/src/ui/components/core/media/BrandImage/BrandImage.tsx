@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import classnames from 'classnames';
+import grain from '@web/assets/grain.png';
+
 /**
  * Our BrandImage is a special Image wrapper component that applies uniform image treatments
  * to images. It also gives us the control we need to pull specific levers without
@@ -17,13 +19,24 @@ export interface BrandImageProps extends ImageProps {
 }
 
 // STYLES
-const StyledBrandImage = styled(Image)``;
+const StyledBrandImage = styled(Image)`
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0%;
+        top: 0%;
+        background-image: url(${grain});
+    }
+`;
 
 // COMPONENT DEFINITION
-export const BrandImage = ({
-    grain = 1,
-    saturation = 0.8,
-    ...rest
-}: BrandImageProps) => {
-    return <StyledBrandImage imgStyle={{}} {...rest} />;
+export const BrandImage = ({ saturation = 0.8, ...rest }: BrandImageProps) => {
+    return (
+        <StyledBrandImage
+            imgStyle={{ filter: `saturate(${saturation})` }}
+            {...rest}
+        />
+    );
 };
