@@ -55,6 +55,10 @@ export const StyledAvatar = styled.div<AvatarProps>`
         width: 100%;
     }
 
+    img {
+        border-radius: ${borders.circle};
+    }
+
     /* Optional BG Color */
     ${({ theme, bgColor }) =>
         bgColor &&
