@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Image } from '../../../media';
+import { BrandImage } from '../../../media';
 import { BodyText } from '../../../data-display';
 
 /**
@@ -15,7 +15,7 @@ export const Figure: React.FC<FigureProps> = ({ node }) => {
 
     return (
         <figure key={node._key}>
-            <Image
+            <BrandImage
                 image={node.asset}
                 sanityConfig={{
                     fit: 'fillmax',

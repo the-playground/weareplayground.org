@@ -11,7 +11,7 @@ import {
     Avatar,
     BodyText,
     Heading,
-    Image,
+    BrandImage,
     Container,
     PortableText,
 } from '@web/ui/core';
@@ -75,7 +75,7 @@ const PostLanding: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
                         {postedOnDate} • by{' '}
                         {authors.map((author) => author.name).join(' & ')}
                     </BodyText>
-                    <Image
+                    <BrandImage
                         image={post.featuredImage.asset}
                         alt={post.featuredImage.alt ?? ''}
                         className="featured-image"

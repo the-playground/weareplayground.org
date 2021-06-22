@@ -12,7 +12,6 @@ interface DonateFormProps {
 }
 
 // STYLES
-
 const maxWidth = '425px';
 const minWidth = '250px';
 const minHeight = '550px';

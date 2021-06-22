@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from '@web/domains/app/routing';
 import { SanityImageDataWithAlt } from '@web/shared/types';
 
-import { BodyText, Heading, Image, BackgroundOverlay } from '@web/ui/core';
+import { BodyText, Heading, BrandImage, BackgroundOverlay } from '@web/ui/core';
 
 import { useConfigContext } from '@web/shared/context';
 import * as styled from './__styles';
@@ -28,7 +28,7 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
                 className="wrapper"
                 to={links.getShow(season.slug, slug) ?? '/'}
             >
-                <Image
+                <BrandImage
                     image={image.asset}
                     alt={image.alt ?? ''}
                     objectFit="cover"
