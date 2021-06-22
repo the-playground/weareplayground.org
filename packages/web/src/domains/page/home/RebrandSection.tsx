@@ -42,11 +42,8 @@ const StyledRebrandSection = styled(Section)`
     &:before,
     &:after {
         content: '';
-        display: block;
         height: 100%;
         position: absolute;
-        pointer-events: none;
-        background-size: 600px;
         width: 100%;
         top: 0;
         left: 0;
