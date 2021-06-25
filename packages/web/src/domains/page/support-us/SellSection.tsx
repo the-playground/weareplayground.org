@@ -32,7 +32,7 @@ const StyledSellSection = styled(Section)`
         width: 100%;
         top: 0;
         left: 0;
-        z-index: ${zIndex.front};
+        z-index: ${zIndex.base};
     }
 
     &:before {
