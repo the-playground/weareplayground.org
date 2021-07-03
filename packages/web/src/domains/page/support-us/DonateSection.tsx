@@ -60,13 +60,13 @@ const StyledDonateSection = styled(Section)`
     }
 
     .sponsorship-opportunities {
-        margin-top: ${spacing.layout.s};
+        margin-top: ${spacing.layout.m};
     }
 `;
 
 const donationLevels = [
     <>
-        <strong>$25</strong> will pay for a script for 2 team members.
+        <strong>$25</strong> will pay for a script for 2 artists.
     </>,
     <>
         <strong>$75</strong> will cover the cost of renting a single light for 1
@@ -86,14 +86,13 @@ export const DonateSection = () => (
             <div className="content">
                 <div className="title">
                     <Heading color="light" size="xs" as="h3">
-                        Your kindness and generosity can make this future a
-                        reality.
+                        It takes a fuckin’ village y’all
                     </Heading>
                 </div>
                 <div className="copy">
                     <BodyText color="medium" size="m">
-                        With your support, we can put more money in local
-                        artists' pockets, keep creating our brand of raw, real,
+                        With your generous support, we can put more money in an
+                        artist’s pocket, keep creating our brand of raw, real
                         and relevant theatre, and build the kind of artistic
                         community that Dayton deserves.
                     </BodyText>
@@ -102,7 +101,8 @@ export const DonateSection = () => (
                         className="donation-levels-list"
                         heading={
                             <BodyText color="light" size="m" weight="bold">
-                                See the difference you can make:
+                                Every little bit helps. Check out how far your
+                                donation can go:
                             </BodyText>
                         }
                     >
@@ -125,22 +125,22 @@ export const DonateSection = () => (
                         weight="bold"
                         className="cta"
                     >
-                        Do you have the nerve? Become a donor.
+                        Do you have the nerve? Become a donor today.
                     </BodyText>
                 </div>
             </div>
             <DonateForm campaignID="grassroots-support-fund" className="form" />
         </Container>
-        <Container maxWidth="xs">
+        <Container maxWidth="s">
             <BodyText
                 color="medium"
-                size="s"
+                size="m"
                 className="sponsorship-opportunities"
             >
-                * If you are an individual or businesses looking to contribute
+                * If you are an individual or businesses who wants to contribute
                 more than $500 per season, reach out to us at{' '}
                 <strong>sponsorship@nervetheatre.org</strong> to discuss
-                sponsorship opportunities
+                sponsorship opportunities.
             </BodyText>
         </Container>
     </StyledDonateSection>
