@@ -106,8 +106,8 @@ export const DonateSection = () => (
                             </BodyText>
                         }
                     >
-                        {donationLevels.map((text) => (
-                            <ListItem>
+                        {donationLevels.map((text, index) => (
+                            <ListItem key={`donation-levels-${index}`}>
                                 <Icon
                                     name="CircleRight"
                                     size="xs"

@@ -91,28 +91,28 @@ export const SellSection = () => (
                 What does that “innovation” really mean for Dayton?
             </BodyText>
             <List itemSpacing="xxs" className="list">
-                <ListItem>
+                <ListItem key="donor-sell-1">
                     <Icon name="Fire" size="s" color="accent" />
                     <BodyText size="m" color="dark">
                         Opportunities for new voices and new perspectives to be
                         shared and heard
                     </BodyText>
                 </ListItem>
-                <ListItem>
+                <ListItem key="donor-sell-2">
                     <Icon name="Fire" size="s" color="accent" />
                     <BodyText size="m" color="dark">
                         Opportunities for artists to work on unique and
                         challenging material
                     </BodyText>
                 </ListItem>
-                <ListItem>
+                <ListItem key="donor-sell-3">
                     <Icon name="Fire" size="s" color="accent" />
                     <BodyText size="m" color="dark">
                         Opportunities for artists to be properly valued for the
                         work they do
                     </BodyText>
                 </ListItem>
-                <ListItem>
+                <ListItem key="donor-sell-4">
                     <Icon name="Fire" size="s" color="accent" />
                     <BodyText size="m" color="dark">
                         Opportunities for audiences to discover new artistic
