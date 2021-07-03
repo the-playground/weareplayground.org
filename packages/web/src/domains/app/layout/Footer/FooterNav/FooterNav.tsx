@@ -26,6 +26,10 @@ export const FooterNav = (): JSX.Element => {
             text: 'support us',
             link: links.supportUsPage,
         },
+        {
+            text: 'our rebrand',
+            link: links.getPost('the-playground-theatre-is-now-the-nerve'),
+        },
         // {
         //     text: 'about us',
         //     link: links.about,
