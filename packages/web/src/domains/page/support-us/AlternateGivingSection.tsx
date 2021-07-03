@@ -152,7 +152,7 @@ export const AlternateGivingSection = () => {
                             </CardHeader>
                             <Divider color="paperLight" />
                             <CardContent>
-                                <List itemSpacing="xs">
+                                <List itemSpacing="xs" as="ol">
                                     {amazonSmile.steps.map((text) => (
                                         <ListItem>
                                             <Icon
@@ -212,7 +212,7 @@ export const AlternateGivingSection = () => {
                             </CardHeader>
                             <Divider color="paperLight" />
                             <CardContent>
-                                <List itemSpacing="xs">
+                                <List itemSpacing="xs" as="ol">
                                     {krogerRewards.steps.map((text) => (
                                         <ListItem>
                                             <Icon
