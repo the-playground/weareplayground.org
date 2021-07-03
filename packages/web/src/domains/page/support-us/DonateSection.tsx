@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import {
     Heading,
     BodyText,
-    Card,
-    CardHeader,
-    CardContent,
+    List,
+    ListItem,
     Section,
     Container,
+    Icon,
 } from '@web/ui/core';
 import { breakpoints, grid, spacing } from '@web/ui/tokens';
 import { DonateForm } from '@web/ui/molecules';
@@ -53,7 +53,28 @@ const StyledDonateSection = styled(Section)`
     .content .cta {
         margin-top: ${spacing.component.m};
     }
+
+    .content .donation-levels-list {
+        margin-bottom: ${spacing.component.l};
+        margin-top: ${spacing.component.m};
+    }
 `;
+
+const donationLevels = [
+    <>
+        <strong>$25</strong> will pay for a script for 2 team members.
+    </>,
+    <>
+        <strong>$75</strong> will cover the cost of renting a single light for 1
+        week.
+    </>,
+    <>
+        <strong>$150</strong> will cover the cost of rights for one performance.
+    </>,
+    <>
+        <strong>$250</strong> will go towards paying an artist's stipend.
+    </>,
+];
 
 export const DonateSection = () => (
     <StyledDonateSection bgColor="default">
@@ -72,13 +93,35 @@ export const DonateSection = () => (
                         and relevant theatre, and build the kind of artistic
                         community that Dayton deserves.
                     </BodyText>
+                    <List
+                        itemSpacing="xs"
+                        className="donation-levels-list"
+                        heading={
+                            <BodyText color="light" size="m" weight="bold">
+                                See the difference you can make:
+                            </BodyText>
+                        }
+                    >
+                        {donationLevels.map((text) => (
+                            <ListItem>
+                                <Icon
+                                    name="CircleRight"
+                                    size="xs"
+                                    color="light"
+                                />
+                                <BodyText size="m" color="medium">
+                                    {text}
+                                </BodyText>
+                            </ListItem>
+                        ))}
+                    </List>
                     <BodyText
                         color="accent"
                         size="m"
                         weight="bold"
                         className="cta"
                     >
-                        Do you have the nerve? Become a donor today.
+                        Do you have the nerve? Become a donor.
                     </BodyText>
                 </div>
             </div>

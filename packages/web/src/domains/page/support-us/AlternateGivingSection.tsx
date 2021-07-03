@@ -58,7 +58,7 @@ const amazonSmile = {
     buttonText: 'Get Started Now',
     wishlistUrl:
         'https://smile.amazon.com/hz/charitylist/ls/2IIOUNXC7E9IY/ref=smi_ext_lnk_lcl_cl',
-    wishlistButtonText: 'View Our Wishlist',
+    wishlistButtonText: 'View Wishlist',
     steps: [
         'Sign into smile.amazon.com',
         <>
@@ -158,20 +158,20 @@ export const AlternateGivingSection = () => {
                                 </List>
                             </CardContent>
                             <CardActions>
-                                <GhostButton
+                                <OutlineButton
                                     size="s"
                                     to={amazonSmile.url}
                                     color="primary"
                                 >
                                     {amazonSmile.buttonText}
-                                </GhostButton>
-                                <GhostButton
+                                </OutlineButton>
+                                <OutlineButton
                                     size="s"
                                     to={amazonSmile.wishlistUrl}
                                     color="tertiary"
                                 >
                                     {amazonSmile.wishlistButtonText}
-                                </GhostButton>
+                                </OutlineButton>
                             </CardActions>
                         </Card>
 
@@ -213,13 +213,13 @@ export const AlternateGivingSection = () => {
                                 </List>
                             </CardContent>
                             <CardActions>
-                                <GhostButton
+                                <OutlineButton
                                     size="s"
                                     to={krogerRewards.url}
                                     color="primary"
                                 >
                                     {krogerRewards.buttonText}
-                                </GhostButton>
+                                </OutlineButton>
                             </CardActions>
                         </Card>
                     </div>
