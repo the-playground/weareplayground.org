@@ -256,20 +256,20 @@ export const AlternateGivingSection = () => {
                                     Tell your friends about us
                                 </BodyText>
                                 <BodyText size="m" color="medium">
-                                    Say something cool
+                                    You talk, we grow
                                 </BodyText>
                             </CardHeader>
                             <CardContent verticalSpacing="s">
                                 <BodyText size="m" color="light">
-                                    I vomit in the bed in the middle of the
-                                    night sit on human they not getting up ever
-                                    and unwrap toilet paper ooooh feather moving
-                                    feather!
+                                    A large majority of our audience members saw
+                                    their first Nerve show because they heard
+                                    about us through a friend.
                                 </BodyText>
                             </CardContent>
                             <CardActions>
                                 <SocialShareModal
-                                    socialShareText="Tell your friends"
+                                    title="Say something cool about us"
+                                    socialShareText="Check out The Nerve. They are doing some seriously cool shit in Dayton."
                                     shareButtonText="Help spread the word"
                                     shareURL={href}
                                 />
