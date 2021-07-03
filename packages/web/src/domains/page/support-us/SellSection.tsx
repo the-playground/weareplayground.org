@@ -36,10 +36,12 @@ const StyledSellSection = styled(Section)`
     }
 
     &:before {
+        background-size: 800px;
         background-image: url(${blackGrit});
     }
 
     &:after {
+        background-size: 800px;
         background-image: url(${whiteGrit});
     }
 
@@ -80,6 +82,7 @@ export const SellSection = () => (
                 bgColor="paper"
                 size="s"
                 offset={-1}
+                as="h2"
                 className="title"
             >
                 Our unfiltered storytelling style + experimentation = Innovation

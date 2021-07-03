@@ -85,7 +85,7 @@ export const DonateSection = () => (
         <Container className="container" maxWidth="l">
             <div className="content">
                 <div className="title">
-                    <Heading color="light" size="xs">
+                    <Heading color="light" size="xs" as="h3">
                         Your kindness and generosity can make this future a
                         reality.
                     </Heading>

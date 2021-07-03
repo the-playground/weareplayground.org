@@ -109,7 +109,12 @@ export const AlternateGivingSection = () => {
             <StyledAlternateGivingSection>
                 <Container>
                     <div className="intro">
-                        <Heading size="s" color="light" className="heading">
+                        <Heading
+                            size="s"
+                            color="light"
+                            className="heading"
+                            as="h3"
+                        >
                             Short on cash?
                         </Heading>
                         <BodyText color="light" size="m" className="copy">
@@ -133,7 +138,12 @@ export const AlternateGivingSection = () => {
                                     <Avatar borderColor="neutral">1</Avatar>
                                 }
                             >
-                                <BodyText weight="bold" color="light" size="l">
+                                <BodyText
+                                    weight="bold"
+                                    color="light"
+                                    size="l"
+                                    as="h4"
+                                >
                                     {amazonSmile.title}
                                 </BodyText>
                                 <BodyText size="m" color="medium">
@@ -188,7 +198,12 @@ export const AlternateGivingSection = () => {
                                     <Avatar borderColor="neutral">2</Avatar>
                                 }
                             >
-                                <BodyText weight="bold" color="light" size="l">
+                                <BodyText
+                                    weight="bold"
+                                    color="light"
+                                    size="l"
+                                    as="h4"
+                                >
                                     {krogerRewards.title}
                                 </BodyText>
                                 <BodyText size="m" color="medium">
@@ -232,7 +247,12 @@ export const AlternateGivingSection = () => {
                                     <Avatar borderColor="neutral">3</Avatar>
                                 }
                             >
-                                <BodyText weight="bold" color="light" size="l">
+                                <BodyText
+                                    weight="bold"
+                                    color="light"
+                                    size="l"
+                                    as="h4"
+                                >
                                     Tell your friends about us
                                 </BodyText>
                                 <BodyText size="m" color="medium">

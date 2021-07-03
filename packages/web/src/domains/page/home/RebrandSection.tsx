@@ -51,10 +51,12 @@ const StyledRebrandSection = styled(Section)`
     }
 
     &:before {
+        background-size: 700px;
         background-image: url(${blackGrit});
     }
 
     &:after {
+        background-size: 700px;
         background-image: url(${whiteGrit});
     }
 `;
