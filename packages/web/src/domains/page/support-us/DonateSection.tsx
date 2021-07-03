@@ -50,13 +50,17 @@ const StyledDonateSection = styled(Section)`
         margin-bottom: ${spacing.component.l};
     }
 
+    .content .donation-levels-list {
+        margin-bottom: ${spacing.component.l};
+        margin-top: ${spacing.component.m};
+    }
+
     .content .cta {
         margin-top: ${spacing.component.m};
     }
 
-    .content .donation-levels-list {
-        margin-bottom: ${spacing.component.l};
-        margin-top: ${spacing.component.m};
+    .sponsorship-opportunities {
+        margin-top: ${spacing.layout.s};
     }
 `;
 
@@ -126,6 +130,18 @@ export const DonateSection = () => (
                 </div>
             </div>
             <DonateForm campaignID="grassroots-support-fund" className="form" />
+        </Container>
+        <Container maxWidth="xs">
+            <BodyText
+                color="medium"
+                size="s"
+                className="sponsorship-opportunities"
+            >
+                * If you are an individual or businesses looking to contribute
+                more than $500 per season, reach out to us at{' '}
+                <strong>sponsorship@nervetheatre.org</strong> to discuss
+                sponsorship opportunities
+            </BodyText>
         </Container>
     </StyledDonateSection>
 );
