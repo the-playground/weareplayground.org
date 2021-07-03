@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { breakpoints, spacing } from '@nerve/core/tokens';
+import { breakpoints, spacing } from '@web/ui/tokens';
 
 const componentBreakpoint = breakpoints.s;
 
@@ -18,17 +18,12 @@ export const AuthorCard = styled.div`
     }
 
     .avatar {
-        line-height: 0;
         margin-bottom: ${spacing.component.s};
 
         ${componentBreakpoint} {
             margin-bottom: 0;
             margin-right: ${spacing.component.l};
         }
-    }
-
-    .avatar img {
-        border-radius: 50%;
     }
 
     .byline {

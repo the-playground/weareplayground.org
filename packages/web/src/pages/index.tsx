@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql, PageProps } from 'gatsby';
 import {
     GatsbyPageContext,
     SanityDocument,
     SanityImageData,
-} from '@nerve/shared/types';
+} from '@web/shared/types';
 
-import { NewsSubscribeCTA } from '@nerve/domains/engagement';
+import { NewsSubscribeCTA } from '@web/ui/molecules';
 
-import PageTemplate from '@nerve/domains/page/PageTemplate';
+import PageTemplate from '@web/domains/page/__template__';
+
 import {
     ArchiveSection,
     HeroSection,
     RebrandSection,
-} from '@nerve/domains/page/home';
+} from '@web/domains/page/home';
 
 const HomePage: React.FC<PageProps<PageData, GatsbyPageContext>> = ({
     data,

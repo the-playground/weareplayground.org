@@ -1,9 +1,9 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-import { SEASON_ROOT_SLUG } from '@nerve/domains/season';
-import { BLOG_ROOT_SLUG } from '@nerve/domains/blog';
+import { SEASON_ROOT_SLUG } from '@web/domains/season';
+import { BLOG_ROOT_SLUG } from '@web/domains/blog';
 
-import { buildNestedSlugPath, normalizeSlug } from '@nerve/shared/lib';
+import { buildNestedSlugPath, normalizeSlug } from '@web/shared/utils';
 
 export const useLinkMapConfig = (): LinkMapConfig => {
     /**
@@ -22,6 +22,11 @@ export const useLinkMapConfig = (): LinkMapConfig => {
                         current
                     }
                 }
+                supportUsPage {
+                    slug {
+                        current
+                    }
+                }
                 sitemap
             }
         }
@@ -32,6 +37,7 @@ export const useLinkMapConfig = (): LinkMapConfig => {
     return {
         blogPage: normalizeSlug(links?.blogPage?.slug?.current),
         archivePage: normalizeSlug(links?.showArchivePage?.slug?.current),
+        supportUsPage: normalizeSlug(links?.supportUsPage?.slug?.current),
         sitemap: links?.sitemap,
         getShow: (season, show) =>
             buildNestedSlugPath([SEASON_ROOT_SLUG, season, show]),
@@ -44,6 +50,7 @@ export const useLinkMapConfig = (): LinkMapConfig => {
 export interface LinkMapConfig {
     blogPage: string | null;
     archivePage: string | null;
+    supportUsPage: string | null;
     sitemap: string;
     getShow: (season: string, show: string) => string | null;
     getSeason: (season: string) => string | null;

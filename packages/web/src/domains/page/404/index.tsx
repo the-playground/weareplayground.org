@@ -7,9 +7,9 @@ import {
     GrittyHeading,
     Section,
     Container,
-} from '@nerve/core/components';
+} from '@web/ui/core';
 
-import { spacing } from '@nerve/core/tokens';
+import { spacing } from '@web/ui/tokens';
 
 const StyledSection = styled(Section)`
     align-items: center;

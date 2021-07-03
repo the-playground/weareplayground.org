@@ -1,16 +1,11 @@
 import React from 'react';
 
-import { Link } from '@nerve/core/routing';
-import { SanityImageDataWithAlt } from '@nerve/shared/types';
+import { Link } from '@web/domains/app/routing';
+import { SanityImageDataWithAlt } from '@web/shared/types';
 
-import {
-    BodyText,
-    Heading,
-    Image,
-    BackgroundOverlay,
-} from '@nerve/core/components';
+import { BodyText, Heading, BrandImage, BackgroundOverlay } from '@web/ui/core';
 
-import { useConfigContext } from '@nerve/shared/context';
+import { useConfigContext } from '@web/shared/context';
 import * as styled from './__styles';
 
 export const ShowPoster: React.FC<ShowPosterProps> = ({
@@ -33,7 +28,7 @@ export const ShowPoster: React.FC<ShowPosterProps> = ({
                 className="wrapper"
                 to={links.getShow(season.slug, slug) ?? '/'}
             >
-                <Image
+                <BrandImage
                     image={image.asset}
                     alt={image.alt ?? ''}
                     objectFit="cover"

@@ -6,9 +6,9 @@
  * @link https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/
  */
 
-// import { redirects as blogRedirects } from '@nerve/domains/blog';
-// import { redirects as seasonRedirects } from '@nerve/domains/season';
-// import { redirects as showRedirects } from '@nerve/domains/show';
+// import { redirects as blogRedirects } from '@web/domains/blog';
+// import { redirects as seasonRedirects } from '@web/domains/season';
+// import { redirects as showRedirects } from '@web/domains/show';
 
 import { GatsbyNetlifyRedirect } from './types';
 

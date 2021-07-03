@@ -1,4 +1,4 @@
-import { GatsbyPageContext, SanityDocument } from '@nerve/shared/types';
+import { GatsbyPageContext, SanityDocument } from '@web/shared/types';
 
 export interface SeasonReference {
     slug: {

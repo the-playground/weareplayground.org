@@ -21,7 +21,7 @@ const deployContext = process.env.CONTEXT ?? '';
 const deployID = process.env.DEPLOY_ID ?? '';
 const commitRef = process.env.COMMIT_REF ?? '';
 const prevCommitRef = process.env.CACHED_COMMIT_REF ?? '';
-const environment = deployContext ?? 'development';
+const environment = deployContext || 'development';
 const isDev = environment === 'development';
 const isDeployPreview = environment === 'deploy-preview';
 const isProd = environment === 'production';
@@ -76,6 +76,8 @@ module.exports = {
             resolve: '@sentry/gatsby',
             options: {
                 dsn: process.env.SENTRY_DSN,
+                environment,
+                release: `nerve.web@${appVersion}`,
                 // A rate of 1 means all traces will be sent, so it's good for testing.
                 // In production, you'll likely want to either choose a lower rate or use `tracesSampler` instead (see below).
                 tracesSampleRate: 0.5,
@@ -109,10 +111,14 @@ module.exports = {
                 root: '', // <- will be used as a root dir
                 aliases: {
                     '@gatsby': './@gatsby',
-                    '@nerve/core': './src/core',
-                    '@nerve/domains': './src/domains',
-                    '@nerve/assets': './src/assets',
-                    '@nerve/shared': './src/shared',
+                    '@web/domains': './src/domains',
+                    '@web/assets': './src/assets',
+                    '@web/shared': './src/shared',
+                    '@web/ui/core': './src/ui/components/core',
+                    '@web/ui/layout': './src/ui/components/layout',
+                    '@web/ui/molecules': './src/ui/components/molecules',
+                    '@web/ui/themes': './src/ui/themes',
+                    '@web/ui/tokens': './src/ui/tokens',
                 },
             },
         },

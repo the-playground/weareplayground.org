@@ -4,14 +4,14 @@ import { useEffect, RefObject } from 'react';
  * Detect a click outside a referenced component and handle the click accordingly.
  *
  * @param ref The object we are watching to see if a click outside of that object takes place
- * @param handler The event handler that should handle the click
+ * @param callback The function to run if a click outside the ref element was detected
  */
 export const useOnClickOutside = (
     ref: RefObject<HTMLElement> | null,
-    handler: Handler | null
+    callback: () => void
 ): void => {
     useEffect(() => {
-        if (!ref || !handler) {
+        if (!ref || !callback) {
             return;
         }
 
@@ -19,7 +19,7 @@ export const useOnClickOutside = (
             if (!ref.current || ref.current.contains(event.target as Node)) {
                 return;
             }
-            handler(event);
+            callback();
         };
 
         // Listen for a click or touch interaction
@@ -31,9 +31,7 @@ export const useOnClickOutside = (
             document.removeEventListener('mousedown', listener);
             document.removeEventListener('touchstart', listener);
         };
-    }, [handler, ref]);
+    }, [callback, ref]);
 };
-
-type Handler = (event: HandledEvents) => void;
 
 type HandledEvents = MouseEvent | TouchEvent;

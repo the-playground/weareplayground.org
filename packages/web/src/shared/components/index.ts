@@ -1,1 +1,0 @@
-export * from './SimpleHero/SimpleHero';

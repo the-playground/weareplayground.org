@@ -1,16 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoints, spacing } from '@nerve/core/tokens';
+import { breakpoints, spacing } from '@web/ui/tokens';
 
-import { useConfigContext } from '@nerve/shared/context';
+import { useConfigContext } from '@web/shared/context';
 
-import {
-    BodyText,
-    Container,
-    Heading,
-    Icon,
-    TextButton,
-} from '@nerve/core/components';
+import { BodyText, Container, Heading, Icon, TextButton } from '@web/ui/core';
 
 const StyledArchiveSection = styled.section`
     padding: ${spacing.layout.l} 0;
@@ -60,8 +54,8 @@ export const ArchiveSection: React.FC = () => {
                 <TextButton
                     color="primary"
                     size="m"
-                    to={links.archivePage}
-                    endIcon={<Icon name="ArrowRight" size="xs" />}
+                    to={links.archivePage!}
+                    endIcon={<Icon name="ArrowRight" size="s" />}
                     animateIconOnHover
                 >
                     Take me there

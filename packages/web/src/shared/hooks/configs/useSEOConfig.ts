@@ -1,5 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import { SanityImageDataWithAlt } from '@nerve/shared/types';
+import { SanityImageDataWithAlt } from '@web/shared/types';
 
 export const useSEOConfig = (): SEOConfig => {
     /**

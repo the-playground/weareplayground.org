@@ -7,16 +7,16 @@ import { bindFieldsToFieldset } from '../../../../lib/fieldset';
 import articles from './fields/articles';
 import artists from './fields/artists';
 import author from './fields/author';
-import basicInfo from './fields/basicInfo';
 import collaboration from './fields/collaboration';
-import directors from './fields/directors';
+import details from './fields/details';
 import images from './fields/images';
-import location from './fields/location';
-import openCloseDates from './fields/openCloseDates';
-import { performances, performanceConfig } from './fields/performance';
+import messaging from './fields/messaging';
+import { performances } from './fields/performance';
 import promo from './fields/promo';
 import season from './fields/season';
+import selectors from './fields/selectors';
 import sponsors from './fields/sponsors';
+import toggles from './fields/toggles';
 
 import * as showObjects from './objects';
 
@@ -26,16 +26,23 @@ export const schema: DocumentCollection = {
     icon: <Star />,
     fieldsets: [
         {
-            name: 'basic',
-            title: 'Basic Info',
-            description: '',
+            name: 'messaging',
+            title: 'Messaging',
+            description: 'General messaging and descriptions for this show',
+            options: { collapsible: true, collapsed: true },
+        },
+        {
+            name: 'details',
+            title: 'Performance Details',
+            description:
+                'Detailed information about this show and its performances',
             options: { collapsible: true, collapsed: true },
         },
         {
             name: 'images',
             title: 'Images',
             description:
-                'Core images for representing this show in various places',
+                'Images that represent this show in different contexts',
             type: 'object',
             options: { collapsed: true, collapsible: true },
         },
@@ -58,43 +65,31 @@ export const schema: DocumentCollection = {
             },
             validation: (Rule: any) => Rule.required(),
         },
-        {
-            name: 'doNotDisplay',
-            title: 'Do not display on website',
-            description:
-                'Toggling this on will prevent this show from being displayed on the frontend of the website.',
-            type: 'boolean',
-        },
-        {
-            name: 'type',
-            title: 'Show Type',
-            type: 'string',
-            options: {
-                layout: 'radio',
-                direction: 'horizontal',
-                list: [
-                    { title: 'Live', value: 'live' },
-                    { title: 'Virtual', value: 'virtual' },
-                ],
-            },
-            validation: (Rule: any) => Rule.required(),
-        },
         season,
         author,
-        directors,
-        location,
-        ...bindFieldsToFieldset('basic', basicInfo),
-        collaboration,
+        toggles,
+        selectors,
         ...bindFieldsToFieldset('images', images),
-        ...openCloseDates,
-        performanceConfig,
+        ...bindFieldsToFieldset('messaging', messaging),
+        ...bindFieldsToFieldset('details', details),
+        collaboration,
+        artists,
         performances,
     ],
     initialValue: {
-        doNotDisplay: false,
-        type: 'live',
-        collaboration: {
-            is: false,
+        toggles: {
+            isHiddenFromWebsite: false,
+            isHCollaboration: false,
+        },
+        selectors: {
+            type: 'live',
+            status: 'active',
+        },
+        contentAdvisory: {
+            hasModal: false,
+        },
+        effectsAdvisory: {
+            hasModal: false,
         },
         seo: {
             hideDocument: false,
@@ -125,9 +120,14 @@ export const schema: DocumentCollection = {
 };
 
 export const objects = [
+    showObjects.artists,
     showObjects.collaboration,
+    showObjects.effectsAdvisory,
+    showObjects.contentAdvisory,
+    showObjects.detailItem,
     showObjects.performance,
-    showObjects.performanceConfig,
     showObjects.ticket,
     showObjects.scriptAuthor,
+    showObjects.selectors,
+    showObjects.toggles,
 ];

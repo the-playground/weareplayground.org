@@ -3,8 +3,8 @@ import {
     SanityDocument,
     SanityImageData,
     SanityImageDataWithAlt,
-} from '@nerve/shared/types';
-import { SeasonReference } from '@nerve/domains/season';
+} from '@web/shared/types';
+import { SeasonReference } from '@web/domains/season';
 
 /**
  * Types for a single Show landing page

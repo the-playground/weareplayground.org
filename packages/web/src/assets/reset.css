@@ -108,6 +108,8 @@
 
 	button,
 	input { /* 1 */
+		background: transparent;
+		border: none;
 		overflow: visible;
 	}
 
@@ -130,6 +132,7 @@
 	[type="reset"],
 	[type="submit"] {
 		appearance: none;
+		cursor: pointer;
 	}
 
 	/**

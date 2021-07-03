@@ -1,6 +1,6 @@
 {
 	"name": "@nerve/web",
-	"version": "1.1.2",
+	"version": "1.2.0",
 	"description": "Frontend for The Nerve web app",
 	"main": "package.json",
 	"license": "MIT",
@@ -12,6 +12,8 @@
 		"classnames": "^2.3.1",
 		"date-fns": "^2.21.3",
 		"dotenv": "^9.0.2",
+		"focus-trap-react": "^8.5.0",
+		"framer-motion": "^4.1.17",
 		"gatsby": "^3.5.0",
 		"gatsby-plugin-gtag": "^1.0.13",
 		"gatsby-plugin-image": "^1.5.0",
@@ -49,7 +51,8 @@
 	},
 	"scripts": {
 		"clean": "gatsby clean",
-		"start": "npm run clean && gatsby develop",
+		"start": "gatsby develop",
+		"start:clean": "npm run clean && gatsby develop",
 		"netlify:start": "npm run clean && netlify dev",
 		"netlify:build": "netlify build --context deploy-preview",
 		"build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",

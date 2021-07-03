@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { breakpoints, grid, spacing } from '@nerve/core/tokens';
+import { breakpoints, grid, spacing } from '@web/ui/tokens';
 
-import { useConfigContext } from '@nerve/shared/context';
+import { useConfigContext } from '@web/shared/context';
 
 import {
     BodyText,
@@ -13,7 +13,7 @@ import {
     Icon,
     Section,
     SectionProps,
-} from '@nerve/core/components';
+} from '@web/ui/core';
 
 const StyledHeroSection = styled(Section)`
     padding: ${spacing.layout.l} 0 ${spacing.layout.xl} 0;
@@ -46,7 +46,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     const blogLink = links.getPost(rebrandLink);
 
     return (
-        <StyledHeroSection bgImage={bgImage} overlay="dark85">
+        <StyledHeroSection bgImage={bgImage} overlay="dark55">
             <Container>
                 <GrittyHeading
                     as="h1"
@@ -65,7 +65,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     color="primary"
                     size="m"
                     className="action"
-                    endIcon={<Icon name="ArrowRight" size="xs" />}
+                    endIcon={<Icon name="ArrowRight" size="m" />}
                     animateIconOnHover
                     animateOnClick
                 >
