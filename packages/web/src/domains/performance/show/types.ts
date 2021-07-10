@@ -69,13 +69,3 @@ export interface ShowPerformance {
     isPayWhatYouCan: boolean;
     hasTalkback: boolean;
 }
-
-/**
- * Types for show filter & sort functions anywhere an instance of a show needs
- * to be filtered or sorted by date. This can be any shape as long as it extends
- * ShowCore. We don't want to be too prescriptive here.
- */
-
-export interface ComparableShow extends ShowCore {
-    [key: string]: any;
-}
