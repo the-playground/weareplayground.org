@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-import { SEASON_ROOT_SLUG } from '@web/domains/season';
+import { SEASON_ROOT_SLUG } from '@web/domains/performance/season';
 import { BLOG_ROOT_SLUG } from '@web/domains/blog';
 
 import { buildNestedSlugPath, normalizeSlug } from '@web/shared/utils';

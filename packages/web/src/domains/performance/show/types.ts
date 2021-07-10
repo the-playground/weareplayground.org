@@ -4,7 +4,7 @@ import {
     SanityImageData,
     SanityImageDataWithAlt,
 } from '@web/shared/types';
-import { SeasonReference } from '@web/domains/season';
+import { SeasonReference } from '@web/domains/performance/season';
 
 /**
  * Types for a single Show landing page
