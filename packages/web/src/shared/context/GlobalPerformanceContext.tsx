@@ -27,6 +27,8 @@ export const useQueryAllPerformanceData = (): unknown => {
                     slug {
                         current
                     }
+                    openDate
+                    closeDate
                 }
             }
         }
@@ -34,6 +36,17 @@ export const useQueryAllPerformanceData = (): unknown => {
 
     return { seasons, shows };
 };
+
+// getCurrentSeason
+// getNextSeason
+// getPreviousSeason
+
+// getCurrentShow
+// getNextShow
+// getPreviousShow
+
+// getAllShowsThisSeason
+// getOtherShowsThisSeason
 
 /**
  * Context & Provider
