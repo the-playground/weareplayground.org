@@ -38,7 +38,7 @@ export const DefaultBlock: React.FC = (props: any) => {
     }
     if (style === 'h3') {
         return (
-            <Heading size="s" as="h3" key={_key} color="medium" className="h3">
+            <Heading size="xs" as="h3" key={_key} color="light" className="h3">
                 {children}
             </Heading>
         );

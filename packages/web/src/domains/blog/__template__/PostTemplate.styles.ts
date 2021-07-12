@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
-import { animation, appNavBreakpoint, borders, spacing } from '@web/ui/tokens';
+import {
+    animation,
+    appNavBreakpoint,
+    borders,
+    spacing,
+    typography,
+} from '@web/ui/tokens';
 
 export const Content = styled.div`
     padding-bottom: ${spacing.layout.m};
@@ -74,6 +80,32 @@ export const Content = styled.div`
     /* Any heading tags that are followed immediately by a standard paragraph */
     > :is(div, .h2, .h3, .h4, .h5, .h6) + .p {
         margin-top: 0;
+    }
+
+    ol {
+        list-style-type: decimal-leading-zero;
+    }
+
+    ul,
+    ol {
+        color: ${({ theme }) => theme.typography.light};
+        margin-top: ${spacing.layout.s};
+        margin-left: ${spacing.component.xl};
+        ${typography.bodyText.m};
+    }
+
+    ul > li:not(:last-child),
+    ol > li:not(:last-child) {
+        margin-bottom: ${spacing.component.l};
+    }
+
+    ol > li > ol {
+        list-style-type: lower-alpha;
+    }
+
+    ol > li > ol,
+    ol > li > ul {
+        margin-top: ${spacing.component.s};
     }
 `;
 
