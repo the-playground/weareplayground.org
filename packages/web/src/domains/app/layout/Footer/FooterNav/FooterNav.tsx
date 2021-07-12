@@ -30,6 +30,10 @@ export const FooterNav = (): JSX.Element => {
             text: 'our rebrand',
             link: links.getPost('the-playground-theatre-is-now-the-nerve'),
         },
+        {
+            text: 'our wsywat response',
+            link: links.getPost('our-wsywat-response-plan'),
+        },
         // {
         //     text: 'about us',
         //     link: links.about,
