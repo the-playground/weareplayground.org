@@ -30,11 +30,9 @@ export const StylesGlobal = createGlobalStyle`
 		z-index: ${zIndex.portal};
 	}
 
-	::selection {
-  		background: ${(props) => props.theme.palette.primary.base};
-	}
+	::selection,
 	::-moz-selection {
-		background:  ${(props) => props.theme.palette.primary.base};
+  		background: ${(props) => props.theme.palette.primary.base};
 	}
 
 	/**
