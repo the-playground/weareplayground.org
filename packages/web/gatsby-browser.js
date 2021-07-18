@@ -27,11 +27,9 @@ export const wrapRootElement = ({ element }) => (
     <EnvironmentProvider>
         <ConfigProvider>
             <ThemeProvider theme={theme}>
-                <UIProvider>
-                    <GlobalPerformanceProvider>
-                        {element}
-                    </GlobalPerformanceProvider>
-                </UIProvider>
+                <GlobalPerformanceProvider>
+                    <UIProvider>{element}</UIProvider>
+                </GlobalPerformanceProvider>
             </ThemeProvider>
         </ConfigProvider>
     </EnvironmentProvider>

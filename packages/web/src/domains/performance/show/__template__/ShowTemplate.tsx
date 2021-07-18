@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { graphql, PageProps } from 'gatsby';
-import { useConfigContext } from '@web/shared/context';
+import {
+    useConfigContext,
+    useGlobalPerformanceContext,
+} from '@web/shared/context';
 import { useGetMetaImage, useCurrentURL } from '@web/shared/hooks';
 
 import { NewsSubscribeCTA, LegacyContentNotice } from '@web/ui/molecules';
@@ -8,6 +11,7 @@ import { NewsSubscribeCTA, LegacyContentNotice } from '@web/ui/molecules';
 import { PageBasicSEO, StructuredData } from '@web/domains/app/seo';
 
 import { ShowPage, ShowPageContext } from '../types';
+import { SingleShowProvider } from '../__context__';
 import { useShowStatus } from '../__hooks__';
 
 const SingleShowLanding: React.FC<PageProps<PageData, ShowPageContext>> = ({

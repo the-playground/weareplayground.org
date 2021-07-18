@@ -38,24 +38,32 @@ export interface ShowCore {
     author: ShowAuthor;
     openDate: string;
     closeDate: string;
+    // In some instances, we will want the full path to the show to be available
+    path?: string;
 }
 
-export interface ShowCoreWithPoster extends ShowCore {
+export interface ShowPosterImage {
     posterImage: SanityImageDataWithAlt;
 }
-
-export interface ShowCoreWithCard extends ShowCore {
+export interface ShowCardImage {
     cardImage: SanityImageDataWithAlt;
 }
 
-export interface ShowCoreWithThumbnail {
+export interface ShowThumbnailImage {
     thumbnailImage: SanityImageDataWithAlt;
 }
+
+export type ShowCoreWithPoster = ShowCore & ShowPosterImage;
+export type ShowCoreWithCard = ShowCore & ShowCardImage;
+export type ShowCoreWithThumbnail = ShowCore & ShowThumbnailImage;
+export type ShowCoreWithImages = ShowCore &
+    ShowCardImage &
+    ShowPosterImage &
+    ShowThumbnailImage;
 
 /**
  * Metadata associated with a show.
  */
-
 export interface ShowAuthor {
     name: string;
     bioLink?: string;
