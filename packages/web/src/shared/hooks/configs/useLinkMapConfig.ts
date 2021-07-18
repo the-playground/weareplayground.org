@@ -48,11 +48,11 @@ export const useLinkMapConfig = (): LinkMapConfig => {
 };
 
 export interface LinkMapConfig {
-    blogPage: string | null;
-    archivePage: string | null;
-    supportUsPage: string | null;
+    blogPage: string | undefined;
+    archivePage: string | undefined;
+    supportUsPage: string | undefined;
     sitemap: string;
-    getShow: (season: string, show: string) => string | null;
-    getSeason: (season: string) => string | null;
+    getShow: (season: string, show: string) => string | undefined;
+    getSeason: (season: string) => string | undefined;
     getPost: (post: string) => string;
 }
